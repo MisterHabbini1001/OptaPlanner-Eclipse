@@ -29,7 +29,10 @@ public enum Affinity {
     }
 
     public int getDurationMultiplier() {
-        return durationMultiplier;
+    	//habbo+
+        //return durationMultiplier;
+    	return 2;
+    	//habbo-
     }
 
     public String getLabel() {

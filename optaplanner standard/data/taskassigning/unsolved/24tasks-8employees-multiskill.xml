@@ -105,6 +105,9 @@
         <TaSkill reference="3"/>
         <TaSkill reference="4"/>
         <TaSkill reference="5"/>
+        <TaSkill reference="6"/>
+        <TaSkill reference="7"/>
+        <TaSkill reference="8"/>		
       </skillSet>
 	  <capacitySet class="linked-hash-set" id = "803">
 	  	<TaCapacity reference="2001"/>	
@@ -135,8 +138,12 @@
  	  <latitude>52.2</latitude>
 	  <longitude>4.2</longitude>
       <skillSet class="linked-hash-set" id="28">
+        <TaSkill reference="3"/>
+        <TaSkill reference="4"/>
+        <TaSkill reference="5"/>
         <TaSkill reference="6"/>
         <TaSkill reference="7"/>
+        <TaSkill reference="8"/>
       </skillSet>
 	  <capacitySet class="linked-hash-set" id = "804">
 	  </capacitySet>
@@ -165,8 +172,12 @@
 	  <latitude>52.3</latitude>
 	  <longitude>4.1</longitude>	  
       <skillSet class="linked-hash-set" id="31">
-        <TaSkill reference="8"/>
         <TaSkill reference="3"/>
+        <TaSkill reference="4"/>
+        <TaSkill reference="5"/>
+        <TaSkill reference="6"/>
+        <TaSkill reference="7"/>
+        <TaSkill reference="8"/>
       </skillSet>
 	  <capacitySet class="linked-hash-set" id = "805">
 	  </capacitySet>
@@ -195,8 +206,12 @@
 	  <latitude>52.4</latitude>
 	  <longitude>4.4</longitude>
       <skillSet class="linked-hash-set" id="34">
+        <TaSkill reference="3"/>
         <TaSkill reference="4"/>
         <TaSkill reference="5"/>
+        <TaSkill reference="6"/>
+        <TaSkill reference="7"/>
+        <TaSkill reference="8"/>
       </skillSet>
 	  <capacitySet class="linked-hash-set" id = "806">
  		<TaCapacity reference="2001"/>
@@ -227,6 +242,9 @@
 	  <latitude>52.5</latitude>
 	  <longitude>4.5</longitude>	  
       <skillSet class="linked-hash-set" id="37">
+        <TaSkill reference="3"/>
+        <TaSkill reference="4"/>
+        <TaSkill reference="5"/>
         <TaSkill reference="6"/>
         <TaSkill reference="7"/>
         <TaSkill reference="8"/>
@@ -262,6 +280,10 @@
       <skillSet class="linked-hash-set" id="40">
         <TaSkill reference="3"/>
         <TaSkill reference="4"/>
+        <TaSkill reference="5"/>
+        <TaSkill reference="6"/>
+        <TaSkill reference="7"/>
+        <TaSkill reference="8"/>
       </skillSet>
 	  <capacitySet class="linked-hash-set" id = "808">
 	  </capacitySet>
@@ -290,9 +312,12 @@
 	  <latitude>52.7</latitude>
 	  <longitude>4.7</longitude>	  
       <skillSet class="linked-hash-set" id="43">
+        <TaSkill reference="3"/>
+        <TaSkill reference="4"/>
         <TaSkill reference="5"/>
         <TaSkill reference="6"/>
         <TaSkill reference="7"/>
+        <TaSkill reference="8"/>
       </skillSet>
  	  <capacitySet class="linked-hash-set" id = "809">
 	  </capacitySet>
@@ -321,9 +346,12 @@
 	  <latitude>52.8</latitude>
 	  <longitude>4.3</longitude>	  
       <skillSet class="linked-hash-set" id="46">
-        <TaSkill reference="8"/>
         <TaSkill reference="3"/>
         <TaSkill reference="4"/>
+        <TaSkill reference="5"/>
+        <TaSkill reference="6"/>
+        <TaSkill reference="7"/>
+        <TaSkill reference="8"/>
       </skillSet>
 	  <capacitySet class="linked-hash-set" id = "810">
 	  </capacitySet>
@@ -355,6 +383,7 @@
 	  <code>SV-0000</code>
 	  <title>Planned</title>
 	  <duration>85</duration>
+	  <responsTime>1440</responsTime>	  
 	  <latitude>52.1</latitude>
 	  <longitude>4.0</longitude>	  
       <customer reference="20"/>
@@ -369,6 +398,7 @@
 	  <code>SV-0001</code>
 	  <title>Spoedreparatie</title>
 	  <duration>60</duration>
+	  <responsTime>1440</responsTime>
 	  <latitude>52.2</latitude>
 	  <longitude>4.1</longitude>	  
       <customer reference="22"/>
@@ -383,6 +413,7 @@
 	  <code>SV-0002</code>
 	  <title>Spoedreparatie</title>
 	  <duration>90</duration>
+	  <responsTime>1440</responsTime>
 	  <latitude>52.3</latitude>
 	  <longitude>4.2</longitude>		  
       <customer reference="22"/>
@@ -397,6 +428,7 @@
 	  <code>SV-0003</code>
 	  <title>Spoedreparatie</title>
 	  <duration>110</duration>
+	  <responsTime>720</responsTime>
   	  <latitude>52.4</latitude>
 	  <longitude>4.3</longitude>	  
       <customer reference="22"/>
@@ -411,6 +443,7 @@
   	  <code>SV-0004</code>
 	  <title>Spoedreparatie</title>
 	  <duration>30</duration>
+	  <responsTime>1440</responsTime>
   	  <latitude>52.5</latitude>
 	  <longitude>4.4</longitude>  
       <customer reference="21"/>
@@ -425,6 +458,7 @@
 	  <code>SV-0005</code>
 	  <title>Spoedreparatie</title>
 	  <duration>180</duration>
+	  <responsTime>1440</responsTime>
   	  <latitude>52.6</latitude>
 	  <longitude>4.2</longitude>	  
       <customer reference="21"/>
@@ -439,6 +473,7 @@
 	  <code>SV-0006</code>
 	  <title>Spoedreparatie</title>
 	  <duration>70</duration>
+	  <responsTime>1440</responsTime>
   	  <latitude>52.6</latitude>
 	  <longitude>4.2</longitude>	  
       <customer reference="20"/>
@@ -453,6 +488,7 @@
 	  <code>SV-0007</code>
 	  <title>Spoedreparatie</title>
 	  <duration>45</duration>
+	  <responsTime>1440</responsTime>
   	  <latitude>52.5</latitude>
 	  <longitude>4.5</longitude>	  
       <customer reference="19"/>
@@ -467,6 +503,7 @@
 	  <code>SV-0008</code>
 	  <title>Spoedreparatie</title>
 	  <duration>90</duration>
+	  <responsTime>1440</responsTime>
   	  <latitude>52.4</latitude>
 	  <longitude>4.3</longitude>	  
       <customer reference="19"/>
@@ -481,6 +518,7 @@
 	  <code>SV-0009</code>
 	  <title>Spoedreparatie</title>
 	  <duration>70</duration>
+	  <responsTime>1440</responsTime>
   	  <latitude>52.5</latitude>
 	  <longitude>4.4</longitude>	  
       <customer reference="22"/>
@@ -495,6 +533,7 @@
 	  <code>SV-0010</code>
 	  <title>Spoedreparatie</title>
 	  <duration>90</duration>
+	  <responsTime>1440</responsTime>
   	  <latitude>52.3</latitude>
 	  <longitude>4.5</longitude>	  
       <customer reference="22"/>
@@ -508,6 +547,7 @@
       <indexInTaskType>4</indexInTaskType>
 	  <code>SV-0011</code>
 	  <duration>50</duration>
+	  <responsTime>1440</responsTime>
 	  <title>Spoedreparatie</title>
   	  <latitude>52.2</latitude>
 	  <longitude>4.1</longitude>	  
@@ -523,6 +563,7 @@
 	  <code>SV-0012</code>
 	  <title>Spoedreparatie</title>
 	  <duration>55</duration>
+	  <responsTime>1440</responsTime>
   	  <latitude>52.3</latitude>
 	  <longitude>4.7</longitude>	  
       <customer reference="21"/>
@@ -537,6 +578,7 @@
 	  <code>SV-0013</code>
 	  <title>Spoedreparatie</title>
 	  <duration>60</duration>
+	  <responsTime>1440</responsTime>
   	  <latitude>52.8</latitude>
 	  <longitude>4.3</longitude>	  
       <customer reference="22"/>
@@ -551,6 +593,7 @@
 	  <code>SV-0014</code>
 	  <title>Spoedreparatie</title>
 	  <duration>90</duration>
+	  <responsTime>720</responsTime>
   	  <latitude>52.8</latitude>
 	  <longitude>4.2</longitude>	  
       <customer reference="21"/>
@@ -565,6 +608,7 @@
 	  <code>SV-0015</code>
 	  <title>Spoedreparatie</title>
 	  <duration>80</duration>
+	  <responsTime>1440</responsTime>
   	  <latitude>52.6</latitude>
 	  <longitude>4.4</longitude>	  
       <customer reference="20"/>
@@ -579,6 +623,7 @@
 	  <code>SV-0016</code>
 	  <title>Spoedreparatie</title>
 	  <duration>45</duration>
+	  <responsTime>1440</responsTime>
   	  <latitude>52.2</latitude>
 	  <longitude>4.5</longitude>	  
       <customer reference="21"/>
@@ -593,6 +638,7 @@
 	  <code>SV-0017</code>
 	  <title>Spoedreparatie</title>
 	  <duration>90</duration>
+	  <responsTime>1440</responsTime>
   	  <latitude>52.3</latitude>
 	  <longitude>4.4</longitude>	  
       <customer reference="19"/>
@@ -607,6 +653,7 @@
 	  <code>SV-0018</code>
 	  <title>Spoedreparatie</title>
 	  <duration>130</duration>
+	  <responsTime>1440</responsTime>
   	  <latitude>52.1</latitude>
 	  <longitude>4.7</longitude>	  
       <customer reference="22"/>
@@ -621,6 +668,7 @@
 	  <code>SV-0019</code>
 	  <title>Spoedreparatie</title>
 	  <duration>100</duration>
+	  <responsTime>720</responsTime>
   	  <latitude>52.2</latitude>
 	  <longitude>4.3</longitude>	  
       <customer reference="22"/>
@@ -635,6 +683,7 @@
 	  <code>SV-0020</code>
 	  <title>Spoedreparatie</title>
 	  <duration>50</duration>
+	  <responsTime>1440</responsTime>
   	  <latitude>52.4</latitude>
 	  <longitude>4.5</longitude>	  
       <customer reference="19"/>
@@ -649,6 +698,7 @@
 	  <code>SV-0021</code>
 	  <title>Spoedreparatie</title>
 	  <duration>65</duration>
+	  <responsTime>1440</responsTime>
   	  <latitude>53.0</latitude>
 	  <longitude>4.2</longitude>	  
       <customer reference="20"/>
@@ -663,6 +713,7 @@
 	  <code>SV-0022</code>
 	  <title>Spoedreparatie</title>
 	  <duration>105</duration>
+	  <responsTime>720</responsTime>
   	  <latitude>52.3</latitude>
 	  <longitude>4.3</longitude>	  
       <customer reference="22"/>
@@ -677,6 +728,7 @@
 	  <code>SV-0023</code>
 	  <title>Spoedreparatie</title>
 	  <duration>105</duration>
+	  <responsTime>1440</responsTime>
   	  <latitude>52.7</latitude>
 	  <longitude>4.4</longitude>	  
       <customer reference="22"/>

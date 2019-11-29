@@ -51,5 +51,11 @@ public abstract class TaskOrEmployee extends AbstractPersistable {
      * @return sometimes null
      */
     public abstract Employee getEmployee();
+    
+    
+    public abstract double getLatitude();
+    
+    public abstract double getLongitude();
+    
 
 }

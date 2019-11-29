@@ -37,6 +37,16 @@
 	  <startTime>1860</startTime>
 	  <endTime>2340</endTime>
 	</TaCapacity>
+	<TaCapacity id="2003">
+	  <id>2</id>
+	  <startTime>480</startTime>
+	  <endTime>1200</endTime>
+	</TaCapacity>
+	<TaCapacity id="2004">
+	  <id>3</id>
+	  <startTime>1200</startTime>
+	  <endTime>480</endTime>
+	</TaCapacity>
   </capacityList>
   <taskTypeList id="9">
     <TaTaskType id="10">
@@ -80,140 +90,86 @@
   <customerList id="18">
     <TaCustomer id="19">
       <id>0</id>
-      <name>Steel Inc</name>
+      <name>Bakker Internationaal</name>
     </TaCustomer>
     <TaCustomer id="20">
       <id>1</id>
-      <name>Paper Corp</name>
+      <name>Frigo</name>
     </TaCustomer>
     <TaCustomer id="21">
       <id>2</id>
-      <name>Stone Limited</name>
+      <name>Getru</name>
     </TaCustomer>
     <TaCustomer id="22">
       <id>3</id>
-      <name>Wood Express</name>
+      <name>Getru Koeltransport</name>
+    </TaCustomer>
+	<TaCustomer id="23">
+      <id>4</id>
+      <name>HSF</name>
+    </TaCustomer>
+	<TaCustomer id="24">
+      <id>5</id>
+      <name>HSF Logistics</name>
+    </TaCustomer>
+	<TaCustomer id="25">
+      <id>6</id>
+      <name>Kempen</name>
+    </TaCustomer>
+	<TaCustomer id="26">
+      <id>7</id>
+      <name>Kempen Transport</name>
+    </TaCustomer>
+	<TaCustomer id="27">
+      <id>8</id>
+      <name>Melis</name>
+    </TaCustomer>
+	<TaCustomer id="28">
+      <id>9</id>
+      <name>Melis Internationaal</name>
+    </TaCustomer>
+	<TaCustomer id="29">
+      <id>10</id>
+      <name>Sitra</name>
+    </TaCustomer>
+	<TaCustomer id="30">
+      <id>11</id>
+      <name>Transportbedrijf A. Willems</name>
+    </TaCustomer>
+	<TaCustomer id="31">
+      <id>12</id>
+      <name>Willemsen</name>
     </TaCustomer>
   </customerList>
-  <employeeList id="23">
-    <TaEmployee id="24">
+  <employeeList id="32">
+    <TaEmployee id="33">
       <id>0</id>
-      <fullName>Amy Blue</fullName>
-	  <latitude>52.1</latitude>
-	  <longitude>4.0</longitude>
-      <skillSet class="linked-hash-set" id="25">
+      <fullName>Sjaak Zwart</fullName>
+	  <latitude>53.2</latitude>
+	  <longitude>6.6</longitude>
+      <skillSet class="linked-hash-set" id="34">
         <TaSkill reference="3"/>
         <TaSkill reference="4"/>
         <TaSkill reference="5"/>
+		<TaSkill reference="6"/>
+        <TaSkill reference="7"/>
+        <TaSkill reference="8"/>
       </skillSet>
 	  <capacitySet class="linked-hash-set" id = "803">
-	  	<TaCapacity reference="2001"/>	
-		<TaCapacity reference="2002"/>	  
-	  </capacitySet>
-      <affinityMap class="linked-hash-map" id="26">
-        <entry>
-          <TaCustomer reference="19"/>
-          <org.optaplanner.examples.taskassigning.domain.Affinity>HIGH</org.optaplanner.examples.taskassigning.domain.Affinity>
-        </entry>
-        <entry>
-          <TaCustomer reference="20"/>
-          <org.optaplanner.examples.taskassigning.domain.Affinity>MEDIUM</org.optaplanner.examples.taskassigning.domain.Affinity>
-        </entry>
-        <entry>
-          <TaCustomer reference="21"/>
-          <org.optaplanner.examples.taskassigning.domain.Affinity>NONE</org.optaplanner.examples.taskassigning.domain.Affinity>
-        </entry>
-        <entry>
-          <TaCustomer reference="22"/>
-          <org.optaplanner.examples.taskassigning.domain.Affinity>MEDIUM</org.optaplanner.examples.taskassigning.domain.Affinity>
-        </entry>
-      </affinityMap>
-    </TaEmployee>
-    <TaEmployee id="27">
-      <id>1</id>
-      <fullName>Beth</fullName>
- 	  <latitude>52.2</latitude>
-	  <longitude>4.2</longitude>
-      <skillSet class="linked-hash-set" id="28">
-        <TaSkill reference="6"/>
-        <TaSkill reference="7"/>
-      </skillSet>
-	  <capacitySet class="linked-hash-set" id = "804">
-	  </capacitySet>
-      <affinityMap class="linked-hash-map" id="29">
-        <entry>
-          <TaCustomer reference="19"/>
-          <org.optaplanner.examples.taskassigning.domain.Affinity>LOW</org.optaplanner.examples.taskassigning.domain.Affinity>
-        </entry>
-        <entry>
-          <TaCustomer reference="20"/>
-          <org.optaplanner.examples.taskassigning.domain.Affinity>NONE</org.optaplanner.examples.taskassigning.domain.Affinity>
-        </entry>
-        <entry>
-          <TaCustomer reference="21"/>
-          <org.optaplanner.examples.taskassigning.domain.Affinity>LOW</org.optaplanner.examples.taskassigning.domain.Affinity>
-        </entry>
-        <entry>
-          <TaCustomer reference="22"/>
-          <org.optaplanner.examples.taskassigning.domain.Affinity>NONE</org.optaplanner.examples.taskassigning.domain.Affinity>
-        </entry>
-      </affinityMap>
-    </TaEmployee>
-    <TaEmployee id="30">
-      <id>2</id>
-      <fullName>Chad</fullName>
-	  <latitude>52.3</latitude>
-	  <longitude>4.1</longitude>	  
-      <skillSet class="linked-hash-set" id="31">
-        <TaSkill reference="8"/>
-        <TaSkill reference="3"/>
-      </skillSet>
-	  <capacitySet class="linked-hash-set" id = "805">
-	  </capacitySet>
-      <affinityMap class="linked-hash-map" id="32">
-        <entry>
-          <TaCustomer reference="19"/>
-          <org.optaplanner.examples.taskassigning.domain.Affinity>MEDIUM</org.optaplanner.examples.taskassigning.domain.Affinity>
-        </entry>
-        <entry>
-          <TaCustomer reference="20"/>
-          <org.optaplanner.examples.taskassigning.domain.Affinity>HIGH</org.optaplanner.examples.taskassigning.domain.Affinity>
-        </entry>
-        <entry>
-          <TaCustomer reference="21"/>
-          <org.optaplanner.examples.taskassigning.domain.Affinity>HIGH</org.optaplanner.examples.taskassigning.domain.Affinity>
-        </entry>
-        <entry>
-          <TaCustomer reference="22"/>
-          <org.optaplanner.examples.taskassigning.domain.Affinity>LOW</org.optaplanner.examples.taskassigning.domain.Affinity>
-        </entry>
-      </affinityMap>
-    </TaEmployee>
-    <TaEmployee id="33">
-      <id>3</id>
-      <fullName>Dan</fullName>
-	  <latitude>52.4</latitude>
-	  <longitude>4.4</longitude>
-      <skillSet class="linked-hash-set" id="34">
-        <TaSkill reference="4"/>
-        <TaSkill reference="5"/>
-      </skillSet>
-	  <capacitySet class="linked-hash-set" id = "806">
- 		<TaCapacity reference="2001"/>
-		<TaCapacity reference="2002"/>	  
+	  	<TaCapacity reference="2003"/>		  
 	  </capacitySet>
       <affinityMap class="linked-hash-map" id="35">
         <entry>
           <TaCustomer reference="19"/>
-          <org.optaplanner.examples.taskassigning.domain.Affinity>LOW</org.optaplanner.examples.taskassigning.domain.Affinity>
+          <org.optaplanner.examples.taskassigning.domain.Affinity>HIGH</org.optaplanner.examples.taskassigning.domain.Affinity>
         </entry>
         <entry>
           <TaCustomer reference="20"/>
-          <org.optaplanner.examples.taskassigning.domain.Affinity>HIGH</org.optaplanner.examples.taskassigning.domain.Affinity>
+          <org.optaplanner.examples.taskassigning.domain.Affinity>MEDIUM</org.optaplanner.examples.taskassigning.domain.Affinity>
         </entry>
         <entry>
           <TaCustomer reference="21"/>
-          <org.optaplanner.examples.taskassigning.domain.Affinity>HIGH</org.optaplanner.examples.taskassigning.domain.Affinity>
+          <org.optaplanner.examples.taskassigning.domain.Affinity>NONE</org.optaplanner.examples.taskassigning.domain.Affinity>
         </entry>
         <entry>
           <TaCustomer reference="22"/>
@@ -222,23 +178,25 @@
       </affinityMap>
     </TaEmployee>
     <TaEmployee id="36">
-      <id>4</id>
-      <fullName>Elsa</fullName>
-	  <latitude>52.5</latitude>
-	  <longitude>4.5</longitude>	  
+      <id>1</id>
+      <fullName>Johan de Wit</fullName>
+ 	  <latitude>52.4</latitude>
+	  <longitude>4.7</longitude>
       <skillSet class="linked-hash-set" id="37">
-        <TaSkill reference="6"/>
+        <TaSkill reference="3"/>
+        <TaSkill reference="4"/>
+        <TaSkill reference="5"/>
+		<TaSkill reference="6"/>
         <TaSkill reference="7"/>
         <TaSkill reference="8"/>
       </skillSet>
-	  <capacitySet class="linked-hash-set" id = "807">
-		<TaCapacity reference="2001"/>
-		<TaCapacity reference="2002"/>	  
+	  <capacitySet class="linked-hash-set" id = "804">
+	    <TaCapacity reference="2004"/>
 	  </capacitySet>
       <affinityMap class="linked-hash-map" id="38">
         <entry>
           <TaCustomer reference="19"/>
-          <org.optaplanner.examples.taskassigning.domain.Affinity>MEDIUM</org.optaplanner.examples.taskassigning.domain.Affinity>
+          <org.optaplanner.examples.taskassigning.domain.Affinity>LOW</org.optaplanner.examples.taskassigning.domain.Affinity>
         </entry>
         <entry>
           <TaCustomer reference="20"/>
@@ -246,29 +204,34 @@
         </entry>
         <entry>
           <TaCustomer reference="21"/>
-          <org.optaplanner.examples.taskassigning.domain.Affinity>MEDIUM</org.optaplanner.examples.taskassigning.domain.Affinity>
+          <org.optaplanner.examples.taskassigning.domain.Affinity>LOW</org.optaplanner.examples.taskassigning.domain.Affinity>
         </entry>
         <entry>
           <TaCustomer reference="22"/>
-          <org.optaplanner.examples.taskassigning.domain.Affinity>MEDIUM</org.optaplanner.examples.taskassigning.domain.Affinity>
+          <org.optaplanner.examples.taskassigning.domain.Affinity>NONE</org.optaplanner.examples.taskassigning.domain.Affinity>
         </entry>
       </affinityMap>
     </TaEmployee>
     <TaEmployee id="39">
-      <id>5</id>
-      <fullName>Flo</fullName>
+      <id>2</id>
+      <fullName>Ruud Geel</fullName>
 	  <latitude>52.6</latitude>
-	  <longitude>4.6</longitude>	  
+	  <longitude>6.1</longitude>	  
       <skillSet class="linked-hash-set" id="40">
         <TaSkill reference="3"/>
         <TaSkill reference="4"/>
+        <TaSkill reference="5"/>
+		<TaSkill reference="6"/>
+        <TaSkill reference="7"/>
+        <TaSkill reference="8"/>
       </skillSet>
-	  <capacitySet class="linked-hash-set" id = "808">
+	  <capacitySet class="linked-hash-set" id = "805">
+	    <TaCapacity reference="2003"/>
 	  </capacitySet>
       <affinityMap class="linked-hash-map" id="41">
         <entry>
           <TaCustomer reference="19"/>
-          <org.optaplanner.examples.taskassigning.domain.Affinity>HIGH</org.optaplanner.examples.taskassigning.domain.Affinity>
+          <org.optaplanner.examples.taskassigning.domain.Affinity>MEDIUM</org.optaplanner.examples.taskassigning.domain.Affinity>
         </entry>
         <entry>
           <TaCustomer reference="20"/>
@@ -276,61 +239,139 @@
         </entry>
         <entry>
           <TaCustomer reference="21"/>
-          <org.optaplanner.examples.taskassigning.domain.Affinity>MEDIUM</org.optaplanner.examples.taskassigning.domain.Affinity>
+          <org.optaplanner.examples.taskassigning.domain.Affinity>HIGH</org.optaplanner.examples.taskassigning.domain.Affinity>
         </entry>
         <entry>
           <TaCustomer reference="22"/>
-          <org.optaplanner.examples.taskassigning.domain.Affinity>MEDIUM</org.optaplanner.examples.taskassigning.domain.Affinity>
+          <org.optaplanner.examples.taskassigning.domain.Affinity>LOW</org.optaplanner.examples.taskassigning.domain.Affinity>
         </entry>
       </affinityMap>
     </TaEmployee>
     <TaEmployee id="42">
-      <id>6</id>
-      <fullName>Gus</fullName>
-	  <latitude>52.7</latitude>
-	  <longitude>4.7</longitude>	  
+      <id>3</id>
+      <fullName>Ricardo Blauw</fullName>
+	  <latitude>51.0</latitude>
+	  <longitude>5.8</longitude>
       <skillSet class="linked-hash-set" id="43">
+        <TaSkill reference="3"/>
+        <TaSkill reference="4"/>
         <TaSkill reference="5"/>
-        <TaSkill reference="6"/>
+		<TaSkill reference="6"/>
         <TaSkill reference="7"/>
+        <TaSkill reference="8"/>
       </skillSet>
- 	  <capacitySet class="linked-hash-set" id = "809">
+	  <capacitySet class="linked-hash-set" id = "806">
+ 		<TaCapacity reference="2004"/>	  
 	  </capacitySet>
-     <affinityMap class="linked-hash-map" id="44">
+      <affinityMap class="linked-hash-map" id="44">
         <entry>
           <TaCustomer reference="19"/>
           <org.optaplanner.examples.taskassigning.domain.Affinity>LOW</org.optaplanner.examples.taskassigning.domain.Affinity>
         </entry>
         <entry>
           <TaCustomer reference="20"/>
-          <org.optaplanner.examples.taskassigning.domain.Affinity>MEDIUM</org.optaplanner.examples.taskassigning.domain.Affinity>
+          <org.optaplanner.examples.taskassigning.domain.Affinity>HIGH</org.optaplanner.examples.taskassigning.domain.Affinity>
         </entry>
         <entry>
           <TaCustomer reference="21"/>
-          <org.optaplanner.examples.taskassigning.domain.Affinity>LOW</org.optaplanner.examples.taskassigning.domain.Affinity>
+          <org.optaplanner.examples.taskassigning.domain.Affinity>HIGH</org.optaplanner.examples.taskassigning.domain.Affinity>
         </entry>
         <entry>
           <TaCustomer reference="22"/>
-          <org.optaplanner.examples.taskassigning.domain.Affinity>LOW</org.optaplanner.examples.taskassigning.domain.Affinity>
+          <org.optaplanner.examples.taskassigning.domain.Affinity>MEDIUM</org.optaplanner.examples.taskassigning.domain.Affinity>
         </entry>
       </affinityMap>
     </TaEmployee>
     <TaEmployee id="45">
-      <id>7</id>
-      <fullName>Hugo</fullName>
-	  <latitude>52.8</latitude>
-	  <longitude>4.3</longitude>	  
+      <id>4</id>
+      <fullName>Jessica Rood</fullName>
+	  <latitude>51.9</latitude>
+	  <longitude>4.5</longitude>	  
       <skillSet class="linked-hash-set" id="46">
-        <TaSkill reference="8"/>
         <TaSkill reference="3"/>
         <TaSkill reference="4"/>
+        <TaSkill reference="5"/>
+		<TaSkill reference="6"/>
+        <TaSkill reference="7"/>
+        <TaSkill reference="8"/>
       </skillSet>
-	  <capacitySet class="linked-hash-set" id = "810">
+	  <capacitySet class="linked-hash-set" id = "807">
+		<TaCapacity reference="2003"/>	  
 	  </capacitySet>
       <affinityMap class="linked-hash-map" id="47">
         <entry>
           <TaCustomer reference="19"/>
+          <org.optaplanner.examples.taskassigning.domain.Affinity>MEDIUM</org.optaplanner.examples.taskassigning.domain.Affinity>
+        </entry>
+        <entry>
+          <TaCustomer reference="20"/>
           <org.optaplanner.examples.taskassigning.domain.Affinity>NONE</org.optaplanner.examples.taskassigning.domain.Affinity>
+        </entry>
+        <entry>
+          <TaCustomer reference="21"/>
+          <org.optaplanner.examples.taskassigning.domain.Affinity>MEDIUM</org.optaplanner.examples.taskassigning.domain.Affinity>
+        </entry>
+        <entry>
+          <TaCustomer reference="22"/>
+          <org.optaplanner.examples.taskassigning.domain.Affinity>MEDIUM</org.optaplanner.examples.taskassigning.domain.Affinity>
+        </entry>
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="48">
+      <id>5</id>
+      <fullName>Henk Groen</fullName>
+	  <latitude>52.2</latitude>
+	  <longitude>5.4</longitude>	  
+      <skillSet class="linked-hash-set" id="49">
+        <TaSkill reference="3"/>
+        <TaSkill reference="4"/>
+        <TaSkill reference="5"/>
+		<TaSkill reference="6"/>
+        <TaSkill reference="7"/>
+        <TaSkill reference="8"/>
+      </skillSet>
+	  <capacitySet class="linked-hash-set" id = "808">
+	    <TaCapacity reference="2003"/>
+	  </capacitySet>
+      <affinityMap class="linked-hash-map" id="50">
+        <entry>
+          <TaCustomer reference="19"/>
+          <org.optaplanner.examples.taskassigning.domain.Affinity>HIGH</org.optaplanner.examples.taskassigning.domain.Affinity>
+        </entry>
+        <entry>
+          <TaCustomer reference="20"/>
+          <org.optaplanner.examples.taskassigning.domain.Affinity>HIGH</org.optaplanner.examples.taskassigning.domain.Affinity>
+        </entry>
+        <entry>
+          <TaCustomer reference="21"/>
+          <org.optaplanner.examples.taskassigning.domain.Affinity>MEDIUM</org.optaplanner.examples.taskassigning.domain.Affinity>
+        </entry>
+        <entry>
+          <TaCustomer reference="22"/>
+          <org.optaplanner.examples.taskassigning.domain.Affinity>MEDIUM</org.optaplanner.examples.taskassigning.domain.Affinity>
+        </entry>
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="51">
+      <id>6</id>
+      <fullName>Alex van Oranje</fullName>
+	  <latitude>52.1</latitude>
+	  <longitude>4.3</longitude>	  
+      <skillSet class="linked-hash-set" id="52">
+        <TaSkill reference="3"/>
+        <TaSkill reference="4"/>
+        <TaSkill reference="5"/>
+		<TaSkill reference="6"/>
+        <TaSkill reference="7"/>
+        <TaSkill reference="8"/>
+      </skillSet>
+ 	  <capacitySet class="linked-hash-set" id = "809">
+	    <TaCapacity reference="2003"/>
+	  </capacitySet>
+     <affinityMap class="linked-hash-map" id="53">
+        <entry>
+          <TaCustomer reference="19"/>
+          <org.optaplanner.examples.taskassigning.domain.Affinity>LOW</org.optaplanner.examples.taskassigning.domain.Affinity>
         </entry>
         <entry>
           <TaCustomer reference="20"/>
@@ -338,7 +379,7 @@
         </entry>
         <entry>
           <TaCustomer reference="21"/>
-          <org.optaplanner.examples.taskassigning.domain.Affinity>NONE</org.optaplanner.examples.taskassigning.domain.Affinity>
+          <org.optaplanner.examples.taskassigning.domain.Affinity>LOW</org.optaplanner.examples.taskassigning.domain.Affinity>
         </entry>
         <entry>
           <TaCustomer reference="22"/>
@@ -354,9 +395,9 @@
       <indexInTaskType>1</indexInTaskType>
 	  <code>SV-0000</code>
 	  <title>Planned</title>
-	  <duration>85</duration>
-	  <latitude>52.1</latitude>
-	  <longitude>4.0</longitude>	  
+	  <duration>30</duration>
+	  <latitude>53.1</latitude>
+	  <longitude>5.4</longitude>	  
       <customer reference="20"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -369,8 +410,8 @@
 	  <code>SV-0001</code>
 	  <title>Spoedreparatie</title>
 	  <duration>60</duration>
-	  <latitude>52.2</latitude>
-	  <longitude>4.1</longitude>	  
+	  <latitude>51.6</latitude>
+	  <longitude>4.4</longitude>	  
       <customer reference="22"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -382,9 +423,9 @@
       <indexInTaskType>2</indexInTaskType>
 	  <code>SV-0002</code>
 	  <title>Spoedreparatie</title>
-	  <duration>90</duration>
-	  <latitude>52.3</latitude>
-	  <longitude>4.2</longitude>		  
+	  <duration>15</duration>
+	  <latitude>51.9</latitude>
+	  <longitude>5.9</longitude>		  
       <customer reference="22"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -396,9 +437,9 @@
       <indexInTaskType>1</indexInTaskType>
 	  <code>SV-0003</code>
 	  <title>Spoedreparatie</title>
-	  <duration>110</duration>
-  	  <latitude>52.4</latitude>
-	  <longitude>4.3</longitude>	  
+	  <duration>60</duration>
+  	  <latitude>52.2</latitude>
+	  <longitude>6.1</longitude>	  
       <customer reference="22"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -411,8 +452,8 @@
   	  <code>SV-0004</code>
 	  <title>Spoedreparatie</title>
 	  <duration>30</duration>
-  	  <latitude>52.5</latitude>
-	  <longitude>4.4</longitude>  
+  	  <latitude>52.6</latitude>
+	  <longitude>4.7</longitude>  
       <customer reference="21"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -424,9 +465,9 @@
       <indexInTaskType>3</indexInTaskType>
 	  <code>SV-0005</code>
 	  <title>Spoedreparatie</title>
-	  <duration>180</duration>
-  	  <latitude>52.6</latitude>
-	  <longitude>4.2</longitude>	  
+	  <duration>30</duration>
+  	  <latitude>50.9</latitude>
+	  <longitude>5.7</longitude>	  
       <customer reference="21"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -438,9 +479,9 @@
       <indexInTaskType>1</indexInTaskType>
 	  <code>SV-0006</code>
 	  <title>Spoedreparatie</title>
-	  <duration>70</duration>
-  	  <latitude>52.6</latitude>
-	  <longitude>4.2</longitude>	  
+	  <duration>60</duration>
+  	  <latitude>51.5</latitude>
+	  <longitude>5.0</longitude>	  
       <customer reference="20"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -452,9 +493,9 @@
       <indexInTaskType>2</indexInTaskType>
 	  <code>SV-0007</code>
 	  <title>Spoedreparatie</title>
-	  <duration>45</duration>
-  	  <latitude>52.5</latitude>
-	  <longitude>4.5</longitude>	  
+	  <duration>48</duration>
+  	  <latitude>52.1</latitude>
+	  <longitude>5.3</longitude>	  
       <customer reference="19"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -466,9 +507,9 @@
       <indexInTaskType>3</indexInTaskType>
 	  <code>SV-0008</code>
 	  <title>Spoedreparatie</title>
-	  <duration>90</duration>
-  	  <latitude>52.4</latitude>
-	  <longitude>4.3</longitude>	  
+	  <duration>120</duration>
+  	  <latitude>51.7</latitude>
+	  <longitude>5.9</longitude>	  
       <customer reference="19"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -480,9 +521,9 @@
       <indexInTaskType>3</indexInTaskType>
 	  <code>SV-0009</code>
 	  <title>Spoedreparatie</title>
-	  <duration>70</duration>
-  	  <latitude>52.5</latitude>
-	  <longitude>4.4</longitude>	  
+	  <duration>90</duration>
+  	  <latitude>52.0</latitude>
+	  <longitude>4.6</longitude>	  
       <customer reference="22"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -494,9 +535,9 @@
       <indexInTaskType>2</indexInTaskType>
 	  <code>SV-0010</code>
 	  <title>Spoedreparatie</title>
-	  <duration>90</duration>
-  	  <latitude>52.3</latitude>
-	  <longitude>4.5</longitude>	  
+	  <duration>120</duration>
+  	  <latitude>52.7</latitude>
+	  <longitude>5.2</longitude>	  
       <customer reference="22"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -507,10 +548,10 @@
       <taskType reference="12"/>
       <indexInTaskType>4</indexInTaskType>
 	  <code>SV-0011</code>
-	  <duration>50</duration>
+	  <duration>240</duration>
 	  <title>Spoedreparatie</title>
-  	  <latitude>52.2</latitude>
-	  <longitude>4.1</longitude>	  
+  	  <latitude>51.8</latitude>
+	  <longitude>5.8</longitude>	  
       <customer reference="19"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -522,9 +563,9 @@
       <indexInTaskType>3</indexInTaskType>
 	  <code>SV-0012</code>
 	  <title>Spoedreparatie</title>
-	  <duration>55</duration>
+	  <duration>90</duration>
   	  <latitude>52.3</latitude>
-	  <longitude>4.7</longitude>	  
+	  <longitude>4.6</longitude>	  
       <customer reference="21"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -536,9 +577,9 @@
       <indexInTaskType>5</indexInTaskType>
 	  <code>SV-0013</code>
 	  <title>Spoedreparatie</title>
-	  <duration>60</duration>
-  	  <latitude>52.8</latitude>
-	  <longitude>4.3</longitude>	  
+	  <duration>120</duration>
+  	  <latitude>52.0</latitude>
+	  <longitude>6.0</longitude>	  
       <customer reference="22"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -550,9 +591,9 @@
       <indexInTaskType>6</indexInTaskType>
 	  <code>SV-0014</code>
 	  <title>Spoedreparatie</title>
-	  <duration>90</duration>
-  	  <latitude>52.8</latitude>
-	  <longitude>4.2</longitude>	  
+	  <duration>180</duration>
+  	  <latitude>51.4</latitude>
+	  <longitude>6.1</longitude>	  
       <customer reference="21"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -564,122 +605,10 @@
       <indexInTaskType>7</indexInTaskType>
 	  <code>SV-0015</code>
 	  <title>Spoedreparatie</title>
-	  <duration>80</duration>
-  	  <latitude>52.6</latitude>
-	  <longitude>4.4</longitude>	  
+	  <duration>150</duration>
+  	  <latitude>51.4</latitude>
+	  <longitude>6.1</longitude>	  
       <customer reference="20"/>
-      <readyTime>0</readyTime>
-      <priority>MINOR</priority>
-      <pinned>false</pinned>
-    </TaTask>
-    <TaTask id="65">
-      <id>16</id>
-      <taskType reference="16"/>
-      <indexInTaskType>4</indexInTaskType>
-	  <code>SV-0016</code>
-	  <title>Spoedreparatie</title>
-	  <duration>45</duration>
-  	  <latitude>52.2</latitude>
-	  <longitude>4.5</longitude>	  
-      <customer reference="21"/>
-      <readyTime>0</readyTime>
-      <priority>MAJOR</priority>
-      <pinned>false</pinned>
-    </TaTask>
-    <TaTask id="66">
-      <id>17</id>
-      <taskType reference="16"/>
-      <indexInTaskType>5</indexInTaskType>
-	  <code>SV-0017</code>
-	  <title>Spoedreparatie</title>
-	  <duration>90</duration>
-  	  <latitude>52.3</latitude>
-	  <longitude>4.4</longitude>	  
-      <customer reference="19"/>
-      <readyTime>0</readyTime>
-      <priority>MAJOR</priority>
-      <pinned>false</pinned>
-    </TaTask>
-    <TaTask id="67">
-      <id>18</id>
-      <taskType reference="10"/>
-      <indexInTaskType>4</indexInTaskType>
-	  <code>SV-0018</code>
-	  <title>Spoedreparatie</title>
-	  <duration>130</duration>
-  	  <latitude>52.1</latitude>
-	  <longitude>4.7</longitude>	  
-      <customer reference="22"/>
-      <readyTime>0</readyTime>
-      <priority>MAJOR</priority>
-      <pinned>false</pinned>
-    </TaTask>
-    <TaTask id="68">
-      <id>19</id>
-      <taskType reference="10"/>
-      <indexInTaskType>5</indexInTaskType>
-	  <code>SV-0019</code>
-	  <title>Spoedreparatie</title>
-	  <duration>100</duration>
-  	  <latitude>52.2</latitude>
-	  <longitude>4.3</longitude>	  
-      <customer reference="22"/>
-      <readyTime>0</readyTime>
-      <priority>CRITICAL</priority>
-      <pinned>false</pinned>
-    </TaTask>
-    <TaTask id="69">
-      <id>20</id>
-      <taskType reference="10"/>
-      <indexInTaskType>6</indexInTaskType>
-	  <code>SV-0020</code>
-	  <title>Spoedreparatie</title>
-	  <duration>50</duration>
-  	  <latitude>52.4</latitude>
-	  <longitude>4.5</longitude>	  
-      <customer reference="19"/>
-      <readyTime>0</readyTime>
-      <priority>MINOR</priority>
-      <pinned>false</pinned>
-    </TaTask>
-    <TaTask id="70">
-      <id>21</id>
-      <taskType reference="10"/>
-      <indexInTaskType>7</indexInTaskType>
-	  <code>SV-0021</code>
-	  <title>Spoedreparatie</title>
-	  <duration>65</duration>
-  	  <latitude>53.0</latitude>
-	  <longitude>4.2</longitude>	  
-      <customer reference="20"/>
-      <readyTime>0</readyTime>
-      <priority>MAJOR</priority>
-      <pinned>false</pinned>
-    </TaTask>
-    <TaTask id="71">
-      <id>22</id>
-      <taskType reference="10"/>
-      <indexInTaskType>8</indexInTaskType>
-	  <code>SV-0022</code>
-	  <title>Spoedreparatie</title>
-	  <duration>105</duration>
-  	  <latitude>52.3</latitude>
-	  <longitude>4.3</longitude>	  
-      <customer reference="22"/>
-      <readyTime>0</readyTime>
-      <priority>CRITICAL</priority>
-      <pinned>false</pinned>
-    </TaTask>
-    <TaTask id="72">
-      <id>23</id>
-      <taskType reference="16"/>
-      <indexInTaskType>6</indexInTaskType>
-	  <code>SV-0023</code>
-	  <title>Spoedreparatie</title>
-	  <duration>105</duration>
-  	  <latitude>52.7</latitude>
-	  <longitude>4.4</longitude>	  
-      <customer reference="22"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
       <pinned>false</pinned>

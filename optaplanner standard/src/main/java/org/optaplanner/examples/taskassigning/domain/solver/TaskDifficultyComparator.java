@@ -27,7 +27,8 @@ public class TaskDifficultyComparator implements Comparator<Task>,
     private static final Comparator<Task> COMPARATOR =
             Comparator.comparing(Task::getPriority)
                     .thenComparingInt(task -> task.getTaskType().getRequiredSkillList().size())
-                    .thenComparingInt(task -> task.getTaskType().getBaseDuration())
+                    //.thenComparingInt(task -> task.getTaskType().getBaseDuration())
+                    .thenComparingInt(task -> task.getDuration())
                     .thenComparingLong(Task::getId);
 
     @Override

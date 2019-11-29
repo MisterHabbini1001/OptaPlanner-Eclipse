@@ -105,6 +105,9 @@
         <TaSkill reference="3"/>
         <TaSkill reference="4"/>
         <TaSkill reference="5"/>
+        <TaSkill reference="6"/>
+        <TaSkill reference="7"/>
+        <TaSkill reference="8"/>		
       </skillSet>
 	  <capacitySet class="linked-hash-set" id = "803">
 	  	<TaCapacity reference="2001"/>	
@@ -135,8 +138,12 @@
  	  <latitude>52.2</latitude>
 	  <longitude>4.2</longitude>
       <skillSet class="linked-hash-set" id="28">
+        <TaSkill reference="3"/>
+        <TaSkill reference="4"/>
+        <TaSkill reference="5"/>
         <TaSkill reference="6"/>
         <TaSkill reference="7"/>
+        <TaSkill reference="8"/>
       </skillSet>
 	  <capacitySet class="linked-hash-set" id = "804">
 	  </capacitySet>
@@ -165,8 +172,12 @@
 	  <latitude>52.3</latitude>
 	  <longitude>4.1</longitude>	  
       <skillSet class="linked-hash-set" id="31">
-        <TaSkill reference="8"/>
         <TaSkill reference="3"/>
+        <TaSkill reference="4"/>
+        <TaSkill reference="5"/>
+        <TaSkill reference="6"/>
+        <TaSkill reference="7"/>
+        <TaSkill reference="8"/>
       </skillSet>
 	  <capacitySet class="linked-hash-set" id = "805">
 	  </capacitySet>
@@ -195,8 +206,12 @@
 	  <latitude>52.4</latitude>
 	  <longitude>4.4</longitude>
       <skillSet class="linked-hash-set" id="34">
+        <TaSkill reference="3"/>
         <TaSkill reference="4"/>
         <TaSkill reference="5"/>
+        <TaSkill reference="6"/>
+        <TaSkill reference="7"/>
+        <TaSkill reference="8"/>
       </skillSet>
 	  <capacitySet class="linked-hash-set" id = "806">
  		<TaCapacity reference="2001"/>
@@ -227,6 +242,9 @@
 	  <latitude>52.5</latitude>
 	  <longitude>4.5</longitude>	  
       <skillSet class="linked-hash-set" id="37">
+        <TaSkill reference="3"/>
+        <TaSkill reference="4"/>
+        <TaSkill reference="5"/>
         <TaSkill reference="6"/>
         <TaSkill reference="7"/>
         <TaSkill reference="8"/>
@@ -262,6 +280,10 @@
       <skillSet class="linked-hash-set" id="40">
         <TaSkill reference="3"/>
         <TaSkill reference="4"/>
+        <TaSkill reference="5"/>
+        <TaSkill reference="6"/>
+        <TaSkill reference="7"/>
+        <TaSkill reference="8"/>
       </skillSet>
 	  <capacitySet class="linked-hash-set" id = "808">
 	  </capacitySet>
@@ -290,9 +312,12 @@
 	  <latitude>52.7</latitude>
 	  <longitude>4.7</longitude>	  
       <skillSet class="linked-hash-set" id="43">
+        <TaSkill reference="3"/>
+        <TaSkill reference="4"/>
         <TaSkill reference="5"/>
         <TaSkill reference="6"/>
         <TaSkill reference="7"/>
+        <TaSkill reference="8"/>
       </skillSet>
  	  <capacitySet class="linked-hash-set" id = "809">
 	  </capacitySet>
@@ -321,9 +346,12 @@
 	  <latitude>52.8</latitude>
 	  <longitude>4.3</longitude>	  
       <skillSet class="linked-hash-set" id="46">
-        <TaSkill reference="8"/>
         <TaSkill reference="3"/>
         <TaSkill reference="4"/>
+        <TaSkill reference="5"/>
+        <TaSkill reference="6"/>
+        <TaSkill reference="7"/>
+        <TaSkill reference="8"/>
       </skillSet>
 	  <capacitySet class="linked-hash-set" id = "810">
 	  </capacitySet>
@@ -373,7 +401,7 @@
 	  <longitude>4.1</longitude>	  
       <customer reference="22"/>
       <readyTime>0</readyTime>
-      <priority>MAJOR</priority>
+      <priority>MINOR</priority>
       <pinned>false</pinned>
     </TaTask>
     <TaTask id="51">
@@ -387,7 +415,7 @@
 	  <longitude>4.2</longitude>		  
       <customer reference="22"/>
       <readyTime>0</readyTime>
-      <priority>MAJOR</priority>
+      <priority>MINOR</priority>
       <pinned>false</pinned>
     </TaTask>
     <TaTask id="52">
@@ -401,7 +429,7 @@
 	  <longitude>4.3</longitude>	  
       <customer reference="22"/>
       <readyTime>0</readyTime>
-      <priority>CRITICAL</priority>
+      <priority>MINOR</priority>
       <pinned>false</pinned>
     </TaTask>
     <TaTask id="53">
@@ -485,7 +513,7 @@
 	  <longitude>4.4</longitude>	  
       <customer reference="22"/>
       <readyTime>0</readyTime>
-      <priority>MAJOR</priority>
+      <priority>MINOR</priority>
       <pinned>false</pinned>
     </TaTask>
     <TaTask id="59">
@@ -513,7 +541,7 @@
 	  <longitude>4.1</longitude>	  
       <customer reference="19"/>
       <readyTime>0</readyTime>
-      <priority>MAJOR</priority>
+      <priority>MINOR</priority>
       <pinned>false</pinned>
     </TaTask>
     <TaTask id="61">
@@ -541,7 +569,7 @@
 	  <longitude>4.3</longitude>	  
       <customer reference="22"/>
       <readyTime>0</readyTime>
-      <priority>MAJOR</priority>
+      <priority>MINOR</priority>
       <pinned>false</pinned>
     </TaTask>
     <TaTask id="63">
@@ -555,7 +583,7 @@
 	  <longitude>4.2</longitude>	  
       <customer reference="21"/>
       <readyTime>0</readyTime>
-      <priority>CRITICAL</priority>
+      <priority>MINOR</priority>
       <pinned>false</pinned>
     </TaTask>
     <TaTask id="64">
@@ -583,7 +611,7 @@
 	  <longitude>4.5</longitude>	  
       <customer reference="21"/>
       <readyTime>0</readyTime>
-      <priority>MAJOR</priority>
+      <priority>MINOR</priority>
       <pinned>false</pinned>
     </TaTask>
     <TaTask id="66">
@@ -597,7 +625,7 @@
 	  <longitude>4.4</longitude>	  
       <customer reference="19"/>
       <readyTime>0</readyTime>
-      <priority>MAJOR</priority>
+      <priority>MINOR</priority>
       <pinned>false</pinned>
     </TaTask>
     <TaTask id="67">
@@ -611,7 +639,7 @@
 	  <longitude>4.7</longitude>	  
       <customer reference="22"/>
       <readyTime>0</readyTime>
-      <priority>MAJOR</priority>
+      <priority>MINOR</priority>
       <pinned>false</pinned>
     </TaTask>
     <TaTask id="68">
@@ -625,7 +653,7 @@
 	  <longitude>4.3</longitude>	  
       <customer reference="22"/>
       <readyTime>0</readyTime>
-      <priority>CRITICAL</priority>
+      <priority>MINOR</priority>
       <pinned>false</pinned>
     </TaTask>
     <TaTask id="69">
@@ -653,7 +681,7 @@
 	  <longitude>4.2</longitude>	  
       <customer reference="20"/>
       <readyTime>0</readyTime>
-      <priority>MAJOR</priority>
+      <priority>MINOR</priority>
       <pinned>false</pinned>
     </TaTask>
     <TaTask id="71">
@@ -667,7 +695,7 @@
 	  <longitude>4.3</longitude>	  
       <customer reference="22"/>
       <readyTime>0</readyTime>
-      <priority>CRITICAL</priority>
+      <priority>MINOR</priority>
       <pinned>false</pinned>
     </TaTask>
     <TaTask id="72">

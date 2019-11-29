@@ -1,0 +1,391 @@
+<TaTaskAssigningSolution id="1">
+  <id>0</id>
+  <skillList id="2">
+    <TaSkill id="3">
+      <id>0</id>
+      <name>Problem Solving</name>
+    </TaSkill>
+    <TaSkill id="4">
+      <id>1</id>
+      <name>Team Building</name>
+    </TaSkill>
+    <TaSkill id="5">
+      <id>2</id>
+      <name>Business Storytelling</name>
+    </TaSkill>
+    <TaSkill id="6">
+      <id>3</id>
+      <name>Risk Management</name>
+    </TaSkill>
+    <TaSkill id="7">
+      <id>4</id>
+      <name>Creative Thinking</name>
+    </TaSkill>
+    <TaSkill id="8">
+      <id>5</id>
+      <name>Strategic Planning</name>
+    </TaSkill>
+  </skillList>
+  <capacityList id="2000">
+ 	<TaCapacity id="2001">
+	  <id>0</id>
+	  <startTime>480</startTime>
+	  <endTime>1200</endTime>
+	</TaCapacity>
+	<TaCapacity id="2002">
+	  <id>1</id>
+	  <startTime>1200</startTime>
+	  <endTime>1920</endTime>
+	</TaCapacity>
+ 	<TaCapacity id="2003">
+	  <id>0</id>
+	  <startTime>1920</startTime>
+	  <endTime>2400</endTime>
+	</TaCapacity>
+	<TaCapacity id="2004">
+	  <id>1</id>
+	  <startTime>2400</startTime>
+	  <endTime>2880</endTime>
+	</TaCapacity>
+	
+  </capacityList>
+  <taskTypeList id="9">
+    <TaTaskType id="10">
+      <id>0</id>
+      <code>IS</code>
+      <title>Improve Sales</title>
+      <baseDuration>46</baseDuration>
+      <requiredSkillList id="11">
+        <TaSkill reference="8"/>
+      </requiredSkillList>
+    </TaTaskType>
+    <TaTaskType id="12">
+      <id>1</id>
+      <code>ET</code>
+      <title>Expand Tax</title>
+      <baseDuration>63</baseDuration>
+      <requiredSkillList id="13">
+        <TaSkill reference="3"/>
+        <TaSkill reference="4"/>
+      </requiredSkillList>
+    </TaTaskType>
+    <TaTaskType id="14">
+      <id>2</id>
+      <code>SV</code>
+      <title>Shrink VAT</title>
+      <baseDuration>63</baseDuration>
+      <requiredSkillList id="15">
+        <TaSkill reference="8"/>
+      </requiredSkillList>
+    </TaTaskType>
+    <TaTaskType id="16">
+      <id>3</id>
+      <code>AL</code>
+      <title>Approve Legal</title>
+      <baseDuration>40</baseDuration>
+      <requiredSkillList id="17">
+        <TaSkill reference="6"/>
+      </requiredSkillList>
+    </TaTaskType>
+  </taskTypeList>
+  <customerList id="18">
+    <TaCustomer id="3001">
+      <id>0</id>
+      <name>Transportbedrijf A. Willems</name>
+    </TaCustomer>
+    <TaCustomer id="3002">
+      <id>1</id>
+      <name>Getru Koeltransport</name>
+    </TaCustomer>
+    <TaCustomer id="3003">
+      <id>2</id>
+      <name>Bakker Internationaal</name>
+    </TaCustomer>
+    <TaCustomer id="3004">
+      <id>3</id>
+      <name>HSF Logistics</name>
+    </TaCustomer>
+    <TaCustomer id="3005">
+      <id>4</id>
+      <name>Frigo</name>
+    </TaCustomer>
+    <TaCustomer id="3006">
+      <id>5</id>
+      <name>Melis Internationaal</name>
+    </TaCustomer>
+    <TaCustomer id="3007">
+      <id>6</id>
+      <name>Kempen Transport</name>
+    </TaCustomer>
+    <TaCustomer id="3008">
+      <id>7</id>
+      <name>Sitra</name>
+    </TaCustomer>
+  </customerList>
+  <employeeList id="23">
+    <TaEmployee id="24">
+      <id>0</id>
+      <fullName>Sjaak Zwart</fullName>
+	  <latitude>53.223509</latitude>
+	  <longitude>6.573250</longitude>
+      <skillSet class="linked-hash-set" id="25">
+        <TaSkill reference="3"/>
+        <TaSkill reference="4"/>
+        <TaSkill reference="5"/>
+        <TaSkill reference="6"/>
+        <TaSkill reference="7"/>
+        <TaSkill reference="8"/>		
+      </skillSet>
+	  <capacitySet class="linked-hash-set" id = "803">
+	  	<TaCapacity reference="2001"/>	
+		<TaCapacity reference="2003"/>	  
+	  </capacitySet>
+      <affinityMap class="linked-hash-map" id="26">
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="27">
+      <id>1</id>
+      <fullName>Johan de Wit</fullName>
+ 	  <latitude>52.392334</latitude>
+	  <longitude>4.640832</longitude>
+      <skillSet class="linked-hash-set" id="28">
+        <TaSkill reference="3"/>
+        <TaSkill reference="4"/>
+        <TaSkill reference="5"/>
+        <TaSkill reference="6"/>
+        <TaSkill reference="7"/>
+        <TaSkill reference="8"/>
+      </skillSet>
+	  <capacitySet class="linked-hash-set" id = "804">
+	  	<TaCapacity reference="2002"/>	
+		<TaCapacity reference="2004"/>		  
+	  </capacitySet>
+      <affinityMap class="linked-hash-map" id="29">
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="30">
+      <id>2</id>
+      <fullName>Ruud Geel</fullName>
+	  <latitude>52.515232</latitude>
+	  <longitude>6.110433</longitude>	  
+      <skillSet class="linked-hash-set" id="31">
+        <TaSkill reference="3"/>
+        <TaSkill reference="4"/>
+        <TaSkill reference="5"/>
+        <TaSkill reference="6"/>
+        <TaSkill reference="7"/>
+        <TaSkill reference="8"/>
+      </skillSet>
+	  <capacitySet class="linked-hash-set" id = "805">
+	  	<TaCapacity reference="2001"/>	
+		<TaCapacity reference="2003"/>		  
+	  </capacitySet>
+      <affinityMap class="linked-hash-map" id="32">
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="33">
+      <id>3</id>
+      <fullName>Ricardo Blauw</fullName>
+	  <latitude>50.980919</latitude>
+	  <longitude>5.822524</longitude>
+      <skillSet class="linked-hash-set" id="34">
+        <TaSkill reference="3"/>
+        <TaSkill reference="4"/>
+        <TaSkill reference="5"/>
+        <TaSkill reference="6"/>
+        <TaSkill reference="7"/>
+        <TaSkill reference="8"/>
+      </skillSet>
+	  <capacitySet class="linked-hash-set" id = "806">
+ 		<TaCapacity reference="2002"/>
+		<TaCapacity reference="2004"/>	  
+	  </capacitySet>
+      <affinityMap class="linked-hash-map" id="35">
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="36">
+      <id>4</id>
+      <fullName>Jessica Rood</fullName>
+	  <latitude>51.891525</latitude>
+	  <longitude>4.471138</longitude>	  
+      <skillSet class="linked-hash-set" id="37">
+        <TaSkill reference="3"/>
+        <TaSkill reference="4"/>
+        <TaSkill reference="5"/>
+        <TaSkill reference="6"/>
+        <TaSkill reference="7"/>
+        <TaSkill reference="8"/>
+      </skillSet>
+	  <capacitySet class="linked-hash-set" id = "807">
+		<TaCapacity reference="2001"/>
+		<TaCapacity reference="2003"/>	  
+	  </capacitySet>
+      <affinityMap class="linked-hash-map" id="38">
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="39">
+      <id>5</id>
+      <fullName>Henk Groen</fullName>
+	  <latitude>52.159548</latitude>
+	  <longitude>5.365120</longitude>	  
+      <skillSet class="linked-hash-set" id="40">
+        <TaSkill reference="3"/>
+        <TaSkill reference="4"/>
+        <TaSkill reference="5"/>
+        <TaSkill reference="6"/>
+        <TaSkill reference="7"/>
+        <TaSkill reference="8"/>
+      </skillSet>
+	  <capacitySet class="linked-hash-set" id = "808">
+	  	<TaCapacity reference="2001"/>	
+		<TaCapacity reference="2003"/>		  
+	  </capacitySet>
+      <affinityMap class="linked-hash-map" id="41">
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="42">
+      <id>6</id>
+      <fullName>Alex van Oranje</fullName>
+	  <latitude>52.092540</latitude>
+	  <longitude>4.315367</longitude>	  
+      <skillSet class="linked-hash-set" id="43">
+        <TaSkill reference="3"/>
+        <TaSkill reference="4"/>
+        <TaSkill reference="5"/>
+        <TaSkill reference="6"/>
+        <TaSkill reference="7"/>
+        <TaSkill reference="8"/>
+      </skillSet>
+ 	  <capacitySet class="linked-hash-set" id = "809">
+	  	<TaCapacity reference="2001"/>	
+		<TaCapacity reference="2003"/>		  
+	  </capacitySet>
+     <affinityMap class="linked-hash-map" id="44">
+      </affinityMap>
+    </TaEmployee>
+  </employeeList>
+  <taskList id="48">
+    <TaTask id="49">
+      <id>0</id>
+      <taskType reference="14"/>
+      <indexInTaskType>1</indexInTaskType>
+	  <code>SV-0001</code>
+	  <title>Jaarlijkse inspectie</title>
+	  <duration>120</duration>
+	  <responsTime>2880</responsTime>	  
+	  <latitude>51.662813</latitude>
+	  <longitude>5.918201</longitude>	  
+      <customer reference="3001"/>
+      <readyTime>0</readyTime>
+      <priority>MINOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="50">
+      <id>1</id>
+      <taskType reference="16"/>
+      <indexInTaskType>1</indexInTaskType>
+	  <code>SV-0002</code>
+	  <title>Vervangen koelvloeistof</title>
+	  <duration>90</duration>
+	  <responsTime>2880</responsTime>
+	  <latitude>52.031546</latitude>
+	  <longitude>4.553652</longitude>	  
+      <customer reference="3002"/>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="51">
+      <id>2</id>
+      <taskType reference="14"/>
+      <indexInTaskType>2</indexInTaskType>
+	  <code>SV-0003</code>
+	  <title>Motorstoring verhelpen</title>
+	  <duration>120</duration>
+	  <responsTime>2880</responsTime>
+	  <latitude>52.692342</latitude>
+	  <longitude>5.240138</longitude>		  
+      <customer reference="3003"/>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="52">
+      <id>3</id>
+      <taskType reference="10"/>
+      <indexInTaskType>1</indexInTaskType>
+	  <code>SV-0004</code>
+	  <title>Lekkage leidingen repareren</title>
+	  <duration>240</duration>
+	  <responsTime>2880</responsTime>
+  	  <latitude>51.840654</latitude>
+	  <longitude>5.822347</longitude>	  
+      <customer reference="3004"/>
+      <readyTime>0</readyTime>
+      <priority>CRITICAL</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="53">
+      <id>4</id>
+      <taskType reference="16"/>
+      <indexInTaskType>2</indexInTaskType>
+  	  <code>SV-0005</code>
+	  <title>Jaarlijkse inspectie</title>
+	  <duration>90</duration>
+	  <responsTime>2880</responsTime>
+  	  <latitude>52.262814</latitude>
+	  <longitude>4.587871</longitude>  
+      <customer reference="3005"/>
+      <readyTime>0</readyTime>
+      <priority>MINOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="54">
+      <id>5</id>
+      <taskType reference="16"/>
+      <indexInTaskType>3</indexInTaskType>
+	  <code>SV-0006</code>
+	  <title>Motorstoring verhelpen</title>
+	  <duration>180</duration>
+	  <responsTime>2880</responsTime>
+  	  <latitude>51.962848</latitude>
+	  <longitude>5.998303</longitude>	  
+      <customer reference="3006"/>
+      <readyTime>0</readyTime>
+      <priority>MINOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="55">
+      <id>6</id>
+      <taskType reference="12"/>
+      <indexInTaskType>1</indexInTaskType>
+	  <code>SV-0007</code>
+	  <title>Lekkage leidingen repareren</title>
+	  <duration>180</duration>
+	  <responsTime>2880</responsTime>
+  	  <latitude>51.415161</latitude>
+	  <longitude>6.128188</longitude>	  
+      <customer reference="3007"/>
+      <readyTime>0</readyTime>
+      <priority>MINOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="56">
+      <id>7</id>
+      <taskType reference="12"/>
+      <indexInTaskType>2</indexInTaskType>
+	  <code>SV-0008</code>
+	  <title>Vervangen koelvloeistof</title>
+	  <duration>150</duration>
+	  <responsTime>2880</responsTime>
+  	  <latitude>52.404927</latitude>
+	  <longitude>4.802744</longitude>	  
+      <customer reference="3008"/>
+      <readyTime>0</readyTime>
+      <priority>MINOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+  </taskList>
+
+  <frozenCutoff>0</frozenCutoff>
+</TaTaskAssigningSolution>

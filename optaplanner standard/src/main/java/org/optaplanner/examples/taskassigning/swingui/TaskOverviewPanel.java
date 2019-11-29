@@ -122,13 +122,18 @@ public class TaskOverviewPanel extends JPanel implements Scrollable {
         }
         for (int x = HEADER_COLUMN_WIDTH; x < panelWidth; x += TIME_COLUMN_WIDTH) {
             // Use 10 hours per day
+        	//habbo+
+            int days = (x - HEADER_COLUMN_WIDTH) / (24 * 100);        	
             //int minutes = (x - HEADER_COLUMN_WIDTH) % (10 * 60);
         	int minutes = (x - HEADER_COLUMN_WIDTH) % (24 * 60);
+        	//habbo-
             // Start at 8:00
+            //habbo+
             //int hours = 8 + (minutes / 60);
-            int hours = (minutes / 60);
+            int hours = 0 + (minutes / 60);
+            //habbo-
             minutes %= 60;
-            JLabel timeLabel = new JLabel((hours < 10 ? "0" : "") + hours + ":" + (minutes < 10 ? "0" : "") + minutes);
+            JLabel timeLabel = new JLabel((hours < 10 ? "0" : "") + hours + ":" + (minutes < 10 ? "0" : "") + minutes + " d:" + days);
             timeLabel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
             timeLabel.setLocation(x, 0);
             timeLabel.setSize(TIME_COLUMN_WIDTH, ROW_HEIGHT);

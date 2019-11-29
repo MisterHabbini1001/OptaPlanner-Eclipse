@@ -863,5 +863,7 @@
       <pinned>false</pinned>
     </TaTask>
   </taskList>
+  <capacityList id="2000">
+  </capacityList>  
   <frozenCutoff>0</frozenCutoff>
 </TaTaskAssigningSolution>

@@ -22,6 +22,23 @@
       <name>Creative Thinking</name>
     </TaSkill>
   </skillList>
+  <capacityList id="2000">
+ 	<TaCapacity id="2001">
+	  <id>0</id>
+	  <startTime>420</startTime>
+	  <endTime>900</endTime>
+	</TaCapacity>
+	<TaCapacity id="2002">
+	  <id>1</id>
+	  <startTime>1860</startTime>
+	  <endTime>2340</endTime>
+	</TaCapacity>
+	<TaCapacity id="2003">
+	  <id>2</id>
+	  <startTime>3300</startTime>
+	  <endTime>3780</endTime>
+	</TaCapacity>
+  </capacityList>
   <taskTypeList id="8">
     <TaTaskType id="9">
       <id>0</id>
@@ -276,12 +293,21 @@
   <employeeList id="65">
     <TaEmployee id="66">
       <id>0</id>
-      <fullName>Amy</fullName>
+      <fullName>Amy Cole</fullName>
+	  <latitude>52.1</latitude>
+	  <longitude>4.0</longitude>	  
       <skillSet class="linked-hash-set" id="67">
         <TaSkill reference="3"/>
         <TaSkill reference="4"/>
         <TaSkill reference="5"/>
+        <TaSkill reference="6"/>
+        <TaSkill reference="7"/>		
       </skillSet>
+	  <capacitySet class="linked-hash-set" id = "3001">
+	  	<TaCapacity reference="2001"/>	
+		<TaCapacity reference="2002"/>
+		<TaCapacity reference="2003"/>
+	  </capacitySet>	  
       <affinityMap class="linked-hash-map" id="68">
         <entry>
           <TaCustomer reference="50"/>
@@ -347,11 +373,20 @@
     </TaEmployee>
     <TaEmployee id="69">
       <id>1</id>
-      <fullName>Beth</fullName>
+      <fullName>Beth Fox</fullName>
+	  <latitude>52.2</latitude>
+	  <longitude>4.1</longitude>	  
       <skillSet class="linked-hash-set" id="70">
+        <TaSkill reference="3"/>
+        <TaSkill reference="4"/>
+        <TaSkill reference="5"/>
         <TaSkill reference="6"/>
         <TaSkill reference="7"/>
       </skillSet>
+	  <capacitySet class="linked-hash-set" id = "3001">
+		<TaCapacity reference="2002"/>
+		<TaCapacity reference="2003"/>
+	  </capacitySet>	  
       <affinityMap class="linked-hash-map" id="71">
         <entry>
           <TaCustomer reference="50"/>
@@ -417,11 +452,15 @@
     </TaEmployee>
     <TaEmployee id="72">
       <id>2</id>
-      <fullName>Chad</fullName>
+      <fullName>Jimmy Green</fullName>
+	  <latitude>52.3</latitude>
+	  <longitude>4.4</longitude>	  
       <skillSet class="linked-hash-set" id="73">
         <TaSkill reference="3"/>
         <TaSkill reference="4"/>
         <TaSkill reference="5"/>
+        <TaSkill reference="6"/>
+        <TaSkill reference="7"/>		
       </skillSet>
       <affinityMap class="linked-hash-map" id="74">
         <entry>
@@ -488,8 +527,13 @@
     </TaEmployee>
     <TaEmployee id="75">
       <id>3</id>
-      <fullName>Dan</fullName>
+      <fullName>Dan Jones</fullName>
+	  <latitude>52.4</latitude>
+	  <longitude>4.5</longitude>	  
       <skillSet class="linked-hash-set" id="76">
+        <TaSkill reference="3"/>
+        <TaSkill reference="4"/>
+        <TaSkill reference="5"/>
         <TaSkill reference="6"/>
         <TaSkill reference="7"/>
       </skillSet>
@@ -558,11 +602,15 @@
     </TaEmployee>
     <TaEmployee id="78">
       <id>4</id>
-      <fullName>Elsa</fullName>
+      <fullName>Elsa King</fullName>
+	  <latitude>52.4</latitude>
+	  <longitude>4.3</longitude>	  
       <skillSet class="linked-hash-set" id="79">
         <TaSkill reference="3"/>
         <TaSkill reference="4"/>
         <TaSkill reference="5"/>
+        <TaSkill reference="6"/>
+        <TaSkill reference="7"/>
       </skillSet>
       <affinityMap class="linked-hash-map" id="80">
         <entry>
@@ -633,6 +681,9 @@
       <id>0</id>
       <taskType reference="35"/>
       <indexInTaskType>1</indexInTaskType>
+	  <code>SV-0000</code>
+	  <title>Spoedreparatie</title>
+	  <duration>40</duration>
       <customer reference="50"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -642,6 +693,9 @@
       <id>1</id>
       <taskType reference="37"/>
       <indexInTaskType>1</indexInTaskType>
+	  <code>SV-0001</code>
+	  <title>Spoedreparatie</title>
+	  <duration>60</duration>
       <customer reference="60"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -651,6 +705,9 @@
       <id>2</id>
       <taskType reference="11"/>
       <indexInTaskType>1</indexInTaskType>
+	  <code>SV-0002</code>
+	  <title>Spoedreparatie</title>
+	  <duration>120</duration>
       <customer reference="64"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -660,6 +717,9 @@
       <id>3</id>
       <taskType reference="39"/>
       <indexInTaskType>1</indexInTaskType>
+	  <code>SV-0003</code>
+	  <title>Spoedreparatie</title>
+	  <duration>180</duration>
       <customer reference="62"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -669,6 +729,9 @@
       <id>4</id>
       <taskType reference="37"/>
       <indexInTaskType>2</indexInTaskType>
+	  <code>SV-0004</code>
+	  <title>Spoedreparatie</title>
+	  <duration>45</duration>
       <customer reference="58"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -678,6 +741,9 @@
       <id>5</id>
       <taskType reference="11"/>
       <indexInTaskType>2</indexInTaskType>
+	  <code>SV-0005</code>
+	  <title>Spoedreparatie</title>
+	  <duration>135</duration>
       <customer reference="61"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -687,6 +753,9 @@
       <id>6</id>
       <taskType reference="29"/>
       <indexInTaskType>1</indexInTaskType>
+	  <code>SV-0006</code>
+	  <title>Spoedreparatie</title>
+	  <duration>30</duration>
       <customer reference="61"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -696,6 +765,9 @@
       <id>7</id>
       <taskType reference="25"/>
       <indexInTaskType>1</indexInTaskType>
+	  <code>SV-0007</code>
+	  <title>Spoedreparatie</title>
+	  <duration>105</duration>
       <customer reference="56"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -705,6 +777,9 @@
       <id>8</id>
       <taskType reference="11"/>
       <indexInTaskType>3</indexInTaskType>
+	  <code>SV-0008</code>
+	  <title>Spoedreparatie</title>
+	  <duration>145</duration>
       <customer reference="62"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -714,6 +789,9 @@
       <id>9</id>
       <taskType reference="13"/>
       <indexInTaskType>1</indexInTaskType>
+	  <code>SV-0009</code>
+	  <title>Spoedreparatie</title>
+	  <duration>55</duration>
       <customer reference="58"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -723,6 +801,9 @@
       <id>10</id>
       <taskType reference="43"/>
       <indexInTaskType>1</indexInTaskType>
+	  <code>SV-0010</code>
+	  <title>Spoedreparatie</title>
+	  <duration>80</duration>
       <customer reference="53"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -732,6 +813,9 @@
       <id>11</id>
       <taskType reference="27"/>
       <indexInTaskType>1</indexInTaskType>
+	  <code>SV-0011</code>
+	  <title>Spoedreparatie</title>
+	  <duration>60</duration>
       <customer reference="52"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -741,6 +825,9 @@
       <id>12</id>
       <taskType reference="47"/>
       <indexInTaskType>1</indexInTaskType>
+	  <code>SV-0012</code>
+	  <title>Spoedreparatie</title>
+	  <duration>75</duration>
       <customer reference="56"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -750,6 +837,9 @@
       <id>13</id>
       <taskType reference="45"/>
       <indexInTaskType>1</indexInTaskType>
+	  <code>SV-0013</code>
+	  <title>Spoedreparatie</title>
+	  <duration>40</duration>
       <customer reference="56"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -759,6 +849,9 @@
       <id>14</id>
       <taskType reference="37"/>
       <indexInTaskType>3</indexInTaskType>
+	  <code>SV-0014</code>
+	  <title>Spoedreparatie</title>
+	  <duration>50</duration>
       <customer reference="50"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -768,6 +861,9 @@
       <id>15</id>
       <taskType reference="25"/>
       <indexInTaskType>2</indexInTaskType>
+	  <code>SV-0015</code>
+	  <title>Spoedreparatie</title>
+	  <duration>75</duration>
       <customer reference="50"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -777,6 +873,9 @@
       <id>16</id>
       <taskType reference="17"/>
       <indexInTaskType>1</indexInTaskType>
+	  <code>SV-0016</code>
+	  <title>Spoedreparatie</title>
+	  <duration>30</duration>
       <customer reference="53"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -786,6 +885,9 @@
       <id>17</id>
       <taskType reference="11"/>
       <indexInTaskType>4</indexInTaskType>
+	  <code>SV-0017</code>
+	  <title>Spoedreparatie</title>
+	  <duration>40</duration>
       <customer reference="64"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -795,6 +897,9 @@
       <id>18</id>
       <taskType reference="33"/>
       <indexInTaskType>1</indexInTaskType>
+	  <code>SV-0018</code>
+	  <title>Spoedreparatie</title>
+	  <duration>130</duration>
       <customer reference="60"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -804,6 +909,9 @@
       <id>19</id>
       <taskType reference="9"/>
       <indexInTaskType>1</indexInTaskType>
+	  <code>SV-0019</code>
+	  <title>Spoedreparatie</title>
+	  <duration>115</duration>
       <customer reference="64"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -813,6 +921,9 @@
       <id>20</id>
       <taskType reference="9"/>
       <indexInTaskType>2</indexInTaskType>
+	  <code>SV-0020</code>
+	  <title>Spoedreparatie</title>
+	  <duration>45</duration>
       <customer reference="53"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -822,6 +933,9 @@
       <id>21</id>
       <taskType reference="33"/>
       <indexInTaskType>2</indexInTaskType>
+	  <code>SV-0021</code>
+	  <title>Spoedreparatie</title>
+	  <duration>55</duration>
       <customer reference="56"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -831,6 +945,9 @@
       <id>22</id>
       <taskType reference="11"/>
       <indexInTaskType>5</indexInTaskType>
+	  <code>SV-0022</code>
+	  <title>Spoedreparatie</title>
+	  <duration>180</duration>
       <customer reference="55"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -840,6 +957,9 @@
       <id>23</id>
       <taskType reference="17"/>
       <indexInTaskType>2</indexInTaskType>
+	  <code>SV-0023</code>
+	  <title>Spoedreparatie</title>
+	  <duration>115</duration>
       <customer reference="51"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -849,6 +969,9 @@
       <id>24</id>
       <taskType reference="45"/>
       <indexInTaskType>2</indexInTaskType>
+	  <code>SV-0024</code>
+	  <title>Spoedreparatie</title>
+	  <duration>175</duration>
       <customer reference="62"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -858,6 +981,9 @@
       <id>25</id>
       <taskType reference="25"/>
       <indexInTaskType>3</indexInTaskType>
+	  <code>SV-0025</code>
+	  <title>Spoedreparatie</title>
+	  <duration>55</duration>
       <customer reference="50"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -867,6 +993,9 @@
       <id>26</id>
       <taskType reference="17"/>
       <indexInTaskType>3</indexInTaskType>
+	  <code>SV-0026</code>
+	  <title>Spoedreparatie</title>
+	  <duration>65</duration>
       <customer reference="61"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -876,6 +1005,9 @@
       <id>27</id>
       <taskType reference="13"/>
       <indexInTaskType>2</indexInTaskType>
+	  <code>SV-0027</code>
+	  <title>Spoedreparatie</title>
+	  <duration>90</duration>
       <customer reference="61"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -885,6 +1017,9 @@
       <id>28</id>
       <taskType reference="21"/>
       <indexInTaskType>1</indexInTaskType>
+	  <code>SV-0028</code>
+	  <title>Spoedreparatie</title>
+	  <duration>75</duration>
       <customer reference="61"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -894,6 +1029,9 @@
       <id>29</id>
       <taskType reference="35"/>
       <indexInTaskType>2</indexInTaskType>
+	  <code>SV-0029</code>
+	  <title>Spoedreparatie</title>
+	  <duration>30</duration>
       <customer reference="52"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -903,6 +1041,9 @@
       <id>30</id>
       <taskType reference="9"/>
       <indexInTaskType>3</indexInTaskType>
+	  <code>SV-0030</code>
+	  <title>Spoedreparatie</title>
+	  <duration>40</duration>
       <customer reference="64"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -912,6 +1053,9 @@
       <id>31</id>
       <taskType reference="39"/>
       <indexInTaskType>2</indexInTaskType>
+	  <code>SV-0031</code>
+	  <title>Spoedreparatie</title>
+	  <duration>50</duration>
       <customer reference="58"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -921,6 +1065,9 @@
       <id>32</id>
       <taskType reference="13"/>
       <indexInTaskType>3</indexInTaskType>
+	  <code>SV-0032</code>
+	  <title>Spoedreparatie</title>
+	  <duration>60</duration>
       <customer reference="53"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -930,6 +1077,9 @@
       <id>33</id>
       <taskType reference="11"/>
       <indexInTaskType>6</indexInTaskType>
+	  <code>SV-0033</code>
+	  <title>Spoedreparatie</title>
+	  <duration>70</duration>
       <customer reference="61"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -939,6 +1089,9 @@
       <id>34</id>
       <taskType reference="39"/>
       <indexInTaskType>3</indexInTaskType>
+	  <code>SV-0034</code>
+	  <title>Spoedreparatie</title>
+	  <duration>80</duration>
       <customer reference="56"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -948,6 +1101,9 @@
       <id>35</id>
       <taskType reference="19"/>
       <indexInTaskType>1</indexInTaskType>
+	  <code>SV-0035</code>
+	  <title>Spoedreparatie</title>
+	  <duration>90</duration>
       <customer reference="63"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -957,6 +1113,9 @@
       <id>36</id>
       <taskType reference="25"/>
       <indexInTaskType>4</indexInTaskType>
+	  <code>SV-0036</code>
+	  <title>Spoedreparatie</title>
+	  <duration>100</duration>
       <customer reference="52"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -966,6 +1125,9 @@
       <id>37</id>
       <taskType reference="25"/>
       <indexInTaskType>5</indexInTaskType>
+	  <code>SV-0037</code>
+	  <title>Spoedreparatie</title>
+	  <duration>110</duration>
       <customer reference="55"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -975,6 +1137,9 @@
       <id>38</id>
       <taskType reference="23"/>
       <indexInTaskType>1</indexInTaskType>
+	  <code>SV-0038</code>
+	  <title>Spoedreparatie</title>
+	  <duration>120</duration>
       <customer reference="56"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -984,6 +1149,9 @@
       <id>39</id>
       <taskType reference="9"/>
       <indexInTaskType>4</indexInTaskType>
+	  <code>SV-0039</code>
+	  <title>Spoedreparatie</title>
+	  <duration>130</duration>
       <customer reference="56"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -993,6 +1161,9 @@
       <id>40</id>
       <taskType reference="47"/>
       <indexInTaskType>2</indexInTaskType>
+	  <code>SV-0040</code>
+	  <title>Spoedreparatie</title>
+	  <duration>140</duration>
       <customer reference="61"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -1002,6 +1173,9 @@
       <id>41</id>
       <taskType reference="19"/>
       <indexInTaskType>2</indexInTaskType>
+	  <code>SV-0041</code>
+	  <title>Spoedreparatie</title>
+	  <duration>135</duration>
       <customer reference="51"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -1011,6 +1185,9 @@
       <id>42</id>
       <taskType reference="19"/>
       <indexInTaskType>3</indexInTaskType>
+	  <code>SV-0042</code>
+	  <title>Spoedreparatie</title>
+	  <duration>125</duration>
       <customer reference="57"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -1020,6 +1197,9 @@
       <id>43</id>
       <taskType reference="13"/>
       <indexInTaskType>4</indexInTaskType>
+	  <code>SV-0043</code>
+	  <title>Spoedreparatie</title>
+	  <duration>115</duration>
       <customer reference="64"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -1029,6 +1209,9 @@
       <id>44</id>
       <taskType reference="39"/>
       <indexInTaskType>4</indexInTaskType>
+	  <code>SV-0044</code>
+	  <title>Spoedreparatie</title>
+	  <duration>105</duration>
       <customer reference="60"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -1038,6 +1221,9 @@
       <id>45</id>
       <taskType reference="9"/>
       <indexInTaskType>5</indexInTaskType>
+	  <code>SV-0045</code>
+	  <title>Spoedreparatie</title>
+	  <duration>95</duration>
       <customer reference="56"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -1047,6 +1233,9 @@
       <id>46</id>
       <taskType reference="17"/>
       <indexInTaskType>4</indexInTaskType>
+	  <code>SV-0046</code>
+	  <title>Spoedreparatie</title>
+	  <duration>85</duration>
       <customer reference="52"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -1056,6 +1245,9 @@
       <id>47</id>
       <taskType reference="15"/>
       <indexInTaskType>1</indexInTaskType>
+	  <code>SV-0047</code>
+	  <title>Spoedreparatie</title>
+	  <duration>75</duration>
       <customer reference="57"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -1065,6 +1257,9 @@
       <id>48</id>
       <taskType reference="31"/>
       <indexInTaskType>1</indexInTaskType>
+	  <code>SV-0048</code>
+	  <title>Spoedreparatie</title>
+	  <duration>65</duration>
       <customer reference="59"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -1074,6 +1269,9 @@
       <id>49</id>
       <taskType reference="31"/>
       <indexInTaskType>2</indexInTaskType>
+	  <code>SV-0049</code>
+	  <title>Spoedreparatie</title>
+	  <duration>55</duration>
       <customer reference="63"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -1083,6 +1281,9 @@
       <id>50</id>
       <taskType reference="25"/>
       <indexInTaskType>6</indexInTaskType>
+	  <code>SV-0050</code>
+	  <title>Spoedreparatie</title>
+	  <duration>45</duration>
       <customer reference="52"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -1092,6 +1293,9 @@
       <id>51</id>
       <taskType reference="39"/>
       <indexInTaskType>5</indexInTaskType>
+	  <code>SV-0051</code>
+	  <title>Spoedreparatie</title>
+	  <duration>50</duration>
       <customer reference="52"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -1101,6 +1305,9 @@
       <id>52</id>
       <taskType reference="45"/>
       <indexInTaskType>3</indexInTaskType>
+	  <code>SV-0052</code>
+	  <title>Spoedreparatie</title>
+	  <duration>60</duration>
       <customer reference="57"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -1110,6 +1317,9 @@
       <id>53</id>
       <taskType reference="41"/>
       <indexInTaskType>1</indexInTaskType>
+	  <code>SV-0053</code>
+	  <title>Spoedreparatie</title>
+	  <duration>70</duration>
       <customer reference="64"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -1119,6 +1329,9 @@
       <id>54</id>
       <taskType reference="35"/>
       <indexInTaskType>3</indexInTaskType>
+	  <code>SV-0054</code>
+	  <title>Spoedreparatie</title>
+	  <duration>80</duration>
       <customer reference="57"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -1128,6 +1341,9 @@
       <id>55</id>
       <taskType reference="37"/>
       <indexInTaskType>4</indexInTaskType>
+	  <code>SV-0055</code>
+	  <title>Spoedreparatie</title>
+	  <duration>90</duration>
       <customer reference="62"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -1137,6 +1353,9 @@
       <id>56</id>
       <taskType reference="37"/>
       <indexInTaskType>5</indexInTaskType>
+	  <code>SV-0056</code>
+	  <title>Spoedreparatie</title>
+	  <duration>100</duration>
       <customer reference="52"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -1146,6 +1365,9 @@
       <id>57</id>
       <taskType reference="41"/>
       <indexInTaskType>2</indexInTaskType>
+	  <code>SV-0057</code>
+	  <title>Spoedreparatie</title>
+	  <duration>110</duration>
       <customer reference="58"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -1155,6 +1377,9 @@
       <id>58</id>
       <taskType reference="13"/>
       <indexInTaskType>5</indexInTaskType>
+	  <code>SV-0058</code>
+	  <title>Spoedreparatie</title>
+	  <duration>120</duration>
       <customer reference="51"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -1164,6 +1389,9 @@
       <id>59</id>
       <taskType reference="19"/>
       <indexInTaskType>4</indexInTaskType>
+	  <code>SV-0059</code>
+	  <title>Spoedreparatie</title>
+	  <duration>130</duration>
       <customer reference="60"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -1173,6 +1401,9 @@
       <id>60</id>
       <taskType reference="29"/>
       <indexInTaskType>2</indexInTaskType>
+	  <code>SV-0060</code>
+	  <title>Spoedreparatie</title>
+	  <duration>140</duration>
       <customer reference="56"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -1182,6 +1413,9 @@
       <id>61</id>
       <taskType reference="11"/>
       <indexInTaskType>7</indexInTaskType>
+	  <code>SV-0061</code>
+	  <title>Spoedreparatie</title>
+	  <duration>150</duration>
       <customer reference="63"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -1191,6 +1425,9 @@
       <id>62</id>
       <taskType reference="25"/>
       <indexInTaskType>7</indexInTaskType>
+	  <code>SV-0062</code>
+	  <title>Spoedreparatie</title>
+	  <duration>160</duration>
       <customer reference="57"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -1200,6 +1437,9 @@
       <id>63</id>
       <taskType reference="19"/>
       <indexInTaskType>5</indexInTaskType>
+	  <code>SV-0063</code>
+	  <title>Spoedreparatie</title>
+	  <duration>95</duration>
       <customer reference="61"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -1209,6 +1449,9 @@
       <id>64</id>
       <taskType reference="37"/>
       <indexInTaskType>6</indexInTaskType>
+	  <code>SV-0064</code>
+	  <title>Spoedreparatie</title>
+	  <duration>85</duration>
       <customer reference="58"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -1218,6 +1461,9 @@
       <id>65</id>
       <taskType reference="29"/>
       <indexInTaskType>3</indexInTaskType>
+	  <code>SV-0065</code>
+	  <title>Spoedreparatie</title>
+	  <duration>85</duration>
       <customer reference="57"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -1227,6 +1473,9 @@
       <id>66</id>
       <taskType reference="19"/>
       <indexInTaskType>6</indexInTaskType>
+	  <code>SV-0066</code>
+	  <title>Spoedreparatie</title>
+	  <duration>75</duration>
       <customer reference="60"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -1236,6 +1485,9 @@
       <id>67</id>
       <taskType reference="21"/>
       <indexInTaskType>2</indexInTaskType>
+	  <code>SV-0067</code>
+	  <title>Spoedreparatie</title>
+	  <duration>75</duration>
       <customer reference="64"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -1245,6 +1497,9 @@
       <id>68</id>
       <taskType reference="45"/>
       <indexInTaskType>4</indexInTaskType>
+	  <code>SV-0068</code>
+	  <title>Spoedreparatie</title>
+	  <duration>65</duration>
       <customer reference="53"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -1254,6 +1509,9 @@
       <id>69</id>
       <taskType reference="33"/>
       <indexInTaskType>3</indexInTaskType>
+	  <code>SV-0069</code>
+	  <title>Spoedreparatie</title>
+	  <duration>65</duration>
       <customer reference="52"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -1263,6 +1521,9 @@
       <id>70</id>
       <taskType reference="27"/>
       <indexInTaskType>2</indexInTaskType>
+	  <code>SV-0070</code>
+	  <title>Spoedreparatie</title>
+	  <duration>65</duration>
       <customer reference="54"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -1272,6 +1533,9 @@
       <id>71</id>
       <taskType reference="47"/>
       <indexInTaskType>3</indexInTaskType>
+	  <code>SV-0071</code>
+	  <title>Spoedreparatie</title>
+	  <duration>55</duration>
       <customer reference="54"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -1281,6 +1545,9 @@
       <id>72</id>
       <taskType reference="15"/>
       <indexInTaskType>2</indexInTaskType>
+	  <code>SV-0072</code>
+	  <title>Spoedreparatie</title>
+	  <duration>90</duration>
       <customer reference="59"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -1290,6 +1557,9 @@
       <id>73</id>
       <taskType reference="13"/>
       <indexInTaskType>6</indexInTaskType>
+	  <code>SV-0073</code>
+	  <title>Spoedreparatie</title>
+	  <duration>55</duration>
       <customer reference="57"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -1299,6 +1569,9 @@
       <id>74</id>
       <taskType reference="9"/>
       <indexInTaskType>6</indexInTaskType>
+	  <code>SV-0074</code>
+	  <title>Spoedreparatie</title>
+	  <duration>55</duration>
       <customer reference="59"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -1308,6 +1581,9 @@
       <id>75</id>
       <taskType reference="37"/>
       <indexInTaskType>7</indexInTaskType>
+	  <code>SV-0075</code>
+	  <title>Spoedreparatie</title>
+	  <duration>55</duration>
       <customer reference="54"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -1317,6 +1593,9 @@
       <id>76</id>
       <taskType reference="21"/>
       <indexInTaskType>3</indexInTaskType>
+	  <code>SV-0076</code>
+	  <title>Spoedreparatie</title>
+	  <duration>45</duration>
       <customer reference="59"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -1326,6 +1605,9 @@
       <id>77</id>
       <taskType reference="29"/>
       <indexInTaskType>4</indexInTaskType>
+	  <code>SV-0077</code>
+	  <title>Spoedreparatie</title>
+	  <duration>90</duration>
       <customer reference="51"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -1335,6 +1617,9 @@
       <id>78</id>
       <taskType reference="43"/>
       <indexInTaskType>2</indexInTaskType>
+	  <code>SV-0078</code>
+	  <title>Spoedreparatie</title>
+	  <duration>45</duration>
       <customer reference="63"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -1344,6 +1629,9 @@
       <id>79</id>
       <taskType reference="17"/>
       <indexInTaskType>5</indexInTaskType>
+	  <code>SV-0079</code>
+	  <title>Spoedreparatie</title>
+	  <duration>45</duration>
       <customer reference="56"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -1353,6 +1641,9 @@
       <id>80</id>
       <taskType reference="25"/>
       <indexInTaskType>8</indexInTaskType>
+	  <code>SV-0080</code>
+	  <title>Spoedreparatie</title>
+	  <duration>70</duration>
       <customer reference="61"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -1362,6 +1653,9 @@
       <id>81</id>
       <taskType reference="31"/>
       <indexInTaskType>3</indexInTaskType>
+	  <code>SV-0081</code>
+	  <title>Spoedreparatie</title>
+	  <duration>70</duration>
       <customer reference="57"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -1371,6 +1665,9 @@
       <id>82</id>
       <taskType reference="17"/>
       <indexInTaskType>6</indexInTaskType>
+	  <code>SV-0082</code>
+	  <title>Spoedreparatie</title>
+	  <duration>60</duration>
       <customer reference="56"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -1380,6 +1677,9 @@
       <id>83</id>
       <taskType reference="45"/>
       <indexInTaskType>5</indexInTaskType>
+	  <code>SV-0083</code>
+	  <title>Spoedreparatie</title>
+	  <duration>70</duration>
       <customer reference="64"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -1389,6 +1689,9 @@
       <id>84</id>
       <taskType reference="29"/>
       <indexInTaskType>5</indexInTaskType>
+	  <code>SV-0084</code>
+	  <title>Spoedreparatie</title>
+	  <duration>70</duration>
       <customer reference="62"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -1398,6 +1701,9 @@
       <id>85</id>
       <taskType reference="39"/>
       <indexInTaskType>6</indexInTaskType>
+	  <code>SV-0085</code>
+	  <title>Spoedreparatie</title>
+	  <duration>70</duration>
       <customer reference="60"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -1407,6 +1713,9 @@
       <id>86</id>
       <taskType reference="47"/>
       <indexInTaskType>4</indexInTaskType>
+	  <code>SV-0086</code>
+	  <title>Spoedreparatie</title>
+	  <duration>80</duration>
       <customer reference="60"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -1416,6 +1725,9 @@
       <id>87</id>
       <taskType reference="13"/>
       <indexInTaskType>7</indexInTaskType>
+	  <code>SV-0087</code>
+	  <title>Spoedreparatie</title>
+	  <duration>80</duration>
       <customer reference="57"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -1425,6 +1737,9 @@
       <id>88</id>
       <taskType reference="39"/>
       <indexInTaskType>7</indexInTaskType>
+	  <code>SV-0088</code>
+	  <title>Spoedreparatie</title>
+	  <duration>80</duration>
       <customer reference="51"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -1434,6 +1749,9 @@
       <id>89</id>
       <taskType reference="19"/>
       <indexInTaskType>7</indexInTaskType>
+	  <code>SV-0089</code>
+	  <title>Spoedreparatie</title>
+	  <duration>120</duration>
       <customer reference="57"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -1443,6 +1761,9 @@
       <id>90</id>
       <taskType reference="13"/>
       <indexInTaskType>8</indexInTaskType>
+	  <code>SV-0090</code>
+	  <title>Spoedreparatie</title>
+	  <duration>120</duration>
       <customer reference="54"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -1452,6 +1773,9 @@
       <id>91</id>
       <taskType reference="33"/>
       <indexInTaskType>4</indexInTaskType>
+	  <code>SV-0091</code>
+	  <title>Spoedreparatie</title>
+	  <duration>100</duration>
       <customer reference="50"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -1461,6 +1785,9 @@
       <id>92</id>
       <taskType reference="47"/>
       <indexInTaskType>5</indexInTaskType>
+	  <code>SV-0092</code>
+	  <title>Spoedreparatie</title>
+	  <duration>100</duration>
       <customer reference="61"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -1470,6 +1797,9 @@
       <id>93</id>
       <taskType reference="33"/>
       <indexInTaskType>5</indexInTaskType>
+	  <code>SV-0093</code>
+	  <title>Spoedreparatie</title>
+	  <duration>70</duration>
       <customer reference="62"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -1479,6 +1809,9 @@
       <id>94</id>
       <taskType reference="21"/>
       <indexInTaskType>4</indexInTaskType>
+	  <code>SV-0094</code>
+	  <title>Spoedreparatie</title>
+	  <duration>70</duration>
       <customer reference="57"/>
       <readyTime>0</readyTime>
       <priority>MINOR</priority>
@@ -1488,6 +1821,9 @@
       <id>95</id>
       <taskType reference="11"/>
       <indexInTaskType>8</indexInTaskType>
+	  <code>SV-0095</code>
+	  <title>Spoedreparatie</title>
+	  <duration>90</duration>
       <customer reference="54"/>
       <readyTime>0</readyTime>
       <priority>CRITICAL</priority>
@@ -1497,6 +1833,9 @@
       <id>96</id>
       <taskType reference="15"/>
       <indexInTaskType>3</indexInTaskType>
+	  <code>SV-0096</code>
+	  <title>Spoedreparatie</title>
+	  <duration>90</duration>
       <customer reference="57"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -1506,6 +1845,9 @@
       <id>97</id>
       <taskType reference="23"/>
       <indexInTaskType>2</indexInTaskType>
+	  <code>SV-0097</code>
+	  <title>Spoedreparatie</title>
+	  <duration>80</duration>
       <customer reference="63"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -1515,6 +1857,9 @@
       <id>98</id>
       <taskType reference="41"/>
       <indexInTaskType>3</indexInTaskType>
+	  <code>SV-0098</code>
+	  <title>Spoedreparatie</title>
+	  <duration>30</duration>
       <customer reference="51"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
@@ -1524,13 +1869,14 @@
       <id>99</id>
       <taskType reference="21"/>
       <indexInTaskType>5</indexInTaskType>
+	  <code>SV-0099</code>
+	  <title>Spoedreparatie</title>
+	  <duration>80</duration>
       <customer reference="60"/>
       <readyTime>0</readyTime>
       <priority>MAJOR</priority>
       <pinned>false</pinned>
     </TaTask>
   </taskList>
-  <capacityList id="2000">
-  </capacityList>  
   <frozenCutoff>0</frozenCutoff>
 </TaTaskAssigningSolution>

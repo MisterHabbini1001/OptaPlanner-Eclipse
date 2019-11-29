@@ -17,11 +17,15 @@
 package org.optaplanner.examples.taskassigning.domain;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
+
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 import org.optaplanner.examples.common.swingui.components.Labeled;
+import org.optaplanner.examples.vehiclerouting.domain.location.Location;//habbo+-
 
 @XStreamAlias("TaCustomer")
 public class Customer extends AbstractPersistable implements Labeled {
+	
+    protected Location location;//habbo+-
 
     private String name;
 
@@ -40,6 +44,17 @@ public class Customer extends AbstractPersistable implements Labeled {
     public void setName(String name) {
         this.name = name;
     }
+    
+    //habbo+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+    //habbo-
+
 
     // ************************************************************************
     // Complex methods

@@ -45,31 +45,18 @@ end
 // Soft constraints
 // ############################################################################
 
-rule "Critical priority"
-    when
-        Task(employee != null, priority == Priority.CRITICAL, $endTime : endTime)
-    then
-        scoreHolder.addSoftConstraintMatch(kcontext, 0, - $endTime);
+
+rule "Response Time"
+	when
+		Task(employee != null, responsTime < startTime, $responsTime : responsTime, $startTime : startTime)
+	then
+        scoreHolder.addSoftConstraintMatch(kcontext, 0, $responsTime - $startTime);
 end
 
-rule "Minimze makespan (starting with the latest ending employee first)"
+
+rule "Minimize makespan (starting with the latest ending employee first)"
     when
         Task(employee != null, nextTask == null, $endTime : endTime)
     then
-        // Fairness and load balancing trick (see docs): squared to assure correctness in corner cases
         scoreHolder.addSoftConstraintMatch(kcontext, 1, - ($endTime * $endTime));
-end
-
-rule "Major priority"
-    when
-        Task(employee != null, priority == Priority.MAJOR, $endTime : endTime)
-    then
-        scoreHolder.addSoftConstraintMatch(kcontext, 2, - $endTime);
-end
-
-rule "Minor priority"
-    when
-        Task(employee != null, priority == Priority.MINOR, $endTime : endTime)
-    then
-        scoreHolder.addSoftConstraintMatch(kcontext, 3, - $endTime);
 end

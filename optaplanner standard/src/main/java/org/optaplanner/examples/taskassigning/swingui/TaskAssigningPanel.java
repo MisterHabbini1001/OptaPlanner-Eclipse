@@ -22,21 +22,31 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.util.List;
 import java.util.Random;
+
 import javax.swing.AbstractAction;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSpinner;
+import javax.swing.JTabbedPane;
 import javax.swing.JToggleButton;
 import javax.swing.SpinnerNumberModel;
+import javax.swing.JOptionPane;//habbo+-
 import javax.swing.Timer;
 
+import org.optaplanner.core.impl.score.director.ScoreDirector;
+import org.optaplanner.core.impl.solver.ProblemFactChange;
 import org.optaplanner.examples.common.swingui.SolutionPanel;
 import org.optaplanner.examples.taskassigning.domain.Customer;
 import org.optaplanner.examples.taskassigning.domain.Priority;
 import org.optaplanner.examples.taskassigning.domain.Task;
 import org.optaplanner.examples.taskassigning.domain.TaskAssigningSolution;
 import org.optaplanner.examples.taskassigning.domain.TaskType;
+import org.optaplanner.examples.technicianscheduling.domain.TechnicianSchedulingSolution;
+import org.optaplanner.examples.technicianscheduling.domain.location.AirLocation;
+import org.optaplanner.examples.technicianscheduling.domain.location.Location;
+import org.optaplanner.examples.technicianscheduling.swingui.TechnicianSchedulingListPanel;
+import org.optaplanner.examples.technicianscheduling.swingui.TechnicianSchedulingWorldPanel;
 
 import static org.optaplanner.examples.taskassigning.persistence.TaskAssigningGenerator.*;
 
@@ -47,6 +57,7 @@ public class TaskAssigningPanel extends SolutionPanel<TaskAssigningSolution> {
     private final TaskOverviewPanel taskOverviewPanel;
 
     private JSpinner consumeRateField;
+    private AbstractAction worldPanelAction;//habbo+-    
     private AbstractAction consumeAction;
     private Timer consumeTimer;
     private JSpinner produceRateField;
@@ -58,13 +69,32 @@ public class TaskAssigningPanel extends SolutionPanel<TaskAssigningSolution> {
     private int producedTimeInSeconds = 0;
     private int previousProducedTime = 0; // In minutes
     private volatile Random producingRandom;
-
+    private TaskWorldPanel taskWorldPanel;//changed Habbo
+    
     public TaskAssigningPanel() {
+    	//habbo+
+    	/*
+    	original+
         setLayout(new BorderLayout());
         JPanel headerPanel = createHeaderPanel();
-        add(headerPanel, BorderLayout.NORTH);
+        add(headerPanel, BorderLayout.NORTH);         
         taskOverviewPanel = new TaskOverviewPanel(this);
         add(new JScrollPane(taskOverviewPanel), BorderLayout.CENTER);
+    	original-
+    	*/
+    	
+        //Changed+
+        setLayout(new BorderLayout());
+        JTabbedPane tabbedPane = new JTabbedPane();
+        tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);        
+        taskOverviewPanel = new TaskOverviewPanel(this);
+        JScrollPane scrollPane = new JScrollPane(taskOverviewPanel);
+        tabbedPane.add("Gantt", scrollPane);
+        taskWorldPanel = new TaskWorldPanel(this);
+        tabbedPane.add("Map", taskWorldPanel);
+        add(tabbedPane, BorderLayout.CENTER);
+        //Changed-
+        
     }
 
     private JPanel createHeaderPanel() {
@@ -92,8 +122,9 @@ public class TaskAssigningPanel extends SolutionPanel<TaskAssigningSolution> {
         };
         consumePanel.add(new JToggleButton(consumeAction));
         headerPanel.add(consumePanel);
+
         JPanel producePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        producePanel.add(new JLabel("Produce rate:"));
+        producePanel.add(new JLabel("Praduce rate:"));
         produceRateField = new JSpinner(new SpinnerNumberModel(600, 10, 3600, 10));
         producePanel.add(produceRateField);
         produceTimer = new Timer(1000, e -> {
@@ -209,6 +240,10 @@ public class TaskAssigningPanel extends SolutionPanel<TaskAssigningSolution> {
     public boolean isWrapInScrollPane() {
         return false;
     }
+    
+    public TaskAssigningSolution getTaskAssigningSolution() {
+        return (TaskAssigningSolution) solutionBusiness.getSolution();
+    }
 
     @Override
     public void resetPanel(TaskAssigningSolution solution) {
@@ -219,11 +254,56 @@ public class TaskAssigningPanel extends SolutionPanel<TaskAssigningSolution> {
         producingRandom = new Random(0); // Random is thread safe
         taskOverviewPanel.resetPanel(solution);
         taskOverviewPanel.setConsumedDuration(consumedTimeInSeconds / 60);
-    }
+        taskWorldPanel.resetPanel(solution);//habbo+-
+     }
 
     @Override
     public void updatePanel(TaskAssigningSolution taskAssigningSolution) {
         taskOverviewPanel.resetPanel(taskAssigningSolution);
+        taskWorldPanel.updatePanel(taskAssigningSolution);//habbo+-
     }
+
+    //habbo+
+    public void insertLocationAndCustomer(double longitude, double latitude) {
+    	System.out.println("InsertLocationAndCustomer");
+    	/*
+        final Location newLocation;
+        switch (getVehicleRoutingSolution().getDistanceType()) {
+            case AIR_DISTANCE:
+                newLocation = new AirLocation();
+                break;
+            case ROAD_DISTANCE:
+                logger.warn("Adding locations for a road distance dataset is not supported.");
+                return;
+            case SEGMENTED_ROAD_DISTANCE:
+                logger.warn("Adding locations for a segmented road distance dataset is not supported.");
+                return;
+            default:
+                throw new IllegalStateException("The distanceType (" + getVehicleRoutingSolution().getDistanceType() + ") is not implemented.");
+        }
+        newLocation.setId(nextLocationId);
+        nextLocationId++;
+        newLocation.setLongitude(longitude);
+        newLocation.setLatitude(latitude);
+        logger.info("Scheduling insertion of newLocation ({}).", newLocation);
+        doProblemFactChange(new ProblemFactChange() {
+
+            @Override
+            public void doChange(ScoreDirector scoreDirector) {
+                TechnicianSchedulingSolution solution = (TechnicianSchedulingSolution) scoreDirector.getWorkingSolution();
+                scoreDirector.beforeProblemFactAdded(newLocation);
+                solution.getLocationList().add(newLocation);
+                scoreDirector.afterProblemFactAdded(newLocation);
+                Task newCustomer = createCustomer(solution, newLocation);
+                scoreDirector.beforeEntityAdded(newCustomer);
+                solution.getTaskList().add(newCustomer);
+                scoreDirector.afterEntityAdded(newCustomer);
+                scoreDirector.triggerVariableListeners();
+            }
+        });
+        */
+    }
+    //habbo-
+    
 
 }
