@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;optaplanner_example_implement/binaries&apos; to &apos;ref_lib&apos;" description="Rename resource &apos;binaries&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="binaries" name="ref_lib" stamp="1571657380161" updateReferences="true"/>
+</session>

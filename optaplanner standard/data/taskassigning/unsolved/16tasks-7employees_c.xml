@@ -1,0 +1,269 @@
+<TaTaskAssigningSolution id="1">
+  <id>0</id>
+  <skillList id="2">
+    <TaSkill id="3">
+      <id>0</id>
+      <name>Problem Solving</name>
+    </TaSkill>
+  </skillList>
+  <taskTypeList id="4">
+    <TaTaskType id="5">
+      <id>0</id>
+      <code>JI</code>
+      <title>Jaarlijkse inspectie</title>
+      <baseDuration>30</baseDuration>
+      <requiredSkillList id="6">
+        <TaSkill reference="3"/>
+      </requiredSkillList>
+    </TaTaskType>
+    <TaTaskType id="7">
+      <id>1</id>
+      <code>PK</code>
+      <title>Preventief kort</title>
+      <baseDuration>23</baseDuration>
+      <requiredSkillList id="8">
+        <TaSkill reference="3"/>
+      </requiredSkillList>
+    </TaTaskType>
+    <TaTaskType id="9">
+      <id>2</id>
+      <code>PL</code>
+      <title>Preventief lang</title>
+      <baseDuration>50</baseDuration>
+      <requiredSkillList id="10">
+        <TaSkill reference="3"/>
+      </requiredSkillList>
+    </TaTaskType>
+    <TaTaskType id="11">
+      <id>3</id>
+      <code>ST</code>
+      <title>Storing</title>
+      <baseDuration>15</baseDuration>
+      <requiredSkillList id="12">
+        <TaSkill reference="3"/>
+      </requiredSkillList>
+    </TaTaskType>
+  </taskTypeList>
+  <customerList id="13">
+    <TaCustomer id="14">
+      <id>0</id>
+      <name>Transportbedrijf A. Willems</name>
+    </TaCustomer>
+    <TaCustomer id="15">
+      <id>1</id>
+      <name>Getru Koeltransport</name>
+    </TaCustomer>
+    <TaCustomer id="16">
+      <id>2</id>
+      <name>Bakker Internationaal</name>
+    </TaCustomer>
+    <TaCustomer id="17">
+      <id>3</id>
+      <name>HSF Logistics</name>
+    </TaCustomer>
+    <TaCustomer id="18">
+      <id>4</id>
+      <name>Frigo</name>
+    </TaCustomer>
+    <TaCustomer id="19">
+      <id>5</id>
+      <name>Melis Internationaal</name>
+    </TaCustomer>
+    <TaCustomer id="20">
+      <id>6</id>
+      <name>Kempen Transport</name>
+    </TaCustomer>
+    <TaCustomer id="21">
+      <id>7</id>
+      <name>Sitra</name>
+    </TaCustomer>
+  </customerList>
+  <employeeList id="22">
+    <TaEmployee id="23">
+      <id>0</id>
+      <nextTask id="24">
+        <id>7</id>
+        <taskType reference="9"/>
+        <indexInTaskType>3</indexInTaskType>
+        <customer reference="21"/>
+        <readyTime>0</readyTime>
+        <priority>MINOR</priority>
+        <pinned>true</pinned>
+        <previousTaskOrEmployee class="TaEmployee" reference="23"/>
+        <employee reference="23"/>
+        <startTime>0</startTime>
+      </nextTask>
+      <fullName>Sjaak Zwart</fullName>
+      <skillSet class="linked-hash-set" id="25">
+        <TaSkill reference="3"/>
+      </skillSet>
+      <affinityMap class="linked-hash-map" id="26"/>
+    </TaEmployee>
+    <TaEmployee id="27">
+      <id>1</id>
+      <nextTask id="28">
+        <id>6</id>
+        <taskType reference="9"/>
+        <indexInTaskType>2</indexInTaskType>
+        <customer reference="20"/>
+        <readyTime>0</readyTime>
+        <priority>MINOR</priority>
+        <pinned>true</pinned>
+        <previousTaskOrEmployee class="TaEmployee" reference="27"/>
+        <employee reference="27"/>
+        <startTime>0</startTime>
+      </nextTask>
+      <fullName>Johan de Wit</fullName>
+      <skillSet class="linked-hash-set" id="29">
+        <TaSkill reference="3"/>
+      </skillSet>
+      <affinityMap class="linked-hash-map" id="30"/>
+    </TaEmployee>
+    <TaEmployee id="31">
+      <id>2</id>
+      <nextTask id="32">
+        <id>5</id>
+        <taskType reference="9"/>
+        <indexInTaskType>1</indexInTaskType>
+        <customer reference="17"/>
+        <readyTime>0</readyTime>
+        <priority>MINOR</priority>
+        <pinned>true</pinned>
+        <previousTaskOrEmployee class="TaEmployee" reference="31"/>
+        <employee reference="31"/>
+        <startTime>0</startTime>
+      </nextTask>
+      <fullName>Ruud Geel</fullName>
+      <skillSet class="linked-hash-set" id="33">
+        <TaSkill reference="3"/>
+      </skillSet>
+      <affinityMap class="linked-hash-map" id="34"/>
+    </TaEmployee>
+    <TaEmployee id="35">
+      <id>3</id>
+      <nextTask id="36">
+        <id>1</id>
+        <taskType reference="5"/>
+        <indexInTaskType>2</indexInTaskType>
+        <customer reference="18"/>
+        <readyTime>0</readyTime>
+        <priority>MINOR</priority>
+        <pinned>true</pinned>
+        <previousTaskOrEmployee class="TaEmployee" reference="35"/>
+        <employee reference="35"/>
+        <startTime>0</startTime>
+      </nextTask>
+      <fullName>Ricardo Blauw</fullName>
+      <skillSet class="linked-hash-set" id="37">
+        <TaSkill reference="3"/>
+      </skillSet>
+      <affinityMap class="linked-hash-map" id="38"/>
+    </TaEmployee>
+    <TaEmployee id="39">
+      <id>4</id>
+      <nextTask id="40">
+        <id>0</id>
+        <taskType reference="5"/>
+        <indexInTaskType>1</indexInTaskType>
+        <customer reference="14"/>
+        <readyTime>0</readyTime>
+        <priority>MINOR</priority>
+        <pinned>true</pinned>
+        <previousTaskOrEmployee class="TaEmployee" reference="39"/>
+        <employee reference="39"/>
+        <startTime>0</startTime>
+      </nextTask>
+      <fullName>Jessica Rood</fullName>
+      <skillSet class="linked-hash-set" id="41">
+        <TaSkill reference="3"/>
+      </skillSet>
+      <affinityMap class="linked-hash-map" id="42"/>
+    </TaEmployee>
+    <TaEmployee id="43">
+      <id>5</id>
+      <nextTask id="44">
+        <id>2</id>
+        <nextTask id="45">
+          <id>4</id>
+          <taskType reference="7"/>
+          <indexInTaskType>3</indexInTaskType>
+          <customer reference="19"/>
+          <readyTime>0</readyTime>
+          <priority>MINOR</priority>
+          <pinned>true</pinned>
+          <previousTaskOrEmployee class="TaTask" reference="44"/>
+          <employee reference="43"/>
+          <startTime>92</startTime>
+        </nextTask>
+        <taskType reference="7"/>
+        <indexInTaskType>1</indexInTaskType>
+        <customer reference="15"/>
+        <readyTime>0</readyTime>
+        <priority>MINOR</priority>
+        <pinned>true</pinned>
+        <previousTaskOrEmployee class="TaEmployee" reference="43"/>
+        <employee reference="43"/>
+        <startTime>0</startTime>
+      </nextTask>
+      <fullName>Henk Groen</fullName>
+      <skillSet class="linked-hash-set" id="46">
+        <TaSkill reference="3"/>
+      </skillSet>
+      <affinityMap class="linked-hash-map" id="47"/>
+    </TaEmployee>
+    <TaEmployee id="48">
+      <id>6</id>
+      <nextTask id="49">
+        <id>3</id>
+        <nextTask id="50">
+          <id>8</id>
+          <taskType reference="11"/>
+          <indexInTaskType>1</indexInTaskType>
+          <customer reference="18"/>
+          <readyTime>0</readyTime>
+          <priority>MINOR</priority>
+          <pinned>true</pinned>
+          <previousTaskOrEmployee class="TaTask" reference="49"/>
+          <employee reference="48"/>
+          <startTime>92</startTime>
+        </nextTask>
+        <taskType reference="7"/>
+        <indexInTaskType>2</indexInTaskType>
+        <customer reference="16"/>
+        <readyTime>0</readyTime>
+        <priority>MINOR</priority>
+        <pinned>true</pinned>
+        <previousTaskOrEmployee class="TaEmployee" reference="48"/>
+        <employee reference="48"/>
+        <startTime>0</startTime>
+      </nextTask>
+      <fullName>Alex van Oranje</fullName>
+      <skillSet class="linked-hash-set" id="51">
+        <TaSkill reference="3"/>
+      </skillSet>
+      <affinityMap class="linked-hash-map" id="52"/>
+    </TaEmployee>
+  </employeeList>
+  <taskList id="53">
+    <TaTask reference="40"/>
+    <TaTask reference="36"/>
+    <TaTask reference="44"/>
+    <TaTask reference="49"/>
+    <TaTask reference="45"/>
+    <TaTask reference="32"/>
+    <TaTask reference="28"/>
+    <TaTask reference="24"/>
+    <TaTask reference="50"/>
+    <TaTask id="158">
+      <id>9</id>
+      <taskType reference="11"/>
+      <indexInTaskType>2</indexInTaskType>
+      <customer reference="14"/>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>	
+  </taskList>
+  <score id="54">[0]hard/[0/-205760/0/-1360]soft</score>
+  <frozenCutoff>0</frozenCutoff>
+</TaTaskAssigningSolution>

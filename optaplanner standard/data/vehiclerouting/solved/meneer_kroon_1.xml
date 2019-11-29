@@ -1,0 +1,286 @@
+<VrpVehicleRoutingSolution id="1">
+  <id>0</id>
+  <name>A-n33-k6</name>
+  <distanceType>AIR_DISTANCE</distanceType>
+  <distanceUnitOfMeasurement>distance</distanceUnitOfMeasurement>
+  <locationList id="2">
+    <VrpAirLocation id="3">
+      <id>1</id>
+      <latitude>53.223509</latitude>
+      <longitude>6.57325</longitude>
+    </VrpAirLocation>
+    <VrpAirLocation id="4">
+      <id>2</id>
+      <latitude>52.392334</latitude>
+      <longitude>4.640832</longitude>
+    </VrpAirLocation>
+    <VrpAirLocation id="5">
+      <id>3</id>
+      <latitude>52.515232</latitude>
+      <longitude>6.110433</longitude>
+    </VrpAirLocation>
+    <VrpAirLocation id="6">
+      <id>4</id>
+      <latitude>50.980919</latitude>
+      <longitude>5.822524</longitude>
+    </VrpAirLocation>
+    <VrpAirLocation id="7">
+      <id>5</id>
+      <latitude>51.891525</latitude>
+      <longitude>4.471138</longitude>
+    </VrpAirLocation>
+    <VrpAirLocation id="8">
+      <id>6</id>
+      <latitude>52.159548</latitude>
+      <longitude>5.36512</longitude>
+    </VrpAirLocation>
+    <VrpAirLocation id="9">
+      <id>7</id>
+      <latitude>52.09254</latitude>
+      <longitude>4.315367</longitude>
+    </VrpAirLocation>
+    <VrpAirLocation id="10">
+      <id>8</id>
+      <latitude>52.692342</latitude>
+      <longitude>5.240138</longitude>
+    </VrpAirLocation>
+    <VrpAirLocation id="11">
+      <id>9</id>
+      <latitude>52.262814</latitude>
+      <longitude>4.587871</longitude>
+    </VrpAirLocation>
+    <VrpAirLocation id="12">
+      <id>10</id>
+      <latitude>52.227515</latitude>
+      <longitude>6.139564</longitude>
+    </VrpAirLocation>
+    <VrpAirLocation id="13">
+      <id>11</id>
+      <latitude>51.890675</latitude>
+      <longitude>5.852928</longitude>
+    </VrpAirLocation>
+    <VrpAirLocation id="14">
+      <id>12</id>
+      <latitude>52.115222</latitude>
+      <longitude>5.250945</longitude>
+    </VrpAirLocation>
+    <VrpAirLocation id="15">
+      <id>13</id>
+      <latitude>52.580108</latitude>
+      <longitude>4.720212</longitude>
+    </VrpAirLocation>
+    <VrpAirLocation id="16">
+      <id>14</id>
+      <latitude>52.404927</latitude>
+      <longitude>4.802744</longitude>
+    </VrpAirLocation>
+    <VrpAirLocation id="17">
+      <id>15</id>
+      <latitude>51.601466</latitude>
+      <longitude>4.358117</longitude>
+    </VrpAirLocation>
+    <VrpAirLocation id="18">
+      <id>16</id>
+      <latitude>52.480215</latitude>
+      <longitude>5.496638</longitude>
+    </VrpAirLocation>
+  </locationList>
+  <depotList id="19">
+    <VrpDepot id="20">
+      <id>1</id>
+      <location class="VrpAirLocation" reference="3"/>
+    </VrpDepot>
+    <VrpDepot id="21">
+      <id>2</id>
+      <location class="VrpAirLocation" reference="4"/>
+    </VrpDepot>
+    <VrpDepot id="22">
+      <id>3</id>
+      <location class="VrpAirLocation" reference="5"/>
+    </VrpDepot>
+    <VrpDepot id="23">
+      <id>4</id>
+      <location class="VrpAirLocation" reference="6"/>
+    </VrpDepot>
+    <VrpDepot id="24">
+      <id>5</id>
+      <location class="VrpAirLocation" reference="7"/>
+    </VrpDepot>
+    <VrpDepot id="25">
+      <id>6</id>
+      <location class="VrpAirLocation" reference="8"/>
+    </VrpDepot>
+    <VrpDepot id="26">
+      <id>7</id>
+      <location class="VrpAirLocation" reference="9"/>
+    </VrpDepot>
+  </depotList>
+  <vehicleList id="27">
+    <VrpVehicle id="28">
+      <id>0</id>
+      <capacity>240</capacity>
+      <depot reference="20"/>
+    </VrpVehicle>
+    <VrpVehicle id="29">
+      <id>1</id>
+      <capacity>240</capacity>
+      <depot reference="21"/>
+      <nextCustomer id="30">
+        <id>12</id>
+        <location class="VrpAirLocation" reference="15"/>
+        <demand>120</demand>
+        <previousStandstill class="VrpVehicle" reference="29"/>
+        <nextCustomer id="31">
+          <id>13</id>
+          <location class="VrpAirLocation" reference="15"/>
+          <demand>0</demand>
+          <previousStandstill class="VrpCustomer" reference="30"/>
+          <nextCustomer id="32">
+            <id>3</id>
+            <location class="VrpAirLocation" reference="10"/>
+            <demand>0</demand>
+            <previousStandstill class="VrpCustomer" reference="31"/>
+            <nextCustomer id="33">
+              <id>2</id>
+              <location class="VrpAirLocation" reference="10"/>
+              <demand>120</demand>
+              <previousStandstill class="VrpCustomer" reference="32"/>
+              <vehicle reference="29"/>
+            </nextCustomer>
+            <vehicle reference="29"/>
+          </nextCustomer>
+          <vehicle reference="29"/>
+        </nextCustomer>
+        <vehicle reference="29"/>
+      </nextCustomer>
+    </VrpVehicle>
+    <VrpVehicle id="34">
+      <id>2</id>
+      <capacity>240</capacity>
+      <depot reference="22"/>
+      <nextCustomer id="35">
+        <id>9</id>
+        <location class="VrpAirLocation" reference="13"/>
+        <demand>0</demand>
+        <previousStandstill class="VrpVehicle" reference="34"/>
+        <nextCustomer id="36">
+          <id>8</id>
+          <location class="VrpAirLocation" reference="13"/>
+          <demand>240</demand>
+          <previousStandstill class="VrpCustomer" reference="35"/>
+          <vehicle reference="34"/>
+        </nextCustomer>
+        <vehicle reference="34"/>
+      </nextCustomer>
+    </VrpVehicle>
+    <VrpVehicle id="37">
+      <id>3</id>
+      <capacity>240</capacity>
+      <depot reference="23"/>
+    </VrpVehicle>
+    <VrpVehicle id="38">
+      <id>4</id>
+      <capacity>240</capacity>
+      <depot reference="24"/>
+      <nextCustomer id="39">
+        <id>4</id>
+        <location class="VrpAirLocation" reference="11"/>
+        <demand>90</demand>
+        <previousStandstill class="VrpVehicle" reference="38"/>
+        <nextCustomer id="40">
+          <id>5</id>
+          <location class="VrpAirLocation" reference="11"/>
+          <demand>0</demand>
+          <previousStandstill class="VrpCustomer" reference="39"/>
+          <nextCustomer id="41">
+            <id>17</id>
+            <location class="VrpAirLocation" reference="17"/>
+            <demand>0</demand>
+            <previousStandstill class="VrpCustomer" reference="40"/>
+            <nextCustomer id="42">
+              <id>16</id>
+              <location class="VrpAirLocation" reference="17"/>
+              <demand>150</demand>
+              <previousStandstill class="VrpCustomer" reference="41"/>
+              <vehicle reference="38"/>
+            </nextCustomer>
+            <vehicle reference="38"/>
+          </nextCustomer>
+          <vehicle reference="38"/>
+        </nextCustomer>
+        <vehicle reference="38"/>
+      </nextCustomer>
+    </VrpVehicle>
+    <VrpVehicle id="43">
+      <id>5</id>
+      <capacity>240</capacity>
+      <depot reference="25"/>
+      <nextCustomer id="44">
+        <id>7</id>
+        <location class="VrpAirLocation" reference="12"/>
+        <demand>0</demand>
+        <previousStandstill class="VrpVehicle" reference="43"/>
+        <nextCustomer id="45">
+          <id>6</id>
+          <location class="VrpAirLocation" reference="12"/>
+          <demand>120</demand>
+          <previousStandstill class="VrpCustomer" reference="44"/>
+          <nextCustomer id="46">
+            <id>10</id>
+            <location class="VrpAirLocation" reference="14"/>
+            <demand>90</demand>
+            <previousStandstill class="VrpCustomer" reference="45"/>
+            <nextCustomer id="47">
+              <id>11</id>
+              <location class="VrpAirLocation" reference="14"/>
+              <demand>0</demand>
+              <previousStandstill class="VrpCustomer" reference="46"/>
+              <vehicle reference="43"/>
+            </nextCustomer>
+            <vehicle reference="43"/>
+          </nextCustomer>
+          <vehicle reference="43"/>
+        </nextCustomer>
+        <vehicle reference="43"/>
+      </nextCustomer>
+    </VrpVehicle>
+    <VrpVehicle id="48">
+      <id>6</id>
+      <capacity>240</capacity>
+      <depot reference="26"/>
+      <nextCustomer id="49">
+        <id>14</id>
+        <location class="VrpAirLocation" reference="16"/>
+        <demand>180</demand>
+        <previousStandstill class="VrpVehicle" reference="48"/>
+        <nextCustomer id="50">
+          <id>15</id>
+          <location class="VrpAirLocation" reference="16"/>
+          <demand>0</demand>
+          <previousStandstill class="VrpCustomer" reference="49"/>
+          <vehicle reference="48"/>
+        </nextCustomer>
+        <vehicle reference="48"/>
+      </nextCustomer>
+    </VrpVehicle>
+  </vehicleList>
+  <customerList id="51">
+    <VrpCustomer reference="33"/>
+    <VrpCustomer reference="32"/>
+    <VrpCustomer reference="39"/>
+    <VrpCustomer reference="40"/>
+    <VrpCustomer reference="45"/>
+    <VrpCustomer reference="44"/>
+    <VrpCustomer reference="36"/>
+    <VrpCustomer reference="35"/>
+    <VrpCustomer reference="46"/>
+    <VrpCustomer reference="47"/>
+    <VrpCustomer reference="30"/>
+    <VrpCustomer reference="31"/>
+    <VrpCustomer reference="49"/>
+    <VrpCustomer reference="50"/>
+    <VrpCustomer reference="42"/>
+    <VrpCustomer reference="41"/>
+  </customerList>
+  <score id="52">0hard/-7111soft</score>
+</VrpVehicleRoutingSolution>

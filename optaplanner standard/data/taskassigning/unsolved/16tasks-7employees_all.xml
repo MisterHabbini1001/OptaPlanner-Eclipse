@@ -1,0 +1,293 @@
+<TaTaskAssigningSolution id="1">
+  <id>0</id>
+  <skillList id="2">
+    <TaSkill id="3">
+      <id>0</id>
+      <name>Problem Solving</name>
+    </TaSkill>
+  </skillList>
+  <taskTypeList id="9">
+    <TaTaskType id="10">
+      <id>0</id>
+      <code>JI</code>
+      <title>Jaarlijkse inspectie</title>
+      <baseDuration>30</baseDuration>
+      <requiredSkillList id="11">
+        <TaSkill reference="3"/>
+      </requiredSkillList>
+    </TaTaskType>
+    <TaTaskType id="12">
+      <id>1</id>
+      <code>PK</code>
+      <title>Preventief kort</title>
+      <baseDuration>23</baseDuration>
+      <requiredSkillList id="13">
+        <TaSkill reference="3"/>
+      </requiredSkillList>
+    </TaTaskType>
+    <TaTaskType id="14">
+      <id>2</id>
+      <code>PL</code>
+      <title>Preventief lang</title>
+      <baseDuration>50</baseDuration>
+      <requiredSkillList id="15">
+        <TaSkill reference="3"/>
+      </requiredSkillList>
+    </TaTaskType>
+    <TaTaskType id="16">
+      <id>3</id>
+      <code>ST</code>
+      <title>Storing</title>
+      <baseDuration>15</baseDuration>
+      <requiredSkillList id="17">
+        <TaSkill reference="3"/>
+      </requiredSkillList>
+    </TaTaskType>
+  </taskTypeList>
+  <customerList id="18">
+    <TaCustomer id="19">
+      <id>0</id>
+      <name>Transportbedrijf A. Willems</name>
+    </TaCustomer>
+    <TaCustomer id="20">
+      <id>1</id>
+      <name>Getru Koeltransport</name>
+    </TaCustomer>
+    <TaCustomer id="21">
+      <id>2</id>
+      <name>Bakker Internationaal</name>
+    </TaCustomer>
+    <TaCustomer id="22">
+      <id>3</id>
+      <name>HSF Logistics</name>
+    </TaCustomer>
+    <TaCustomer id="123">
+      <id>4</id>
+      <name>Frigo</name>
+    </TaCustomer>
+    <TaCustomer id="124">
+      <id>5</id>
+      <name>Melis Internationaal</name>
+    </TaCustomer>
+    <TaCustomer id="125">
+      <id>6</id>
+      <name>Kempen Transport</name>
+    </TaCustomer>
+    <TaCustomer id="126">
+      <id>7</id>
+      <name>Sitra</name>
+    </TaCustomer>
+  </customerList>
+  <employeeList id="23">
+    <TaEmployee id="24">
+      <id>0</id>
+      <fullName>Sjaak Zwart</fullName>
+      <skillSet class="linked-hash-set" id="25">
+        <TaSkill reference="3"/>
+      </skillSet>
+      <affinityMap class="linked-hash-map" id="26">
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="27">
+      <id>1</id>
+      <fullName>Johan de Wit</fullName>
+      <skillSet class="linked-hash-set" id="28">
+        <TaSkill reference="3"/>
+      </skillSet>
+      <affinityMap class="linked-hash-map" id="29">
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="30">
+      <id>2</id>
+      <fullName>Ruud Geel</fullName>
+      <skillSet class="linked-hash-set" id="31">
+        <TaSkill reference="3"/>
+      </skillSet>
+      <affinityMap class="linked-hash-map" id="32">
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="33">
+      <id>3</id>
+      <fullName>Ricardo Blauw</fullName>
+      <skillSet class="linked-hash-set" id="34">
+        <TaSkill reference="3"/>
+      </skillSet>
+      <affinityMap class="linked-hash-map" id="35">
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="36">
+      <id>4</id>
+      <fullName>Jessica Rood</fullName>
+      <skillSet class="linked-hash-set" id="37">
+        <TaSkill reference="3"/>
+      </skillSet>
+      <affinityMap class="linked-hash-map" id="38">
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="39">
+      <id>5</id>
+      <fullName>Henk Groen</fullName>
+      <skillSet class="linked-hash-set" id="40">
+        <TaSkill reference="3"/>
+      </skillSet>
+      <affinityMap class="linked-hash-map" id="41">
+       </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="42">
+      <id>6</id>
+      <fullName>Alex van Oranje</fullName>
+      <skillSet class="linked-hash-set" id="43">
+        <TaSkill reference="3"/>
+      </skillSet>
+      <affinityMap class="linked-hash-map" id="44">
+      </affinityMap>
+    </TaEmployee>	  
+  </employeeList>
+  <taskList id="48">
+    <TaTask id="49">
+      <id>0</id>
+      <taskType reference="10"/>
+      <indexInTaskType>1</indexInTaskType>
+      <customer reference="19"/>
+      <readyTime>0</readyTime>
+      <priority>MINOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="50">
+      <id>1</id>
+      <taskType reference="10"/>
+      <indexInTaskType>2</indexInTaskType>
+      <customer reference="123"/>
+      <readyTime>0</readyTime>
+      <priority>MINOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="51">
+      <id>2</id>
+      <taskType reference="12"/>
+      <indexInTaskType>1</indexInTaskType>
+      <customer reference="20"/>
+      <readyTime>0</readyTime>
+      <priority>MINOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="52">
+      <id>3</id>
+      <taskType reference="12"/>
+      <indexInTaskType>2</indexInTaskType>
+      <customer reference="21"/>
+      <readyTime>0</readyTime>
+      <priority>MINOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="53">
+      <id>4</id>
+      <taskType reference="12"/>
+      <indexInTaskType>3</indexInTaskType>
+      <customer reference="124"/>
+      <readyTime>0</readyTime>
+      <priority>MINOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="54">
+      <id>5</id>
+      <taskType reference="14"/>
+      <indexInTaskType>1</indexInTaskType>
+      <customer reference="22"/>
+      <readyTime>0</readyTime>
+      <priority>MINOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="55">
+      <id>6</id>
+      <taskType reference="14"/>
+      <indexInTaskType>2</indexInTaskType>
+      <customer reference="125"/>
+      <readyTime>0</readyTime>
+      <priority>MINOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="56">
+      <id>7</id>
+      <taskType reference="14"/>
+      <indexInTaskType>3</indexInTaskType>
+      <customer reference="126"/>
+      <readyTime>0</readyTime>
+      <priority>MINOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="57">
+      <id>8</id>
+      <taskType reference="16"/>
+      <indexInTaskType>1</indexInTaskType>
+      <customer reference="123"/>
+      <readyTime>0</readyTime>
+      <priority>MINOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="58">
+      <id>9</id>
+      <taskType reference="16"/>
+      <indexInTaskType>2</indexInTaskType>
+      <customer reference="19"/>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="59">
+      <id>10</id>
+      <taskType reference="16"/>
+      <indexInTaskType>3</indexInTaskType>
+      <customer reference="22"/>
+      <readyTime>0</readyTime>
+      <priority>MINOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="60">
+      <id>11</id>
+      <taskType reference="16"/>
+      <indexInTaskType>4</indexInTaskType>
+      <customer reference="20"/>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="61">
+      <id>12</id>
+      <taskType reference="16"/>
+      <indexInTaskType>5</indexInTaskType>
+      <customer reference="124"/>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="62">
+      <id>13</id>
+      <taskType reference="16"/>
+      <indexInTaskType>6</indexInTaskType>
+      <customer reference="123"/>
+      <readyTime>0</readyTime>
+      <priority>MINOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="63">
+      <id>14</id>
+      <taskType reference="16"/>
+      <indexInTaskType>7</indexInTaskType>
+      <customer reference="124"/>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="64">
+      <id>15</id>
+      <taskType reference="16"/>
+      <indexInTaskType>8</indexInTaskType>
+      <customer reference="125"/>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+  </taskList>
+  <frozenCutoff>0</frozenCutoff>
+</TaTaskAssigningSolution>
