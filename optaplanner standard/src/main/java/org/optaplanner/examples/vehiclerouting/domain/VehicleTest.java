@@ -1,0 +1,73 @@
+package org.optaplanner.examples.vehiclerouting.domain;
+import static org.junit.Assert.*;
+import org.junit.*;
+
+public class VehicleTest 
+{
+    /*
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+    */
+	
+	@Test
+	public void testgetCapacity()
+	{
+		assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testsetCapacity()
+	{
+		assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetDepot()
+	{
+		assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testsetDepot()
+	{
+		assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetNextCustomer()
+	{
+		assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testsetNextCustomer()
+	{
+		assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetVehicle()
+	{
+		assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetLocation()
+	{
+		assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetDistanceTo()
+	{
+		assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testtoString()
+	{
+		assertEquals(2, 2); // For now. Remove later
+	}
+}

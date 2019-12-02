@@ -1,0 +1,48 @@
+package org.optaplanner.examples.vehiclerouting.domain.location.segmented;
+import static org.junit.Assert.*;
+import org.junit.*;
+
+public class HubSegmentLocationTest 
+{
+    /*
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+    */
+	
+	public void testgetNearbyTravelDistanceMap()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testsetNearbyTravelDistanceMap()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testgetHubTravelDistanceMap()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testsetHubTravelDistanceMap()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testgetDistanceTo()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testgetDistanceDouble()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testgetShortestDistanceDoubleThroughOtherHub
+	{
+		assertEquals(2, 2);
+	}
+}

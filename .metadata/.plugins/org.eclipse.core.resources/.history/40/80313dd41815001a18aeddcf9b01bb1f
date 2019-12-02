@@ -1,0 +1,117 @@
+package org.optaplanner.examples.taskassigning.domain;
+import static org.junit.Assert.*;
+
+import java.util.Map;
+import java.util.Set;
+
+import org.junit.*;  
+
+public class EmployeeTest 
+{
+	/*
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+    */
+	
+	public void testgetFullName()
+	{
+		
+	}
+	
+	public void testsetFullName()
+	{
+		
+	}
+	
+	public void testsetLatitude()
+	{
+		
+	}
+	
+	public void testsetLongitude()
+	{
+		
+	}
+	
+	public void testgetSkillSet()
+	{
+		
+	}
+	
+	public void testsetSkillSet()
+	{
+		
+	}
+	
+	public void testgetCapacityet()
+	{
+		
+	}
+	
+	public void testsetCapacitySet()
+	{
+		
+	}
+	
+	public void testgetAffinityMap()
+	{
+		
+	}
+	
+	public void testsetAffinityMap()
+	{
+		
+	}
+	
+	public void testgetEmployee()
+	{
+		
+	}
+	
+	public void testgetLatitude()
+	{
+		
+	}
+	
+	public void testgetLongitude()
+	{
+		
+	}
+	
+	public void testgetEndTime()
+	{
+		
+	}
+	
+	public void testgetAffinity()
+	{
+		
+	}
+	
+	public void testgetLabel()
+	{
+		
+	}
+	
+	public void testtoString()
+	{
+		
+	}
+	
+	public void testgetCapacityEndTime()
+	{
+		
+	}
+	
+	public void testgetWorkStart()
+	{
+		
+	}
+	
+	public void testgetStandardStart()
+	{
+		
+	}
+}

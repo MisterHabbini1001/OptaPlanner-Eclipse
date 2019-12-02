@@ -1,0 +1,15 @@
+package org.optaplanner.examples.vehiclerouting.domain;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class DepotTest 
+{
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

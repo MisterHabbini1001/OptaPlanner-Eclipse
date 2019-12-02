@@ -1,0 +1,28 @@
+package org.optaplanner.examples.taskassigning.domain.location;
+import static org.junit.Assert.*;
+import org.junit.*;
+
+public class RoadLocationTest 
+{
+    /*
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+    */
+	
+	public void testgetTravelDistanceMap()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testsetTravelDistanceMap()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testgetDistanceTo()
+	{
+		assertEquals(2, 2);
+	}
+}

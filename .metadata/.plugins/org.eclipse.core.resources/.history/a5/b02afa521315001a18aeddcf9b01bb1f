@@ -1,0 +1,14 @@
+package org.optaplanner.examples.vehiclerouting.domain.location.segmented;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class HubSegmentLocationTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

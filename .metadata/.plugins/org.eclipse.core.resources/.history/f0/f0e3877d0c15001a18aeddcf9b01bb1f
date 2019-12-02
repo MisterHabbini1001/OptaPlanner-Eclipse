@@ -1,0 +1,100 @@
+package org.optaplanner.examples.taskassigning.domain;
+import static org.junit.Assert.*;
+import org.junit.*;  
+
+public class TaskTest 
+{
+	/*
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+    */
+    
+	public void testgetTaskType()
+	{
+		
+	}
+	
+	public void testsetTaskType() 
+	{
+		
+	}
+	
+	public void testgetCode()
+	{
+		
+	}
+	
+	public void testsetCode(String code)
+	{
+		
+	}
+	
+	public void testgetTitle()
+	{
+		
+	}
+	
+	public void testsetTitle()
+	{
+		
+	}
+	
+	public void testsetDuration()
+	{
+		
+	}
+	
+	public void testgetResponsTime()
+	{
+		
+	}
+	
+	public void testsetResponsTime()
+	{
+		
+	}
+	
+	public void testsetLatitude()
+	{
+		
+	}
+	
+	public void testsetLongitude()
+	{
+		
+	}
+	
+	public void testgetIndexInTaskType()
+	{
+		
+	}
+	
+	public void testsetIndexInTaskType()
+	public void testgetCustomer()
+	public void testsetCustomer()
+	public void testgetReadyTime()
+	public void testsetReadyTime()
+	public void testgetPriority()
+	public void testsetPriority()
+	public void testisPinned()
+	public void testsetPinned()
+	public void testgetPreviousTaskOrEmployee()
+	public void testsetPreviousTaskOrEmployee()
+	public void testgetEmployee()
+	public void testsetEmployee()
+	public void testgetStartTime()
+	public void testsetStartTime()
+	public void testgetMissingSkillCount()
+	public void testgetDuration()
+	public void testgetAffinity()
+	public void testgetLatitude()
+	public void testgetLongitude()
+	public void testgetEndTime()
+	public void testgetLabel()
+	public void testgetToolText()
+	public void testtoString()
+	public void testgetTravelHomeDuration()
+	public void testgetAirTimeTo()
+}

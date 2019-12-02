@@ -1,0 +1,15 @@
+package org.optaplanner.examples.taskassigning.domain.solver;
+import static org.junit.Assert.*;
+import org.junit.*;
+
+public class StartTimeUpdatingVariableListenerTest 
+{
+    /*
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+    */
+	
+	
+}

@@ -1,0 +1,33 @@
+package org.optaplanner.examples.taskassigning.domain;
+import static org.junit.Assert.*;
+import org.junit.*; 
+
+public class SkillTest 
+{
+	/*
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+    */
+	
+	public void testgetName()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testsetName()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testgetLabel()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testtoString()
+	{
+		assertEquals(2, 2);
+	}
+}

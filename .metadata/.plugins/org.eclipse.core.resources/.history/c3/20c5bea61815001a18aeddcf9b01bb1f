@@ -1,0 +1,22 @@
+package org.optaplanner.examples.taskassigning.domain;
+import static org.junit.Assert.*;
+import org.junit.*;  
+
+public class AffinityTest 
+{
+	/*
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+    */
+	public void testgetDurationMultiplier()
+	{
+		
+	}
+	
+	public void testgetLabel()
+	{
+		
+	}
+}

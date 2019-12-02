@@ -1,0 +1,18 @@
+package org.optaplanner.examples.taskassigning.domain.solver;
+import static org.junit.Assert.*;
+import org.junit.*;
+
+public class TaskDifficultyComparatorTest 
+{
+	/*
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+    */
+	
+	public void testcompare()
+	{
+		
+	}
+}

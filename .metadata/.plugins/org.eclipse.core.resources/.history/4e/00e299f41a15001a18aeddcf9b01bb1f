@@ -1,0 +1,117 @@
+package org.optaplanner.examples.taskassigning.domain;
+import static org.junit.Assert.*;
+
+import java.util.Map;
+import java.util.Set;
+
+import org.junit.*;  
+
+public class EmployeeTest 
+{
+	/*
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+    */
+	
+	public void testgetFullName()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testsetFullName()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testsetLatitude()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testsetLongitude()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testgetSkillSet()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testsetSkillSet()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testgetCapacityet()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testsetCapacitySet()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testgetAffinityMap()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testsetAffinityMap()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testgetEmployee()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testgetLatitude()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testgetLongitude()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testgetEndTime()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testgetAffinity()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testgetLabel()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testtoString()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testgetCapacityEndTime()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testgetWorkStart()
+	{
+		assertEquals(2, 2);
+	}
+	
+	public void testgetStandardStart()
+	{
+		assertEquals(2, 2);
+	}
+}

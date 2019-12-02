@@ -1,0 +1,63 @@
+package org.optaplanner.examples.vehiclerouting.domain.location;
+import static org.junit.Assert.*;
+import org.junit.*;
+
+public class LocationTest 
+{
+    /*
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+    */
+	
+	public void testgetName()
+	{
+		
+	}
+	
+	public void testsetName()
+	{
+		
+	}
+	
+	public void testgetLatitude()
+	{
+		
+	}
+	
+	public void testsetLatitude()
+	{
+		
+	}
+	
+	public void testgetLongitude()
+	{
+		
+	}
+	
+	public void testsetLongitude()
+	{
+		
+	}
+	
+	public void testgetDistanceTo()
+	{
+		
+	}
+	
+	public void testgetAirDistanceDoubleTo()
+	{
+		
+	}
+	
+	public void testgetAngle()
+	{
+		
+	}
+	
+	public void testtoString()
+	{
+		
+	}
+}

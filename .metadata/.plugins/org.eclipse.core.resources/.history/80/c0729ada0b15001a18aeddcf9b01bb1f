@@ -1,0 +1,52 @@
+package org.optaplanner.examples.taskassigning.domain;
+import static org.junit.Assert.*;
+import org.junit.*;  
+
+public class TaskTest 
+{
+	/*
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+    */
+    
+	public void testgetTaskType()
+	public void testsetTaskType()
+	public void testgetCode()
+	public void testsetCode(String code)
+	public void testgetTitle()
+	public void testsetTitle()
+	public void testsetDuration()
+	public void testgetResponsTime()
+	public void testsetResponsTime()
+	public void testsetLatitude()
+	public void testsetLongitude()
+	public void testgetIndexInTaskType()
+	public void testsetIndexInTaskType()
+	public void testgetCustomer()
+	public void testsetCustomer()
+	getReadyTime()
+	setReadyTime()
+	getPriority()
+	setPriority()
+	isPinned()
+	setPinned()
+	getPreviousTaskOrEmployee()
+	setPreviousTaskOrEmployee()
+	getEmployee()
+	setEmployee()
+	getStartTime()
+	setStartTime()
+	getMissingSkillCount()
+	getDuration()
+	getAffinity()
+	getLatitude()
+	getLongitude()
+	getEndTime()
+	getLabel()
+	getToolText()
+	toString()
+	getTravelHomeDuration()
+	getAirTimeTo()
+}

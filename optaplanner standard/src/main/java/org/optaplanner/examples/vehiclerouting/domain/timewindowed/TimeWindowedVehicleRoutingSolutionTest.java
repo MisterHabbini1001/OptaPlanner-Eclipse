@@ -1,0 +1,16 @@
+package org.optaplanner.examples.vehiclerouting.domain.timewindowed;
+import static org.junit.Assert.*;
+import org.junit.*; 
+
+public class TimeWindowedVehicleRoutingSolutionTest 
+{
+
+	/*
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+	*/
+
+	
+}
