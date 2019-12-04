@@ -1,0 +1,87 @@
+package org.optaplanner.examples.vehiclerouting.domain.timewindowed.solver;
+import static org.junit.Assert.*;
+import org.junit.*;
+import org.optaplanner.core.impl.score.director.ScoreDirector;
+import org.optaplanner.examples.vehiclerouting.domain.Customer; 
+
+public class ArrivalTimeUpdatingVariableListenerTest 
+{
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		ArrivalTimeUpdatingVariableListener atuvl = new ArrivalTimeUpdatingVariableListener();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		ArrivalTimeUpdatingVariableListener atuvl = new ArrivalTimeUpdatingVariableListener();
+		atuvl = null;
+	}
+
+	@Before
+	public void setUp() throws Exception
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		ArrivalTimeUpdatingVariableListener atuvl = new ArrivalTimeUpdatingVariableListener();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		ArrivalTimeUpdatingVariableListener atuvl = new ArrivalTimeUpdatingVariableListener();
+		atuvl = null;
+	}
+	
+	@Test
+	public void testbeforeEntityAdded(ScoreDirector scoreDirector, Customer customer)
+	{
+		//assertEquals(2, 2);  // For now. Remove later
+		// Do nothing
+	}
+	
+	@Test
+	public void testafterEntityAdded(ScoreDirector scoreDirector, Customer customer)
+	{
+		//assertEquals(2, 2);  // For now. Remove later
+	}
+	
+	@Test
+	public void testbeforeVariableChanged()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testafterVariableChanged()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testbeforeEntityRemoved()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testafterEntityRemoved()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testupdateArrivalTime()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testcalculateArrivalTime()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+}

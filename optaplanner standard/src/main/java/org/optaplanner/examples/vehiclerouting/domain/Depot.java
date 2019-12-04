@@ -27,7 +27,6 @@ import org.optaplanner.examples.vehiclerouting.domain.timewindowed.TimeWindowedD
 
 public class Depot extends AbstractPersistable 
 {
-
     protected Location location;
 
     public Location getLocation() 
@@ -63,5 +62,4 @@ public class Depot extends AbstractPersistable
         
         return location.getName();
     }
-
 }

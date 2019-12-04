@@ -110,9 +110,11 @@ public abstract class Location extends AbstractPersistable
     @Override
     public String toString() 
     {
-        if (name == null) {
+        if (name == null) 
+        {
             return super.toString();
         }
+        
         return name;
     }
 }

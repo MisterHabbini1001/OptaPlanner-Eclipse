@@ -51,7 +51,8 @@ public class RoadLocation extends Location
     @Override
     public long getDistanceTo(Location location) 
     {
-        if (this == location) {
+        if (this == location) 
+        {
             return 0L;
         }
         double distance = travelDistanceMap.get((RoadLocation) location);

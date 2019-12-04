@@ -27,7 +27,6 @@ import org.optaplanner.examples.vehiclerouting.domain.timewindowed.TimeWindowedD
 // TODO When this class is added only for TimeWindowedCustomer, use TimeWindowedCustomer instead of Customer
 public class ArrivalTimeUpdatingVariableListener implements VariableListener<Customer> 
 {
-
     @Override
     public void beforeEntityAdded(ScoreDirector scoreDirector, Customer customer) 
     {

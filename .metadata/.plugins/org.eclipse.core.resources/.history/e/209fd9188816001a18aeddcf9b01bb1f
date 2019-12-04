@@ -1,0 +1,135 @@
+package org.optaplanner.examples.vehiclerouting.domain.timewindowed;
+import static org.junit.Assert.*;
+import org.junit.*; 
+
+public class TimeWindowedCustomerTest 
+{
+    // Times are multiplied by 1000 to avoid floating point arithmetic rounding errors
+    private long readyTime;
+    private long dueTime;
+    private long serviceDuration;
+
+    // Shadow variable
+    private Long arrivalTime;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		TimeWindowedCustomer twc = new TimeWindowedCustomer();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		TimeWindowedCustomer twc = new TimeWindowedCustomer();
+		twc = null;
+	}
+
+	@Before
+	public void setUp() throws Exception
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		TimeWindowedCustomer twc = new TimeWindowedCustomer();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		TimeWindowedCustomer twc = new TimeWindowedCustomer();
+		twc = null;
+	}
+	
+	@Test
+	public long testgetReadyTime()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		return readyTime;
+	}
+	
+	@Test
+	public void testsetReadyTime(long readyTime)
+    {
+		//assertEquals(2, 2); // For now. Remove later
+		this.readyTime = readyTime;
+	}
+	
+	@Test
+	public long testgetDueTime()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		return dueTime;
+	}
+	
+	@Test
+	public void testsetDueTime(long dueTime)
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		this.dueTime = dueTime;
+	}
+	
+	@Test
+	public long testgetServiceDuration()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		return serviceDuration;
+	}
+	
+	@Test
+	public void testsetServiceDuration(long serviceDuration)
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		this.serviceDuration = serviceDuration;
+	}
+	
+	@Test
+	public Long testgetArrivalTime()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		return arrivalTime;
+	}
+	
+	@Test
+	public void testsetArrivalTime(Long arrivalTime)
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		this.arrivalTime = arrivalTime;
+	}
+	
+	@Test
+	public Long testgetDepartureTime()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+        if (arrivalTime == null) 
+        {
+            return null;
+        }
+        return Math.max(arrivalTime, readyTime) + serviceDuration;
+	}
+	
+	@Test
+	public void testisArrivalBeforeReadyTime()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testisArrivalAfterDueTime()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetNextCustomer()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetTimeWindowGapTo()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+}

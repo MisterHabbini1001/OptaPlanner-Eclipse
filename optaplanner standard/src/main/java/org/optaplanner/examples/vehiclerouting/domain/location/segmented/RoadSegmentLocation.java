@@ -29,7 +29,6 @@ import org.optaplanner.examples.vehiclerouting.domain.location.RoadLocation;
 @XStreamAlias("VrpRoadSegmentLocation")
 public class RoadSegmentLocation extends Location 
 {
-
     // Prefer Map over array or List because customers might be added and removed in real-time planning.
     protected Map<RoadSegmentLocation, Double> nearbyTravelDistanceMap;
     protected Map<HubSegmentLocation, Double> hubTravelDistanceMap;

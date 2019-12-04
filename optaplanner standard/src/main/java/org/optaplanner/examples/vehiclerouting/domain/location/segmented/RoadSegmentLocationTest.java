@@ -1,72 +1,107 @@
 package org.optaplanner.examples.vehiclerouting.domain.location.segmented;
 import static org.junit.Assert.*;
+import java.util.Map;
 import org.junit.*;
+import org.optaplanner.examples.vehiclerouting.domain.location.Location;
 
 public class RoadSegmentLocationTest 
 {
+    protected Map<RoadSegmentLocation, Double> nearbyTravelDistanceMap;
+    protected Map<HubSegmentLocation, Double> hubTravelDistanceMap;
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception 
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		RoadSegmentLocation rsl = new RoadSegmentLocation();
 	}
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		RoadSegmentLocation rsl = new RoadSegmentLocation();
+		rsl = null;
 	}
 
 	@Before
 	public void setUp() throws Exception
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		RoadSegmentLocation rsl = new RoadSegmentLocation();
 	}
 
 	@After
 	public void tearDown() throws Exception 
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		RoadSegmentLocation rsl = new RoadSegmentLocation();
+		rsl = null;
 	}
 	
 	@Test
-	public void testgetNearbyTravelDistanceMap()
+	public Map<RoadSegmentLocation, Double> testgetNearbyTravelDistanceMap()
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		return nearbyTravelDistanceMap;
 	}
 	
 	@Test
-	public void testsetNearbyTravelDistanceMap()
+	public void testsetNearbyTravelDistanceMap(Map<RoadSegmentLocation, Double> nearbyTravelDistanceMap)
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		this.nearbyTravelDistanceMap = nearbyTravelDistanceMap;
 	}
 	
 	@Test
-	public void testgetHubTravelDistanceMap()
+	public Map<HubSegmentLocation, Double> testgetHubTravelDistanceMap()
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		return hubTravelDistanceMap;
 	}
 	
 	@Test
-	public void testsetHubTravelDistanceMap()
+	public void testsetHubTravelDistanceMap(Map<HubSegmentLocation, Double> hubTravelDistanceMap)
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		this.hubTravelDistanceMap = hubTravelDistanceMap
 	}
 	
 	@Test
-	public void testgetDistanceTo()
+	public long testgetDistanceTo(Location location)
 	{
 		//assertEquals(2, 2); // For now. Remove later
+        Double distance = testgetDistanceDouble((RoadSegmentLocation) location);
+        // Multiplied by 1000 to avoid floating point arithmetic rounding errors
+        return (long) (distance * 1000.0 + 0.5);
 	}
 	
 	@Test
-	public void testgetDistanceDouble()
+	public Double testgetDistanceDouble(RoadSegmentLocation location)
 	{
 		//assertEquals(2, 2); // For now. Remove later
+        Double distance = nearbyTravelDistanceMap.get((RoadSegmentLocation) location);
+        if (distance == null) 
+        {
+            // location isn't nearby
+            distance = testgetShortestDistanceDoubleThroughHubs((RoadSegmentLocation) location);
+        }
+        return distance;
 	}
 	
 	@Test
-	public void testgetShortestDistanceDoubleThroughHubs()
+	public double testgetShortestDistanceDoubleThroughHubs(RoadSegmentLocation location)
 	{
 		//assertEquals(2, 2); // For now. Remove later
+        double shortestDistance = Double.MAX_VALUE;
+        for (Map.Entry<HubSegmentLocation, Double> entry : hubTravelDistanceMap.entrySet()) {
+            double distance = entry.getValue();
+            distance += entry.getKey().getDistanceDouble(location);
+            if (distance < shortestDistance) 
+            {
+                shortestDistance = distance;
+            }
+        }
+        return shortestDistance;
 	}
 }

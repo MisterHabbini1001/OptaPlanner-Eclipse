@@ -1,0 +1,42 @@
+package org.optaplanner.examples.vehiclerouting.domain.solver.nearby;
+import static org.junit.Assert.*;
+import org.junit.*;
+
+public class CustomerNearbyDistanceMeterTest 
+{
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		CustomerNearbyDistanceMeter cndm = new CustomerNearbyDistanceMeter();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		CustomerNearbyDistanceMeter cndm = new CustomerNearbyDistanceMeter();
+		cndm = null;
+	}
+
+	@Before
+	public void setUp() throws Exception
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		CustomerNearbyDistanceMeter cndm = new CustomerNearbyDistanceMeter();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		CustomerNearbyDistanceMeter cndm = new CustomerNearbyDistanceMeter();
+		cndm = null;
+	}
+	
+	@Test
+	public void testgetNearbyDistance()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+}

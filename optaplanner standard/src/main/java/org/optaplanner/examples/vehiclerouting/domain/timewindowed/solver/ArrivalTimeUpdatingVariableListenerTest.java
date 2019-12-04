@@ -1,6 +1,15 @@
 package org.optaplanner.examples.vehiclerouting.domain.timewindowed.solver;
 import static org.junit.Assert.*;
-import org.junit.*; 
+
+import java.util.Objects;
+
+import org.junit.*;
+import org.optaplanner.core.impl.score.director.ScoreDirector;
+import org.optaplanner.examples.vehiclerouting.domain.Customer;
+import org.optaplanner.examples.vehiclerouting.domain.Standstill;
+import org.optaplanner.examples.vehiclerouting.domain.Vehicle;
+import org.optaplanner.examples.vehiclerouting.domain.timewindowed.TimeWindowedCustomer;
+import org.optaplanner.examples.vehiclerouting.domain.timewindowed.TimeWindowedDepot; 
 
 public class ArrivalTimeUpdatingVariableListenerTest 
 {
@@ -8,71 +17,117 @@ public class ArrivalTimeUpdatingVariableListenerTest
 	public static void setUpBeforeClass() throws Exception 
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		ArrivalTimeUpdatingVariableListener atuvl = new ArrivalTimeUpdatingVariableListener();
 	}
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		ArrivalTimeUpdatingVariableListener atuvl = new ArrivalTimeUpdatingVariableListener();
+		atuvl = null;
 	}
 
 	@Before
 	public void setUp() throws Exception
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		ArrivalTimeUpdatingVariableListener atuvl = new ArrivalTimeUpdatingVariableListener();
 	}
 
 	@After
 	public void tearDown() throws Exception 
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		ArrivalTimeUpdatingVariableListener atuvl = new ArrivalTimeUpdatingVariableListener();
+		atuvl = null;
 	}
 	
 	@Test
-	public void testbeforeEntityAdded()
+	public void testbeforeEntityAdded(ScoreDirector scoreDirector, Customer customer)
 	{
 		//assertEquals(2, 2);  // For now. Remove later
+		// Do nothing
 	}
 	
 	@Test
-	public void testafterEntityAdded()
+	public void testafterEntityAdded(ScoreDirector scoreDirector, Customer customer)
 	{
 		//assertEquals(2, 2);  // For now. Remove later
+        if (customer instanceof TimeWindowedCustomer) 
+        {
+            testupdateArrivalTime(scoreDirector, (TimeWindowedCustomer) customer);
+        }
 	}
 	
 	@Test
-	public void testbeforeVariableChanged()
+	public void testbeforeVariableChanged(ScoreDirector scoreDirector, Customer customer)
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		// Do nothing
 	}
 	
 	@Test
-	public void testafterVariableChanged()
+	public void testafterVariableChanged(ScoreDirector scoreDirector, Customer customer)
 	{
 		//assertEquals(2, 2); // For now. Remove later
+        if (customer instanceof TimeWindowedCustomer) 
+        {
+            updateArrivalTime(scoreDirector, (TimeWindowedCustomer) customer);
+        }
 	}
 	
 	@Test
-	public void testbeforeEntityRemoved()
+	public void testbeforeEntityRemoved(ScoreDirector scoreDirector, Customer customer)
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		// Do nothing
 	}
 	
 	@Test
-	public void testafterEntityRemoved()
+	public void testafterEntityRemoved(ScoreDirector scoreDirector, Customer customer)
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		// Do nothing
 	}
 	
 	@Test
-	public void testupdateArrivalTime()
+	public void testupdateArrivalTime(ScoreDirector scoreDirector, TimeWindowedCustomer sourceCustomer)
 	{
 		//assertEquals(2, 2); // For now. Remove later
+        Standstill previousStandstill = sourceCustomer.getPreviousStandstill();
+        Long departureTime = previousStandstill == null ? null
+                : (previousStandstill instanceof TimeWindowedCustomer)
+                ? ((TimeWindowedCustomer) previousStandstill).getDepartureTime()
+                : ((TimeWindowedDepot) ((Vehicle) previousStandstill).getDepot()).getReadyTime();
+        TimeWindowedCustomer shadowCustomer = sourceCustomer;
+        Long arrivalTime = testcalculateArrivalTime(shadowCustomer, departureTime);
+        while (shadowCustomer != null && !Objects.equals(shadowCustomer.getArrivalTime(), arrivalTime)) {
+            scoreDirector.beforeVariableChanged(shadowCustomer, "arrivalTime");
+            shadowCustomer.setArrivalTime(arrivalTime);
+            scoreDirector.afterVariableChanged(shadowCustomer, "arrivalTime");
+            departureTime = shadowCustomer.getDepartureTime();
+            shadowCustomer = shadowCustomer.getNextCustomer();
+            arrivalTime = testcalculateArrivalTime(shadowCustomer, departureTime);
+        }
 	}
 	
 	@Test
-	public void testcalculateArrivalTime()
+	public Long testcalculateArrivalTime(TimeWindowedCustomer customer, Long previousDepartureTime)
 	{
 		//assertEquals(2, 2); // For now. Remove later
+        if (customer == null || customer.getPreviousStandstill() == null) 
+        {
+            return null;
+        }
+        
+        if (customer.getPreviousStandstill() instanceof Vehicle) 
+        {
+            // PreviousStandstill is the Vehicle, so we leave from the Depot at the best suitable time
+            return Math.max(customer.getReadyTime(),
+                    previousDepartureTime + customer.getDistanceFromPreviousStandstill());
+        }
+        
+        return previousDepartureTime + customer.getDistanceFromPreviousStandstill();
 	}
 }

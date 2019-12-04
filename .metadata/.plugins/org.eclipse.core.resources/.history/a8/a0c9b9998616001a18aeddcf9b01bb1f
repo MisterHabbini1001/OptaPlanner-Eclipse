@@ -1,0 +1,86 @@
+package org.optaplanner.examples.vehiclerouting.domain.location.segmented;
+import static org.junit.Assert.*;
+import java.util.Map;
+import org.junit.*;
+
+public class RoadSegmentLocationTest 
+{
+    protected Map<RoadSegmentLocation, Double> nearbyTravelDistanceMap;
+    protected Map<HubSegmentLocation, Double> hubTravelDistanceMap;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		RoadSegmentLocation rsl = new RoadSegmentLocation();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		RoadSegmentLocation rsl = new RoadSegmentLocation();
+		rsl = null;
+	}
+
+	@Before
+	public void setUp() throws Exception
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		RoadSegmentLocation rsl = new RoadSegmentLocation();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		RoadSegmentLocation rsl = new RoadSegmentLocation();
+		rsl = null;
+	}
+	
+	@Test
+	public Map<RoadSegmentLocation, Double> testgetNearbyTravelDistanceMap()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		return nearbyTravelDistanceMap;
+	}
+	
+	@Test
+	public void testsetNearbyTravelDistanceMap(Map<RoadSegmentLocation, Double> nearbyTravelDistanceMap)
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		this.nearbyTravelDistanceMap = nearbyTravelDistanceMap;
+	}
+	
+	@Test
+	public Map<HubSegmentLocation, Double> testgetHubTravelDistanceMap()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		return hubTravelDistanceMap;
+	}
+	
+	@Test
+	public void testsetHubTravelDistanceMap(Map<HubSegmentLocation, Double> hubTravelDistanceMap)
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		this.hubTravelDistanceMap = hubTravelDistanceMap
+	}
+	
+	@Test
+	public void testgetDistanceTo()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetDistanceDouble()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetShortestDistanceDoubleThroughHubs()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+}

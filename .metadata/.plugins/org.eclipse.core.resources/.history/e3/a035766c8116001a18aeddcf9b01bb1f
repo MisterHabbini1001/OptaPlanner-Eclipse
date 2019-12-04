@@ -1,0 +1,173 @@
+package org.optaplanner.examples.vehiclerouting.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.*;
+import org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore;
+import org.optaplanner.examples.vehiclerouting.domain.location.DistanceType;
+import org.optaplanner.examples.vehiclerouting.domain.location.Location;
+import org.optaplanner.persistence.xstream.api.score.buildin.hardsoftlong.HardSoftLongScoreXStreamConverter;
+
+import com.thoughtworks.xstream.annotations.XStreamConverter;
+
+public class VehicleRoutingSolutionTest 
+{
+    protected String name;
+    protected DistanceType distanceType;
+    protected String distanceUnitOfMeasurement;
+    protected List<Location> locationList;
+    protected List<Depot> depotList;
+    protected List<Vehicle> vehicleList;
+    protected List<Customer> customerList;
+
+    @XStreamConverter(HardSoftLongScoreXStreamConverter.class)
+    protected HardSoftLongScore score;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		VehicleRoutingSolutionTest vrst = new VehicleRoutingSolutionTest();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		VehicleRoutingSolutionTest vrst = new VehicleRoutingSolutionTest();
+		vrst = null;
+	}
+
+	@Before
+	public void setUp() throws Exception
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		VehicleRoutingSolutionTest vrst = new VehicleRoutingSolutionTest();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		VehicleRoutingSolutionTest vrst = new VehicleRoutingSolutionTest();
+		vrst = null;
+	}
+	
+	@Test
+	public String testgetName()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		return name;
+	}
+	
+	@Test
+	public void testsetName(String name)
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		this.name = name;
+	}
+	
+	@Test
+	public DistanceType testgetDistanceType()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		return distanceType;
+	}
+	
+	@Test
+	public void testsetDistanceType(DistanceType distanceType)
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		this.distanceType = distanceType;
+	}
+	
+	@Test
+	public String testgetDistanceUnitOfMeasurement()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		return distanceUnitOfMeasurement;
+	}
+	
+	@Test
+	public void testsetDistanceUnitOfMeasurement(String distanceUnitOfMeasurement)
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		this.distanceUnitOfMeasurement = distanceUnitOfMeasurement;
+	}
+	
+	@Test
+	public List<Location> testgetLocationList()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		return locationList;
+	}
+	
+	@Test
+	public void testsetLocationList(List<Location> locationList)
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		this.locationList = locationList;
+	}
+	
+	@Test
+	public List<Depot> testgetDepotList()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		return depotList;
+	}
+	
+	@Test
+	public void testsetDepotList(List<Depot> depotList)
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		this.depotList = depotList;
+	}
+	
+	@Test
+	public List<Vehicle> testgetVehicleList()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		return vehicleList;
+	}
+	
+	@Test
+	public void testsetVehicleList(List<Vehicle> vehicleList)
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		this.vehicleList = vehicleList;
+	}
+	
+	@Test
+	public List<Customer> testgetCustomerList()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		return customerList;
+	}
+	
+	@Test
+	public void testsetCustomerList(List<Customer> customerList)
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		this.customerList = customerList;
+	}
+	
+	@Test
+	public HardSoftLongScore testgetScore()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		return score;
+	}
+	
+	@Test
+	public void testsetScore(HardSoftLongScore score)
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetDistanceString()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+}

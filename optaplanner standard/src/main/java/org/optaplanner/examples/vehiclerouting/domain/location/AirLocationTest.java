@@ -8,29 +8,38 @@ public class AirLocationTest
 	public static void setUpBeforeClass() throws Exception 
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		AirLocation al = new AirLocation();
 	}
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		AirLocation al = new AirLocation();
+		al = null;
 	}
 
 	@Before
 	public void setUp() throws Exception
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		AirLocation al = new AirLocation();
 	}
 
 	@After
 	public void tearDown() throws Exception 
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		AirLocation al = new AirLocation();
+		al = null;
 	}
 	
 	@Test
-	public void testgetDistanceTo()
+	public long testgetDistanceTo(Location location)
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		double distance = location.getAirDistanceDoubleTo(location);
+        // Multiplied by 1000 to avoid floating point arithmetic rounding errors
+        return (long) (distance * 1000.0 + 0.5);
 	}
 }
