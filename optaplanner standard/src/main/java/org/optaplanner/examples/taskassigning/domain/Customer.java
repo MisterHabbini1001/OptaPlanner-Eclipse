@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.taskassigning.domain;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 import org.optaplanner.examples.common.domain.AbstractPersistable;
@@ -23,34 +21,39 @@ import org.optaplanner.examples.common.swingui.components.Labeled;
 import org.optaplanner.examples.vehiclerouting.domain.location.Location;//habbo+-
 
 @XStreamAlias("TaCustomer")
-public class Customer extends AbstractPersistable implements Labeled {
-	
+public class Customer extends AbstractPersistable implements Labeled 
+{	
     protected Location location;//habbo+-
-
     private String name;
 
-    public Customer() {
+    public Customer() 
+    {
     }
 
-    public Customer(long id, String name) {
+    public Customer(long id, String name) 
+    {
         super(id);
         this.name = name;
     }
 
-    public String getName() {
+    public String getName() 
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name) 
+    {
         this.name = name;
     }
     
     //habbo+
-    public Location getLocation() {
+    public Location getLocation() 
+    {
         return location;
     }
 
-    public void setLocation(Location location) {
+    public void setLocation(Location location) 
+    {
         this.location = location;
     }
     //habbo-
@@ -61,12 +64,14 @@ public class Customer extends AbstractPersistable implements Labeled {
     // ************************************************************************
 
     @Override
-    public String getLabel() {
+    public String getLabel() 
+    {
         return name;
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return name;
     }
 

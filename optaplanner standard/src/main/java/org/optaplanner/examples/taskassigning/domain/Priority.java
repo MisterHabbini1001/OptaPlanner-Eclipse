@@ -13,16 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.taskassigning.domain;
 
-public enum Priority {
+public enum Priority 
+{
     MINOR,
     MAJOR,
     CRITICAL;
 
-    public String getLabel() {
-        switch (this) {
+    public String getLabel() 
+    {
+        switch (this) 
+        {
             case MINOR:
                 return "Minor priority";
             case MAJOR:
@@ -33,5 +35,4 @@ public enum Priority {
                 throw new IllegalStateException("The priority (" + this + ") is not implemented.");
         }
     }
-
 }

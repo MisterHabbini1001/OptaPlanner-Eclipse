@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.taskassigning.domain;
-
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
@@ -26,8 +24,8 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.examples.common.swingui.components.Labeled;
 
 @XStreamAlias("TaEmployee")
-public class Employee extends TaskOrEmployee implements Labeled {
-
+public class Employee extends TaskOrEmployee implements Labeled 
+{
     private String fullName;
     private double latitude;
     private double longitude;
@@ -35,10 +33,12 @@ public class Employee extends TaskOrEmployee implements Labeled {
     private Set<Capacity> capacitySet;//habbo+-
     private Map<Customer, Affinity> affinityMap;
 
-    public Employee() {
+    public Employee() 
+    {
     }
 
-    public Employee(long id, String fullName, double latitute, double longitude) {
+    public Employee(long id, String fullName, double latitude, double longitude) 
+    {
         super(id);
         this.fullName = fullName;
         this.latitude = latitude;
@@ -48,45 +48,55 @@ public class Employee extends TaskOrEmployee implements Labeled {
         affinityMap = new LinkedHashMap<>();
     }
 
-    public String getFullName() {
+    public String getFullName() 
+    {
         return fullName;
     }
 
-    public void setFullName(String fullName) {
+    public void setFullName(String fullName) 
+    {
         this.fullName = fullName;
     }
     
-    public void setLatitude(double latitude) {
+    public void setLatitude(double latitude) 
+    {
     	this.latitude = latitude;
     }
 
-    public void setLongitude(double longitude) {
+    public void setLongitude(double longitude) 
+    {
     	this.longitude = longitude;
     }
     
-    public Set<Skill> getSkillSet() {
+    public Set<Skill> getSkillSet() 
+    {
         return skillSet;
     }
 
-    public void setSkillSet(Set<Skill> skillSet) {
+    public void setSkillSet(Set<Skill> skillSet) 
+    {
         this.skillSet = skillSet;
     }
 
     //habbo+
-    public Set<Capacity> getCapacityet() {
+    public Set<Capacity> getCapacitySet() 
+    {
         return capacitySet;
     }
 
-    public void setCapacitySet(Set<Capacity> capacitySet) {
+    public void setCapacitySet(Set<Capacity> capacitySet) 
+    {
         this.capacitySet = capacitySet;
     }
     //habbo-
     
-    public Map<Customer, Affinity> getAffinityMap() {
+    public Map<Customer, Affinity> getAffinityMap() 
+    {
         return affinityMap;
     }
 
-    public void setAffinityMap(Map<Customer, Affinity> affinityMap) {
+    public void setAffinityMap(Map<Customer, Affinity> affinityMap) 
+    {
         this.affinityMap = affinityMap;
     }
 
@@ -96,31 +106,35 @@ public class Employee extends TaskOrEmployee implements Labeled {
    
     
     @Override
-    public Employee getEmployee() {
+    public Employee getEmployee() 
+    {
         return this;
     }
     
     @Override
-    public double getLatitude() {
+    public double getLatitude() 
+    {
     	return latitude;
     }
 
     @Override
-    public double getLongitude() {
+    public double getLongitude() 
+    {
     	return longitude;
     }
 
     @Override
-    public Integer getEndTime() {
+    public Integer getEndTime() 
+    {
         return 0;
     }
-    
-    
+      
     /**
      * @param customer never null
      * @return never null
      */
-    public Affinity getAffinity(Customer customer) {
+    public Affinity getAffinity(Customer customer) 
+    {
         Affinity affinity = affinityMap.get(customer);
         if (affinity == null) {
             affinity = Affinity.NONE;
@@ -129,11 +143,13 @@ public class Employee extends TaskOrEmployee implements Labeled {
     }
 
     @Override
-    public String getLabel() {
+    public String getLabel() 
+    {
         return fullName;
     }
 
-    public String getToolText() {
+    public String getToolText() 
+    {
         StringBuilder toolText = new StringBuilder();
         toolText.append("<html><center><b>").append(fullName).append("</b><br/><br/>");
         toolText.append("Skills:<br/>");
@@ -145,18 +161,21 @@ public class Employee extends TaskOrEmployee implements Labeled {
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return fullName;
     }
     
     //habbo+
     private int capacityEndTime;
     
-    public int getCapacityEndTime() {
+    public int getCapacityEndTime() 
+    {
     	return capacityEndTime;
     }
     
-    public Integer getWorkStart(int startTime) {
+    public Integer getWorkStart(int startTime) 
+    {
     	if (capacitySet == null || capacitySet.isEmpty()) {
     		return getStandardStart(startTime);
     	}
@@ -176,7 +195,8 @@ public class Employee extends TaskOrEmployee implements Labeled {
     	return getStandardStart(startTime);
     }
     
-    private Integer getStandardStart(int startTime) {
+    private Integer getStandardStart(int startTime) 
+    {
     	//If start is after 16:00 add one day = 1440 minutes
     	if (startTime % 1440 > 960) {
     		startTime += 1440;

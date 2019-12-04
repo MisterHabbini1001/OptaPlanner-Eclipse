@@ -1,0 +1,258 @@
+package org.optaplanner.examples.taskassigning.domain;
+import static org.junit.Assert.*;
+import org.junit.*;  
+
+public class TaskTest 
+{
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+
+	@Before
+	public void setUp() throws Exception
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetTaskType()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testsetTaskType() 
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetCode()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testsetCode(String code)
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetTitle()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testsetTitle()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testsetDuration()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetResponsTime()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testsetResponsTime()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testsetLatitude()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testsetLongitude()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetIndexInTaskType()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testsetIndexInTaskType()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetCustomer()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testsetCustomer()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetReadyTime()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testsetReadyTime()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetPriority()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testsetPriority()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testisPinned()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testsetPinned()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetPreviousTaskOrEmployee()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testsetPreviousTaskOrEmployee()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetEmployee()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testsetEmployee()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetStartTime()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testsetStartTime()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetMissingSkillCount()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetDuration()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetAffinity()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetLatitude()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetLongitude()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetEndTime()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetLabel()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetToolText()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testtoString()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetTravelHomeDuration()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetAirTimeTo()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+}

@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.taskassigning.domain;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 import org.optaplanner.core.api.domain.entity.PlanningEntity;
@@ -31,8 +29,8 @@ import org.optaplanner.examples.taskassigning.domain.solver.TaskDifficultyCompar
 
 @PlanningEntity(difficultyComparatorClass = TaskDifficultyComparator.class)
 @XStreamAlias("TaTask")
-public class Task extends TaskOrEmployee implements Labeled {
-
+public class Task extends TaskOrEmployee implements Labeled 
+{
     private TaskType taskType;
     private int indexInTaskType;
     private String code;
@@ -62,7 +60,8 @@ public class Task extends TaskOrEmployee implements Labeled {
             sources = {@PlanningVariableReference(variableName = "previousTaskOrEmployee")})
     private Integer startTime; // In minutes
 
-    public Task() {
+    public Task() 
+    {
     }
 
     public Task(
@@ -95,112 +94,139 @@ public class Task extends TaskOrEmployee implements Labeled {
         pinned = false;
     }
 
-    public TaskType getTaskType() {
+    public TaskType getTaskType() 
+    {
         return taskType;
     }
 
-    public void setTaskType(TaskType taskType) {
+    public void setTaskType(TaskType taskType) 
+    {
         this.taskType = taskType;
     }
 
-    public String getCode() {
+    public String getCode() 
+    {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(String code) 
+    {
         this.code = code;
     }
 
-    public String getTitle() {
+    public String getTitle() 
+    {
         return title;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(String title) 
+    {
         this.title = title;
     }
     
-    public void setDuration(int duration) {
+    public void setDuration(int duration) 
+    {
         this.duration = duration;
     }
     
-    public int getResponsTime() {
+    public int getResponsTime() 
+    {
     	return responsTime;
     }
     
-    public void setResponsTime(int responsTime) {
+    public void setResponsTime(int responsTime) 
+    {
     	this.responsTime = responsTime;
     } 
     
-    public void setLatitude(double latitude) {
+    public void setLatitude(double latitude) 
+    {
         this.latitude = latitude;
     }
     
-    public void setLongitude(double longitude) {
+    public void setLongitude(double longitude) 
+    {
         this.longitude = longitude;
     }
     
-    public int getIndexInTaskType() {
+    public int getIndexInTaskType() 
+    {
         return indexInTaskType;
     }
 
-    public void setIndexInTaskType(int indexInTaskType) {
+    public void setIndexInTaskType(int indexInTaskType) 
+    {
         this.indexInTaskType = indexInTaskType;
     }
 
-    public Customer getCustomer() {
+    public Customer getCustomer() 
+    {
         return customer;
     }
 
-    public void setCustomer(Customer customer) {
+    public void setCustomer(Customer customer) 
+    {
         this.customer = customer;
     }
 
-    public int getReadyTime() {
+    public int getReadyTime() 
+    {
         return readyTime;
     }
 
-    public void setReadyTime(int readyTime) {
+    public void setReadyTime(int readyTime) 
+    {
         this.readyTime = readyTime;
     }
 
-    public Priority getPriority() {
+    public Priority getPriority() 
+    {
         return priority;
     }
 
-    public void setPriority(Priority priority) {
+    public void setPriority(Priority priority) 
+    {
         this.priority = priority;
     }
 
-    public boolean isPinned() {
+    public boolean isPinned() 
+    {
         return pinned;
     }
 
-    public void setPinned(boolean pinned) {
+    public void setPinned(boolean pinned) 
+    {
         this.pinned = pinned;
     }
 
-    public TaskOrEmployee getPreviousTaskOrEmployee() {
+    public TaskOrEmployee getPreviousTaskOrEmployee() 
+    {
         return previousTaskOrEmployee;
     }
 
-    public void setPreviousTaskOrEmployee(TaskOrEmployee previousTaskOrEmployee) {
+    public void setPreviousTaskOrEmployee(TaskOrEmployee previousTaskOrEmployee) 
+    {
         this.previousTaskOrEmployee = previousTaskOrEmployee;
     }
 
     @Override
-    public Employee getEmployee() {
+    public Employee getEmployee() 
+    {
         return employee;
     }
 
-    public void setEmployee(Employee employee) {
+    public void setEmployee(Employee employee) 
+    {
         this.employee = employee;
     }
 
-    public Integer getStartTime() {
+    public Integer getStartTime() 
+    {
         return startTime;
     }
 
-    public void setStartTime(Integer startTime) {
+    public void setStartTime(Integer startTime) 
+    {
         this.startTime = startTime;
     }
 
@@ -208,13 +234,17 @@ public class Task extends TaskOrEmployee implements Labeled {
     // Complex methods
     // ************************************************************************
 
-    public int getMissingSkillCount() {
-        if (employee == null) {
+    public int getMissingSkillCount() 
+    {
+        if (employee == null) 
+        {
             return 0;
         }
         int count = 0;
-        for (Skill skill : taskType.getRequiredSkillList()) {
-            if (!employee.getSkillSet().contains(skill)) {
+        for (Skill skill : taskType.getRequiredSkillList()) 
+        {
+            if (!employee.getSkillSet().contains(skill)) 
+            {
                 count++;
             }
         }
@@ -225,42 +255,51 @@ public class Task extends TaskOrEmployee implements Labeled {
      * In minutes
      * @return at least 1 minute
      */
-    public int getDuration() {
-    	if (duration == 0) {
+    public int getDuration() 
+    {
+    	if (duration == 0) 
+    	{
     		Affinity affinity = getAffinity();
     		return taskType.getBaseDuration() * affinity.getDurationMultiplier() + getTravelDuration();
     	}
     	return duration + getTravelDuration();
     }
 
-    public Affinity getAffinity() {
+    public Affinity getAffinity() 
+    {
         return (employee == null) ? Affinity.NONE : employee.getAffinity(customer);
     }
     
     @Override
-    public double getLatitude() {
+    public double getLatitude() 
+    {
         return latitude;
     }
     
     @Override
-    public double getLongitude() {
+    public double getLongitude() 
+    {
         return longitude;
     } 
 
     @Override
-    public Integer getEndTime() {
-        if (startTime == null) {
+    public Integer getEndTime() 
+    {
+        if (startTime == null) 
+        {
             return null;
         }
         return startTime + getDuration();
     }
 
     @Override
-    public String getLabel() {
+    public String getLabel() 
+    {
         return getCode() + ": " + getTitle();
     }
 
-    public String getToolText() {
+    public String getToolText() 
+    {
         StringBuilder toolText = new StringBuilder();
         toolText.append("<html><center><b>").append(getLabel()).append("</b><br/><br/>");
                 //.append(priority.getLabel()).append("<br/><br/>");
@@ -288,63 +327,70 @@ public class Task extends TaskOrEmployee implements Labeled {
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return getCode();
     }
     
     //habbo+
     //Determine travel time between work location and home
-    public Integer getTravelHomeDuration() {
-    	if (latitude == 0 && longitude == 0) {
+    public Integer getTravelHomeDuration() 
+    {
+    	if (latitude == 0 && longitude == 0) 
+    	{
     		return 0;
     	}
+    	
     	Employee employee = getEmployee();
-    	if (employee == null) {
+    	if (employee == null) 
+    	{
     		return 0;
     	}
+    	
     	int timeToTravelHome = getAirTimeTo(latitude, longitude, employee.getLatitude(), employee.getLongitude());
     	return Math.min(timeToTravelHome, 90);
     }
     
-    public Integer getTravelDuration() {
+    public Integer getTravelDuration() 
+    {
     	//skip when no value for current position
-    	if (latitude == 0 && longitude == 0) {
+    	if (latitude == 0 && longitude == 0) 
+    	{
     		return 0;
     	}
     	//get previous position
         TaskOrEmployee previous = this.getPreviousTaskOrEmployee();
-        if (previous == null) {
+        if (previous == null) 
+        {
         	return 0;
         }
+        
         double latitudeFrom = previous.getLatitude();
         double longitudeFrom = previous.getLongitude();
         int previousEndTime = previous.getEndTime();
         //if this start is more than 6 hours from previous end, then employee leaves from home
-        if (startTime != null && previousEndTime != 0) {
-	        if ((startTime - previousEndTime > 360))  {
+        if (startTime != null && previousEndTime != 0) 
+        {
+	        if ((startTime - previousEndTime > 360))  
+	        {
 	        	Employee employee = getEmployee();
 	        	latitudeFrom = employee.getLatitude();
 	        	longitudeFrom = employee.getLongitude();
 	        }
         }
         //skip when no previous position
-        if (latitudeFrom == 0 && longitudeFrom == 0) {
+        if (latitudeFrom == 0 && longitudeFrom == 0) 
+        {
         	return 0;
         }
         int travelDuration = getAirTimeTo(latitudeFrom, longitudeFrom, latitude, longitude);
         return Math.min(travelDuration, 120);
     }
     //habbo-
-
     
     //habbo+
-    public int getAirTimeTo(
-    		double latitudeFrom,
-    		double longitudeFrom,
-    		double latitudeTo,
-    		double longitudeTo
-    	)
-    	{
+    public int getAirTimeTo(double latitudeFrom, double longitudeFrom, double latitudeTo, double longitudeTo)
+    {
         // Calculation are based upon Haversine formula
     	// The math module contains a function named toRadians which converts from degrees to radians
         
@@ -374,6 +420,4 @@ public class Task extends TaskOrEmployee implements Labeled {
         return((int)Math.round(c * r * 60 / speed));
     }
     //habbo-
-       
-
 }

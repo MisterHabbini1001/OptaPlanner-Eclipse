@@ -1,0 +1,193 @@
+package org.optaplanner.examples.taskassigning.domain;
+import static org.junit.Assert.*;
+
+import java.util.Map;
+import java.util.Set;
+
+import org.junit.*;  
+
+public class EmployeeTest 
+{
+    private String fullName;
+    private double latitude;
+    private double longitude;
+    private Set<Skill> skillSet;
+    private Set<Capacity> capacitySet;//habbo+-
+    private Map<Customer, Affinity> affinityMap;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		Employee em = new Employee();
+		Employee em_1 = new Employee(23948023, "Habbo Gaastra", 52.823092, 7.203820);
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		Employee em = new Employee();
+		Employee em_1 = new Employee(23948023, "Habbo Gaastra", 52.823092, 7.203820);
+		em = null;
+		em_1 = null;
+	}
+
+	@Before
+	public void setUp() throws Exception
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		Employee em = new Employee();
+		Employee em_1 = new Employee(23948023, "Habbo Gaastra", 52.823092, 7.203820);
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		Employee em = new Employee();
+		Employee em_1 = new Employee(23948023, "Habbo Gaastra", 52.823092, 7.203820);
+		em = null;
+		em_1 = null;
+	}
+	
+	@Test
+	public String testgetFullName()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		return fullName;
+	}
+	
+	@Test
+	public void testsetFullName(String fullName)
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		this.fullName = fullName;
+	}
+	
+	@Test
+	public void testsetLatitude(double latitude)
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		this.latitude = latitude;
+	}
+	
+	@Test
+	public void testsetLongitude(double longitude)
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		this.longitude = longitude;
+	}
+	
+	@Test
+	public Set<Skill> testgetSkillSet()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		return skillSet;
+	}
+	
+	@Test
+	public void testsetSkillSet(Set<Skill> skillSet)
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		this.skillSet = skillSet;
+	}
+	
+	@Test
+	public Set<Capacity> testgetCapacitySet()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		return capacitySet;
+	}
+	
+	@Test
+	public void testsetCapacitySet(Set<Capacity> capacitySet)
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		this.capacitySet = capacitySet;
+	}
+	
+	@Test
+	public Map<Customer, Affinity> testgetAffinityMap()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		return affinityMap;
+	}
+	
+	@Test
+	public void testsetAffinityMap(Map<Customer, Affinity> affinityMap)
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		this.affinityMap = affinityMap;
+	}
+	
+	@Test
+	public EmployeeTest testgetEmployee()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		return this;
+	}
+	
+	@Test
+	public double testgetLatitude()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		return latitude;
+	}
+	
+	@Test
+	public double testgetLongitude()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		return longitude;
+	}
+	
+	@Test
+	public Integer testgetEndTime()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		return 0;
+	}
+	
+	@Test
+	public Affinity testgetAffinity()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public String testgetLabel()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public String testgetToolText()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public String testtoString()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public int testgetCapacityEndTime()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public Integer testgetWorkStart()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public Integer testgetStandardStart()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+}

@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.vehiclerouting.domain.timewindowed.solver;
-
 import java.util.Objects;
 
 import org.optaplanner.core.impl.domain.variable.listener.VariableListener;
@@ -27,43 +25,53 @@ import org.optaplanner.examples.vehiclerouting.domain.timewindowed.TimeWindowedC
 import org.optaplanner.examples.vehiclerouting.domain.timewindowed.TimeWindowedDepot;
 
 // TODO When this class is added only for TimeWindowedCustomer, use TimeWindowedCustomer instead of Customer
-public class ArrivalTimeUpdatingVariableListener implements VariableListener<Customer> {
+public class ArrivalTimeUpdatingVariableListener implements VariableListener<Customer> 
+{
 
     @Override
-    public void beforeEntityAdded(ScoreDirector scoreDirector, Customer customer) {
+    public void beforeEntityAdded(ScoreDirector scoreDirector, Customer customer) 
+    {
         // Do nothing
     }
 
     @Override
-    public void afterEntityAdded(ScoreDirector scoreDirector, Customer customer) {
-        if (customer instanceof TimeWindowedCustomer) {
+    public void afterEntityAdded(ScoreDirector scoreDirector, Customer customer) 
+    {
+        if (customer instanceof TimeWindowedCustomer) 
+        {
             updateArrivalTime(scoreDirector, (TimeWindowedCustomer) customer);
         }
     }
 
     @Override
-    public void beforeVariableChanged(ScoreDirector scoreDirector, Customer customer) {
+    public void beforeVariableChanged(ScoreDirector scoreDirector, Customer customer) 
+    {
         // Do nothing
     }
 
     @Override
-    public void afterVariableChanged(ScoreDirector scoreDirector, Customer customer) {
-        if (customer instanceof TimeWindowedCustomer) {
+    public void afterVariableChanged(ScoreDirector scoreDirector, Customer customer) 
+    {
+        if (customer instanceof TimeWindowedCustomer) 
+        {
             updateArrivalTime(scoreDirector, (TimeWindowedCustomer) customer);
         }
     }
 
     @Override
-    public void beforeEntityRemoved(ScoreDirector scoreDirector, Customer customer) {
+    public void beforeEntityRemoved(ScoreDirector scoreDirector, Customer customer) 
+    {
         // Do nothing
     }
 
     @Override
-    public void afterEntityRemoved(ScoreDirector scoreDirector, Customer customer) {
+    public void afterEntityRemoved(ScoreDirector scoreDirector, Customer customer) 
+    {
         // Do nothing
     }
 
-    protected void updateArrivalTime(ScoreDirector scoreDirector, TimeWindowedCustomer sourceCustomer) {
+    protected void updateArrivalTime(ScoreDirector scoreDirector, TimeWindowedCustomer sourceCustomer) 
+    {
         Standstill previousStandstill = sourceCustomer.getPreviousStandstill();
         Long departureTime = previousStandstill == null ? null
                 : (previousStandstill instanceof TimeWindowedCustomer)
@@ -81,16 +89,20 @@ public class ArrivalTimeUpdatingVariableListener implements VariableListener<Cus
         }
     }
 
-    private Long calculateArrivalTime(TimeWindowedCustomer customer, Long previousDepartureTime) {
-        if (customer == null || customer.getPreviousStandstill() == null) {
+    private Long calculateArrivalTime(TimeWindowedCustomer customer, Long previousDepartureTime) 
+    {
+        if (customer == null || customer.getPreviousStandstill() == null) 
+        {
             return null;
         }
-        if (customer.getPreviousStandstill() instanceof Vehicle) {
+        
+        if (customer.getPreviousStandstill() instanceof Vehicle) 
+        {
             // PreviousStandstill is the Vehicle, so we leave from the Depot at the best suitable time
             return Math.max(customer.getReadyTime(),
                     previousDepartureTime + customer.getDistanceFromPreviousStandstill());
         }
+        
         return previousDepartureTime + customer.getDistanceFromPreviousStandstill();
     }
-
 }

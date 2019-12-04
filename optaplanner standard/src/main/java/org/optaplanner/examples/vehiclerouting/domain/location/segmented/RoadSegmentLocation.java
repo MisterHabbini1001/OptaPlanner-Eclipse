@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.vehiclerouting.domain.location.segmented;
-
 import java.util.Map;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
@@ -29,61 +27,72 @@ import org.optaplanner.examples.vehiclerouting.domain.location.RoadLocation;
  * Used with {@link DistanceType#SEGMENTED_ROAD_DISTANCE}.
  */
 @XStreamAlias("VrpRoadSegmentLocation")
-public class RoadSegmentLocation extends Location {
+public class RoadSegmentLocation extends Location 
+{
 
     // Prefer Map over array or List because customers might be added and removed in real-time planning.
     protected Map<RoadSegmentLocation, Double> nearbyTravelDistanceMap;
     protected Map<HubSegmentLocation, Double> hubTravelDistanceMap;
 
-    public RoadSegmentLocation() {
+    public RoadSegmentLocation() 
+    {
     }
 
-    public RoadSegmentLocation(long id, double latitude, double longitude) {
+    public RoadSegmentLocation(long id, double latitude, double longitude) 
+    {
         super(id, latitude, longitude);
     }
 
-    public Map<RoadSegmentLocation, Double> getNearbyTravelDistanceMap() {
+    public Map<RoadSegmentLocation, Double> getNearbyTravelDistanceMap() 
+    {
         return nearbyTravelDistanceMap;
     }
 
-    public void setNearbyTravelDistanceMap(Map<RoadSegmentLocation, Double> nearbyTravelDistanceMap) {
+    public void setNearbyTravelDistanceMap(Map<RoadSegmentLocation, Double> nearbyTravelDistanceMap) 
+    {
         this.nearbyTravelDistanceMap = nearbyTravelDistanceMap;
     }
 
-    public Map<HubSegmentLocation, Double> getHubTravelDistanceMap() {
+    public Map<HubSegmentLocation, Double> getHubTravelDistanceMap() 
+    {
         return hubTravelDistanceMap;
     }
 
-    public void setHubTravelDistanceMap(Map<HubSegmentLocation, Double> hubTravelDistanceMap) {
+    public void setHubTravelDistanceMap(Map<HubSegmentLocation, Double> hubTravelDistanceMap) 
+    {
         this.hubTravelDistanceMap = hubTravelDistanceMap;
     }
 
     @Override
-    public long getDistanceTo(Location location) {
+    public long getDistanceTo(Location location) 
+    {
         Double distance = getDistanceDouble((RoadSegmentLocation) location);
         // Multiplied by 1000 to avoid floating point arithmetic rounding errors
         return (long) (distance * 1000.0 + 0.5);
     }
 
-    public Double getDistanceDouble(RoadSegmentLocation location) {
+    public Double getDistanceDouble(RoadSegmentLocation location) 
+    {
         Double distance = nearbyTravelDistanceMap.get((RoadSegmentLocation) location);
-        if (distance == null) {
+        if (distance == null) 
+        {
             // location isn't nearby
             distance = getShortestDistanceDoubleThroughHubs((RoadSegmentLocation) location);
         }
         return distance;
     }
 
-    protected double getShortestDistanceDoubleThroughHubs(RoadSegmentLocation location) {
+    protected double getShortestDistanceDoubleThroughHubs(RoadSegmentLocation location) 
+    {
         double shortestDistance = Double.MAX_VALUE;
         for (Map.Entry<HubSegmentLocation, Double> entry : hubTravelDistanceMap.entrySet()) {
             double distance = entry.getValue();
             distance += entry.getKey().getDistanceDouble(location);
-            if (distance < shortestDistance) {
+            if (distance < shortestDistance) 
+            {
                 shortestDistance = distance;
             }
         }
         return shortestDistance;
     }
-
 }

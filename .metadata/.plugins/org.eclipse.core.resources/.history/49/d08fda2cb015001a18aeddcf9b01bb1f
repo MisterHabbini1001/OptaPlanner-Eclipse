@@ -1,0 +1,19 @@
+package org.optaplanner.examples.vehiclerouting.domain.solver.nearby;
+import static org.junit.Assert.*;
+import org.junit.*;
+
+public class CustomerNearbyDistanceMeterTest 
+{
+    /*
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+    */
+	
+	@Test
+	public void testgetNearbyDistance()
+	{
+		assertEquals(2, 2); // For now. Remove later
+	}
+}

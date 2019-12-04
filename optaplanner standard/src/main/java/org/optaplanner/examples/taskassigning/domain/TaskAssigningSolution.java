@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.taskassigning.domain;
-
 import java.text.NumberFormat;
 import java.util.List;
 
@@ -33,8 +31,8 @@ import org.optaplanner.persistence.xstream.api.score.buildin.bendable.BendableSc
 
 @PlanningSolution
 @XStreamAlias("TaTaskAssigningSolution")
-public class TaskAssigningSolution extends AbstractPersistable {
-
+public class TaskAssigningSolution extends AbstractPersistable 
+{
     @ProblemFactCollectionProperty
     private List<Skill> skillList;
     @ProblemFactCollectionProperty
@@ -60,7 +58,8 @@ public class TaskAssigningSolution extends AbstractPersistable {
     /** Relates to {@link Task#getStartTime()}. */
     private int frozenCutoff; // In minutes
 
-    public TaskAssigningSolution() {
+    public TaskAssigningSolution() 
+    {
     }
 
     //habbo+
@@ -77,53 +76,65 @@ public class TaskAssigningSolution extends AbstractPersistable {
         this.capacityList = capacityList;//habbo+-
     }
 
-    public List<Skill> getSkillList() {
+    public List<Skill> getSkillList() 
+    {
         return skillList;
     }
 
-    public void setSkillList(List<Skill> skillList) {
+    public void setSkillList(List<Skill> skillList) 
+    {
         this.skillList = skillList;
     }
 
-    public List<TaskType> getTaskTypeList() {
+    public List<TaskType> getTaskTypeList() 
+    {
         return taskTypeList;
     }
 
-    public void setTaskTypeList(List<TaskType> taskTypeList) {
+    public void setTaskTypeList(List<TaskType> taskTypeList) 
+    {
         this.taskTypeList = taskTypeList;
     }
 
-    public List<Customer> getCustomerList() {
+    public List<Customer> getCustomerList() 
+    {
         return customerList;
     }
 
-    public void setCustomerList(List<Customer> customerList) {
+    public void setCustomerList(List<Customer> customerList) 
+    {
         this.customerList = customerList;
     }
 
-    public List<Employee> getEmployeeList() {
+    public List<Employee> getEmployeeList() 
+    {
         return employeeList;
     }
 
-    public void setEmployeeList(List<Employee> employeeList) {
+    public void setEmployeeList(List<Employee> employeeList) 
+    {
         this.employeeList = employeeList;
     }
 
-    public List<Task> getTaskList() {
+    public List<Task> getTaskList() 
+    {
         return taskList;
     }
 
-    public void setTaskList(List<Task> taskList) {
+    public void setTaskList(List<Task> taskList) 
+    {
         this.taskList = taskList;
     }
     
     //habbo+
-    public List<Capacity> getCapacityList() {
+    public List<Capacity> getCapacityList() 
+    {
     	System.out.println("Capacity get");
         return capacityList;
     }
 
-    public void setCapacityList(List<Capacity> capacityList) {
+    public void setCapacityList(List<Capacity> capacityList) 
+    {
         this.capacityList = capacityList;
     	System.out.println(capacityList.size());
     	System.out.println("Capacity set");    	
@@ -131,19 +142,23 @@ public class TaskAssigningSolution extends AbstractPersistable {
     
     //habbo-
 
-    public BendableScore getScore() {
+    public BendableScore getScore() 
+    {
         return score;
     }
 
-    public void setScore(BendableScore score) {
+    public void setScore(BendableScore score) 
+    {
         this.score = score;
     }
 
-    public int getFrozenCutoff() {
+    public int getFrozenCutoff() 
+    {
         return frozenCutoff;
     }
 
-    public void setFrozenCutoff(int frozenCutoff) {
+    public void setFrozenCutoff(int frozenCutoff) 
+    {
         this.frozenCutoff = frozenCutoff;
     }
 
@@ -151,13 +166,16 @@ public class TaskAssigningSolution extends AbstractPersistable {
     // Complex methods
     // ************************************************************************
     
-    public String getTravelDurationString(NumberFormat numberFormat) {
-        if (score == null) {
+    public String getTravelDurationString(NumberFormat numberFormat) 
+    {
+        if (score == null) 
+        {
             return null;
         }
+        
         long travelDuration = - score.getSoftScore(1);
-            return numberFormat.format(((double) travelDuration) / 60.0);
-        }
+        return numberFormat.format(((double) travelDuration) / 60.0);
+   }
     
 
 }

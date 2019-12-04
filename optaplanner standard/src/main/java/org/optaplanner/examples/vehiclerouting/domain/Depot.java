@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.vehiclerouting.domain;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamInclude;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
@@ -26,15 +24,19 @@ import org.optaplanner.examples.vehiclerouting.domain.timewindowed.TimeWindowedD
 @XStreamInclude({
         TimeWindowedDepot.class
 })
-public class Depot extends AbstractPersistable {
+
+public class Depot extends AbstractPersistable 
+{
 
     protected Location location;
 
-    public Location getLocation() {
+    public Location getLocation() 
+    {
         return location;
     }
 
-    public void setLocation(Location location) {
+    public void setLocation(Location location) 
+    {
         this.location = location;
     }
 
@@ -46,15 +48,19 @@ public class Depot extends AbstractPersistable {
      * @param standstill never null
      * @return a positive number, the distance multiplied by 1000 to avoid floating point arithmetic rounding errors
      */
-    public long getDistanceTo(Standstill standstill) {
+    public long getDistanceTo(Standstill standstill) 
+    {
         return location.getDistanceTo(standstill.getLocation());
     }
 
     @Override
-    public String toString() {
-        if (location.getName() == null) {
+    public String toString() 
+    {
+        if (location.getName() == null) 
+        {
             return super.toString();
         }
+        
         return location.getName();
     }
 

@@ -24,18 +24,19 @@ import org.optaplanner.examples.common.domain.AbstractPersistable;
 import org.optaplanner.examples.common.swingui.components.Labeled;
 
 @XStreamAlias("TaTaskType")
-public class TaskType extends AbstractPersistable implements Labeled {
-
+public class TaskType extends AbstractPersistable implements Labeled 
+{
     private String code;
     private String title;
     private int baseDuration; // In minutes
-
     private List<Skill> requiredSkillList;
 
-    public TaskType() {
+    public TaskType() 
+    {
     }
 
-    public TaskType(long id, String code, String title, int baseDuration) {
+    public TaskType(long id, String code, String title, int baseDuration) 
+    {
         super(id);
         this.code = code;
         this.title = title;
@@ -43,35 +44,43 @@ public class TaskType extends AbstractPersistable implements Labeled {
         requiredSkillList = new ArrayList<>();
     }
 
-    public String getCode() {
+    public String getCode() 
+    {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(String code) 
+    {
         this.code = code;
     }
 
-    public String getTitle() {
+    public String getTitle() 
+    {
         return title;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(String title) 
+    {
         this.title = title;
     }
 
-    public int getBaseDuration() {
+    public int getBaseDuration() 
+    {
         return baseDuration;
     }
 
-    public void setBaseDuration(int baseDuration) {
+    public void setBaseDuration(int baseDuration) 
+    {
         this.baseDuration = baseDuration;
     }
 
-    public List<Skill> getRequiredSkillList() {
+    public List<Skill> getRequiredSkillList() 
+    {
         return requiredSkillList;
     }
 
-    public void setRequiredSkillList(List<Skill> requiredSkillList) {
+    public void setRequiredSkillList(List<Skill> requiredSkillList) 
+    {
         this.requiredSkillList = requiredSkillList;
     }
 
@@ -80,12 +89,14 @@ public class TaskType extends AbstractPersistable implements Labeled {
     // ************************************************************************
 
     @Override
-    public String getLabel() {
+    public String getLabel() 
+    {
         return title;
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return code;
     }
 

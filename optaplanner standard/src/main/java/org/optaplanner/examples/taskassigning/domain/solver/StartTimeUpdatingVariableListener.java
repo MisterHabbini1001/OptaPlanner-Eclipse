@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.taskassigning.domain.solver;
-
 import java.util.Objects;
 
 import org.optaplanner.core.impl.domain.variable.listener.VariableListener;
@@ -26,40 +24,46 @@ import org.optaplanner.examples.taskassigning.domain.TaskOrEmployee;
 import org.optaplanner.examples.taskassigning.domain.TaskType;
 import org.optaplanner.examples.vehiclerouting.domain.location.Location;
 
-
-public class StartTimeUpdatingVariableListener implements VariableListener<Task> {
-	
+public class StartTimeUpdatingVariableListener implements VariableListener<Task> 
+{
     @Override
-    public void beforeEntityAdded(ScoreDirector scoreDirector, Task task) {
+    public void beforeEntityAdded(ScoreDirector scoreDirector, Task task) 
+    {
         // Do nothing
     }
 
     @Override
-    public void afterEntityAdded(ScoreDirector scoreDirector, Task task) {
+    public void afterEntityAdded(ScoreDirector scoreDirector, Task task) 
+    {
         updateStartTime(scoreDirector, task);
     }
 
     @Override
-    public void beforeVariableChanged(ScoreDirector scoreDirector, Task task) {
+    public void beforeVariableChanged(ScoreDirector scoreDirector, Task task) 
+    {
         // Do nothing
     }
 
     @Override
-    public void afterVariableChanged(ScoreDirector scoreDirector, Task task) {
+    public void afterVariableChanged(ScoreDirector scoreDirector, Task task) 
+    {
         updateStartTime(scoreDirector, task);
     }
 
     @Override
-    public void beforeEntityRemoved(ScoreDirector scoreDirector, Task task) {
+    public void beforeEntityRemoved(ScoreDirector scoreDirector, Task task) 
+    {
         // Do nothing
     }
 
     @Override
-    public void afterEntityRemoved(ScoreDirector scoreDirector, Task task) {
+    public void afterEntityRemoved(ScoreDirector scoreDirector, Task task) 
+    {
         // Do nothing
     }
 
-    protected void updateStartTime(ScoreDirector scoreDirector, Task sourceTask) {
+    protected void updateStartTime(ScoreDirector scoreDirector, Task sourceTask) 
+    {
         TaskOrEmployee previous = sourceTask.getPreviousTaskOrEmployee();
         Task shadowTask = sourceTask;
         Integer previousEndTime = (previous == null ? null : previous.getEndTime());
@@ -75,7 +79,8 @@ public class StartTimeUpdatingVariableListener implements VariableListener<Task>
     }
     
     
-    private Integer calculateStartTime(Task task, Integer previousEndTime) {
+    private Integer calculateStartTime(Task task, Integer previousEndTime) 
+    {
         if (task == null || previousEndTime == null) {
             return null;
         }
@@ -94,6 +99,4 @@ public class StartTimeUpdatingVariableListener implements VariableListener<Task>
         return startTime;
         //habbo-
     }
-    
-
 }

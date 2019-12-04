@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.taskassigning.domain;
 
-public enum Affinity {
+public enum Affinity 
+{
     NONE(4),
     LOW(3),
     MEDIUM(2),
@@ -24,18 +24,21 @@ public enum Affinity {
 
     private final int durationMultiplier;
 
-    Affinity(int durationMultiplier) {
+    Affinity(int durationMultiplier) 
+    {
         this.durationMultiplier = durationMultiplier;
     }
 
-    public int getDurationMultiplier() {
+    public int getDurationMultiplier() 
+    {
     	//habbo+
         //return durationMultiplier;
     	return 2;
     	//habbo-
     }
 
-    public String getLabel() {
+    public String getLabel() 
+    {
         switch (this) {
             case NONE:
                 return "No affinity";

@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.taskassigning.domain.solver;
-
 import java.io.Serializable;
 import java.util.Comparator;
 
@@ -32,7 +30,8 @@ public class TaskDifficultyComparator implements Comparator<Task>,
                     .thenComparingLong(Task::getId);
 
     @Override
-    public int compare(Task a, Task b) {
+    public int compare(Task a, Task b) 
+    {
         return COMPARATOR.compare(a, b);
     }
 }

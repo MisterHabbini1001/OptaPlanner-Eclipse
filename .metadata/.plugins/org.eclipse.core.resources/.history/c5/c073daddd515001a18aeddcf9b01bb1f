@@ -1,0 +1,46 @@
+package org.optaplanner.examples.taskassigning.domain;
+import static org.junit.Assert.*;
+import org.junit.*;  
+
+public class AffinityTest 
+{
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		Affinity af = Affinity.NONE;
+		Affinity af = Affinity.LOW;
+		Affinity af = Affinity.MEDIUM;
+		Affinity af = Affinity.HIGH;
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetDurationMultiplier() 
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+	
+	@Test
+	public void testgetLabel() 
+	{
+		//assertEquals(2, 2); // For now. Remove later
+	}
+}

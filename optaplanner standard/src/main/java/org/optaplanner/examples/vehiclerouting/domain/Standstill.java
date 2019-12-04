@@ -13,16 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.vehiclerouting.domain;
-
 import org.optaplanner.core.api.domain.entity.PlanningEntity;
 import org.optaplanner.core.api.domain.variable.InverseRelationShadowVariable;
 import org.optaplanner.examples.vehiclerouting.domain.location.Location;
 
 @PlanningEntity
-public interface Standstill {
-
+public interface Standstill 
+{
     /**
      * @return never null
      */
@@ -39,5 +37,4 @@ public interface Standstill {
     @InverseRelationShadowVariable(sourceVariableName = "previousStandstill")
     Customer getNextCustomer();
     void setNextCustomer(Customer nextCustomer);
-
 }

@@ -13,31 +13,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.taskassigning.domain;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 import org.optaplanner.examples.common.swingui.components.Labeled;
 
 @XStreamAlias("TaSkill")
-public class Skill extends AbstractPersistable implements Labeled {
-
+public class Skill extends AbstractPersistable implements Labeled 
+{
     private String name;
 
-    public Skill() {
+    public Skill() 
+    {
     }
 
-    public Skill(long id, String name) {
+    public Skill(long id, String name) 
+    {
         super(id);
         this.name = name;
     }
 
-    public String getName() {
+    public String getName() 
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name) 
+    {
         this.name = name;
     }
 
@@ -46,13 +48,14 @@ public class Skill extends AbstractPersistable implements Labeled {
     // ************************************************************************
 
     @Override
-    public String getLabel() {
+    public String getLabel() 
+    {
         return name;
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return name;
     }
-
 }

@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.taskassigning.domain.location;
-
 import java.util.Map;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
@@ -26,28 +24,33 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  * Used with {@link DistanceType#ROAD_DISTANCE}.
  */
 @XStreamAlias("VrpRoadLocation")
-public class RoadLocation extends Location {
-
+public class RoadLocation extends Location 
+{
     // Prefer Map over array or List because customers might be added and removed in real-time planning.
     protected Map<RoadLocation, Double> travelDistanceMap;
 
-    public RoadLocation() {
+    public RoadLocation() 
+    {
     }
 
-    public RoadLocation(long id, double latitude, double longitude) {
+    public RoadLocation(long id, double latitude, double longitude) 
+    {
         super(id, latitude, longitude);
     }
 
-    public Map<RoadLocation, Double> getTravelDistanceMap() {
+    public Map<RoadLocation, Double> getTravelDistanceMap() 
+    {
         return travelDistanceMap;
     }
 
-    public void setTravelDistanceMap(Map<RoadLocation, Double> travelDistanceMap) {
+    public void setTravelDistanceMap(Map<RoadLocation, Double> travelDistanceMap) 
+    {
         this.travelDistanceMap = travelDistanceMap;
     }
 
     @Override
-    public long getDistanceTo(Location location) {
+    public long getDistanceTo(Location location) 
+    {
         if (this == location) {
             return 0L;
         }
@@ -55,5 +58,4 @@ public class RoadLocation extends Location {
         // Multiplied by 1000 to avoid floating point arithmetic rounding errors
         return (long) (distance * 1000.0 + 0.5);
     }
-
 }
