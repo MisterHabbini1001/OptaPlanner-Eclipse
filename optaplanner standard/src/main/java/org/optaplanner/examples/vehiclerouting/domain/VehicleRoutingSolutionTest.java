@@ -56,132 +56,144 @@ public class VehicleRoutingSolutionTest
 	}
 	
 	@Test
-	public String testgetName()
+	public void testgetName()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return name;
+		//return name;
+		System.out.println(name);
 	}
 	
 	@Test
-	public void testsetName(String name)
+	public void testsetName()
 	{
 		//assertEquals(2, 2); // For now. Remove later
 		this.name = name;
 	}
 	
 	@Test
-	public DistanceType testgetDistanceType()
+	public void testgetDistanceType()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return distanceType;
+		//return distanceType;
+		System.out.println(distanceType);
 	}
 	
 	@Test
-	public void testsetDistanceType(DistanceType distanceType)
+	public void testsetDistanceType()
 	{
 		//assertEquals(2, 2); // For now. Remove later
 		this.distanceType = distanceType;
 	}
 	
 	@Test
-	public String testgetDistanceUnitOfMeasurement()
+	public void testgetDistanceUnitOfMeasurement()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return distanceUnitOfMeasurement;
+		//return distanceUnitOfMeasurement;
+		System.out.println(distanceUnitOfMeasurement);
 	}
 	
 	@Test
-	public void testsetDistanceUnitOfMeasurement(String distanceUnitOfMeasurement)
+	public void testsetDistanceUnitOfMeasurement()
 	{
 		//assertEquals(2, 2); // For now. Remove later
 		this.distanceUnitOfMeasurement = distanceUnitOfMeasurement;
 	}
 	
 	@Test
-	public List<Location> testgetLocationList()
+	public void testgetLocationList()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return locationList;
+		//return locationList;
+		System.out.println(locationList);
 	}
 	
 	@Test
-	public void testsetLocationList(List<Location> locationList)
+	public void testsetLocationList()
 	{
 		//assertEquals(2, 2); // For now. Remove later
 		this.locationList = locationList;
 	}
 	
 	@Test
-	public List<Depot> testgetDepotList()
+	public void testgetDepotList()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return depotList;
+		//return depotList;
+		System.out.println(depotList);
 	}
 	
 	@Test
-	public void testsetDepotList(List<Depot> depotList)
+	public void testsetDepotList()
 	{
 		//assertEquals(2, 2); // For now. Remove later
 		this.depotList = depotList;
 	}
 	
 	@Test
-	public List<Vehicle> testgetVehicleList()
+	public void testgetVehicleList()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return vehicleList;
+		//return vehicleList;
+		System.out.println(vehicleList);
 	}
 	
 	@Test
-	public void testsetVehicleList(List<Vehicle> vehicleList)
+	public void testsetVehicleList()
 	{
 		//assertEquals(2, 2); // For now. Remove later
 		this.vehicleList = vehicleList;
 	}
 	
 	@Test
-	public List<Customer> testgetCustomerList()
+	public void testgetCustomerList()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return customerList;
+		//return customerList;
+		System.out.println(customerList);
 	}
 	
 	@Test
-	public void testsetCustomerList(List<Customer> customerList)
+	public void testsetCustomerList()
 	{
 		//assertEquals(2, 2); // For now. Remove later
 		this.customerList = customerList;
 	}
 	
 	@Test
-	public HardSoftLongScore testgetScore()
+	public void testgetScore()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return score;
+		//return score;
+		System.out.println(score);
 	}
 	
 	@Test
-	public void testsetScore(HardSoftLongScore score)
+	public void testsetScore()
 	{
 		//assertEquals(2, 2); // For now. Remove later
 		this.score = score;
 	}
 	
 	@Test
-	public String testgetDistanceString(NumberFormat numberFormat)
+	public void testgetDistanceString()
 	{
 		//assertEquals(2, 2); // For now. Remove later
         if (score == null) 
         {
-            return null;
+            //return null;
+            System.out.println();
         }
         
-        long distance = - score.getSoftScore();
+        //long distance = - score.getSoftScore();
+        long distance = 123;
         if (distanceUnitOfMeasurement == null) 
         {
-            return numberFormat.format(((double) distance) / 1000.0);
+            //return numberFormat.format(((double) distance) / 1000.0);
+            System.out.println((double) distance / 1000.0);
         }
         
+        /*
         switch (distanceUnitOfMeasurement) 
         {
             case "sec":  // TODO why are the values 1000 larger?
@@ -189,20 +201,25 @@ public class VehicleRoutingSolutionTest
                 long minutes = distance % 3600000L / 60000L;
                 long seconds = distance % 60000L / 1000L;
                 long milliseconds = distance % 1000L;
-                return hours + "h " + minutes + "m " + seconds + "s " + milliseconds + "ms";
+                //return hours + "h " + minutes + "m " + seconds + "s " + milliseconds + "ms";
+                System.out.println(hours + "h " + minutes + "m " + seconds + "s " + milliseconds + "ms");
             case "km": { // TODO why are the values 1000 larger?
                 long km = distance / 1000L;
                 long meter = distance % 1000L;
-                return km + "km " + meter + "m";
+                //return km + "km " + meter + "m";
+                System.out.println(km + "km " + meter + "m");
             }
             case "meter": 
             {
                 long km = distance / 1000L;
                 long meter = distance % 1000L;
-                return km + "km " + meter + "m";
+                //return km + "km " + meter + "m";
+                System.out.println(km + "km " + meter + "m");
             }
             default:
-                return numberFormat.format(((double) distance) / 1000.0) + " " + distanceUnitOfMeasurement;
+                //return numberFormat.format(((double) distance) / 1000.0) + " " + distanceUnitOfMeasurement;
+                System.out.println((double) distance / 1000.0 + " " + distanceUnitOfMeasurement);
         }
+        */
 	}
 }

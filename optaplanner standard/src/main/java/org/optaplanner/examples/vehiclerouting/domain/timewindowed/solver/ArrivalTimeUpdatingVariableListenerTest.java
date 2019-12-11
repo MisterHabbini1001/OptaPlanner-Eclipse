@@ -44,90 +44,108 @@ public class ArrivalTimeUpdatingVariableListenerTest
 	}
 	
 	@Test
-	public void testbeforeEntityAdded(ScoreDirector scoreDirector, Customer customer)
+	public void testbeforeEntityAdded()
 	{
 		//assertEquals(2, 2);  // For now. Remove later
 		// Do nothing
 	}
 	
 	@Test
-	public void testafterEntityAdded(ScoreDirector scoreDirector, Customer customer)
+	public void testafterEntityAdded()
 	{
 		//assertEquals(2, 2);  // For now. Remove later
+		/*
         if (customer instanceof TimeWindowedCustomer) 
         {
             testupdateArrivalTime(scoreDirector, (TimeWindowedCustomer) customer);
         }
+        */
+		
+		System.out.println();
 	}
 	
 	@Test
-	public void testbeforeVariableChanged(ScoreDirector scoreDirector, Customer customer)
+	public void testbeforeVariableChanged()
 	{
 		//assertEquals(2, 2); // For now. Remove later
 		// Do nothing
 	}
 	
 	@Test
-	public void testafterVariableChanged(ScoreDirector scoreDirector, Customer customer)
+	public void testafterVariableChanged()
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		/*
         if (customer instanceof TimeWindowedCustomer) 
         {
             updateArrivalTime(scoreDirector, (TimeWindowedCustomer) customer);
         }
+        */
+        
+        System.out.println();
 	}
 	
 	@Test
-	public void testbeforeEntityRemoved(ScoreDirector scoreDirector, Customer customer)
+	public void testbeforeEntityRemoved()
 	{
 		//assertEquals(2, 2); // For now. Remove later
 		// Do nothing
 	}
 	
 	@Test
-	public void testafterEntityRemoved(ScoreDirector scoreDirector, Customer customer)
+	public void testafterEntityRemoved()
 	{
 		//assertEquals(2, 2); // For now. Remove later
 		// Do nothing
 	}
 	
 	@Test
-	public void testupdateArrivalTime(ScoreDirector scoreDirector, TimeWindowedCustomer sourceCustomer)
+	public void testupdateArrivalTime()
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		/*
         Standstill previousStandstill = sourceCustomer.getPreviousStandstill();
+        Standstill previousStandstill = new Standstill();
         Long departureTime = previousStandstill == null ? null
                 : (previousStandstill instanceof TimeWindowedCustomer)
                 ? ((TimeWindowedCustomer) previousStandstill).getDepartureTime()
                 : ((TimeWindowedDepot) ((Vehicle) previousStandstill).getDepot()).getReadyTime();
         TimeWindowedCustomer shadowCustomer = sourceCustomer;
         Long arrivalTime = testcalculateArrivalTime(shadowCustomer, departureTime);
-        while (shadowCustomer != null && !Objects.equals(shadowCustomer.getArrivalTime(), arrivalTime)) {
-            scoreDirector.beforeVariableChanged(shadowCustomer, "arrivalTime");
+        while (shadowCustomer != null && !Objects.equals(shadowCustomer.getArrivalTime(), arrivalTime)) 
+        {
+            //scoreDirector.beforeVariableChanged(shadowCustomer, "arrivalTime");
             shadowCustomer.setArrivalTime(arrivalTime);
-            scoreDirector.afterVariableChanged(shadowCustomer, "arrivalTime");
+            //scoreDirector.afterVariableChanged(shadowCustomer, "arrivalTime");
             departureTime = shadowCustomer.getDepartureTime();
             shadowCustomer = shadowCustomer.getNextCustomer();
-            arrivalTime = testcalculateArrivalTime(shadowCustomer, departureTime);
+            //arrivalTime = testcalculateArrivalTime(shadowCustomer, departureTime);
         }
+        */
+		System.out.println();
 	}
 	
 	@Test
-	public Long testcalculateArrivalTime(TimeWindowedCustomer customer, Long previousDepartureTime)
+	public void testcalculateArrivalTime()
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		TimeWindowedCustomer customer = new TimeWindowedCustomer();
+		Long previousDepartureTime = 1020L;
+		
         if (customer == null || customer.getPreviousStandstill() == null) 
         {
-            return null;
+            //return null;
+            System.out.println();
         }
         
         if (customer.getPreviousStandstill() instanceof Vehicle) 
         {
             // PreviousStandstill is the Vehicle, so we leave from the Depot at the best suitable time
-            return Math.max(customer.getReadyTime(),
-                    previousDepartureTime + customer.getDistanceFromPreviousStandstill());
+            //return Math.max(customer.getReadyTime(), previousDepartureTime + customer.getDistanceFromPreviousStandstill());
+            System.out.println(Math.max(customer.getReadyTime(), previousDepartureTime + customer.getDistanceFromPreviousStandstill()));
         }
         
-        return previousDepartureTime + customer.getDistanceFromPreviousStandstill();
+        //return previousDepartureTime + customer.getDistanceFromPreviousStandstill();
+        System.out.println(previousDepartureTime + customer.getDistanceFromPreviousStandstill());
 	}
 }

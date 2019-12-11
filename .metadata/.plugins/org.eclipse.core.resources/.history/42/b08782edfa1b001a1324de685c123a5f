@@ -1,0 +1,88 @@
+package org.optaplanner.examples.projectjobscheduling.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class ExecutionModeTest 
+{
+	private Job job;
+    private int duration; // In days
+    private List<ResourceRequirement> resourceRequirementList;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+    */
+	
+	@Test
+    public void getJob() 
+    {
+        //return job;
+        System.out.println(job);
+    }
+
+	@Test
+    public void setJob() 
+    {
+        this.job = job;
+    }
+
+	@Test
+    public void getDuration() 
+    {
+        //return duration;
+        System.out.println(duration);
+    }
+
+	@Test
+    public void setDuration() 
+    {
+        this.duration = duration;
+    }
+
+	@Test
+    public void getResourceRequirementList() 
+    {
+        //return resourceRequirementList;
+		System.out.println(resourceRequirementList);
+    }
+
+	@Test
+    public void setResourceRequirementList() 
+	{
+        this.resourceRequirementList = resourceRequirementList;
+    }
+}

@@ -38,26 +38,29 @@ public class RoadLocationTest
 	}
 	
 	@Test
-	public Map<RoadLocation, Double> testgetTravelDistanceMap()
+	public void testgetTravelDistanceMap()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return travelDistanceMap;
+		//return travelDistanceMap;
+		System.out.println(travelDistanceMap);
 	}
 	
 	@Test
-	public void testsetTravelDistanceMap(Map<RoadLocation, Double> travelDistanceMap)
+	public void testsetTravelDistanceMap()
 	{
 		//assertEquals(2, 2); // For now. Remove later
 		this.travelDistanceMap = travelDistanceMap;
 	}
 	
 	@Test
-	public long testgetDistanceTo(Location location)
+	public void testgetDistanceTo()
 	{
 		//assertEquals(2, 2); // For now. Remove later
 		
-        double distance = travelDistanceMap.get((RoadLocation) location);
+        //double distance = travelDistanceMap.get((RoadLocation) location);
+		double distance = 1.31;
         // Multiplied by 1000 to avoid floating point arithmetic rounding errors
-        return (long) (distance * 1000.0 + 0.5);
+        //return (long) (distance * 1000.0 + 0.5);
+        System.out.println((long) (distance * 1000.0 + 0.5));
 	}
 }

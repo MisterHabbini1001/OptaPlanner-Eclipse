@@ -74,5 +74,4 @@ public class Project extends AbstractPersistable {
     public String getLabel() {
         return "Project " + id;
     }
-
 }

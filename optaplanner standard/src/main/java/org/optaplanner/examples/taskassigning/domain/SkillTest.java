@@ -43,30 +43,33 @@ public class SkillTest
 	}
 	
 	@Test
-	public String testgetName()
+	public void testgetName()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return name;
+		//return name;
+		System.out.println(name);
 	}
 	
 	@Test
-	public void testsetName(String name)
+	public void testsetName()
 	{
 		//assertEquals(2, 2); // For now. Remove later
 		this.name = name;
 	}
 	
 	@Test
-	public String testgetLabel()
+	public void testgetLabel()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return name;
+		//return name;
+		System.out.println(name);
 	}
 	
 	@Test
-	public String testtoString()
+	public void testtoString()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return name;
+		//return name;
+		System.out.println(name);
 	}
 }

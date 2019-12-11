@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="CustomerTest (1)" project="optaplanner standard" tests="14" started="14" failures="0" errors="0" ignored="0">
+  <testsuite name="org.optaplanner.examples.vehiclerouting.domain.CustomerTest" time="0.0">
+    <testcase name="testgetPreviousStandstill" classname="org.optaplanner.examples.vehiclerouting.domain.CustomerTest" time="0.0"/>
+    <testcase name="testsetNextCustomer" classname="org.optaplanner.examples.vehiclerouting.domain.CustomerTest" time="0.0"/>
+    <testcase name="testgetVehicle" classname="org.optaplanner.examples.vehiclerouting.domain.CustomerTest" time="0.0"/>
+    <testcase name="testsetDemand" classname="org.optaplanner.examples.vehiclerouting.domain.CustomerTest" time="0.0"/>
+    <testcase name="testgetDistanceTo" classname="org.optaplanner.examples.vehiclerouting.domain.CustomerTest" time="0.0"/>
+    <testcase name="testtoString" classname="org.optaplanner.examples.vehiclerouting.domain.CustomerTest" time="0.0"/>
+    <testcase name="testgetDemand" classname="org.optaplanner.examples.vehiclerouting.domain.CustomerTest" time="0.0"/>
+    <testcase name="testgetDistanceFromPreviousStandstill" classname="org.optaplanner.examples.vehiclerouting.domain.CustomerTest" time="0.0"/>
+    <testcase name="testsetVehicle" classname="org.optaplanner.examples.vehiclerouting.domain.CustomerTest" time="0.0"/>
+    <testcase name="testsetPreviousStandstill" classname="org.optaplanner.examples.vehiclerouting.domain.CustomerTest" time="0.0"/>
+    <testcase name="testgetDistanceFrom" classname="org.optaplanner.examples.vehiclerouting.domain.CustomerTest" time="0.0"/>
+    <testcase name="testsetLocation" classname="org.optaplanner.examples.vehiclerouting.domain.CustomerTest" time="0.0"/>
+    <testcase name="testgetLocation" classname="org.optaplanner.examples.vehiclerouting.domain.CustomerTest" time="0.0"/>
+    <testcase name="testgetNextCustomer" classname="org.optaplanner.examples.vehiclerouting.domain.CustomerTest" time="0.0"/>
+  </testsuite>
+</testrun>

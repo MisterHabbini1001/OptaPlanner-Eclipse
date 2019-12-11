@@ -169,5 +169,4 @@ public class Allocation extends AbstractPersistable {
     public CountableValueRange<Integer> getDelayRange() {
         return ValueRangeFactory.createIntValueRange(0, 500);
     }
-
 }

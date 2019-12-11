@@ -33,42 +33,45 @@ public class LocationTest
 	}
 	
 	@Test
-	public String testgetName()
+	public void testgetName()
 	{
 		//assertEquals(2, 2);  // For now. Remove later
-		return name;
+		//return name;
+        System.out.println(name);
 	}
 	
 	@Test
-	public void testsetName(String name)
+	public void testsetName()
 	{
 		//assertEquals(2, 2);  // For now. Remove later
 		this.name = name;
 	}
 	
 	@Test
-	public double testgetLatitude()
+	public void testgetLatitude()
 	{
 		//assertEquals(2, 2);  // For now. Remove later
-		return latitude;
+		//return latitude;
+        System.out.println(latitude);
 	}
 	
 	@Test
-	public void testsetLatitude(double latitude)
+	public void testsetLatitude()
 	{
 		//assertEquals(2, 2);  // For now. Remove later
 		this.latitude = latitude;
 	}
 	
 	@Test
-	public double testgetLongitude()
+	public void testgetLongitude()
 	{
 		//assertEquals(2, 2);  // For now. Remove later
-		return longitude;
+		//return longitude;
+		System.out.println(longitude);
 	}
 	
 	@Test
-	public void testsetLongitude(double longitude)
+	public void testsetLongitude()
 	{
 		//assertEquals(2, 2);  // For now. Remove later
 		this.longitude = longitude;
@@ -81,34 +84,42 @@ public class LocationTest
 	}
 	
 	@Test
-	public double testgetAirDistanceDoubleTo(Location location)
+	public void testgetAirDistanceDoubleTo()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-        double latitudeDifference = location.latitude - latitude;
-        double longitudeDifference = location.longitude - longitude;
-        return Math.sqrt(
-                (latitudeDifference * latitudeDifference) + (longitudeDifference * longitudeDifference));
+        //double latitudeDifference = location.latitude - latitude;
+        //double longitudeDifference = location.longitude - longitude;
+		double latitudeDifference = 1.293822;
+		double longitudeDifference = 2.039339;
+        //return Math.sqrt((latitudeDifference * latitudeDifference) + (longitudeDifference * longitudeDifference));
+        System.out.println(Math.sqrt((latitudeDifference * latitudeDifference) + (longitudeDifference * longitudeDifference)));
 	}
 	
 	@Test
-	public double testgetAngle(Location location)
+	public void testgetAngle()
 	{
 		//assertEquals(2, 2); // For now. Remove later
         // Euclidean distance (Pythagorean theorem) - not correct when the surface is a sphere
-        double latitudeDifference = location.latitude - latitude;
-        double longitudeDifference = location.longitude - longitude;
-        return Math.atan2(latitudeDifference, longitudeDifference);
+        //double latitudeDifference = location.latitude - latitude;
+        //double longitudeDifference = location.longitude - longitude;
+		double latitudeDifference = 0.793822;
+		double longitudeDifference = 1.039339;
+        //return Math.atan2(latitudeDifference, longitudeDifference);
+		System.out.println(Math.atan2(latitudeDifference, longitudeDifference));
 	}
 	
 	@Test
-	public String testtoString()
+	public void testtoString()
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		/*
         if (name == null) 
         {
             return super.toString();
         }
         
         return name;
+        */
+        System.out.println();
 	}
 }

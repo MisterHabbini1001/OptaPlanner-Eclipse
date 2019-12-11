@@ -53,27 +53,35 @@ public class AffinityTest
 	}
 	
 	@Test
-	public int testgetDurationMultiplier() 
+	public void testgetDurationMultiplier() 
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return 2;
+		//return 2;
+		System.out.println(2);
 	}
 	
 	@Test
-	public String testgetLabel() 
+	public void testgetLabel() 
 	{
 		//assertEquals(2, 2); // For now. Remove later
-        switch (this) {
-        case Affinity.NONE:
-            return "No affinity";
-        case Affinity.LOW:
-            return "Low affinity";
-        case Affinity.MEDIUM:
-            return "Medium affinity";
-        case Affinity.HIGH:
-            return "High affinity";
-        default:
-            throw new IllegalStateException("The affinity (" + this + ") is not implemented.");
+		// switch (this)
+		Affinity wee = Affinity.HIGH;
+
+        switch (wee) {
+        case NONE:
+            //return "No affinity";
+        	System.out.println("No affinity");
+        case LOW:
+            //return "Low affinity";
+        	System.out.println("Low affinity");
+        case MEDIUM:
+            //return "Medium affinity";
+        	System.out.println("Medium affinity");
+        case HIGH:
+            //return "High affinity";
+        	System.out.println("High affinity");
+        //default:
+           // throw new IllegalStateException("The affinity (" + this + ") is not implemented.");
         }
 	}
 }

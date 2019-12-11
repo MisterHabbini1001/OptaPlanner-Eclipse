@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="HubSegmentLocationTest" project="optaplanner standard" tests="7" started="7" failures="0" errors="0" ignored="0">
+  <testsuite name="org.optaplanner.examples.vehiclerouting.domain.location.segmented.HubSegmentLocationTest" time="0.0">
+    <testcase name="testgetNearbyTravelDistanceMap" classname="org.optaplanner.examples.vehiclerouting.domain.location.segmented.HubSegmentLocationTest" time="0.0"/>
+    <testcase name="testgetDistanceTo" classname="org.optaplanner.examples.vehiclerouting.domain.location.segmented.HubSegmentLocationTest" time="0.0"/>
+    <testcase name="testgetShortestDistanceDoubleThroughOtherHub" classname="org.optaplanner.examples.vehiclerouting.domain.location.segmented.HubSegmentLocationTest" time="0.0"/>
+    <testcase name="testsetNearbyTravelDistanceMap" classname="org.optaplanner.examples.vehiclerouting.domain.location.segmented.HubSegmentLocationTest" time="0.0"/>
+    <testcase name="testgetHubTravelDistanceMap" classname="org.optaplanner.examples.vehiclerouting.domain.location.segmented.HubSegmentLocationTest" time="0.0"/>
+    <testcase name="testgetDistanceDouble" classname="org.optaplanner.examples.vehiclerouting.domain.location.segmented.HubSegmentLocationTest" time="0.0"/>
+    <testcase name="testsetHubTravelDistanceMap" classname="org.optaplanner.examples.vehiclerouting.domain.location.segmented.HubSegmentLocationTest" time="0.0"/>
+  </testsuite>
+</testrun>

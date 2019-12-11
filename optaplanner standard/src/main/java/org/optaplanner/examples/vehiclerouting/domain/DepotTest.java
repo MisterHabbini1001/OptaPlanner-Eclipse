@@ -38,35 +38,42 @@ public class DepotTest
 	}
 	
 	@Test
-	public Location testgetLocation()
+	public void testgetLocation()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return location;
+		//return location;
+        System.out.println(location);
 	}
 	
 	@Test
-	public void testsetLocation(Location location)
+	public void testsetLocation()
 	{
 		//assertEquals(2, 2); // For now. Remove later
 		this.location = location;
 	}
 	
 	@Test
-	public long testgetDistanceTo(Standstill standstill)
+	public void testgetDistanceTo()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return location.getDistanceTo(standstill.getLocation());
+		//return location.getDistanceTo(standstill.getLocation());
+		System.out.println();
 	}
 	
 	@Test
-	public String testtoString()
+	public void testtoString()
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		/*
         if (location.getName() == null) 
         {
-            return super.toString();
+            //return super.toString();
+            System.out.println(super.toString());
         }
         
-        return location.getName();
+        //return location.getName();
+        System.out.println(location.getName());
+        */
+        System.out.println();
 	}
 }

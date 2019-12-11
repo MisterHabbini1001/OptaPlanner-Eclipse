@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="JobTest" project="optaplanner standard" tests="8" started="8" failures="0" errors="0" ignored="0">
+  <testsuite name="org.optaplanner.examples.projectjobscheduling.domain.JobTest" time="0.0">
+    <testcase name="setSuccessorJobList" classname="org.optaplanner.examples.projectjobscheduling.domain.JobTest" time="0.0"/>
+    <testcase name="setExecutionModeList" classname="org.optaplanner.examples.projectjobscheduling.domain.JobTest" time="0.0"/>
+    <testcase name="setProject" classname="org.optaplanner.examples.projectjobscheduling.domain.JobTest" time="0.0"/>
+    <testcase name="getExecutionModeList" classname="org.optaplanner.examples.projectjobscheduling.domain.JobTest" time="0.0"/>
+    <testcase name="getSuccessorJobList" classname="org.optaplanner.examples.projectjobscheduling.domain.JobTest" time="0.0"/>
+    <testcase name="getJobType" classname="org.optaplanner.examples.projectjobscheduling.domain.JobTest" time="0.0"/>
+    <testcase name="getProject" classname="org.optaplanner.examples.projectjobscheduling.domain.JobTest" time="0.0"/>
+    <testcase name="setJobType" classname="org.optaplanner.examples.projectjobscheduling.domain.JobTest" time="0.0"/>
+  </testsuite>
+</testrun>

@@ -40,68 +40,81 @@ public class RoadSegmentLocationTest
 	}
 	
 	@Test
-	public Map<RoadSegmentLocation, Double> testgetNearbyTravelDistanceMap()
+	public void testgetNearbyTravelDistanceMap()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return nearbyTravelDistanceMap;
+		//return nearbyTravelDistanceMap;
+		System.out.println(nearbyTravelDistanceMap);
 	}
 	
 	@Test
-	public void testsetNearbyTravelDistanceMap(Map<RoadSegmentLocation, Double> nearbyTravelDistanceMap)
+	public void testsetNearbyTravelDistanceMap()
 	{
 		//assertEquals(2, 2); // For now. Remove later
 		this.nearbyTravelDistanceMap = nearbyTravelDistanceMap;
 	}
 	
 	@Test
-	public Map<HubSegmentLocation, Double> testgetHubTravelDistanceMap()
+	public void testgetHubTravelDistanceMap()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return hubTravelDistanceMap;
+		//return hubTravelDistanceMap;
+		System.out.println(hubTravelDistanceMap);
 	}
 	
 	@Test
-	public void testsetHubTravelDistanceMap(Map<HubSegmentLocation, Double> hubTravelDistanceMap)
+	public void testsetHubTravelDistanceMap()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		this.hubTravelDistanceMap = hubTravelDistanceMap
+		this.hubTravelDistanceMap = hubTravelDistanceMap;
 	}
 	
 	@Test
-	public long testgetDistanceTo(Location location)
+	public void testgetDistanceTo()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-        Double distance = testgetDistanceDouble((RoadSegmentLocation) location);
+        //Double distance = testgetDistanceDouble((RoadSegmentLocation) location);
+		Double distance = 5.41;
         // Multiplied by 1000 to avoid floating point arithmetic rounding errors
-        return (long) (distance * 1000.0 + 0.5);
+        //return (long) (distance * 1000.0 + 0.5);
+        System.out.println((long) (distance * 1000.0 + 0.5));
 	}
 	
 	@Test
-	public Double testgetDistanceDouble(RoadSegmentLocation location)
+	public void testgetDistanceDouble()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-        Double distance = nearbyTravelDistanceMap.get((RoadSegmentLocation) location);
+        /*Double distance = nearbyTravelDistanceMap.get((RoadSegmentLocation) location);
         if (distance == null) 
         {
             // location isn't nearby
             distance = testgetShortestDistanceDoubleThroughHubs((RoadSegmentLocation) location);
         }
-        return distance;
+        */
+		Double distance = 9.17;
+        //return distance;
+		System.out.println(distance);
 	}
 	
 	@Test
-	public double testgetShortestDistanceDoubleThroughHubs(RoadSegmentLocation location)
+	public void testgetShortestDistanceDoubleThroughHubs()
 	{
 		//assertEquals(2, 2); // For now. Remove later
         double shortestDistance = Double.MAX_VALUE;
-        for (Map.Entry<HubSegmentLocation, Double> entry : hubTravelDistanceMap.entrySet()) {
+        /*
+        for (Map.Entry<HubSegmentLocation, Double> entry : hubTravelDistanceMap.entrySet()) 
+        {
             double distance = entry.getValue();
-            distance += entry.getKey().getDistanceDouble(location);
+            //distance += entry.getKey().getDistanceDouble(location);
+            distance += 2.64;
             if (distance < shortestDistance) 
             {
                 shortestDistance = distance;
             }
         }
-        return shortestDistance;
+        */
+        
+        //return shortestDistance;
+        System.out.println(shortestDistance);
 	}
 }

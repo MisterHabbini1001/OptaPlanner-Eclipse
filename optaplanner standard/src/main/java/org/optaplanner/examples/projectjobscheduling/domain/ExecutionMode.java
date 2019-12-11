@@ -26,7 +26,6 @@ public class ExecutionMode extends AbstractPersistable {
 
     private Job job;
     private int duration; // In days
-
     private List<ResourceRequirement> resourceRequirementList;
 
     public Job getJob() {

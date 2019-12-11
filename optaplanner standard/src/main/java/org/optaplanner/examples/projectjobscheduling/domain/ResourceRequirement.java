@@ -58,5 +58,4 @@ public class ResourceRequirement extends AbstractPersistable {
     public boolean isResourceRenewable() {
         return resource.isRenewable();
     }
-
 }

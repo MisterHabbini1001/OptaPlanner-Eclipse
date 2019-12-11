@@ -112,8 +112,7 @@ public abstract class Location extends AbstractPersistable
         //average speed over air is 68 kilometer per hour
         //return the time in minutes
         double speed = 68;
-        return(c * r * 60 / speed);
-        
+        return(c * r * 60 / speed);        
     }
 
     /**
@@ -133,9 +132,11 @@ public abstract class Location extends AbstractPersistable
     @Override
     public String toString() 
     {
-        if (name == null) {
-            return super.toString();
+        if (name == null) 
+        {
+          return super.toString();
         }
+        
         return name;
     }
 

@@ -1,9 +1,14 @@
 package org.optaplanner.examples.taskassigning.domain.location;
 import static org.junit.Assert.*;
+
+import java.util.Map;
+
 import org.junit.*;
 
 public class RoadLocationTest 
 {
+	protected Map<RoadLocation, Double> travelDistanceMap;
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception 
 	{
@@ -44,17 +49,24 @@ public class RoadLocationTest
 	public void testgetTravelDistanceMap()
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		//return travelDistanceMap;
+		System.out.println(travelDistanceMap);
 	}
 	
 	@Test
 	public void testsetTravelDistanceMap()
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		this.travelDistanceMap = travelDistanceMap;
 	}
 	
 	@Test
 	public void testgetDistanceTo()
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		double distance = 1.34;
+        // Multiplied by 1000 to avoid floating point arithmetic rounding errors
+        //return (long) (distance * 1000.0 + 0.5);
+        System.out.println((long) (distance * 1000.0 + 0.5));
 	}
 }

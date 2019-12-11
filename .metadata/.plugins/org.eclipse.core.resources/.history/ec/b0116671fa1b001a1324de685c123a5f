@@ -1,0 +1,46 @@
+package org.optaplanner.examples.projectjobscheduling.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class JobTypeTest 
+{
+
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		JobType jt_1 = JobType.SOURCE;
+		JobType jt_1 = JobType.SINK;
+		JobType jt_1 = JobType.STANDARD;
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+}

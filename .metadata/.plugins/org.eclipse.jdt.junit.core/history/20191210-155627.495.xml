@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="RoadLocationTest" project="optaplanner standard" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="org.optaplanner.examples.taskassigning.domain.location.RoadLocationTest" time="0.0">
+    <testcase name="testsetTravelDistanceMap" classname="org.optaplanner.examples.taskassigning.domain.location.RoadLocationTest" time="0.0"/>
+    <testcase name="testgetTravelDistanceMap" classname="org.optaplanner.examples.taskassigning.domain.location.RoadLocationTest" time="0.0"/>
+    <testcase name="testgetDistanceTo" classname="org.optaplanner.examples.taskassigning.domain.location.RoadLocationTest" time="0.0"/>
+  </testsuite>
+</testrun>

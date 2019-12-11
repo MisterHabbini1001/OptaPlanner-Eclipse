@@ -38,17 +38,18 @@ public class CapacityTest
 	}
 	
 	@Test
-	public void testsetStartTime(int startTime)
+	public void testsetStartTime()
 	{
 		//assertEquals(2, 2); // For now. Remove later
 		this.startTime = startTime;
 	}
 	
 	@Test
-	public int testgetStartTime()
+	public void testgetStartTime()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return startTime;
+		//return startTime;
+		System.out.println(startTime);
 	}
 	
 	@Test
@@ -59,9 +60,10 @@ public class CapacityTest
 	}
 	
 	@Test
-	public int testgetEndTime()
+	public void testgetEndTime()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return endTime;
+		//return endTime;
+		System.out.println(endTime);
 	}
 }

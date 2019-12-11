@@ -1,0 +1,45 @@
+package org.optaplanner.examples.projectjobscheduling.domain.resource;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class LocalResourceTest 
+{
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		LocalResource lr = new LocalResource();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		LocalResource lr = new LocalResource();
+		lr = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		LocalResource lr = new LocalResource();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		LocalResource lr = new LocalResource();
+		lr = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+}

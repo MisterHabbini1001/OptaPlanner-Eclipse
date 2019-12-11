@@ -37,14 +37,16 @@ public class CustomerNearbyDistanceMeterTest
 	}
 	
 	@Test
-	public double testgetNearbyDistance(Customer origin, Standstill destination)
+	public void testgetNearbyDistance()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-        long distance = origin.getDistanceTo(destination);
+        //long distance = origin.getDistanceTo(destination);
+		long distance = 156;
         // If arriving early also inflicts a cost (more than just not using the vehicle more), such as the driver's wage, use this:
 //        if (origin instanceof TimeWindowedCustomer && destination instanceof TimeWindowedCustomer) {
 //            distance += ((TimeWindowedCustomer) origin).getTimeWindowGapTo((TimeWindowedCustomer) destination);
 //        }
-        return distance;
+        //return distance;
+        System.out.println(distance);
 	}
 }

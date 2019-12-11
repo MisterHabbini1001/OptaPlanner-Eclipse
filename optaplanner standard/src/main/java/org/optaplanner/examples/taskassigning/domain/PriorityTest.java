@@ -51,19 +51,23 @@ public enum PriorityTest
 	}
 	
 	@Test
-	public String testgetLabel()
+	public void testgetLabel()
 	{
 		//assertEquals(2, 2); // For now. Remove later
         switch (this) 
         {
             case MINOR:
-                return "Minor priority";
+                //return "Minor priority";
+                System.out.println("Minor priority");
             case MAJOR:
-                return "Major priority";
+                //return "Major priority";
+                System.out.println("Major priority");
             case CRITICAL:
-                return "Critical priority";
+                //return "Critical priority";
+                System.out.println("Critical priority");
             default:
-                throw new IllegalStateException("The priority (" + this + ") is not implemented.");
+                //throw new IllegalStateException("The priority (" + this + ") is not implemented.");
+            	System.out.println("The priority (" + this + ") is not implemented.");
         }
 	}
 }

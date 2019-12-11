@@ -1,0 +1,114 @@
+package org.optaplanner.examples.projectjobscheduling.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.examples.projectjobscheduling.domain.resource.LocalResource;
+
+public class ProjectTest 
+{
+    private int releaseDate;
+    private int criticalPathDuration;
+    private List<LocalResource> localResourceList;
+    private List<Job> jobList;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		Project pr = new Project();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		Project pr = new Project();
+		pr = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		Project pr = new Project();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		Project pr = new Project();
+		pr = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+	
+	@Test
+    public void getReleaseDate() 
+	{
+        //return releaseDate;
+		System.out.println(releaseDate);
+    }
+
+	@Test
+    public void setReleaseDate(int releaseDate) 
+    {
+        this.releaseDate = releaseDate;
+    }
+
+	@Test
+    public int getCriticalPathDuration() 
+    {
+        return criticalPathDuration;
+    }
+
+	@Test
+    public void setCriticalPathDuration(int criticalPathDuration) 
+    {
+        this.criticalPathDuration = criticalPathDuration;
+    }
+
+	@Test
+    public List<LocalResource> getLocalResourceList() 
+    {
+        return localResourceList;
+    }
+
+	@Test
+    public void setLocalResourceList(List<LocalResource> localResourceList) 
+    {
+        this.localResourceList = localResourceList;
+    }
+
+	@Test
+    public List<Job> getJobList() 
+    {
+        return jobList;
+    }
+
+	@Test
+    public void setJobList(List<Job> jobList) 
+    {
+        this.jobList = jobList;
+    }
+
+	@Test
+    public int getCriticalPathEndDate() 
+    {
+        return releaseDate + criticalPathDuration;
+    }
+
+	@Test
+    public String getLabel() 
+    {
+        return "Project " + id;
+    }
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="LocalResourceTest" project="optaplanner standard" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="org.optaplanner.examples.projectjobscheduling.domain.resource.LocalResourceTest" time="0.0">
+    <testcase name="setProject" classname="org.optaplanner.examples.projectjobscheduling.domain.resource.LocalResourceTest" time="0.0"/>
+    <testcase name="isRenewable" classname="org.optaplanner.examples.projectjobscheduling.domain.resource.LocalResourceTest" time="0.0"/>
+    <testcase name="setRenewable" classname="org.optaplanner.examples.projectjobscheduling.domain.resource.LocalResourceTest" time="0.0"/>
+    <testcase name="getProject" classname="org.optaplanner.examples.projectjobscheduling.domain.resource.LocalResourceTest" time="0.0"/>
+  </testsuite>
+</testrun>

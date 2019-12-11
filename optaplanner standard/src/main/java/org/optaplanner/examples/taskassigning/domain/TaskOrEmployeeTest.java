@@ -4,6 +4,8 @@ import org.junit.*;
 
 public class TaskOrEmployeeTest 
 {
+	protected Task nextTask;
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception 
 	{
@@ -32,12 +34,14 @@ public class TaskOrEmployeeTest
 	public void testgetNextTask()
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		System.out.println(nextTask);
 	}
 	
 	@Test
 	public void testsetNextTask()
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		this.nextTask = nextTask;
 	}
 	
 	@Test

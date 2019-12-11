@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="VehicleRoutingSolutionTest" project="optaplanner standard" tests="17" started="17" failures="0" errors="1" ignored="0">
+  <testsuite name="org.optaplanner.examples.vehiclerouting.domain.VehicleRoutingSolutionTest" time="0.001">
+    <testcase name="testgetName" classname="org.optaplanner.examples.vehiclerouting.domain.VehicleRoutingSolutionTest" time="0.0"/>
+    <testcase name="testsetDistanceType" classname="org.optaplanner.examples.vehiclerouting.domain.VehicleRoutingSolutionTest" time="0.0"/>
+    <testcase name="testgetLocationList" classname="org.optaplanner.examples.vehiclerouting.domain.VehicleRoutingSolutionTest" time="0.0"/>
+    <testcase name="testgetScore" classname="org.optaplanner.examples.vehiclerouting.domain.VehicleRoutingSolutionTest" time="0.0"/>
+    <testcase name="testsetLocationList" classname="org.optaplanner.examples.vehiclerouting.domain.VehicleRoutingSolutionTest" time="0.0"/>
+    <testcase name="testgetCustomerList" classname="org.optaplanner.examples.vehiclerouting.domain.VehicleRoutingSolutionTest" time="0.0"/>
+    <testcase name="testgetVehicleList" classname="org.optaplanner.examples.vehiclerouting.domain.VehicleRoutingSolutionTest" time="0.0"/>
+    <testcase name="testsetName" classname="org.optaplanner.examples.vehiclerouting.domain.VehicleRoutingSolutionTest" time="0.0"/>
+    <testcase name="testsetCustomerList" classname="org.optaplanner.examples.vehiclerouting.domain.VehicleRoutingSolutionTest" time="0.0"/>
+    <testcase name="testgetDepotList" classname="org.optaplanner.examples.vehiclerouting.domain.VehicleRoutingSolutionTest" time="0.0"/>
+    <testcase name="testgetDistanceUnitOfMeasurement" classname="org.optaplanner.examples.vehiclerouting.domain.VehicleRoutingSolutionTest" time="0.0"/>
+    <testcase name="testsetDistanceUnitOfMeasurement" classname="org.optaplanner.examples.vehiclerouting.domain.VehicleRoutingSolutionTest" time="0.0"/>
+    <testcase name="testgetDistanceType" classname="org.optaplanner.examples.vehiclerouting.domain.VehicleRoutingSolutionTest" time="0.0"/>
+    <testcase name="testgetDistanceString" classname="org.optaplanner.examples.vehiclerouting.domain.VehicleRoutingSolutionTest" time="0.001">
+      <error>java.lang.NullPointerException&#13;
+	at org.optaplanner.examples.vehiclerouting.domain.VehicleRoutingSolutionTest.testgetDistanceString(VehicleRoutingSolutionTest.java:188)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)&#13;
+	at java.lang.reflect.Method.invoke(Unknown Source)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)&#13;
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)&#13;
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)&#13;
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)&#13;
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)&#13;
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)&#13;
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)&#13;
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)&#13;
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)&#13;
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)&#13;
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)&#13;
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)&#13;
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)&#13;
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)&#13;
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209)&#13;
+&#13;
+</error>
+    </testcase>
+    <testcase name="testsetDepotList" classname="org.optaplanner.examples.vehiclerouting.domain.VehicleRoutingSolutionTest" time="0.0"/>
+    <testcase name="testsetVehicleList" classname="org.optaplanner.examples.vehiclerouting.domain.VehicleRoutingSolutionTest" time="0.0"/>
+    <testcase name="testsetScore" classname="org.optaplanner.examples.vehiclerouting.domain.VehicleRoutingSolutionTest" time="0.0"/>
+  </testsuite>
+</testrun>

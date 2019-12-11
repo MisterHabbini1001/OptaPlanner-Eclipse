@@ -43,111 +43,133 @@ public class TimeWindowedCustomerTest
 	}
 	
 	@Test
-	public long testgetReadyTime()
+	public void testgetReadyTime()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return readyTime;
+		//return readyTime;
+		System.out.println(readyTime);
 	}
 	
 	@Test
-	public void testsetReadyTime(long readyTime)
+	public void testsetReadyTime()
     {
 		//assertEquals(2, 2); // For now. Remove later
 		this.readyTime = readyTime;
 	}
 	
 	@Test
-	public long testgetDueTime()
+	public void testgetDueTime()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return dueTime;
+		//return dueTime;
+		System.out.println(dueTime);
 	}
 	
 	@Test
-	public void testsetDueTime(long dueTime)
+	public void testsetDueTime()
 	{
 		//assertEquals(2, 2); // For now. Remove later
 		this.dueTime = dueTime;
 	}
 	
 	@Test
-	public long testgetServiceDuration()
+	public void testgetServiceDuration()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return serviceDuration;
+		//return serviceDuration;
+        System.out.println(serviceDuration);
 	}
 	
 	@Test
-	public void testsetServiceDuration(long serviceDuration)
+	public void testsetServiceDuration()
 	{
 		//assertEquals(2, 2); // For now. Remove later
 		this.serviceDuration = serviceDuration;
 	}
 	
 	@Test
-	public Long testgetArrivalTime()
+	public void testgetArrivalTime()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return arrivalTime;
+		//return arrivalTime;
+		System.out.println(arrivalTime);
 	}
 	
 	@Test
-	public void testsetArrivalTime(Long arrivalTime)
+	public void testsetArrivalTime()
 	{
 		//assertEquals(2, 2); // For now. Remove later
 		this.arrivalTime = arrivalTime;
 	}
 	
 	@Test
-	public Long testgetDepartureTime()
+	public void testgetDepartureTime()
 	{
 		//assertEquals(2, 2); // For now. Remove later
         if (arrivalTime == null) 
         {
-            return null;
+            //return null;
+            System.out.println();
         }
-        return Math.max(arrivalTime, readyTime) + serviceDuration;
+        
+        //return Math.max(arrivalTime, readyTime) + serviceDuration;
+        //System.out.println(Math.max(arrivalTime, readyTime) + serviceDuration);
+        System.out.println(Math.max(readyTime, readyTime) + serviceDuration);
 	}
 	
 	@Test
-	public boolean testisArrivalBeforeReadyTime()
+	public void testisArrivalBeforeReadyTime()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-        return arrivalTime != null
-                && arrivalTime < readyTime;
+        //return arrivalTime != null && arrivalTime < readyTime;
+        System.out.println(arrivalTime != null && arrivalTime < readyTime);
 	}
 	
 	@Test
-	public boolean testisArrivalAfterDueTime()
+	public void testisArrivalAfterDueTime()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return arrivalTime != null
-                && dueTime < arrivalTime;
+		//return arrivalTime != null && dueTime < arrivalTime;
+		System.out.println(arrivalTime != null && dueTime < arrivalTime);
 	}
 	
 	@Test
-	public TimeWindowedCustomer testgetNextCustomer()
+	public void testgetNextCustomer()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return (TimeWindowedCustomer) super.getNextCustomer();
+		//return (TimeWindowedCustomer) super.getNextCustomer();
+		System.out.println();
 	}
 	
 	@Test
-	public long testgetTimeWindowGapTo(TimeWindowedCustomer other)
+	public void testgetTimeWindowGapTo()
 	{
 		//assertEquals(2, 2); // For now. Remove later
         // dueTime doesn't account for serviceDuration
         long latestDepartureTime = dueTime + serviceDuration;
-        long otherLatestDepartureTime = other.getDueTime() + other.getServiceDuration();
+        //long otherLatestDepartureTime = other.getDueTime() + other.getServiceDuration();
+        
+        /*
         if (latestDepartureTime < other.getReadyTime()) 
         {
             return other.getReadyTime() - latestDepartureTime;
         }
+        */
         
+        /*
         if (otherLatestDepartureTime < readyTime) 
         {
             return readyTime - otherLatestDepartureTime;
         }
-        return 0L;
+        */
+        
+        if (latestDepartureTime < readyTime) 
+        {
+            //return readyTime - latestDepartureTime;
+            System.out.println(readyTime - latestDepartureTime);
+        }
+        
+        //return 0L;
+        System.out.println(0L);
 	}
 }

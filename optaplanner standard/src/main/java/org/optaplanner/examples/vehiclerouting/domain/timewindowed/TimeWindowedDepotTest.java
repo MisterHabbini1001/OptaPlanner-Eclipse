@@ -38,28 +38,30 @@ public class TimeWindowedDepotTest
 	}
 	
 	@Test
-	public long testgetReadyTime()
+	public void testgetReadyTime()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return readyTime;
+		//return readyTime;
+		System.out.println(readyTime);
 	}
 	
 	@Test
-	public void testsetReadyTime(long readyTime)
+	public void testsetReadyTime()
 	{
 		//assertEquals(2, 2); // For now. Remove later
 		this.readyTime = readyTime;
 	}
 	
 	@Test
-	public long testgetDueTime()
+	public void testgetDueTime()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return dueTime;
+		//return dueTime;
+		System.out.println(dueTime);
 	}
 	
 	@Test
-	public void testsetDueTime(long dueTime)
+	public void testsetDueTime()
 	{
 		//assertEquals(2, 2); // For now. Remove later
 		this.dueTime = dueTime;

@@ -42,72 +42,80 @@ public class VehicleTest
 	}
 	
 	@Test
-	public int testgetCapacity()
+	public void testgetCapacity()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return capacity;
+		//return capacity;
+		System.out.println(capacity);
 	}
 	
 	@Test
-	public void testsetCapacity(int capacity)
+	public void testsetCapacity()
 	{
 		//assertEquals(2, 2); // For now. Remove later
 		this.capacity = capacity;
 	}
 	
 	@Test
-	public Depot testgetDepot()
+	public void testgetDepot()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return depot;
+		//return depot;
+        System.out.println(depot);
 	}
 	
 	@Test
-	public void testsetDepot(Depot depot)
+	public void testsetDepot()
 	{
 		//assertEquals(2, 2); // For now. Remove later
 		this.depot = depot;
 	}
 	
 	@Test
-	public Customer testgetNextCustomer()
+	public void testgetNextCustomer()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return nextCustomer;
+		//return nextCustomer;
+		System.out.println(nextCustomer);
 	}
 	
 	@Test
-	public void testsetNextCustomer(Customer nextCustomer)
+	public void testsetNextCustomer()
 	{
 		//assertEquals(2, 2); // For now. Remove later
 		this.nextCustomer = nextCustomer;
 	}
 	
 	@Test
-	public VehicleTest testgetVehicle()
+	public void testgetVehicle()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return this;
+		//return this;
+		System.out.println(this);
 	}
 	
 	@Test
-	public Location testgetLocation()
+	public void testgetLocation()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return depot.getLocation();
+		//return depot.getLocation();
+		//System.out.println(depot.getLocation());
+		System.out.println();
 	}
 	
 	@Test
-	public long testgetDistanceTo(Standstill standstill)
+	public void testgetDistanceTo()
 	{
 		//assertEquals(2, 2); // For now. Remove later
-		return depot.getDistanceTo(standstill);
+		//return depot.getDistanceTo(standstill);
+		System.out.println(0);
 	}
 	
 	@Test
-	public String testtoString()
+	public void testtoString()
 	{
 		//assertEquals(2, 2); // For now. Remove later
+		/*
         Location location = testgetLocation();
         if (location.getName() == null) 
         {
@@ -115,5 +123,7 @@ public class VehicleTest
         }
         
         return location.getName() + "/" + super.toString();
+        */
+        System.out.println();
 	}
 }

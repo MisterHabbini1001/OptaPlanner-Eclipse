@@ -44,5 +44,11 @@ public class AirLocationTest
 	public void testgetDistanceTo()
 	{
 		//assertEquals(2, 2); // For now. Remove later
+
+		//double distance = getAirDistanceDoubleTo(location);
+		double distance = 1.35;
+        // Multiplied by 1000 to avoid floating point arithmetic rounding errors
+        //return (long) (distance * 1000.0 + 0.5);
+        System.out.println((long) (distance * 1000.0 + 0.5));
 	}
 }

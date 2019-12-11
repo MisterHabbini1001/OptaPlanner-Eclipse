@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TaskTest" project="optaplanner standard" tests="39" started="39" failures="0" errors="0" ignored="0">
+  <testsuite name="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.001">
+    <testcase name="testgetCode" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testsetPreviousTaskOrEmployee" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testsetLatitude" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testsetLongitude" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testgetLatitude" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testgetLabel" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testgetTitle" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testsetPriority" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testgetPriority" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testgetStartTime" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testgetToolText" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testtoString" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testsetPinned" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testsetResponsTime" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testsetTaskType" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testgetTaskType" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testgetReadyTime" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testsetCode" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testsetCustomer" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testsetStartTime" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testgetTravelDuration" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testisPinned" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testgetTravelHomeDuration" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testgetAffinity" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testgetCustomer" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testgetAirTimeTo" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testsetEmployee" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testgetEmployee" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testgetResponsTime" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testgetLongitude" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testgetEndTime" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testgetIndexInTaskType" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testsetReadyTime" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testgetPreviousTaskOrEmployee" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testsetDuration" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testsetIndexInTaskType" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testgetDuration" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testsetTitle" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+    <testcase name="testgetMissingSkillCount" classname="org.optaplanner.examples.taskassigning.domain.TaskTest" time="0.0"/>
+  </testsuite>
+</testrun>
