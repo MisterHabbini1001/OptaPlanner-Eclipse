@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TimeWindowedDepotTest" project="optaplanner standard" tests="4" started="4" failures="0" errors="0" ignored="0">
-  <testsuite name="org.optaplanner.examples.vehiclerouting.domain.timewindowed.TimeWindowedDepotTest" time="0.0">
-    <testcase name="testsetDueTime" classname="org.optaplanner.examples.vehiclerouting.domain.timewindowed.TimeWindowedDepotTest" time="0.0"/>
-    <testcase name="testgetReadyTime" classname="org.optaplanner.examples.vehiclerouting.domain.timewindowed.TimeWindowedDepotTest" time="0.0"/>
-    <testcase name="testgetDueTime" classname="org.optaplanner.examples.vehiclerouting.domain.timewindowed.TimeWindowedDepotTest" time="0.0"/>
-    <testcase name="testsetReadyTime" classname="org.optaplanner.examples.vehiclerouting.domain.timewindowed.TimeWindowedDepotTest" time="0.0"/>
-  </testsuite>
-</testrun>

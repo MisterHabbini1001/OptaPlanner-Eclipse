@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="CapacityTest" project="optaplanner standard" tests="4" started="4" failures="0" errors="0" ignored="0">
-  <testsuite name="org.optaplanner.examples.taskassigning.domain.CapacityTest" time="0.0">
-    <testcase name="testsetEndTime" classname="org.optaplanner.examples.taskassigning.domain.CapacityTest" time="0.0"/>
-    <testcase name="testgetStartTime" classname="org.optaplanner.examples.taskassigning.domain.CapacityTest" time="0.0"/>
-    <testcase name="testsetStartTime" classname="org.optaplanner.examples.taskassigning.domain.CapacityTest" time="0.0"/>
-    <testcase name="testgetEndTime" classname="org.optaplanner.examples.taskassigning.domain.CapacityTest" time="0.0"/>
-  </testsuite>
-</testrun>

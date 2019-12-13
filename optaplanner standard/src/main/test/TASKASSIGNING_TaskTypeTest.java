@@ -1,0 +1,116 @@
+package org.optaplanner.examples.taskassigning.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.*;  
+
+public class TaskTypeTest 
+{
+    private String code;
+    private String title;
+    private int baseDuration; // In minutes
+    private List<Skill> requiredSkillList;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		TaskType tt = new TaskType();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		TaskType tt = new TaskType();
+		tt = null;
+	}
+
+	@Before
+	public void setUp() throws Exception
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		TaskType tt = new TaskType();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		TaskType tt = new TaskType();
+		tt = null;
+	}
+	
+	@Test
+	public void testgetCode()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		System.out.println(code);
+	}
+	
+	@Test
+	public void testsetCode()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		this.code = code;
+	}
+	
+	@Test
+	public void testgetTitle()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		//return title;
+		System.out.println(title);
+	}
+	
+	@Test
+	public void testsetTitle()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		this.title = title;
+	}
+	
+	@Test
+	public void testgetBaseDuration()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		System.out.println(baseDuration);
+	}
+	
+	@Test
+	public void testsetBaseDuration()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		this.baseDuration = baseDuration;
+	}
+	
+	@Test
+	public void testgetRequiredSkillList()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		//return requiredSkillList;
+		System.out.println(requiredSkillList);
+	}
+	
+	@Test
+	public void testsetRequiredSkillList()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		this.requiredSkillList = requiredSkillList;
+	}
+	
+	@Test
+	public void testgetLabel()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		System.out.println(title);
+	}
+	
+	@Test
+	public void testtoString()
+	{
+		//assertEquals(2, 2); // For now. Remove later
+		System.out.println(code);
+	}
+}
