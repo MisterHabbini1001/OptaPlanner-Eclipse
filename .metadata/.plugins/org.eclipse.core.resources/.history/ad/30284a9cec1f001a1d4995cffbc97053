@@ -1,0 +1,5 @@
+package org.optaplanner.examples.taskassigning.domain.location;
+
+public class TK_RoadLocation {
+
+}

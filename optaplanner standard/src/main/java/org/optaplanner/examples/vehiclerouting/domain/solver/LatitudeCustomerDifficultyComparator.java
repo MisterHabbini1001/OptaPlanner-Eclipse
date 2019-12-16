@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.vehiclerouting.domain.solver;
-
 import java.io.Serializable;
 import java.util.Comparator;
 
@@ -24,8 +22,8 @@ import org.optaplanner.examples.vehiclerouting.domain.Customer;
 /**
  * On large datasets, the constructed solution looks like a zebra crossing.
  */
-public class LatitudeCustomerDifficultyComparator implements Comparator<Customer>, Serializable {
-
+public class LatitudeCustomerDifficultyComparator implements Comparator<Customer>, Serializable 
+{
     private static final Comparator<Customer> COMPARATOR =
             Comparator.comparingDouble((Customer customer) -> customer.getLocation().getLatitude())
                     .thenComparingDouble(customer -> customer.getLocation().getLongitude())
@@ -33,8 +31,8 @@ public class LatitudeCustomerDifficultyComparator implements Comparator<Customer
                     .thenComparingLong(Customer::getId);
 
     @Override
-    public int compare(Customer a, Customer b) {
+    public int compare(Customer a, Customer b) 
+    {
         return COMPARATOR.compare(a, b);
     }
-
 }

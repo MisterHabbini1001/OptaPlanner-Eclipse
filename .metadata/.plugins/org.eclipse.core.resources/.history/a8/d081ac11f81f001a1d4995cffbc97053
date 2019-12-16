@@ -1,0 +1,6 @@
+package org.optaplanner.examples.vehiclerouting.domain.timewindowed.solver;
+
+public class TK_ArrivalTimeUpdatingVariableListener 
+{
+
+}

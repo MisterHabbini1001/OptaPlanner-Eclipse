@@ -1,0 +1,5 @@
+package org.optaplanner.examples.vehiclerouting.domain.location.segmented;
+
+public class TK_HubSegmentLocation {
+
+}

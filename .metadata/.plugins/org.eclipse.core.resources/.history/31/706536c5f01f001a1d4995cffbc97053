@@ -1,0 +1,5 @@
+package org.optaplanner.examples.vehiclerouting.domain;
+
+public class TK_Vehicle {
+
+}

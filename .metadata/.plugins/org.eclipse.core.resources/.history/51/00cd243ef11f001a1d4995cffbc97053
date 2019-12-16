@@ -1,0 +1,15 @@
+package org.optaplanner.examples.vehiclerouting.domain;
+import org.optaplanner.core.api.domain.solution.PlanningSolution;
+import org.optaplanner.examples.vehiclerouting.domain.timewindowed.TimeWindowedVehicleRoutingSolution;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamInclude;
+
+@PlanningSolution
+@XStreamAlias("VrpVehicleRoutingSolution")
+@XStreamInclude({
+        TimeWindowedVehicleRoutingSolution.class
+})
+public class TK_VehicleRoutingSolution 
+{
+
+}

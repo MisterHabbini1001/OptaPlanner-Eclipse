@@ -1,0 +1,6 @@
+package org.optaplanner.examples.taskassigning.domain;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+public class TK_Task {
+
+}

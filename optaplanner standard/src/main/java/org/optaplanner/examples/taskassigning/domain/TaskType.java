@@ -33,6 +33,7 @@ public class TaskType extends AbstractPersistable implements Labeled
 
     public TaskType() 
     {
+    	
     }
 
     public TaskType(long id, String code, String title, int baseDuration) 
@@ -99,5 +100,4 @@ public class TaskType extends AbstractPersistable implements Labeled
     {
         return code;
     }
-
 }

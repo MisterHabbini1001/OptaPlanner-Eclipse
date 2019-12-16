@@ -1,0 +1,16 @@
+package org.optaplanner.examples.vehiclerouting.domain;
+
+import org.optaplanner.core.api.domain.variable.InverseRelationShadowVariable;
+import org.optaplanner.examples.vehiclerouting.domain.location.Location;
+
+public class TK_Standstill implements Standstill
+{
+    
+    Location getLocation();
+
+    Vehicle getVehicle();
+
+    @InverseRelationShadowVariable(sourceVariableName = "previousStandstill")
+    Customer getNextCustomer();
+    void setNextCustomer(Customer nextCustomer);
+}

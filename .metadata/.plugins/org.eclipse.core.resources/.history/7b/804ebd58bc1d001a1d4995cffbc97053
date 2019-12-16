@@ -1,0 +1,5 @@
+package org.optaplanner.examples.taskassigning.domain;
+
+public class TA_Customer {
+
+}

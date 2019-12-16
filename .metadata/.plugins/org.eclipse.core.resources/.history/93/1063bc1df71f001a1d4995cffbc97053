@@ -1,0 +1,5 @@
+package org.optaplanner.examples.vehiclerouting.domain.solver.nearby;
+
+public class TK_CustomerNearbyDistanceMeter {
+
+}

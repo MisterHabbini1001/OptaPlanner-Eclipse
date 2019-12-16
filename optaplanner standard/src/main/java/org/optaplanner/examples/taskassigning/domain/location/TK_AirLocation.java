@@ -1,0 +1,25 @@
+package org.optaplanner.examples.taskassigning.domain.location;
+
+public class TK_AirLocation extends AirLocation
+{
+	double latitude;
+	double longitude;
+	
+    public TK_AirLocation() 
+    {
+    	
+    }
+
+    public TK_AirLocation(long id, double latitude, double longitude) 
+    {
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+
+    public long getDistanceTo(Location location) 
+    {
+        double distance = location.getAirDistanceDoubleTo(location);
+        // Multiplied by 1000 to avoid floating point arithmetic rounding errors
+        return (long) (distance * 1000.0 + 0.5);
+    }
+}

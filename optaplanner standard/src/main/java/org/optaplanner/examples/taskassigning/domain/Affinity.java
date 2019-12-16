@@ -52,5 +52,4 @@ public enum Affinity
                 throw new IllegalStateException("The affinity (" + this + ") is not implemented.");
         }
     }
-
 }

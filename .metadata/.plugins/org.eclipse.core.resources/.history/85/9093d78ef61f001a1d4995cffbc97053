@@ -1,0 +1,5 @@
+package org.optaplanner.examples.vehiclerouting.domain.solver;
+
+public class TK_DepotDistanceCustomerDifficultyWeightFactory {
+
+}

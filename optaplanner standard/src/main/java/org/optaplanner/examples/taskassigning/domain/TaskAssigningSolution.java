@@ -176,6 +176,4 @@ public class TaskAssigningSolution extends AbstractPersistable
         long travelDuration = - score.getSoftScore(1);
         return numberFormat.format(((double) travelDuration) / 60.0);
    }
-    
-
 }

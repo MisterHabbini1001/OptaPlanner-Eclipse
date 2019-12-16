@@ -1,0 +1,6 @@
+package org.optaplanner.examples.taskassigning.domain;
+
+public enum TK_Priority 
+{
+
+}

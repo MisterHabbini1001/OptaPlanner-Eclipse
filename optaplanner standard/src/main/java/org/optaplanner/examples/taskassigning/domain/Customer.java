@@ -74,5 +74,4 @@ public class Customer extends AbstractPersistable implements Labeled
     {
         return name;
     }
-
 }

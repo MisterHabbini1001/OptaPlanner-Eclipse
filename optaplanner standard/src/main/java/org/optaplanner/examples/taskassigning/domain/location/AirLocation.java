@@ -23,9 +23,9 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 @XStreamAlias("VrpAirLocation")
 public class AirLocation extends Location 
 {
-
     public AirLocation() 
     {
+    	
     }
 
     public AirLocation(long id, double latitude, double longitude) 

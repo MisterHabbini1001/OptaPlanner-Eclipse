@@ -1,0 +1,8 @@
+package org.optaplanner.examples.taskassigning.domain;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+@XStreamAlias("TaSkill")
+public class TK_Skill 
+{
+
+}

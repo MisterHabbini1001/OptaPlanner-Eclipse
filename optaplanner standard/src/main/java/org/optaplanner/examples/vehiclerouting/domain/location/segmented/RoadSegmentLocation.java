@@ -78,13 +78,15 @@ public class RoadSegmentLocation extends Location
             // location isn't nearby
             distance = getShortestDistanceDoubleThroughHubs((RoadSegmentLocation) location);
         }
+        
         return distance;
     }
 
     protected double getShortestDistanceDoubleThroughHubs(RoadSegmentLocation location) 
     {
         double shortestDistance = Double.MAX_VALUE;
-        for (Map.Entry<HubSegmentLocation, Double> entry : hubTravelDistanceMap.entrySet()) {
+        for (Map.Entry<HubSegmentLocation, Double> entry : hubTravelDistanceMap.entrySet()) 
+        {
             double distance = entry.getValue();
             distance += entry.getKey().getDistanceDouble(location);
             if (distance < shortestDistance) 
@@ -92,6 +94,7 @@ public class RoadSegmentLocation extends Location
                 shortestDistance = distance;
             }
         }
+        
         return shortestDistance;
     }
 }

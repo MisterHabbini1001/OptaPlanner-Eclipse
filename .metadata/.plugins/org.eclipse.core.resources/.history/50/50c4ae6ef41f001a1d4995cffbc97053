@@ -1,0 +1,6 @@
+package org.optaplanner.examples.vehiclerouting.domain.location;
+
+public class TK_RoadLocation 
+{
+
+}

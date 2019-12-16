@@ -105,6 +105,7 @@ public class HubSegmentLocation extends Location
                 }
             }
         }
+        
         return shortestDistance;
     }
 }

@@ -142,5 +142,4 @@ public class TimeWindowedCustomer extends Customer
         }
         return 0L;
     }
-
 }

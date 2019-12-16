@@ -1,0 +1,13 @@
+package org.optaplanner.examples.vehiclerouting.domain.solver.nearby;
+
+import org.optaplanner.examples.vehiclerouting.domain.Customer;
+import org.optaplanner.examples.vehiclerouting.domain.Standstill;
+
+public class TK_CustomerNearbyDistanceMeter extends CustomerNearbyDistanceMeter
+{
+    public double getNearbyDistance(Customer origin, Standstill destination) 
+    {
+        long distance = origin.getDistanceTo(destination);
+        return distance;
+    }
+}

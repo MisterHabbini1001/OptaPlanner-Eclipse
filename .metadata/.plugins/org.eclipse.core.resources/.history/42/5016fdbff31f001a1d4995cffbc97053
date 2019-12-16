@@ -1,0 +1,28 @@
+package org.optaplanner.examples.vehiclerouting.domain.location;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+@XStreamAlias("VrpAirLocation")
+public class TK_AirLocation extends AirLocation
+{
+	double latitude;
+	double longitude;
+	
+    public AirLocation() 
+    {
+    	
+    }
+
+    public AirLocation(double latitude, double longitude) 
+    {
+        this.latitude = latitude;
+        this.longitude = this.longitude;
+    }
+
+    @Override
+    public long getDistanceTo(Location location) 
+    {
+        double distance = getAirDistanceDoubleTo(location);
+        // Multiplied by 1000 to avoid floating point arithmetic rounding errors
+        return (long) (distance * 1000.0 + 0.5);
+    }
+}

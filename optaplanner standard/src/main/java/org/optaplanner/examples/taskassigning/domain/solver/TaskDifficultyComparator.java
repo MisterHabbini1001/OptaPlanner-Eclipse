@@ -20,7 +20,8 @@ import java.util.Comparator;
 import org.optaplanner.examples.taskassigning.domain.Task;
 
 public class TaskDifficultyComparator implements Comparator<Task>,
-        Serializable {
+        Serializable 
+        {
 
     private static final Comparator<Task> COMPARATOR =
             Comparator.comparing(Task::getPriority)

@@ -1,0 +1,10 @@
+package org.optaplanner.examples.vehiclerouting.domain.timewindowed;
+import org.optaplanner.core.api.domain.entity.PlanningEntity;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+@PlanningEntity
+@XStreamAlias("VrpTimeWindowedCustomer")
+public class TK_TimeWindowedCustomer 
+{
+
+}

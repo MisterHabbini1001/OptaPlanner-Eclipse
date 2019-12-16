@@ -22,8 +22,8 @@ import org.optaplanner.core.api.score.buildin.hardmediumsoft.HardMediumSoftScore
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 
 @ConstraintConfiguration(constraintPackage = "org.optaplanner.examples.conferencescheduling.solver")
-public class ConferenceConstraintConfiguration extends AbstractPersistable {
-
+public class ConferenceConstraintConfiguration extends AbstractPersistable 
+{
     public static final String ROOM_UNAVAILABLE_TIMESLOT = "Room unavailable timeslot";
     public static final String ROOM_CONFLICT = "Room conflict";
     public static final String SPEAKER_UNAVAILABLE_TIMESLOT = "Speaker unavailable timeslot";

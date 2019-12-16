@@ -68,7 +68,8 @@ public class StartTimeUpdatingVariableListener implements VariableListener<Task>
         Task shadowTask = sourceTask;
         Integer previousEndTime = (previous == null ? null : previous.getEndTime());
         Integer startTime = calculateStartTime(shadowTask, previousEndTime);
-        while (shadowTask != null && !Objects.equals(shadowTask.getStartTime(), startTime)) {
+        while (shadowTask != null && !Objects.equals(shadowTask.getStartTime(), startTime)) 
+        {
             scoreDirector.beforeVariableChanged(shadowTask, "startTime");
     		shadowTask.setStartTime(startTime);
             scoreDirector.afterVariableChanged(shadowTask, "startTime");
@@ -77,11 +78,11 @@ public class StartTimeUpdatingVariableListener implements VariableListener<Task>
             startTime = calculateStartTime(shadowTask, previousEndTime);
         }
     }
-    
-    
+        
     private Integer calculateStartTime(Task task, Integer previousEndTime) 
     {
-        if (task == null || previousEndTime == null) {
+        if (task == null || previousEndTime == null) 
+        {
             return null;
         }
         //habbo+
@@ -92,7 +93,8 @@ public class StartTimeUpdatingVariableListener implements VariableListener<Task>
         int duration = task.getDuration();
         int travelHome = task.getTravelHomeDuration();
         //get to next capacity until you reached 4 weeks, so tasks which take longer than current capacity can still be planned
-        while ((startTime + duration + travelHome > employee.getCapacityEndTime()) && startTime < 1440 * 28) {
+        while ((startTime + duration + travelHome > employee.getCapacityEndTime()) && startTime < 1440 * 28) 
+        {
         	startTime = employee.getCapacityEndTime() + 1;
             startTime = Math.max(startTime,  employee.getWorkStart(startTime));
         }

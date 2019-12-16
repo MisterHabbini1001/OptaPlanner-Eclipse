@@ -1,0 +1,8 @@
+package org.optaplanner.examples.vehiclerouting.domain.location.segmented;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+@XStreamAlias("VrpHubSegmentLocation")
+public class TK_HubSegmentLocation 
+{
+
+}

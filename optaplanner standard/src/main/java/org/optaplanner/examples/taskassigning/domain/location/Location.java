@@ -128,7 +128,6 @@ public abstract class Location extends AbstractPersistable
         return Math.atan2(latitudeDifference, longitudeDifference);
     }
 
-
     @Override
     public String toString() 
     {
@@ -139,5 +138,4 @@ public abstract class Location extends AbstractPersistable
         
         return name;
     }
-
 }

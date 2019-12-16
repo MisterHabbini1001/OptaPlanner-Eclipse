@@ -1,0 +1,6 @@
+package org.optaplanner.examples.taskassigning.domain;
+
+public class TK_TaskAssigningSolution extends TaskAssigningSolution
+{
+
+}

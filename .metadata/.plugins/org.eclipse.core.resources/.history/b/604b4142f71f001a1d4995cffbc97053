@@ -1,0 +1,6 @@
+package org.optaplanner.examples.vehiclerouting.domain.timewindowed;
+
+public class TK_TimeWindowedCustomer 
+{
+
+}

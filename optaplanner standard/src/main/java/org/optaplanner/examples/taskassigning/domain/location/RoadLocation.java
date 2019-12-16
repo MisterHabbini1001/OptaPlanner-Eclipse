@@ -31,6 +31,7 @@ public class RoadLocation extends Location
 
     public RoadLocation() 
     {
+    	
     }
 
     public RoadLocation(long id, double latitude, double longitude) 

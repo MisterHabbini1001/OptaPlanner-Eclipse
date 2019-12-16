@@ -1,0 +1,16 @@
+package org.optaplanner.examples.vehiclerouting.domain;
+import org.optaplanner.core.api.domain.entity.PlanningEntity;
+import org.optaplanner.examples.vehiclerouting.domain.solver.DepotAngleCustomerDifficultyWeightFactory;
+import org.optaplanner.examples.vehiclerouting.domain.timewindowed.TimeWindowedCustomer;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamInclude;
+
+@PlanningEntity(difficultyWeightFactoryClass = DepotAngleCustomerDifficultyWeightFactory.class)
+@XStreamAlias("VrpCustomer")
+@XStreamInclude({
+        TimeWindowedCustomer.class
+})
+public class TK_Customer 
+{
+
+}

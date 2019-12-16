@@ -1,0 +1,8 @@
+package org.optaplanner.examples.vehiclerouting.domain.location;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+@XStreamAlias("VrpRoadLocation")
+public class TK_RoadLocation extends RoadLocation
+{
+
+}

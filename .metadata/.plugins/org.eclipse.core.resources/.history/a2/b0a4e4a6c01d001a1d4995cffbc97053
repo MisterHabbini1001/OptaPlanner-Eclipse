@@ -1,0 +1,37 @@
+package org.optaplanner.examples.taskassigning.domain;
+import org.optaplanner.core.api.domain.entity.PlanningEntity;
+import org.optaplanner.core.api.domain.variable.InverseRelationShadowVariable;
+
+public class TK_TaskOrEmployee 
+{
+    // Shadow variables
+    @InverseRelationShadowVariable(sourceVariableName = "previousTaskOrEmployee")
+    protected Task nextTask;
+
+    public TK_TaskOrEmployee() 
+    {
+    	
+    }
+
+    public Task getNextTask() 
+    {
+        return nextTask;
+    }
+
+    public void setNextTask(Task nextTask) 
+    {
+        this.nextTask = nextTask;
+    }
+
+    /**
+     * @return sometimes null
+     */
+    public abstract Integer getEndTime();
+
+    /**
+     * @return sometimes null
+     */
+    public abstract Employee getEmployee();   
+    public abstract double getLatitude();   
+    public abstract double getLongitude();
+}
