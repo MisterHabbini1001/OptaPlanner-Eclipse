@@ -27,8 +27,8 @@ import org.optaplanner.core.api.score.buildin.hardmediumsoft.HardMediumSoftScore
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 
 @PlanningSolution
-public class ConferenceSolution extends AbstractPersistable {
-
+public class ConferenceSolution extends AbstractPersistable 
+{
     private String conferenceName;
     @ConstraintConfigurationProvider
     private ConferenceConstraintConfiguration constraintConfiguration;

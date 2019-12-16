@@ -1,0 +1,244 @@
+package org.optaplanner.examples.conferencescheduling.domain;
+import static org.junit.Assert.*;
+import java.util.Set;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class SpeakerTest 
+{
+    private String name;
+    private Set<Timeslot> unavailableTimeslotSet;
+    private Set<String> requiredTimeslotTagSet;
+    private Set<String> preferredTimeslotTagSet;
+    private Set<String> prohibitedTimeslotTagSet;
+    private Set<String> undesiredTimeslotTagSet;
+    private Set<String> requiredRoomTagSet;
+    private Set<String> preferredRoomTagSet;
+    private Set<String> prohibitedRoomTagSet;
+    private Set<String> undesiredRoomTagSet;
+		
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		Speaker sp = new Speaker();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Override
+	@Test
+    public String toString() 
+	{
+        return name;
+    }
+
+	@Test
+    public String getName() 
+    {
+        return name;
+    }
+
+	@Test
+    public void setName(String name) 
+    {
+        this.name = name;
+    }
+
+	@Test
+    public Set<Timeslot> getUnavailableTimeslotSet() 
+    {
+        return unavailableTimeslotSet;
+    }
+
+	@Test
+    public void setUnavailableTimeslotSet(Set<Timeslot> unavailableTimeslotSet) 
+    {
+        this.unavailableTimeslotSet = unavailableTimeslotSet;
+    }
+
+	@Test
+    public Set<String> getRequiredTimeslotTagSet() 
+    {
+        return requiredTimeslotTagSet;
+    }
+
+	@Test
+    public void setRequiredTimeslotTagSet(Set<String> requiredTimeslotTagSet) 
+    {
+        this.requiredTimeslotTagSet = requiredTimeslotTagSet;
+    }
+
+	@Test
+    public Set<String> getPreferredTimeslotTagSet() 
+    {
+        return preferredTimeslotTagSet;
+    }
+
+	@Test
+    public void setPreferredTimeslotTagSet(Set<String> preferredTimeslotTagSet) 
+    {
+        this.preferredTimeslotTagSet = preferredTimeslotTagSet;
+    }
+
+	@Test
+    public Set<String> getProhibitedTimeslotTagSet() 
+    {
+        return prohibitedTimeslotTagSet;
+    }
+
+	@Test
+    public void setProhibitedTimeslotTagSet(Set<String> prohibitedTimeslotTagSet) 
+    {
+        this.prohibitedTimeslotTagSet = prohibitedTimeslotTagSet;
+    }
+
+	@Test
+    public Set<String> getUndesiredTimeslotTagSet() 
+    {
+        return undesiredTimeslotTagSet;
+    }
+
+	@Test
+    public void setUndesiredTimeslotTagSet(Set<String> undesiredTimeslotTagSet) 
+    {
+        this.undesiredTimeslotTagSet = undesiredTimeslotTagSet;
+    }
+
+	@Test
+    public Set<String> getRequiredRoomTagSet() 
+    {
+        return requiredRoomTagSet;
+    }
+
+	@Test
+    public void setRequiredRoomTagSet(Set<String> requiredRoomTagSet) 
+    {
+        this.requiredRoomTagSet = requiredRoomTagSet;
+    }
+
+	@Test
+    public Set<String> getPreferredRoomTagSet() 
+    {
+        return preferredRoomTagSet;
+    }
+
+	@Test
+    public void setPreferredRoomTagSet(Set<String> preferredRoomTagSet) 
+    {
+        this.preferredRoomTagSet = preferredRoomTagSet;
+    }
+
+	@Test
+    public Set<String> getProhibitedRoomTagSet() 
+    {
+        return prohibitedRoomTagSet;
+    }
+
+	@Test
+    public void setProhibitedRoomTagSet(Set<String> prohibitedRoomTagSet) 
+    {
+        this.prohibitedRoomTagSet = prohibitedRoomTagSet;
+    }
+
+	@Test
+    public Set<String> getUndesiredRoomTagSet() 
+    {
+        return undesiredRoomTagSet;
+    }
+
+	@Test
+    public void setUndesiredRoomTagSet(Set<String> undesiredRoomTagSet) 
+    {
+        this.undesiredRoomTagSet = undesiredRoomTagSet;
+    }
+
+	@Test
+    public Speaker withUnavailableTimeslotSet(Set<Timeslot> unavailableTimeslotTest) 
+    {
+        this.unavailableTimeslotSet = unavailableTimeslotTest;
+        return this;
+    }
+
+	@Test
+    public Speaker withRequiredTimeslotTagSet(Set<String> requiredTimeslotTagSet) 
+    {
+        this.requiredTimeslotTagSet = requiredTimeslotTagSet;
+        return this;
+    }
+
+	@Test
+    public Speaker withPreferredTimeslotTagSet(Set<String> preferredTimeslotTagSet) 
+    {
+        this.preferredTimeslotTagSet = preferredTimeslotTagSet;
+        return this;
+    }
+
+	@Test
+    public Speaker withProhibitedTimeslotTagSet(Set<String> prohibitedTimeslotTagSet) 
+    {
+        this.prohibitedTimeslotTagSet = prohibitedTimeslotTagSet;
+        return this;
+    }
+
+	@Test
+    public Speaker withUndesiredTimeslotTagSet(Set<String> undesiredTimeslotTagSet) 
+    {
+        this.undesiredTimeslotTagSet = undesiredTimeslotTagSet;
+        return this;
+    }
+
+	@Test
+    public Speaker withRequiredRoomTagSet(Set<String> requiredRoomTagSet) 
+    {
+        this.requiredRoomTagSet = requiredRoomTagSet;
+        return this;
+    }
+
+	@Test
+    public Speaker withPreferredRoomTagSet(Set<String> preferredRoomTagSet) 
+    {
+        this.preferredRoomTagSet = preferredRoomTagSet;
+        return this;
+    }
+
+	@Test
+    public Speaker withUndesiredRoomTagSet(Set<String> undesiredRoomTagSet) 
+    {
+        this.undesiredRoomTagSet = undesiredRoomTagSet;
+        return this;
+    }
+
+	@Test
+    public Speaker withProhibitedRoomTagSet(Set<String> prohibitedRoomTagSet) 
+    {
+        this.prohibitedRoomTagSet = prohibitedRoomTagSet;
+        return this;
+    }
+}

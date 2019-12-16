@@ -1,0 +1,219 @@
+package org.optaplanner.examples.conferencescheduling.domain;
+import static org.junit.Assert.*;
+import java.util.List;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.constraintweight.ConstraintConfigurationProvider;
+import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
+import org.optaplanner.core.api.domain.solution.PlanningScore;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactCollectionProperty;
+import org.optaplanner.core.api.score.buildin.hardmediumsoft.HardMediumSoftScore;
+
+public class ConferenceSolutionTest 
+{
+    private String conferenceName;
+    @ConstraintConfigurationProvider
+    private ConferenceConstraintConfiguration constraintConfiguration;
+
+    @ProblemFactCollectionProperty
+    private List<TalkType> talkTypeList;
+
+    @ProblemFactCollectionProperty
+    private List<Timeslot> timeslotList;
+
+    @ProblemFactCollectionProperty
+    private List<Room> roomList;
+
+    @ProblemFactCollectionProperty
+    private List<Speaker> speakerList;
+
+    @PlanningEntityCollectionProperty
+    private List<Talk> talkList;
+
+    @PlanningScore
+    private HardMediumSoftScore score = null;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		ConferenceSolution cs = new ConferenceSolution();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		ConferenceSolution cs = new ConferenceSolution();
+		cs = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		ConferenceSolution cs = new ConferenceSolution();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		ConferenceSolution cs = new ConferenceSolution();
+		cs = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+    */
+	
+	@Test
+    public void testtoString() 
+	{
+        System.out.println(conferenceName);
+    }
+
+    // ************************************************************************
+    // Simple getters and setters
+    // ************************************************************************
+
+	@Test
+    public void testgetConferenceName() 
+	{
+        System.out.println(conferenceName);
+    }
+
+	@Test
+    public void testsetConferenceName() 
+	{
+        this.conferenceName = conferenceName;
+    }
+
+	@Test
+    public void testgetConstraintConfiguration() 
+	{
+        System.out.println(constraintConfiguration);
+    }
+
+	@Test
+    public void testsetConstraintConfiguration() 
+	{
+        this.constraintConfiguration = constraintConfiguration;
+    }
+
+	@Test
+    public void testgetTalkTypeList() 
+	{
+        System.out.println(talkTypeList);
+    }
+
+	@Test
+    public void testsetTalkTypeList() 
+	{
+        this.talkTypeList = talkTypeList;
+    }
+
+	@Test
+    public void testgetTimeslotList() 
+	{
+        System.out.println(timeslotList);
+    }
+
+	@Test
+    public void testsetTimeslotList() 
+	{
+        this.timeslotList = timeslotList;
+    }
+
+	@Test
+    public List<Room> testgetRoomList() 
+	{
+        System.out.println(roomList);
+    }
+
+	@Test
+    public void testsetRoomList() 
+	{
+        this.roomList = roomList;
+    }
+
+	@Test
+    public void testgetSpeakerList() 
+	{
+        System.out.println(speakerList);
+    }
+
+	@Test
+    public void testsetSpeakerList() 
+	{
+        this.speakerList = speakerList;
+    }
+
+	@Test
+    public List<Talk> testgetTalkList() 
+	{
+        return talkList;
+    }
+
+	@Test
+    public void testsetTalkList(List<Talk> talkList) 
+	{
+        this.talkList = talkList;
+    }
+
+	@Test
+    public HardMediumSoftScore testgetScore() 
+	{
+        return score;
+    }
+
+	@Test
+    public void testsetScore(HardMediumSoftScore score) 
+	{
+        this.score = score;
+    }
+
+	@Test
+    public ConferenceSolution testwithConstraintConfiguration(ConferenceConstraintConfiguration constraintConfiguration) 
+	{
+        this.constraintConfiguration = constraintConfiguration;
+        return this;
+    }
+
+	@Test
+    public ConferenceSolution testwithTalkTypeList(List<TalkType> talkTypeList) 
+	{
+        this.talkTypeList = talkTypeList;
+        return this;
+    }
+
+	@Test
+    public ConferenceSolution testwithTimeslotList(List<Timeslot> timeslotList) 
+	{
+        this.timeslotList = timeslotList;
+        return this;
+    }
+
+	@Test
+    public ConferenceSolution testwithRoomList(List<Room> roomList) 
+	{
+        this.roomList = roomList;
+        return this;
+    }
+
+    public ConferenceSolution testwithSpeakerList(List<Speaker> speakerList) 
+    {
+        this.speakerList = speakerList;
+        return this;
+    }
+
+    @Test
+    public ConferenceSolution testwithTalkList(List<Talk> talkList) 
+    {
+        this.talkList = talkList;
+        return this;
+    }
+}

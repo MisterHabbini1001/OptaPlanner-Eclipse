@@ -1,0 +1,140 @@
+package org.optaplanner.examples.conferencescheduling.domain;
+import static org.junit.Assert.*;
+
+import java.util.Set;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class RoomTest 
+{
+    private String name;
+    private int capacity;
+    private Set<TalkType> talkTypeSet;
+    private Set<Timeslot> unavailableTimeslotSet;
+    private Set<String> tagSet;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		Room r = new Room();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		Room r = new Room();
+		r = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		Room r = new Room();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		Room r = new Room();
+		r = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+    */
+	
+	@Test
+	public void testhasTag(String tag) 
+	{
+        System.out.println(tagSet.contains(tag));
+    }
+
+    @Test
+    public void testtoString() 
+    {
+        System.out.println(name);
+    }
+
+    @Test
+    public void testgetName() 
+    {
+        System.out.println(name);
+    }
+
+    @Test
+    public void testsetName() 
+    {
+        this.name = name;
+    }
+
+    @Test
+    public void testgetCapacity() 
+    {
+        System.out.println(capacity);
+    }
+
+    @Test
+    public void testsetCapacity() 
+    {
+        this.capacity = capacity;
+    }
+
+    @Test
+    public void testgetTalkTypeSet() 
+    {
+        System.out.println(talkTypeSet);
+    }
+
+    @Test
+    public void testsetTalkTypeSet() 
+    {
+        this.talkTypeSet = talkTypeSet;
+    }
+
+    @Test
+    public void testgetUnavailableTimeslotSet() 
+    {
+        System.out.println(unavailableTimeslotSet);
+    }
+
+    @Test
+    public void testsetUnavailableTimeslotSet() 
+    {
+        this.unavailableTimeslotSet = unavailableTimeslotSet;
+    }
+
+    @Test
+    public void testgetTagSet() 
+    {
+        return tagSet;
+        System.out.println(tagSet);
+    }
+
+    @Test
+    public void testsetTagSet(Set<String> tagSet) 
+    {
+        this.tagSet = tagSet;
+    }
+
+    @Test
+    public Room testwithTalkTypeSet(Set<TalkType> talkTypeSet) 
+    {
+        this.talkTypeSet = talkTypeSet;
+        return this;
+    }
+
+    @Test
+    public Room testwithUnavailableTimeslotSet(Set<Timeslot> unavailableTimeslotTest) 
+    {
+        this.unavailableTimeslotSet = unavailableTimeslotTest;
+        return this;
+    }
+}

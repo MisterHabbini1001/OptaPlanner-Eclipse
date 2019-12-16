@@ -1,0 +1,231 @@
+package org.optaplanner.examples.conferencescheduling.domain;
+import static org.junit.Assert.*;
+
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Set;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class TimeslotTest 
+{
+    private LocalDateTime startDateTime;
+    private LocalDateTime endDateTime;
+    private Set<TalkType> talkTypeSet;
+    private Set<String> tagSet;
+
+    // Cached
+    private Integer durationInMinutes;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+    public void testgetDate() 
+	{
+        System.out.println(startDateTime.toLocalDate());
+    }
+
+	@Test
+    public void testgetDurationInMinutes() 
+    {
+		System.out.println(durationInMinutes);
+    }
+
+	@Test
+    public void testoverlapsTime() 
+    {
+		System.out.println(true);
+    }
+
+	@Test
+    public int testgetOverlapInMinutes(Timeslot other) 
+    {
+        if (this == other) 
+        {
+            return durationInMinutes;
+        }
+        
+        LocalDateTime startMaximum = (startDateTime.compareTo(other.startDateTime) < 0) ? other.startDateTime : startDateTime;
+        LocalDateTime endMinimum = (endDateTime.compareTo(other.endDateTime) < 0) ? endDateTime : other.endDateTime;
+        return (int) Duration.between(startMaximum, endMinimum).toMinutes();
+    }
+
+	@Test
+    public boolean teststartsAfter(Timeslot other) 
+    {
+        return other.endDateTime.compareTo(startDateTime) <= 0;
+    }
+
+	@Test
+    public boolean testendsBefore(Timeslot other) 
+    {
+        return endDateTime.compareTo(other.startDateTime) <= 0;
+    }
+
+	@Test
+    public boolean testhasTag(String tag) 
+    {
+        return tagSet.contains(tag);
+    }
+
+	@Test
+    public boolean testisOnSameDayAs(Timeslot other) 
+    {
+        return startDateTime.toLocalDate().equals(other.getStartDateTime().toLocalDate());
+    }
+
+	@Test
+    public boolean testpauseExists(Timeslot other, int pauseInMinutes) 
+    {
+        if (this.overlapsTime(other)) 
+        {
+            return false;
+        }
+        
+        if (!this.isOnSameDayAs(other)) 
+        {
+            return true;
+        }
+        
+        if (this.startsAfter(other)) 
+        {
+            // TODO use Duration.between(a, b).toMinutes()
+            return (this.getStartDateTime().getHour() * 60 + this.getStartDateTime().getMinute())
+                    - (other.getEndDateTime().getHour() * 60 + other.getEndDateTime().getMinute()) >= pauseInMinutes;
+        } 
+        
+        else 
+        {
+            // TODO use Duration.between(a, b).toMinutes()
+            return (other.getStartDateTime().getHour() * 60 + other.getStartDateTime().getMinute())
+                    - (this.getEndDateTime().getHour() * 60 + this.getEndDateTime().getMinute()) >= pauseInMinutes;
+        }
+    }
+
+    @Override
+    @Test
+    public String testtoString() 
+    {
+        return startDateTime + "-" + endDateTime.toLocalTime();
+    }
+
+    // ************************************************************************
+    // Simple getters and setters
+    // ************************************************************************
+
+    @Test
+    public LocalDateTime testgetStartDateTime() 
+    {
+        return startDateTime;
+    }
+
+    @Test
+    public void testsetStartDateTime(LocalDateTime startDateTime) 
+    {
+        this.startDateTime = startDateTime;
+        durationInMinutes = (startDateTime == null || endDateTime == null) ? null
+                : (int) Duration.between(startDateTime, endDateTime).toMinutes();
+    }
+
+    @Test
+    public LocalDateTime testgetEndDateTime() 
+    {
+        return endDateTime;
+    }
+
+    @Test
+    public void testsetEndDateTime(LocalDateTime endDateTime) 
+    {
+        this.endDateTime = endDateTime;
+        durationInMinutes = (startDateTime == null || endDateTime == null) ? null
+                : (int) Duration.between(startDateTime, endDateTime).toMinutes();
+    }
+
+    @Test
+    public Set<TalkType> testgetTalkTypeSet() 
+    {
+        return talkTypeSet;
+    }
+
+    @Test
+    public void testsetTalkTypeSet(Set<TalkType> talkTypeSet) 
+    {
+        this.talkTypeSet = talkTypeSet;
+    }
+
+    @Test
+    public Set<String> testgetTagSet() 
+    {
+        return tagSet;
+    }
+
+    @Test
+    public void testsetTagSet(Set<String> tagSet) 
+    {
+        this.tagSet = tagSet;
+    }
+
+    // ************************************************************************
+    // With methods
+    // ************************************************************************
+
+    @Test
+    public Timeslot testwithTalkTypeSet(Set<TalkType> talkTypeSet) 
+    {
+        this.talkTypeSet = talkTypeSet;
+        return this;
+    }
+
+    @Test
+    public Timeslot testwithStartDateTime(LocalDateTime startDateTime) 
+    {
+        this.startDateTime = startDateTime;
+        durationInMinutes = (startDateTime == null || endDateTime == null) ? null
+                : (int) Duration.between(startDateTime, endDateTime).toMinutes();
+        return this;
+    }
+
+    @Test
+    public Timeslot testwithEndDateTime(LocalDateTime endDateTime) 
+    {
+        this.endDateTime = endDateTime;
+        durationInMinutes = (startDateTime == null || endDateTime == null) ? null
+                : (int) Duration.between(startDateTime, endDateTime).toMinutes();
+        return this;
+    }
+}
