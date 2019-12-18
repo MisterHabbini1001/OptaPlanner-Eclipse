@@ -1,0 +1,146 @@
+package org.optaplanner.examples.examination.domain;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.variable.PlanningVariable;
+import org.optaplanner.examples.examination.domain.solver.RoomStrengthWeightFactory;
+
+public class ExamTest 
+{
+    protected Topic topic;
+    protected Room room;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	public Topic getTopic() 
+	{
+        return topic;
+    }
+
+    public void setTopic(Topic topic) 
+    {
+        this.topic = topic;
+    }
+
+    @PlanningVariable(valueRangeProviderRefs = {"roomRange"},
+            strengthWeightFactoryClass = RoomStrengthWeightFactory.class)
+    public Room getRoom() 
+    {
+        return room;
+    }
+
+    public void setRoom(Room room) 
+    {
+        this.room = room;
+    }
+
+    public Period getPeriod()
+    {
+    	
+    }
+
+    public int getTopicDuration() 
+    {
+        return getTopic().getDuration();
+    }
+
+    public int getTopicStudentSize() 
+    {
+        return getTopic().getStudentSize();
+    }
+
+    public int getDayIndex() 
+    {
+        Period period = getPeriod();
+        if (period == null) 
+        {
+            return Integer.MIN_VALUE;
+        }
+        
+        return period.getDayIndex();
+    }
+
+    public int getPeriodIndex() 
+    {
+        Period period = getPeriod();
+        if (period == null) 
+        {
+            return Integer.MIN_VALUE;
+        }
+        
+        return period.getPeriodIndex();
+    }
+
+    public int getPeriodDuration() 
+    {
+        Period period = getPeriod();
+        if (period == null) 
+        {
+            return Integer.MIN_VALUE;
+        }
+        
+        return period.getDuration();
+    }
+
+    public boolean isTopicFrontLoadLarge() 
+    {
+        return topic.isFrontLoadLarge();
+    }
+
+    public boolean isPeriodFrontLoadLast() 
+    {
+        Period period = getPeriod();
+        if (period == null) 
+        {
+            return false;
+        }
+        
+        return period.isFrontLoadLast();
+    }
+
+    public String getLabel() 
+    {
+        return Long.toString(topic.getId());
+    }
+
+    @Override
+    public String toString() 
+    {
+        return topic.toString();
+    }
+}

@@ -1,0 +1,78 @@
+package org.optaplanner.examples.curriculumcourse.domain;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class RoomTest 
+{
+    private String code;
+    private int capacity;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		Room ro = new Room();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		Room ro = new Room();
+		ro = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	
+    public String getCode() 
+    {
+        return code;
+    }
+
+    public void setCode(String code) 
+    {
+        this.code = code;
+    }
+
+    public int getCapacity() 
+    {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) 
+    {
+        this.capacity = capacity;
+    }
+
+    @Override
+    public String getLabel() 
+    {
+        return code;
+    }
+
+    @Override
+    public String toString() 
+    {
+        return code;
+    }
+}

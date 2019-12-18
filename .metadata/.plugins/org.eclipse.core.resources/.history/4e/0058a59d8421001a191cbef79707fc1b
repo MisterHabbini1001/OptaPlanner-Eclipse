@@ -1,0 +1,77 @@
+package org.optaplanner.examples.examination.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class RoomPenaltyTest 
+{
+    private RoomPenaltyType roomPenaltyType;
+    private Topic topic;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		RoomPenalty rp = new RoomPenalty();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		RoomPenalty rp = new RoomPenalty();
+		rp = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		RoomPenalty rp = new RoomPenalty();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		RoomPenalty rp = new RoomPenalty();
+		rp = null;
+	}
+
+	/*
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+	*/
+	
+	@Test
+    public RoomPenaltyType testgetRoomPenaltyType() 
+    {
+        return roomPenaltyType;
+    }
+
+	@Test
+    public void testsetRoomPenaltyType(RoomPenaltyType roomPenaltyType) 
+    {
+        this.roomPenaltyType = roomPenaltyType;
+    }
+
+	@Test
+    public Topic testgetTopic() 
+    {
+        return topic;
+    }
+
+	@Test
+    public void testsetTopic(Topic topic) 
+    {
+        this.topic = topic;
+    }
+
+    @Test
+    public String testtoString() 
+    {
+        return roomPenaltyType + "@" + topic.getId();
+    }
+}

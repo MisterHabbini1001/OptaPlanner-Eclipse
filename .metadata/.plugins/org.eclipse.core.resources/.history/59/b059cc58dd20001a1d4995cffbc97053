@@ -1,0 +1,145 @@
+package org.optaplanner.examples.curriculumcourse.domain;
+
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.entity.PlanningPin;
+import org.optaplanner.core.api.domain.variable.PlanningVariable;
+import org.optaplanner.examples.curriculumcourse.domain.solver.PeriodStrengthWeightFactory;
+import org.optaplanner.examples.curriculumcourse.domain.solver.RoomStrengthWeightFactory;
+
+public class LectureTest 
+{
+    private Course course;
+    private int lectureIndexInCourse;
+    private boolean pinned;
+
+    // Planning variables: changes during planning, between score calculations.
+    private Period period;
+    private Room room;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		Lecture le = new Lecture();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		Lecture le = new Lecture();
+		le = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		Lecture le = new Lecture();
+		le = null;
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		Lecture le = new Lecture();
+		le = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
+    public int getLectureIndexInCourse() {
+        return lectureIndexInCourse;
+    }
+
+    public void setLectureIndexInCourse(int lectureIndexInCourse) {
+        this.lectureIndexInCourse = lectureIndexInCourse;
+    }
+
+    @PlanningPin
+    public boolean isPinned() {
+        return pinned;
+    }
+
+    public void setPinned(boolean pinned) {
+        this.pinned = pinned;
+    }
+
+    @PlanningVariable(valueRangeProviderRefs = {"periodRange"},
+            strengthWeightFactoryClass = PeriodStrengthWeightFactory.class)
+    public Period getPeriod() {
+        return period;
+    }
+
+    public void setPeriod(Period period) {
+        this.period = period;
+    }
+
+    @PlanningVariable(valueRangeProviderRefs = {"roomRange"},
+            strengthWeightFactoryClass = RoomStrengthWeightFactory.class)
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
+    // ************************************************************************
+    // Complex methods
+    // ************************************************************************
+
+    public Teacher getTeacher() {
+        return course.getTeacher();
+    }
+
+    public int getStudentSize() {
+        return course.getStudentSize();
+    }
+
+    public List<Curriculum> getCurriculumList() {
+        return course.getCurriculumList();
+    }
+
+    public Day getDay() {
+        if (period == null) {
+            return null;
+        }
+        return period.getDay();
+    }
+
+    public int getTimeslotIndex() {
+        if (period == null) {
+            return Integer.MIN_VALUE;
+        }
+        return period.getTimeslot().getTimeslotIndex();
+    }
+
+    public String getLabel() {
+        return course.getCode() + "-" + lectureIndexInCourse;
+    }
+
+    @Override
+    public String toString() {
+        return course + "-" + lectureIndexInCourse;
+    }
+}

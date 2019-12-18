@@ -1,0 +1,187 @@
+package org.optaplanner.examples.examination.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.constraintweight.ConstraintWeight;
+import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
+
+public class ExaminationConstraintConfigurationTest 
+{
+    private int twoInARowPenalty;
+    private int twoInADayPenalty;
+    private int periodSpreadLength;
+    private int periodSpreadPenalty;
+    private int mixedDurationPenalty;
+    private int frontLoadLargeTopicSize;
+    private int frontLoadLastPeriodSize;
+    private int frontLoadPenalty;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		ExaminationConstraintConfiguration ecc = new ExaminationConstraintConfiguration();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		ExaminationConstraintConfiguration ecc = new ExaminationConstraintConfiguration();
+		ecc = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		ExaminationConstraintConfiguration ecc = new ExaminationConstraintConfiguration();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		ExaminationConstraintConfiguration ecc = new ExaminationConstraintConfiguration();
+		ecc = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    @ConstraintWeight("twoExamsInARow")
+    @Test
+    public void testgetTwoInARowPenaltyAsScore() 
+    {
+    	System.out.println(0);
+    }
+
+    @ConstraintWeight("twoExamsInADay")
+    @Test
+    public void testgetTwoInADayPenaltyAsScore() 
+    {
+    	System.out.println(0);
+    }
+
+    @ConstraintWeight("periodSpread")
+    @Test
+    public void testgetPeriodSpreadPenaltyAsScore() 
+    {
+    	System.out.println(0);
+    }
+
+    @ConstraintWeight("mixedDurations")
+    @Test
+    public void testgetMixedDurationPenaltyAsScore() 
+    {
+    	System.out.println(0);
+    }
+
+    @ConstraintWeight("frontLoad")
+    @Test
+    public void testgetFrontLoadPenaltyAsScore() 
+    {
+    	System.out.println(0);
+    }
+
+    @Test
+    public void testgetTwoInARowPenalty() 
+    {
+    	System.out.println(twoInARowPenalty);
+    }
+
+    @Test
+    public void testsetTwoInARowPenalty() 
+    {
+        this.twoInARowPenalty = twoInARowPenalty;
+    }
+
+    @Test
+    public void testgetTwoInADayPenalty() 
+    {
+    	System.out.println(twoInADayPenalty);
+    }
+
+    @Test
+    public void testsetTwoInADayPenalty(int twoInADayPenalty) 
+    {
+        this.twoInADayPenalty = twoInADayPenalty;
+    }
+
+    @Test
+    public int testgetPeriodSpreadLength() 
+    {
+        return periodSpreadLength;
+    }
+
+    @Test
+    public void testsetPeriodSpreadLength(int periodSpreadLength) 
+    {
+        this.periodSpreadLength = periodSpreadLength;
+    }
+
+    @Test
+    public int testgetPeriodSpreadPenalty() 
+    {
+        return periodSpreadPenalty;
+    }
+
+    @Test
+    public void testsetPeriodSpreadPenalty(int periodSpreadPenalty) 
+    {
+        this.periodSpreadPenalty = periodSpreadPenalty;
+    }
+
+    @Test
+    public int testgetMixedDurationPenalty() 
+    {
+        return mixedDurationPenalty;
+    }
+
+    @Test
+    public void testsetMixedDurationPenalty(int mixedDurationPenalty) 
+    {
+        this.mixedDurationPenalty = mixedDurationPenalty;
+    }
+
+    @Test
+    public int testgetFrontLoadLargeTopicSize() 
+    {
+        return frontLoadLargeTopicSize;
+    }
+
+    @Test
+    public void testsetFrontLoadLargeTopicSize(int frontLoadLargeTopicSize) 
+    {
+        this.frontLoadLargeTopicSize = frontLoadLargeTopicSize;
+    }
+
+    @Test
+    public int testgetFrontLoadLastPeriodSize() 
+    {
+        return frontLoadLastPeriodSize;
+    }
+
+    @Test
+    public void testsetFrontLoadLastPeriodSize(int frontLoadLastPeriodSize) 
+    {
+        this.frontLoadLastPeriodSize = frontLoadLastPeriodSize;
+    }
+
+    @Test
+    public int testgetFrontLoadPenalty() 
+    {
+        return frontLoadPenalty;
+    }
+
+    @Test
+    public void testsetFrontLoadPenalty(int frontLoadPenalty) 
+    {
+        this.frontLoadPenalty = frontLoadPenalty;
+    }
+}

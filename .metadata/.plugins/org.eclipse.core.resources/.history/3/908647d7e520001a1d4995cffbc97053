@@ -1,0 +1,60 @@
+package org.optaplanner.examples.examination.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
+import org.optaplanner.persistence.xstream.api.score.buildin.hardsoft.HardSoftScoreXStreamConverter;
+import com.thoughtworks.xstream.annotations.XStreamConverter;
+
+public class ExaminationTest 
+{
+    private ExaminationConstraintConfiguration constraintConfiguration;
+    private List<Student> studentList;
+    private List<Topic> topicList;
+    private List<Period> periodList;
+    private List<Room> roomList;
+    private List<PeriodPenalty> periodPenaltyList;
+    private List<RoomPenalty> roomPenaltyList;
+    private List<Exam> examList;
+
+    @XStreamConverter(HardSoftScoreXStreamConverter.class)
+    private HardSoftScore score;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+}

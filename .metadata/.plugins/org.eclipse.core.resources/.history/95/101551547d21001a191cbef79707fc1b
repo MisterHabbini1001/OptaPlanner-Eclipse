@@ -1,0 +1,221 @@
+package org.optaplanner.examples.examination.domain;
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.constraintweight.ConstraintConfigurationProvider;
+import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
+import org.optaplanner.core.api.domain.solution.PlanningScore;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactCollectionProperty;
+import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
+import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
+import org.optaplanner.examples.examination.domain.solver.TopicConflict;
+import org.optaplanner.persistence.xstream.api.score.buildin.hardsoft.HardSoftScoreXStreamConverter;
+import com.thoughtworks.xstream.annotations.XStreamConverter;
+
+public class ExaminationTest 
+{
+    private ExaminationConstraintConfiguration constraintConfiguration;
+    private List<Student> studentList;
+    private List<Topic> topicList;
+    private List<Period> periodList;
+    private List<Room> roomList;
+    private List<PeriodPenalty> periodPenaltyList;
+    private List<RoomPenalty> roomPenaltyList;
+    private List<Exam> examList;
+
+    @XStreamConverter(HardSoftScoreXStreamConverter.class)
+    private HardSoftScore score;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		Examination ex = new Examination();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		Examination ex = new Examination();
+		ex = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+	
+    @ConstraintConfigurationProvider
+    @Test
+    public ExaminationConstraintConfiguration testgetConstraintConfiguration() 
+    {
+        return constraintConfiguration;
+    }
+
+    @Test
+    public void testsetConstraintConfiguration(ExaminationConstraintConfiguration constraintConfiguration) 
+    {
+        this.constraintConfiguration = constraintConfiguration;
+    }
+
+    @Test
+    public List<Student> testgetStudentList() 
+    {
+        return studentList;
+    }
+
+    @Test
+    public void testsetStudentList(List<Student> studentList) 
+    {
+        this.studentList = studentList;
+    }
+
+    @ProblemFactCollectionProperty
+    @Test
+    public List<Topic> testgetTopicList() 
+    {
+        return topicList;
+    }
+
+    @Test
+    public void testsetTopicList(List<Topic> topicList) 
+    {
+        this.topicList = topicList;
+    }
+
+    @ValueRangeProvider(id = "periodRange")
+    @ProblemFactCollectionProperty
+    @Test
+    public List<Period> testgetPeriodList() 
+    {
+        return periodList;
+    }
+
+    @Test
+    public void testsetPeriodList(List<Period> periodList) 
+    {
+        this.periodList = periodList;
+    }
+
+    @ValueRangeProvider(id = "roomRange")
+    @ProblemFactCollectionProperty
+    @Test
+    public List<Room> testgetRoomList() 
+    {
+        return roomList;
+    }
+
+    @Test
+    public void testsetRoomList(List<Room> roomList) 
+    {
+        this.roomList = roomList;
+    }
+
+    @ProblemFactCollectionProperty
+    @Test
+    public List<PeriodPenalty> testgetPeriodPenaltyList() 
+    {
+        return periodPenaltyList;
+    }
+
+    @Test
+    public void testsetPeriodPenaltyList(List<PeriodPenalty> periodPenaltyList) 
+    {
+        this.periodPenaltyList = periodPenaltyList;
+    }
+
+    @ProblemFactCollectionProperty
+    @Test
+    public List<RoomPenalty> testgetRoomPenaltyList() 
+    {
+        return roomPenaltyList;
+    }
+
+    @Test
+    public void testsetRoomPenaltyList(List<RoomPenalty> roomPenaltyList) 
+    {
+        this.roomPenaltyList = roomPenaltyList;
+    }
+
+    @PlanningEntityCollectionProperty
+    @Test
+    public List<Exam> testgetExamList() 
+    {
+        return examList;
+    }
+
+    @Test
+    public void testsetExamList(List<Exam> examList) 
+    {
+        this.examList = examList;
+    }
+
+    @PlanningScore
+    @Test
+    public HardSoftScore testgetScore() 
+    {
+        return score;
+    }
+
+    @Test
+    public void testsetScore(HardSoftScore score) 
+    {
+        this.score = score;
+    }
+
+    // ************************************************************************
+    // Complex methods
+    // ************************************************************************
+
+    @ProblemFactCollectionProperty
+    @Test
+    private List<TopicConflict> testcalculateTopicConflictList() 
+    {
+        List<TopicConflict> topicConflictList = new ArrayList<>();
+        for (Topic leftTopic : topicList) 
+        {
+            for (Topic rightTopic : topicList) 
+            {
+                if (leftTopic.getId() < rightTopic.getId()) 
+                {
+                    int studentSize = 0;
+                    for (Student student : leftTopic.getStudentList()) 
+                    {
+                        if (rightTopic.getStudentList().contains(student)) 
+                        {
+                            studentSize++;
+                        }
+                    }
+                    
+                    if (studentSize > 0) 
+                    {
+                        topicConflictList.add(new TopicConflict(leftTopic, rightTopic, studentSize));
+                    }
+                }
+            }
+        }
+        
+        return topicConflictList;
+    }
+}

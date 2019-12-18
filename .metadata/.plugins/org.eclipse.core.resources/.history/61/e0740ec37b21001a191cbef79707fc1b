@@ -1,0 +1,186 @@
+package org.optaplanner.examples.examination.domain;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.constraintweight.ConstraintWeight;
+import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
+
+public class ExaminationConstraintConfigurationTest 
+{
+    private int twoInARowPenalty;
+    private int twoInADayPenalty;
+    private int periodSpreadLength;
+    private int periodSpreadPenalty;
+    private int mixedDurationPenalty;
+    private int frontLoadLargeTopicSize;
+    private int frontLoadLastPeriodSize;
+    private int frontLoadPenalty;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    @ConstraintWeight("twoExamsInARow")
+    @Test
+    public HardSoftScore testgetTwoInARowPenaltyAsScore() 
+    {
+        return HardSoftScore.ofSoft(twoInARowPenalty);
+    }
+
+    @ConstraintWeight("twoExamsInADay")
+    @Test
+    public HardSoftScore testgetTwoInADayPenaltyAsScore() 
+    {
+        return HardSoftScore.ofSoft(twoInADayPenalty);
+    }
+
+    @ConstraintWeight("periodSpread")
+    @Test
+    public HardSoftScore testgetPeriodSpreadPenaltyAsScore() 
+    {
+        return HardSoftScore.ofSoft(periodSpreadPenalty);
+    }
+
+    @ConstraintWeight("mixedDurations")
+    @Test
+    public HardSoftScore testgetMixedDurationPenaltyAsScore() 
+    {
+        return HardSoftScore.ofSoft(mixedDurationPenalty);
+    }
+
+    @ConstraintWeight("frontLoad")
+    @Test
+    public HardSoftScore testgetFrontLoadPenaltyAsScore() 
+    {
+        return HardSoftScore.ofSoft(frontLoadPenalty);
+    }
+
+    @Test
+    public int testgetTwoInARowPenalty() 
+    {
+        return twoInARowPenalty;
+    }
+
+    @Test
+    public void testsetTwoInARowPenalty(int twoInARowPenalty) 
+    {
+        this.twoInARowPenalty = twoInARowPenalty;
+    }
+
+    @Test
+    public int testgetTwoInADayPenalty() 
+    {
+        return twoInADayPenalty;
+    }
+
+    @Test
+    public void testsetTwoInADayPenalty(int twoInADayPenalty) 
+    {
+        this.twoInADayPenalty = twoInADayPenalty;
+    }
+
+    @Test
+    public int testgetPeriodSpreadLength() 
+    {
+        return periodSpreadLength;
+    }
+
+    @Test
+    public void testsetPeriodSpreadLength(int periodSpreadLength) 
+    {
+        this.periodSpreadLength = periodSpreadLength;
+    }
+
+    @Test
+    public int testgetPeriodSpreadPenalty() 
+    {
+        return periodSpreadPenalty;
+    }
+
+    @Test
+    public void testsetPeriodSpreadPenalty(int periodSpreadPenalty) 
+    {
+        this.periodSpreadPenalty = periodSpreadPenalty;
+    }
+
+    @Test
+    public int testgetMixedDurationPenalty() 
+    {
+        return mixedDurationPenalty;
+    }
+
+    @Test
+    public void testsetMixedDurationPenalty(int mixedDurationPenalty) 
+    {
+        this.mixedDurationPenalty = mixedDurationPenalty;
+    }
+
+    @Test
+    public int testgetFrontLoadLargeTopicSize() 
+    {
+        return frontLoadLargeTopicSize;
+    }
+
+    @Test
+    public void testsetFrontLoadLargeTopicSize(int frontLoadLargeTopicSize) 
+    {
+        this.frontLoadLargeTopicSize = frontLoadLargeTopicSize;
+    }
+
+    @Test
+    public int testgetFrontLoadLastPeriodSize() 
+    {
+        return frontLoadLastPeriodSize;
+    }
+
+    @Test
+    public void testsetFrontLoadLastPeriodSize(int frontLoadLastPeriodSize) 
+    {
+        this.frontLoadLastPeriodSize = frontLoadLastPeriodSize;
+    }
+
+    @Test
+    public int testgetFrontLoadPenalty() 
+    {
+        return frontLoadPenalty;
+    }
+
+    @Test
+    public void testsetFrontLoadPenalty(int frontLoadPenalty) 
+    {
+        this.frontLoadPenalty = frontLoadPenalty;
+    }
+}

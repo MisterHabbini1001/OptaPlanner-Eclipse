@@ -1,0 +1,131 @@
+package org.optaplanner.examples.curriculumcourse.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class CourseTest 
+{
+    private String code;
+    private Teacher teacher;
+    private int lectureSize;
+    private int minWorkingDaySize;
+    private List<Curriculum> curriculumList;
+    private int studentSize;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		Course co = new Course();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+	
+	@Test
+    public String testgetCode() 
+	{
+        return code;
+    }
+
+	@Test
+    public void testsetCode(String code) 
+	{
+        this.code = code;
+    }
+
+	@Test
+    public Teacher testgetTeacher() 
+	{
+        return teacher;
+    }
+
+	@Test
+    public void testsetTeacher(Teacher teacher) 
+	{
+        this.teacher = teacher;
+    }
+
+	@Test
+    public int testgetLectureSize() 
+	{
+        return lectureSize;
+    }
+
+	@Test
+    public void testsetLectureSize(int lectureSize) 
+	{
+        this.lectureSize = lectureSize;
+    }
+
+	@Test
+    public int testgetMinWorkingDaySize() 
+	{
+        return minWorkingDaySize;
+    }
+
+	@Test
+    public void testsetMinWorkingDaySize(int minWorkingDaySize) 
+	{
+        this.minWorkingDaySize = minWorkingDaySize;
+    }
+
+	@Test
+    public List<Curriculum> testgetCurriculumList() 
+	{
+        return curriculumList;
+    }
+
+	@Test
+    public void testsetCurriculumList(List<Curriculum> curriculumList) 
+	{
+        this.curriculumList = curriculumList;
+    }
+
+	@Test
+    public int testgetStudentSize() 
+	{
+        return studentSize;
+    }
+
+	@Test
+    public void testsetStudentSize(int studentSize) 
+	{
+        this.studentSize = studentSize;
+    }
+
+	@Test
+    @Override
+    public String testtoString() 
+	{
+        return code;
+    }
+}

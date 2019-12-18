@@ -1,0 +1,64 @@
+package org.optaplanner.examples.examination.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class RoomTest 
+{
+    private int capacity;
+    private int penalty;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	/*
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public int getPenalty() {
+        return penalty;
+    }
+
+    public void setPenalty(int penalty) {
+        this.penalty = penalty;
+    }
+
+    @Override
+    public String getLabel() {
+        return Long.toString(id);
+    }
+
+    @Override
+    public String toString() {
+        return Long.toString(id);
+    }
+}

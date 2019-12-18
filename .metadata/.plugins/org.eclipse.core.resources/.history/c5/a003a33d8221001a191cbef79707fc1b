@@ -1,0 +1,120 @@
+package org.optaplanner.examples.examination.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class PeriodTest 
+{
+    private String startDateTimeString;
+    private int periodIndex;
+    private int dayIndex;
+    private int duration; // in minutes
+    private int penalty;
+    private boolean frontLoadLast;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public String testgetStartDateTimeString() 
+    {
+        return startDateTimeString;
+    }
+
+    public void testsetStartDateTimeString(String startDateTimeString) 
+    {
+        this.startDateTimeString = startDateTimeString;
+    }
+
+    public int testgetPeriodIndex() 
+    {
+        return periodIndex;
+    }
+
+    public void testsetPeriodIndex(int periodIndex) 
+    {
+        this.periodIndex = periodIndex;
+    }
+
+    public int testgetDayIndex() 
+    {
+        return dayIndex;
+    }
+
+    public void testsetDayIndex(int dayIndex) 
+    {
+        this.dayIndex = dayIndex;
+    }
+
+    public int testgetDuration() 
+    {
+        return duration;
+    }
+
+    public void testsetDuration(int duration) 
+    {
+        this.duration = duration;
+    }
+
+    public int testgetPenalty() 
+    {
+        return penalty;
+    }
+
+    public void testsetPenalty(int penalty) 
+    {
+        this.penalty = penalty;
+    }
+
+    public boolean testisFrontLoadLast() 
+    {
+        return frontLoadLast;
+    }
+
+    public void testsetFrontLoadLast(boolean frontLoadLast) 
+    {
+        this.frontLoadLast = frontLoadLast;
+    }
+
+    public String testgetLabel() 
+    {
+        return startDateTimeString;
+    }
+
+    public String testtoString() 
+    {
+        return startDateTimeString;
+    }
+}

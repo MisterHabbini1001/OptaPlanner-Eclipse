@@ -1,0 +1,78 @@
+package org.optaplanner.examples.curriculumcourse.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class PeriodTest 
+{
+    private Day day;
+    private Timeslot timeslot;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+	
+    public Day getDay() 
+    {
+        return day;
+    }
+
+    public void setDay(Day day) 
+    {
+        this.day = day;
+    }
+
+    public Timeslot getTimeslot() 
+    {
+        return timeslot;
+    }
+
+    public void setTimeslot(Timeslot timeslot) 
+    {
+        this.timeslot = timeslot;
+    }
+
+    @Override
+    public String getLabel() 
+    {
+        return day.getLabel() + " " + timeslot.getLabel();
+    }
+
+    @Override
+    public String toString() 
+    {
+        return day + "-" + timeslot;
+    }
+}

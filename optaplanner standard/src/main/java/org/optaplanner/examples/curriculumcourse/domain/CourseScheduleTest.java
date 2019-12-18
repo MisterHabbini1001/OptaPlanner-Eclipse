@@ -1,0 +1,253 @@
+package org.optaplanner.examples.curriculumcourse.domain;
+import static org.junit.Assert.*;
+import java.util.ArrayList;
+import java.util.List;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
+import org.optaplanner.core.api.domain.solution.PlanningScore;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactCollectionProperty;
+import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
+import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
+import org.optaplanner.examples.curriculumcourse.domain.solver.CourseConflict;
+import org.optaplanner.persistence.xstream.api.score.buildin.hardsoft.HardSoftScoreXStreamConverter;
+
+import com.thoughtworks.xstream.annotations.XStreamConverter;
+
+public class CourseScheduleTest 
+{
+    private String name;
+    private List<Teacher> teacherList;
+    private List<Curriculum> curriculumList;
+    private List<Course> courseList;
+    private List<Day> dayList;
+    private List<Timeslot> timeslotList;
+    private List<Period> periodList;
+    private List<Room> roomList;
+    private List<UnavailablePeriodPenalty> unavailablePeriodPenaltyList;
+    private List<Lecture> lectureList;
+
+    @XStreamConverter(HardSoftScoreXStreamConverter.class)
+    private HardSoftScore score;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		CourseSchedule cs = new CourseSchedule();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		CourseSchedule cs = new CourseSchedule();
+		cs = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		CourseSchedule cs = new CourseSchedule();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		CourseSchedule cs = new CourseSchedule();
+		cs = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+	
+	@Test
+	public void testgetName() 
+	{
+		System.out.println(name);
+    }
+
+	@Test
+    public void testsetName() 
+	{
+        this.name = name;
+    }
+
+	@Test
+    @ProblemFactCollectionProperty
+    public void testgetTeacherList() 
+	{
+		System.out.println(teacherList);
+    }
+
+	@Test
+    public void testsetTeacherList() 
+	{
+        this.teacherList = teacherList;
+    }
+
+    @ProblemFactCollectionProperty
+    @Test
+    public void testgetCurriculumList() 
+    {
+    	System.out.println(curriculumList);
+    }
+
+    @Test
+    public void testsetCurriculumList() 
+    {
+        this.curriculumList = curriculumList;
+    }
+
+    @ProblemFactCollectionProperty
+    @Test
+    public void testgetCourseList() 
+    {
+    	System.out.println(courseList);
+    }
+
+    @Test
+    public void testsetCourseList() 
+    {
+        this.courseList = courseList;
+    }
+
+    @ProblemFactCollectionProperty
+    @Test
+    public void testgetDayList() 
+    {
+    	System.out.println(dayList);
+    }
+
+    @Test
+    public void testsetDayList() 
+    {
+        this.dayList = dayList;
+    }
+
+    @ProblemFactCollectionProperty
+    @Test
+    public void testgetTimeslotList() 
+    {
+    	System.out.println(timeslotList);
+    }
+
+    @Test
+    public void testsetTimeslotList() 
+    {
+        this.timeslotList = timeslotList;
+    }
+
+    @ValueRangeProvider(id = "periodRange")
+    @ProblemFactCollectionProperty
+    @Test
+    public void testgetPeriodList() 
+    {
+    	System.out.println(periodList);
+    }
+
+    @Test
+    public void testsetPeriodList() 
+    {
+        this.periodList = periodList;
+    }
+
+    @ValueRangeProvider(id = "roomRange")
+    @ProblemFactCollectionProperty
+    @Test
+    public void testgetRoomList() 
+    {
+    	System.out.println(roomList);
+    }
+
+    @Test
+    public void testsetRoomList() 
+    {
+        this.roomList = roomList;
+    }
+
+    @ProblemFactCollectionProperty
+    @Test
+    public void testgetUnavailablePeriodPenaltyList() 
+    {
+    	System.out.println(unavailablePeriodPenaltyList);
+    }
+
+    @Test
+    public void testsetUnavailablePeriodPenaltyList() 
+    {
+        this.unavailablePeriodPenaltyList = unavailablePeriodPenaltyList;
+    }
+
+    @PlanningEntityCollectionProperty
+    @Test
+    public void testgetLectureList() 
+    {
+    	System.out.println(lectureList);
+    }
+
+    @Test
+    public void testsetLectureList() 
+    {
+        this.lectureList = lectureList;
+    }
+
+    @PlanningScore
+    @Test
+    public void testgetScore() 
+    {
+    	System.out.println(score);
+    }
+
+    @Test
+    public void testsetScore() 
+    {
+        this.score = score;
+    }
+
+    // ************************************************************************
+    // Complex methods
+    // ************************************************************************
+
+    @ProblemFactCollectionProperty
+    @Test
+    public void testcalculateCourseConflictList() 
+    {
+        List<CourseConflict> courseConflictList = new ArrayList<>();
+        for (Course leftCourse : courseList) 
+        {
+            for (Course rightCourse : courseList) 
+            {
+                if (leftCourse.getId() < rightCourse.getId()) 
+                {
+                    int conflictCount = 0;
+                    if (leftCourse.getTeacher().equals(rightCourse.getTeacher())) 
+                    {
+                        conflictCount++;
+                    }
+                    
+                    for (Curriculum curriculum : leftCourse.getCurriculumList()) 
+                    {
+                        if (rightCourse.getCurriculumList().contains(curriculum)) 
+                        {
+                            conflictCount++;
+                        }
+                    }
+                    
+                    if (conflictCount > 0) 
+                    {
+                        courseConflictList.add(new CourseConflict(leftCourse, rightCourse, conflictCount));
+                    }
+                }
+            }
+        }
+        
+        System.out.println(courseConflictList);
+    }
+}

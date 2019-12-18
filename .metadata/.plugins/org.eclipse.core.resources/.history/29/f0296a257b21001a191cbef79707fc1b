@@ -1,0 +1,134 @@
+package org.optaplanner.examples.examination.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.variable.PlanningVariable;
+import org.optaplanner.examples.examination.domain.solver.RoomStrengthWeightFactory;
+
+public class ExamTest 
+{
+    protected Topic topic;
+    protected Room room;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+	public void testgetTopic() 
+	{
+        System.out.println(topic);
+    }
+
+	@Test
+    public void testsetTopic() 
+    {
+        this.topic = topic;
+    }
+
+    @PlanningVariable(valueRangeProviderRefs = {"roomRange"},
+            strengthWeightFactoryClass = RoomStrengthWeightFactory.class)
+    @Test
+    public void testgetRoom() 
+    {
+    	System.out.println(room);
+    }
+
+    @Test
+    public void testsetRoom() 
+    {
+        this.room = room;
+    }
+
+    @Test
+    public void testgetTopicDuration() 
+    {
+    	System.out.println(0);
+    }
+
+    @Test
+    public void testgetTopicStudentSize() 
+    {
+    	System.out.println(0);
+    }
+
+    @Test
+    public void testgetDayIndex() 
+    {
+    	System.out.println(0);
+    }
+
+    @Test
+    public void testgetPeriodIndex() 
+    {
+    	System.out.println(0);
+    }
+
+    @Test
+    public void testgetPeriodDuration() 
+    {
+    	System.out.println(0);
+    }
+
+    @Test
+    public boolean testisTopicFrontLoadLarge() 
+    {
+        return topic.isFrontLoadLarge();
+    }
+
+    @Test
+    public boolean testisPeriodFrontLoadLast() 
+    {
+        Period period = getPeriod();
+        if (period == null) 
+        {
+            return false;
+        }
+        
+        return period.isFrontLoadLast();
+    }
+
+    @Test
+    public String testgetLabel() 
+    {
+        return Long.toString(topic.getId());
+    }
+
+    @Test
+    public String testtoString() 
+    {
+        return topic.toString();
+    }
+}

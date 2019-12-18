@@ -1,0 +1,118 @@
+package org.optaplanner.examples.curriculumcourse.domain.solver;
+
+import static org.junit.Assert.*;
+
+import java.util.Comparator;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.examples.curriculumcourse.domain.Course;
+
+public class CourseConflictTest 
+{
+    private static final Comparator<Course> COURSE_COMPARATOR = Comparator.comparingLong(Course::getId);
+    private static final Comparator<CourseConflict> COMPARATOR =
+            Comparator.comparing(CourseConflict::getLeftCourse, COURSE_COMPARATOR)
+                    .thenComparing(CourseConflict::getRightCourse, COURSE_COMPARATOR);
+
+    private Course leftCourse;
+    private Course rightCourse;
+    private int conflictCount;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	
+	@Test
+    public Course getLeftCourse() 
+    {
+        return leftCourse;
+    }
+
+	@Test
+    public Course getRightCourse() 
+    {
+        return rightCourse;
+    }
+
+	@Test
+    public int getConflictCount() 
+    {
+        return conflictCount;
+    }
+
+    @Test
+    public boolean equals(Object o) 
+    {
+        if (this == o) 
+        {
+            return true;
+        } 
+        
+        else if (o instanceof CourseConflict) 
+        {
+            CourseConflict other = (CourseConflict) o;
+            return new EqualsBuilder()
+                    .append(leftCourse, other.leftCourse)
+                    .append(rightCourse, other.rightCourse)
+                    .isEquals();
+        } 
+        
+        else 
+        {
+            return false;
+        }
+    }
+
+    @Test
+    public int hashCode() 
+    {
+        return new HashCodeBuilder()
+                .append(leftCourse)
+                .append(rightCourse)
+                .toHashCode();
+    }
+
+    @Test
+    public int compareTo(CourseConflict other) 
+    {
+        return COMPARATOR.compare(this, other);
+    }
+
+    @Test
+    public String toString() 
+    {
+        return leftCourse + " & " + rightCourse;
+    }
+}
