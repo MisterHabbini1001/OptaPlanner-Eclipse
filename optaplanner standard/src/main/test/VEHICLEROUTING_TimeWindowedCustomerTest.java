@@ -1,8 +1,8 @@
-package org.optaplanner.examples.vehiclerouting.domain.timewindowed;
+//package org.optaplanner.examples.vehiclerouting.domain.timewindowed;
 import static org.junit.Assert.*;
 import org.junit.*; 
 
-public class TimeWindowedCustomerTest 
+public class VEHICLEROUTING_TimeWindowedCustomerTest 
 {
     // Times are multiplied by 1000 to avoid floating point arithmetic rounding errors
     private long readyTime;

@@ -1,0 +1,127 @@
+package org.optaplanner.examples.flightcrewscheduling.domain;
+import static org.junit.Assert.*;
+import java.util.Map;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class AirportTest 
+{
+    private String code; // IATA 3-letter code
+    private String name;
+    private double latitude;
+    private double longitude;
+    private Map<Airport, Long> taxiTimeInMinutesMap;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+	
+	@Test
+	public double testgetHaversineDistanceInKmTo(Airport other) 
+	{
+        System.out.println(0);
+    }
+
+	@Test
+    public String testtoString() 
+    {
+        return name;
+    }
+
+	@Test
+    public String testgetCode() 
+    {
+        return code;
+    }
+
+	@Test
+    public void testsetCode(String code) 
+    {
+        this.code = code;
+    }
+
+	@Test
+    public String testgetName() 
+    {
+        return name;
+    }
+
+	@Test
+    public void testsetName(String name) 
+    {
+        this.name = name;
+    }
+
+	@Test
+    public double testgetLatitude() 
+    {
+        return latitude;
+    }
+
+	@Test
+    public void testsetLatitude(double latitude) 
+    {
+        this.latitude = latitude;
+    }
+
+	@Test
+    public double testgetLongitude() 
+    {
+        return longitude;
+    }
+
+	@Test
+    public void testsetLongitude(double longitude) 
+    {
+        this.longitude = longitude;
+    }
+
+	@Test
+    public Map<Airport, Long> testgetTaxiTimeInMinutesMap() 
+    {
+        return taxiTimeInMinutesMap;
+    }
+
+	@Test
+    public void testsetTaxiTimeInMinutesMap(Map<Airport, Long> taxiTimeInMinutesMap) 
+    {
+        this.taxiTimeInMinutesMap = taxiTimeInMinutesMap;
+    }
+
+    @Test
+    public int testcompareTo(Airport o) 
+    {
+        return code.compareTo(o.code);
+    }
+}

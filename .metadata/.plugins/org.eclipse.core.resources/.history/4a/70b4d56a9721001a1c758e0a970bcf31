@@ -1,0 +1,49 @@
+package org.optaplanner.examples.flightcrewscheduling.domain;
+
+import static org.junit.Assert.*;
+
+import java.time.LocalDateTime;
+import java.util.Comparator;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class FlightTest 
+{
+    private static final Comparator<Flight> COMPARATOR = Comparator.comparing(Flight::getDepartureUTCDate)
+            .thenComparing(Flight::getDepartureAirport)
+            .thenComparing(Flight::getDepartureUTCDateTime)
+            .thenComparing(Flight::getArrivalAirport)
+            .thenComparing(Flight::getArrivalUTCDateTime);
+
+    private String flightNumber;
+    private Airport departureAirport;
+    private LocalDateTime departureUTCDateTime;
+    private Airport arrivalAirport;
+    private LocalDateTime arrivalUTCDateTime;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

@@ -1,8 +1,8 @@
-package org.optaplanner.examples.vehiclerouting.domain.location;
+//package org.optaplanner.examples.vehiclerouting.domain.location;
 import static org.junit.Assert.*;
 import org.junit.*;
 
-public class DistanceTypeTest 
+public class VEHICLEROUTING_DistanceTypeTest 
 {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception 

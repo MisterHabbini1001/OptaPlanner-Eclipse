@@ -57,6 +57,7 @@ import org.optaplanner.examples.projectjobscheduling.app.ProjectJobSchedulingApp
 import org.optaplanner.examples.rocktour.app.RockTourApp;
 import org.optaplanner.examples.scrabble.app.ScrabbleApp;
 import org.optaplanner.examples.taskassigning.app.TaskAssigningApp;
+import org.optaplanner.examples.thermokingplanning.app.ThermoKingPlanningApp;
 import org.optaplanner.examples.tennis.app.TennisApp;
 import org.optaplanner.examples.travelingtournament.app.TravelingTournamentApp;
 import org.optaplanner.examples.tsp.app.TspApp;
@@ -142,6 +143,7 @@ public class OptaPlannerExamplesApp extends JFrame {
 
         panel.add(createExampleButton(new TennisApp()));
         panel.add(createExampleButton(new FlightCrewSchedulingApp()));
+        panel.add(createExampleButton(new ThermoKingPlanningApp()));
 
         return panel;
     }

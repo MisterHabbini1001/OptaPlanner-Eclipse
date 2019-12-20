@@ -1,0 +1,1 @@
+package org.optaplanner.examples.thermokingplanning.domain;

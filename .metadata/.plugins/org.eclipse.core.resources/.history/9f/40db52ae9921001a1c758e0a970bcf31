@@ -1,0 +1,126 @@
+package org.optaplanner.examples.flightcrewscheduling.domain;
+import static org.junit.Assert.*;
+
+import java.util.Comparator;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.variable.PlanningVariable;
+
+public class FlightAssignmentTest 
+{
+    private static final Comparator<FlightAssignment> PILLAR_SEQUENCE_COMPARATOR =
+            Comparator.comparing((FlightAssignment a) -> a.getFlight().getDepartureUTCDateTime())
+                    .thenComparing(a -> a.getFlight().getArrivalUTCDateTime())
+                    .thenComparing(FlightAssignment::getIndexInFlight);
+
+    private Flight flight;
+    private int indexInFlight;
+    private Skill requiredSkill;
+
+    @PlanningVariable(valueRangeProviderRefs = {"employeeRange"})
+    private Employee employee;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		FlightAssignment fa = new FlightAssignment();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		FlightAssignment fa = new FlightAssignment();
+		fa = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		FlightAssignment fa = new FlightAssignment();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		FlightAssignment fa = new FlightAssignment();
+		fa = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+	public long testgetFlightDurationInMinutes() 
+	{
+        return flight.getDurationInMinutes();
+    }
+
+	@Test
+    public String testtoString() 
+    {
+        return flight + "-" + indexInFlight;
+    }
+
+	@Test
+    public Flight testgetFlight() 
+    {
+        return flight;
+    }
+
+	@Test
+    public void testsetFlight(Flight flight) 
+    {
+        this.flight = flight;
+    }
+
+	@Test
+    public int testgetIndexInFlight() 
+    {
+        return indexInFlight;
+    }
+
+	@Test
+    public void testsetIndexInFlight(int indexInFlight) 
+    {
+        this.indexInFlight = indexInFlight;
+    }
+
+	@Test
+    public Skill testgetRequiredSkill() 
+    {
+        return requiredSkill;
+    }
+
+	@Test
+    public void testsetRequiredSkill(Skill requiredSkill) 
+    {
+        this.requiredSkill = requiredSkill;
+    }
+
+	@Test
+    public Employee testgetEmployee() 
+    {
+        return employee;
+    }
+
+	@Test
+    public void testsetEmployee(Employee employee) 
+    {
+        this.employee = employee;
+    }
+
+	@Test
+    public int testcompareTo(FlightAssignment o) 
+    {
+        return PILLAR_SEQUENCE_COMPARATOR.compare(this, o);
+    }
+}

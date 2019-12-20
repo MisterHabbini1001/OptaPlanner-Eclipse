@@ -1,8 +1,8 @@
-package org.optaplanner.examples.taskassigning.domain.location;
+//package org.optaplanner.examples.taskassigning.domain.location;
 import static org.junit.Assert.*;
 import org.junit.*;
 
-public class AirLocationTest 
+public class TASKASSIGNING_AirLocationTest 
 {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception 

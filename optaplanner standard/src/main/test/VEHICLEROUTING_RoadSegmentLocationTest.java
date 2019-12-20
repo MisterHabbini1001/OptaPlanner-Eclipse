@@ -1,10 +1,10 @@
-package org.optaplanner.examples.vehiclerouting.domain.location.segmented;
+//package org.optaplanner.examples.vehiclerouting.domain.location.segmented;
 import static org.junit.Assert.*;
 import java.util.Map;
 import org.junit.*;
 import org.optaplanner.examples.vehiclerouting.domain.location.Location;
 
-public class RoadSegmentLocationTest 
+public class VEHICLEROUTING_RoadSegmentLocationTest 
 {
     protected Map<RoadSegmentLocation, Double> nearbyTravelDistanceMap;
     protected Map<HubSegmentLocation, Double> hubTravelDistanceMap;

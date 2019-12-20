@@ -1,4 +1,4 @@
-package org.optaplanner.examples.taskassigning.domain;
+//package org.optaplanner.examples.taskassigning.domain;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 

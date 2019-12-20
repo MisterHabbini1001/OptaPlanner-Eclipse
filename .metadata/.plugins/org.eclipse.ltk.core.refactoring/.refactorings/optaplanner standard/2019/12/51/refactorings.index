@@ -1,2 +1,58 @@
 1576666449253	Delete element
 1576666667408	Delete element
+1576681399247	Copy compilation unit
+1576758147852	Copy compilation unit
+1576758179029	Copy compilation unit
+1576758426626	Rename type 'TaskAssigningApp'
+1576758477619	Rename type 'TaskAssigningBenchmarkApp'
+1576759402398	Rename package 'org.optaplanner.examples.thermokingplanning.domain.location'
+1576759800159	Copy compilation unit
+1576759825247	Copy compilation unit
+1576759833849	Copy compilation unit
+1576759843530	Copy compilation unit
+1576759849573	Delete element
+1576759859350	Copy compilation unit
+1576759867651	Copy compilation unit
+1576759889301	Copy compilation unit
+1576759914592	Copy compilation unit
+1576759924117	Copy compilation unit
+1576759952984	Copy compilation unit
+1576759968000	Copy compilation unit
+1576759979173	Copy compilation unit
+1576759987100	Copy compilation unit
+1576759995289	Copy compilation unit
+1576760002006	Copy compilation unit
+1576760008986	Copy compilation unit
+1576760015877	Copy compilation unit
+1576760022519	Copy compilation unit
+1576760028740	Copy compilation unit
+1576760035412	Copy compilation unit
+1576760565041	Copy compilation unit
+1576760579755	Copy compilation unit
+1576760590924	Copy compilation unit
+1576760596239	Copy compilation unit
+1576760607209	Copy compilation unit
+1576760618063	Copy compilation unit
+1576760623976	Copy compilation unit
+1576760629846	Copy compilation unit
+1576760655247	Copy compilation unit
+1576760661994	Copy compilation unit
+1576760669609	Copy compilation unit
+1576760675288	Copy compilation unit
+1576760688158	Copy compilation unit
+1576760697617	Copy compilation unit
+1576760746152	Copy compilation unit
+1576760753583	Copy compilation unit
+1576760759957	Copy compilation unit
+1576760765883	Copy compilation unit
+1576760794918	Rename type 'TaskAssigningPanel'
+1576760830974	Rename type 'TaskAssigningSolutionPainter'
+1576760854440	Rename type 'TaskOverviewPanel'
+1576760870662	Rename type 'TaskWorldPanel'
+1576760917447	Rename type 'TaskAssigningConstraintProvider'
+1576760935615	Rename type 'TaskAssigningGenerator'
+1576760961340	Rename type 'TaskDifficultyComparator'
+1576760980323	Rename type 'TK_TaskDifficultyComparator'
+1576839548638	Copy package
+1576839586835	Copy package
+1576839658204	Copy package

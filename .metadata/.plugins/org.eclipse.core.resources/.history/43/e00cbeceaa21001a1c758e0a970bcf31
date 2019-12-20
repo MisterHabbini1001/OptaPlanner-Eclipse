@@ -1,0 +1,167 @@
+package org.optaplanner.examples.meetingscheduling.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class MeetingTest 
+{
+    private String topic;
+    private List<Person> speakerList;
+    private String content;
+    private boolean entireGroupMeeting;
+    /**
+     * Multiply by {@link TimeGrain#GRAIN_LENGTH_IN_MINUTES} to get duration in minutes.
+     */
+    private int durationInGrains;
+
+    private List<RequiredAttendance> requiredAttendanceList;
+    private List<PreferredAttendance> preferredAttendanceList;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		Meeting me = new Meeting();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		Meeting me = new Meeting();
+		me = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		Meeting me = new Meeting();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		Meeting me = new Meeting();
+		me = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+	
+	@Test
+	public void testgetTopic() 
+	{
+        System.out.println(topic);
+    }
+
+	@Test
+    public void testsetTopic() 
+    {
+        this.topic = topic;
+    }
+
+	@Test
+    public void testgetSpeakerList() 
+    {
+		System.out.println(speakerList);
+    }
+
+	@Test
+    public void testsetSpeakerList(List<Person> speakerList) 
+    {
+        this.speakerList = speakerList;
+    }
+
+	@Test
+    public String testgetContent() 
+    {
+        return content;
+    }
+
+	@Test
+    public void testsetContent(String content) 
+    {
+        this.content = content;
+    }
+
+	@Test
+    public boolean testisEntireGroupMeeting() 
+    {
+        return entireGroupMeeting;
+    }
+
+	@Test
+    public void testsetEntireGroupMeeting(boolean entireGroupMeeting) 
+    {
+        this.entireGroupMeeting = entireGroupMeeting;
+    }
+
+	@Test
+    public int testgetDurationInGrains() 
+    {
+        return durationInGrains;
+    }
+
+	@Test
+    public void testsetDurationInGrains(int durationInGrains) 
+    {
+        this.durationInGrains = durationInGrains;
+    }
+
+	@Test
+    public List<RequiredAttendance> testgetRequiredAttendanceList() 
+    {
+        return requiredAttendanceList;
+    }
+
+	@Test
+    public void testsetRequiredAttendanceList(List<RequiredAttendance> requiredAttendanceList) 
+    {
+        this.requiredAttendanceList = requiredAttendanceList;
+    }
+
+	@Test
+    public List<PreferredAttendance> testgetPreferredAttendanceList() 
+    {
+        return preferredAttendanceList;
+    }
+
+	@Test
+    public void testsetPreferredAttendanceList(List<PreferredAttendance> preferredAttendanceList) 
+    {
+        this.preferredAttendanceList = preferredAttendanceList;
+    }
+
+	@Test
+    public int testgetRequiredCapacity() 
+    {
+        return requiredAttendanceList.size() + preferredAttendanceList.size();
+    }
+
+	@Test
+    public String testgetDurationString() 
+    {
+        return (durationInGrains * TimeGrain.GRAIN_LENGTH_IN_MINUTES) + " minutes";
+    }
+
+	@Test
+    public String testgetLabel() 
+    {
+        return topic;
+    }
+
+	@Test
+    public String testtoString() 
+    {
+        return topic;
+    }
+}

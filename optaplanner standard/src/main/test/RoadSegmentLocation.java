@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.optaplanner.examples.vehiclerouting.domain.location.segmented;
+//package org.optaplanner.examples.vehiclerouting.domain.location.segmented;
 import java.util.Map;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;

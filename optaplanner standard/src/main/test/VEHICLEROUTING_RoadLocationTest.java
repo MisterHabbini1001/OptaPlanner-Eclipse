@@ -1,9 +1,9 @@
-package org.optaplanner.examples.vehiclerouting.domain.location;
+//package org.optaplanner.examples.vehiclerouting.domain.location;
 import static org.junit.Assert.*;
 import java.util.Map;
 import org.junit.*;
 
-public class RoadLocationTest 
+public class VEHICLEROUTING_RoadLocationTest 
 {
 	protected Map<RoadLocation, Double> travelDistanceMap;
 	

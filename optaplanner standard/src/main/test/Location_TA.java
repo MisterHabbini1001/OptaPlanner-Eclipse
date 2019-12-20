@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.optaplanner.examples.taskassigning.domain.location;
+//package org.optaplanner.examples.taskassigning.domain.location;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamInclude;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
@@ -25,17 +25,17 @@ import org.optaplanner.examples.vehiclerouting.domain.VehicleRoutingSolution;
         RoadLocation.class
 })
 
-public abstract class Location extends AbstractPersistable 
+public abstract class Location_TA extends AbstractPersistable 
 {
     protected String name = null;
     protected double latitude;
     protected double longitude;
 
-    public Location() 
+    public Location_TA() 
     {
     }
 
-    public Location(long id, double latitude, double longitude) 
+    public Location_TA(long id, double latitude, double longitude) 
     {
         super(id);
         this.latitude = latitude;

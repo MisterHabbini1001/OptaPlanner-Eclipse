@@ -1,8 +1,8 @@
-package org.optaplanner.examples.taskassigning.domain.solver;
+//package org.optaplanner.examples.taskassigning.domain.solver;
 import static org.junit.Assert.*;
 import org.junit.*;
 
-public class StartTimeUpdatingVariableListenerTest 
+public class TASKASSIGNING_StartTimeUpdatingVariableListenerTest 
 {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception 

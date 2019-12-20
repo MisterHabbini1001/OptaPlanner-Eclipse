@@ -1,10 +1,10 @@
-package org.optaplanner.examples.vehiclerouting.domain.solver.nearby;
+//package org.optaplanner.examples.vehiclerouting.domain.solver.nearby;
 import static org.junit.Assert.*;
 import org.junit.*;
 import org.optaplanner.examples.vehiclerouting.domain.Customer;
 import org.optaplanner.examples.vehiclerouting.domain.Standstill;
 
-public class CustomerNearbyDistanceMeterTest 
+public class VEHICLEROUTING_CustomerNearbyDistanceMeterTest 
 {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception 

@@ -1,8 +1,8 @@
-package org.optaplanner.examples.taskassigning.domain.solver;
+//package org.optaplanner.examples.taskassigning.domain.solver;
 import static org.junit.Assert.*;
 import org.junit.*;
 
-public class TaskDifficultyComparatorTest 
+public class TASKASSIGNING_TaskDifficultyComparatorTest 
 {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception 

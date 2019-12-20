@@ -1,8 +1,8 @@
-package org.optaplanner.examples.vehiclerouting.domain.timewindowed;
+//package org.optaplanner.examples.vehiclerouting.domain.timewindowed;
 import static org.junit.Assert.*;
 import org.junit.*; 
 
-public class TimeWindowedDepotTest 
+public class VEHICLEROUTING_TimeWindowedDepotTest 
 {
     private long readyTime;
     private long dueTime;

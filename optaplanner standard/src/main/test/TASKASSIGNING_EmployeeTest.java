@@ -1,4 +1,4 @@
-package org.optaplanner.examples.taskassigning.domain;
+//package org.optaplanner.examples.taskassigning.domain;
 import static org.junit.Assert.*;
 
 import java.util.Map;
@@ -6,7 +6,7 @@ import java.util.Set;
 
 import org.junit.*;  
 
-public class EmployeeTest 
+public class TASKASSIGNING_EmployeeTest 
 {
     private String fullName;
     private double latitude;

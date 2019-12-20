@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.optaplanner.examples.taskassigning.domain;
+//package org.optaplanner.examples.taskassigning.domain;
 
 import java.util.ArrayList;
 import java.util.List;

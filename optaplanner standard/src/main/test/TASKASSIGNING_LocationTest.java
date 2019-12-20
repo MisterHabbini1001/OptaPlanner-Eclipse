@@ -1,8 +1,8 @@
-package org.optaplanner.examples.taskassigning.domain.location;
+//package org.optaplanner.examples.taskassigning.domain.location;
 import static org.junit.Assert.*;
 import org.junit.*;
 
-public class LocationTest 
+public class TASKASSIGNING_LocationTest 
 {
     protected String name = null;
     protected double latitude;

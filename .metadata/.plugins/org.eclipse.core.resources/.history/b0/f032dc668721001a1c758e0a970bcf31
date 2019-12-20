@@ -1,0 +1,108 @@
+package org.optaplanner.examples.examination.domain;
+
+import static org.junit.Assert.*;
+
+import java.util.List;
+import java.util.Set;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class TopicTest 
+{
+    private int duration; 
+    private List<Student> studentList;
+    private boolean frontLoadLarge;
+    private Set<Topic> coincidenceTopicSet = null;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		Topic to = new Topic();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		Topic to = new Topic();
+		to = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	/*
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+	*/
+
+    public int getDuration() 
+    {
+        return duration;
+    }
+
+    public void setDuration(int duration) 
+    {
+        this.duration = duration;
+    }
+
+    public List<Student> getStudentList() 
+    {
+        return studentList;
+    }
+
+    public void setStudentList(List<Student> studentList) 
+    {
+        this.studentList = studentList;
+    }
+
+    public int getStudentSize() 
+    {
+        return studentList.size();
+    }
+
+    public boolean isFrontLoadLarge() 
+    {
+        return frontLoadLarge;
+    }
+
+    public void setFrontLoadLarge(boolean frontLoadLarge) 
+    {
+        this.frontLoadLarge = frontLoadLarge;
+    }
+
+    public Set<Topic> getCoincidenceTopicSet() 
+    {
+        return coincidenceTopicSet;
+    }
+
+    public void setCoincidenceTopicSet(Set<Topic> coincidenceTopicSet) 
+    {
+        this.coincidenceTopicSet = coincidenceTopicSet;
+    }
+
+    public boolean hasCoincidenceTopic() 
+    {
+        return coincidenceTopicSet != null;
+    }
+
+    @Override
+    public String toString() 
+    {
+        return Long.toString(id);
+    }
+}

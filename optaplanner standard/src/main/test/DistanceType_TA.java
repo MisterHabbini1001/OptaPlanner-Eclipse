@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.optaplanner.examples.taskassigning.domain.location;
+//package org.optaplanner.examples.taskassigning.domain.location;
 import org.optaplanner.examples.vehiclerouting.domain.location.segmented.HubSegmentLocation;
 import org.optaplanner.examples.vehiclerouting.domain.location.segmented.RoadSegmentLocation;
 
-public enum DistanceType 
+public enum DistanceType_TA 
 {
     /**
      * Requires that all {@link Location} instances are of type {@link AirLocation}.

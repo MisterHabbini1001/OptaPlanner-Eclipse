@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.optaplanner.examples.taskassigning.domain;
+//package org.optaplanner.examples.taskassigning.domain;
 import java.text.NumberFormat;
 import java.util.List;
 

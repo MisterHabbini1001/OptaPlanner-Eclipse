@@ -1,11 +1,11 @@
-package org.optaplanner.examples.taskassigning.domain.location;
+//package org.optaplanner.examples.taskassigning.domain.location;
 import static org.junit.Assert.*;
 
 import java.util.Map;
 
 import org.junit.*;
 
-public class RoadLocationTest 
+public class TASKASSIGNING_RoadLocationTest 
 {
 	protected Map<RoadLocation, Double> travelDistanceMap;
 	

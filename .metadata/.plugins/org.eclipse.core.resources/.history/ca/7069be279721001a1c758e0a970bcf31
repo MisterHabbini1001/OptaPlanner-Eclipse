@@ -1,0 +1,190 @@
+package org.optaplanner.examples.flightcrewscheduling.domain;
+import static org.junit.Assert.*;
+import java.time.LocalDate;
+import java.util.Set;
+import java.util.SortedSet;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.variable.InverseRelationShadowVariable;
+
+public class EmployeeTest 
+{
+    private String name;
+    private Airport homeAirport;
+    private Set<Skill> skillSet;
+    private Set<LocalDate> unavailableDaySet;
+
+    @InverseRelationShadowVariable(sourceVariableName = "employee")
+    private SortedSet<FlightAssignment> flightAssignmentSet;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		Employee em = new Employee();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		Employee em = new Employee();
+		em = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		Employee em = new Employee();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		Employee em = new Employee();
+		em = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+	public void testhasSkill() 
+	{
+		System.out.println(false);
+    }
+
+	@Test
+    public void testisAvailable() 
+    {
+		System.out.println(false);
+    }
+
+	@Test
+    public void testisFirstAssignmentDepartingFromHome() 
+    {
+        if (flightAssignmentSet.isEmpty()) 
+        {
+        	System.out.println(true);
+        }
+        
+        FlightAssignment firstAssignment = flightAssignmentSet.first();
+        System.out.println(firstAssignment.getFlight().getDepartureAirport() == homeAirport);
+    }
+
+	@Test
+    public void testisLastAssignmentArrivingAtHome() 
+    {
+        if (flightAssignmentSet.isEmpty()) 
+        {
+        	System.out.println(true);
+        }
+        
+        FlightAssignment lastAssignment = flightAssignmentSet.last();
+        System.out.println(lastAssignment.getFlight().getArrivalAirport() == homeAirport);
+    }
+
+	@Test
+    public void testcountInvalidConnections() 
+    {
+        long count = 0L;
+        FlightAssignment previousAssignment = null;
+        for (FlightAssignment assignment : flightAssignmentSet) 
+        {
+            if (previousAssignment != null
+                    && previousAssignment.getFlight().getArrivalAirport()
+                    != assignment.getFlight().getDepartureAirport()) 
+            {
+                count++;
+            }
+            
+            previousAssignment = assignment;
+        }
+        
+        System.out.println(count);
+    }
+
+	@Test
+    public void testgetFlightDurationTotalInMinutes() 
+    {
+        long total = 0L;
+        for (FlightAssignment flightAssignment : flightAssignmentSet) 
+        {
+            total += flightAssignment.getFlightDurationInMinutes();
+        }
+        
+        System.out.println(total);
+    }
+
+	@Test
+    public void testtoString() 
+    {
+		System.out.println(name);
+    }
+
+	@Test
+    public void testgetName() 
+    {
+		System.out.println(name);
+    }
+
+	@Test
+    public void testsetName() 
+    {
+        this.name = name;
+    }
+
+	@Test
+    public void testgetHomeAirport() 
+    {
+		System.out.println(homeAirport);
+    }
+
+	@Test
+    public void testsetHomeAirport() 
+    {
+        this.homeAirport = homeAirport;
+    }
+
+	@Test
+    public void testgetSkillSet() 
+    {
+        return skillSet;
+    }
+
+	@Test
+    public void testsetSkillSet(Set<Skill> skillSet) 
+    {
+        this.skillSet = skillSet;
+    }
+
+	@Test
+    public Set<LocalDate> testgetUnavailableDaySet() 
+    {
+        return unavailableDaySet;
+    }
+
+	@Test
+    public void testsetUnavailableDaySet(Set<LocalDate> unavailableDaySet) 
+    {
+        this.unavailableDaySet = unavailableDaySet;
+    }
+
+	@Test
+    public SortedSet<FlightAssignment> testgetFlightAssignmentSet() 
+    {
+        return flightAssignmentSet;
+    }
+
+	@Test
+    public void testsetFlightAssignmentSet(SortedSet<FlightAssignment> flightAssignmentSet) 
+    {
+        this.flightAssignmentSet = flightAssignmentSet;
+    }
+}

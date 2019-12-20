@@ -1,0 +1,47 @@
+package org.optaplanner.examples.flightcrewscheduling.domain;
+
+import static org.junit.Assert.*;
+
+import java.time.LocalDate;
+import java.util.Set;
+import java.util.SortedSet;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.variable.InverseRelationShadowVariable;
+
+public class EmployeeTest 
+{
+    private String name;
+    private Airport homeAirport;
+    private Set<Skill> skillSet;
+    private Set<LocalDate> unavailableDaySet;
+
+    @InverseRelationShadowVariable(sourceVariableName = "employee")
+    private SortedSet<FlightAssignment> flightAssignmentSet;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

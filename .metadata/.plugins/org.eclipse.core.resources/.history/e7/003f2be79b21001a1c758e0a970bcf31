@@ -1,0 +1,185 @@
+package org.optaplanner.examples.flightcrewscheduling.domain;
+import static org.junit.Assert.*;
+import java.time.LocalDate;
+import java.util.List;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
+import org.optaplanner.core.api.domain.solution.PlanningScore;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactCollectionProperty;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactProperty;
+import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
+import org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore;
+
+public class FlightCrewSolutionTest 
+{
+    private LocalDate scheduleFirstUTCDate;
+    private LocalDate scheduleLastUTCDate;
+
+    @ProblemFactProperty
+    private FlightCrewParametrization parametrization;
+
+    @ProblemFactCollectionProperty
+    private List<Skill> skillList;
+
+    @ProblemFactCollectionProperty
+    private List<Airport> airportList;
+
+    @ProblemFactCollectionProperty
+    @ValueRangeProvider(id = "employeeRange")
+    private List<Employee> employeeList;
+
+    @ProblemFactCollectionProperty
+    private List<Flight> flightList;
+
+    @PlanningEntityCollectionProperty
+    private List<FlightAssignment> flightAssignmentList;
+
+    @PlanningScore
+    private HardSoftLongScore score = null;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		FlightCrewSolution fcs = new FlightCrewSolution();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		FlightCrewSolution fcs = new FlightCrewSolution();
+		fcs = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		FlightCrewSolution fcs = new FlightCrewSolution();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		FlightCrewSolution fcs = new FlightCrewSolution();
+		fcs = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+	
+	@Test
+	public void testgetScheduleFirstUTCDate() 
+	{
+        System.out.println(scheduleFirstUTCDate);
+    }
+
+	@Test
+    public void testsetScheduleFirstUTCDate() 
+    {
+        this.scheduleFirstUTCDate = scheduleFirstUTCDate;
+    }
+
+	@Test
+    public void testgetScheduleLastUTCDate() 
+    {
+		System.out.println(scheduleLastUTCDate);
+    }
+
+	@Test
+    public void testsetScheduleLastUTCDate() 
+    {
+        this.scheduleLastUTCDate = scheduleLastUTCDate;
+    }
+
+	@Test
+    public FlightCrewParametrization testgetParametrization() 
+    {
+        return parametrization;
+    }
+
+	@Test
+    public void testsetParametrization(FlightCrewParametrization parametrization) 
+    {
+        this.parametrization = parametrization;
+    }
+
+	@Test
+    public List<Skill> testgetSkillList() 
+    {
+        return skillList;
+    }
+
+	@Test
+    public void testsetSkillList(List<Skill> skillList) 
+    {
+        this.skillList = skillList;
+    }
+
+	@Test
+    public List<Airport> testgetAirportList() 
+    {
+        return airportList;
+    }
+
+	@Test
+    public void testsetAirportList(List<Airport> airportList) 
+    {
+        this.airportList = airportList;
+    }
+
+	@Test
+    public List<Employee> testgetEmployeeList() 
+    {
+        return employeeList;
+    }
+
+	@Test
+    public void testsetEmployeeList(List<Employee> employeeList) 
+    {
+        this.employeeList = employeeList;
+    }
+
+	@Test
+    public List<Flight> testgetFlightList() 
+    {
+        return flightList;
+    }
+
+	@Test
+    public void testsetFlightList(List<Flight> flightList) 
+    {
+        this.flightList = flightList;
+    }
+
+	@Test
+    public List<FlightAssignment> testgetFlightAssignmentList() 
+    {
+        return flightAssignmentList;
+    }
+
+	@Test
+    public void testsetFlightAssignmentList(List<FlightAssignment> flightAssignmentList) 
+    {
+        this.flightAssignmentList = flightAssignmentList;
+    }
+
+	@Test
+    public HardSoftLongScore testgetScore() 
+    {
+        return score;
+    }
+
+	@Test
+    public void testsetScore(HardSoftLongScore score) 
+    {
+        this.score = score;
+    }
+}

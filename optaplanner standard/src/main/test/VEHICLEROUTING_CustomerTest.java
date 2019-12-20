@@ -1,9 +1,9 @@
-package org.optaplanner.examples.vehiclerouting.domain;
+//package org.optaplanner.examples.vehiclerouting.domain;
 import static org.junit.Assert.*;
 import org.junit.*;
 import org.optaplanner.examples.vehiclerouting.domain.location.Location;
 
-public class CustomerTest 
+public class VEHICLEROUTING_CustomerTest 
 {
     protected Location location;
     protected int demand;

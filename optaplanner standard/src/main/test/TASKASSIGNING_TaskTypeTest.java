@@ -1,11 +1,11 @@
-package org.optaplanner.examples.taskassigning.domain;
+//package org.optaplanner.examples.taskassigning.domain;
 import static org.junit.Assert.*;
 
 import java.util.List;
 
 import org.junit.*;  
 
-public class TaskTypeTest 
+public class TASKASSIGNING_TaskTypeTest 
 {
     private String code;
     private String title;

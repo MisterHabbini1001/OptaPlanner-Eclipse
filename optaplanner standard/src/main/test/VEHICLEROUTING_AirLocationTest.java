@@ -1,8 +1,8 @@
-package org.optaplanner.examples.vehiclerouting.domain.location;
+//package org.optaplanner.examples.vehiclerouting.domain.location;
 import static org.junit.Assert.*;
 import org.junit.*;
 
-public class AirLocationTest 
+public class VEHICLEROUTING_AirLocationTest 
 {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception 

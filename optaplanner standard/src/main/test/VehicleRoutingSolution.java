@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.optaplanner.examples.vehiclerouting.domain;
+//package org.optaplanner.examples.vehiclerouting.domain;
 import java.text.NumberFormat;
 import java.util.List;
 

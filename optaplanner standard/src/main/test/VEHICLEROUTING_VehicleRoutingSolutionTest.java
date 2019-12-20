@@ -1,4 +1,4 @@
-package org.optaplanner.examples.vehiclerouting.domain;
+//package org.optaplanner.examples.vehiclerouting.domain;
 import static org.junit.Assert.*;
 
 import java.text.NumberFormat;
@@ -6,13 +6,14 @@ import java.util.List;
 
 import org.junit.*;
 import org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore;
+import org.optaplanner.examples.vehiclerouting.domain.VehicleRoutingSolutionTest;
 import org.optaplanner.examples.vehiclerouting.domain.location.DistanceType;
 import org.optaplanner.examples.vehiclerouting.domain.location.Location;
 import org.optaplanner.persistence.xstream.api.score.buildin.hardsoftlong.HardSoftLongScoreXStreamConverter;
 
 import com.thoughtworks.xstream.annotations.XStreamConverter;
 
-public class VehicleRoutingSolutionTest 
+public class VEHICLEROUTING_VehicleRoutingSolutionTest 
 {
     protected String name;
     protected DistanceType distanceType;

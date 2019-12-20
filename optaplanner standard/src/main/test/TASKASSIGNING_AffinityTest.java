@@ -2,7 +2,7 @@
 import static org.junit.Assert.*;
 import org.junit.*;  
 
-public class AffinityTest 
+public class TASKASSIGNING_AffinityTest 
 {	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception 

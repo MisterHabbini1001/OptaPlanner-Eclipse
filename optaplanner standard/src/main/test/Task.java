@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.optaplanner.examples.taskassigning.domain;
+//package org.optaplanner.examples.taskassigning.domain;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 import org.optaplanner.core.api.domain.entity.PlanningEntity;
@@ -320,8 +320,8 @@ public class Task extends TaskOrEmployee implements Labeled
         for (Skill skill : taskType.getRequiredSkillList()) {
             toolText.append(skill.getLabel()).append("<br/>");
         }
-        toolText.append("<br/>Customer:<br/>").append(customer.getName()).append("<br/>(")
-                .append(getAffinity().getLabel()).append(")<br/>");
+        //toolText.append("<br/>Customer:<br/>").append(customer.getName()).append("<br/>(")
+        //        .append(getAffinity().getLabel()).append(")<br/>");
         toolText.append("</center></html>");
         return toolText.toString();
     }

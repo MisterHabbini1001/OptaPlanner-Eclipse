@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.optaplanner.examples.taskassigning.domain.location;
+
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 /**
@@ -21,14 +21,14 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  * Used with {@link DistanceType#AIR_DISTANCE}.
  */
 @XStreamAlias("VrpAirLocation")
-public class AirLocation extends Location 
+public class AirLocation_TA extends Location 
 {
 
-    public AirLocation() 
+    public AirLocation_TA() 
     {
     }
 
-    public AirLocation(long id, double latitude, double longitude) 
+    public AirLocation_TA(long id, double latitude, double longitude) 
     {
         super(id, latitude, longitude);
     }

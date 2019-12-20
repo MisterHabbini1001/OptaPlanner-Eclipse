@@ -1,8 +1,8 @@
-package org.optaplanner.examples.vehiclerouting.domain;
+//package org.optaplanner.examples.vehiclerouting.domain;
 import static org.junit.Assert.*;
 import org.junit.*;
 
-public class StandstillTest 
+public class VEHICLEROUTING_StandstillTest 
 {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception 

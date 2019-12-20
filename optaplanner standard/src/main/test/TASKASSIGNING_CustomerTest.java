@@ -1,9 +1,9 @@
-package org.optaplanner.examples.taskassigning.domain;
+//package org.optaplanner.examples.taskassigning.domain;
 import static org.junit.Assert.*;
 import org.junit.*;
 import org.optaplanner.examples.vehiclerouting.domain.location.Location;  
 
-public class CustomerTest 
+public class TASKASSIGNING_CustomerTest 
 {
     protected Location location;//habbo+-
     private String name;

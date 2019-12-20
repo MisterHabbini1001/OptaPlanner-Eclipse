@@ -1,0 +1,70 @@
+package org.optaplanner.examples.meetingscheduling.domain;
+
+import static org.junit.Assert.*;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class DayTest 
+{
+    private int dayOfYear;
+    private static final DateTimeFormatter DAY_FORMATTER
+            = DateTimeFormatter.ofPattern("E", Locale.ENGLISH);
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public int getDayOfYear() {
+        return dayOfYear;
+    }
+
+    public void setDayOfYear(int dayOfYear) {
+        this.dayOfYear = dayOfYear;
+    }
+
+    public String getDateString() {
+        return DAY_FORMATTER.format(toDate());
+    }
+
+    public LocalDate toDate() {
+        return LocalDate.ofYearDay(LocalDate.now().getYear(), dayOfYear);
+    }
+
+    @Override
+    public String getLabel() {
+        return getDateString();
+    }
+
+    @Override
+    public String toString() {
+        return getDateString();
+    }
+}

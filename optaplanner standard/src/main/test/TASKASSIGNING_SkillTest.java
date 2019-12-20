@@ -1,8 +1,8 @@
-package org.optaplanner.examples.taskassigning.domain;
+//package org.optaplanner.examples.taskassigning.domain;
 import static org.junit.Assert.*;
 import org.junit.*; 
 
-public class SkillTest 
+public class TASKASSIGNING_SkillTest 
 {
 	private String name;
 	

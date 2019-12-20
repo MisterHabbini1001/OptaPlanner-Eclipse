@@ -1,4 +1,4 @@
-package org.optaplanner.examples.taskassigning.domain;
+//package org.optaplanner.examples.taskassigning.domain;
 import static org.junit.Assert.*;
 import org.junit.*;
 import org.optaplanner.core.api.domain.entity.PlanningPin;
@@ -9,7 +9,7 @@ import org.optaplanner.core.api.domain.variable.PlanningVariableGraphType;
 import org.optaplanner.core.api.domain.variable.PlanningVariableReference;
 import org.optaplanner.examples.taskassigning.domain.solver.StartTimeUpdatingVariableListener;  
 
-public class TaskTest 
+public class TASKASSIGNING_TaskTest 
 {
     private TaskType taskType;
     private int indexInTaskType;

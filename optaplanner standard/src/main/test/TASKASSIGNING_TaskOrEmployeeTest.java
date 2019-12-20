@@ -1,8 +1,8 @@
-package org.optaplanner.examples.taskassigning.domain;
+//package org.optaplanner.examples.taskassigning.domain;
 import static org.junit.Assert.*;
 import org.junit.*;  
 
-public class TaskOrEmployeeTest 
+public class TASKASSIGNING_TaskOrEmployeeTest 
 {
 	protected Task nextTask;
 	

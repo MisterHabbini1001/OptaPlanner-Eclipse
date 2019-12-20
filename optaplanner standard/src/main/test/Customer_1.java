@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.optaplanner.examples.taskassigning.domain;
+//package org.optaplanner.examples.taskassigning.domain;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 import org.optaplanner.examples.common.domain.AbstractPersistable;
@@ -26,11 +26,11 @@ public class Customer_1 extends AbstractPersistable implements Labeled
     protected Location location;//habbo+-
     private String name;
 
-    public Customer() 
+    public Customer_1() 
     {
     }
 
-    public Customer(long id, String name) 
+    public Customer_1(long id, String name) 
     {
         super(id);
         this.name = name;

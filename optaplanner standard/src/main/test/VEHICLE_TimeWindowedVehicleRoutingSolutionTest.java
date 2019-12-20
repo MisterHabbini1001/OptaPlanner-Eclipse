@@ -1,8 +1,8 @@
-package org.optaplanner.examples.vehiclerouting.domain.timewindowed;
+//package org.optaplanner.examples.vehiclerouting.domain.timewindowed;
 import static org.junit.Assert.*;
 import org.junit.*; 
 
-public class TimeWindowedVehicleRoutingSolutionTest 
+public class VEHICLE_TimeWindowedVehicleRoutingSolutionTest 
 {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception 

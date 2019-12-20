@@ -1,0 +1,152 @@
+package org.optaplanner.examples.flightcrewscheduling.domain;
+import static org.junit.Assert.*;
+import java.util.Map;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class AirportTest 
+{
+    private String code; // IATA 3-letter code
+    private String name;
+    private double latitude;
+    private double longitude;
+    private Map<Airport, Long> taxiTimeInMinutesMap;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+	
+	@Test
+	public double testgetHaversineDistanceInKmTo(Airport other) 
+	{
+        if (this == other) {
+            return 0.0;
+        }
+        final int EARTH_RADIUS_IN_KM = 6371;
+        final int TWICE_EARTH_RADIUS_IN_KM = 2 * EARTH_RADIUS_IN_KM;
+
+        double latitudeInRads  = Math.toRadians(latitude);
+        double longitudeInRads = Math.toRadians(longitude);
+        // Cartesian coordinates, normalized for a sphere of diameter 1.0
+        double cartesianX = 0.5 * Math.cos(latitudeInRads) * Math.sin(longitudeInRads);
+        double cartesianY = 0.5 * Math.cos(latitudeInRads) * Math.cos(longitudeInRads);
+        double cartesianZ = 0.5 * Math.sin(latitudeInRads);
+
+        double otherLatitudeInRads  = Math.toRadians(other.latitude);
+        double otherLongitudeInRads = Math.toRadians(other.longitude);
+        // Cartesian coordinates, normalized for a sphere of diameter 1.0
+        double otherCartesianX = 0.5 * Math.cos(otherLatitudeInRads) * Math.sin(otherLongitudeInRads);
+        double otherCartesianY = 0.5 * Math.cos(otherLatitudeInRads) * Math.cos(otherLongitudeInRads);
+        double otherCartesianZ = 0.5 * Math.sin(otherLatitudeInRads);
+
+        // TODO cache the part above
+        double dX = cartesianX - otherCartesianX;
+        double dY = cartesianY - otherCartesianY;
+        double dZ = cartesianZ - otherCartesianZ;
+        double r = Math.sqrt((dX * dX) + (dY * dY) + (dZ * dZ));
+        return TWICE_EARTH_RADIUS_IN_KM * Math.asin(r);
+    }
+
+	@Test
+    public String testtoString() 
+    {
+        return name;
+    }
+
+	@Test
+    public String testgetCode() 
+    {
+        return code;
+    }
+
+	@Test
+    public void testsetCode(String code) 
+    {
+        this.code = code;
+    }
+
+	@Test
+    public String testgetName() 
+    {
+        return name;
+    }
+
+	@Test
+    public void testsetName(String name) 
+    {
+        this.name = name;
+    }
+
+	@Test
+    public double testgetLatitude() 
+    {
+        return latitude;
+    }
+
+	@Test
+    public void testsetLatitude(double latitude) 
+    {
+        this.latitude = latitude;
+    }
+
+	@Test
+    public double testgetLongitude() 
+    {
+        return longitude;
+    }
+
+	@Test
+    public void testsetLongitude(double longitude) 
+    {
+        this.longitude = longitude;
+    }
+
+	@Test
+    public Map<Airport, Long> testgetTaxiTimeInMinutesMap() 
+    {
+        return taxiTimeInMinutesMap;
+    }
+
+	@Test
+    public void testsetTaxiTimeInMinutesMap(Map<Airport, Long> taxiTimeInMinutesMap) 
+    {
+        this.taxiTimeInMinutesMap = taxiTimeInMinutesMap;
+    }
+
+    @Test
+    public int testcompareTo(Airport o) 
+    {
+        return code.compareTo(o.code);
+    }
+}

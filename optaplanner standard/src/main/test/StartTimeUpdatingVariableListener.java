@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.optaplanner.examples.taskassigning.domain.solver;
+//package org.optaplanner.examples.taskassigning.domain.solver;
 import java.util.Objects;
 
 import org.optaplanner.core.impl.domain.variable.listener.VariableListener;

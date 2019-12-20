@@ -1,4 +1,4 @@
-package org.optaplanner.examples.taskassigning.domain;
+//package org.optaplanner.examples.taskassigning.domain;
 import static org.junit.Assert.*;
 
 import java.text.NumberFormat;
@@ -14,7 +14,7 @@ import org.optaplanner.persistence.xstream.api.score.buildin.bendable.BendableSc
 
 import com.thoughtworks.xstream.annotations.XStreamConverter;  
 
-public class TaskAssigningSolutionTest 
+public class TASKASSIGNING_TaskAssigningSolutionTest 
 {
     @ProblemFactCollectionProperty
     private List<Skill> skillList;

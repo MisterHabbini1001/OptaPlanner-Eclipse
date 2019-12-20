@@ -1,8 +1,8 @@
-package org.optaplanner.examples.taskassigning.domain;
+//package org.optaplanner.examples.taskassigning.domain;
 import static org.junit.Assert.*;
 import org.junit.*;
 
-public class CapacityTest 
+public class TASKASSIGNING_CapacityTest 
 {
 	private Integer startTime;
 	private Integer endTime;

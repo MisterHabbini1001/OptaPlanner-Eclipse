@@ -1,4 +1,4 @@
-package org.optaplanner.examples.vehiclerouting.domain.timewindowed.solver;
+//package org.optaplanner.examples.vehiclerouting.domain.timewindowed.solver;
 import static org.junit.Assert.*;
 
 import java.util.Objects;
@@ -11,7 +11,7 @@ import org.optaplanner.examples.vehiclerouting.domain.Vehicle;
 import org.optaplanner.examples.vehiclerouting.domain.timewindowed.TimeWindowedCustomer;
 import org.optaplanner.examples.vehiclerouting.domain.timewindowed.TimeWindowedDepot; 
 
-public class ArrivalTimeUpdatingVariableListenerTest 
+public class VEHICLEROUTING_ArrivalTimeUpdatingVariableListenerTest 
 {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception 
