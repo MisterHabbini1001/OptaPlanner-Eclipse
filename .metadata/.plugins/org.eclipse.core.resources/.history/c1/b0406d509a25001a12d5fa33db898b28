@@ -1,0 +1,92 @@
+package org.optaplanner.examples.nurserostering.domain.request;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.examples.nurserostering.domain.Employee;
+import org.optaplanner.examples.nurserostering.domain.ShiftDate;
+
+public class DayOffRequestTest 
+{
+    private Employee employee;
+    private ShiftDate shiftDate;
+    private int weight;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		DayOffRequest dor = new DayOffRequest();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		DayOffRequest dor = new DayOffRequest();
+		dor = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+    public Employee testgetEmployee() 
+	{
+        return employee;
+    }
+
+	@Test
+    public void testsetEmployee(Employee employee) 
+	{
+        this.employee = employee;
+    }
+
+	@Test
+    public ShiftDate testgetShiftDate() 
+	{
+        return shiftDate;
+    }
+
+	@Test
+    public void testsetShiftDate(ShiftDate shiftDate) 
+	{
+        this.shiftDate = shiftDate;
+    }
+
+	@Test
+    public int testgetWeight() 
+	{
+        return weight;
+    }
+
+	@Test
+    public void testsetWeight(int weight) 
+	{
+        this.weight = weight;
+    }
+
+	@Test
+    public String testtoString() 
+	{
+        return shiftDate + "_OFF_" + employee;
+    }
+}

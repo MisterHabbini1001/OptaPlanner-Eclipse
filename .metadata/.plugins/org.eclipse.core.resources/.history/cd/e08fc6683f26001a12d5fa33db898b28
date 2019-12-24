@@ -1,0 +1,85 @@
+package org.optaplanner.examples.travelingtournament.domain;
+
+import static org.junit.Assert.*;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.variable.PlanningVariable;
+
+public class MatchTest 
+{
+    private Team homeTeam;
+    private Team awayTeam;
+    private Day day;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public void getHomeTeam() {
+        System.out.println(homeTeam);
+    }
+
+    public void setHomeTeam() {
+        this.homeTeam = homeTeam;
+    }
+
+    public void getAwayTeam() {
+    	System.out.println(awayTeam);
+    }
+
+    public void setAwayTeam(Team awayTeam) {
+        this.awayTeam = awayTeam;
+    }
+
+    @PlanningVariable(valueRangeProviderRefs = {"dayRange"})
+    public Day getDay() {
+        return day;
+    }
+
+    public void setDay(Day day) {
+        this.day = day;
+    }
+
+    public void solutionEquals() {
+    	System.out.println(false);
+    }
+
+    public void solutionHashCode() {
+    	System.out.println(new HashCodeBuilder()
+                .append(homeTeam)
+                .append(awayTeam)
+                .append(day)
+                .toHashCode());
+    }
+
+    @Override
+    public String toString() {
+        return homeTeam + "+" + awayTeam;
+    }
+}

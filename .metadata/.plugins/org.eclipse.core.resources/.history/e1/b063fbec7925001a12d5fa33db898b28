@@ -1,0 +1,333 @@
+package org.optaplanner.examples.nurserostering.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
+import org.optaplanner.core.api.domain.solution.PlanningScore;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactCollectionProperty;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactProperty;
+import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
+import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
+import org.optaplanner.examples.nurserostering.domain.contract.Contract;
+import org.optaplanner.examples.nurserostering.domain.contract.ContractLine;
+import org.optaplanner.examples.nurserostering.domain.contract.PatternContractLine;
+import org.optaplanner.examples.nurserostering.domain.pattern.Pattern;
+import org.optaplanner.examples.nurserostering.domain.request.DayOffRequest;
+import org.optaplanner.examples.nurserostering.domain.request.DayOnRequest;
+import org.optaplanner.examples.nurserostering.domain.request.ShiftOffRequest;
+import org.optaplanner.examples.nurserostering.domain.request.ShiftOnRequest;
+import org.optaplanner.persistence.xstream.api.score.buildin.hardsoft.HardSoftScoreXStreamConverter;
+
+import com.thoughtworks.xstream.annotations.XStreamConverter;
+
+public class NurseRosterTest 
+{
+    private String code;
+
+    @ProblemFactProperty
+    private NurseRosterParametrization nurseRosterParametrization;
+    @ProblemFactCollectionProperty
+    private List<Skill> skillList;
+    @ProblemFactCollectionProperty
+    private List<ShiftType> shiftTypeList;
+    @ProblemFactCollectionProperty
+    private List<ShiftTypeSkillRequirement> shiftTypeSkillRequirementList;
+    @ProblemFactCollectionProperty
+    private List<Pattern> patternList;
+    @ProblemFactCollectionProperty
+    private List<Contract> contractList;
+    @ProblemFactCollectionProperty
+    private List<ContractLine> contractLineList;
+    @ProblemFactCollectionProperty
+    private List<PatternContractLine> patternContractLineList;
+    @ValueRangeProvider(id = "employeeRange")
+    @ProblemFactCollectionProperty
+    private List<Employee> employeeList;
+    @ProblemFactCollectionProperty
+    private List<SkillProficiency> skillProficiencyList;
+    @ProblemFactCollectionProperty
+    private List<ShiftDate> shiftDateList;
+    @ProblemFactCollectionProperty
+    private List<Shift> shiftList;
+    @ProblemFactCollectionProperty
+    private List<DayOffRequest> dayOffRequestList;
+    @ProblemFactCollectionProperty
+    private List<DayOnRequest> dayOnRequestList;
+    @ProblemFactCollectionProperty
+    private List<ShiftOffRequest> shiftOffRequestList;
+    @ProblemFactCollectionProperty
+    private List<ShiftOnRequest> shiftOnRequestList;
+
+    @PlanningEntityCollectionProperty
+    private List<ShiftAssignment> shiftAssignmentList;
+
+    @PlanningScore
+    @XStreamConverter(HardSoftScoreXStreamConverter.class)
+    private HardSoftScore score;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+	public String getCode() 
+	{
+        return code;
+    }
+
+	@Test
+    public void setCode(String code) 
+    {
+        this.code = code;
+    }
+
+	@Test
+    public NurseRosterParametrization getNurseRosterParametrization() 
+    {
+        return nurseRosterParametrization;
+    }
+
+	@Test
+    public void setNurseRosterParametrization(NurseRosterParametrization nurseRosterParametrization) 
+    {
+        this.nurseRosterParametrization = nurseRosterParametrization;
+    }
+
+	@Test
+    public List<Skill> getSkillList() 
+    {
+        return skillList;
+    }
+
+	@Test
+    public void setSkillList(List<Skill> skillList) 
+    {
+        this.skillList = skillList;
+    }
+
+	@Test
+    public List<ShiftType> getShiftTypeList() 
+    {
+        return shiftTypeList;
+    }
+
+	@Test
+    public void setShiftTypeList(List<ShiftType> shiftTypeList) 
+    {
+        this.shiftTypeList = shiftTypeList;
+    }
+
+	@Test
+    public List<ShiftTypeSkillRequirement> getShiftTypeSkillRequirementList() 
+    {
+        return shiftTypeSkillRequirementList;
+    }
+
+	@Test
+    public void setShiftTypeSkillRequirementList(List<ShiftTypeSkillRequirement> shiftTypeSkillRequirementList) 
+    {
+        this.shiftTypeSkillRequirementList = shiftTypeSkillRequirementList;
+    }
+
+	@Test
+    public List<Pattern> getPatternList() 
+    {
+        return patternList;
+    }
+
+	@Test
+    public void setPatternList(List<Pattern> patternList) 
+    {
+        this.patternList = patternList;
+    }
+
+	@Test
+    public List<Contract> getContractList() 
+    {
+        return contractList;
+    }
+
+	@Test
+    public void setContractList(List<Contract> contractList) 
+    {
+        this.contractList = contractList;
+    }
+
+	@Test
+    public List<ContractLine> getContractLineList() 
+    {
+        return contractLineList;
+    }
+
+	@Test
+    public void setContractLineList(List<ContractLine> contractLineList) 
+    {
+        this.contractLineList = contractLineList;
+    }
+
+	@Test
+    public List<PatternContractLine> getPatternContractLineList() 
+    {
+        return patternContractLineList;
+    }
+
+	@Test
+    public void setPatternContractLineList(List<PatternContractLine> patternContractLineList) 
+    {
+        this.patternContractLineList = patternContractLineList;
+    }
+
+	@Test
+    public List<Employee> getEmployeeList() 
+    {
+        return employeeList;
+    }
+
+	@Test
+    public void setEmployeeList(List<Employee> employeeList) 
+    {
+        this.employeeList = employeeList;
+    }
+
+	@Test
+    public List<SkillProficiency> getSkillProficiencyList() 
+    {
+        return skillProficiencyList;
+    }
+
+	@Test
+    public void setSkillProficiencyList(List<SkillProficiency> skillProficiencyList) 
+    {
+        this.skillProficiencyList = skillProficiencyList;
+    }
+
+	@Test
+    public List<ShiftDate> getShiftDateList() 
+    {
+        return shiftDateList;
+    }
+
+	@Test
+    public void setShiftDateList(List<ShiftDate> shiftDateList) 
+    {
+        this.shiftDateList = shiftDateList;
+    }
+
+	@Test
+    public List<Shift> getShiftList() 
+    {
+        return shiftList;
+    }
+
+	@Test
+    public void setShiftList(List<Shift> shiftList) 
+    {
+        this.shiftList = shiftList;
+    }
+
+	@Test
+    public List<DayOffRequest> getDayOffRequestList() 
+    {
+        return dayOffRequestList;
+    }
+
+	@Test
+    public void setDayOffRequestList(List<DayOffRequest> dayOffRequestList) 
+    {
+        this.dayOffRequestList = dayOffRequestList;
+    }
+
+	@Test
+    public List<DayOnRequest> getDayOnRequestList() 
+    {
+        return dayOnRequestList;
+    }
+
+	@Test
+    public void setDayOnRequestList(List<DayOnRequest> dayOnRequestList) 
+    {
+        this.dayOnRequestList = dayOnRequestList;
+    }
+
+	@Test
+    public List<ShiftOffRequest> getShiftOffRequestList() 
+    {
+        return shiftOffRequestList;
+    }
+
+	@Test
+    public void setShiftOffRequestList(List<ShiftOffRequest> shiftOffRequestList) 
+    {
+        this.shiftOffRequestList = shiftOffRequestList;
+    }
+
+	@Test
+    public List<ShiftOnRequest> getShiftOnRequestList() 
+    {
+        return shiftOnRequestList;
+    }
+
+	@Test
+    public void setShiftOnRequestList(List<ShiftOnRequest> shiftOnRequestList) 
+    {
+        this.shiftOnRequestList = shiftOnRequestList;
+    }
+
+	@Test
+    public List<ShiftAssignment> getShiftAssignmentList() 
+    {
+        return shiftAssignmentList;
+    }
+
+	@Test
+    public void setShiftAssignmentList(List<ShiftAssignment> shiftAssignmentList) 
+    {
+        this.shiftAssignmentList = shiftAssignmentList;
+    }
+
+	@Test
+    public HardSoftScore getScore() 
+    {
+        return score;
+    }
+
+	@Test
+    public void setScore(HardSoftScore score) 
+    {
+        this.score = score;
+    }
+}

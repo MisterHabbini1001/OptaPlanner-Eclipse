@@ -1,0 +1,215 @@
+package org.optaplanner.examples.rocktour.domain;
+import static java.time.temporal.ChronoUnit.DAYS;
+import static org.junit.Assert.*;
+
+import java.time.LocalDate;
+import java.util.NavigableSet;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.variable.AnchorShadowVariable;
+import org.optaplanner.core.api.domain.variable.CustomShadowVariable;
+import org.optaplanner.core.api.domain.variable.PlanningVariable;
+import org.optaplanner.core.api.domain.variable.PlanningVariableGraphType;
+import org.optaplanner.core.api.domain.variable.PlanningVariableReference;
+import org.optaplanner.examples.rocktour.domain.solver.RockShowVariableListener;
+
+public class RockShowTest {
+    private String venueName;
+    private RockLocation location;
+    private int durationInHalfDay;
+    private int revenueOpportunity;
+    private boolean required;
+    private NavigableSet<LocalDate> availableDateSet;
+
+    @PlanningVariable(valueRangeProviderRefs = {"busRange", "showRange"}, graphType = PlanningVariableGraphType.CHAINED)
+    private RockStandstill previousStandstill;
+    private RockShow nextShow;
+
+    @AnchorShadowVariable(sourceVariableName = "previousStandstill")
+    private RockBus bus;
+
+    @CustomShadowVariable(variableListenerClass = RockShowVariableListener.class,
+            sources = {@PlanningVariableReference(variableName = "previousStandstill"),
+            @PlanningVariableReference(variableName = "bus")})
+    private LocalDate date;
+
+    @CustomShadowVariable(variableListenerRef = @PlanningVariableReference(variableName = "date"))
+    private RockTimeOfDay timeOfDay; 
+
+    @CustomShadowVariable(variableListenerRef = @PlanningVariableReference(variableName = "date"))
+    private RockStandstill hosWeekStart; 
+
+    @CustomShadowVariable(variableListenerRef = @PlanningVariableReference(variableName = "date"))
+    private Long hosWeekDrivingSecondsTotal; 
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public void getDepartureLocation() {
+        System.out.println(location);
+    }
+
+    public void getDepartureDate() {
+        if (date == null) 
+        {
+        	System.out.println();
+        }
+        
+        System.out.println(date.plusDays((durationInHalfDay - 1) / 2));
+    }
+
+    public void getDepartureTimeOfDay() {
+    	System.out.println(durationInHalfDay % 2 == 0 ? RockTimeOfDay.LATE : timeOfDay);
+    }
+
+    public void getArrivalLocation() {
+    	System.out.println(location);
+    }
+
+    public void getDrivingTimeFromPreviousStandstill() {
+    	System.out.println(previousStandstill.getDepartureLocation().getDrivingTimeTo(location));
+    }
+
+    public void getDrivingTimeToBusArrivalLocation() {
+    	System.out.println(location.getDrivingTimeTo(bus.getArrivalLocation()));
+    }
+
+    public void getDaysAfterBusDeparture() {
+    	System.out.println(DAYS.between(bus.getDepartureDate(), date));
+    }
+
+    public void toString() {
+    	System.out.println(venueName);
+    }
+
+    public void getVenueName() {
+    	System.out.println(venueName);
+    }
+
+    public void setVenueName() {
+        this.venueName = venueName;
+    }
+
+    public void getLocation() {
+    	System.out.println(location);
+    }
+
+    public void setLocation() {
+        this.location = location;
+    }
+
+    public void getDurationInHalfDay() {
+    	System.out.println(durationInHalfDay);
+    }
+
+    public void setDurationInHalfDay() {
+        this.durationInHalfDay = durationInHalfDay;
+    }
+
+    public void getRevenueOpportunity() {
+    	System.out.println(revenueOpportunity);
+    }
+
+    public void setRevenueOpportunity() {
+        this.revenueOpportunity = revenueOpportunity;
+    }
+
+    public void isRequired() {
+    	System.out.println(required);
+    }
+
+    public void setRequired() {
+        this.required = required;
+    }
+
+    public void getAvailableDateSet() {
+    	System.out.println(availableDateSet);
+    }
+
+    public void setAvailableDateSet() {
+        this.availableDateSet = availableDateSet;
+    }
+
+    public void getPreviousStandstill() {
+    	System.out.println(previousStandstill);
+    }
+
+    public void setPreviousStandstill() {
+        this.previousStandstill = previousStandstill;
+    }
+
+    public void getNextShow() {
+    	System.out.println(nextShow);
+    }
+
+    public void setNextShow() {
+        this.nextShow = nextShow;
+    }
+
+    public void getBus() {
+    	System.out.println(bus);
+    }
+
+    public void setBus() {
+        this.bus = bus;
+    }
+
+    public void getDate() {
+    	System.out.println(date);
+    }
+
+    public void setDate() {
+        this.date = date;
+    }
+
+    public void getTimeOfDay() {
+    	System.out.println(timeOfDay);
+    }
+
+    public void setTimeOfDay() {
+        this.timeOfDay = timeOfDay;
+    }
+
+    @Override
+    public RockStandstill getHosWeekStart() {
+        return hosWeekStart;
+    }
+
+    public void setHosWeekStart(RockStandstill hosWeekStart) {
+        this.hosWeekStart = hosWeekStart;
+    }
+
+    @Override
+    public Long getHosWeekDrivingSecondsTotal() {
+        return hosWeekDrivingSecondsTotal;
+    }
+
+    public void setHosWeekDrivingSecondsTotal(Long hosWeekDrivingSecondsTotal) {
+        this.hosWeekDrivingSecondsTotal = hosWeekDrivingSecondsTotal;
+    }
+}

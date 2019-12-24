@@ -1,0 +1,111 @@
+package org.optaplanner.examples.dinnerparty.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class GuestTest 
+{
+    private String code;
+    private String name;
+    private Job job;
+    private Gender gender;
+    private List<HobbyPractician> hobbyPracticianList;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public String getCode() 
+    {
+        return code;
+    }
+
+    public void setCode(String code) 
+    {
+        this.code = code;
+    }
+
+    public String getName() 
+    {
+        return name;
+    }
+
+    public void setName(String name) 
+    {
+        this.name = name;
+    }
+
+    public Job getJob() 
+    {
+        return job;
+    }
+
+    public void setJob(Job job) 
+    {
+        this.job = job;
+    }
+
+    public Gender getGender() 
+    {
+        return gender;
+    }
+
+    public void setGender(Gender gender) 
+    {
+        this.gender = gender;
+    }
+
+    public List<HobbyPractician> getHobbyPracticianList() 
+    {
+        return hobbyPracticianList;
+    }
+
+    public void setHobbyPracticianList(List<HobbyPractician> hobbyPracticianList) 
+    {
+        this.hobbyPracticianList = hobbyPracticianList;
+    }
+
+    public String getLabel() 
+    {
+        return name;
+    }
+
+    public String toString() 
+    {
+        return name;
+    }
+}

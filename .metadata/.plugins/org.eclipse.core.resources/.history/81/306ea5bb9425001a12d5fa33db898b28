@@ -1,0 +1,61 @@
+package org.optaplanner.examples.nurserostering.domain.contract;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.examples.nurserostering.domain.pattern.Pattern;
+
+public class PatternContractLineTest {
+
+    private Contract contract;
+    private Pattern pattern;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+    public Contract getContract() {
+        return contract;
+    }
+
+	@Test
+    public void setContract(Contract contract) {
+        this.contract = contract;
+    }
+
+	@Test
+    public Pattern getPattern() {
+        return pattern;
+    }
+
+	@Test
+    public void setPattern(Pattern pattern) {
+        this.pattern = pattern;
+    }
+
+	@Test
+    public String toString() {
+        return contract + "-" + pattern;
+    }
+}

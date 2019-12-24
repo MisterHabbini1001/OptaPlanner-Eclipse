@@ -1,0 +1,52 @@
+package org.optaplanner.examples.nurserostering.domain.pattern;
+import static org.junit.Assert.*;
+
+import java.time.DayOfWeek;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class FreeBefore2DaysWithAWorkDayPatternTest {
+	private DayOfWeek freeDayOfWeek;
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+    public DayOfWeek testgetFreeDayOfWeek() {
+        return freeDayOfWeek;
+    }
+
+	@Test
+    public void testsetFreeDayOfWeek(DayOfWeek freeDayOfWeek) {
+        this.freeDayOfWeek = freeDayOfWeek;
+    }
+
+	@Test
+    public String testtoString() {
+        return "Free on " + freeDayOfWeek + " followed by a work day within 2 days";
+    }
+}

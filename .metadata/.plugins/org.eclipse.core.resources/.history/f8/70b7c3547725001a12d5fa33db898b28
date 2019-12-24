@@ -1,0 +1,49 @@
+package org.optaplanner.examples.nurserostering.domain;
+import static org.junit.Assert.*;
+
+import java.util.Map;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.examples.nurserostering.domain.contract.Contract;
+import org.optaplanner.examples.nurserostering.domain.request.DayOffRequest;
+import org.optaplanner.examples.nurserostering.domain.request.DayOnRequest;
+import org.optaplanner.examples.nurserostering.domain.request.ShiftOffRequest;
+import org.optaplanner.examples.nurserostering.domain.request.ShiftOnRequest;
+
+public class EmployeeTest 
+{
+    private String code;
+    private String name;
+    private Contract contract;
+
+    private Map<ShiftDate, DayOffRequest> dayOffRequestMap;
+    private Map<ShiftDate, DayOnRequest> dayOnRequestMap;
+    private Map<Shift, ShiftOffRequest> shiftOffRequestMap;
+    private Map<Shift, ShiftOnRequest> shiftOnRequestMap;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

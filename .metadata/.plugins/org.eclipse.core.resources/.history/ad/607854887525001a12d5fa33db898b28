@@ -1,0 +1,143 @@
+package org.optaplanner.examples.dinnerparty.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.variable.PlanningVariable;
+
+public class SeatDesignationTest 
+{
+    private Guest guest;
+    private Seat seat;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+    public Guest getGuest() 
+    {
+        return guest;
+    }
+
+	@Test
+    public void setGuest(Guest guest) 
+    {
+        this.guest = guest;
+    }
+
+    @PlanningVariable(valueRangeProviderRefs = {"seatRange"})
+    @Test
+    public Seat getSeat() 
+    {
+        return seat;
+    }
+
+    @Test
+    public void setSeat(Seat seat) 
+    {
+        this.seat = seat;
+    }
+
+    @Test
+    public String getGuestName() 
+    {
+        return getGuest().getName();
+    }
+
+    @Test
+    public Gender getGuestGender() 
+    {
+        return getGuest().getGender();
+    }
+
+    @Test
+    public Job getGuestJob() 
+    {
+        return getGuest().getJob();
+    }
+
+    @Test
+    public JobType getGuestJobType() 
+    {
+        return getGuest().getJob().getJobType();
+    }
+
+    @Test
+    public boolean differentKindIfNeeded(Job otherGuestJob) 
+    {
+        JobType jobType = guest.getJob().getJobType();
+        return jobType == JobType.SOCIALITE || jobType == JobType.TEACHER || guest.getJob() != otherGuestJob;
+    }
+
+    public Table getSeatTable() 
+    {
+        if (seat == null) 
+        {
+            return  null;
+        }
+        
+        return seat.getTable();
+    }
+
+    public boolean isRightOf(SeatDesignation leftSeatDesignation) 
+    {
+        if (seat == null || leftSeatDesignation.seat == null) 
+        {
+            return false;
+        }
+        
+        return seat.getRightSeat() == leftSeatDesignation.seat;
+    }
+
+    public boolean isNeighborOf(SeatDesignation otherSeatDesignation) 
+    {
+        if (seat == null || otherSeatDesignation.seat == null) 
+        {
+            return false;
+        }
+        
+        return seat.getLeftSeat() == otherSeatDesignation.seat || seat.getRightSeat() == otherSeatDesignation.seat;
+    }
+
+    public String getLabel() 
+    {
+        return guest.getLabel();
+    }
+
+    public String toString() 
+    {
+        return guest.toString();
+    }
+}

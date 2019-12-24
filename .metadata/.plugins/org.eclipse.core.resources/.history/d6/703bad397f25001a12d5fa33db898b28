@@ -1,0 +1,82 @@
+package org.optaplanner.examples.nurserostering.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class NurseRosterParametrizationTest 
+{
+    private ShiftDate firstShiftDate;
+    private ShiftDate lastShiftDate;
+
+    private ShiftDate planningWindowStart;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+    public ShiftDate getFirstShiftDate() {
+        return firstShiftDate;
+    }
+
+    public void setFirstShiftDate(ShiftDate firstShiftDate) {
+        this.firstShiftDate = firstShiftDate;
+    }
+
+    public ShiftDate getLastShiftDate() {
+        return lastShiftDate;
+    }
+
+    public void setLastShiftDate(ShiftDate lastShiftDate) {
+        this.lastShiftDate = lastShiftDate;
+    }
+
+    public int getFirstShiftDateDayIndex() {
+        return firstShiftDate.getDayIndex();
+    }
+
+    public int getLastShiftDateDayIndex() {
+        return lastShiftDate.getDayIndex();
+    }
+
+    public ShiftDate getPlanningWindowStart() {
+        return planningWindowStart;
+    }
+
+    public void setPlanningWindowStart(ShiftDate planningWindowStart) {
+        this.planningWindowStart = planningWindowStart;
+    }
+
+    // ************************************************************************
+    // Worker methods
+    // ************************************************************************
+
+    public boolean isInPlanningWindow(ShiftDate shiftDate) {
+        return planningWindowStart.getDayIndex() <= shiftDate.getDayIndex();
+    }
+
+    @Override
+    public String toString() {
+        return firstShiftDate + " - " + lastShiftDate;
+    }
+}

@@ -1,0 +1,70 @@
+package org.optaplanner.examples.rocktour.domain;
+
+import static org.junit.Assert.*;
+
+import java.time.LocalDate;
+import java.util.NavigableSet;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.variable.AnchorShadowVariable;
+import org.optaplanner.core.api.domain.variable.CustomShadowVariable;
+import org.optaplanner.core.api.domain.variable.PlanningVariable;
+import org.optaplanner.core.api.domain.variable.PlanningVariableGraphType;
+import org.optaplanner.core.api.domain.variable.PlanningVariableReference;
+import org.optaplanner.examples.rocktour.domain.solver.RockShowVariableListener;
+
+public class RockShowTest {
+    private String venueName;
+    private RockLocation location;
+    private int durationInHalfDay;
+    private int revenueOpportunity;
+    private boolean required;
+    private NavigableSet<LocalDate> availableDateSet;
+
+    @PlanningVariable(valueRangeProviderRefs = {"busRange", "showRange"}, graphType = PlanningVariableGraphType.CHAINED)
+    private RockStandstill previousStandstill;
+    private RockShow nextShow;
+
+    @AnchorShadowVariable(sourceVariableName = "previousStandstill")
+    private RockBus bus;
+
+    @CustomShadowVariable(variableListenerClass = RockShowVariableListener.class,
+            sources = {@PlanningVariableReference(variableName = "previousStandstill"),
+            @PlanningVariableReference(variableName = "bus")})
+    private LocalDate date;
+
+    @CustomShadowVariable(variableListenerRef = @PlanningVariableReference(variableName = "date"))
+    private RockTimeOfDay timeOfDay; 
+
+    @CustomShadowVariable(variableListenerRef = @PlanningVariableReference(variableName = "date"))
+    private RockStandstill hosWeekStart; 
+
+    @CustomShadowVariable(variableListenerRef = @PlanningVariableReference(variableName = "date"))
+    private Long hosWeekDrivingSecondsTotal; // HOS stands for Hours of Service regulation
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

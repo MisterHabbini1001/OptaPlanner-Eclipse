@@ -45,5 +45,4 @@ public class SkillProficiency extends AbstractPersistable {
     public String toString() {
         return employee + "-" + skill;
     }
-
 }

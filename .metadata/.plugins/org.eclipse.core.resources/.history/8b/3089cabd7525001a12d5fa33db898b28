@@ -1,0 +1,145 @@
+package org.optaplanner.examples.dinnerparty.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.variable.PlanningVariable;
+
+public class SeatDesignationTest 
+{
+    private Guest guest;
+    private Seat seat;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		SeatDesignation sd = new SeatDesignation();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		SeatDesignation sd = new SeatDesignation();
+		sd = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		SeatDesignation sd = new SeatDesignation();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		SeatDesignation sd = new SeatDesignation();
+		sd = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+    public Guest testgetGuest() 
+    {
+        return guest;
+    }
+
+	@Test
+    public void testsetGuest(Guest guest) 
+    {
+        this.guest = guest;
+    }
+
+    @PlanningVariable(valueRangeProviderRefs = {"seatRange"})
+    @Test
+    public Seat testgetSeat() 
+    {
+        return seat;
+    }
+
+    @Test
+    public void testsetSeat(Seat seat) 
+    {
+        this.seat = seat;
+    }
+
+    @Test
+    public String testgetGuestName() 
+    {
+        return getGuest().getName();
+    }
+
+    @Test
+    public Gender testgetGuestGender() 
+    {
+        return getGuest().getGender();
+    }
+
+    @Test
+    public Job testgetGuestJob() 
+    {
+        return getGuest().getJob();
+    }
+
+    @Test
+    public JobType testgetGuestJobType() 
+    {
+        return getGuest().getJob().getJobType();
+    }
+
+    @Test
+    public boolean testdifferentKindIfNeeded(Job otherGuestJob) 
+    {
+        JobType jobType = guest.getJob().getJobType();
+        return jobType == JobType.SOCIALITE || jobType == JobType.TEACHER || guest.getJob() != otherGuestJob;
+    }
+
+    public Table testgetSeatTable() 
+    {
+        if (seat == null) 
+        {
+            return  null;
+        }
+        
+        return seat.getTable();
+    }
+
+    public boolean testisRightOf(SeatDesignation leftSeatDesignation) 
+    {
+        if (seat == null || leftSeatDesignation.seat == null) 
+        {
+            return false;
+        }
+        
+        return seat.getRightSeat() == leftSeatDesignation.seat;
+    }
+
+    public boolean testisNeighborOf(SeatDesignation otherSeatDesignation) 
+    {
+        if (seat == null || otherSeatDesignation.seat == null) 
+        {
+            return false;
+        }
+        
+        return seat.getLeftSeat() == otherSeatDesignation.seat || seat.getRightSeat() == otherSeatDesignation.seat;
+    }
+
+    public String testgetLabel() 
+    {
+        return guest.getLabel();
+    }
+
+    public String testtoString() 
+    {
+        return guest.toString();
+    }
+}

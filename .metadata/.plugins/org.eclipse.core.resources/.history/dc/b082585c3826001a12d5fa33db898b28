@@ -1,0 +1,291 @@
+package org.optaplanner.examples.rocktour.domain;
+import static java.time.temporal.ChronoUnit.DAYS;
+import static org.junit.Assert.*;
+
+import java.time.LocalDate;
+import java.util.NavigableSet;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.variable.AnchorShadowVariable;
+import org.optaplanner.core.api.domain.variable.CustomShadowVariable;
+import org.optaplanner.core.api.domain.variable.PlanningVariable;
+import org.optaplanner.core.api.domain.variable.PlanningVariableGraphType;
+import org.optaplanner.core.api.domain.variable.PlanningVariableReference;
+import org.optaplanner.examples.rocktour.domain.solver.RockShowVariableListener;
+
+public class RockShowTest {
+    private String venueName;
+    private RockLocation location;
+    private int durationInHalfDay;
+    private int revenueOpportunity;
+    private boolean required;
+    private NavigableSet<LocalDate> availableDateSet;
+
+    @PlanningVariable(valueRangeProviderRefs = {"busRange", "showRange"}, graphType = PlanningVariableGraphType.CHAINED)
+    private RockStandstill previousStandstill;
+    private RockShow nextShow;
+
+    @AnchorShadowVariable(sourceVariableName = "previousStandstill")
+    private RockBus bus;
+
+    @CustomShadowVariable(variableListenerClass = RockShowVariableListener.class,
+            sources = {@PlanningVariableReference(variableName = "previousStandstill"),
+            @PlanningVariableReference(variableName = "bus")})
+    private LocalDate date;
+
+    @CustomShadowVariable(variableListenerRef = @PlanningVariableReference(variableName = "date"))
+    private RockTimeOfDay timeOfDay; 
+
+    @CustomShadowVariable(variableListenerRef = @PlanningVariableReference(variableName = "date"))
+    private RockStandstill hosWeekStart; 
+
+    @CustomShadowVariable(variableListenerRef = @PlanningVariableReference(variableName = "date"))
+    private Long hosWeekDrivingSecondsTotal; 
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		RockShow rs = new RockShow();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		RockShow rs = new RockShow();
+		rs = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		RockShow rs = new RockShow();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		RockShow rs = new RockShow();
+		rs = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+    public void getDepartureLocation() 
+    {
+        System.out.println(location);
+    }
+
+	@Test
+    public void getDepartureDate() 
+    {
+        if (date == null) 
+        {
+        	System.out.println();
+        }
+        
+        System.out.println(date.plusDays((durationInHalfDay - 1) / 2));
+    }
+
+	@Test
+    public void getDepartureTimeOfDay() 
+    {
+    	System.out.println(durationInHalfDay % 2 == 0 ? RockTimeOfDay.LATE : timeOfDay);
+    }
+
+	@Test
+    public void getArrivalLocation() 
+    {
+    	System.out.println(location);
+    }
+
+	@Test
+    public void getDrivingTimeFromPreviousStandstill() 
+    {
+    	System.out.println(previousStandstill.getDepartureLocation().getDrivingTimeTo(location));
+    }
+
+	@Test
+    public void getDrivingTimeToBusArrivalLocation() 
+    {
+    	System.out.println(location.getDrivingTimeTo(bus.getArrivalLocation()));
+    }
+
+	@Test
+    public void getDaysAfterBusDeparture() 
+    {
+    	System.out.println(DAYS.between(bus.getDepartureDate(), date));
+    }
+
+	@Test
+    public void toString() 
+    {
+    	System.out.println(venueName);
+    }
+
+	@Test
+    public void getVenueName() 
+    {
+    	System.out.println(venueName);
+    }
+
+	@Test
+    public void setVenueName() 
+    {
+        this.venueName = venueName;
+    }
+
+	@Test
+    public void getLocation() 
+    {
+    	System.out.println(location);
+    }
+
+	@Test
+    public void setLocation() 
+    {
+        this.location = location;
+    }
+
+	@Test
+    public void getDurationInHalfDay() 
+    {
+    	System.out.println(durationInHalfDay);
+    }
+
+	@Test
+    public void setDurationInHalfDay() 
+    {
+        this.durationInHalfDay = durationInHalfDay;
+    }
+
+	@Test
+    public void getRevenueOpportunity() 
+    {
+    	System.out.println(revenueOpportunity);
+    }
+
+	@Test
+    public void setRevenueOpportunity() 
+    {
+        this.revenueOpportunity = revenueOpportunity;
+    }
+
+	@Test
+    public void isRequired() 
+    {
+    	System.out.println(required);
+    }
+
+	@Test
+    public void setRequired() 
+    {
+        this.required = required;
+    }
+
+	@Test
+    public void getAvailableDateSet() 
+    {
+    	System.out.println(availableDateSet);
+    }
+
+	@Test
+    public void setAvailableDateSet() 
+    {
+        this.availableDateSet = availableDateSet;
+    }
+
+	@Test
+    public void getPreviousStandstill() 
+    {
+    	System.out.println(previousStandstill);
+    }
+
+	@Test
+    public void setPreviousStandstill() 
+    {
+        this.previousStandstill = previousStandstill;
+    }
+
+	@Test
+    public void getNextShow() 
+    {
+    	System.out.println(nextShow);
+    }
+
+	@Test
+    public void setNextShow() 
+    {
+        this.nextShow = nextShow;
+    }
+
+	@Test
+    public void getBus() 
+    {
+    	System.out.println(bus);
+    }
+
+	@Test
+    public void setBus() 
+    {
+        this.bus = bus;
+    }
+
+	@Test
+    public void getDate() 
+    {
+    	System.out.println(date);
+    }
+
+	@Test
+    public void setDate() 
+    {
+        this.date = date;
+    }
+
+	@Test
+    public void getTimeOfDay() 
+    {
+    	System.out.println(timeOfDay);
+    }
+
+	@Test
+    public void setTimeOfDay() 
+    {
+        this.timeOfDay = timeOfDay;
+    }
+
+	@Test
+    public void getHosWeekStart() 
+    {
+    	System.out.println(hosWeekStart);
+    }
+
+	@Test
+    public void setHosWeekStart() 
+    {
+        this.hosWeekStart = hosWeekStart;
+    }
+
+	@Test
+    public void getHosWeekDrivingSecondsTotal() 
+    {
+    	System.out.println(hosWeekDrivingSecondsTotal);
+    }
+
+	@Test
+    public void setHosWeekDrivingSecondsTotal() 
+    {
+        this.hosWeekDrivingSecondsTotal = hosWeekDrivingSecondsTotal;
+    }
+}

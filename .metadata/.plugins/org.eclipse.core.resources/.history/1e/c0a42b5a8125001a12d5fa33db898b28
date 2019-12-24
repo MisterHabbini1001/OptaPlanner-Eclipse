@@ -1,0 +1,49 @@
+package org.optaplanner.examples.nurserostering.domain;
+import static org.junit.Assert.*;
+
+import java.util.Comparator;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.variable.PlanningVariable;
+import org.optaplanner.examples.nurserostering.domain.solver.EmployeeStrengthComparator;
+
+public class ShiftAssignmentTest 
+{
+    private static final Comparator<Shift> COMPARATOR = Comparator.comparing(Shift::getShiftDate)
+            .thenComparing(a -> a.getShiftType().getStartTimeString())
+            .thenComparing(a -> a.getShiftType().getEndTimeString());
+
+    private Shift shift;
+    private int indexInShift;
+
+    // Planning variables: changes during planning, between score calculations.
+    @PlanningVariable(valueRangeProviderRefs = {"employeeRange"},
+            strengthComparatorClass = EmployeeStrengthComparator.class)
+    private Employee employee;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

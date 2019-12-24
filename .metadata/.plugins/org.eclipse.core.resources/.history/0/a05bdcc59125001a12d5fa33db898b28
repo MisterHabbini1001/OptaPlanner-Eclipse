@@ -1,0 +1,70 @@
+package org.optaplanner.examples.nurserostering.domain.contract;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class BooleanContractLineTest 
+{
+    private boolean enabled;
+    private int weight;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		BooleanContractLine bcl = new BooleanContractLine();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	
+    @Override
+    @Test
+    public boolean testisEnabled() 
+    {
+        return enabled;
+    }
+
+    @Test
+    public void testsetEnabled(boolean enabled) 
+    {
+        this.enabled = enabled;
+    }
+
+    @Test
+    public int testgetWeight() 
+    {
+        return weight;
+    }
+
+    @Test
+    public void testsetWeight(int weight) 
+    {
+        this.weight = weight;
+    }
+}

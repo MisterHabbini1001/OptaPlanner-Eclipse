@@ -1,0 +1,115 @@
+package org.optaplanner.examples.rocktour.domain;
+import static org.junit.Assert.*;
+
+import java.util.Collections;
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.constraintweight.ConstraintConfigurationProvider;
+import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
+import org.optaplanner.core.api.domain.solution.PlanningScore;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactProperty;
+import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
+import org.optaplanner.core.api.score.buildin.hardmediumsoftlong.HardMediumSoftLongScore;
+
+public class RockTourSolutionTest 
+{
+    private String tourName;
+
+    @ConstraintConfigurationProvider
+    private RockTourConstraintConfiguration constraintConfiguration;
+
+    @ProblemFactProperty
+    private RockBus bus;
+
+    @PlanningEntityCollectionProperty
+    @ValueRangeProvider(id = "showRange")
+    private List<RockShow> showList;
+
+    @PlanningScore
+    private HardMediumSoftLongScore score = null;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@ValueRangeProvider(id = "busRange")
+	@Test
+    public void getBugRange() {
+        System.out.println(Collections.singletonList(bus));
+    }
+
+	@Test
+    public void getTourName() {
+        System.out.println(tourName);
+    }
+
+	@Test
+    public void setTourName() {
+        this.tourName = tourName;
+    }
+
+	@Test
+    public void getConstraintConfiguration() {
+    	System.out.println(constraintConfiguration);
+    }
+
+	@Test
+    public void setConstraintConfiguration() {
+        this.constraintConfiguration = constraintConfiguration;
+    }
+
+	@Test
+    public void getBus() {
+    	System.out.println(bus);
+    }
+
+	@Test
+    public void setBus() {
+        this.bus = bus;
+    }
+
+	@Test
+    public void getShowList() {
+    	System.out.println(showList);
+    }
+
+	@Test
+    public void setShowList() {
+        this.showList = showList;
+    }
+
+	@Test
+    public void getScore() {
+    	System.out.println(score);
+    }
+
+	@Test
+    public void setScore() {
+        this.score = score;
+    }
+}

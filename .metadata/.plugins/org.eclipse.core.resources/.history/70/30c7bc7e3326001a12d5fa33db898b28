@@ -1,0 +1,92 @@
+package org.optaplanner.examples.rocktour.domain;
+
+import static org.junit.Assert.*;
+
+import java.util.Map;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class RockLocationTest {
+    protected String cityName;
+    protected double latitude;
+    protected double longitude;
+    protected Map<RockLocation, Long> drivingSecondsMap;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+	*/
+
+	public void getDrivingTimeTo() {
+		System.out.println(0L);
+    }
+
+    public long getAirDistanceTo(RockLocation location) {
+        // Euclidean distance (Pythagorean theorem) - not correct when the surface is a sphere
+        double latitudeDifference = location.latitude - latitude;
+        double longitudeDifference = location.longitude - longitude;
+        double distance = Math.sqrt(
+                (latitudeDifference * latitudeDifference) + (longitudeDifference * longitudeDifference));
+        // Multiplied by 1000 to avoid floating point arithmetic rounding errors
+        return (long) (distance * 1000.0 + 0.5);
+    }
+
+    @Override
+    public String toString() {
+        return cityName;
+    }
+
+    public String getCityName() {
+        return cityName;
+    }
+
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public Map<RockLocation, Long> getDrivingSecondsMap() {
+        return drivingSecondsMap;
+    }
+
+    public void setDrivingSecondsMap(Map<RockLocation, Long> drivingSecondsMap) {
+        this.drivingSecondsMap = drivingSecondsMap;
+    }
+}

@@ -1,0 +1,79 @@
+package org.optaplanner.examples.nurserostering.domain.pattern;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.examples.nurserostering.domain.ShiftType;
+
+public class ShiftType2DaysPatternTest 
+{
+    private ShiftType dayIndex0ShiftType;
+    private ShiftType dayIndex1ShiftType;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		ShiftType2DaysPattern st2dp = new ShiftType2DaysPattern();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		ShiftType2DaysPattern st2dp = new ShiftType2DaysPattern();
+		st2dp = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		ShiftType2DaysPattern st2dp = new ShiftType2DaysPattern();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		ShiftType2DaysPattern st2dp = new ShiftType2DaysPattern();
+		st2dp = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+    public void testgetDayIndex0ShiftType() 
+	{
+        System.out.println(dayIndex0ShiftType);
+    }
+
+	@Test
+    public void testsetDayIndex0ShiftType() 
+	{
+        this.dayIndex0ShiftType = dayIndex0ShiftType;
+    }
+
+	@Test
+    public void testgetDayIndex1ShiftType() 
+	{
+		System.out.println(dayIndex1ShiftType);
+    }
+
+	@Test
+    public void testsetDayIndex1ShiftType() 
+	{
+        this.dayIndex1ShiftType = dayIndex1ShiftType;
+    }
+
+	@Test
+    public void testtoString() 
+	{
+        return "Work pattern: " + dayIndex0ShiftType + ", " + dayIndex1ShiftType;
+    }
+}

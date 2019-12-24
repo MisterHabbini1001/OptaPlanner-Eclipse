@@ -1,0 +1,64 @@
+package org.optaplanner.examples.nurserostering.domain.request;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.examples.nurserostering.domain.Employee;
+import org.optaplanner.examples.nurserostering.domain.Shift;
+
+public class ShiftOffRequestTest {
+    private Employee employee;
+    private Shift shift;
+    private int weight;
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
+    public Shift getShift() {
+        return shift;
+    }
+
+    public void setShift(Shift shift) {
+        this.shift = shift;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public String toString() {
+        return shift + "_OFF_" + employee;
+    }
+}

@@ -1,0 +1,64 @@
+package org.optaplanner.examples.travelingtournament.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class DayTest 
+{
+    private int index;
+    private Day nextDay;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public void getIndex() {
+        System.out.println(index);
+    }
+
+    public void setIndex() {
+        this.index = index;
+    }
+
+    public void getNextDay() {
+    	System.out.println(nextDay);
+    }
+
+    public void setNextDay(Day nextDay) {
+        this.nextDay = nextDay;
+    }
+
+    @Override
+    public String getLabel() {
+        return Integer.toString(index);
+    }
+
+    @Override
+    public String toString() {
+        return "Day-" + index;
+    }
+}

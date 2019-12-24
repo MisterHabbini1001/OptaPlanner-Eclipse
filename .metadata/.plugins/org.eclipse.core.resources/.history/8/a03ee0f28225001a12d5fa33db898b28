@@ -1,0 +1,117 @@
+package org.optaplanner.examples.nurserostering.domain;
+
+import static org.junit.Assert.*;
+
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class ShiftDateTest 
+{
+    private static final DateTimeFormatter LABEL_FORMATTER = DateTimeFormatter.ofPattern("E d MMM");
+    private int dayIndex; 
+    private LocalDate date;
+    private List<Shift> shiftList;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+    public int getDayIndex() {
+        return dayIndex;
+    }
+
+	@Test
+    public void setDayIndex(int dayIndex) {
+        this.dayIndex = dayIndex;
+    }
+
+	@Test
+    public LocalDate getDate() {
+        return date;
+    }
+
+	@Test
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+	@Test
+    public DayOfWeek getDayOfWeek() {
+        return date.getDayOfWeek();
+    }
+
+	@Test
+    public List<Shift> getShiftList() {
+        return shiftList;
+    }
+
+	@Test
+    public void setShiftList(List<Shift> shiftList) {
+        this.shiftList = shiftList;
+    }
+
+	@Test
+    public int getWeekendSundayIndex() {
+        switch (date.getDayOfWeek()) {
+            case MONDAY:
+                return dayIndex - 1;
+            case TUESDAY:
+                return dayIndex - 2;
+            case WEDNESDAY:
+                return dayIndex - 3;
+            case THURSDAY:
+                return dayIndex + 3;
+            case FRIDAY:
+                return dayIndex + 2;
+            case SATURDAY:
+                return dayIndex + 1;
+            case SUNDAY:
+                return dayIndex;
+            default:
+                throw new IllegalArgumentException("The dayOfWeek (" + date.getDayOfWeek() + ") is not valid.");
+        }
+    }
+
+	@Test
+    public String getLabel() {
+        return date.format(LABEL_FORMATTER);
+    }
+
+	@Test
+    public String toString() {
+        return date.format(DateTimeFormatter.ISO_DATE);
+    }
+
+	@Test
+    public int compareTo(ShiftDate o) {
+        return this.getDate().compareTo(o.getDate());
+    }
+}

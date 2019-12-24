@@ -1,0 +1,109 @@
+package org.optaplanner.examples.nurserostering.domain.contract;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.examples.nurserostering.domain.WeekendDefinition;
+
+public class ContractTest 
+{
+    private String code;
+    private String description;
+    private WeekendDefinition weekendDefinition;
+    private List<ContractLine> contractLineList;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+
+	@Test
+    public String testgetCode() 
+    {
+        return code;
+    }
+
+	@Test
+    public void testsetCode(String code) 
+    {
+        this.code = code;
+    }
+
+	@Test
+    public String testgetDescription() 
+    {
+        return description;
+    }
+
+	@Test
+    public void testsetDescription(String description) 
+    {
+        this.description = description;
+    }
+
+	@Test
+    public WeekendDefinition testgetWeekendDefinition() 
+    {
+        return weekendDefinition;
+    }
+
+	@Test
+    public void testsetWeekendDefinition(WeekendDefinition weekendDefinition) 
+    {
+        this.weekendDefinition = weekendDefinition;
+    }
+
+	@Test
+    public List<ContractLine> testgetContractLineList() 
+    {
+        return contractLineList;
+    }
+
+	@Test
+    public void testsetContractLineList(List<ContractLine> contractLineList) 
+    {
+        this.contractLineList = contractLineList;
+    }
+
+	@Test
+    public String testtoString() 
+    {
+        return code;
+    }
+
+	@Test
+    public int testgetWeekendLength() 
+    {
+        return weekendDefinition.getWeekendLength();
+    }
+}

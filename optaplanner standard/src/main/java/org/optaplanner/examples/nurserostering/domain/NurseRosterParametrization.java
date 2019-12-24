@@ -71,5 +71,4 @@ public class NurseRosterParametrization extends AbstractPersistable {
     public String toString() {
         return firstShiftDate + " - " + lastShiftDate;
     }
-
 }

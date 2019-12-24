@@ -1,0 +1,109 @@
+package org.optaplanner.examples.nurserostering.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class ShiftTypeTest 
+{
+    private String code;
+    private int index;
+    private String startTimeString;
+    private String endTimeString;
+    private boolean night;
+    private String description;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public String getCode() {
+        return code;
+    }
+
+	@Test
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+	@Test
+    public int getIndex() {
+        return index;
+    }
+
+	@Test
+    public void setIndex(int index) {
+        this.index = index;
+    }
+
+	@Test
+    public String getStartTimeString() {
+        return startTimeString;
+    }
+
+	@Test
+    public void setStartTimeString(String startTimeString) {
+        this.startTimeString = startTimeString;
+    }
+
+	@Test
+    public String getEndTimeString() {
+        return endTimeString;
+    }
+
+	@Test
+    public void setEndTimeString(String endTimeString) {
+        this.endTimeString = endTimeString;
+    }
+
+	@Test
+    public boolean isNight() {
+        return night;
+    }
+
+	@Test
+    public void setNight(boolean night) {
+        this.night = night;
+    }
+
+	@Test
+    public String getDescription() {
+        return description;
+    }
+
+	@Test
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+	@Test
+    public String getLabel() {
+        return code + " (" + description + ")";
+    }
+
+	@Test
+    public String toString() {
+        return code;
+    }
+}

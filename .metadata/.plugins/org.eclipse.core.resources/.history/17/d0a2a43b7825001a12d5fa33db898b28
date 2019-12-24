@@ -1,0 +1,168 @@
+package org.optaplanner.examples.nurserostering.domain;
+import static org.junit.Assert.*;
+
+import java.util.Map;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.examples.nurserostering.domain.contract.Contract;
+import org.optaplanner.examples.nurserostering.domain.request.DayOffRequest;
+import org.optaplanner.examples.nurserostering.domain.request.DayOnRequest;
+import org.optaplanner.examples.nurserostering.domain.request.ShiftOffRequest;
+import org.optaplanner.examples.nurserostering.domain.request.ShiftOnRequest;
+
+public class EmployeeTest 
+{
+    private String code;
+    private String name;
+    private Contract contract;
+
+    private Map<ShiftDate, DayOffRequest> dayOffRequestMap;
+    private Map<ShiftDate, DayOnRequest> dayOnRequestMap;
+    private Map<Shift, ShiftOffRequest> shiftOffRequestMap;
+    private Map<Shift, ShiftOnRequest> shiftOnRequestMap;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		Employee em = new Employee();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		Employee em = new Employee();
+		em = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		Employee em = new Employee();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		Employee em = new Employee();
+		em = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+	public void testgetCode() 
+	{
+        System.out.println(code);
+    }
+
+	@Test
+    public void testsetCode(String code) 
+    {
+        this.code = code;
+    }
+
+	@Test
+    public String testgetName() 
+    {
+        return name;
+    }
+
+	@Test
+    public void testsetName(String name) 
+    {
+        this.name = name;
+    }
+
+	@Test
+    public Contract testgetContract() 
+    {
+        return contract;
+    }
+
+	@Test
+    public void testsetContract(Contract contract) 
+    {
+        this.contract = contract;
+    }
+
+	@Test
+    public int testgetWeekendLength() 
+    {
+        return getContract().getWeekendLength();
+    }
+
+	@Test
+    public Map<ShiftDate, DayOffRequest> testgetDayOffRequestMap() 
+    {
+        return dayOffRequestMap;
+    }
+
+	@Test
+    public void testsetDayOffRequestMap(Map<ShiftDate, DayOffRequest> dayOffRequestMap) 
+    {
+        this.dayOffRequestMap = dayOffRequestMap;
+    }
+
+	@Test
+    public Map<ShiftDate, DayOnRequest> testgetDayOnRequestMap() 
+    {
+        return dayOnRequestMap;
+    }
+
+	@Test
+    public void testsetDayOnRequestMap(Map<ShiftDate, DayOnRequest> dayOnRequestMap) 
+    {
+        this.dayOnRequestMap = dayOnRequestMap;
+    }
+
+	@Test
+    public Map<Shift, ShiftOffRequest> testgetShiftOffRequestMap() 
+    {
+        return shiftOffRequestMap;
+    }
+
+	@Test
+    public void testsetShiftOffRequestMap(Map<Shift, ShiftOffRequest> shiftOffRequestMap)
+    {
+        this.shiftOffRequestMap = shiftOffRequestMap;
+    }
+
+	@Test
+    public Map<Shift, ShiftOnRequest> testgetShiftOnRequestMap() 
+    {
+        return shiftOnRequestMap;
+    }
+
+	@Test
+    public void testsetShiftOnRequestMap(Map<Shift, ShiftOnRequest> shiftOnRequestMap) 
+    {
+        this.shiftOnRequestMap = shiftOnRequestMap;
+    }
+
+	@Test
+    public String testgetLabel() 
+    {
+        return "Employee " + name;
+    }
+
+	@Test
+    public String testtoString() 
+    {
+        if (name == null) 
+        {
+            return super.toString();
+        }
+        
+        return name;
+    }
+}

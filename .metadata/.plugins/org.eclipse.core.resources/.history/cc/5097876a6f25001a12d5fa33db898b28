@@ -1,0 +1,135 @@
+package org.optaplanner.examples.meetingscheduling.domain;
+import static org.junit.Assert.*;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class TimeGrainTest 
+{
+    public static final int GRAIN_LENGTH_IN_MINUTES = 15;
+    private int grainIndex; // unique
+    private Day day;
+    private int startingMinuteOfDay;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		TimeGrain tg = new TimeGrain();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		TimeGrain tg = new TimeGrain();
+		tg = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		TimeGrain tg = new TimeGrain();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		TimeGrain tg = new TimeGrain();
+		tg = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+	public void testgetGrainIndex() 
+	{
+        System.out.println(grainIndex);
+    }
+
+	@Test
+    public void testsetGrainIndex() 
+    {
+        this.grainIndex = grainIndex;
+    }
+
+	@Test
+    public void testgetDay() 
+    {
+		System.out.println(day);
+    }
+
+	@Test
+    public void testsetDay() 
+    {
+        this.day = day;
+    }
+
+	@Test
+    public void testgetStartingMinuteOfDay() 
+    {
+		System.out.println(startingMinuteOfDay);
+    }
+
+	@Test
+    public void test(int startingMinuteOfDay) 
+    {
+        this.startingMinuteOfDay = startingMinuteOfDay;
+    }
+
+	@Test
+    public LocalDate testgetDate() 
+    {
+        return day.toDate();
+    }
+
+	@Test
+    public LocalTime testgetTime() 
+    {
+        return LocalTime.of(startingMinuteOfDay / 60, startingMinuteOfDay % 60);
+    }
+
+	@Test
+    public LocalDateTime testgetDateTime() 
+    {
+        return LocalDateTime.of(getDate(), getTime());
+    }
+
+	@Test
+    public String testgetTimeString() 
+    {
+        int hourOfDay = startingMinuteOfDay / 60;
+        int minuteOfHour = startingMinuteOfDay % 60;
+        return (hourOfDay < 10 ? "0" : "") + hourOfDay
+                + ":" + (minuteOfHour < 10 ? "0" : "") + minuteOfHour;
+    }
+
+	@Test
+    public String testgetDateTimeString() 
+    {
+        return day.getDateString() + " " + getTimeString();
+    }
+
+	@Test
+    public String testgetLabel() 
+    {
+        return getTimeString();
+    }
+
+	@Test
+    public String testtoString() 
+    {
+        return grainIndex + "(" + getDateTimeString() + ")";
+    }
+}

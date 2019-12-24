@@ -1,0 +1,61 @@
+package org.optaplanner.examples.nurserostering.domain.contract;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class ContractLineTest 
+{
+    private Contract contract;
+    private ContractLineType contractLineType;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+    private Contract contract;
+    private ContractLineType contractLineType;
+
+    public Contract getContract() {
+        return contract;
+    }
+
+    public void setContract(Contract contract) {
+        this.contract = contract;
+    }
+
+    public ContractLineType getContractLineType() {
+        return contractLineType;
+    }
+
+    public void setContractLineType(ContractLineType contractLineType) {
+        this.contractLineType = contractLineType;
+    }
+
+    public abstract boolean isEnabled();
+
+    @Override
+    public String toString() {
+        return contract + "-" + contractLineType;
+    }
+}

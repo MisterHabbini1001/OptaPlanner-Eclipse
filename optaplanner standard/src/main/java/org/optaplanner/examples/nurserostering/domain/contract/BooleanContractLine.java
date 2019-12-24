@@ -40,5 +40,4 @@ public class BooleanContractLine extends ContractLine {
     public void setWeight(int weight) {
         this.weight = weight;
     }
-
 }

@@ -1,0 +1,92 @@
+package org.optaplanner.examples.nurserostering.domain.contract;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class MinMaxContractLineTest {
+    private boolean minimumEnabled;
+    private int minimumValue;
+    private int minimumWeight;
+
+    private boolean maximumEnabled;
+    private int maximumValue;
+    private int maximumWeight;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+    public boolean isMinimumEnabled() {
+        return minimumEnabled;
+    }
+
+    public void setMinimumEnabled(boolean minimumEnabled) {
+        this.minimumEnabled = minimumEnabled;
+    }
+
+    public int getMinimumValue() {
+        return minimumValue;
+    }
+
+    public void setMinimumValue(int minimumValue) {
+        this.minimumValue = minimumValue;
+    }
+
+    public int getMinimumWeight() {
+        return minimumWeight;
+    }
+
+    public void setMinimumWeight(int minimumWeight) {
+        this.minimumWeight = minimumWeight;
+    }
+
+    public boolean isMaximumEnabled() {
+        return maximumEnabled;
+    }
+
+    public void setMaximumEnabled(boolean maximumEnabled) {
+        this.maximumEnabled = maximumEnabled;
+    }
+
+    public int getMaximumValue() {
+        return maximumValue;
+    }
+
+    public void setMaximumValue(int maximumValue) {
+        this.maximumValue = maximumValue;
+    }
+
+    public int getMaximumWeight() {
+        return maximumWeight;
+    }
+
+    public void setMaximumWeight(int maximumWeight) {
+        this.maximumWeight = maximumWeight;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return minimumEnabled || maximumEnabled;
+    }
+}

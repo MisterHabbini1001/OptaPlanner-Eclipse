@@ -1,0 +1,109 @@
+package org.optaplanner.examples.nurserostering.domain.contract;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.examples.nurserostering.domain.WeekendDefinition;
+
+public class ContractTest 
+{
+    private String code;
+    private String description;
+    private WeekendDefinition weekendDefinition;
+    private List<ContractLine> contractLineList;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+
+	@Test
+    public String getCode() 
+    {
+        return code;
+    }
+
+	@Test
+    public void setCode(String code) 
+    {
+        this.code = code;
+    }
+
+	@Test
+    public String getDescription() 
+    {
+        return description;
+    }
+
+	@Test
+    public void setDescription(String description) 
+    {
+        this.description = description;
+    }
+
+	@Test
+    public WeekendDefinition getWeekendDefinition() 
+    {
+        return weekendDefinition;
+    }
+
+	@Test
+    public void setWeekendDefinition(WeekendDefinition weekendDefinition) 
+    {
+        this.weekendDefinition = weekendDefinition;
+    }
+
+	@Test
+    public List<ContractLine> getContractLineList() 
+    {
+        return contractLineList;
+    }
+
+	@Test
+    public void setContractLineList(List<ContractLine> contractLineList) 
+    {
+        this.contractLineList = contractLineList;
+    }
+
+	@Test
+    public String toString() 
+    {
+        return code;
+    }
+
+	@Test
+    public int getWeekendLength() 
+    {
+        return weekendDefinition.getWeekendLength();
+    }
+}

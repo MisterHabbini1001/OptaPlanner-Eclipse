@@ -72,6 +72,4 @@ public class Seat extends AbstractPersistable {
     public String toString() {
         return table + "." + seatIndexInTable;
     }
-
-
 }

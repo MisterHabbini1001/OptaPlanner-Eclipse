@@ -1,0 +1,109 @@
+package org.optaplanner.examples.nurserostering.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class NurseRosterParametrizationTest 
+{
+    private ShiftDate firstShiftDate;
+    private ShiftDate lastShiftDate;
+    private ShiftDate planningWindowStart;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		NurseRosterParametrization nrp = new NurseRosterParametrization();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		NurseRosterParametrization nrp = new NurseRosterParametrization();
+		nrp = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		NurseRosterParametrization nrp = new NurseRosterParametrization();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		NurseRosterParametrization nrp = new NurseRosterParametrization();
+		nrp = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+    public void testgetFirstShiftDate() 
+    {
+        System.out.println(firstShiftDate);
+    }
+
+	@Test
+    public void testsetFirstShiftDate() 
+    {
+        this.firstShiftDate = firstShiftDate;
+    }
+
+	@Test
+    public ShiftDate testgetLastShiftDate() 
+    {
+        return lastShiftDate;
+    }
+
+	@Test
+    public void testsetLastShiftDate(ShiftDate lastShiftDate) 
+    {
+        this.lastShiftDate = lastShiftDate;
+    }
+
+	@Test
+    public int testgetFirstShiftDateDayIndex() 
+    {
+        return firstShiftDate.getDayIndex();
+    }
+
+	@Test
+    public int testgetLastShiftDateDayIndex() 
+    {
+        return lastShiftDate.getDayIndex();
+    }
+
+	@Test
+    public ShiftDate testgetPlanningWindowStart() 
+    {
+        return planningWindowStart;
+    }
+
+	@Test
+    public void testsetPlanningWindowStart(ShiftDate planningWindowStart) 
+    {
+        this.planningWindowStart = planningWindowStart;
+    }
+
+	@Test
+    public boolean testisInPlanningWindow(ShiftDate shiftDate) 
+    {
+        return planningWindowStart.getDayIndex() <= shiftDate.getDayIndex();
+    }
+
+	@Test
+    public String testtoString() 
+    {
+        return firstShiftDate + " - " + lastShiftDate;
+    }
+}

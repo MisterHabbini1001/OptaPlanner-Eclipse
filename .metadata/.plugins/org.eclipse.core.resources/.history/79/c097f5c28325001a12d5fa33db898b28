@@ -1,0 +1,139 @@
+package org.optaplanner.examples.nurserostering.domain;
+import static org.junit.Assert.*;
+
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class ShiftDateTest 
+{
+    private static final DateTimeFormatter LABEL_FORMATTER = DateTimeFormatter.ofPattern("E d MMM");
+    private int dayIndex; 
+    private LocalDate date;
+    private List<Shift> shiftList;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		ShiftDate sd = new ShiftDate();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		ShiftDate sd = new ShiftDate();
+		sd = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		ShiftDate sd = new ShiftDate();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		ShiftDate sd = new ShiftDate();
+		sd = null;
+	}
+
+	/*
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+    public void testgetDayIndex() 
+	{
+        System.out.println(dayIndex);
+    }
+
+	@Test
+    public void testsetDayIndex() 
+	{
+        this.dayIndex = dayIndex;
+    }
+
+	@Test
+    public void testgetDate() 
+	{
+		System.out.println(date);
+    }
+
+	@Test
+    public void testsetDate() 
+	{
+        this.date = date;
+    }
+
+	@Test
+    public void testgetDayOfWeek() 
+	{
+		System.out.println(date.getDayOfWeek());
+    }
+
+	@Test
+    public void testgetShiftList() 
+	{
+		System.out.println(shiftList);
+    }
+
+	@Test
+    public void testsetShiftList() 
+	{
+        this.shiftList = shiftList;
+    }
+
+	@Test
+    public void testgetWeekendSundayIndex() 
+	{
+        switch (date.getDayOfWeek()) 
+        {
+            case MONDAY:
+            	System.out.println(dayIndex - 1);
+            case TUESDAY:
+            	System.out.println(dayIndex - 2);
+            case WEDNESDAY:
+            	System.out.println(dayIndex - 3);
+            case THURSDAY:
+            	System.out.println(dayIndex + 3);
+            case FRIDAY:
+            	System.out.println(dayIndex + 2);
+            case SATURDAY:
+            	System.out.println(dayIndex + 1);
+            case SUNDAY:
+            	System.out.println(dayIndex);
+            default:
+                throw new IllegalArgumentException("The dayOfWeek (" + date.getDayOfWeek() + ") is not valid.");
+        }
+    }
+
+	@Test
+    public void testgetLabel() 
+	{
+		System.out.println(date.format(LABEL_FORMATTER));
+    }
+
+	@Test
+    public void testtoString() 
+	{
+		System.out.println(date.format(DateTimeFormatter.ISO_DATE));
+    }
+
+	@Test
+    public void testcompareTo(ShiftDate o) 
+	{
+		System.out.println(0);
+        return this.getDate().compareTo(o.getDate());
+    }
+}

@@ -1,0 +1,107 @@
+package org.optaplanner.examples.rocktour.domain;
+import static org.junit.Assert.*;
+
+import java.time.LocalDate;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class RockBusTest 
+{
+    private RockLocation startLocation;
+    private LocalDate startDate;
+    private RockLocation endLocation;
+    private LocalDate endDate;
+    private RockShow nextShow;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public void getDepartureLocation() {
+        System.out.println(startLocation);
+    }
+
+    public void getDepartureDate() {
+    	System.out.println(startDate);
+    }
+
+    public void getDepartureTimeOfDay() {
+    	System.out.println(RockTimeOfDay.EARLY);
+    }
+
+    public void getHosWeekStart() {
+    	System.out.println(this);
+    }
+
+    public void getHosWeekDrivingSecondsTotal() {
+    	System.out.println(0L);
+    }
+
+    public void getArrivalLocation() {
+    	System.out.println(endLocation);
+    }
+
+    public RockLocation getStartLocation() {
+        return startLocation;
+    }
+
+    public void setStartLocation(RockLocation startLocation) {
+        this.startLocation = startLocation;
+    }
+
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
+
+    public RockLocation getEndLocation() {
+        return endLocation;
+    }
+
+    public void setEndLocation(RockLocation endLocation) {
+        this.endLocation = endLocation;
+    }
+
+    public LocalDate getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
+    }
+
+    public RockShow getNextShow() {
+        return nextShow;
+    }
+
+    public void setNextShow(RockShow nextShow) {
+        this.nextShow = nextShow;
+    }
+}

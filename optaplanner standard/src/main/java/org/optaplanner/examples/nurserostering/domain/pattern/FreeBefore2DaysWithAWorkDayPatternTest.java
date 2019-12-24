@@ -1,0 +1,66 @@
+package org.optaplanner.examples.nurserostering.domain.pattern;
+import static org.junit.Assert.*;
+
+import java.time.DayOfWeek;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class FreeBefore2DaysWithAWorkDayPatternTest 
+{
+	private DayOfWeek freeDayOfWeek;
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		FreeBefore2DaysWithAWorkDayPattern fb2dwawdp = new FreeBefore2DaysWithAWorkDayPattern();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		FreeBefore2DaysWithAWorkDayPattern fb2dwawdp = new FreeBefore2DaysWithAWorkDayPattern();
+		fb2dwawdp = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		FreeBefore2DaysWithAWorkDayPattern fb2dwawdp = new FreeBefore2DaysWithAWorkDayPattern();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		FreeBefore2DaysWithAWorkDayPattern fb2dwawdp = new FreeBefore2DaysWithAWorkDayPattern();
+		fb2dwawdp = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+    public void testgetFreeDayOfWeek() 
+	{
+        System.out.println(freeDayOfWeek);
+    }
+
+	@Test
+    public void testsetFreeDayOfWeek() 
+	{
+        this.freeDayOfWeek = freeDayOfWeek;
+    }
+
+	@Test
+    public void testtoString() 
+	{
+        System.out.println("Free on " + freeDayOfWeek + " followed by a work day within 2 days");
+    }
+}

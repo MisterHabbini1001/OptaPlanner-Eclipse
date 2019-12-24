@@ -1,0 +1,94 @@
+package org.optaplanner.examples.nurserostering.domain.pattern;
+
+import static org.junit.Assert.*;
+
+import java.time.DayOfWeek;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.examples.nurserostering.domain.ShiftType;
+
+public class WorkBeforeFreeSequencePatternTest 
+{
+    private DayOfWeek workDayOfWeek; // null means any
+    private ShiftType workShiftType; // null means any
+    private int freeDayLength;
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		WorkBeforeFreeSequencePattern wbfsp = new WorkBeforeFreeSequencePattern();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		WorkBeforeFreeSequencePattern wbfsp = new WorkBeforeFreeSequencePattern();
+		wbfsp = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		WorkBeforeFreeSequencePattern wbfsp = new WorkBeforeFreeSequencePattern();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		WorkBeforeFreeSequencePattern wbfsp = new WorkBeforeFreeSequencePattern();
+		wbfsp = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+    public void testgetWorkDayOfWeek() 
+	{
+        System.out.println(workDayOfWeek);
+    }
+
+	@Test
+    public void testsetWorkDayOfWeek() 
+	{
+        this.workDayOfWeek = workDayOfWeek;
+    }
+
+	@Test
+    public void testgetWorkShiftType() 
+	{
+		System.out.println(workShiftType);
+    }
+
+	@Test
+    public void testsetWorkShiftType() 
+	{
+        this.workShiftType = workShiftType;
+    }
+
+	@Test
+    public void testgetFreeDayLength() 
+	{
+		System.out.println(freeDayLength);
+    }
+
+	@Test
+    public void testsetFreeDayLength(int freeDayLength) 
+	{
+        this.freeDayLength = freeDayLength;
+    }
+
+	@Test
+    public String testtoString() 
+	{
+        return "Work " + workShiftType + " on " + workDayOfWeek + " followed by " + freeDayLength + " free days";
+    }
+}

@@ -1,0 +1,78 @@
+package org.optaplanner.examples.dinnerparty.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class JobTest 
+{
+    private JobType jobType;
+    private String name;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		Job j = new Job();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		Job j = new Job();
+		j = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		Job j = new Job();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		Job j = new Job();
+		j = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+    public JobType testgetJobType() 
+    {
+        System.out.println(jobType);
+    }
+
+	@Test
+    public void testsetJobType(JobType jobType) 
+    {
+        this.jobType = jobType;
+    }
+
+	@Test
+    public String testgetName() 
+    {
+        return name;
+    }
+
+	@Test
+    public void testsetName(String name) 
+    {
+        this.name = name;
+    }
+
+	@Test
+    public String testtoString() 
+    {
+        return name + "(" + jobType.getCode() + ")";
+    }
+}

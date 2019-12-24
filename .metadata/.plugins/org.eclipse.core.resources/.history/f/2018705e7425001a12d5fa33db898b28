@@ -1,0 +1,115 @@
+package org.optaplanner.examples.dinnerparty.domain;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class SeatTest 
+{
+    private Table table;
+    private int seatIndexInTable;
+    private Seat leftSeat;
+    private Seat rightSeat;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+    public Table testgetTable() 
+    {
+        return table;
+    }
+
+	@Test
+    public void testsetTable(Table table) 
+    {
+        this.table = table;
+    }
+
+	@Test
+    public int testgetSeatIndexInTable() 
+    {
+        return seatIndexInTable;
+    }
+
+	@Test
+    public void testsetSeatIndexInTable(int seatIndexInTable) 
+    {
+        this.seatIndexInTable = seatIndexInTable;
+    }
+
+	@Test
+    public Seat testgetLeftSeat() 
+    {
+        return leftSeat;
+    }
+
+	@Test
+    public void testsetLeftSeat(Seat leftSeat) 
+    {
+        this.leftSeat = leftSeat;
+    }
+
+	@Test
+    public Seat testgetRightSeat() 
+    {
+        return rightSeat;
+    }
+
+	@Test
+    public void testsetRightSeat(Seat rightSeat) 
+    {
+        this.rightSeat = rightSeat;
+    }
+
+	@Test
+    public Gender testgetRequiredGender() 
+    {
+        return (seatIndexInTable % 2 == 0) ? Gender.MALE : Gender.FEMALE;
+    }
+
+	@Test
+    public String testgetLabel() 
+    {
+        return "Table " + table.getTableIndex() + " seat " + seatIndexInTable;
+    }
+
+	@Test
+    public String testtoString() 
+    {
+        return table + "." + seatIndexInTable;
+    }
+}

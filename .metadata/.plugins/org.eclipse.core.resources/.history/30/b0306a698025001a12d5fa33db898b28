@@ -1,0 +1,98 @@
+package org.optaplanner.examples.nurserostering.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class ShiftTest 
+{
+    private ShiftDate shiftDate;
+    private ShiftType shiftType;
+    private int index;
+    private int requiredEmployeeSize;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public ShiftDate getShiftDate() 
+    {
+        return shiftDate;
+    }
+
+    public void setShiftDate(ShiftDate shiftDate) 
+    {
+        this.shiftDate = shiftDate;
+    }
+
+    public ShiftType getShiftType() 
+    {
+        return shiftType;
+    }
+
+    public void setShiftType(ShiftType shiftType) 
+    {
+        this.shiftType = shiftType;
+    }
+
+    public int getIndex() 
+    {
+        return index;
+    }
+
+    public void setIndex(int index) 
+    {
+        this.index = index;
+    }
+
+    public int getRequiredEmployeeSize() 
+    {
+        return requiredEmployeeSize;
+    }
+
+    public void setRequiredEmployeeSize(int requiredEmployeeSize) 
+    {
+        this.requiredEmployeeSize = requiredEmployeeSize;
+    }
+
+    public String getLabel() 
+    {
+        return shiftType.getLabel() + " of " + shiftDate.getLabel();
+    }
+
+    public String toString() 
+    {
+        return shiftDate + "/" + shiftType;
+    }
+}

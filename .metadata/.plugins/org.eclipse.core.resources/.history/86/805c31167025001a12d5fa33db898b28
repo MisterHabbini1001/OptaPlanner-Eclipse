@@ -1,0 +1,49 @@
+package org.optaplanner.examples.dinnerparty.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.score.buildin.simple.SimpleScore;
+import org.optaplanner.persistence.xstream.api.score.buildin.simple.SimpleScoreXStreamConverter;
+
+import com.thoughtworks.xstream.annotations.XStreamConverter;
+
+public class DinnerPartyTest 
+{
+    private List<Job> jobList;
+    private List<Guest> guestList;
+    private List<HobbyPractician> hobbyPracticianList;
+    private List<Table> tableList;
+    private List<Seat> seatList;
+    private List<SeatDesignation> seatDesignationList;
+    
+    @XStreamConverter(SimpleScoreXStreamConverter.class)
+    private SimpleScore score;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

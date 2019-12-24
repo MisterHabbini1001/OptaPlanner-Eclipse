@@ -1,0 +1,173 @@
+package org.optaplanner.examples.rocktour.domain;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.constraintweight.ConstraintWeight;
+import org.optaplanner.core.api.score.buildin.hardmediumsoftlong.HardMediumSoftLongScore;
+
+public class RockTourConstraintConfigurationTest {
+    public static final String EARLY_LATE_BREAK_DRIVING_SECONDS = "Early late break driving seconds budget";
+    public static final String NIGHT_DRIVING_SECONDS = "Night driving seconds budget";
+    public static final String HOS_WEEK_DRIVING_SECONDS_BUDGET = "HOS week driving seconds budget";
+    public static final String HOS_WEEK_CONSECUTIVE_DRIVING_DAYS_BUDGET = "HOS week consecutive driving days budget";
+    public static final String HOS_WEEK_REST_DAYS = "HOS week rest days";
+
+    public static final String REQUIRED_SHOW = "Required show";
+    public static final String UNASSIGNED_SHOW = "Unassigned show";
+
+    public static final String REVENUE_OPPORTUNITY = "Revenue opportunity";
+    public static final String DRIVING_TIME_TO_SHOW_PER_SECOND = "Driving time to show per second";
+    public static final String DRIVING_TIME_TO_BUS_ARRIVAL_PER_SECOND = "Driving time to bus arrival per second";
+    public static final String DELAY_SHOW_COST_PER_DAY = "Delay show cost per day";
+
+    public static final String SHORTEN_DRIVING_TIME_PER_MILLISECOND_SQUARED = "Shorten driving time per millisecond squared";
+
+    private long earlyLateBreakDrivingSecondsBudget = 1L * 60L * 60L;
+    private long nightDrivingSecondsBudget = 7L * 60L * 60L;
+
+    private long hosWeekDrivingSecondsBudget = 50L * 60L * 60L;
+    private int hosWeekConsecutiveDrivingDaysBudget = 7;
+    private int hosWeekRestDays = 2;
+
+    @ConstraintWeight(REQUIRED_SHOW)
+    private HardMediumSoftLongScore requiredShow = HardMediumSoftLongScore.ofHard(1000);
+    @ConstraintWeight(UNASSIGNED_SHOW)
+    private HardMediumSoftLongScore unassignedShow = HardMediumSoftLongScore.ofHard(1);
+
+    @ConstraintWeight(REVENUE_OPPORTUNITY)
+    private HardMediumSoftLongScore revenueOpportunity = HardMediumSoftLongScore.ofMedium(1);
+    @ConstraintWeight(DRIVING_TIME_TO_SHOW_PER_SECOND)
+    private HardMediumSoftLongScore drivingTimeToShowPerSecond = HardMediumSoftLongScore.ofMedium(1);
+    @ConstraintWeight(DRIVING_TIME_TO_BUS_ARRIVAL_PER_SECOND)
+    private HardMediumSoftLongScore drivingTimeToBusArrivalPerSecond = HardMediumSoftLongScore.ZERO;
+    @ConstraintWeight(DELAY_SHOW_COST_PER_DAY)
+    private HardMediumSoftLongScore delayShowCostPerDay = HardMediumSoftLongScore.ofMedium(30);
+
+    @ConstraintWeight(SHORTEN_DRIVING_TIME_PER_MILLISECOND_SQUARED)
+    private HardMediumSoftLongScore shortenDrivingTimePerMillisecondSquared = HardMediumSoftLongScore.ofSoft(1);
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	 public void getEarlyLateBreakDrivingSecondsBudget() {
+	    System.out.println(earlyLateBreakDrivingSecondsBudget);
+	 }
+
+    public void setEarlyLateBreakDrivingSecondsBudget() {
+        this.earlyLateBreakDrivingSecondsBudget = earlyLateBreakDrivingSecondsBudget;
+    }
+
+    public void getNightDrivingSecondsBudget() {
+    	System.out.println(nightDrivingSecondsBudget);
+    }
+
+    public void setNightDrivingSecondsBudget() {
+        this.nightDrivingSecondsBudget = nightDrivingSecondsBudget;
+    }
+
+    public void getHosWeekDrivingSecondsBudget() {
+    	System.out.println(hosWeekDrivingSecondsBudget);
+    }
+
+    public void setHosWeekDrivingSecondsBudget() {
+        this.hosWeekDrivingSecondsBudget = hosWeekDrivingSecondsBudget;
+    }
+
+    public void getHosWeekConsecutiveDrivingDaysBudget() {
+    	System.out.println(hosWeekConsecutiveDrivingDaysBudget);
+    }
+
+    public void setHosWeekConsecutiveDrivingDaysBudget() {
+        this.hosWeekConsecutiveDrivingDaysBudget = hosWeekConsecutiveDrivingDaysBudget;
+    }
+
+    public void getHosWeekRestDays() {
+    	System.out.println(hosWeekRestDays);
+    }
+
+    public void setHosWeekRestDays() {
+        this.hosWeekRestDays = hosWeekRestDays;
+    }
+
+    public void getRequiredShow() {
+    	System.out.println(requiredShow);
+    }
+
+    public void setRequiredShow() {
+        this.requiredShow = requiredShow;
+    }
+
+    public void getUnassignedShow() {
+    	System.out.println(unassignedShow);
+    }
+
+    public void setUnassignedShow(HardMediumSoftLongScore unassignedShow) {
+        this.unassignedShow = unassignedShow;
+    }
+
+    public HardMediumSoftLongScore getRevenueOpportunity() {
+        return revenueOpportunity;
+    }
+
+    public void setRevenueOpportunity(HardMediumSoftLongScore revenueOpportunity) {
+        this.revenueOpportunity = revenueOpportunity;
+    }
+
+    public HardMediumSoftLongScore getDrivingTimeToShowPerSecond() {
+        return drivingTimeToShowPerSecond;
+    }
+
+    public void setDrivingTimeToShowPerSecond(HardMediumSoftLongScore drivingTimeToShowPerSecond) {
+        this.drivingTimeToShowPerSecond = drivingTimeToShowPerSecond;
+    }
+
+    public HardMediumSoftLongScore getDrivingTimeToBusArrivalPerSecond() {
+        return drivingTimeToBusArrivalPerSecond;
+    }
+
+    public void setDrivingTimeToBusArrivalPerSecond(HardMediumSoftLongScore drivingTimeToBusArrivalPerSecond) {
+        this.drivingTimeToBusArrivalPerSecond = drivingTimeToBusArrivalPerSecond;
+    }
+
+    public HardMediumSoftLongScore getDelayShowCostPerDay() {
+        return delayShowCostPerDay;
+    }
+
+    public void setDelayShowCostPerDay(HardMediumSoftLongScore delayShowCostPerDay) {
+        this.delayShowCostPerDay = delayShowCostPerDay;
+    }
+
+    public HardMediumSoftLongScore getShortenDrivingTimePerMillisecondSquared() {
+        return shortenDrivingTimePerMillisecondSquared;
+    }
+
+    public void setShortenDrivingTimePerMillisecondSquared(HardMediumSoftLongScore shortenDrivingTimePerMillisecondSquared) {
+        this.shortenDrivingTimePerMillisecondSquared = shortenDrivingTimePerMillisecondSquared;
+    }
+}

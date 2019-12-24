@@ -1,0 +1,163 @@
+package org.optaplanner.examples.nurserostering.domain;
+import static org.junit.Assert.*;
+
+import java.time.DayOfWeek;
+import java.util.Comparator;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.variable.PlanningVariable;
+import org.optaplanner.examples.nurserostering.domain.contract.Contract;
+import org.optaplanner.examples.nurserostering.domain.solver.EmployeeStrengthComparator;
+
+public class ShiftAssignmentTest 
+{
+    private static final Comparator<Shift> COMPARATOR = Comparator.comparing(Shift::getShiftDate)
+            .thenComparing(a -> a.getShiftType().getStartTimeString())
+            .thenComparing(a -> a.getShiftType().getEndTimeString());
+
+    private Shift shift;
+    private int indexInShift;
+
+    // Planning variables: changes during planning, between score calculations.
+    @PlanningVariable(valueRangeProviderRefs = {"employeeRange"},
+            strengthComparatorClass = EmployeeStrengthComparator.class)
+    private Employee employee;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		ShiftAssignment sa = new ShiftAssignment();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+	public Shift testgetShift() 
+	{
+        return shift;
+    }
+
+	@Test
+    public void testsetShift(Shift shift) 
+    {
+        this.shift = shift;
+    }
+
+	@Test
+    public int testgetIndexInShift() 
+    {
+        return indexInShift;
+    }
+
+	@Test
+    public void testsetIndexInShift(int indexInShift) 
+    {
+        this.indexInShift = indexInShift;
+    }
+
+	@Test
+    public Employee testgetEmployee() 
+    {
+        return employee;
+    }
+
+	@Test
+    public void testsetEmployee(Employee employee) 
+    {
+        this.employee = employee;
+    }
+
+	@Test
+    public ShiftDate testgetShiftDate() 
+    {
+        return shift.getShiftDate();
+    }
+
+	@Test
+    public ShiftType testgetShiftType() 
+    {
+        return shift.getShiftType();
+    }
+
+	@Test
+    public int testgetShiftDateDayIndex() 
+    {
+        return shift.getShiftDate().getDayIndex();
+    }
+
+	@Test
+    public DayOfWeek testgetShiftDateDayOfWeek() 
+    {
+        return shift.getShiftDate().getDayOfWeek();
+    }
+
+	@Test
+    public Contract testgetContract() 
+    {
+        if (employee == null) 
+        {
+            return null;
+        }
+        
+        return employee.getContract();
+    }
+
+	@Test
+    public boolean testisWeekend() 
+    {
+        if (employee == null) 
+        {
+            return false;
+        }
+        
+        WeekendDefinition weekendDefinition = employee.getContract().getWeekendDefinition();
+        DayOfWeek dayOfWeek = shift.getShiftDate().getDayOfWeek();
+        return weekendDefinition.isWeekend(dayOfWeek);
+    }
+
+	@Test
+    public int testgetWeekendSundayIndex() 
+    {
+        return shift.getShiftDate().getWeekendSundayIndex();
+    }
+
+	@Test
+    public String testtoString() 
+    {
+        return shift.toString();
+    }
+
+	@Test
+    public int testcompareTo(ShiftAssignment o) 
+	{
+        return COMPARATOR.compare(shift, o.shift);
+    }
+}

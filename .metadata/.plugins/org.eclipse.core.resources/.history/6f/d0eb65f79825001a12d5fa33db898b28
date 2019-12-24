@@ -1,0 +1,67 @@
+package org.optaplanner.examples.nurserostering.domain.pattern;
+
+import static org.junit.Assert.*;
+
+import java.time.DayOfWeek;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.examples.nurserostering.domain.ShiftType;
+
+public class WorkBeforeFreeSequencePatternTest {
+    private DayOfWeek workDayOfWeek; // null means any
+    private ShiftType workShiftType; // null means any
+    private int freeDayLength;
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+    public DayOfWeek getWorkDayOfWeek() {
+        return workDayOfWeek;
+    }
+
+    public void setWorkDayOfWeek(DayOfWeek workDayOfWeek) {
+        this.workDayOfWeek = workDayOfWeek;
+    }
+
+    public ShiftType getWorkShiftType() {
+        return workShiftType;
+    }
+
+    public void setWorkShiftType(ShiftType workShiftType) {
+        this.workShiftType = workShiftType;
+    }
+
+    public int getFreeDayLength() {
+        return freeDayLength;
+    }
+
+    public void setFreeDayLength(int freeDayLength) {
+        this.freeDayLength = freeDayLength;
+    }
+
+    @Override
+    public String toString() {
+        return "Work " + workShiftType + " on " + workDayOfWeek + " followed by " + freeDayLength + " free days";
+    }
+}

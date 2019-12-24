@@ -1,0 +1,107 @@
+package org.optaplanner.examples.nurserostering.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class NurseRosterParametrizationTest 
+{
+    private ShiftDate firstShiftDate;
+    private ShiftDate lastShiftDate;
+    private ShiftDate planningWindowStart;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+    public ShiftDate getFirstShiftDate() 
+    {
+        return firstShiftDate;
+    }
+
+	@Test
+    public void setFirstShiftDate(ShiftDate firstShiftDate) 
+    {
+        this.firstShiftDate = firstShiftDate;
+    }
+
+	@Test
+    public ShiftDate getLastShiftDate() 
+    {
+        return lastShiftDate;
+    }
+
+	@Test
+    public void setLastShiftDate(ShiftDate lastShiftDate) 
+    {
+        this.lastShiftDate = lastShiftDate;
+    }
+
+	@Test
+    public int getFirstShiftDateDayIndex() 
+    {
+        return firstShiftDate.getDayIndex();
+    }
+
+	@Test
+    public int getLastShiftDateDayIndex() 
+    {
+        return lastShiftDate.getDayIndex();
+    }
+
+	@Test
+    public ShiftDate getPlanningWindowStart() 
+    {
+        return planningWindowStart;
+    }
+
+	@Test
+    public void setPlanningWindowStart(ShiftDate planningWindowStart) 
+    {
+        this.planningWindowStart = planningWindowStart;
+    }
+
+	@Test
+    public boolean isInPlanningWindow(ShiftDate shiftDate) 
+    {
+        return planningWindowStart.getDayIndex() <= shiftDate.getDayIndex();
+    }
+
+	@Test
+    public String toString() 
+    {
+        return firstShiftDate + " - " + lastShiftDate;
+    }
+}

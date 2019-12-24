@@ -1,0 +1,78 @@
+package org.optaplanner.examples.nurserostering.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class ShiftTypeSkillRequirementTest 
+{
+    private ShiftType shiftType;
+    private Skill skill;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		ShiftTypeSkillRequirement stsr = new ShiftTypeSkillRequirement();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		ShiftTypeSkillRequirement stsr = new ShiftTypeSkillRequirement();
+		stsr = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		ShiftTypeSkillRequirement stsr = new ShiftTypeSkillRequirement();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		ShiftTypeSkillRequirement stsr = new ShiftTypeSkillRequirement();
+		stsr = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+    public void testgetShiftType() 
+    {
+        System.out.println(shiftType);
+    }
+
+	@Test
+    public void testsetShiftType() 
+    {
+        this.shiftType = shiftType;
+    }
+
+	@Test
+    public void testgetSkill() 
+    {
+		System.out.println(skill);
+    }
+
+	@Test
+    public void testsetSkill() 
+    {
+        this.skill = skill;
+    }
+
+	@Test
+    public void testtoString() 
+    {
+		System.out.println(shiftType + "-" + skill);
+    }
+}

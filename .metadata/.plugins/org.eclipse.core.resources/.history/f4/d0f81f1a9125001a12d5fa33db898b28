@@ -1,0 +1,78 @@
+package org.optaplanner.examples.nurserostering.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class SkillProficiencyTest 
+{
+    private Employee employee;
+    private Skill skill;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		SkillProficiency sp = new SkillProficiency();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		SkillProficiency sp = new SkillProficiency();
+		sp = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		SkillProficiency sp = new SkillProficiency();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		SkillProficiency sp = new SkillProficiency();
+		sp = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+    public Employee testgetEmployee() 
+    {
+        return employee;
+    }
+
+	@Test
+    public void testsetEmployee(Employee employee) 
+    {
+        this.employee = employee;
+    }
+
+	@Test
+    public Skill testgetSkill() 
+    {
+        return skill;
+    }
+
+	@Test
+    public void testsetSkill(Skill skill) 
+    {
+        this.skill = skill;
+    }
+
+	@Test
+    public String testtoString() 
+    {
+        return employee + "-" + skill;
+    }
+}
