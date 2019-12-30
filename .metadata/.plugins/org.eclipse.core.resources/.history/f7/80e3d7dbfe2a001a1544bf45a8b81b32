@@ -1,0 +1,122 @@
+package org.optaplanner.examples.pas.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.variable.PlanningVariable;
+import org.optaplanner.examples.pas.domain.solver.BedStrengthComparator;
+
+public class BedDesignationTest {
+    private AdmissionPart admissionPart;
+    private Bed bed;
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+	public AdmissionPart getAdmissionPart() {
+        return admissionPart;
+    }
+
+    public void setAdmissionPart(AdmissionPart admissionPart) {
+        this.admissionPart = admissionPart;
+    }
+
+    @PlanningVariable(nullable = true, valueRangeProviderRefs = {"bedRange"},
+            strengthComparatorClass = BedStrengthComparator.class)
+    public Bed getBed() {
+        return bed;
+    }
+
+    public void setBed(Bed bed) {
+        this.bed = bed;
+    }
+
+    // ************************************************************************
+    // Complex methods
+    // ************************************************************************
+
+    public Patient getPatient() {
+        return admissionPart.getPatient();
+    }
+
+    public Gender getPatientGender() {
+        return admissionPart.getPatient().getGender();
+    }
+
+    public int getPatientAge() {
+        return admissionPart.getPatient().getAge();
+    }
+
+    public Integer getPatientPreferredMaximumRoomCapacity() {
+        return admissionPart.getPatient().getPreferredMaximumRoomCapacity();
+    }
+
+    public Specialism getAdmissionPartSpecialism() {
+        return admissionPart.getSpecialism();
+    }
+
+    public int getFirstNightIndex() {
+        return admissionPart.getFirstNight().getIndex();
+    }
+
+    public int getLastNightIndex() {
+        return admissionPart.getLastNight().getIndex();
+    }
+
+    public int getAdmissionPartNightCount() {
+        return admissionPart.getNightCount();
+    }
+
+    public Room getRoom() {
+        if (bed == null) {
+            return null;
+        }
+        return bed.getRoom();
+    }
+
+    public int getRoomCapacity() {
+        if (bed == null) {
+            return Integer.MIN_VALUE;
+        }
+        return bed.getRoom().getCapacity();
+    }
+
+    public Department getDepartment() {
+        if (bed == null) {
+            return null;
+        }
+        return bed.getRoom().getDepartment();
+    }
+
+    public GenderLimitation getRoomGenderLimitation() {
+        if (bed == null) {
+            return null;
+        }
+        return bed.getRoom().getGenderLimitation();
+    }
+
+    @Override
+    public String toString() {
+        return admissionPart.toString();
+    }
+}

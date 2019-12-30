@@ -1,0 +1,76 @@
+package org.optaplanner.examples.cheaptime.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class MachineCapacityTest {
+    private Machine machine;
+    private Resource resource;
+    private int capacity;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		MachineCapacity mc = new MachineCapacity();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		MachineCapacity mc = new MachineCapacity();
+		mc = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		MachineCapacity mc = new MachineCapacity();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		MachineCapacity mc = new MachineCapacity();
+		mc = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+    public void getMachine() {
+        System.out.println(machine);
+    }
+
+	@Test
+    public void setMachine() {
+        this.machine = machine;
+    }
+
+	@Test
+    public void getResource() {
+    	System.out.println(resource);
+    }
+
+	@Test
+    public void setResource() {
+        this.resource = resource;
+    }
+
+    public void getCapacity() {
+    	System.out.println(capacity);
+    }
+
+    public void setCapacity() {
+        this.capacity = capacity;
+    }
+}

@@ -1,0 +1,65 @@
+package org.optaplanner.examples.tennis.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class TeamTest 
+{
+	private String name;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		Team t = new Team();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		Team t = new Team();
+		t = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		Team t = new Team();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		Team t = new Team();
+		t = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String getLabel() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        return name == null ? super.toString() : name;
+    }
+}

@@ -1,0 +1,49 @@
+package org.optaplanner.examples.tsp.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.score.buildin.simplelong.SimpleLongScore;
+import org.optaplanner.examples.tsp.domain.location.DistanceType;
+import org.optaplanner.examples.tsp.domain.location.Location;
+import org.optaplanner.persistence.xstream.api.score.buildin.simplelong.SimpleLongScoreXStreamConverter;
+
+import com.thoughtworks.xstream.annotations.XStreamConverter;
+
+public class TspSolutionTest 
+{
+    private String name;
+    protected DistanceType distanceType;
+    protected String distanceUnitOfMeasurement;
+    private List<Location> locationList;
+    private Domicile domicile;
+    private List<Visit> visitList;
+
+    @XStreamConverter(SimpleLongScoreXStreamConverter.class)
+    private SimpleLongScore score;
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+}

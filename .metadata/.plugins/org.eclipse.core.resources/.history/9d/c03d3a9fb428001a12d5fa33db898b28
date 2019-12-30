@@ -1,0 +1,89 @@
+package org.optaplanner.examples.coachshuttlegathering.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.examples.coachshuttlegathering.domain.location.RoadLocation;
+
+public class BusHubTest 
+{
+    protected String name;
+    protected RoadLocation location;
+    protected List<Shuttle> transferShuttleList;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		BusHub bh = new BusHub();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		BusHub bh = new BusHub();
+		bh = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		BusHub bh = new BusHub();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		BusHub bh = new BusHub();
+		bh = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public void getName() {
+        System.out.println(name);
+    }
+
+    public void setName() {
+        this.name = name;
+    }
+
+    public void getLocation() {
+    	System.out.println(location);
+    }
+
+    public void setLocation() {
+        this.location = location;
+    }
+
+    public void getTransferShuttleList() {
+    	System.out.println(transferShuttleList);
+    }
+
+    public void setTransferShuttleList() {
+        this.transferShuttleList = transferShuttleList;
+    }
+
+    public void getTransportTimeToHub() {
+    	System.out.println(0);
+    }
+
+    public void isVisitedByCoach() {
+    	System.out.println(true);
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
+}

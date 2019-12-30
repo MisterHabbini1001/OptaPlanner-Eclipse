@@ -1,0 +1,106 @@
+package org.optaplanner.examples.pas.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class PatientTest {
+    private String name;
+    private Gender gender;
+    private int age;
+    private Integer preferredMaximumRoomCapacity;
+    private List<RequiredPatientEquipment> requiredPatientEquipmentList;
+    private List<PreferredPatientEquipment> preferredPatientEquipmentList;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		Patient pa = new Patient();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		Patient pa = new Patient();
+		pa = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		Patient pa = new Patient();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		Patient pa = new Patient();
+		pa = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public void getName() {
+        System.out.println(name);
+    }
+
+    public void setName() {
+        this.name = name;
+    }
+
+    public void getGender() {
+    	System.out.println(gender);
+    }
+
+    public void setGender() {
+        this.gender = gender;
+    }
+
+    public void getAge() {
+    	System.out.println(age);
+    }
+
+    public void setAge() {
+        this.age = age;
+    }
+
+    public void getPreferredMaximumRoomCapacity() {
+    	System.out.println(preferredMaximumRoomCapacity);
+    }
+
+    public void setPreferredMaximumRoomCapacity(Integer preferredMaximumRoomCapacity) {
+        this.preferredMaximumRoomCapacity = preferredMaximumRoomCapacity;
+    }
+
+    public List<RequiredPatientEquipment> getRequiredPatientEquipmentList() {
+        return requiredPatientEquipmentList;
+    }
+
+    public void setRequiredPatientEquipmentList(List<RequiredPatientEquipment> requiredPatientEquipmentList) {
+        this.requiredPatientEquipmentList = requiredPatientEquipmentList;
+    }
+
+    public List<PreferredPatientEquipment> getPreferredPatientEquipmentList() {
+        return preferredPatientEquipmentList;
+    }
+
+    public void setPreferredPatientEquipmentList(List<PreferredPatientEquipment> preferredPatientEquipmentList) {
+        this.preferredPatientEquipmentList = preferredPatientEquipmentList;
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
+}

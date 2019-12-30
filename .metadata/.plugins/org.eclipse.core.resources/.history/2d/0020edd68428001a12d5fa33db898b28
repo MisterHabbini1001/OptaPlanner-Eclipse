@@ -1,0 +1,60 @@
+package org.optaplanner.examples.nqueens.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class ColumnTest 
+{
+	private int index;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		Column c = new Column();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		Column c = new Column();
+		c = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		Column c = new Column();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		Column c = new Column();
+		c = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
+
+    @Override
+    public String toString() {
+        return "Column-" + index;
+    }
+}

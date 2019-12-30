@@ -1,0 +1,144 @@
+package org.optaplanner.examples.scrabble.domain;
+import static org.junit.Assert.*;
+
+import java.util.Map;
+import java.util.Set;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.solution.cloner.DeepPlanningClone;
+import org.optaplanner.core.api.domain.variable.CustomShadowVariable;
+import org.optaplanner.core.api.domain.variable.PlanningVariableReference;
+import org.optaplanner.examples.scrabble.domain.solver.CellUpdatingVariableListener;
+
+public class ScrabbleCellTest {
+    private int x;
+    private int y;
+
+    @CustomShadowVariable(variableListenerClass = CellUpdatingVariableListener.class,
+            sources = {@PlanningVariableReference(entityClass = ScrabbleWordAssignment.class, variableName = "startCell"),
+                    @PlanningVariableReference(entityClass = ScrabbleWordAssignment.class, variableName = "direction")})
+    @DeepPlanningClone 
+    private Set<ScrabbleWordAssignment> wordSet;
+
+    @CustomShadowVariable(variableListenerRef = @PlanningVariableReference(variableName = "wordSet"))
+    @DeepPlanningClone 
+    private Map<Character, Integer> characterCountMap;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	public void getX() {
+        System.out.println(x);
+    }
+
+    public void setX() {
+        this.x = x;
+    }
+
+    public void getY() {
+    	System.out.println(y);
+    }
+
+    public void setY() {
+        this.y = y;
+    }
+
+    public void getWordSet() {
+    	System.out.println(wordSet);
+    }
+
+    public void setWordSet(Set<ScrabbleWordAssignment> wordSet) {
+        this.wordSet = wordSet;
+    }
+
+    public Map<Character, Integer> getCharacterCountMap() {
+        return characterCountMap;
+    }
+
+    public void setCharacterCountMap(Map<Character, Integer> characterCountMap) {
+        this.characterCountMap = characterCountMap;
+    }
+
+    public String getLabel() {
+        return "(" + x + "," + y + ")";
+    }
+
+    public void insertWordAssignment(ScrabbleWordAssignment wordAssignment, char c) {
+        boolean added = wordSet.add(wordAssignment);
+        if (!added) {
+            throw new IllegalStateException("The wordAssignment (" + wordAssignment
+                    + ") is already in the cell (" + this + ").");
+        }
+        Integer characterCount = characterCountMap.get(c);
+        if (characterCount == null) {
+            characterCount = 0;
+        }
+        characterCount++;
+        characterCountMap.put(c, characterCount);
+    }
+
+    public void retractWordAssignment(ScrabbleWordAssignment wordAssignment, char c) {
+        boolean removed = wordSet.remove(wordAssignment);
+        if (!removed) {
+            throw new IllegalStateException("The wordAssignment (" + wordAssignment
+                    + ") is not in the cell (" + this + ").");
+        }
+        Integer characterCount = characterCountMap.get(c);
+        characterCount--;
+        if (characterCount == 0) {
+            characterCountMap.remove(c);
+        } else {
+            characterCountMap.put(c, characterCount);
+        }
+    }
+
+    public Set<Character> getCharacterSet() {
+        return characterCountMap.keySet();
+    }
+
+    public boolean hasMerge() {
+        if (characterCountMap.containsKey(' ')) {
+            return false;
+        }
+        return wordSet.size() > 1;
+    }
+
+    public boolean hasWordSet(ScrabbleWordDirection direction) {
+        for (ScrabbleWordAssignment wordAssignment : wordSet) {
+            if (wordAssignment.getDirection() == direction) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return "(" + x + "," + y + ")";
+    }
+}

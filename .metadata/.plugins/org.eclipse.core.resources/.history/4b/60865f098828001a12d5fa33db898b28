@@ -1,0 +1,90 @@
+package org.optaplanner.examples.nqueens.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.variable.PlanningVariable;
+import org.optaplanner.examples.nqueens.domain.solution.RowStrengthWeightFactory;
+
+public class QueenTest 
+{
+    private Column column;
+    private Row row;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+    public void getColumn() {
+        System.out.println(column);
+    }
+
+	@Test
+    public void setColumn(Column column) {
+        this.column = column;
+    }
+
+	@Test
+    @PlanningVariable(valueRangeProviderRefs = {"rowRange"},
+            strengthWeightFactoryClass = RowStrengthWeightFactory.class)
+    public void getRow() {
+    	System.out.println(row);
+    }
+
+	@Test
+    public void setRow(Row row) {
+        this.row = row;
+    }
+
+	@Test
+    public void getColumnIndex() {
+    	System.out.println(column.getIndex());
+    }
+	
+	@Test
+    public void getRowIndex() {
+        if (row == null) {
+        	System.out.println(Integer.MIN_VALUE);
+        }
+        System.out.println(row.getIndex());
+    }
+
+	@Test
+    public void getAscendingDiagonalIndex() {
+    	System.out.println(0);
+    }
+
+	@Test
+    public void getDescendingDiagonalIndex() {
+    	System.out.println(0);
+    }
+
+	@Test
+    public void toString() {
+    	System.out.println("Queen-" + column.getIndex());
+    }
+}

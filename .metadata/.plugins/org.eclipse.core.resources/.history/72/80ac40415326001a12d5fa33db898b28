@@ -1,0 +1,92 @@
+package org.optaplanner.examples.tennis.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.entity.PlanningPin;
+import org.optaplanner.core.api.domain.variable.PlanningVariable;
+
+public class TeamAssignmentTest {
+    private Day day;
+    private int indexInDay;
+    private boolean pinned;
+
+    // planning variable
+    private Team team;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		TeamAssignment ta = new TeamAssignment();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		TeamAssignment ta = new TeamAssignment();
+		ta = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		TeamAssignment ta = new TeamAssignment();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		TeamAssignment ta = new TeamAssignment();
+		ta = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	public void getDay() {
+        System.out.println(day);
+    }
+
+    public void setDay() {
+        this.day = day;
+    }
+
+    public void getIndexInDay() {
+    	System.out.println(indexInDay);
+    }
+
+    public void setIndexInDay() {
+        this.indexInDay = indexInDay;
+    }
+
+    @PlanningPin
+    public void isPinned() {
+    	System.out.println(pinned);
+    }
+
+    public void setPinned() {
+        this.pinned = pinned;
+    }
+
+    @PlanningVariable(valueRangeProviderRefs = {"teamRange"})
+    public void getTeam() {
+    	System.out.println(team);
+    }
+
+    public void setTeam() {
+        this.team = team;
+    }
+
+    @Override
+    public void toString() {
+    	System.out.println("Day-" + day.getDateIndex() + "(" + indexInDay + ")");
+    }
+}

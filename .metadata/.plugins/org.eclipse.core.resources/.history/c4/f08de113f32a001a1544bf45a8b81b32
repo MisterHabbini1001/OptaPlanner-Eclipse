@@ -1,0 +1,80 @@
+package org.optaplanner.examples.machinereassignment.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class MrProcessTest {
+    private MrService service;
+    private int moveCost;
+    private List<MrProcessRequirement> processRequirementList;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public void getService() {
+        System.out.println(service);
+    }
+
+    public void setService() {
+        this.service = service;
+    }
+
+    public void getMoveCost() {
+    	System.out.println(moveCost);
+    }
+
+    public void setMoveCost() {
+        this.moveCost = moveCost;
+    }
+
+    public List<MrProcessRequirement> getProcessRequirementList() {
+        return processRequirementList;
+    }
+
+    public void setProcessRequirementList(List<MrProcessRequirement> processRequirementList) {
+        this.processRequirementList = processRequirementList;
+    }
+
+    public MrProcessRequirement getProcessRequirement(MrResource resource) {
+        return processRequirementList.get(resource.getIndex());
+    }
+
+    public long getUsage(MrResource resource) {
+        return processRequirementList.get(resource.getIndex()).getUsage();
+    }
+
+    public int getUsageMultiplicand() {
+        int multiplicand = 1;
+        for (MrProcessRequirement processRequirement : processRequirementList) {
+            multiplicand *= processRequirement.getUsage();
+        }
+        return multiplicand;
+    }
+}

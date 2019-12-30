@@ -1,0 +1,209 @@
+package org.optaplanner.examples.pas.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
+import org.optaplanner.core.api.domain.solution.PlanningScore;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactCollectionProperty;
+import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
+import org.optaplanner.core.api.score.buildin.hardmediumsoft.HardMediumSoftScore;
+import org.optaplanner.persistence.xstream.api.score.buildin.hardmediumsoft.HardMediumSoftScoreXStreamConverter;
+
+import com.thoughtworks.xstream.annotations.XStreamConverter;
+
+public class PatientAdmissionScheduleTest 
+{
+    private List<Specialism> specialismList;
+    private List<Equipment> equipmentList;
+    private List<Department> departmentList;
+    private List<DepartmentSpecialism> departmentSpecialismList;
+    private List<Room> roomList;
+    private List<RoomSpecialism> roomSpecialismList;
+    private List<RoomEquipment> roomEquipmentList;
+    private List<Bed> bedList;
+    private List<Night> nightList;
+    private List<Patient> patientList;
+    private List<AdmissionPart> admissionPartList;
+    private List<RequiredPatientEquipment> requiredPatientEquipmentList;
+    private List<PreferredPatientEquipment> preferredPatientEquipmentList;
+    private List<BedDesignation> bedDesignationList;
+
+    @XStreamConverter(HardMediumSoftScoreXStreamConverter.class)
+    private HardMediumSoftScore score;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		PatientAdmissionSchedule pas = new PatientAdmissionSchedule();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		PatientAdmissionSchedule pas = new PatientAdmissionSchedule();
+		pas = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		PatientAdmissionSchedule pas = new PatientAdmissionSchedule();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		PatientAdmissionSchedule pas = new PatientAdmissionSchedule();
+		pas = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+	
+	@ProblemFactCollectionProperty
+    public void getSpecialismList() {
+        System.out.println(specialismList);
+    }
+
+    public void setSpecialismList() {
+        this.specialismList = specialismList;
+    }
+
+    @ProblemFactCollectionProperty
+    public void getEquipmentList() {
+    	System.out.println(equipmentList);
+    }
+
+    public void setEquipmentList() {
+        this.equipmentList = equipmentList;
+    }
+
+    @ProblemFactCollectionProperty
+    public void getDepartmentList() {
+    	System.out.println(departmentList);
+    }
+
+    public void setDepartmentList() {
+        this.departmentList = departmentList;
+    }
+
+    @ProblemFactCollectionProperty
+    public void getDepartmentSpecialismList() {
+    	System.out.println(departmentSpecialismList);
+    }
+
+    public void setDepartmentSpecialismList() {
+        this.departmentSpecialismList = departmentSpecialismList;
+    }
+
+    @ProblemFactCollectionProperty
+    public void getRoomList() {
+    	System.out.println(roomList);
+    }
+
+    public void setRoomList() {
+        this.roomList = roomList;
+    }
+
+    @ProblemFactCollectionProperty
+    public void getRoomSpecialismList() {
+    	System.out.println(roomSpecialismList);
+    }
+
+    public void setRoomSpecialismList() {
+        this.roomSpecialismList = roomSpecialismList;
+    }
+
+    @ProblemFactCollectionProperty
+    public void getRoomEquipmentList() {
+    	System.out.println(roomEquipmentList);
+    }
+
+    public void setRoomEquipmentList() {
+        this.roomEquipmentList = roomEquipmentList;
+    }
+
+    @ValueRangeProvider(id = "bedRange")
+    @ProblemFactCollectionProperty
+    public void getBedList() {
+    	System.out.println(bedList);
+    }
+
+    public void setBedList() {
+        this.bedList = bedList;
+    }
+
+    @ProblemFactCollectionProperty
+    public void getNightList() {
+    	System.out.println(nightList);
+    }
+
+    public void setNightList() {
+        this.nightList = nightList;
+    }
+
+    @ProblemFactCollectionProperty
+    public List<Patient> getPatientList() {
+        return patientList;
+    }
+
+    public void setPatientList(List<Patient> patientList) {
+        this.patientList = patientList;
+    }
+
+    @ProblemFactCollectionProperty
+    public List<AdmissionPart> getAdmissionPartList() {
+        return admissionPartList;
+    }
+
+    public void setAdmissionPartList(List<AdmissionPart> admissionPartList) {
+        this.admissionPartList = admissionPartList;
+    }
+
+    @ProblemFactCollectionProperty
+    public List<RequiredPatientEquipment> getRequiredPatientEquipmentList() {
+        return requiredPatientEquipmentList;
+    }
+
+    public void setRequiredPatientEquipmentList(List<RequiredPatientEquipment> requiredPatientEquipmentList) {
+        this.requiredPatientEquipmentList = requiredPatientEquipmentList;
+    }
+
+    @ProblemFactCollectionProperty
+    public List<PreferredPatientEquipment> getPreferredPatientEquipmentList() {
+        return preferredPatientEquipmentList;
+    }
+
+    public void setPreferredPatientEquipmentList(List<PreferredPatientEquipment> preferredPatientEquipmentList) {
+        this.preferredPatientEquipmentList = preferredPatientEquipmentList;
+    }
+
+    @PlanningEntityCollectionProperty
+    public List<BedDesignation> getBedDesignationList() {
+        return bedDesignationList;
+    }
+
+    public void setBedDesignationList(List<BedDesignation> bedDesignationList) {
+        this.bedDesignationList = bedDesignationList;
+    }
+
+    @PlanningScore
+    public HardMediumSoftScore getScore() {
+        return score;
+    }
+
+    public void setScore(HardMediumSoftScore score) {
+        this.score = score;
+    }
+}

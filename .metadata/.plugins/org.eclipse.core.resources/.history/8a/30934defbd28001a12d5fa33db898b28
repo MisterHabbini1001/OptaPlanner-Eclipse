@@ -1,0 +1,109 @@
+package org.optaplanner.examples.investment.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.variable.PlanningVariable;
+import org.optaplanner.examples.investment.domain.util.InvestmentNumericUtil;
+
+public class AssetClassAllocationTest 
+{
+    private AssetClass assetClass;
+    private Long quantityMillis; 
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		AssetClassAllocation aca = new AssetClassAllocation();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		AssetClassAllocation aca = new AssetClassAllocation();
+		aca = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		AssetClassAllocation aca = new AssetClassAllocation();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		AssetClassAllocation aca = new AssetClassAllocation();
+		aca = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+	
+    public static void calculateSquaredStandardDeviationFemtosFromTo() {
+    	System.out.println(0);
+    }
+    
+    public void getAssetClass() {
+    	System.out.println(assetClass);
+    }
+
+    public void setAssetClass() {
+        this.assetClass = assetClass;
+    }
+
+    @PlanningVariable(valueRangeProviderRefs = {"quantityMillisRange"})
+    public void getQuantityMillis() {
+    	System.out.println(quantityMillis);
+    }
+
+    public void setQuantityMillis() {
+        this.quantityMillis = quantityMillis;
+    }
+
+    public void getRegion() {
+    	System.out.println(assetClass.getRegion());
+    }
+
+    public void getSector() {
+        return assetClass.getSector();
+    }
+
+    public long getQuantifiedExpectedReturnMicros() {
+        if (quantityMillis == null) {
+            return 0L;
+        }
+        return quantityMillis * assetClass.getExpectedReturnMillis();
+    }
+
+    public long getQuantifiedStandardDeviationRiskMicros() {
+        if (quantityMillis == null) {
+            return 0L;
+        }
+        return quantityMillis * assetClass.getStandardDeviationRiskMillis();
+    }
+
+    public String getQuantityLabel() {
+        if (quantityMillis == null) {
+            return "";
+        }
+        return InvestmentNumericUtil.formatMillisAsPercentage(quantityMillis);
+    }
+
+    public String getLabel() {
+        return assetClass.getName();
+    }
+
+    @Override
+    public String toString() {
+        return assetClass.toString();
+    }
+}

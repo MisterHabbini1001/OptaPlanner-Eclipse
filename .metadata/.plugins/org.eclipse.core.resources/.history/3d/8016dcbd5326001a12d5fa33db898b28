@@ -1,0 +1,52 @@
+package org.optaplanner.examples.tennis.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.score.buildin.hardmediumsoft.HardMediumSoftScore;
+
+public class TennisSolutionTest 
+{
+    private List<Team> teamList;
+    private List<Day> dayList;
+    private List<UnavailabilityPenalty> unavailabilityPenaltyList;
+    private List<TeamAssignment> teamAssignmentList;
+    private HardMediumSoftScore score;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		TennisSolution ts = new TennisSolution();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		TennisSolution ts = new TennisSolution();
+		ts = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		TennisSolution ts = new TennisSolution();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		TennisSolution ts = new TennisSolution();
+		ts = null;
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

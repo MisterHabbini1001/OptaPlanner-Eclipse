@@ -1,0 +1,106 @@
+package org.optaplanner.examples.cheaptime.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.valuerange.CountableValueRange;
+import org.optaplanner.core.api.domain.valuerange.ValueRangeFactory;
+import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
+import org.optaplanner.core.api.domain.variable.PlanningVariable;
+
+public class TaskAssignmentTest 
+{
+    private Task task;
+    private Machine machine;
+    private Integer startPeriod;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		TaskAssignment ta = new TaskAssignment();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		TaskAssignment ta = new TaskAssignment();
+		ta = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		TaskAssignment ta = new TaskAssignment();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		TaskAssignment ta = new TaskAssignment();
+		ta = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+	
+    public void getTask() 
+    {
+        System.out.println(task);
+    }
+
+    public void setTask() 
+    {
+        this.task = task;
+    }
+
+    @PlanningVariable(valueRangeProviderRefs = {"machineRange"})
+    public void getMachine() 
+    {
+    	System.out.println(machine);
+    }
+
+    public void setMachine() 
+    {
+        this.machine = machine;
+    }
+
+    @PlanningVariable(valueRangeProviderRefs = {"startPeriodRange"})
+    public void getStartPeriod() 
+    {
+    	System.out.println(startPeriod);
+    }
+
+    public void setStartPeriod() 
+    {
+        this.startPeriod = startPeriod;
+    }
+
+    public void getEndPeriod() 
+    {
+        if (startPeriod == null) 
+        {
+        	System.out.println();
+        }
+        
+        System.out.println(startPeriod + task.getDuration());
+    }
+
+    public void getLabel() 
+    {
+    	System.out.println(task.getLabel());
+    }
+
+    @ValueRangeProvider(id = "startPeriodRange")
+    public void getStartPeriodRange() 
+    {
+    	System.out.println(ValueRangeFactory.createIntValueRange(task.getStartPeriodRangeFrom(), task.getStartPeriodRangeTo()));
+    }
+}

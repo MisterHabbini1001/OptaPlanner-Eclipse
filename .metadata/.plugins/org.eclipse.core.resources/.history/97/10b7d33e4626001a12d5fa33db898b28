@@ -1,0 +1,130 @@
+package org.optaplanner.examples.travelingtournament.domain;
+import static org.junit.Assert.*;
+
+import java.util.Iterator;
+import java.util.List;
+
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
+import org.optaplanner.core.api.domain.solution.PlanningScore;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactCollectionProperty;
+import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
+import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
+import org.optaplanner.persistence.xstream.api.score.buildin.hardsoft.HardSoftScoreXStreamConverter;
+
+import com.thoughtworks.xstream.annotations.XStreamConverter;
+
+public class TravelingTournamentTest {
+    private List<Day> dayList;
+    private List<Team> teamList;
+
+    private List<Match> matchList;
+
+    @XStreamConverter(HardSoftScoreXStreamConverter.class)
+    private HardSoftScore score;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+    @ValueRangeProvider(id = "dayRange")
+    @ProblemFactCollectionProperty
+    public List<Day> getDayList() {
+        return dayList;
+    }
+
+    public void setDayList(List<Day> dayList) {
+        this.dayList = dayList;
+    }
+
+    @ProblemFactCollectionProperty
+    public List<Team> getTeamList() {
+        return teamList;
+    }
+
+    public void setTeamList(List<Team> teamList) {
+        this.teamList = teamList;
+    }
+
+    @PlanningEntityCollectionProperty
+    public List<Match> getMatchList() {
+        return matchList;
+    }
+
+    public void setMatchList(List<Match> matchSets) {
+        this.matchList = matchSets;
+    }
+
+    @PlanningScore
+    public HardSoftScore getScore() {
+        return score;
+    }
+
+    public void setScore(HardSoftScore score) {
+        this.score = score;
+    }
+
+    // ************************************************************************
+    // Complex methods
+    // ************************************************************************
+
+    public int getN() {
+        return teamList.size();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (id == null || !(o instanceof TravelingTournament)) {
+            return false;
+        } else {
+            TravelingTournament other = (TravelingTournament) o;
+            if (matchList.size() != other.matchList.size()) {
+                return false;
+            }
+            for (Iterator<Match> it = matchList.iterator(), otherIt = other.matchList.iterator(); it.hasNext();) {
+                Match match = it.next();
+                Match otherMatch = otherIt.next();
+                // Notice: we don't use equals()
+                if (!match.solutionEquals(otherMatch)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        HashCodeBuilder hashCodeBuilder = new HashCodeBuilder();
+        for (Match match : matchList) {
+            // Notice: we don't use hashCode()
+            hashCodeBuilder.append(match.solutionHashCode());
+        }
+        return hashCodeBuilder.toHashCode();
+    }
+}

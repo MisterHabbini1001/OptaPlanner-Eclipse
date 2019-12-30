@@ -1,0 +1,75 @@
+package org.optaplanner.examples.machinereassignment.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class MrMachineCapacityTest {
+    private MrMachine machine;
+    private MrResource resource;
+    private long maximumCapacity;
+    private long safetyCapacity;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public void getMachine() {
+        System.out.println(machine);
+    }
+
+    public void setMachine() {
+        this.machine = machine;
+    }
+
+    public void getResource() {
+    	System.out.println(resource);
+    }
+
+    public void setResource() {
+        this.resource = resource;
+    }
+
+    public void getMaximumCapacity() {
+    	System.out.println(maximumCapacity);
+    }
+
+    public void setMaximumCapacity() {
+        this.maximumCapacity = maximumCapacity;
+    }
+
+    public void getSafetyCapacity() {
+    	System.out.println(safetyCapacity);
+    }
+
+    public void setSafetyCapacity() {
+        this.safetyCapacity = safetyCapacity;
+    }
+
+    public void isTransientlyConsumed() {
+    	System.out.println(resource.isTransientlyConsumed());
+    }
+}

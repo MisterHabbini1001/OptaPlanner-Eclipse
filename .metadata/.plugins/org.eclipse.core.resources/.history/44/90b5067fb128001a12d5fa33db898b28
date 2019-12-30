@@ -1,0 +1,50 @@
+package org.optaplanner.examples.cloudbalancing.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class CloudProcessTest 
+{
+    private int requiredCpuPower; 
+    private int requiredMemory; 
+    private int requiredNetworkBandwidth; 
+    private CloudComputer computer;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		CloudProcess cp = new CloudProcess();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		CloudProcess cp = new CloudProcess();
+		cp = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		CloudProcess cp = new CloudProcess();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		CloudProcess cp = new CloudProcess();
+		cp = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+}

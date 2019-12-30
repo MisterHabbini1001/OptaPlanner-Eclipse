@@ -1,0 +1,79 @@
+package org.optaplanner.examples.cheaptime.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class TaskRequirementTest 
+{
+    private Task task;
+    private Resource resource;
+    private int resourceUsage;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		TaskRequirement tr = new TaskRequirement();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		TaskRequirement tr = new TaskRequirement();
+		tr = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		TaskRequirement tr = new TaskRequirement();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		TaskRequirement tr = new TaskRequirement();
+		tr = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public void getTask() 
+    {
+        System.out.println(task);
+    }
+
+    public void setTask(Task task) 
+    {
+        this.task = task;
+    }
+
+    public void getResource() 
+    {
+    	System.out.println(resource);
+    }
+
+    public void setResource() 
+    {
+        this.resource = resource;
+    }
+
+    public void getResourceUsage() 
+    {
+    	System.out.println(resourceUsage);
+    }
+
+    public void setResourceUsage() 
+    {
+        this.resourceUsage = resourceUsage;
+    }
+}

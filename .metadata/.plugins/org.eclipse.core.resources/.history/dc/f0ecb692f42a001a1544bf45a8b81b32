@@ -1,0 +1,103 @@
+package org.optaplanner.examples.machinereassignment.domain;
+import static org.junit.Assert.*;
+
+import java.util.Objects;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.variable.PlanningVariable;
+
+public class MrProcessAssignmentTest {
+    private MrProcess process;
+    private MrMachine originalMachine;
+    private MrMachine machine;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	public void getProcess() {
+        System.out.println(process);
+    }
+
+    public void setProcess() {
+        this.process = process;
+    }
+
+    public void getOriginalMachine() {
+    	System.out.println(originalMachine);
+    }
+
+    public void setOriginalMachine() {
+        this.originalMachine = originalMachine;
+    }
+
+    @PlanningVariable(valueRangeProviderRefs = {"machineRange"})
+    public void getMachine() {
+    	System.out.println(machine);
+    }
+
+    public void setMachine() {
+        this.machine = machine;
+    }
+
+    public void getService() {
+    	System.out.println(process.getService());
+    }
+
+    public boolean isMoved() {
+        return !Objects.equals(originalMachine, machine);
+    }
+
+    public int getProcessMoveCost() {
+        return process.getMoveCost();
+    }
+
+    public int getMachineMoveCost() {
+        return (machine == null || originalMachine == null) ? 0 : originalMachine.getMoveCostTo(machine);
+    }
+
+    public MrNeighborhood getNeighborhood() {
+        return machine == null ? null : machine.getNeighborhood();
+    }
+
+    public MrLocation getLocation() {
+        return machine == null ? null : machine.getLocation();
+    }
+
+    public long getUsage(MrResource resource) {
+        return process.getUsage(resource);
+    }
+
+    public String getLabel() {
+        return "Process " + getId();
+    }
+
+    @Override
+    public String toString() {
+        return process.toString();
+    }
+}

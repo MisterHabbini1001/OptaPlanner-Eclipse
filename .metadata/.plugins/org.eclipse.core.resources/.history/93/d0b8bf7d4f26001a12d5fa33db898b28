@@ -1,0 +1,111 @@
+package org.optaplanner.examples.scrabble.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
+import org.optaplanner.core.api.domain.solution.PlanningScore;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactCollectionProperty;
+import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
+import org.optaplanner.core.api.score.buildin.hardmediumsoft.HardMediumSoftScore;
+import org.optaplanner.persistence.xstream.api.score.buildin.hardmediumsoft.HardMediumSoftScoreXStreamConverter;
+
+import com.thoughtworks.xstream.annotations.XStreamConverter;
+
+public class ScrabbleSolutionTest {
+    private int gridWidth;
+    private int gridHeight;
+
+    @ValueRangeProvider(id = "startCellRange")
+    @ProblemFactCollectionProperty
+    private List<ScrabbleCell> cellList;
+
+    @PlanningEntityCollectionProperty
+    private List<ScrabbleWordAssignment> wordList;
+
+    @XStreamConverter(HardMediumSoftScoreXStreamConverter.class)
+    private HardMediumSoftScore score;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	public int getGridWidth() {
+        System.out.println(gridWidth);
+    }
+
+    public void setGridWidth(int gridWidth) {
+        this.gridWidth = gridWidth;
+    }
+
+    public int getGridHeight() {
+        return gridHeight;
+    }
+
+    public void setGridHeight(int gridHeight) {
+        this.gridHeight = gridHeight;
+    }
+
+    public List<ScrabbleCell> getCellList() {
+        return cellList;
+    }
+
+    public void setCellList(List<ScrabbleCell> cellList) {
+        this.cellList = cellList;
+    }
+
+    public List<ScrabbleWordAssignment> getWordList() {
+        return wordList;
+    }
+
+    public void setWordList(List<ScrabbleWordAssignment> wordList) {
+        this.wordList = wordList;
+    }
+
+    @PlanningScore
+    public HardMediumSoftScore getScore() {
+        return score;
+    }
+
+    public void setScore(HardMediumSoftScore score) {
+        this.score = score;
+    }
+
+    // ************************************************************************
+    // Complex methods
+    // ************************************************************************
+
+    @ValueRangeProvider(id = "directionRange")
+    public ScrabbleWordDirection[] getDirectionRange() {
+        return ScrabbleWordDirection.values();
+    }
+
+    public ScrabbleCell getCell(int x, int y) {
+        return cellList.get(x * gridWidth + y);
+    }
+}

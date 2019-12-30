@@ -1,0 +1,118 @@
+package org.optaplanner.examples.pas.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class DepartmentTest {
+    private String name;
+    private Integer minimumAge = null;
+    private Integer maximumAge = null;
+    private List<Room> roomList;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		Department d = new Department();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		Department d = new Department();
+		d = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		Department d = new Department();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		Department d = new Department();
+		d = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+    public void testgetName() {
+        System.out.println(name);
+    }
+
+	@Test
+    public void testsetName() {
+        this.name = name;
+    }
+
+	@Test
+    public void testgetMinimumAge() {
+    	System.out.println(minimumAge);
+    }
+
+	@Test
+    public void testsetMinimumAge() {
+        this.minimumAge = minimumAge;
+    }
+
+	@Test
+    public void testgetMaximumAge() {
+    	System.out.println(maximumAge);
+    }
+
+	@Test
+    public void testsetMaximumAge() {
+        this.maximumAge = maximumAge;
+    }
+
+	@Test
+    public void testgetRoomList() {
+    	System.out.println(roomList);
+    }
+
+	@Test
+    public void testsetRoomList() {
+        this.roomList = roomList;
+    }
+
+	@Test
+    public void testcountHardDisallowedAdmissionPart() {
+    	System.out.println(0);
+    }
+
+	@Test
+    public void testcountDisallowedPatientAge() {
+    	System.out.println(0);
+    }
+
+	@Test
+    public void testgetLabel() {
+        String label = name;
+        if (minimumAge != null) {
+            label += "(≥" + minimumAge + ")";
+        }
+        if (maximumAge != null) {
+            label += "(≤" + maximumAge + ")";
+        }
+        System.out.println(label);
+    }
+
+	@Test
+    public void testtoString() {
+    	System.out.println(name);
+    }
+}

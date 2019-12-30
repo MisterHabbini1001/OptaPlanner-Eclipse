@@ -1,0 +1,106 @@
+package org.optaplanner.examples.pas.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class DepartmentTest {
+    private String name;
+    private Integer minimumAge = null;
+    private Integer maximumAge = null;
+    private List<Room> roomList;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		Department d = new Department();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		Department d = new Department();
+		d = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		Department d = new Department();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		Department d = new Department();
+		d = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public void getName() {
+        System.out.println(name);
+    }
+
+    public void setName() {
+        this.name = name;
+    }
+
+    public void getMinimumAge() {
+    	System.out.println(minimumAge);
+    }
+
+    public void setMinimumAge() {
+        this.minimumAge = minimumAge;
+    }
+
+    public void getMaximumAge() {
+    	System.out.println(maximumAge);
+    }
+
+    public void setMaximumAge() {
+        this.maximumAge = maximumAge;
+    }
+
+    public void getRoomList() {
+    	System.out.println(roomList);
+    }
+
+    public void setRoomList() {
+        this.roomList = roomList;
+    }
+
+    public void countHardDisallowedAdmissionPart() {
+    	System.out.println(0);
+    }
+
+    public void countDisallowedPatientAge() {
+    	System.out.println(0);
+    }
+
+    public void getLabel() {
+        String label = name;
+        if (minimumAge != null) {
+            label += "(≥" + minimumAge + ")";
+        }
+        if (maximumAge != null) {
+            label += "(≤" + maximumAge + ")";
+        }
+        System.out.println(label);
+    }
+
+    public void toString() {
+    	System.out.println(name);
+    }
+}

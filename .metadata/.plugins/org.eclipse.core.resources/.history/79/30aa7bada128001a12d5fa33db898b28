@@ -1,0 +1,82 @@
+package org.optaplanner.examples.cloudbalancing.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class CloudComputerTest 
+{
+    private int cpuPower; 
+    private int memory; 
+    private int networkBandwidth; 
+    private int cost; 
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+    public int getCpuPower() {
+        return cpuPower;
+    }
+
+    public void setCpuPower(int cpuPower) {
+        this.cpuPower = cpuPower;
+    }
+
+    public int getMemory() {
+        return memory;
+    }
+
+    public void setMemory(int memory) {
+        this.memory = memory;
+    }
+
+    public int getNetworkBandwidth() {
+        return networkBandwidth;
+    }
+
+    public void setNetworkBandwidth(int networkBandwidth) {
+        this.networkBandwidth = networkBandwidth;
+    }
+
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
+
+    // ************************************************************************
+    // Complex methods
+    // ************************************************************************
+
+    public int getMultiplicand() {
+        return cpuPower * memory * networkBandwidth;
+    }
+
+    @Override
+    public String getLabel() {
+        return "Computer " + id;
+    }
+}

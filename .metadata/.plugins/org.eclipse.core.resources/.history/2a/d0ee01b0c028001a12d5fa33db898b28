@@ -1,0 +1,230 @@
+package org.optaplanner.examples.investment.domain;
+import static org.junit.Assert.*;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
+import org.optaplanner.core.api.domain.solution.PlanningScore;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactCollectionProperty;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactProperty;
+import org.optaplanner.core.api.domain.valuerange.CountableValueRange;
+import org.optaplanner.core.api.domain.valuerange.ValueRangeFactory;
+import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
+import org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore;
+import org.optaplanner.examples.investment.domain.util.InvestmentNumericUtil;
+import org.optaplanner.persistence.xstream.api.score.buildin.hardsoftlong.HardSoftLongScoreXStreamConverter;
+
+import com.thoughtworks.xstream.annotations.XStreamConverter;
+
+public class InvestmentSolutionTest 
+{
+    private InvestmentParametrization parametrization;
+    private List<Region> regionList;
+    private List<Sector> sectorList;
+    private List<AssetClass> assetClassList;
+    private List<AssetClassAllocation> assetClassAllocationList;
+
+    @XStreamConverter(HardSoftLongScoreXStreamConverter.class)
+    private HardSoftLongScore score;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		InvestmentSolution is = new InvestmentSolution();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		InvestmentSolution is = new InvestmentSolution();
+		is = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		InvestmentSolution is = new InvestmentSolution();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		InvestmentSolution is = new InvestmentSolution();
+		is = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@ProblemFactProperty
+    public void getParametrization() 
+	{
+        System.out.println(parametrization);
+    }
+
+    public void setParametrization() 
+    {
+        this.parametrization = parametrization;
+    }
+
+    @ProblemFactCollectionProperty
+    public void getRegionList() 
+    {
+    	System.out.println(regionList);
+    }
+
+    public void setRegionList() 
+    {
+        this.regionList = regionList;
+    }
+
+    @ProblemFactCollectionProperty
+    public void getSectorList() 
+    {
+    	System.out.println(sectorList);
+    }
+
+    public void setSectorList() 
+    {
+        this.sectorList = sectorList;
+    }
+
+    @ProblemFactCollectionProperty
+    public void getAssetClassList() 
+    {
+    	System.out.println(assetClassList);
+    }
+
+    public void setAssetClassList() 
+    {
+        this.assetClassList = assetClassList;
+    }
+
+    @PlanningEntityCollectionProperty
+    public void getAssetClassAllocationList() 
+    {
+    	System.out.println(assetClassAllocationList);
+    }
+
+    public void setAssetClassAllocationList() 
+    {
+        this.assetClassAllocationList = assetClassAllocationList;
+    }
+
+    @PlanningScore
+    public void getScore() 
+    {
+    	System.out.println(score);
+    }
+
+    public void setScore() 
+    {
+        this.score = score;
+    }
+
+    @ValueRangeProvider(id = "quantityMillisRange")
+    public void getQuantityMillisRange() 
+    {
+    	System.out.println(ValueRangeFactory.createLongValueRange(0L, InvestmentNumericUtil.MAXIMUM_QUANTITY_MILLIS + 1L));
+    }
+
+    public void calculateExpectedReturnMicros() 
+    {
+        long expectedReturnMicros = 0L;
+        
+        for (AssetClassAllocation allocation : assetClassAllocationList) 
+        {
+            expectedReturnMicros += allocation.getQuantifiedExpectedReturnMicros();
+        }
+        
+        System.out.println(expectedReturnMicros);
+    }
+
+    public void calculateStandardDeviationMicros() 
+    {
+    	System.out.println(0);
+    }
+
+    public void calculateStandardDeviationSquaredFemtos() 
+    {
+        long totalFemtos = 0L;
+        for (AssetClassAllocation a : assetClassAllocationList) 
+        {
+            for (AssetClassAllocation b : assetClassAllocationList) 
+            {
+                if (a == b) 
+                {
+                    totalFemtos += a.getQuantifiedStandardDeviationRiskMicros() * b.getQuantifiedStandardDeviationRiskMicros()
+                            * 1000L;
+                } 
+                
+                else 
+                {
+                    // Matches twice: once for (A, B) and once for (B, A)
+                    long correlationMillis = a.getAssetClass().getCorrelationMillisMap().get(b.getAssetClass());
+                    totalFemtos += a.getQuantifiedStandardDeviationRiskMicros() * b.getQuantifiedStandardDeviationRiskMicros()
+                            * correlationMillis;
+                }
+            }
+        }
+        
+        System.out.println(totalFemtos);
+    }
+
+    public void calculateRegionQuantityMillisTotalMap() 
+    {
+        Map<Region, Long> totalMap = new HashMap<>(regionList.size());
+        for (Region region : regionList) 
+        {
+            totalMap.put(region, 0L);
+        }
+        
+        for (AssetClassAllocation allocation : assetClassAllocationList) 
+        {
+            Long quantityMillis = allocation.getQuantityMillis();
+            
+            if (quantityMillis != null) 
+            {
+                totalMap.put(allocation.getRegion(),
+                        totalMap.get(allocation.getRegion()) + quantityMillis);
+            }
+        }
+        
+        System.out.println(totalMap);
+    }
+
+    public void calculateSectorQuantityMillisTotalMap() 
+    {
+        Map<Sector, Long> totalMap = new HashMap<>(regionList.size());
+        for (Sector sector : sectorList) 
+        {
+            totalMap.put(sector, 0L);
+        }
+        
+        for (AssetClassAllocation allocation : assetClassAllocationList) 
+        {
+            Long quantityMillis = allocation.getQuantityMillis();
+            
+            if (quantityMillis != null) 
+            {
+                totalMap.put(allocation.getSector(),
+                        totalMap.get(allocation.getSector()) + quantityMillis);
+            }
+            
+        }
+        
+        System.out.println(totalMap);
+    }
+}

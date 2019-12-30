@@ -1,0 +1,52 @@
+package org.optaplanner.examples.machinereassignment.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore;
+import org.optaplanner.persistence.xstream.api.score.buildin.hardsoftlong.HardSoftLongScoreXStreamConverter;
+
+import com.thoughtworks.xstream.annotations.XStreamConverter;
+
+public class MachineReassignmentTest {
+    private MrGlobalPenaltyInfo globalPenaltyInfo;
+    private List<MrResource> resourceList;
+    private List<MrNeighborhood> neighborhoodList;
+    private List<MrLocation> locationList;
+    private List<MrMachine> machineList;
+    private List<MrMachineCapacity> machineCapacityList;
+    private List<MrService> serviceList;
+    private List<MrProcess> processList;
+    private List<MrBalancePenalty> balancePenaltyList;
+    private List<MrProcessAssignment> processAssignmentList;
+
+    @XStreamConverter(HardSoftLongScoreXStreamConverter.class)
+    private HardSoftLongScore score;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

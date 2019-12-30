@@ -1,0 +1,98 @@
+package org.optaplanner.examples.machinereassignment.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class MrBalancePenaltyTest 
+{
+    private MrResource originResource;
+    private MrResource targetResource;
+    private int multiplicand;
+    private int weight;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		MrBalancePenalty mbp = new MrBalancePenalty();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		MrBalancePenalty mbp = new MrBalancePenalty();
+		mbp = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		MrBalancePenalty mbp = new MrBalancePenalty();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		MrBalancePenalty mbp = new MrBalancePenalty();
+		mbp = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+    public void testgetOriginResource() 
+	{
+        System.out.println(originResource);
+    }
+
+	@Test
+    public void testsetOriginResource() 
+	{
+        this.originResource = originResource;
+    }
+
+	@Test
+    public void testgetTargetResource() 
+	{
+    	System.out.println(targetResource);
+    }
+
+	@Test
+    public void testsetTargetResource() 
+	{
+        this.targetResource = targetResource;
+    }
+
+	@Test
+    public void testgetMultiplicand() 
+	{
+    	System.out.println(multiplicand);
+    }
+
+	@Test
+    public void testsetMultiplicand() 
+	{
+        this.multiplicand = multiplicand;
+    }
+
+	@Test
+    public void testgetWeight() 
+	{
+    	System.out.println(weight);
+    }
+
+	@Test
+    public void testsetWeight() 
+	{
+        this.weight = weight;
+    }
+}

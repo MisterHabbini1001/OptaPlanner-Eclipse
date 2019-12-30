@@ -1,0 +1,58 @@
+package org.optaplanner.examples.pas.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.score.buildin.hardmediumsoft.HardMediumSoftScore;
+import org.optaplanner.persistence.xstream.api.score.buildin.hardmediumsoft.HardMediumSoftScoreXStreamConverter;
+
+import com.thoughtworks.xstream.annotations.XStreamConverter;
+
+public class PatientAdmissionScheduleTest {
+    private List<Specialism> specialismList;
+    private List<Equipment> equipmentList;
+    private List<Department> departmentList;
+    private List<DepartmentSpecialism> departmentSpecialismList;
+    private List<Room> roomList;
+    private List<RoomSpecialism> roomSpecialismList;
+    private List<RoomEquipment> roomEquipmentList;
+    private List<Bed> bedList;
+    private List<Night> nightList;
+    private List<Patient> patientList;
+    private List<AdmissionPart> admissionPartList;
+    private List<RequiredPatientEquipment> requiredPatientEquipmentList;
+    private List<PreferredPatientEquipment> preferredPatientEquipmentList;
+    private List<BedDesignation> bedDesignationList;
+
+    @XStreamConverter(HardMediumSoftScoreXStreamConverter.class)
+    private HardMediumSoftScore score;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+}

@@ -1,0 +1,75 @@
+package org.optaplanner.examples.coachshuttlegathering.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.examples.coachshuttlegathering.domain.location.RoadLocation;
+
+public class CoachTest 
+{
+    protected int stopLimit;
+    protected BusHub destination;
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+    */ 
+     
+	public void getStopLimit() 
+	{
+        System.out.println(stopLimit);
+    }
+
+    public void setStopLimit(int stopLimit) {
+        this.stopLimit = stopLimit;
+    }
+
+    public void setDestination(BusHub destination) {
+        this.destination = destination;
+    }
+
+    @Override
+    public int getSetupCost() {
+        return 0;
+    }
+
+    @Override
+    public int getDistanceFromTo(RoadLocation sourceLocation, RoadLocation targetLocation) {
+        return sourceLocation.getCoachDistanceTo(targetLocation);
+    }
+
+    @Override
+    public int getDurationFromTo(RoadLocation sourceLocation, RoadLocation targetLocation) {
+        return sourceLocation.getCoachDurationTo(targetLocation);
+    }
+
+    @Override
+    public StopOrHub getDestination() {
+        return destination;
+    }
+
+    public int getDistanceToDestinationCost() {
+        return getDistanceFromTo(departureLocation, destination.getLocation()) * getMileageCost();
+    }
+}

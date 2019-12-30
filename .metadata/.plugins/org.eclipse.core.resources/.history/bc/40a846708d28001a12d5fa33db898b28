@@ -1,0 +1,83 @@
+package org.optaplanner.examples.cheaptime.domain;
+
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class MachineTest {
+    private int index;
+    private long powerConsumptionMicros; 
+    private long spinUpDownCostMicros; 
+    private List<MachineCapacity> machineCapacityList;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
+
+    public long getPowerConsumptionMicros() {
+        return powerConsumptionMicros;
+    }
+
+    public void setPowerConsumptionMicros(long powerConsumptionMicros) {
+        this.powerConsumptionMicros = powerConsumptionMicros;
+    }
+
+    public long getSpinUpDownCostMicros() {
+        return spinUpDownCostMicros;
+    }
+
+    public void setSpinUpDownCostMicros(long spinUpDownCostMicros) {
+        this.spinUpDownCostMicros = spinUpDownCostMicros;
+    }
+
+    public List<MachineCapacity> getMachineCapacityList() {
+        return machineCapacityList;
+    }
+
+    public void setMachineCapacityList(List<MachineCapacity> machineCapacityList) {
+        this.machineCapacityList = machineCapacityList;
+    }
+
+    public MachineCapacity getMachineCapacity(Resource resource) {
+        return machineCapacityList.get(resource.getIndex());
+    }
+
+    // ************************************************************************
+    // Complex methods
+    // ************************************************************************
+
+    public String getLabel() {
+        return "Machine " + id;
+    }
+}

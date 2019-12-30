@@ -1,0 +1,67 @@
+package org.optaplanner.examples.pas.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class RoomEquipmentTest {
+    private Room room;
+    private Equipment equipment;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		RoomEquipment re = new RoomEquipment();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		RoomEquipment re = new RoomEquipment();
+		re = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		RoomEquipment re = new RoomEquipment();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		RoomEquipment re = new RoomEquipment();
+		re = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public void getRoom() {
+        System.out.println(room);
+    }
+
+    public void setRoom() {
+        this.room = room;
+    }
+
+    public void getEquipment() {
+    	System.out.println(equipment);
+    }
+
+    public void setEquipment() {
+        this.equipment = equipment;
+    }
+
+    public void toString() {
+    	System.out.println(room + "-" + equipment);
+    }
+}

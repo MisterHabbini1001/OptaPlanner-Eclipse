@@ -1,0 +1,124 @@
+package org.optaplanner.examples.tennis.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
+import org.optaplanner.core.api.domain.solution.PlanningScore;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactCollectionProperty;
+import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
+import org.optaplanner.core.api.score.buildin.hardmediumsoft.HardMediumSoftScore;
+
+public class TennisSolutionTest 
+{
+    private List<Team> teamList;
+    private List<Day> dayList;
+    private List<UnavailabilityPenalty> unavailabilityPenaltyList;
+    private List<TeamAssignment> teamAssignmentList;
+    private HardMediumSoftScore score;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		TennisSolution ts = new TennisSolution();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		TennisSolution ts = new TennisSolution();
+		ts = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		TennisSolution ts = new TennisSolution();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		TennisSolution ts = new TennisSolution();
+		ts = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+	@ValueRangeProvider(id = "teamRange")
+    @ProblemFactCollectionProperty
+    public List<Team> testgetTeamList() 
+	{
+        return teamList;
+    }
+
+	@Test
+    public void testsetTeamList() 
+	{
+        this.teamList = teamList;
+    }
+
+	@Test
+    @ProblemFactCollectionProperty
+    public List<Day> testgetDayList() 
+	{
+        return dayList;
+    }
+
+	@Test
+    public void testsetDayList(List<Day> dayList) 
+	{
+        this.dayList = dayList;
+    }
+
+	@Test
+    @ProblemFactCollectionProperty
+    public List<UnavailabilityPenalty> testgetUnavailabilityPenaltyList() 
+	{
+        return unavailabilityPenaltyList;
+    }
+
+	@Test
+    public void testsetUnavailabilityPenaltyList() 
+	{
+        this.unavailabilityPenaltyList = unavailabilityPenaltyList;
+    }
+
+	@Test
+    @PlanningEntityCollectionProperty
+    public List<TeamAssignment> testgetTeamAssignmentList() 
+	{
+        return teamAssignmentList;
+    }
+
+	@Test
+    public void testsetTeamAssignmentList() 
+	{
+        this.teamAssignmentList = teamAssignmentList;
+    }
+
+	@Test
+    @PlanningScore
+    public HardMediumSoftScore testgetScore() 
+	{
+        return score;
+    }
+
+	@Test
+    public void testsetScore() 
+	{
+        this.score = score;
+    }
+}

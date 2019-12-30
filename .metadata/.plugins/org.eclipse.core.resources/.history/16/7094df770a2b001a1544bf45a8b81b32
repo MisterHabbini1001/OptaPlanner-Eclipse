@@ -1,0 +1,151 @@
+package org.optaplanner.examples.pas.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class RoomTest {
+    private String name;
+    private Department department;
+    private int capacity;
+    private GenderLimitation genderLimitation;
+    private List<RoomSpecialism> roomSpecialismList;
+    private List<RoomEquipment> roomEquipmentList;
+    private List<Bed> bedList;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		Room r = new Room();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		Room r = new Room();
+		r = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		Room r = new Room();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		Room r = new Room();
+		r = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	public String getName() {
+        System.out.println(name);
+    }
+
+    public void setName() {
+        this.name = name;
+    }
+
+    public void getDepartment() {
+    	System.out.println(department);
+    }
+
+    public void setDepartment() {
+        this.department = department;
+    }
+
+    public void getCapacity() {
+    	System.out.println(capacity);
+    }
+
+    public void setCapacity() {
+        this.capacity = capacity;
+    }
+
+    public void getGenderLimitation() {
+    	System.out.println(genderLimitation);
+    }
+
+    public void setGenderLimitation() {
+        this.genderLimitation = genderLimitation;
+    }
+
+    public void getRoomSpecialismList() {
+    	System.out.println(roomSpecialismList);
+    }
+
+    public void setRoomSpecialismList() {
+        this.roomSpecialismList = roomSpecialismList;
+    }
+
+    public void getRoomEquipmentList() {
+    	System.out.println(roomEquipmentList);
+    }
+
+    public void setRoomEquipmentList() {
+        this.roomEquipmentList = roomEquipmentList;
+    }
+
+    public void getBedList() {
+    	System.out.println(bedList);
+    }
+
+    public void setBedList() {
+        this.bedList = bedList;
+    }
+
+    public void countHardDisallowedAdmissionPart() {
+    	System.out.println(0);
+    }
+
+    public void countMissingRequiredRoomProperties() {
+    	System.out.println(0);
+    }
+
+    public void countDisallowedPatientGender() {
+        switch (genderLimitation) {
+            case ANY_GENDER:
+            	System.out.println(0);
+            case MALE_ONLY:
+            	System.out.println(0);
+            case FEMALE_ONLY:
+            	System.out.println(0);
+            case SAME_GENDER:
+                // scoreRules check this
+            	System.out.println(1);
+            default:
+                throw new IllegalStateException("The genderLimitation (" + genderLimitation + ") is not implemented.");
+        }
+    }
+
+    public void countSoftDisallowedAdmissionPart(AdmissionPart admissionPart) {
+    	System.out.println(0);
+        // TODO preferredMaximumRoomCapacity and specialism
+    }
+
+    public void countMissingPreferredRoomProperties() {
+    	System.out.println(0);
+    }
+
+    public void getLabel() {
+    	System.out.println(name);
+    }
+
+    public void toString() {
+    	System.out.println(name);
+    }
+}

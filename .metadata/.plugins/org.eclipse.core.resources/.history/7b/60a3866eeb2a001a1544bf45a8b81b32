@@ -1,0 +1,93 @@
+package org.optaplanner.examples.tsp.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.variable.PlanningVariable;
+import org.optaplanner.core.api.domain.variable.PlanningVariableGraphType;
+import org.optaplanner.examples.tsp.domain.location.Location;
+import org.optaplanner.examples.tsp.domain.solver.DomicileDistanceStandstillStrengthWeightFactory;
+
+public class VisitTest 
+{
+    private Location location;
+    private Standstill previousStandstill;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		Visit vi = new Visit();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		Visit vi = new Visit();
+		vi = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		Visit vi = new Visit();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		Visit vi = new Visit();
+		vi = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public void getLocation() {
+        System.out.println(location);
+    }
+
+    public void setLocation() {
+        this.location = location;
+    }
+
+    @PlanningVariable(valueRangeProviderRefs = {"domicileRange", "visitRange"},
+            graphType = PlanningVariableGraphType.CHAINED,
+            strengthWeightFactoryClass = DomicileDistanceStandstillStrengthWeightFactory.class)
+    public void getPreviousStandstill() {
+    	System.out.println(previousStandstill);
+    }
+
+    public void setPreviousStandstill() {
+        this.previousStandstill = previousStandstill;
+    }
+
+    public void getDistanceFromPreviousStandstill() {
+        if (previousStandstill == null) {
+        	System.out.println(0L);
+        }
+        System.out.println(0L);
+    }
+
+    public void getDistanceFrom() {
+    	System.out.println(0L);
+    }
+
+    public void getDistanceTo() {
+    	System.out.println(0L);
+    }
+
+    public String toString() {
+        if (location.getName() == null) {
+        	System.out.println(super.toString());
+        }
+        System.out.println(location.getName());
+    }
+}

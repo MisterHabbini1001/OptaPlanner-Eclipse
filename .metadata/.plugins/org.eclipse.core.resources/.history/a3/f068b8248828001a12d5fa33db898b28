@@ -1,0 +1,100 @@
+package org.optaplanner.examples.nqueens.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.variable.PlanningVariable;
+import org.optaplanner.examples.nqueens.domain.solution.RowStrengthWeightFactory;
+
+public class QueenTest 
+{
+    private Column column;
+    private Row row;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		Queen q = new Queen();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		Queen q = new Queen();
+		q = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		Queen q = new Queen();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		Queen q = new Queen();
+		q = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+    public void testgetColumn() {
+        System.out.println(column);
+    }
+
+	@Test
+    public void testsetColumn(Column column) {
+        this.column = column;
+    }
+
+	@Test
+    @PlanningVariable(valueRangeProviderRefs = {"rowRange"},
+            strengthWeightFactoryClass = RowStrengthWeightFactory.class)
+    public void testgetRow() {
+    	System.out.println(row);
+    }
+
+	@Test
+    public void testsetRow(Row row) {
+        this.row = row;
+    }
+
+	@Test
+    public void testgetColumnIndex() {
+    	System.out.println(column.getIndex());
+    }
+	
+	@Test
+    public void testgetRowIndex() {
+        if (row == null) {
+        	System.out.println(Integer.MIN_VALUE);
+        }
+        System.out.println(row.getIndex());
+    }
+
+	@Test
+    public void testgetAscendingDiagonalIndex() {
+    	System.out.println(0);
+    }
+
+	@Test
+    public void testgetDescendingDiagonalIndex() {
+    	System.out.println(0);
+    }
+
+	@Test
+    public void testtoString() {
+    	System.out.println("Queen-" + column.getIndex());
+    }
+}

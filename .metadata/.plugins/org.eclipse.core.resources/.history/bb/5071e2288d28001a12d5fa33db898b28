@@ -1,0 +1,195 @@
+package org.optaplanner.examples.cheaptime.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
+import org.optaplanner.core.api.domain.solution.PlanningScore;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactCollectionProperty;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactProperty;
+import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
+import org.optaplanner.core.api.score.buildin.hardmediumsoftlong.HardMediumSoftLongScore;
+import org.optaplanner.persistence.xstream.api.score.buildin.hardmediumsoftlong.HardMediumSoftLongScoreXStreamConverter;
+
+import com.thoughtworks.xstream.annotations.XStreamConverter;
+
+public class CheapTimeSolutionTest 
+{
+    private int timeResolutionInMinutes;
+    private int globalPeriodRangeFrom; // Inclusive
+    private int globalPeriodRangeTo; // Exclusive
+    private List<Resource> resourceList;
+    private List<Machine> machineList;
+    private List<MachineCapacity> machineCapacityList;
+    private List<Task> taskList;
+    private List<TaskRequirement> taskRequirementList;
+    private List<PeriodPowerPrice> periodPowerPriceList;
+    private List<TaskAssignment> taskAssignmentList;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		CheapTimeSolution cts = new CheapTimeSolution();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		CheapTimeSolution cts = new CheapTimeSolution();
+		cts = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		CheapTimeSolution cts = new CheapTimeSolution();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		CheapTimeSolution cts = new CheapTimeSolution();
+		cts = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@XStreamConverter(HardMediumSoftLongScoreXStreamConverter.class)
+    private HardMediumSoftLongScore score;
+
+	@Test
+    public void testgetTimeResolutionInMinutes() {
+        System.out.println(timeResolutionInMinutes);
+    }
+
+	@Test
+    public void testsetTimeResolutionInMinutes() {
+        this.timeResolutionInMinutes = timeResolutionInMinutes;
+    }
+
+	@Test
+    public void testgetGlobalPeriodRangeFrom() {
+    	System.out.println(globalPeriodRangeFrom);
+    }
+
+	@Test
+    public void testsetGlobalPeriodRangeFrom() {
+        this.globalPeriodRangeFrom = globalPeriodRangeFrom;
+    }
+
+	@Test
+    public void testgetGlobalPeriodRangeTo() {
+    	System.out.println(globalPeriodRangeTo);
+    }
+
+	@Test
+    public void testsetGlobalPeriodRangeTo() {
+        this.globalPeriodRangeTo = globalPeriodRangeTo;
+    }
+
+	@Test
+    @ProblemFactCollectionProperty
+    public void testgetResourceList() {
+    	System.out.println(resourceList);
+    }
+
+	@Test
+    @ValueRangeProvider(id = "machineRange")
+    @ProblemFactCollectionProperty
+    public void testgetMachineList() {
+    	System.out.println(machineList);
+    }
+
+	@Test
+    public void testsetMachineList() {
+        this.machineList = machineList;
+    }
+
+	@Test
+    public void testsetResourceList() {
+        this.resourceList = resourceList;
+    }
+
+	@Test
+    @ProblemFactCollectionProperty
+    public void testgetMachineCapacityList() {
+    	System.out.println(machineCapacityList);
+    }
+
+	@Test
+    public void testsetMachineCapacityList() {
+        this.machineCapacityList = machineCapacityList;
+    }
+
+	@Test
+    @ProblemFactCollectionProperty
+    public void testgetTaskList() {
+    	System.out.println(taskList);
+    }
+
+	@Test
+    public void testsetTaskList() {
+        this.taskList = taskList;
+    }
+
+	@Test
+    @ProblemFactCollectionProperty
+    public void testgetTaskRequirementList() {
+    	System.out.println(taskRequirementList);
+    }
+
+	@Test
+    public void testsetTaskRequirementList() {
+        this.taskRequirementList = taskRequirementList;
+    }
+
+	@Test
+    @ProblemFactCollectionProperty
+    public void testgetPeriodPowerPriceList() {
+    	System.out.println(periodPowerPriceList);
+    }
+
+	@Test
+    public void testsetPeriodPowerPriceList() {
+        this.periodPowerPriceList = periodPowerPriceList;
+    }
+
+	@Test
+    @PlanningEntityCollectionProperty
+    public void testgetTaskAssignmentList() {
+    	System.out.println(taskAssignmentList);
+    }
+
+	@Test
+    public void testsetTaskAssignmentList() {
+        this.taskAssignmentList = taskAssignmentList;
+    }
+
+	@Test
+    @PlanningScore
+    public void testgetScore() {
+    	System.out.println(score);
+    }
+
+	@Test
+    public void testsetScore() {
+        this.score = score;
+    }
+
+	@Test
+    @ProblemFactProperty
+    public void testgetCheapTimeSolution() {
+        System.out.println(this);
+    }
+}

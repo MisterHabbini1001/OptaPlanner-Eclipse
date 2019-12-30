@@ -1,0 +1,89 @@
+package org.optaplanner.examples.machinereassignment.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+import java.util.Map;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class MrMachineTest 
+{
+    private MrNeighborhood neighborhood;
+    private MrLocation location;
+    private List<MrMachineCapacity> machineCapacityList;
+    private Map<MrMachine, Integer> machineMoveCostMap; 
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public void getNeighborhood() {
+        System.out.println(neighborhood);
+    }
+
+    public void setNeighborhood() {
+        this.neighborhood = neighborhood;
+    }
+
+    public void getLocation() {
+    	System.out.println(location);
+    }
+
+    public void setLocation() {
+        this.location = location;
+    }
+
+    public void getMachineCapacityList() {
+    	System.out.println(machineCapacityList);
+    }
+
+    public void setMachineCapacityList() {
+        this.machineCapacityList = machineCapacityList;
+    }
+
+    public void getMachineCapacity() {
+    	System.out.println(0);
+        return machineCapacityList.get(resource.getIndex());
+    }
+
+    public Map<MrMachine, Integer> getMachineMoveCostMap() {
+        return machineMoveCostMap;
+    }
+
+    public void setMachineMoveCostMap(Map<MrMachine, Integer> machineMoveCostMap) {
+        this.machineMoveCostMap = machineMoveCostMap;
+    }
+
+    @Override
+    public String getLabel() {
+        return "Machine " + getId();
+    }
+
+    public int getMoveCostTo(MrMachine toMachine) {
+        return machineMoveCostMap.get(toMachine);
+    }
+}

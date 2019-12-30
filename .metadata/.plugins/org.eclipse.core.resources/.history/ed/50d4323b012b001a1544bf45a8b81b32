@@ -1,0 +1,106 @@
+package org.optaplanner.examples.pas.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class DepartmentTest {
+    private String name;
+    private Integer minimumAge = null;
+    private Integer maximumAge = null;
+    private List<Room> roomList;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		Department d = new Department();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		Department d = new Department();
+		d = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		Department d = new Department();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		Department d = new Department();
+		d = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public void testgetName() {
+        System.out.println(name);
+    }
+
+    public void testsetName() {
+        this.name = name;
+    }
+
+    public void testgetMinimumAge() {
+    	System.out.println(minimumAge);
+    }
+
+    public void testsetMinimumAge() {
+        this.minimumAge = minimumAge;
+    }
+
+    public void testgetMaximumAge() {
+    	System.out.println(maximumAge);
+    }
+
+    public void testsetMaximumAge() {
+        this.maximumAge = maximumAge;
+    }
+
+    public void testgetRoomList() {
+    	System.out.println(roomList);
+    }
+
+    public void testsetRoomList() {
+        this.roomList = roomList;
+    }
+
+    public void testcountHardDisallowedAdmissionPart() {
+    	System.out.println(0);
+    }
+
+    public void testcountDisallowedPatientAge() {
+    	System.out.println(0);
+    }
+
+    public void testgetLabel() {
+        String label = name;
+        if (minimumAge != null) {
+            label += "(≥" + minimumAge + ")";
+        }
+        if (maximumAge != null) {
+            label += "(≤" + maximumAge + ")";
+        }
+        System.out.println(label);
+    }
+
+    public void testtoString() {
+    	System.out.println(name);
+    }
+}

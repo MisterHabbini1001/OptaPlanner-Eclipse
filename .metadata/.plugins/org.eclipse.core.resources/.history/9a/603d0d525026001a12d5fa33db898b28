@@ -1,0 +1,125 @@
+package org.optaplanner.examples.scrabble.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.variable.PlanningVariable;
+
+public class ScrabbleWordAssignmentTest {
+    private ScrabbleSolution solution;
+    private String word;
+
+    @PlanningVariable(valueRangeProviderRefs = {"startCellRange"})
+    private ScrabbleCell startCell;
+    @PlanningVariable(valueRangeProviderRefs = {"directionRange"})
+    private ScrabbleWordDirection direction;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+	public ScrabbleSolution getSolution() {
+        return solution;
+    }
+
+    public void setSolution(ScrabbleSolution solution) {
+        this.solution = solution;
+    }
+
+    public String getWord() {
+        return word;
+    }
+
+    public void setWord(String word) {
+        this.word = word;
+    }
+
+    public ScrabbleCell getStartCell() {
+        return startCell;
+    }
+
+    public void setStartCell(ScrabbleCell startCell) {
+        this.startCell = startCell;
+    }
+
+    public ScrabbleWordDirection getDirection() {
+        return direction;
+    }
+
+    public void setDirection(ScrabbleWordDirection direction) {
+        this.direction = direction;
+    }
+
+    // ************************************************************************
+    // Complex methods
+    // ************************************************************************
+
+    public String getLabel() {
+        return word;
+    }
+
+    public boolean isOutOfGrid() {
+        if (direction == null || startCell == null) {
+            return false;
+        }
+        switch (direction) {
+            case HORIZONTAL:
+                return startCell.getX() + word.length() > solution.getGridWidth();
+            case VERTICAL:
+                return startCell.getY() + word.length() > solution.getGridHeight();
+            default:
+                throw new IllegalStateException("The direction (" + direction + ") is not implemented.");
+        }
+    }
+
+    /**
+     * @return manhattan distance
+     */
+    public int getDistanceToCenter() {
+        if (direction == null || startCell == null) {
+            return 0;
+        }
+        int centerX = solution.getGridWidth() / 2;
+        int centerY = solution.getGridHeight() / 2;
+        int x;
+        int y;
+        switch (direction) {
+            case HORIZONTAL:
+                x = startCell.getX() + word.length() / 2;
+                y = startCell.getY();
+                break;
+            case VERTICAL:
+                x = startCell.getX();
+                y = startCell.getY() + word.length() / 2;
+                break;
+            default:
+                throw new IllegalStateException("The direction (" + direction + ") is not implemented.");
+        }
+        return Math.abs(centerX - x) + Math.abs(centerY - y);
+    }
+
+    @Override
+    public String toString() {
+        return word;
+    }
+}

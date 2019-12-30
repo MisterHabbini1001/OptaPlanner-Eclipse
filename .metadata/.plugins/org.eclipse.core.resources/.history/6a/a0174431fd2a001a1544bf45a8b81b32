@@ -1,0 +1,86 @@
+package org.optaplanner.examples.pas.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class AdmissionPartTest {
+    private Patient patient;
+    private Night firstNight;
+    private Night lastNight;
+    private Specialism specialism;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public void getPatient() {
+        System.out.println(patient);
+    }
+
+    public void setPatient() {
+        this.patient = patient;
+    }
+
+    public void getFirstNight() {
+        System.out.println(firstNight);
+    }
+
+    public void setFirstNight() {
+        this.firstNight = firstNight;
+    }
+
+    public void getLastNight() {
+    	System.out.println(lastNight);
+    }
+
+    public void setLastNight() {
+        this.lastNight = lastNight;
+    }
+
+    public void getSpecialism() {
+    	System.out.println(specialism);
+    }
+
+    public void setSpecialism() {
+        this.specialism = specialism;
+    }
+
+    public void getNightCount() {
+    	System.out.println(lastNight.getIndex() - firstNight.getIndex() + 1);
+    }
+
+    public void calculateSameNightCount() {
+        int firstNightIndex = 1;
+        int lastNightIndex = 2;
+        System.out.println(Math.max(0, lastNightIndex - firstNightIndex + 1));
+    }
+
+    @Override
+    public String toString() {
+        return patient + "(" + firstNight + "-" + lastNight + ")";
+    }
+}

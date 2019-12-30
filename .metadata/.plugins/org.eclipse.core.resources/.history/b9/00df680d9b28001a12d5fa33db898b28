@@ -1,0 +1,138 @@
+package org.optaplanner.examples.cheaptime.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class TaskTest 
+{
+    private long powerConsumptionMicros;
+    private int duration;
+    private int startPeriodRangeFrom; 
+    private int startPeriodRangeTo; 
+    private List<TaskRequirement> taskRequirementList;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		Task t = new Task();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		Task t = new Task();
+		t = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		Task t = new Task();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		Task t = new Task();
+		t = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+    public void getPowerConsumptionMicros() 
+    {
+        System.out.println(powerConsumptionMicros);
+    }
+
+	@Test
+    public void setPowerConsumptionMicros() 
+    {
+        this.powerConsumptionMicros = powerConsumptionMicros;
+    }
+
+	@Test
+    public void getDuration() 
+    {
+    	System.out.println(duration);
+    }
+
+	@Test
+    public void setDuration() 
+    {
+        this.duration = duration;
+    }
+
+	@Test
+    public void getStartPeriodRangeFrom() 
+    {
+    	System.out.println(startPeriodRangeFrom);
+    }
+
+	@Test
+    public void setStartPeriodRangeFrom() 
+    {
+        this.startPeriodRangeFrom = startPeriodRangeFrom;
+    }
+
+	@Test
+    public void getStartPeriodRangeTo() 
+    {
+    	System.out.println(startPeriodRangeTo);
+    }
+
+	@Test
+    public void setStartPeriodRangeTo() 
+    {
+        this.startPeriodRangeTo = startPeriodRangeTo;
+    }
+
+	@Test
+    public void getTaskRequirementList() 
+    {
+    	System.out.println(taskRequirementList);
+    }
+
+	@Test
+    public void setTaskRequirementList() 
+    {
+        this.taskRequirementList = taskRequirementList;
+    }
+
+	@Test
+    public void getUsage() 
+    {
+    	System.out.println(0);
+    }
+
+	@Test
+    public void getResourceUsageMultiplicand() 
+    {
+        int multiplicand = 1;
+        
+        for (TaskRequirement taskRequirement : taskRequirementList) 
+        {
+            multiplicand *= taskRequirement.getResourceUsage();
+        }
+        
+        System.out.println(multiplicand);
+    }
+
+	@Test
+    public void getLabel() 
+    {
+    	System.out.println("Task");
+    }
+}

@@ -1,0 +1,48 @@
+package org.optaplanner.examples.investment.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore;
+import org.optaplanner.persistence.xstream.api.score.buildin.hardsoftlong.HardSoftLongScoreXStreamConverter;
+
+import com.thoughtworks.xstream.annotations.XStreamConverter;
+
+public class InvestmentSolutionTest 
+{
+    private InvestmentParametrization parametrization;
+    private List<Region> regionList;
+    private List<Sector> sectorList;
+    private List<AssetClass> assetClassList;
+    private List<AssetClassAllocation> assetClassAllocationList;
+
+    @XStreamConverter(HardSoftLongScoreXStreamConverter.class)
+    private HardSoftLongScore score;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

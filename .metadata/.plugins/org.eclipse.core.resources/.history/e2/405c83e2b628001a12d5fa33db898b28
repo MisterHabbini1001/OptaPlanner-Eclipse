@@ -1,0 +1,206 @@
+package org.optaplanner.examples.coachshuttlegathering.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.variable.AnchorShadowVariable;
+import org.optaplanner.core.api.domain.variable.CustomShadowVariable;
+import org.optaplanner.core.api.domain.variable.PlanningVariable;
+import org.optaplanner.core.api.domain.variable.PlanningVariableGraphType;
+import org.optaplanner.core.api.domain.variable.PlanningVariableReference;
+import org.optaplanner.examples.coachshuttlegathering.domain.location.RoadLocation;
+import org.optaplanner.examples.coachshuttlegathering.domain.solver.TransportTimeToHubUpdatingVariableListener;
+
+public class BusStopTest 
+{
+    protected String name;
+    protected RoadLocation location;
+    protected int passengerQuantity;
+    protected int transportTimeLimit;
+    protected BusOrStop previousBusOrStop;
+    protected BusStop nextStop;
+    protected Bus bus;
+    protected List<Shuttle> transferShuttleList;
+    protected Integer transportTimeToHub;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public void testgetName() 
+    {
+        System.out.println(name);
+    }
+
+    public void testsetName() 
+    {
+        this.name = name;
+    }
+
+    public void testgetLocation() 
+    {
+    	System.out.println(location);
+    }
+
+    public void testsetLocation() 
+    {
+        this.location = location;
+    }
+
+    public void testgetPassengerQuantity() 
+    {
+    	System.out.println(passengerQuantity);
+    }
+
+    public void testsetPassengerQuantity() 
+    {
+        this.passengerQuantity = passengerQuantity;
+    }
+
+    public void testgetTransportTimeLimit() 
+    {
+    	System.out.println(transportTimeLimit);
+    }
+
+    public void testsetTransportTimeLimit() 
+    {
+        this.transportTimeLimit = transportTimeLimit;
+    }
+
+    @PlanningVariable(valueRangeProviderRefs = {"coachRange", "shuttleRange", "stopRange"},
+            graphType = PlanningVariableGraphType.CHAINED)
+    public void testgetPreviousBusOrStop() 
+    {
+    	System.out.println(previousBusOrStop);
+    }
+
+    public void testsetPreviousBusOrStop() 
+    {
+        this.previousBusOrStop = previousBusOrStop;
+    }
+
+    public void testgetNextStop() 
+    {
+    	System.out.println(nextStop);
+    }
+
+    public void testsetNextStop() 
+    {
+        this.nextStop = nextStop;
+    }
+
+    @AnchorShadowVariable(sourceVariableName = "previousBusOrStop")
+    public void testgetBus() 
+    {
+    	System.out.println(bus);
+    }
+
+    public void testsetBus() 
+    {
+        this.bus = bus;
+    }
+
+    public void testgetTransferShuttleList() 
+    {
+    	System.out.println(transferShuttleList);
+    }
+
+    public void testsetTransferShuttleList() 
+    {
+        this.transferShuttleList = transferShuttleList;
+    }
+
+    @CustomShadowVariable(variableListenerClass = TransportTimeToHubUpdatingVariableListener.class,
+            sources = {@PlanningVariableReference(variableName = "nextStop"),
+                    @PlanningVariableReference(variableName = "bus"),
+                    @PlanningVariableReference(entityClass = Shuttle.class, variableName = "destination")})
+    public void testgetTransportTimeToHub() 
+    {
+    	System.out.println(transportTimeToHub);
+    }
+
+    public void testsetTransportTimeToHub() 
+    {
+        this.transportTimeToHub = transportTimeToHub;
+    }
+
+    public void testgetDistanceFromPreviousCost() 
+    {
+        if (previousBusOrStop == null) 
+        {
+        	System.out.println(0);
+        }
+        
+        System.out.println(0);
+    }
+
+    public void testgetDistanceFrom() 
+    {
+    	System.out.println(0);
+    }
+
+    public void testgetDistanceToDestinationCost() 
+    {
+    	System.out.println(0);
+    }
+
+    public void testisVisitedByCoach() 
+    {
+    	System.out.println(bus != null && bus instanceof Coach);
+    }
+
+    public void testgetTransportTimeRemainder() 
+    {
+        if (transportTimeToHub == null) 
+        {
+        	System.out.println();;
+        }
+        
+        if (passengerQuantity <= 0) 
+        {
+        	System.out.println(0);
+        }
+        
+        System.out.println(transportTimeLimit - transportTimeToHub);
+    }
+
+    public void testgetTransportLabel() 
+    {
+        if (passengerQuantity <= 0) 
+        {
+        	System.out.println();
+        }
+        
+        System.out.println((transportTimeToHub == null ? "inf" : transportTimeToHub.toString()) + "/" + transportTimeLimit);
+    }
+
+    public void testtoString() 
+    {
+    	System.out.println(name);
+    }
+}

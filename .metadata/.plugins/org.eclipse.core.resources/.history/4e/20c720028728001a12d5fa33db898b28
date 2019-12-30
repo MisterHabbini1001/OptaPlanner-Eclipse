@@ -1,0 +1,86 @@
+package org.optaplanner.examples.nqueens.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.variable.PlanningVariable;
+import org.optaplanner.examples.nqueens.domain.solution.RowStrengthWeightFactory;
+
+public class QueenTest 
+{
+    private Column column;
+    private Row row;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public Column getColumn() {
+        return column;
+    }
+
+    public void setColumn(Column column) {
+        this.column = column;
+    }
+
+    @PlanningVariable(valueRangeProviderRefs = {"rowRange"},
+            strengthWeightFactoryClass = RowStrengthWeightFactory.class)
+    public Row getRow() {
+        return row;
+    }
+
+    public void setRow(Row row) {
+        this.row = row;
+    }
+
+    // ************************************************************************
+    // Complex methods
+    // ************************************************************************
+
+    public int getColumnIndex() {
+        return column.getIndex();
+    }
+
+    public int getRowIndex() {
+        if (row == null) {
+            return Integer.MIN_VALUE;
+        }
+        return row.getIndex();
+    }
+
+    public int getAscendingDiagonalIndex() {
+        return (getColumnIndex() + getRowIndex());
+    }
+
+    public int getDescendingDiagonalIndex() {
+        return (getColumnIndex() - getRowIndex());
+    }
+
+    @Override
+    public String toString() {
+        return "Queen-" + column.getIndex();
+    }
+}

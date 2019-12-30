@@ -1,0 +1,161 @@
+package org.optaplanner.examples.cheaptime.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
+import org.optaplanner.core.api.domain.solution.PlanningScore;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactCollectionProperty;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactProperty;
+import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
+import org.optaplanner.core.api.score.buildin.hardmediumsoftlong.HardMediumSoftLongScore;
+import org.optaplanner.persistence.xstream.api.score.buildin.hardmediumsoftlong.HardMediumSoftLongScoreXStreamConverter;
+
+import com.thoughtworks.xstream.annotations.XStreamConverter;
+
+public class CheapTimeSolutionTest {
+    private int timeResolutionInMinutes;
+    private int globalPeriodRangeFrom; // Inclusive
+    private int globalPeriodRangeTo; // Exclusive
+    private List<Resource> resourceList;
+    private List<Machine> machineList;
+    private List<MachineCapacity> machineCapacityList;
+    private List<Task> taskList;
+    private List<TaskRequirement> taskRequirementList;
+    private List<PeriodPowerPrice> periodPowerPriceList;
+    private List<TaskAssignment> taskAssignmentList;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@XStreamConverter(HardMediumSoftLongScoreXStreamConverter.class)
+    private HardMediumSoftLongScore score;
+
+    public int getTimeResolutionInMinutes() {
+        System.out.println(timeResolutionInMinutes);
+    }
+
+    public void setTimeResolutionInMinutes() {
+        this.timeResolutionInMinutes = timeResolutionInMinutes;
+    }
+
+    public void getGlobalPeriodRangeFrom() {
+    	System.out.println(globalPeriodRangeFrom);
+    }
+
+    public void setGlobalPeriodRangeFrom() {
+        this.globalPeriodRangeFrom = globalPeriodRangeFrom;
+    }
+
+    public void getGlobalPeriodRangeTo() {
+    	System.out.println(globalPeriodRangeTo);
+    }
+
+    public void setGlobalPeriodRangeTo() {
+        this.globalPeriodRangeTo = globalPeriodRangeTo;
+    }
+
+    @ProblemFactCollectionProperty
+    public void getResourceList() {
+    	System.out.println(resourceList);
+    }
+
+    @ValueRangeProvider(id = "machineRange")
+    @ProblemFactCollectionProperty
+    public void getMachineList() {
+    	System.out.println(machineList);
+    }
+
+    public void setMachineList() {
+        this.machineList = machineList;
+    }
+
+    public void setResourceList() {
+        this.resourceList = resourceList;
+    }
+
+    @ProblemFactCollectionProperty
+    public void getMachineCapacityList() {
+    	System.out.println(machineCapacityList);
+    }
+
+    public void setMachineCapacityList() {
+        this.machineCapacityList = machineCapacityList;
+    }
+
+    @ProblemFactCollectionProperty
+    public void getTaskList() {
+    	System.out.println(taskList);
+    }
+
+    public void setTaskList() {
+        this.taskList = taskList;
+    }
+
+    @ProblemFactCollectionProperty
+    public void getTaskRequirementList() {
+    	System.out.println(taskRequirementList);
+    }
+
+    public void setTaskRequirementList(List<TaskRequirement> taskRequirementList) {
+        this.taskRequirementList = taskRequirementList;
+    }
+
+    @ProblemFactCollectionProperty
+    public List<PeriodPowerPrice> getPeriodPowerPriceList() {
+        return periodPowerPriceList;
+    }
+
+    public void setPeriodPowerPriceList(List<PeriodPowerPrice> periodPowerPriceList) {
+        this.periodPowerPriceList = periodPowerPriceList;
+    }
+
+    @PlanningEntityCollectionProperty
+    public List<TaskAssignment> getTaskAssignmentList() {
+        return taskAssignmentList;
+    }
+
+    public void setTaskAssignmentList(List<TaskAssignment> taskAssignmentList) {
+        this.taskAssignmentList = taskAssignmentList;
+    }
+
+    @PlanningScore
+    public HardMediumSoftLongScore getScore() {
+        return score;
+    }
+
+    public void setScore(HardMediumSoftLongScore score) {
+        this.score = score;
+    }
+
+    @ProblemFactProperty
+    public CheapTimeSolution getCheapTimeSolution() {
+        return this;
+    }
+}

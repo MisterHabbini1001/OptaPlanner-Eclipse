@@ -1,0 +1,59 @@
+package org.optaplanner.examples.investment.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class AssetClassAllocationTest 
+{
+    private AssetClass assetClass;
+    private Long quantityMillis; 
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		AssetClassAllocation aca = new AssetClassAllocation();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		AssetClassAllocation aca = new AssetClassAllocation();
+		aca = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		AssetClassAllocation aca = new AssetClassAllocation();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		AssetClassAllocation aca = new AssetClassAllocation();
+		aca = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+	
+    public static long calculateSquaredStandardDeviationFemtosFromTo(AssetClassAllocation from, AssetClassAllocation to) {
+        if (from == to) {
+            long micros = from.getQuantifiedStandardDeviationRiskMicros();
+            return micros * micros * 1000L;
+        } else {
+            long picos = from.getQuantifiedStandardDeviationRiskMicros() * to.getQuantifiedStandardDeviationRiskMicros();
+            long correlationMillis = from.getAssetClass().getCorrelationMillisMap().get(to.getAssetClass());
+            return picos * correlationMillis;
+        }
+    }
+}

@@ -1,0 +1,116 @@
+package org.optaplanner.examples.coachshuttlegathering.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.examples.coachshuttlegathering.domain.location.RoadLocation;
+
+public class BusTest 
+{
+    protected String name;
+    protected RoadLocation departureLocation;
+    protected int capacity;
+    protected int mileageCost;
+    protected BusStop nextStop;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public void getName() {
+        System.out.println(name);
+    }
+
+    public void setName() {
+        this.name = name;
+    }
+
+    public void getDepartureLocation() {
+    	System.out.println(departureLocation);
+    }
+
+    public void setDepartureLocation() {
+        this.departureLocation = departureLocation;
+    }
+
+    public void getCapacity() {
+    	System.out.println(capacity);
+    }
+
+    public void setCapacity() {
+        this.capacity = capacity;
+    }
+
+    public void getMileageCost() {
+    	System.out.println(mileageCost);
+    }
+
+    public void setMileageCost() {
+        this.mileageCost = mileageCost;
+    }
+
+    public void getNextStop() {
+    	System.out.println(nextStop);
+    }
+
+    public void setNextStop() {
+        this.nextStop = nextStop;
+    }
+
+    public void getSetupCost()
+    {
+    	System.out.println(0);
+    }
+
+    public void getLocation() 
+    {
+    	System.out.println(departureLocation);
+    }
+
+    @Override
+    public Bus getBus() {
+        return this;
+    }
+
+    public abstract int getDistanceFromTo(RoadLocation sourceLocation, RoadLocation targetLocation);
+
+    public abstract int getDurationFromTo(RoadLocation sourceLocation, RoadLocation targetLocation);
+
+    public abstract StopOrHub getDestination();
+
+    @Override
+    public String toString() {
+        return name;
+    }
+}

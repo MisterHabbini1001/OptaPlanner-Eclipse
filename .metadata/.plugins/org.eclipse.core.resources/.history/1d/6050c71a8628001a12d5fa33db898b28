@@ -1,0 +1,102 @@
+package org.optaplanner.examples.nqueens.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
+import org.optaplanner.core.api.domain.solution.PlanningScore;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactCollectionProperty;
+import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
+import org.optaplanner.core.api.score.buildin.simple.SimpleScore;
+
+public class NQueensTest 
+{
+    private int n;
+    private List<Column> columnList;
+    private List<Row> rowList;
+    private List<Queen> queenList;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+    public void testgetN() {
+        System.out.println(n);
+    }
+
+	@Test
+    public void testsetN() {
+        this.n = n;
+    }
+
+	@Test
+    @ProblemFactCollectionProperty
+    public void testgetColumnList() {
+		System.out.println(columnList);
+    }
+	
+	@Test
+    public void testsetColumnList(List<Column> columnList) {
+        this.columnList = columnList;
+    }
+
+	@Test
+    @ValueRangeProvider(id = "rowRange")
+    @ProblemFactCollectionProperty
+    public List<Row> testgetRowList() {
+        return rowList;
+    }
+
+	@Test
+    public void testsetRowList(List<Row> rowList) {
+        this.rowList = rowList;
+    }
+
+	@Test
+    @PlanningEntityCollectionProperty
+    public List<Queen> testgetQueenList() {
+        return queenList;
+    }
+
+	@Test
+    public void testsetQueenList(List<Queen> queenList) {
+        this.queenList = queenList;
+    }
+
+	@Test
+    @PlanningScore
+    public SimpleScore testgetScore() {
+        return score;
+    }
+
+	@Test
+    public void testsetScore(SimpleScore score) {
+        this.score = score;
+    }
+}

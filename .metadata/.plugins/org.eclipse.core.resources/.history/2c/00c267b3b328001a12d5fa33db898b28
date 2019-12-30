@@ -1,0 +1,135 @@
+package org.optaplanner.examples.coachshuttlegathering.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.examples.coachshuttlegathering.domain.location.RoadLocation;
+
+public class BusTest 
+{
+    protected String name;
+    protected RoadLocation departureLocation;
+    protected int capacity;
+    protected int mileageCost;
+    protected BusStop nextStop;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public void testgetName() 
+    {
+        System.out.println(name);
+    }
+
+    public void testsetName() 
+    {
+        this.name = name;
+    }
+
+    public void testgetDepartureLocation() 
+    {
+    	System.out.println(departureLocation);
+    }
+
+    public void testsetDepartureLocation() 
+    {
+        this.departureLocation = departureLocation;
+    }
+
+    public void testgetCapacity() 
+    {
+    	System.out.println(capacity);
+    }
+
+    public void testsetCapacity() 
+    {
+        this.capacity = capacity;
+    }
+
+    public void testgetMileageCost() 
+    {
+    	System.out.println(mileageCost);
+    }
+
+    public void testsetMileageCost() 
+    {
+        this.mileageCost = mileageCost;
+    }
+
+    public void testgetNextStop() 
+    {
+    	System.out.println(nextStop);
+    }
+
+    public void testsetNextStop() 
+    {
+        this.nextStop = nextStop;
+    }
+
+    public void testgetSetupCost()
+    {
+    	System.out.println(0);
+    }
+
+    public void testgetLocation() 
+    {
+    	System.out.println(departureLocation);
+    }
+
+    public void testgetBus() 
+    {
+    	System.out.println(this);
+    }
+
+    public void testgetDistanceFromTo()
+    {
+    	System.out.println(0);
+    }
+
+    public void testgetDurationFromTo()
+    {
+    	System.out.println(0);
+    }
+
+    public void testgetDestination()
+    {
+    	System.out.println(0);
+    }
+
+    public void testtoString() 
+    {
+    	System.out.println(name);
+    }
+}

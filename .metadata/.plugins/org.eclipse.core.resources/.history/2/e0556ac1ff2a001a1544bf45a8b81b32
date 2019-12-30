@@ -1,0 +1,121 @@
+package org.optaplanner.examples.pas.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.variable.PlanningVariable;
+import org.optaplanner.examples.pas.domain.solver.BedStrengthComparator;
+
+public class BedDesignationTest {
+    private AdmissionPart admissionPart;
+    private Bed bed;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	public void getAdmissionPart() {
+        System.out.println(admissionPart);
+    }
+
+    public void setAdmissionPart() {
+        this.admissionPart = admissionPart;
+    }
+
+    @PlanningVariable(nullable = true, valueRangeProviderRefs = {"bedRange"},
+            strengthComparatorClass = BedStrengthComparator.class)
+    public void getBed() {
+    	System.out.println(bed);
+    }
+
+    public void setBed() {
+        this.bed = bed;
+    }
+
+    public void getPatient() {
+    	System.out.println(admissionPart.getPatient());
+    }
+
+    public void getPatientGender() {
+    	System.out.println(admissionPart.getPatient().getGender());
+    }
+
+    public void getPatientAge() {
+    	System.out.println(admissionPart.getPatient().getAge());
+    }
+
+    public void getPatientPreferredMaximumRoomCapacity() {
+    	System.out.println(admissionPart.getPatient().getPreferredMaximumRoomCapacity());
+    }
+
+    public void getAdmissionPartSpecialism() {
+    	System.out.println(admissionPart.getSpecialism());
+    }
+
+    public void getFirstNightIndex() {
+    	System.out.println(admissionPart.getFirstNight().getIndex());
+    }
+
+    public void getLastNightIndex() {
+    	System.out.println(admissionPart.getLastNight().getIndex());
+    }
+
+    public void getAdmissionPartNightCount() {
+    	System.out.println(admissionPart.getNightCount());
+    }
+
+    public void getRoom() {
+        if (bed == null) {
+        	System.out.println(0);
+        }
+        System.out.println(bed.getRoom());
+    }
+
+    public void getRoomCapacity() {
+        if (bed == null) {
+        	System.out.println(Integer.MIN_VALUE);
+        }
+        System.out.println(bed.getRoom().getCapacity());
+    }
+
+    public void getDepartment() {
+        if (bed == null) {
+        	System.out.println();
+        }
+        System.out.println(bed.getRoom().getDepartment());
+    }
+
+    public void getRoomGenderLimitation() {
+        if (bed == null) {
+        	System.out.println();
+        }
+        System.out.println(bed.getRoom().getGenderLimitation());
+    }
+
+    public void toString() {
+    	System.out.println(admissionPart.toString());
+    }
+}

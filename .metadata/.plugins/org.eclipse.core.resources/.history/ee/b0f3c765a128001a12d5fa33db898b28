@@ -1,0 +1,90 @@
+package org.optaplanner.examples.cloudbalancing.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
+import org.optaplanner.core.api.domain.solution.PlanningScore;
+import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
+import org.optaplanner.persistence.xstream.api.score.buildin.hardsoft.HardSoftScoreXStreamConverter;
+
+import com.thoughtworks.xstream.annotations.XStreamConverter;
+
+public class CloudBalanceTest 
+{
+    private List<CloudComputer> computerList;
+    private List<CloudProcess> processList;
+    @XStreamConverter(HardSoftScoreXStreamConverter.class)
+    private HardSoftScore score;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		CloudBalance cb = new CloudBalance();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		CloudBalance cb = new CloudBalance();
+		cb = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		CloudBalance cb = new CloudBalance();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		CloudBalance cb = new CloudBalance();
+		cb = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+	
+	@Test
+    public void setComputerList() 
+	{
+        this.computerList = computerList;
+    }
+
+	@Test
+    @PlanningEntityCollectionProperty
+    public void getProcessList() 
+	{
+        System.out.println(processList);
+    }
+
+	@Test
+    public void setProcessList() 
+	{
+        this.processList = processList;
+    }
+
+	@Test
+    @PlanningScore
+    public void getScore() 
+	{
+		System.out.println(score);
+    }
+
+	@Test
+    public void setScore() 
+	{
+        this.score = score;
+    }
+}

@@ -1,0 +1,85 @@
+package org.optaplanner.examples.investment.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.examples.investment.domain.util.InvestmentNumericUtil;
+
+public class SectorTest 
+{
+    private String name;
+    private Long quantityMillisMaximum; 
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		Sector se = new Sector();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		Sector se = new Sector();
+		se = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		Sector se = new Sector();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		Sector se = new Sector();
+		se = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+    public String testgetName() 
+    {
+        return name;
+    }
+
+	@Test
+    public void testsetName(String name) 
+    {
+        this.name = name;
+    }
+
+	@Test
+    public Long testgetQuantityMillisMaximum() 
+    {
+        return quantityMillisMaximum;
+    }
+
+	@Test
+    public void testsetQuantityMillisMaximum(Long quantityMillisMaximum) 
+    {
+        this.quantityMillisMaximum = quantityMillisMaximum;
+    }
+
+	@Test
+    public String testgetQuantityMaximumLabel() 
+    {
+        return InvestmentNumericUtil.formatMillisAsPercentage(quantityMillisMaximum);
+    }
+
+	@Test
+    public String testtoString() 
+    {
+        return name;
+    }
+}

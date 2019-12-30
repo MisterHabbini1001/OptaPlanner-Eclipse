@@ -1,0 +1,68 @@
+package org.optaplanner.examples.pas.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class BedTest {
+    private Room room;
+    private int indexInRoom;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	public void testgetRoom() {
+        System.out.println(room);
+    }
+
+    public void testsetRoom() {
+        this.room = room;
+    }
+
+    public void testgetIndexInRoom() {
+    	System.out.println(indexInRoom);
+    }
+
+    public void testsetIndexInRoom() {
+        this.indexInRoom = indexInRoom;
+    }
+
+    public void testgetLabelInRoom() {
+        if (indexInRoom > 'Z') {
+        	System.out.println(Integer.toString(indexInRoom));
+        }
+        System.out.println(Character.toString((char) ('A' + indexInRoom)));
+    }
+
+    public void testgetLabel() {
+    	System.out.println(room.getDepartment().getName() + " " + room.getName());
+    }
+
+    public void testtoString() {
+    	System.out.println(room + "(" + indexInRoom + ")");
+    }
+}

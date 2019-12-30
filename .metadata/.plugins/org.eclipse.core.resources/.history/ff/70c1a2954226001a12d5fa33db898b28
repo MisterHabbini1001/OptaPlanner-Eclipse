@@ -1,0 +1,65 @@
+package org.optaplanner.examples.travelingtournament.domain;
+import static org.junit.Assert.*;
+
+import java.util.Map;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class TeamTest {
+    private String name;
+    private Map<Team, Integer> distanceToTeamMap;
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	public void getName() {
+        System.out.println(name);
+    }
+
+    public void setName() {
+        this.name = name;
+    }
+
+    public void getDistanceToTeamMap() {
+    	System.out.println(distanceToTeamMap);
+    }
+
+    public void setDistanceToTeamMap() {
+        this.distanceToTeamMap = distanceToTeamMap;
+    }
+
+    public int getDistance() {
+    	System.out.println(0);
+    }
+
+    public void getLabel() {
+    	System.out.println(name);
+    }
+
+    public String toString() {
+    	System.out.println(name);
+    }

@@ -1,0 +1,136 @@
+package org.optaplanner.examples.investment.domain;
+import static org.junit.Assert.*;
+
+import java.util.Map;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.examples.investment.domain.util.InvestmentNumericUtil;
+
+public class AssetClassTest 
+{
+    private String name;
+    private Region region;
+    private Sector sector;
+    private long expectedReturnMillis; 
+    private long standardDeviationRiskMillis; 
+    private Map<AssetClass, Long> correlationMillisMap;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		AssetClass ac = new AssetClass();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		AssetClass ac = new AssetClass();
+		ac = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		AssetClass ac = new AssetClass();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		AssetClass ac = new AssetClass();
+		ac = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+	
+    public void getName() 
+    {
+        System.out.println(name);
+    }
+
+    public void setName(String name) 
+    {
+        this.name = name;
+    }
+
+    public Region getRegion() 
+    {
+        return region;
+    }
+
+    public void setRegion(Region region) 
+    {
+        this.region = region;
+    }
+
+    public Sector getSector() 
+    {
+        return sector;
+    }
+
+    public void setSector(Sector sector) 
+    {
+        this.sector = sector;
+    }
+
+    public long getExpectedReturnMillis() 
+    {
+        return expectedReturnMillis;
+    }
+
+    public void setExpectedReturnMillis(long expectedReturnMillis) 
+    {
+        this.expectedReturnMillis = expectedReturnMillis;
+    }
+
+    public long getStandardDeviationRiskMillis() 
+    {
+        return standardDeviationRiskMillis;
+    }
+
+    public void setStandardDeviationRiskMillis(long standardDeviationRiskMillis) 
+    {
+        this.standardDeviationRiskMillis = standardDeviationRiskMillis;
+    }
+
+    public Map<AssetClass, Long> getCorrelationMillisMap() 
+    {
+        return correlationMillisMap;
+    }
+
+    public void setCorrelationMillisMap(Map<AssetClass, Long> correlationMillisMap) 
+    {
+        this.correlationMillisMap = correlationMillisMap;
+    }
+
+    public String getExpectedReturnLabel() 
+    {
+        return InvestmentNumericUtil.formatMillisAsPercentage(expectedReturnMillis);
+    }
+
+    public String getStandardDeviationRiskLabel() 
+    {
+        return InvestmentNumericUtil.formatMillisAsPercentage(standardDeviationRiskMillis);
+    }
+
+    public String getCorrelationLabel(AssetClass other) 
+    {
+        long correlationMillis = correlationMillisMap.get(other);
+        return InvestmentNumericUtil.formatMillisAsNumber(correlationMillis);
+    }
+
+    public String toString() 
+    {
+        return "-" + name;
+    }
+}

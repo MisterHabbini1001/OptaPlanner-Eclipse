@@ -1,0 +1,46 @@
+package org.optaplanner.examples.coachshuttlegathering.domain;
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.examples.coachshuttlegathering.domain.location.RoadLocation;
+
+public class BusStopTest 
+{
+    protected String name;
+    protected RoadLocation location;
+    protected int passengerQuantity;
+    protected int transportTimeLimit;
+    protected BusOrStop previousBusOrStop;
+    protected BusStop nextStop;
+    protected Bus bus;
+    protected List<Shuttle> transferShuttleList;
+    protected Integer transportTimeToHub;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

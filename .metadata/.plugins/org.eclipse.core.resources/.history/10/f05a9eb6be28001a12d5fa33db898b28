@@ -1,0 +1,50 @@
+package org.optaplanner.examples.investment.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class InvestmentParametrizationTest 
+{
+	private long standardDeviationMillisMaximum; 
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+    public long getStandardDeviationMillisMaximum() {
+        return standardDeviationMillisMaximum;
+    }
+
+    public void setStandardDeviationMillisMaximum(long standardDeviationMillisMaximum) {
+        this.standardDeviationMillisMaximum = standardDeviationMillisMaximum;
+    }
+
+    // ************************************************************************
+    // Complex methods
+    // ************************************************************************
+
+    public long calculateSquaredStandardDeviationFemtosMaximum() {
+        return standardDeviationMillisMaximum * standardDeviationMillisMaximum
+                * 1000L * 1000L * 1000L;
+    }
+}

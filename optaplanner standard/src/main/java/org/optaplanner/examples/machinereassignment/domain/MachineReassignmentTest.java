@@ -1,0 +1,235 @@
+package org.optaplanner.examples.machinereassignment.domain;
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
+import org.optaplanner.core.api.domain.solution.PlanningScore;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactCollectionProperty;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactProperty;
+import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
+import org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore;
+import org.optaplanner.examples.machinereassignment.domain.solver.MrServiceDependency;
+import org.optaplanner.persistence.xstream.api.score.buildin.hardsoftlong.HardSoftLongScoreXStreamConverter;
+
+import com.thoughtworks.xstream.annotations.XStreamConverter;
+
+public class MachineReassignmentTest 
+{
+    private MrGlobalPenaltyInfo globalPenaltyInfo;
+    private List<MrResource> resourceList;
+    private List<MrNeighborhood> neighborhoodList;
+    private List<MrLocation> locationList;
+    private List<MrMachine> machineList;
+    private List<MrMachineCapacity> machineCapacityList;
+    private List<MrService> serviceList;
+    private List<MrProcess> processList;
+    private List<MrBalancePenalty> balancePenaltyList;
+    private List<MrProcessAssignment> processAssignmentList;
+
+    @XStreamConverter(HardSoftLongScoreXStreamConverter.class)
+    private HardSoftLongScore score;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		MachineReassignment mr = new MachineReassignment();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		MachineReassignment mr = new MachineReassignment();
+		mr = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		MachineReassignment mr = new MachineReassignment();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		MachineReassignment mr = new MachineReassignment();
+		mr = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+	@Test
+	@ProblemFactProperty
+    public void testgetGlobalPenaltyInfo() 
+	{
+        System.out.println(globalPenaltyInfo);
+    }
+
+	@Test
+    public void testsetGlobalPenaltyInfo() 
+	{
+        this.globalPenaltyInfo = globalPenaltyInfo;
+    }
+
+	@Test
+    @ProblemFactCollectionProperty
+    public void testgetResourceList() 
+	{
+    	System.out.println(resourceList);
+    }
+
+	@Test
+    public void testsetResourceList() 
+	{
+        this.resourceList = resourceList;
+    }
+
+	@Test
+    @ProblemFactCollectionProperty
+    public void testgetNeighborhoodList() 
+	{
+    	System.out.println(neighborhoodList);
+    }
+
+	@Test
+    public void testsetNeighborhoodList() 
+	{
+        this.neighborhoodList = neighborhoodList;
+    }
+
+	@Test
+    @ProblemFactCollectionProperty
+    public void testgetLocationList() 
+	{
+    	System.out.println(locationList);
+    }
+
+	@Test
+    public void testsetLocationList() 
+	{
+        this.locationList = locationList;
+    }
+
+	@Test
+    @ValueRangeProvider(id = "machineRange")
+    @ProblemFactCollectionProperty
+    public void testgetMachineList() 
+	{
+    	System.out.println(machineList);
+    }
+
+	@Test
+    public void testsetMachineList() 
+	{
+        this.machineList = machineList;
+    }
+
+	@Test
+    @ProblemFactCollectionProperty
+    public void testgetMachineCapacityList() 
+	{
+    	System.out.println(machineCapacityList);
+    }
+
+	@Test
+    public void testsetMachineCapacityList() 
+	{
+        this.machineCapacityList = machineCapacityList;
+    }
+
+	@Test
+    @ProblemFactCollectionProperty
+    public void testgetServiceList() 
+	{
+    	System.out.println(serviceList);
+    }
+
+	@Test
+    public void testsetServiceList() 
+	{
+        this.serviceList = serviceList;
+    }
+
+	@Test
+    @ProblemFactCollectionProperty
+    public void testgetProcessList() 
+	{
+    	System.out.println(processList);
+    }
+
+	@Test
+    public void testsetProcessList() 
+	{
+        this.processList = processList;
+    }
+
+	@Test
+    @ProblemFactCollectionProperty
+    public void testgetBalancePenaltyList() 
+	{
+    	System.out.println(balancePenaltyList);
+    }
+
+	@Test
+    public void testsetBalancePenaltyList() 
+	{
+        this.balancePenaltyList = balancePenaltyList;
+    }
+
+	@Test
+    @PlanningEntityCollectionProperty
+    public void testgetProcessAssignmentList() 
+	{
+    	System.out.println(processAssignmentList);
+    }
+
+	@Test
+    public void testsetProcessAssignmentList()
+	{
+        this.processAssignmentList = processAssignmentList;
+    }
+
+	@Test
+    @PlanningScore
+    public void testgetScore() 
+	{
+    	System.out.println(score);
+    }
+
+	@Test
+    public void testsetScore() 
+	{
+        this.score = score;
+    }
+
+	@Test
+    @ProblemFactCollectionProperty
+    private void testgetServiceDependencyList() 
+	{
+        List<MrServiceDependency> serviceDependencyList = new ArrayList<>(serviceList.size() * 5);
+        for (MrService service : serviceList) 
+        {
+            for (MrService toService : service.getToDependencyServiceList()) 
+            {
+                MrServiceDependency serviceDependency = new MrServiceDependency();
+                serviceDependency.setFromService(service);
+                serviceDependency.setToService(toService);
+                serviceDependencyList.add(serviceDependency);
+            }
+        }
+        
+        System.out.println(serviceDependencyList);
+    }
+}

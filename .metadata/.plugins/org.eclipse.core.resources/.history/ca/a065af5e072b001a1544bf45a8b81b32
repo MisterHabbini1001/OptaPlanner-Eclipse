@@ -1,0 +1,67 @@
+package org.optaplanner.examples.pas.domain;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class PreferredPatientEquipmentTest {
+    private Patient patient;
+    private Equipment equipment;
+    
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception 
+	{
+		PreferredPatientEquipment ppe = new PreferredPatientEquipment();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception 
+	{
+		PreferredPatientEquipment ppe = new PreferredPatientEquipment();
+		ppe = null;
+	}
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		PreferredPatientEquipment ppe = new PreferredPatientEquipment();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		PreferredPatientEquipment ppe = new PreferredPatientEquipment();
+		ppe = null;
+	}
+
+	/*
+	@Test
+	public void test() 
+	{
+		fail("Not yet implemented");
+	}
+	*/
+
+    public void testgetPatient() {
+        System.out.println(patient);
+    }
+
+    public void testsetPatient() {
+        this.patient = patient;
+    }
+
+    public void testgetEquipment() {
+    	System.out.println(equipment);
+    }
+
+    public void testsetEquipment() {
+        this.equipment = equipment;
+    }
+
+    public void testtoString() {
+    	System.out.println(patient + "-" + equipment);
+    }
+}
