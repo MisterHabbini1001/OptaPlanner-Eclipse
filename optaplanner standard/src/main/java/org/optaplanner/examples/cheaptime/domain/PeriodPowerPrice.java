@@ -13,36 +13,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cheaptime.domain;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 
 @XStreamAlias("CtPeriodPowerPrice")
-public class PeriodPowerPrice extends AbstractPersistable {
-
+public class PeriodPowerPrice extends AbstractPersistable 
+{
     private int period;
     private long powerPriceMicros;
 
-    public int getPeriod() {
+    public int getPeriod() 
+    {
         return period;
     }
 
-    public void setPeriod(int period) {
+    public void setPeriod(int period) 
+    {
         this.period = period;
     }
 
-    public long getPowerPriceMicros() {
+    public long getPowerPriceMicros() 
+    {
         return powerPriceMicros;
     }
 
-    public void setPowerPriceMicros(long powerPriceMicros) {
+    public void setPowerPriceMicros(long powerPriceMicros) 
+    {
         this.powerPriceMicros = powerPriceMicros;
     }
 
     // ************************************************************************
     // Complex methods
     // ************************************************************************
-
 }

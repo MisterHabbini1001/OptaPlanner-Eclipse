@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.vehiclerouting.app;
-
 import org.optaplanner.examples.common.app.CommonApp;
 import org.optaplanner.examples.common.persistence.AbstractSolutionImporter;
 import org.optaplanner.examples.vehiclerouting.domain.VehicleRoutingSolution;
@@ -24,19 +22,21 @@ import org.optaplanner.examples.vehiclerouting.swingui.VehicleRoutingPanel;
 import org.optaplanner.persistence.common.api.domain.solution.SolutionFileIO;
 import org.optaplanner.persistence.xstream.impl.domain.solution.XStreamSolutionFileIO;
 
-public class VehicleRoutingApp extends CommonApp<VehicleRoutingSolution> {
-
+public class VehicleRoutingApp extends CommonApp<VehicleRoutingSolution> 
+{
     public static final String SOLVER_CONFIG
             = "org/optaplanner/examples/vehiclerouting/solver/vehicleRoutingSolverConfig.xml";
 
     public static final String DATA_DIR_NAME = "vehiclerouting";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         prepareSwingEnvironment();
         new VehicleRoutingApp().init();
     }
 
-    public VehicleRoutingApp() {
+    public VehicleRoutingApp() 
+    {
         super("Vehicle routing",
                 "Official competition name: Capacitated vehicle routing problem (CVRP), " +
                         "optionally with time windows (CVRPTW)\n\n" +
@@ -49,20 +49,23 @@ public class VehicleRoutingApp extends CommonApp<VehicleRoutingSolution> {
     }
 
     @Override
-    protected VehicleRoutingPanel createSolutionPanel() {
+    protected VehicleRoutingPanel createSolutionPanel() 
+    {
         return new VehicleRoutingPanel();
     }
 
     @Override
-    public SolutionFileIO<VehicleRoutingSolution> createSolutionFileIO() {
+    public SolutionFileIO<VehicleRoutingSolution> createSolutionFileIO() 
+    {
         return new XStreamSolutionFileIO<>(VehicleRoutingSolution.class);
     }
 
     @Override
-    protected AbstractSolutionImporter[] createSolutionImporters() {
-        return new AbstractSolutionImporter[]{
+    protected AbstractSolutionImporter[] createSolutionImporters() 
+    {
+        return new AbstractSolutionImporter[]
+        		{
                 new VehicleRoutingImporter()
         };
     }
-
 }

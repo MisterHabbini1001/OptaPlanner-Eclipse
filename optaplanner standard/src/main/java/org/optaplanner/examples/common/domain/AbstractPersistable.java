@@ -13,30 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.common.domain;
-
 import java.io.Serializable;
 
 import org.optaplanner.core.api.domain.lookup.PlanningId;
 
-public abstract class AbstractPersistable implements Serializable {
-
+public abstract class AbstractPersistable implements Serializable 
+{
     protected Long id;
 
-    protected AbstractPersistable() {
+    protected AbstractPersistable() 
+    {
     }
 
-    protected AbstractPersistable(long id) {
+    protected AbstractPersistable(long id) 
+    {
         this.id = id;
     }
 
     @PlanningId
-    public Long getId() {
+    public Long getId() 
+    {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Long id) 
+    {
         this.id = id;
     }
 
@@ -66,8 +68,8 @@ public abstract class AbstractPersistable implements Serializable {
 //    }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return getClass().getName().replaceAll(".*\\.", "") + "-" + id;
     }
-
 }

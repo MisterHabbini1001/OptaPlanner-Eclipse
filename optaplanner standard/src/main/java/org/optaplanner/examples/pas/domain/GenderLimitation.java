@@ -13,32 +13,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.pas.domain;
 
-public enum GenderLimitation {
+public enum GenderLimitation 
+{
     ANY_GENDER("N"), // mixed
     MALE_ONLY("M"),
     FEMALE_ONLY("F"),
     SAME_GENDER("D"); // dependent on the first
 
-    public static GenderLimitation valueOfCode(String code) {
-        for (GenderLimitation gender : GenderLimitation.values()) {
-            if (code.equalsIgnoreCase(gender.getCode())) {
+    public static GenderLimitation valueOfCode(String code) 
+    {
+        for (GenderLimitation gender : GenderLimitation.values()) 
+        {
+            if (code.equalsIgnoreCase(gender.getCode())) 
+            {
                 return gender;
             }
         }
+        
         return null;
     }
 
     private String code;
 
-    private GenderLimitation(String code) {
+    private GenderLimitation(String code) 
+    {
         this.code = code;
     }
 
-    public String getCode() {
+    public String getCode() 
+    {
         return code;
     }
-
 }

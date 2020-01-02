@@ -13,32 +13,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.pas.domain;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 
 @XStreamAlias("Night")
-public class Night extends AbstractPersistable {
-
+public class Night extends AbstractPersistable 
+{
     private int index;
 
-    public int getIndex() {
+    public int getIndex() 
+    {
         return index;
     }
 
-    public void setIndex(int index) {
+    public void setIndex(int index) 
+    {
         this.index = index;
     }
 
-    public String getLabel() {
+    public String getLabel() 
+    {
         return (index + 1) + "-JAN";
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return Integer.toString(index);
     }
-
 }

@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.pas.domain;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 
@@ -23,21 +21,23 @@ import org.optaplanner.examples.common.domain.AbstractPersistable;
  * AKA RoomProperty.
  */
 @XStreamAlias("Equipment")
-public class Equipment extends AbstractPersistable {
-
+public class Equipment extends AbstractPersistable 
+{
     private String name;
 
-    public String getName() {
+    public String getName() 
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name) 
+    {
         this.name = name;
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return name;
     }
-
 }

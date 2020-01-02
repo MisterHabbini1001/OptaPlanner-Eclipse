@@ -13,47 +13,51 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.travelingtournament.domain;
-
 import java.util.Map;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 
 @XStreamAlias("TtpTeam")
-public class Team extends AbstractPersistable {
-
+public class Team extends AbstractPersistable 
+{
     private String name;
     private Map<Team, Integer> distanceToTeamMap;
 
-    public String getName() {
+    public String getName() 
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name) 
+    {
         this.name = name;
     }
 
-    public Map<Team, Integer> getDistanceToTeamMap() {
+    public Map<Team, Integer> getDistanceToTeamMap() 
+    {
         return distanceToTeamMap;
     }
 
-    public void setDistanceToTeamMap(Map<Team, Integer> distanceToTeamMap) {
+    public void setDistanceToTeamMap(Map<Team, Integer> distanceToTeamMap) 
+    {
         this.distanceToTeamMap = distanceToTeamMap;
     }
 
-    public int getDistance(Team other) {
+    public int getDistance(Team other) 
+    {
         return distanceToTeamMap.get(other);
     }
 
-    public String getLabel() {
+    public String getLabel() 
+    {
         return name;
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return getName();
     }
-
 }

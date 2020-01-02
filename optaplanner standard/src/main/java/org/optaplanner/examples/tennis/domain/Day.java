@@ -13,35 +13,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.tennis.domain;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 
 @XStreamAlias("TennisDay")
-public class Day extends AbstractPersistable {
-
+public class Day extends AbstractPersistable 
+{
     private int dateIndex;
 
-    public Day() {
+    public Day() 
+    {
     }
 
-    public Day(long id, int dateIndex) {
+    public Day(long id, int dateIndex) 
+    {
         super(id);
         this.dateIndex = dateIndex;
     }
 
-    public int getDateIndex() {
+    public int getDateIndex() 
+    {
         return dateIndex;
     }
 
-    public void setDateIndex(int dateIndex) {
+    public void setDateIndex(int dateIndex) 
+    {
         this.dateIndex = dateIndex;
     }
 
-    public String getLabel() {
+    public String getLabel() 
+    {
         return "day " + dateIndex;
     }
-
 }

@@ -13,37 +13,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.pas.domain;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 
 @XStreamAlias("RequiredPatientEquipment")
-public class RequiredPatientEquipment extends AbstractPersistable {
-
+public class RequiredPatientEquipment extends AbstractPersistable 
+{
     private Patient patient;
     private Equipment equipment;
 
-    public Patient getPatient() {
+    public Patient getPatient() 
+    {
         return patient;
     }
 
-    public void setPatient(Patient patient) {
+    public void setPatient(Patient patient) 
+    {
         this.patient = patient;
     }
 
-    public Equipment getEquipment() {
+    public Equipment getEquipment() 
+    {
         return equipment;
     }
 
-    public void setEquipment(Equipment equipment) {
+    public void setEquipment(Equipment equipment) 
+    {
         this.equipment = equipment;
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return patient + "-" + equipment;
     }
-
 }

@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.travelingtournament.domain;
-
 import java.util.Iterator;
 import java.util.List;
 
@@ -33,11 +31,10 @@ import org.optaplanner.persistence.xstream.api.score.buildin.hardsoft.HardSoftSc
 
 @PlanningSolution
 @XStreamAlias("TravelingTournament")
-public class TravelingTournament extends AbstractPersistable {
-
+public class TravelingTournament extends AbstractPersistable 
+{
     private List<Day> dayList;
     private List<Team> teamList;
-
     private List<Match> matchList;
 
     @XStreamConverter(HardSoftScoreXStreamConverter.class)
@@ -45,38 +42,46 @@ public class TravelingTournament extends AbstractPersistable {
 
     @ValueRangeProvider(id = "dayRange")
     @ProblemFactCollectionProperty
-    public List<Day> getDayList() {
+    public List<Day> getDayList() 
+    {
         return dayList;
     }
 
-    public void setDayList(List<Day> dayList) {
+    public void setDayList(List<Day> dayList) 
+    {
         this.dayList = dayList;
     }
 
     @ProblemFactCollectionProperty
-    public List<Team> getTeamList() {
+    public List<Team> getTeamList() 
+    {
         return teamList;
     }
 
-    public void setTeamList(List<Team> teamList) {
+    public void setTeamList(List<Team> teamList) 
+    {
         this.teamList = teamList;
     }
 
     @PlanningEntityCollectionProperty
-    public List<Match> getMatchList() {
+    public List<Match> getMatchList() 
+    {
         return matchList;
     }
 
-    public void setMatchList(List<Match> matchSets) {
+    public void setMatchList(List<Match> matchSets) 
+    {
         this.matchList = matchSets;
     }
 
     @PlanningScore
-    public HardSoftScore getScore() {
+    public HardSoftScore getScore() 
+    {
         return score;
     }
 
-    public void setScore(HardSoftScore score) {
+    public void setScore(HardSoftScore score) 
+    {
         this.score = score;
     }
 
@@ -84,42 +89,57 @@ public class TravelingTournament extends AbstractPersistable {
     // Complex methods
     // ************************************************************************
 
-    public int getN() {
+    public int getN() 
+    {
         return teamList.size();
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) {
+    public boolean equals(Object o) 
+    {
+        if (this == o) 
+        {
             return true;
         }
-        if (id == null || !(o instanceof TravelingTournament)) {
+        
+        if (id == null || !(o instanceof TravelingTournament)) 
+        {
             return false;
-        } else {
+        }
+        
+        else 
+        {
             TravelingTournament other = (TravelingTournament) o;
-            if (matchList.size() != other.matchList.size()) {
+            if (matchList.size() != other.matchList.size()) 
+            {
                 return false;
             }
-            for (Iterator<Match> it = matchList.iterator(), otherIt = other.matchList.iterator(); it.hasNext();) {
+            
+            for (Iterator<Match> it = matchList.iterator(), otherIt = other.matchList.iterator(); it.hasNext();) 
+            {
                 Match match = it.next();
                 Match otherMatch = otherIt.next();
                 // Notice: we don't use equals()
-                if (!match.solutionEquals(otherMatch)) {
+                if (!match.solutionEquals(otherMatch)) 
+                {
                     return false;
                 }
             }
+            
             return true;
         }
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode() 
+    {
         HashCodeBuilder hashCodeBuilder = new HashCodeBuilder();
-        for (Match match : matchList) {
+        for (Match match : matchList) 
+        {
             // Notice: we don't use hashCode()
             hashCodeBuilder.append(match.solutionHashCode());
         }
+        
         return hashCodeBuilder.toHashCode();
     }
-
 }

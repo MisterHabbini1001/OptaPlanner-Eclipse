@@ -13,46 +13,48 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cheaptime.domain;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 
 @XStreamAlias("CtMachineCapacity")
-public class MachineCapacity extends AbstractPersistable {
-
+public class MachineCapacity extends AbstractPersistable 
+{
     private Machine machine;
     private Resource resource;
-
     private int capacity;
 
-    public Machine getMachine() {
+    public Machine getMachine() 
+    {
         return machine;
     }
 
-    public void setMachine(Machine machine) {
+    public void setMachine(Machine machine) 
+    {
         this.machine = machine;
     }
 
-    public Resource getResource() {
+    public Resource getResource() 
+    {
         return resource;
     }
 
-    public void setResource(Resource resource) {
+    public void setResource(Resource resource) 
+    {
         this.resource = resource;
     }
 
-    public int getCapacity() {
+    public int getCapacity() 
+    {
         return capacity;
     }
 
-    public void setCapacity(int capacity) {
+    public void setCapacity(int capacity) 
+    {
         this.capacity = capacity;
     }
 
     // ************************************************************************
     // Complex methods
     // ************************************************************************
-
 }

@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.scrabble.domain;
-
 import java.util.Map;
 import java.util.Set;
 
@@ -29,8 +27,8 @@ import org.optaplanner.examples.scrabble.domain.solver.CellUpdatingVariableListe
 
 @PlanningEntity()
 @XStreamAlias("ScrabbleCell")
-public class ScrabbleCell extends AbstractPersistable {
-
+public class ScrabbleCell extends AbstractPersistable 
+{
     private int x;
     private int y;
 
@@ -44,35 +42,43 @@ public class ScrabbleCell extends AbstractPersistable {
     @DeepPlanningClone // TODO Why is this needed? This is already a shadow var
     private Map<Character, Integer> characterCountMap;
 
-    public int getX() {
+    public int getX() 
+    {
         return x;
     }
 
-    public void setX(int x) {
+    public void setX(int x) 
+    {
         this.x = x;
     }
 
-    public int getY() {
+    public int getY() 
+    {
         return y;
     }
 
-    public void setY(int y) {
+    public void setY(int y) 
+    {
         this.y = y;
     }
 
-    public Set<ScrabbleWordAssignment> getWordSet() {
+    public Set<ScrabbleWordAssignment> getWordSet() 
+    {
         return wordSet;
     }
 
-    public void setWordSet(Set<ScrabbleWordAssignment> wordSet) {
+    public void setWordSet(Set<ScrabbleWordAssignment> wordSet) 
+    {
         this.wordSet = wordSet;
     }
 
-    public Map<Character, Integer> getCharacterCountMap() {
+    public Map<Character, Integer> getCharacterCountMap() 
+    {
         return characterCountMap;
     }
 
-    public void setCharacterCountMap(Map<Character, Integer> characterCountMap) {
+    public void setCharacterCountMap(Map<Character, Integer> characterCountMap) 
+    {
         this.characterCountMap = characterCountMap;
     }
 
@@ -80,62 +86,83 @@ public class ScrabbleCell extends AbstractPersistable {
     // Complex methods
     // ************************************************************************
 
-    public String getLabel() {
+    public String getLabel() 
+    {
         return "(" + x + "," + y + ")";
     }
 
-    public void insertWordAssignment(ScrabbleWordAssignment wordAssignment, char c) {
+    public void insertWordAssignment(ScrabbleWordAssignment wordAssignment, char c) 
+    {
         boolean added = wordSet.add(wordAssignment);
-        if (!added) {
+        if (!added) 
+        {
             throw new IllegalStateException("The wordAssignment (" + wordAssignment
                     + ") is already in the cell (" + this + ").");
         }
+        
         Integer characterCount = characterCountMap.get(c);
-        if (characterCount == null) {
+        if (characterCount == null) 
+        {
             characterCount = 0;
         }
+        
         characterCount++;
         characterCountMap.put(c, characterCount);
     }
 
-    public void retractWordAssignment(ScrabbleWordAssignment wordAssignment, char c) {
+    public void retractWordAssignment(ScrabbleWordAssignment wordAssignment, char c) 
+    {
         boolean removed = wordSet.remove(wordAssignment);
-        if (!removed) {
+        if (!removed) 
+        {
             throw new IllegalStateException("The wordAssignment (" + wordAssignment
                     + ") is not in the cell (" + this + ").");
         }
+        
         Integer characterCount = characterCountMap.get(c);
         characterCount--;
-        if (characterCount == 0) {
+        if (characterCount == 0) 
+        {
             characterCountMap.remove(c);
-        } else {
+        }
+        
+        else 
+        {
             characterCountMap.put(c, characterCount);
         }
     }
 
-    public Set<Character> getCharacterSet() {
+    public Set<Character> getCharacterSet() 
+    {
         return characterCountMap.keySet();
     }
 
-    public boolean hasMerge() {
-        if (characterCountMap.containsKey(' ')) {
+    public boolean hasMerge() 
+    {
+        if (characterCountMap.containsKey(' ')) 
+        {
             return false;
         }
+        
         return wordSet.size() > 1;
     }
 
-    public boolean hasWordSet(ScrabbleWordDirection direction) {
-        for (ScrabbleWordAssignment wordAssignment : wordSet) {
-            if (wordAssignment.getDirection() == direction) {
+    public boolean hasWordSet(ScrabbleWordDirection direction) 
+    {
+        for (ScrabbleWordAssignment wordAssignment : wordSet) 
+        {
+            if (wordAssignment.getDirection() == direction) 
+            {
                 return true;
             }
         }
+        
         return false;
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return "(" + x + "," + y + ")";
     }
-
 }

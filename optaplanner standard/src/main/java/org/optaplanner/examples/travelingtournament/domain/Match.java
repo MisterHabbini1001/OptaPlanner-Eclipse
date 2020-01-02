@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.travelingtournament.domain;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -25,35 +23,40 @@ import org.optaplanner.examples.common.domain.AbstractPersistable;
 
 @PlanningEntity
 @XStreamAlias("TtpMatch")
-public class Match extends AbstractPersistable {
-
+public class Match extends AbstractPersistable 
+{
     private Team homeTeam;
     private Team awayTeam;
-
     private Day day;
 
-    public Team getHomeTeam() {
+    public Team getHomeTeam() 
+    {
         return homeTeam;
     }
 
-    public void setHomeTeam(Team homeTeam) {
+    public void setHomeTeam(Team homeTeam) 
+    {
         this.homeTeam = homeTeam;
     }
 
-    public Team getAwayTeam() {
+    public Team getAwayTeam() 
+    {
         return awayTeam;
     }
 
-    public void setAwayTeam(Team awayTeam) {
+    public void setAwayTeam(Team awayTeam) 
+    {
         this.awayTeam = awayTeam;
     }
 
     @PlanningVariable(valueRangeProviderRefs = {"dayRange"})
-    public Day getDay() {
+    public Day getDay() 
+    {
         return day;
     }
 
-    public void setDay(Day day) {
+    public void setDay(Day day) 
+    {
         this.day = day;
     }
 
@@ -66,10 +69,15 @@ public class Match extends AbstractPersistable {
      * because the rule engine already requires them (for performance in their original state).
      * @see #solutionHashCode()
      */
-    public boolean solutionEquals(Object o) {
-        if (this == o) {
+    public boolean solutionEquals(Object o) 
+    {
+        if (this == o) 
+        {
             return true;
-        } else if (o instanceof Match) {
+        } 
+        
+        else if (o instanceof Match) 
+        {
             Match other = (Match) o;
             return new EqualsBuilder()
                     .append(id, other.id)
@@ -77,7 +85,10 @@ public class Match extends AbstractPersistable {
                     .append(awayTeam, other.awayTeam)
                     .append(day, other.day)
                     .isEquals();
-        } else {
+        } 
+        
+        else 
+        {
             return false;
         }
     }
@@ -87,7 +98,8 @@ public class Match extends AbstractPersistable {
      * because the rule engine already requires them (for performance in their original state).
      * @see #solutionEquals(Object)
      */
-    public int solutionHashCode() {
+    public int solutionHashCode() 
+    {
         return new HashCodeBuilder()
                 .append(id)
                 .append(homeTeam)
@@ -97,8 +109,8 @@ public class Match extends AbstractPersistable {
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return homeTeam + "+" + awayTeam;
     }
-
 }

@@ -13,44 +13,46 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.travelingtournament.domain;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 import org.optaplanner.examples.common.swingui.components.Labeled;
 
 @XStreamAlias("TtpDay")
-public class Day extends AbstractPersistable implements Labeled {
-
+public class Day extends AbstractPersistable implements Labeled 
+{
     private int index;
-
     private Day nextDay;
 
-    public int getIndex() {
+    public int getIndex() 
+    {
         return index;
     }
 
-    public void setIndex(int index) {
+    public void setIndex(int index) 
+    {
         this.index = index;
     }
 
-    public Day getNextDay() {
+    public Day getNextDay() 
+    {
         return nextDay;
     }
 
-    public void setNextDay(Day nextDay) {
+    public void setNextDay(Day nextDay) 
+    {
         this.nextDay = nextDay;
     }
 
     @Override
-    public String getLabel() {
+    public String getLabel() 
+    {
         return Integer.toString(index);
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return "Day-" + index;
     }
-
 }

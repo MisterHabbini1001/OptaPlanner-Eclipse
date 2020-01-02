@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.coachshuttlegathering.domain;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.core.api.domain.entity.PlanningEntity;
 import org.optaplanner.core.api.domain.variable.PlanningVariable;
@@ -24,29 +22,33 @@ import org.optaplanner.examples.coachshuttlegathering.domain.solver.DepotAngleBu
 
 @PlanningEntity(difficultyWeightFactoryClass = DepotAngleBusStopDifficultyWeightFactory.class)
 @XStreamAlias("CsgShuttle")
-public class Shuttle extends Bus {
-
+public class Shuttle extends Bus 
+{
     protected int setupCost;
 
     // Planning variables: changes during planning, between score calculations.
     protected StopOrHub destination;
 
     @Override
-    public int getSetupCost() {
+    public int getSetupCost() 
+    {
         return setupCost;
     }
 
-    public void setSetupCost(int setupCost) {
+    public void setSetupCost(int setupCost) 
+    {
         this.setupCost = setupCost;
     }
 
     @Override
     @PlanningVariable(valueRangeProviderRefs = {"stopRange", "hubRange"})
-    public StopOrHub getDestination() {
+    public StopOrHub getDestination() 
+    {
         return destination;
     }
 
-    public void setDestination(StopOrHub destination) {
+    public void setDestination(StopOrHub destination) 
+    {
         this.destination = destination;
     }
 
@@ -55,23 +57,29 @@ public class Shuttle extends Bus {
     // ************************************************************************
 
     @Override
-    public int getDistanceFromTo(RoadLocation sourceLocation, RoadLocation targetLocation) {
+    public int getDistanceFromTo(RoadLocation sourceLocation, RoadLocation targetLocation) 
+    {
         return sourceLocation.getShuttleDistanceTo(targetLocation);
     }
 
     @Override
-    public int getDurationFromTo(RoadLocation sourceLocation, RoadLocation targetLocation) {
+    public int getDurationFromTo(RoadLocation sourceLocation, RoadLocation targetLocation) 
+    {
         return sourceLocation.getShuttleDurationTo(targetLocation);
     }
 
-    public Bus getDestinationBus() {
-        if (destination == null) {
+    public Bus getDestinationBus() 
+    {
+        if (destination == null) 
+        {
             return null;
         }
-        if (!(destination instanceof BusStop)) {
+        
+        if (!(destination instanceof BusStop)) 
+        {
             return null;
         }
+        
         return ((BusStop) destination).getBus();
     }
-
 }

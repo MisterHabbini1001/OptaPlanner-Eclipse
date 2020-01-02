@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.scrabble.domain;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.core.api.domain.entity.PlanningEntity;
 import org.optaplanner.core.api.domain.variable.PlanningVariable;
@@ -24,8 +22,8 @@ import org.optaplanner.examples.scrabble.domain.solver.ScrabbleWordAssignmentDif
 
 @PlanningEntity(difficultyComparatorClass = ScrabbleWordAssignmentDifficultyComparator.class)
 @XStreamAlias("ScrabbleWord")
-public class ScrabbleWordAssignment extends AbstractPersistable {
-
+public class ScrabbleWordAssignment extends AbstractPersistable 
+{
     private ScrabbleSolution solution;
     private String word;
 
@@ -34,35 +32,43 @@ public class ScrabbleWordAssignment extends AbstractPersistable {
     @PlanningVariable(valueRangeProviderRefs = {"directionRange"})
     private ScrabbleWordDirection direction;
 
-    public ScrabbleSolution getSolution() {
+    public ScrabbleSolution getSolution() 
+    {
         return solution;
     }
 
-    public void setSolution(ScrabbleSolution solution) {
+    public void setSolution(ScrabbleSolution solution) 
+    {
         this.solution = solution;
     }
 
-    public String getWord() {
+    public String getWord() 
+    {
         return word;
     }
 
-    public void setWord(String word) {
+    public void setWord(String word) 
+    {
         this.word = word;
     }
 
-    public ScrabbleCell getStartCell() {
+    public ScrabbleCell getStartCell() 
+    {
         return startCell;
     }
 
-    public void setStartCell(ScrabbleCell startCell) {
+    public void setStartCell(ScrabbleCell startCell) 
+    {
         this.startCell = startCell;
     }
 
-    public ScrabbleWordDirection getDirection() {
+    public ScrabbleWordDirection getDirection() 
+    {
         return direction;
     }
 
-    public void setDirection(ScrabbleWordDirection direction) {
+    public void setDirection(ScrabbleWordDirection direction) 
+    {
         this.direction = direction;
     }
 
@@ -70,15 +76,20 @@ public class ScrabbleWordAssignment extends AbstractPersistable {
     // Complex methods
     // ************************************************************************
 
-    public String getLabel() {
+    public String getLabel() 
+    {
         return word;
     }
 
-    public boolean isOutOfGrid() {
-        if (direction == null || startCell == null) {
+    public boolean isOutOfGrid() 
+    {
+        if (direction == null || startCell == null) 
+        {
             return false;
         }
-        switch (direction) {
+        
+        switch (direction) 
+        {
             case HORIZONTAL:
                 return startCell.getX() + word.length() > solution.getGridWidth();
             case VERTICAL:
@@ -91,15 +102,19 @@ public class ScrabbleWordAssignment extends AbstractPersistable {
     /**
      * @return manhattan distance
      */
-    public int getDistanceToCenter() {
-        if (direction == null || startCell == null) {
+    public int getDistanceToCenter() 
+    {
+        if (direction == null || startCell == null) 
+        {
             return 0;
         }
+        
         int centerX = solution.getGridWidth() / 2;
         int centerY = solution.getGridHeight() / 2;
         int x;
         int y;
-        switch (direction) {
+        switch (direction) 
+        {
             case HORIZONTAL:
                 x = startCell.getX() + word.length() / 2;
                 y = startCell.getY();
@@ -115,8 +130,8 @@ public class ScrabbleWordAssignment extends AbstractPersistable {
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return word;
     }
-
 }

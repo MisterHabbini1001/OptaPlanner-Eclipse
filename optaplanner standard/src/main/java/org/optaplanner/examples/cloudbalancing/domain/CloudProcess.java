@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cloudbalancing.domain;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.core.api.domain.entity.PlanningEntity;
 import org.optaplanner.core.api.domain.variable.PlanningVariable;
@@ -25,8 +23,8 @@ import org.optaplanner.examples.common.domain.AbstractPersistable;
 
 @PlanningEntity(difficultyComparatorClass = CloudProcessDifficultyComparator.class)
 @XStreamAlias("CloudProcess")
-public class CloudProcess extends AbstractPersistable {
-
+public class CloudProcess extends AbstractPersistable 
+{
     private int requiredCpuPower; // in gigahertz
     private int requiredMemory; // in gigabyte RAM
     private int requiredNetworkBandwidth; // in gigabyte per hour
@@ -34,47 +32,57 @@ public class CloudProcess extends AbstractPersistable {
     // Planning variables: changes during planning, between score calculations.
     private CloudComputer computer;
 
-    public CloudProcess() {
+    public CloudProcess() 
+    {
     }
 
-    public CloudProcess(long id, int requiredCpuPower, int requiredMemory, int requiredNetworkBandwidth) {
+    public CloudProcess(long id, int requiredCpuPower, int requiredMemory, int requiredNetworkBandwidth) 
+    {
         super(id);
         this.requiredCpuPower = requiredCpuPower;
         this.requiredMemory = requiredMemory;
         this.requiredNetworkBandwidth = requiredNetworkBandwidth;
     }
 
-    public int getRequiredCpuPower() {
+    public int getRequiredCpuPower() 
+    {
         return requiredCpuPower;
     }
 
-    public void setRequiredCpuPower(int requiredCpuPower) {
+    public void setRequiredCpuPower(int requiredCpuPower) 
+    {
         this.requiredCpuPower = requiredCpuPower;
     }
 
-    public int getRequiredMemory() {
+    public int getRequiredMemory() 
+    {
         return requiredMemory;
     }
 
-    public void setRequiredMemory(int requiredMemory) {
+    public void setRequiredMemory(int requiredMemory) 
+    {
         this.requiredMemory = requiredMemory;
     }
 
-    public int getRequiredNetworkBandwidth() {
+    public int getRequiredNetworkBandwidth() 
+    {
         return requiredNetworkBandwidth;
     }
 
-    public void setRequiredNetworkBandwidth(int requiredNetworkBandwidth) {
+    public void setRequiredNetworkBandwidth(int requiredNetworkBandwidth) 
+    {
         this.requiredNetworkBandwidth = requiredNetworkBandwidth;
     }
 
     @PlanningVariable(valueRangeProviderRefs = {"computerRange"},
             strengthComparatorClass = CloudComputerStrengthComparator.class)
-    public CloudComputer getComputer() {
+    public CloudComputer getComputer() 
+    {
         return computer;
     }
 
-    public void setComputer(CloudComputer computer) {
+    public void setComputer(CloudComputer computer) 
+    {
         this.computer = computer;
     }
 
@@ -82,12 +90,13 @@ public class CloudProcess extends AbstractPersistable {
     // Complex methods
     // ************************************************************************
 
-    public int getRequiredMultiplicand() {
+    public int getRequiredMultiplicand() 
+    {
         return requiredCpuPower * requiredMemory * requiredNetworkBandwidth;
     }
 
-    public String getLabel() {
+    public String getLabel() 
+    {
         return "Process " + id;
     }
-
 }

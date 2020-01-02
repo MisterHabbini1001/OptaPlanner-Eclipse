@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.tsp.domain;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.core.api.domain.entity.PlanningEntity;
 import org.optaplanner.core.api.domain.variable.PlanningVariable;
@@ -27,30 +25,34 @@ import org.optaplanner.examples.tsp.domain.solver.DomicileDistanceStandstillStre
 
 @PlanningEntity(difficultyWeightFactoryClass = DomicileAngleVisitDifficultyWeightFactory.class)
 @XStreamAlias("Visit")
-public class Visit extends AbstractPersistable implements Standstill {
-
+public class Visit extends AbstractPersistable implements Standstill 
+{
     private Location location;
 
     // Planning variables: changes during planning, between score calculations.
     private Standstill previousStandstill;
 
     @Override
-    public Location getLocation() {
+    public Location getLocation() 
+    {
         return location;
     }
 
-    public void setLocation(Location location) {
+    public void setLocation(Location location) 
+    {
         this.location = location;
     }
 
     @PlanningVariable(valueRangeProviderRefs = {"domicileRange", "visitRange"},
             graphType = PlanningVariableGraphType.CHAINED,
             strengthWeightFactoryClass = DomicileDistanceStandstillStrengthWeightFactory.class)
-    public Standstill getPreviousStandstill() {
+    public Standstill getPreviousStandstill() 
+    {
         return previousStandstill;
     }
 
-    public void setPreviousStandstill(Standstill previousStandstill) {
+    public void setPreviousStandstill(Standstill previousStandstill) 
+    {
         this.previousStandstill = previousStandstill;
     }
 
@@ -61,10 +63,13 @@ public class Visit extends AbstractPersistable implements Standstill {
     /**
      * @return a positive number, the distance multiplied by 1000 to avoid floating point arithmetic rounding errors
      */
-    public long getDistanceFromPreviousStandstill() {
-        if (previousStandstill == null) {
+    public long getDistanceFromPreviousStandstill() 
+    {
+        if (previousStandstill == null) 
+        {
             return 0L;
         }
+        
         return getDistanceFrom(previousStandstill);
     }
 
@@ -72,7 +77,8 @@ public class Visit extends AbstractPersistable implements Standstill {
      * @param standstill never null
      * @return a positive number, the distance multiplied by 1000 to avoid floating point arithmetic rounding errors
      */
-    public long getDistanceFrom(Standstill standstill) {
+    public long getDistanceFrom(Standstill standstill) 
+    {
         return standstill.getLocation().getDistanceTo(location);
     }
 
@@ -81,16 +87,19 @@ public class Visit extends AbstractPersistable implements Standstill {
      * @return a positive number, the distance multiplied by 1000 to avoid floating point arithmetic rounding errors
      */
     @Override
-    public long getDistanceTo(Standstill standstill) {
+    public long getDistanceTo(Standstill standstill) 
+    {
         return location.getDistanceTo(standstill.getLocation());
     }
 
     @Override
-    public String toString() {
-        if (location.getName() == null) {
+    public String toString() 
+    {
+        if (location.getName() == null) 
+        {
             return super.toString();
         }
+        
         return location.getName();
     }
-
 }

@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.coachshuttlegathering.domain;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamInclude;
 import org.optaplanner.examples.coachshuttlegathering.domain.location.RoadLocation;
@@ -26,8 +24,8 @@ import org.optaplanner.examples.common.domain.AbstractPersistable;
         Coach.class,
         Shuttle.class
 })
-public abstract class Bus extends AbstractPersistable implements BusOrStop {
-
+public abstract class Bus extends AbstractPersistable implements BusOrStop 
+{
     protected String name;
     protected RoadLocation departureLocation;
     protected int capacity;
@@ -36,45 +34,55 @@ public abstract class Bus extends AbstractPersistable implements BusOrStop {
     // Shadow variables
     protected BusStop nextStop;
 
-    public String getName() {
+    public String getName() 
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name) 
+    {
         this.name = name;
     }
 
-    public RoadLocation getDepartureLocation() {
+    public RoadLocation getDepartureLocation() 
+    {
         return departureLocation;
     }
 
-    public void setDepartureLocation(RoadLocation departureLocation) {
+    public void setDepartureLocation(RoadLocation departureLocation) 
+    {
         this.departureLocation = departureLocation;
     }
 
-    public int getCapacity() {
+    public int getCapacity() 
+    {
         return capacity;
     }
 
-    public void setCapacity(int capacity) {
+    public void setCapacity(int capacity) 
+    {
         this.capacity = capacity;
     }
 
-    public int getMileageCost() {
+    public int getMileageCost() 
+    {
         return mileageCost;
     }
 
-    public void setMileageCost(int mileageCost) {
+    public void setMileageCost(int mileageCost) 
+    {
         this.mileageCost = mileageCost;
     }
 
     @Override
-    public BusStop getNextStop() {
+    public BusStop getNextStop() 
+    {
         return nextStop;
     }
 
     @Override
-    public void setNextStop(BusStop nextStop) {
+    public void setNextStop(BusStop nextStop) 
+    {
         this.nextStop = nextStop;
     }
 
@@ -85,12 +93,14 @@ public abstract class Bus extends AbstractPersistable implements BusOrStop {
     public abstract int getSetupCost();
 
     @Override
-    public RoadLocation getLocation() {
+    public RoadLocation getLocation() 
+    {
         return departureLocation;
     }
 
     @Override
-    public Bus getBus() {
+    public Bus getBus() 
+    {
         return this;
     }
 
@@ -101,8 +111,8 @@ public abstract class Bus extends AbstractPersistable implements BusOrStop {
     public abstract StopOrHub getDestination();
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return name;
     }
-
 }

@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cloudbalancing.domain;
-
 import java.util.List;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
@@ -31,19 +29,20 @@ import org.optaplanner.persistence.xstream.api.score.buildin.hardsoft.HardSoftSc
 
 @PlanningSolution
 @XStreamAlias("CloudBalance")
-public class CloudBalance extends AbstractPersistable {
-
+public class CloudBalance extends AbstractPersistable 
+{
     private List<CloudComputer> computerList;
-
     private List<CloudProcess> processList;
 
     @XStreamConverter(HardSoftScoreXStreamConverter.class)
     private HardSoftScore score;
 
-    public CloudBalance() {
+    public CloudBalance() 
+    {
     }
 
-    public CloudBalance(long id, List<CloudComputer> computerList, List<CloudProcess> processList) {
+    public CloudBalance(long id, List<CloudComputer> computerList, List<CloudProcess> processList) 
+    {
         super(id);
         this.computerList = computerList;
         this.processList = processList;
@@ -51,34 +50,39 @@ public class CloudBalance extends AbstractPersistable {
 
     @ValueRangeProvider(id = "computerRange")
     @ProblemFactCollectionProperty
-    public List<CloudComputer> getComputerList() {
+    public List<CloudComputer> getComputerList() 
+    {
         return computerList;
     }
 
-    public void setComputerList(List<CloudComputer> computerList) {
+    public void setComputerList(List<CloudComputer> computerList) 
+    {
         this.computerList = computerList;
     }
 
     @PlanningEntityCollectionProperty
-    public List<CloudProcess> getProcessList() {
+    public List<CloudProcess> getProcessList() 
+    {
         return processList;
     }
 
-    public void setProcessList(List<CloudProcess> processList) {
+    public void setProcessList(List<CloudProcess> processList) 
+    {
         this.processList = processList;
     }
 
     @PlanningScore
-    public HardSoftScore getScore() {
+    public HardSoftScore getScore() 
+    {
         return score;
     }
 
-    public void setScore(HardSoftScore score) {
+    public void setScore(HardSoftScore score) 
+    {
         this.score = score;
     }
 
     // ************************************************************************
     // Complex methods
     // ************************************************************************
-
 }

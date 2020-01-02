@@ -13,27 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.coachshuttlegathering.domain;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.examples.coachshuttlegathering.domain.location.RoadLocation;
 
 @XStreamAlias("CsgCoach")
-public class Coach extends Bus {
-
+public class Coach extends Bus 
+{
     protected int stopLimit;
     protected BusHub destination;
 
-    public int getStopLimit() {
+    public int getStopLimit() 
+    {
         return stopLimit;
     }
 
-    public void setStopLimit(int stopLimit) {
+    public void setStopLimit(int stopLimit) 
+    {
         this.stopLimit = stopLimit;
     }
 
-    public void setDestination(BusHub destination) {
+    public void setDestination(BusHub destination) 
+    {
         this.destination = destination;
     }
 
@@ -42,27 +43,31 @@ public class Coach extends Bus {
     // ************************************************************************
 
     @Override
-    public int getSetupCost() {
+    public int getSetupCost() 
+    {
         return 0;
     }
 
     @Override
-    public int getDistanceFromTo(RoadLocation sourceLocation, RoadLocation targetLocation) {
+    public int getDistanceFromTo(RoadLocation sourceLocation, RoadLocation targetLocation) 
+    {
         return sourceLocation.getCoachDistanceTo(targetLocation);
     }
 
     @Override
-    public int getDurationFromTo(RoadLocation sourceLocation, RoadLocation targetLocation) {
+    public int getDurationFromTo(RoadLocation sourceLocation, RoadLocation targetLocation) 
+    {
         return sourceLocation.getCoachDurationTo(targetLocation);
     }
 
     @Override
-    public StopOrHub getDestination() {
+    public StopOrHub getDestination() 
+    {
         return destination;
     }
 
-    public int getDistanceToDestinationCost() {
+    public int getDistanceToDestinationCost() 
+    {
         return getDistanceFromTo(departureLocation, destination.getLocation()) * getMileageCost();
     }
-
 }

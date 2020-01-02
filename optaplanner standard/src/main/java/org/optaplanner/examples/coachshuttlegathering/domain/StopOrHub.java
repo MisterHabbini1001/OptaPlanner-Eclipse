@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.coachshuttlegathering.domain;
-
 import java.util.List;
 
 import org.optaplanner.core.api.domain.entity.PlanningEntity;
@@ -23,8 +21,8 @@ import org.optaplanner.core.api.domain.variable.InverseRelationShadowVariable;
 import org.optaplanner.examples.coachshuttlegathering.domain.location.RoadLocation;
 
 @PlanningEntity
-public interface StopOrHub {
-
+public interface StopOrHub 
+{
     String getName();
 
     /**
@@ -39,5 +37,4 @@ public interface StopOrHub {
     void setTransferShuttleList(List<Shuttle> transferShuttleList);
 
     Integer getTransportTimeToHub();
-
 }

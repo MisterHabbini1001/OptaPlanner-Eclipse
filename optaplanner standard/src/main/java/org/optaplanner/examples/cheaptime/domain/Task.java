@@ -13,17 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cheaptime.domain;
-
 import java.util.List;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 
 @XStreamAlias("CtTask")
-public class Task extends AbstractPersistable {
-
+public class Task extends AbstractPersistable 
+{
     private long powerConsumptionMicros;
     private int duration;
     private int startPeriodRangeFrom; // Inclusive
@@ -32,47 +30,58 @@ public class Task extends AbstractPersistable {
     // Order is equal to resourceList so Resource.getIndex() can be used for the index
     private List<TaskRequirement> taskRequirementList;
 
-    public long getPowerConsumptionMicros() {
+    public long getPowerConsumptionMicros() 
+    {
         return powerConsumptionMicros;
     }
 
-    public void setPowerConsumptionMicros(long powerConsumptionMicros) {
+    public void setPowerConsumptionMicros(long powerConsumptionMicros) 
+    {
         this.powerConsumptionMicros = powerConsumptionMicros;
     }
 
-    public int getDuration() {
+    public int getDuration() 
+    {
         return duration;
     }
 
-    public void setDuration(int duration) {
+    public void setDuration(int duration) 
+    {
         this.duration = duration;
     }
 
-    public int getStartPeriodRangeFrom() {
+    public int getStartPeriodRangeFrom() 
+    {
         return startPeriodRangeFrom;
     }
 
-    public void setStartPeriodRangeFrom(int startPeriodRangeFrom) {
+    public void setStartPeriodRangeFrom(int startPeriodRangeFrom) 
+    {
         this.startPeriodRangeFrom = startPeriodRangeFrom;
     }
 
-    public int getStartPeriodRangeTo() {
+    public int getStartPeriodRangeTo() 
+    {
         return startPeriodRangeTo;
     }
 
-    public void setStartPeriodRangeTo(int startPeriodRangeTo) {
+    public void setStartPeriodRangeTo(int startPeriodRangeTo) 
+    {
         this.startPeriodRangeTo = startPeriodRangeTo;
     }
 
-    public List<TaskRequirement> getTaskRequirementList() {
+    public List<TaskRequirement> getTaskRequirementList() 
+    {
         return taskRequirementList;
     }
 
-    public void setTaskRequirementList(List<TaskRequirement> taskRequirementList) {
+    public void setTaskRequirementList(List<TaskRequirement> taskRequirementList) 
+    {
         this.taskRequirementList = taskRequirementList;
     }
 
-    public int getUsage(Resource resource) {
+    public int getUsage(Resource resource) 
+    {
         return taskRequirementList.get(resource.getIndex()).getResourceUsage();
     }
 
@@ -80,16 +89,19 @@ public class Task extends AbstractPersistable {
     // Complex methods
     // ************************************************************************
 
-    public int getResourceUsageMultiplicand() {
+    public int getResourceUsageMultiplicand() 
+    {
         int multiplicand = 1;
-        for (TaskRequirement taskRequirement : taskRequirementList) {
+        for (TaskRequirement taskRequirement : taskRequirementList) 
+        {
             multiplicand *= taskRequirement.getResourceUsage();
         }
+        
         return multiplicand;
     }
 
-    public String getLabel() {
+    public String getLabel() 
+    {
         return "Task " + id;
     }
-
 }

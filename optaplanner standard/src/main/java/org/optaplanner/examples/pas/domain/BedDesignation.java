@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.pas.domain;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.core.api.domain.entity.PlanningEntity;
 import org.optaplanner.core.api.domain.variable.PlanningVariable;
@@ -25,26 +23,30 @@ import org.optaplanner.examples.pas.domain.solver.BedStrengthComparator;
 
 @PlanningEntity(difficultyWeightFactoryClass = BedDesignationDifficultyWeightFactory.class)
 @XStreamAlias("BedDesignation")
-public class BedDesignation extends AbstractPersistable {
-
+public class BedDesignation extends AbstractPersistable 
+{
     private AdmissionPart admissionPart;
     private Bed bed;
 
-    public AdmissionPart getAdmissionPart() {
+    public AdmissionPart getAdmissionPart() 
+    {
         return admissionPart;
     }
 
-    public void setAdmissionPart(AdmissionPart admissionPart) {
+    public void setAdmissionPart(AdmissionPart admissionPart) 
+    {
         this.admissionPart = admissionPart;
     }
 
     @PlanningVariable(nullable = true, valueRangeProviderRefs = {"bedRange"},
             strengthComparatorClass = BedStrengthComparator.class)
-    public Bed getBed() {
+    public Bed getBed() 
+    {
         return bed;
     }
 
-    public void setBed(Bed bed) {
+    public void setBed(Bed bed) 
+    {
         this.bed = bed;
     }
 
@@ -52,68 +54,89 @@ public class BedDesignation extends AbstractPersistable {
     // Complex methods
     // ************************************************************************
 
-    public Patient getPatient() {
+    public Patient getPatient() 
+    {
         return admissionPart.getPatient();
     }
 
-    public Gender getPatientGender() {
+    public Gender getPatientGender() 
+    {
         return admissionPart.getPatient().getGender();
     }
 
-    public int getPatientAge() {
+    public int getPatientAge() 
+    {
         return admissionPart.getPatient().getAge();
     }
 
-    public Integer getPatientPreferredMaximumRoomCapacity() {
+    public Integer getPatientPreferredMaximumRoomCapacity() 
+    {
         return admissionPart.getPatient().getPreferredMaximumRoomCapacity();
     }
 
-    public Specialism getAdmissionPartSpecialism() {
+    public Specialism getAdmissionPartSpecialism() 
+    {
         return admissionPart.getSpecialism();
     }
 
-    public int getFirstNightIndex() {
+    public int getFirstNightIndex() 
+    {
         return admissionPart.getFirstNight().getIndex();
     }
 
-    public int getLastNightIndex() {
+    public int getLastNightIndex() 
+    {
         return admissionPart.getLastNight().getIndex();
     }
 
-    public int getAdmissionPartNightCount() {
+    public int getAdmissionPartNightCount() 
+    {
         return admissionPart.getNightCount();
     }
 
-    public Room getRoom() {
-        if (bed == null) {
+    public Room getRoom() 
+    {
+        if (bed == null) 
+        {
             return null;
         }
+        
         return bed.getRoom();
     }
 
-    public int getRoomCapacity() {
-        if (bed == null) {
+    public int getRoomCapacity() 
+    {
+        if (bed == null) 
+        {
             return Integer.MIN_VALUE;
         }
+        
         return bed.getRoom().getCapacity();
     }
 
-    public Department getDepartment() {
-        if (bed == null) {
+    public Department getDepartment() 
+    {
+        if (bed == null) 
+        {
             return null;
         }
+        
         return bed.getRoom().getDepartment();
     }
 
-    public GenderLimitation getRoomGenderLimitation() {
-        if (bed == null) {
+    public GenderLimitation getRoomGenderLimitation() 
+    {
+        if (bed == null) 
+        {
             return null;
         }
+        
         return bed.getRoom().getGenderLimitation();
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return admissionPart.toString();
     }
 

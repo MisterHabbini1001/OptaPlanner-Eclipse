@@ -13,23 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cheaptime.domain;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 
 @XStreamAlias("CtResource")
-public class Resource extends AbstractPersistable {
-
+public class Resource extends AbstractPersistable 
+{
     private int index;
 
-    public int getIndex() {
+    public int getIndex() 
+    {
         return index;
     }
 
-    public void setIndex(int index) {
+    public void setIndex(int index) 
+    {
         this.index = index;
     }
-
 }

@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.coachshuttlegathering.domain;
-
 import java.util.List;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
@@ -23,8 +21,8 @@ import org.optaplanner.examples.coachshuttlegathering.domain.location.RoadLocati
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 
 @XStreamAlias("CsgBusHub")
-public class BusHub extends AbstractPersistable implements StopOrHub {
-
+public class BusHub extends AbstractPersistable implements StopOrHub 
+{
     protected String name;
     protected RoadLocation location;
 
@@ -32,35 +30,42 @@ public class BusHub extends AbstractPersistable implements StopOrHub {
     protected List<Shuttle> transferShuttleList;
 
     @Override
-    public String getName() {
+    public String getName() 
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name) 
+    {
         this.name = name;
     }
 
     @Override
-    public RoadLocation getLocation() {
+    public RoadLocation getLocation() 
+    {
         return location;
     }
 
-    public void setLocation(RoadLocation location) {
+    public void setLocation(RoadLocation location) 
+    {
         this.location = location;
     }
 
     @Override
-    public List<Shuttle> getTransferShuttleList() {
+    public List<Shuttle> getTransferShuttleList() 
+    {
         return transferShuttleList;
     }
 
     @Override
-    public void setTransferShuttleList(List<Shuttle> transferShuttleList) {
+    public void setTransferShuttleList(List<Shuttle> transferShuttleList) 
+    {
         this.transferShuttleList = transferShuttleList;
     }
 
     @Override
-    public Integer getTransportTimeToHub() {
+    public Integer getTransportTimeToHub() 
+    {
         return 0;
     }
 
@@ -69,13 +74,14 @@ public class BusHub extends AbstractPersistable implements StopOrHub {
     // ************************************************************************
 
     @Override
-    public boolean isVisitedByCoach() {
+    public boolean isVisitedByCoach() 
+    {
         return true;
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return name;
     }
-
 }

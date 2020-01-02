@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.conferencescheduling.domain;
-
 import org.optaplanner.core.api.domain.constraintweight.ConstraintConfiguration;
 import org.optaplanner.core.api.domain.constraintweight.ConstraintWeight;
 import org.optaplanner.core.api.score.buildin.hardmediumsoft.HardMediumSoftScore;
@@ -147,10 +145,12 @@ public class ConferenceConstraintConfiguration extends AbstractPersistable
     @ConstraintWeight(TALK_UNDESIRED_ROOM_TAGS)
     private HardMediumSoftScore talkUndesiredRoomTags = HardMediumSoftScore.ofSoft(20);
 
-    public ConferenceConstraintConfiguration() {
+    public ConferenceConstraintConfiguration() 
+    {
     }
 
-    public ConferenceConstraintConfiguration(long id) {
+    public ConferenceConstraintConfiguration(long id) 
+    {
         super(id);
     }
 
@@ -158,75 +158,93 @@ public class ConferenceConstraintConfiguration extends AbstractPersistable
     // Simple getters and setters
     // ************************************************************************
 
-    public int getMinimumConsecutiveTalksPauseInMinutes() {
+    public int getMinimumConsecutiveTalksPauseInMinutes() 
+    {
         return minimumConsecutiveTalksPauseInMinutes;
     }
 
-    public void setMinimumConsecutiveTalksPauseInMinutes(int minimumConsecutiveTalksPauseInMinutes) {
+    public void setMinimumConsecutiveTalksPauseInMinutes(int minimumConsecutiveTalksPauseInMinutes) 
+    {
         this.minimumConsecutiveTalksPauseInMinutes = minimumConsecutiveTalksPauseInMinutes;
     }
 
-    public HardMediumSoftScore getRoomUnavailableTimeslot() {
+    public HardMediumSoftScore getRoomUnavailableTimeslot() 
+    {
         return roomUnavailableTimeslot;
     }
 
-    public void setRoomUnavailableTimeslot(HardMediumSoftScore roomUnavailableTimeslot) {
+    public void setRoomUnavailableTimeslot(HardMediumSoftScore roomUnavailableTimeslot) 
+    {
         this.roomUnavailableTimeslot = roomUnavailableTimeslot;
     }
 
-    public HardMediumSoftScore getRoomConflict() {
+    public HardMediumSoftScore getRoomConflict() 
+    {
         return roomConflict;
     }
 
-    public void setRoomConflict(HardMediumSoftScore roomConflict) {
+    public void setRoomConflict(HardMediumSoftScore roomConflict) 
+    {
         this.roomConflict = roomConflict;
     }
 
-    public HardMediumSoftScore getSpeakerUnavailableTimeslot() {
+    public HardMediumSoftScore getSpeakerUnavailableTimeslot() 
+    {
         return speakerUnavailableTimeslot;
     }
 
-    public void setSpeakerUnavailableTimeslot(HardMediumSoftScore speakerUnavailableTimeslot) {
+    public void setSpeakerUnavailableTimeslot(HardMediumSoftScore speakerUnavailableTimeslot) 
+    {
         this.speakerUnavailableTimeslot = speakerUnavailableTimeslot;
     }
 
-    public HardMediumSoftScore getSpeakerConflict() {
+    public HardMediumSoftScore getSpeakerConflict() 
+    {
         return speakerConflict;
     }
 
-    public void setSpeakerConflict(HardMediumSoftScore speakerConflict) {
+    public void setSpeakerConflict(HardMediumSoftScore speakerConflict) 
+    {
         this.speakerConflict = speakerConflict;
     }
 
-    public HardMediumSoftScore getTalkPrerequisiteTalks() {
+    public HardMediumSoftScore getTalkPrerequisiteTalks() 
+    {
         return talkPrerequisiteTalks;
     }
 
-    public void setTalkPrerequisiteTalks(HardMediumSoftScore talkPrerequisiteTalks) {
+    public void setTalkPrerequisiteTalks(HardMediumSoftScore talkPrerequisiteTalks) 
+    {
         this.talkPrerequisiteTalks = talkPrerequisiteTalks;
     }
 
-    public HardMediumSoftScore getTalkMutuallyExclusiveTalksTags() {
+    public HardMediumSoftScore getTalkMutuallyExclusiveTalksTags() 
+    {
         return talkMutuallyExclusiveTalksTags;
     }
 
-    public void setTalkMutuallyExclusiveTalksTags(HardMediumSoftScore talkMutuallyExclusiveTalksTags) {
+    public void setTalkMutuallyExclusiveTalksTags(HardMediumSoftScore talkMutuallyExclusiveTalksTags) 
+    {
         this.talkMutuallyExclusiveTalksTags = talkMutuallyExclusiveTalksTags;
     }
 
-    public HardMediumSoftScore getConsecutiveTalksPause() {
+    public HardMediumSoftScore getConsecutiveTalksPause() 
+    {
         return consecutiveTalksPause;
     }
 
-    public void setConsecutiveTalksPause(HardMediumSoftScore consecutiveTalksPause) {
+    public void setConsecutiveTalksPause(HardMediumSoftScore consecutiveTalksPause) 
+    {
         this.consecutiveTalksPause = consecutiveTalksPause;
     }
 
-    public HardMediumSoftScore getCrowdControl() {
+    public HardMediumSoftScore getCrowdControl() 
+    {
         return crowdControl;
     }
 
-    public void setCrowdControl(HardMediumSoftScore crowdControl) {
+    public void setCrowdControl(HardMediumSoftScore crowdControl) 
+    {
         this.crowdControl = crowdControl;
     }
 

@@ -13,18 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.vehiclerouting.app;
-
 import org.optaplanner.examples.common.app.CommonBenchmarkApp;
 
-public class VehicleRoutingBenchmarkApp extends CommonBenchmarkApp {
-
-    public static void main(String[] args) {
+public class VehicleRoutingBenchmarkApp extends CommonBenchmarkApp 
+{
+    public static void main(String[] args) 
+    {
         new VehicleRoutingBenchmarkApp().buildAndBenchmark(args);
     }
 
-    public VehicleRoutingBenchmarkApp() {
+    public VehicleRoutingBenchmarkApp() 
+    {
         super(
                 new ArgOption("default",
                         "org/optaplanner/examples/vehiclerouting/benchmark/vehicleRoutingBenchmarkConfig.xml"),
@@ -36,5 +36,4 @@ public class VehicleRoutingBenchmarkApp extends CommonBenchmarkApp {
                         "org/optaplanner/examples/vehiclerouting/benchmark/vehicleRoutingBenchmarkConfigTemplate.xml.ftl", true)
         );
     }
-
 }

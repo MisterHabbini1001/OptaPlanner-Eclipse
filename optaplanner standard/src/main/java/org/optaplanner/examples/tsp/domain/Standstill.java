@@ -13,13 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.tsp.domain;
-
 import org.optaplanner.examples.tsp.domain.location.Location;
 
-public interface Standstill {
-
+public interface Standstill 
+{
     /**
      * @return never null
      */
@@ -30,5 +28,4 @@ public interface Standstill {
      * @return a positive number, the distance multiplied by 1000 to avoid floating point arithmetic rounding errors
      */
     long getDistanceTo(Standstill standstill);
-
 }

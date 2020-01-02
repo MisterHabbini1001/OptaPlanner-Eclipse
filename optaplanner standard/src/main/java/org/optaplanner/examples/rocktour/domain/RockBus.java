@@ -13,52 +13,56 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.rocktour.domain;
-
 import java.time.LocalDate;
 
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 
-public class RockBus extends AbstractPersistable implements RockStandstill {
-
+public class RockBus extends AbstractPersistable implements RockStandstill 
+{
     private RockLocation startLocation;
     private LocalDate startDate;
     private RockLocation endLocation;
     private LocalDate endDate;
-
     private RockShow nextShow;
 
-    public RockBus() {
+    public RockBus() 
+    {
     }
 
     @Override
-    public RockLocation getDepartureLocation() {
+    public RockLocation getDepartureLocation() 
+    {
         return startLocation;
     }
 
     @Override
-    public LocalDate getDepartureDate() {
+    public LocalDate getDepartureDate() 
+    {
         return startDate;
     }
 
     @Override
-    public RockTimeOfDay getDepartureTimeOfDay() {
+    public RockTimeOfDay getDepartureTimeOfDay() 
+    {
         return RockTimeOfDay.EARLY;
     }
 
     @Override
-    public RockStandstill getHosWeekStart() {
+    public RockStandstill getHosWeekStart() 
+    {
         return this;
     }
 
     @Override
-    public Long getHosWeekDrivingSecondsTotal() {
+    public Long getHosWeekDrivingSecondsTotal() 
+    {
         return 0L;
     }
 
     @Override
-    public RockLocation getArrivalLocation() {
+    public RockLocation getArrivalLocation() 
+    {
         return endLocation;
     }
 
@@ -66,46 +70,55 @@ public class RockBus extends AbstractPersistable implements RockStandstill {
     // Simple getters and setters
     // ************************************************************************
 
-    public RockLocation getStartLocation() {
+    public RockLocation getStartLocation() 
+    {
         return startLocation;
     }
 
-    public void setStartLocation(RockLocation startLocation) {
+    public void setStartLocation(RockLocation startLocation) 
+    {
         this.startLocation = startLocation;
     }
 
-    public LocalDate getStartDate() {
+    public LocalDate getStartDate() 
+    {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(LocalDate startDate) 
+    {
         this.startDate = startDate;
     }
 
-    public RockLocation getEndLocation() {
+    public RockLocation getEndLocation() 
+    {
         return endLocation;
     }
 
-    public void setEndLocation(RockLocation endLocation) {
+    public void setEndLocation(RockLocation endLocation) 
+    {
         this.endLocation = endLocation;
     }
 
-    public LocalDate getEndDate() {
+    public LocalDate getEndDate() 
+    {
         return endDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
+    public void setEndDate(LocalDate endDate) 
+    {
         this.endDate = endDate;
     }
 
     @Override
-    public RockShow getNextShow() {
+    public RockShow getNextShow() 
+    {
         return nextShow;
     }
 
     @Override
-    public void setNextShow(RockShow nextShow) {
+    public void setNextShow(RockShow nextShow) 
+    {
         this.nextShow = nextShow;
     }
-
 }

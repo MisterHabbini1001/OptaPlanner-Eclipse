@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.tennis.domain;
-
 import java.util.List;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
@@ -29,60 +27,67 @@ import org.optaplanner.examples.common.domain.AbstractPersistable;
 
 @PlanningSolution
 @XStreamAlias("TennisSolution")
-public class TennisSolution extends AbstractPersistable {
-
+public class TennisSolution extends AbstractPersistable 
+{
     private List<Team> teamList;
     private List<Day> dayList;
     private List<UnavailabilityPenalty> unavailabilityPenaltyList;
-
     private List<TeamAssignment> teamAssignmentList;
-
     private HardMediumSoftScore score;
 
     @ValueRangeProvider(id = "teamRange")
     @ProblemFactCollectionProperty
-    public List<Team> getTeamList() {
+    public List<Team> getTeamList() 
+    {
         return teamList;
     }
 
-    public void setTeamList(List<Team> teamList) {
+    public void setTeamList(List<Team> teamList) 
+    {
         this.teamList = teamList;
     }
 
     @ProblemFactCollectionProperty
-    public List<Day> getDayList() {
+    public List<Day> getDayList() 
+    {
         return dayList;
     }
 
-    public void setDayList(List<Day> dayList) {
+    public void setDayList(List<Day> dayList) 
+    {
         this.dayList = dayList;
     }
 
     @ProblemFactCollectionProperty
-    public List<UnavailabilityPenalty> getUnavailabilityPenaltyList() {
+    public List<UnavailabilityPenalty> getUnavailabilityPenaltyList() 
+    {
         return unavailabilityPenaltyList;
     }
 
-    public void setUnavailabilityPenaltyList(List<UnavailabilityPenalty> unavailabilityPenaltyList) {
+    public void setUnavailabilityPenaltyList(List<UnavailabilityPenalty> unavailabilityPenaltyList) 
+    {
         this.unavailabilityPenaltyList = unavailabilityPenaltyList;
     }
 
     @PlanningEntityCollectionProperty
-    public List<TeamAssignment> getTeamAssignmentList() {
+    public List<TeamAssignment> getTeamAssignmentList() 
+    {
         return teamAssignmentList;
     }
 
-    public void setTeamAssignmentList(List<TeamAssignment> teamAssignmentList) {
+    public void setTeamAssignmentList(List<TeamAssignment> teamAssignmentList) 
+    {
         this.teamAssignmentList = teamAssignmentList;
     }
 
     @PlanningScore
-    public HardMediumSoftScore getScore() {
+    public HardMediumSoftScore getScore() 
+    {
         return score;
     }
 
-    public void setScore(HardMediumSoftScore score) {
+    public void setScore(HardMediumSoftScore score) 
+    {
         this.score = score;
     }
-
 }

@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cheaptime.domain;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.core.api.domain.entity.PlanningEntity;
 import org.optaplanner.core.api.domain.valuerange.CountableValueRange;
@@ -27,37 +25,43 @@ import org.optaplanner.examples.common.domain.AbstractPersistable;
 
 @PlanningEntity(difficultyComparatorClass = TaskAssignmentDifficultyComparator.class)
 @XStreamAlias("CtTaskAssignment")
-public class TaskAssignment extends AbstractPersistable {
-
+public class TaskAssignment extends AbstractPersistable 
+{
     private Task task;
 
     // Planning variables: changes during planning, between score calculations.
     private Machine machine;
     private Integer startPeriod;
 
-    public Task getTask() {
+    public Task getTask() 
+    {
         return task;
     }
 
-    public void setTask(Task task) {
+    public void setTask(Task task) 
+    {
         this.task = task;
     }
 
     @PlanningVariable(valueRangeProviderRefs = {"machineRange"})
-    public Machine getMachine() {
+    public Machine getMachine() 
+    {
         return machine;
     }
 
-    public void setMachine(Machine machine) {
+    public void setMachine(Machine machine) 
+    {
         this.machine = machine;
     }
 
     @PlanningVariable(valueRangeProviderRefs = {"startPeriodRange"})
-    public Integer getStartPeriod() {
+    public Integer getStartPeriod()
+    {
         return startPeriod;
     }
 
-    public void setStartPeriod(Integer startPeriod) {
+    public void setStartPeriod(Integer startPeriod) 
+    {
         this.startPeriod = startPeriod;
     }
 
@@ -69,14 +73,18 @@ public class TaskAssignment extends AbstractPersistable {
      * The startPeriod is included and the endPeriod is excluded.
      * @return null if {@link #getStartPeriod()} is null
      */
-    public Integer getEndPeriod() {
-        if (startPeriod == null) {
+    public Integer getEndPeriod() 
+    {
+        if (startPeriod == null) 
+        {
             return null;
         }
+        
         return startPeriod + task.getDuration();
     }
 
-    public String getLabel() {
+    public String getLabel() 
+    {
         return task.getLabel();
     }
 
@@ -85,8 +93,8 @@ public class TaskAssignment extends AbstractPersistable {
     // ************************************************************************
 
     @ValueRangeProvider(id = "startPeriodRange")
-    public CountableValueRange<Integer> getStartPeriodRange() {
+    public CountableValueRange<Integer> getStartPeriodRange() 
+    {
         return ValueRangeFactory.createIntValueRange(task.getStartPeriodRangeFrom(), task.getStartPeriodRangeTo());
     }
-
 }

@@ -100,7 +100,7 @@ public class TravelingTournamentTest
     @Test
     public void testsetMatchList() 
     {
-        this.matchList = matchSets;
+        this.matchList = matchList;
     }
 
     @Test

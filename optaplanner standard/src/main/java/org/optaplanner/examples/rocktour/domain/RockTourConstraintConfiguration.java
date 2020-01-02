@@ -13,17 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.rocktour.domain;
-
 import org.optaplanner.core.api.domain.constraintweight.ConstraintConfiguration;
 import org.optaplanner.core.api.domain.constraintweight.ConstraintWeight;
 import org.optaplanner.core.api.score.buildin.hardmediumsoftlong.HardMediumSoftLongScore;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 
 @ConstraintConfiguration(constraintPackage = "org.optaplanner.examples.rocktour.solver")
-public class RockTourConstraintConfiguration extends AbstractPersistable {
-
+public class RockTourConstraintConfiguration extends AbstractPersistable 
+{
     public static final String EARLY_LATE_BREAK_DRIVING_SECONDS = "Early late break driving seconds budget";
     public static final String NIGHT_DRIVING_SECONDS = "Night driving seconds budget";
 
@@ -67,10 +65,12 @@ public class RockTourConstraintConfiguration extends AbstractPersistable {
     @ConstraintWeight(SHORTEN_DRIVING_TIME_PER_MILLISECOND_SQUARED)
     private HardMediumSoftLongScore shortenDrivingTimePerMillisecondSquared = HardMediumSoftLongScore.ofSoft(1);
 
-    public RockTourConstraintConfiguration() {
+    public RockTourConstraintConfiguration() 
+    {
     }
 
-    public RockTourConstraintConfiguration(long id) {
+    public RockTourConstraintConfiguration(long id) 
+    {
         super(id);
     }
 
@@ -78,100 +78,123 @@ public class RockTourConstraintConfiguration extends AbstractPersistable {
     // Simple getters and setters
     // ************************************************************************
 
-    public long getEarlyLateBreakDrivingSecondsBudget() {
+    public long getEarlyLateBreakDrivingSecondsBudget() 
+    {
         return earlyLateBreakDrivingSecondsBudget;
     }
 
-    public void setEarlyLateBreakDrivingSecondsBudget(long earlyLateBreakDrivingSecondsBudget) {
+    public void setEarlyLateBreakDrivingSecondsBudget(long earlyLateBreakDrivingSecondsBudget) 
+    {
         this.earlyLateBreakDrivingSecondsBudget = earlyLateBreakDrivingSecondsBudget;
     }
 
-    public long getNightDrivingSecondsBudget() {
+    public long getNightDrivingSecondsBudget() 
+    {
         return nightDrivingSecondsBudget;
     }
 
-    public void setNightDrivingSecondsBudget(long nightDrivingSecondsBudget) {
+    public void setNightDrivingSecondsBudget(long nightDrivingSecondsBudget) 
+    {
         this.nightDrivingSecondsBudget = nightDrivingSecondsBudget;
     }
 
-    public long getHosWeekDrivingSecondsBudget() {
+    public long getHosWeekDrivingSecondsBudget() 
+    {
         return hosWeekDrivingSecondsBudget;
     }
 
-    public void setHosWeekDrivingSecondsBudget(long hosWeekDrivingSecondsBudget) {
+    public void setHosWeekDrivingSecondsBudget(long hosWeekDrivingSecondsBudget) 
+    {
         this.hosWeekDrivingSecondsBudget = hosWeekDrivingSecondsBudget;
     }
 
-    public int getHosWeekConsecutiveDrivingDaysBudget() {
+    public int getHosWeekConsecutiveDrivingDaysBudget() 
+    {
         return hosWeekConsecutiveDrivingDaysBudget;
     }
 
-    public void setHosWeekConsecutiveDrivingDaysBudget(int hosWeekConsecutiveDrivingDaysBudget) {
+    public void setHosWeekConsecutiveDrivingDaysBudget(int hosWeekConsecutiveDrivingDaysBudget) 
+    {
         this.hosWeekConsecutiveDrivingDaysBudget = hosWeekConsecutiveDrivingDaysBudget;
     }
 
-    public int getHosWeekRestDays() {
+    public int getHosWeekRestDays() 
+    {
         return hosWeekRestDays;
     }
 
-    public void setHosWeekRestDays(int hosWeekRestDays) {
+    public void setHosWeekRestDays(int hosWeekRestDays) 
+    {
         this.hosWeekRestDays = hosWeekRestDays;
     }
 
-    public HardMediumSoftLongScore getRequiredShow() {
+    public HardMediumSoftLongScore getRequiredShow() 
+    {
         return requiredShow;
     }
 
-    public void setRequiredShow(HardMediumSoftLongScore requiredShow) {
+    public void setRequiredShow(HardMediumSoftLongScore requiredShow) 
+    {
         this.requiredShow = requiredShow;
     }
 
-    public HardMediumSoftLongScore getUnassignedShow() {
+    public HardMediumSoftLongScore getUnassignedShow() 
+    {
         return unassignedShow;
     }
 
-    public void setUnassignedShow(HardMediumSoftLongScore unassignedShow) {
+    public void setUnassignedShow(HardMediumSoftLongScore unassignedShow) 
+    {
         this.unassignedShow = unassignedShow;
     }
 
-    public HardMediumSoftLongScore getRevenueOpportunity() {
+    public HardMediumSoftLongScore getRevenueOpportunity() 
+    {
         return revenueOpportunity;
     }
 
-    public void setRevenueOpportunity(HardMediumSoftLongScore revenueOpportunity) {
+    public void setRevenueOpportunity(HardMediumSoftLongScore revenueOpportunity) 
+    {
         this.revenueOpportunity = revenueOpportunity;
     }
 
-    public HardMediumSoftLongScore getDrivingTimeToShowPerSecond() {
+    public HardMediumSoftLongScore getDrivingTimeToShowPerSecond() 
+    {
         return drivingTimeToShowPerSecond;
     }
 
-    public void setDrivingTimeToShowPerSecond(HardMediumSoftLongScore drivingTimeToShowPerSecond) {
+    public void setDrivingTimeToShowPerSecond(HardMediumSoftLongScore drivingTimeToShowPerSecond) 
+    {
         this.drivingTimeToShowPerSecond = drivingTimeToShowPerSecond;
     }
 
-    public HardMediumSoftLongScore getDrivingTimeToBusArrivalPerSecond() {
+    public HardMediumSoftLongScore getDrivingTimeToBusArrivalPerSecond() 
+    {
         return drivingTimeToBusArrivalPerSecond;
     }
 
-    public void setDrivingTimeToBusArrivalPerSecond(HardMediumSoftLongScore drivingTimeToBusArrivalPerSecond) {
+    public void setDrivingTimeToBusArrivalPerSecond(HardMediumSoftLongScore drivingTimeToBusArrivalPerSecond) 
+    {
         this.drivingTimeToBusArrivalPerSecond = drivingTimeToBusArrivalPerSecond;
     }
 
-    public HardMediumSoftLongScore getDelayShowCostPerDay() {
+    public HardMediumSoftLongScore getDelayShowCostPerDay() 
+    {
         return delayShowCostPerDay;
     }
 
-    public void setDelayShowCostPerDay(HardMediumSoftLongScore delayShowCostPerDay) {
+    public void setDelayShowCostPerDay(HardMediumSoftLongScore delayShowCostPerDay) 
+    {
         this.delayShowCostPerDay = delayShowCostPerDay;
     }
 
-    public HardMediumSoftLongScore getShortenDrivingTimePerMillisecondSquared() {
+    public HardMediumSoftLongScore getShortenDrivingTimePerMillisecondSquared() 
+    {
         return shortenDrivingTimePerMillisecondSquared;
     }
 
-    public void setShortenDrivingTimePerMillisecondSquared(HardMediumSoftLongScore shortenDrivingTimePerMillisecondSquared) {
+    public void setShortenDrivingTimePerMillisecondSquared(HardMediumSoftLongScore shortenDrivingTimePerMillisecondSquared) 
+    {
         this.shortenDrivingTimePerMillisecondSquared = shortenDrivingTimePerMillisecondSquared;
     }
-
 }

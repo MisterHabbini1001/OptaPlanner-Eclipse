@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cheaptime.app;
-
 import org.optaplanner.examples.cheaptime.domain.CheapTimeSolution;
 import org.optaplanner.examples.cheaptime.persistence.CheapTimeExporter;
 import org.optaplanner.examples.cheaptime.persistence.CheapTimeImporter;
@@ -26,19 +24,21 @@ import org.optaplanner.examples.common.persistence.AbstractSolutionImporter;
 import org.optaplanner.persistence.common.api.domain.solution.SolutionFileIO;
 import org.optaplanner.persistence.xstream.impl.domain.solution.XStreamSolutionFileIO;
 
-public class CheapTimeApp extends CommonApp<CheapTimeSolution> {
-
+public class CheapTimeApp extends CommonApp<CheapTimeSolution> 
+{
     public static final String SOLVER_CONFIG
             = "org/optaplanner/examples/cheaptime/solver/cheapTimeSolverConfig.xml";
 
     public static final String DATA_DIR_NAME = "cheaptime";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         prepareSwingEnvironment();
         new CheapTimeApp().init();
     }
 
-    public CheapTimeApp() {
+    public CheapTimeApp() 
+    {
         super("Cheap time scheduling",
                 "Official competition name: ICON Challenge on Forecasting and Scheduling\n\n" +
                 "Assign tasks to machines and time.\n\n" +
@@ -50,25 +50,29 @@ public class CheapTimeApp extends CommonApp<CheapTimeSolution> {
     }
 
     @Override
-    protected CheapTimePanel createSolutionPanel() {
+    protected CheapTimePanel createSolutionPanel() 
+    {
         return new CheapTimePanel();
     }
 
     @Override
-    public SolutionFileIO<CheapTimeSolution> createSolutionFileIO() {
+    public SolutionFileIO<CheapTimeSolution> createSolutionFileIO() 
+    {
         return new XStreamSolutionFileIO<>(CheapTimeSolution.class);
     }
 
     @Override
-    protected AbstractSolutionImporter[] createSolutionImporters() {
-        return new AbstractSolutionImporter[]{
+    protected AbstractSolutionImporter[] createSolutionImporters() 
+    {
+        return new AbstractSolutionImporter[]
+        		{
                 new CheapTimeImporter()
         };
     }
 
     @Override
-    protected AbstractSolutionExporter createSolutionExporter() {
+    protected AbstractSolutionExporter createSolutionExporter() 
+    {
         return new CheapTimeExporter();
     }
-
 }

@@ -13,47 +13,50 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.pas.domain;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 
 @XStreamAlias("DepartmentSpecialism")
-public class DepartmentSpecialism extends AbstractPersistable {
-
+public class DepartmentSpecialism extends AbstractPersistable 
+{
     private Department department;
     private Specialism specialism;
-
     private int priority; // AKA choice
 
-    public Department getDepartment() {
+    public Department getDepartment() 
+    {
         return department;
     }
 
-    public void setDepartment(Department department) {
+    public void setDepartment(Department department) 
+    {
         this.department = department;
     }
 
-    public Specialism getSpecialism() {
+    public Specialism getSpecialism() 
+    {
         return specialism;
     }
 
-    public void setSpecialism(Specialism specialism) {
+    public void setSpecialism(Specialism specialism) 
+    {
         this.specialism = specialism;
     }
 
-    public int getPriority() {
+    public int getPriority() 
+    {
         return priority;
     }
 
-    public void setPriority(int priority) {
+    public void setPriority(int priority) 
+    {
         this.priority = priority;
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return department + "-" + specialism;
     }
-
 }

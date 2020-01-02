@@ -13,17 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.rocktour.domain;
-
 import java.time.LocalDate;
 
 import org.optaplanner.core.api.domain.entity.PlanningEntity;
 import org.optaplanner.core.api.domain.variable.InverseRelationShadowVariable;
 
 @PlanningEntity
-public interface RockStandstill {
-
+public interface RockStandstill 
+{
     /**
      * @return never null;
      */
@@ -58,7 +56,8 @@ public interface RockStandstill {
      * @param standstill never null
      * @return a positive number, in seconds
      */
-    default long getDrivingTimeTo(RockStandstill standstill) {
+    default long getDrivingTimeTo(RockStandstill standstill) 
+    {
         return getDepartureLocation().getDrivingTimeTo(standstill.getArrivalLocation());
     }
 

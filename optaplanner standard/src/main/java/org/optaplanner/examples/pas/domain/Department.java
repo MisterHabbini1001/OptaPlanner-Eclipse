@@ -13,84 +13,101 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.pas.domain;
-
 import java.util.List;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 
 @XStreamAlias("Department")
-public class Department extends AbstractPersistable {
-
+public class Department extends AbstractPersistable 
+{
     private String name;
     private Integer minimumAge = null;
     private Integer maximumAge = null;
 
     private List<Room> roomList;
 
-    public String getName() {
+    public String getName() 
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name) 
+    {
         this.name = name;
     }
 
-    public Integer getMinimumAge() {
+    public Integer getMinimumAge() 
+    {
         return minimumAge;
     }
 
-    public void setMinimumAge(Integer minimumAge) {
+    public void setMinimumAge(Integer minimumAge) 
+    {
         this.minimumAge = minimumAge;
     }
 
-    public Integer getMaximumAge() {
+    public Integer getMaximumAge() 
+    {
         return maximumAge;
     }
 
-    public void setMaximumAge(Integer maximumAge) {
+    public void setMaximumAge(Integer maximumAge) 
+    {
         this.maximumAge = maximumAge;
     }
 
-    public List<Room> getRoomList() {
+    public List<Room> getRoomList() 
+    {
         return roomList;
     }
 
-    public void setRoomList(List<Room> roomList) {
+    public void setRoomList(List<Room> roomList) 
+    {
         this.roomList = roomList;
     }
 
-    public int countHardDisallowedAdmissionPart(AdmissionPart admissionPart) {
+    public int countHardDisallowedAdmissionPart(AdmissionPart admissionPart) 
+    {
         return countDisallowedPatientAge(admissionPart.getPatient());
     }
 
-    public int countDisallowedPatientAge(Patient patient) {
+    public int countDisallowedPatientAge(Patient patient) 
+    {
         int count = 0;
-        if (minimumAge != null && patient.getAge() < minimumAge) {
+        if (minimumAge != null && patient.getAge() < minimumAge) 
+        {
             count += 100;
         }
-        if (maximumAge != null && patient.getAge() > maximumAge) {
+        
+        if (maximumAge != null && patient.getAge() > maximumAge) 
+        {
             count += 100;
         }
+        
         return count;
     }
 
-    public String getLabel() {
+    public String getLabel() 
+    {
         String label = name;
-        if (minimumAge != null) {
+        if (minimumAge != null) 
+        {
             label += "(≥" + minimumAge + ")";
         }
-        if (maximumAge != null) {
+        
+        if (maximumAge != null) 
+        {
             label += "(≤" + maximumAge + ")";
         }
+        
         return label;
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return name;
     }
-
 }

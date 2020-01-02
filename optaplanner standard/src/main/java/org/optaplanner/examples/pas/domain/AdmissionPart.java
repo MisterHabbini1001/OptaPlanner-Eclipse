@@ -13,41 +13,45 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.pas.domain;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 
 @XStreamAlias("AdmissionPart")
-public class AdmissionPart extends AbstractPersistable {
-
+public class AdmissionPart extends AbstractPersistable 
+{
     private Patient patient;
     private Night firstNight;
     private Night lastNight;
     private Specialism specialism;
 
-    public Patient getPatient() {
+    public Patient getPatient() 
+    {
         return patient;
     }
 
-    public void setPatient(Patient patient) {
+    public void setPatient(Patient patient) 
+    {
         this.patient = patient;
     }
 
-    public Night getFirstNight() {
+    public Night getFirstNight() 
+    {
         return firstNight;
     }
 
-    public void setFirstNight(Night firstNight) {
+    public void setFirstNight(Night firstNight) 
+    {
         this.firstNight = firstNight;
     }
 
-    public Night getLastNight() {
+    public Night getLastNight() 
+    {
         return lastNight;
     }
 
-    public void setLastNight(Night lastNight) {
+    public void setLastNight(Night lastNight) 
+    {
         this.lastNight = lastNight;
     }
 
@@ -55,23 +59,26 @@ public class AdmissionPart extends AbstractPersistable {
         return specialism;
     }
 
-    public void setSpecialism(Specialism specialism) {
+    public void setSpecialism(Specialism specialism) 
+    {
         this.specialism = specialism;
     }
 
-    public int getNightCount() {
+    public int getNightCount() 
+    {
         return lastNight.getIndex() - firstNight.getIndex() + 1;
     }
 
-    public int calculateSameNightCount(AdmissionPart other) {
+    public int calculateSameNightCount(AdmissionPart other) 
+    {
         int firstNightIndex = Math.max(getFirstNight().getIndex(), other.getFirstNight().getIndex());
         int lastNightIndex = Math.min(getLastNight().getIndex(), other.getLastNight().getIndex());
         return Math.max(0, lastNightIndex - firstNightIndex + 1);
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return patient + "(" + firstNight + "-" + lastNight + ")";
     }
-
 }

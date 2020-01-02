@@ -13,41 +13,44 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.tennis.domain;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 
 @XStreamAlias("TennisUnavailabilityPenalty")
-public class UnavailabilityPenalty extends AbstractPersistable {
-
+public class UnavailabilityPenalty extends AbstractPersistable 
+{
     private Team team;
     private Day day;
 
-    public UnavailabilityPenalty() {
+    public UnavailabilityPenalty() 
+    {
     }
 
-    public UnavailabilityPenalty(long id, Team team, Day day) {
+    public UnavailabilityPenalty(long id, Team team, Day day) 
+    {
         super(id);
         this.team = team;
         this.day = day;
     }
 
-    public Team getTeam() {
+    public Team getTeam() 
+    {
         return team;
     }
 
-    public void setTeam(Team team) {
+    public void setTeam(Team team) 
+    {
         this.team = team;
     }
 
-    public Day getDay() {
+    public Day getDay() 
+    {
         return day;
     }
 
-    public void setDay(Day day) {
+    public void setDay(Day day) 
+    {
         this.day = day;
     }
-
 }

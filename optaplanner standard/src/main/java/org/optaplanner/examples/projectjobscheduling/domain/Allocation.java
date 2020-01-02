@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.projectjobscheduling.domain;
-
 import java.util.List;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
@@ -34,10 +32,9 @@ import org.optaplanner.examples.projectjobscheduling.domain.solver.PredecessorsD
 
 @PlanningEntity(movableEntitySelectionFilter = NotSourceOrSinkAllocationFilter.class)
 @XStreamAlias("PjsAllocation")
-public class Allocation extends AbstractPersistable {
-
+public class Allocation extends AbstractPersistable 
+{
     private Job job;
-
     private Allocation sourceAllocation;
     private Allocation sinkAllocation;
     private List<Allocation> predecessorAllocationList;
@@ -50,74 +47,90 @@ public class Allocation extends AbstractPersistable {
     // Shadow variables
     private Integer predecessorsDoneDate;
 
-    public Job getJob() {
+    public Job getJob() 
+    {
         return job;
     }
 
-    public void setJob(Job job) {
+    public void setJob(Job job) 
+    {
         this.job = job;
     }
 
-    public Allocation getSourceAllocation() {
+    public Allocation getSourceAllocation() 
+    {
         return sourceAllocation;
     }
 
-    public void setSourceAllocation(Allocation sourceAllocation) {
+    public void setSourceAllocation(Allocation sourceAllocation) 
+    {
         this.sourceAllocation = sourceAllocation;
     }
 
-    public Allocation getSinkAllocation() {
+    public Allocation getSinkAllocation() 
+    {
         return sinkAllocation;
     }
 
-    public void setSinkAllocation(Allocation sinkAllocation) {
+    public void setSinkAllocation(Allocation sinkAllocation) 
+    {
         this.sinkAllocation = sinkAllocation;
     }
 
-    public List<Allocation> getPredecessorAllocationList() {
+    public List<Allocation> getPredecessorAllocationList() 
+    {
         return predecessorAllocationList;
     }
 
-    public void setPredecessorAllocationList(List<Allocation> predecessorAllocationList) {
+    public void setPredecessorAllocationList(List<Allocation> predecessorAllocationList) 
+    {
         this.predecessorAllocationList = predecessorAllocationList;
     }
 
-    public List<Allocation> getSuccessorAllocationList() {
+    public List<Allocation> getSuccessorAllocationList() 
+    {
         return successorAllocationList;
     }
 
-    public void setSuccessorAllocationList(List<Allocation> successorAllocationList) {
+    public void setSuccessorAllocationList(List<Allocation> successorAllocationList) 
+    {
         this.successorAllocationList = successorAllocationList;
     }
 
     @PlanningVariable(valueRangeProviderRefs = {"executionModeRange"},
             strengthWeightFactoryClass = ExecutionModeStrengthWeightFactory.class)
-    public ExecutionMode getExecutionMode() {
+    public ExecutionMode getExecutionMode() 
+    {
         return executionMode;
     }
 
-    public void setExecutionMode(ExecutionMode executionMode) {
+    public void setExecutionMode(ExecutionMode executionMode) 
+    {
         this.executionMode = executionMode;
     }
 
     @PlanningVariable(valueRangeProviderRefs = {"delayRange"},
             strengthComparatorClass = DelayStrengthComparator.class)
-    public Integer getDelay() {
+    public Integer getDelay() 
+    {
         return delay;
     }
 
-    public void setDelay(Integer delay) {
+    public void setDelay(Integer delay) 
+    {
         this.delay = delay;
     }
 
     @CustomShadowVariable(variableListenerClass = PredecessorsDoneDateUpdatingVariableListener.class,
             sources = {@PlanningVariableReference(variableName = "executionMode"),
                     @PlanningVariableReference(variableName = "delay")})
-    public Integer getPredecessorsDoneDate() {
+    public Integer getPredecessorsDoneDate() 
+    {
         return predecessorsDoneDate;
     }
 
-    public void setPredecessorsDoneDate(Integer predecessorsDoneDate) {
+    public void setPredecessorsDoneDate(Integer predecessorsDoneDate) 
+    {
         this.predecessorsDoneDate = predecessorsDoneDate;
     }
 
@@ -125,34 +138,44 @@ public class Allocation extends AbstractPersistable {
     // Complex methods
     // ************************************************************************
 
-    public Integer getStartDate() {
-        if (predecessorsDoneDate == null) {
+    public Integer getStartDate() 
+    {
+        if (predecessorsDoneDate == null) 
+        {
             return null;
         }
+        
         return predecessorsDoneDate + (delay == null ? 0 : delay);
     }
 
-    public Integer getEndDate() {
-        if (predecessorsDoneDate == null) {
+    public Integer getEndDate() 
+    {
+        if (predecessorsDoneDate == null) 
+        {
             return null;
         }
+        
         return predecessorsDoneDate + (delay == null ? 0 : delay)
                 + (executionMode == null ? 0 : executionMode.getDuration());
     }
 
-    public Project getProject() {
+    public Project getProject() 
+    {
         return job.getProject();
     }
 
-    public int getProjectCriticalPathEndDate() {
+    public int getProjectCriticalPathEndDate() 
+    {
         return job.getProject().getCriticalPathEndDate();
     }
 
-    public JobType getJobType() {
+    public JobType getJobType() 
+    {
         return job.getJobType();
     }
 
-    public String getLabel() {
+    public String getLabel() 
+    {
         return "Job " + job.getId();
     }
 
@@ -161,12 +184,14 @@ public class Allocation extends AbstractPersistable {
     // ************************************************************************
 
     @ValueRangeProvider(id = "executionModeRange")
-    public List<ExecutionMode> getExecutionModeRange() {
+    public List<ExecutionMode> getExecutionModeRange() 
+    {
         return job.getExecutionModeList();
     }
 
     @ValueRangeProvider(id = "delayRange")
-    public CountableValueRange<Integer> getDelayRange() {
+    public CountableValueRange<Integer> getDelayRange() 
+    {
         return ValueRangeFactory.createIntValueRange(0, 500);
     }
 }

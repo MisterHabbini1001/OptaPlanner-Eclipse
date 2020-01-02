@@ -13,13 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.rocktour.domain;
-
 import java.util.Map;
 
-public class RockLocation {
-
+public class RockLocation 
+{
     protected String cityName;
     protected double latitude;
     protected double longitude;
@@ -27,10 +25,12 @@ public class RockLocation {
     // Prefer Map over array or List because shows might be added and removed in real-time planning.
     protected Map<RockLocation, Long> drivingSecondsMap;
 
-    public RockLocation() {
+    public RockLocation() 
+    {
     }
 
-    public RockLocation(String cityName, double latitude, double longitude) {
+    public RockLocation(String cityName, double latitude, double longitude) 
+    {
         this.cityName = cityName;
         this.latitude = latitude;
         this.longitude = longitude;
@@ -40,14 +40,18 @@ public class RockLocation {
      * @param location never null
      * @return a positive number, in seconds
      */
-    public long getDrivingTimeTo(RockLocation location) {
-        if (this == location) {
+    public long getDrivingTimeTo(RockLocation location) 
+    {
+        if (this == location) 
+        {
             return 0L;
         }
+        
         return drivingSecondsMap.get(location);
     }
 
-    public long getAirDistanceTo(RockLocation location) {
+    public long getAirDistanceTo(RockLocation location) 
+    {
         // Euclidean distance (Pythagorean theorem) - not correct when the surface is a sphere
         double latitudeDifference = location.latitude - latitude;
         double longitudeDifference = location.longitude - longitude;
@@ -58,7 +62,8 @@ public class RockLocation {
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return cityName;
     }
 
@@ -66,36 +71,43 @@ public class RockLocation {
     // Simple getters and setters
     // ************************************************************************
 
-    public String getCityName() {
+    public String getCityName() 
+    {
         return cityName;
     }
 
-    public void setCityName(String cityName) {
+    public void setCityName(String cityName) 
+    {
         this.cityName = cityName;
     }
 
-    public double getLatitude() {
+    public double getLatitude() 
+    {
         return latitude;
     }
 
-    public void setLatitude(double latitude) {
+    public void setLatitude(double latitude) 
+    {
         this.latitude = latitude;
     }
 
-    public double getLongitude() {
+    public double getLongitude() 
+    {
         return longitude;
     }
 
-    public void setLongitude(double longitude) {
+    public void setLongitude(double longitude) 
+    {
         this.longitude = longitude;
     }
 
-    public Map<RockLocation, Long> getDrivingSecondsMap() {
+    public Map<RockLocation, Long> getDrivingSecondsMap() 
+    {
         return drivingSecondsMap;
     }
 
-    public void setDrivingSecondsMap(Map<RockLocation, Long> drivingSecondsMap) {
+    public void setDrivingSecondsMap(Map<RockLocation, Long> drivingSecondsMap) 
+    {
         this.drivingSecondsMap = drivingSecondsMap;
     }
-
 }

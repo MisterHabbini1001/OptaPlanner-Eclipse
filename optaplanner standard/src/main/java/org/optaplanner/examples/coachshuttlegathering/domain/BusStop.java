@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.coachshuttlegathering.domain;
-
 import java.util.List;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
@@ -32,8 +30,8 @@ import org.optaplanner.examples.common.domain.AbstractPersistable;
 
 @PlanningEntity(difficultyWeightFactoryClass = DepotAngleBusStopDifficultyWeightFactory.class)
 @XStreamAlias("CsgBusStop")
-public class BusStop extends AbstractPersistable implements BusOrStop, StopOrHub {
-
+public class BusStop extends AbstractPersistable implements BusOrStop, StopOrHub 
+{
     protected String name;
     protected RoadLocation location;
     protected int passengerQuantity;
@@ -49,76 +47,92 @@ public class BusStop extends AbstractPersistable implements BusOrStop, StopOrHub
     protected Integer transportTimeToHub;
 
     @Override
-    public String getName() {
+    public String getName() 
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name) 
+    {
         this.name = name;
     }
 
     @Override
-    public RoadLocation getLocation() {
+    public RoadLocation getLocation() 
+    {
         return location;
     }
 
-    public void setLocation(RoadLocation location) {
+    public void setLocation(RoadLocation location) 
+    {
         this.location = location;
     }
 
-    public int getPassengerQuantity() {
+    public int getPassengerQuantity() 
+    {
         return passengerQuantity;
     }
 
-    public void setPassengerQuantity(int passengerQuantity) {
+    public void setPassengerQuantity(int passengerQuantity) 
+    {
         this.passengerQuantity = passengerQuantity;
     }
 
-    public int getTransportTimeLimit() {
+    public int getTransportTimeLimit() 
+    {
         return transportTimeLimit;
     }
 
-    public void setTransportTimeLimit(int transportTimeLimit) {
+    public void setTransportTimeLimit(int transportTimeLimit) 
+    {
         this.transportTimeLimit = transportTimeLimit;
     }
 
     @PlanningVariable(valueRangeProviderRefs = {"coachRange", "shuttleRange", "stopRange"},
             graphType = PlanningVariableGraphType.CHAINED)
-    public BusOrStop getPreviousBusOrStop() {
+    public BusOrStop getPreviousBusOrStop() 
+    {
         return previousBusOrStop;
     }
 
-    public void setPreviousBusOrStop(BusOrStop previousBusOrStop) {
+    public void setPreviousBusOrStop(BusOrStop previousBusOrStop) 
+    {
         this.previousBusOrStop = previousBusOrStop;
     }
 
     @Override
-    public BusStop getNextStop() {
+    public BusStop getNextStop() 
+    {
         return nextStop;
     }
 
     @Override
-    public void setNextStop(BusStop nextStop) {
+    public void setNextStop(BusStop nextStop) 
+    {
         this.nextStop = nextStop;
     }
 
     @AnchorShadowVariable(sourceVariableName = "previousBusOrStop")
     @Override
-    public Bus getBus() {
+    public Bus getBus() 
+    {
         return bus;
     }
 
-    public void setBus(Bus bus) {
+    public void setBus(Bus bus) 
+    {
         this.bus = bus;
     }
 
     @Override
-    public List<Shuttle> getTransferShuttleList() {
+    public List<Shuttle> getTransferShuttleList() 
+    {
         return transferShuttleList;
     }
 
     @Override
-    public void setTransferShuttleList(List<Shuttle> transferShuttleList) {
+    public void setTransferShuttleList(List<Shuttle> transferShuttleList) 
+    {
         this.transferShuttleList = transferShuttleList;
     }
 
@@ -127,11 +141,13 @@ public class BusStop extends AbstractPersistable implements BusOrStop, StopOrHub
                     @PlanningVariableReference(variableName = "bus"),
                     @PlanningVariableReference(entityClass = Shuttle.class, variableName = "destination")})
     @Override
-    public Integer getTransportTimeToHub() {
+    public Integer getTransportTimeToHub() 
+    {
         return transportTimeToHub;
     }
 
-    public void setTransportTimeToHub(Integer transportTimeToHub) {
+    public void setTransportTimeToHub(Integer transportTimeToHub) 
+    {
         this.transportTimeToHub = transportTimeToHub;
     }
 
@@ -139,46 +155,60 @@ public class BusStop extends AbstractPersistable implements BusOrStop, StopOrHub
     // Complex methods
     // ************************************************************************
 
-    public int getDistanceFromPreviousCost() {
-        if (previousBusOrStop == null) {
+    public int getDistanceFromPreviousCost() 
+    {
+        if (previousBusOrStop == null) 
+        {
             return 0;
         }
+        
         return getDistanceFrom(previousBusOrStop) * bus.getMileageCost();
     }
 
-    public int getDistanceFrom(BusOrStop busOrStop) {
+    public int getDistanceFrom(BusOrStop busOrStop) 
+    {
         return bus.getDistanceFromTo(busOrStop.getLocation(), location);
     }
 
-    public int getDistanceToDestinationCost(StopOrHub destination) {
+    public int getDistanceToDestinationCost(StopOrHub destination) 
+    {
         return bus.getDistanceFromTo(location, destination.getLocation()) * bus.getMileageCost();
     }
 
     @Override
-    public boolean isVisitedByCoach() {
+    public boolean isVisitedByCoach() 
+    {
         return bus != null && bus instanceof Coach;
     }
 
-    public Integer getTransportTimeRemainder() {
-        if (transportTimeToHub == null) {
+    public Integer getTransportTimeRemainder() 
+    {
+        if (transportTimeToHub == null) 
+        {
             return null;
         }
-        if (passengerQuantity <= 0) {
+        
+        if (passengerQuantity <= 0) 
+        {
             return 0;
         }
+        
         return transportTimeLimit - transportTimeToHub;
     }
 
-    public String getTransportLabel() {
-        if (passengerQuantity <= 0) {
+    public String getTransportLabel() 
+    {
+        if (passengerQuantity <= 0) 
+        {
             return null;
         }
+        
         return (transportTimeToHub == null ? "inf" : transportTimeToHub.toString()) + "/" + transportTimeLimit;
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return name;
     }
-
 }

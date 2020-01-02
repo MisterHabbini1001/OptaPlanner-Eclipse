@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.tsp.domain;
-
 import java.text.NumberFormat;
 import java.util.Collections;
 import java.util.List;
@@ -36,77 +34,90 @@ import org.optaplanner.persistence.xstream.api.score.buildin.simplelong.SimpleLo
 
 @PlanningSolution
 @XStreamAlias("TspSolution")
-public class TspSolution extends AbstractPersistable {
-
+public class TspSolution extends AbstractPersistable 
+{
     private String name;
     protected DistanceType distanceType;
     protected String distanceUnitOfMeasurement;
     private List<Location> locationList;
     private Domicile domicile;
-
     private List<Visit> visitList;
 
     @XStreamConverter(SimpleLongScoreXStreamConverter.class)
     private SimpleLongScore score;
 
-    public String getName() {
+    public String getName() 
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name) 
+    {
         this.name = name;
     }
 
-    public DistanceType getDistanceType() {
+    public DistanceType getDistanceType() 
+    {
         return distanceType;
     }
 
-    public void setDistanceType(DistanceType distanceType) {
+    public void setDistanceType(DistanceType distanceType) 
+    {
         this.distanceType = distanceType;
     }
 
-    public String getDistanceUnitOfMeasurement() {
+    public String getDistanceUnitOfMeasurement() 
+    {
         return distanceUnitOfMeasurement;
     }
 
-    public void setDistanceUnitOfMeasurement(String distanceUnitOfMeasurement) {
+    public void setDistanceUnitOfMeasurement(String distanceUnitOfMeasurement) 
+    {
         this.distanceUnitOfMeasurement = distanceUnitOfMeasurement;
     }
 
     @ProblemFactCollectionProperty
-    public List<Location> getLocationList() {
+    public List<Location> getLocationList() 
+    {
         return locationList;
     }
 
-    public void setLocationList(List<Location> locationList) {
+    public void setLocationList(List<Location> locationList) 
+    {
         this.locationList = locationList;
     }
 
     @ProblemFactProperty
-    public Domicile getDomicile() {
+    public Domicile getDomicile() 
+    {
         return domicile;
     }
 
-    public void setDomicile(Domicile domicile) {
+    public void setDomicile(Domicile domicile) 
+    {
         this.domicile = domicile;
     }
 
     @PlanningEntityCollectionProperty
     @ValueRangeProvider(id = "visitRange")
-    public List<Visit> getVisitList() {
+    public List<Visit> getVisitList() 
+    {
         return visitList;
     }
 
-    public void setVisitList(List<Visit> visitList) {
+    public void setVisitList(List<Visit> visitList) 
+    {
         this.visitList = visitList;
     }
 
     @PlanningScore
-    public SimpleLongScore getScore() {
+    public SimpleLongScore getScore() 
+    {
         return score;
     }
 
-    public void setScore(SimpleLongScore score) {
+    public void setScore(SimpleLongScore score) 
+    {
         this.score = score;
     }
 
@@ -115,31 +126,40 @@ public class TspSolution extends AbstractPersistable {
     // ************************************************************************
 
     @ValueRangeProvider(id = "domicileRange")
-    public List<Domicile> getDomicileRange() {
+    public List<Domicile> getDomicileRange() 
+    {
         return Collections.singletonList(domicile);
     }
 
-    public String getDistanceString(NumberFormat numberFormat) {
-        if (score == null) {
+    public String getDistanceString(NumberFormat numberFormat) 
+    {
+        if (score == null) 
+        {
             return null;
         }
+        
         long distance = - score.getScore();
-        if (distanceUnitOfMeasurement == null) {
+        if (distanceUnitOfMeasurement == null) 
+        {
             return numberFormat.format(((double) distance) / 1000.0);
         }
-        switch (distanceUnitOfMeasurement) {
+        
+        switch (distanceUnitOfMeasurement) 
+        {
             case "sec":  // TODO why are the values 1000 larger?
                 long hours = distance / 3600000;
                 long minutes = distance % 3600000 / 60000;
                 long seconds = distance % 60000 / 1000;
                 long milliseconds = distance % 1000;
                 return hours + "h " + minutes + "m " + seconds + "s " + milliseconds + "ms";
-            case "km": { // TODO why are the values 1000 larger?
+            case "km": 
+            { // TODO why are the values 1000 larger?
                 long km = distance / 1000;
                 long meter = distance % 1000;
                 return km + "km " + meter + "m";
             }
-            case "meter": {
+            case "meter": 
+            {
                 long km = distance / 1000;
                 long meter = distance % 1000;
                 return km + "km " + meter + "m";

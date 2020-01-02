@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.app;
-
 import org.optaplanner.examples.cloudbalancing.persistence.CloudBalancingGenerator;
 import org.optaplanner.examples.common.app.LoggingMain;
 import org.optaplanner.examples.curriculumcourse.persistence.CurriculumCourseImporter;
@@ -30,13 +28,15 @@ import org.optaplanner.examples.travelingtournament.persistence.TravelingTournam
 import org.optaplanner.examples.tsp.persistence.TspImporter;
 import org.optaplanner.examples.vehiclerouting.persistence.VehicleRoutingImporter;
 
-public class AllExamplesSolutionImporter extends LoggingMain {
-
-    public static void main(String[] args) {
+public class AllExamplesSolutionImporter extends LoggingMain 
+{
+    public static void main(String[] args) 
+    {
         new AllExamplesSolutionImporter().importAll();
     }
 
-    public void importAll() {
+    public void importAll() 
+    {
         NQueensGenerator.main(new String[0]);
         CloudBalancingGenerator.main(new String[0]);
         TspImporter.main(new String[0]);
@@ -50,5 +50,4 @@ public class AllExamplesSolutionImporter extends LoggingMain {
         NurseRosteringImporter.main(new String[0]);
         TravelingTournamentImporter.main(new String[0]);
     }
-
 }

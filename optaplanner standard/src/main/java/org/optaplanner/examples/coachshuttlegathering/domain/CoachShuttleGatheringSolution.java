@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.coachshuttlegathering.domain;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -35,8 +33,8 @@ import org.optaplanner.persistence.xstream.api.score.buildin.hardsoftlong.HardSo
 
 @PlanningSolution
 @XStreamAlias("CsgCoachShuttleGatheringSolution")
-public class CoachShuttleGatheringSolution extends AbstractPersistable {
-
+public class CoachShuttleGatheringSolution extends AbstractPersistable 
+{
     protected String name;
     protected List<RoadLocation> locationList;
     protected List<Coach> coachList;
@@ -47,68 +45,82 @@ public class CoachShuttleGatheringSolution extends AbstractPersistable {
     @XStreamConverter(HardSoftLongScoreXStreamConverter.class)
     protected HardSoftLongScore score;
 
-    public String getName() {
+    public String getName() 
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name) 
+    {
         this.name = name;
     }
 
     @ProblemFactCollectionProperty
-    public List<RoadLocation> getLocationList() {
+    public List<RoadLocation> getLocationList() 
+    {
         return locationList;
     }
 
-    public void setLocationList(List<RoadLocation> locationList) {
+    public void setLocationList(List<RoadLocation> locationList) 
+    {
         this.locationList = locationList;
     }
 
     @PlanningEntityCollectionProperty
     @ValueRangeProvider(id = "coachRange")
-    public List<Coach> getCoachList() {
+    public List<Coach> getCoachList() 
+    {
         return coachList;
     }
 
-    public void setCoachList(List<Coach> coachList) {
+    public void setCoachList(List<Coach> coachList) 
+    {
         this.coachList = coachList;
     }
 
     @PlanningEntityCollectionProperty
     @ValueRangeProvider(id = "shuttleRange")
-    public List<Shuttle> getShuttleList() {
+    public List<Shuttle> getShuttleList() 
+    {
         return shuttleList;
     }
 
-    public void setShuttleList(List<Shuttle> shuttleList) {
+    public void setShuttleList(List<Shuttle> shuttleList) 
+    {
         this.shuttleList = shuttleList;
     }
 
     @PlanningEntityCollectionProperty
     @ValueRangeProvider(id = "stopRange")
-    public List<BusStop> getStopList() {
+    public List<BusStop> getStopList() 
+    {
         return stopList;
     }
 
-    public void setStopList(List<BusStop> stopList) {
+    public void setStopList(List<BusStop> stopList) 
+    {
         this.stopList = stopList;
     }
 
     @ProblemFactProperty
-    public BusHub getHub() {
+    public BusHub getHub() 
+    {
         return hub;
     }
 
-    public void setHub(BusHub hub) {
+    public void setHub(BusHub hub) 
+    {
         this.hub = hub;
     }
 
     @PlanningScore
-    public HardSoftLongScore getScore() {
+    public HardSoftLongScore getScore() 
+    {
         return score;
     }
 
-    public void setScore(HardSoftLongScore score) {
+    public void setScore(HardSoftLongScore score) 
+    {
         this.score = score;
     }
 
@@ -117,15 +129,16 @@ public class CoachShuttleGatheringSolution extends AbstractPersistable {
     // ************************************************************************
 
     @ValueRangeProvider(id = "hubRange")
-    public List<BusHub> getHubRange() {
+    public List<BusHub> getHubRange() 
+    {
         return Collections.singletonList(hub);
     }
 
-    public List<Bus> getBusList() {
+    public List<Bus> getBusList() 
+    {
         List<Bus> busList = new ArrayList<>(coachList.size() + shuttleList.size());
         busList.addAll(coachList);
         busList.addAll(shuttleList);
         return busList;
     }
-
 }

@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.rocktour.domain;
-
 import java.util.Collections;
 import java.util.List;
 
@@ -29,8 +27,8 @@ import org.optaplanner.core.api.score.buildin.hardmediumsoftlong.HardMediumSoftL
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 
 @PlanningSolution
-public class RockTourSolution extends AbstractPersistable {
-
+public class RockTourSolution extends AbstractPersistable 
+{
     private String tourName;
 
     @ConstraintConfigurationProvider
@@ -46,15 +44,18 @@ public class RockTourSolution extends AbstractPersistable {
     @PlanningScore
     private HardMediumSoftLongScore score = null;
 
-    public RockTourSolution() {
+    public RockTourSolution() 
+    {
     }
 
-    public RockTourSolution(long id) {
+    public RockTourSolution(long id) 
+    {
         super(id);
     }
 
     @ValueRangeProvider(id = "busRange")
-    public List<RockBus> getBugRange() {
+    public List<RockBus> getBugRange() 
+    {
         return Collections.singletonList(bus);
     }
 
@@ -62,44 +63,53 @@ public class RockTourSolution extends AbstractPersistable {
     // Simple getters and setters
     // ************************************************************************
 
-    public String getTourName() {
+    public String getTourName() 
+    {
         return tourName;
     }
 
-    public void setTourName(String tourName) {
+    public void setTourName(String tourName) 
+    {
         this.tourName = tourName;
     }
 
-    public RockTourConstraintConfiguration getConstraintConfiguration() {
+    public RockTourConstraintConfiguration getConstraintConfiguration() 
+    {
         return constraintConfiguration;
     }
 
-    public void setConstraintConfiguration(RockTourConstraintConfiguration constraintConfiguration) {
+    public void setConstraintConfiguration(RockTourConstraintConfiguration constraintConfiguration) 
+    {
         this.constraintConfiguration = constraintConfiguration;
     }
 
-    public RockBus getBus() {
+    public RockBus getBus() 
+    {
         return bus;
     }
 
-    public void setBus(RockBus bus) {
+    public void setBus(RockBus bus) 
+    {
         this.bus = bus;
     }
 
-    public List<RockShow> getShowList() {
+    public List<RockShow> getShowList() 
+    {
         return showList;
     }
 
-    public void setShowList(List<RockShow> showList) {
+    public void setShowList(List<RockShow> showList) 
+    {
         this.showList = showList;
     }
 
-    public HardMediumSoftLongScore getScore() {
+    public HardMediumSoftLongScore getScore() 
+    {
         return score;
     }
 
-    public void setScore(HardMediumSoftLongScore score) {
+    public void setScore(HardMediumSoftLongScore score) 
+    {
         this.score = score;
     }
-
 }

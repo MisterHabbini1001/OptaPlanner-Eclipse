@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cheaptime.domain;
 
 import java.util.List;
@@ -32,8 +31,8 @@ import org.optaplanner.persistence.xstream.api.score.buildin.hardmediumsoftlong.
 
 @PlanningSolution
 @XStreamAlias("CtCheapTimeSolution")
-public class CheapTimeSolution extends AbstractPersistable {
-
+public class CheapTimeSolution extends AbstractPersistable 
+{
     private int timeResolutionInMinutes;
     private int globalPeriodRangeFrom; // Inclusive
     private int globalPeriodRangeTo; // Exclusive
@@ -45,106 +44,127 @@ public class CheapTimeSolution extends AbstractPersistable {
     private List<TaskRequirement> taskRequirementList;
     // Order is equal to global periodRange so int period can be used for the index
     private List<PeriodPowerPrice> periodPowerPriceList;
-
     private List<TaskAssignment> taskAssignmentList;
 
     @XStreamConverter(HardMediumSoftLongScoreXStreamConverter.class)
     private HardMediumSoftLongScore score;
 
-    public int getTimeResolutionInMinutes() {
+    public int getTimeResolutionInMinutes() 
+    {
         return timeResolutionInMinutes;
     }
 
-    public void setTimeResolutionInMinutes(int timeResolutionInMinutes) {
+    public void setTimeResolutionInMinutes(int timeResolutionInMinutes) 
+    {
         this.timeResolutionInMinutes = timeResolutionInMinutes;
     }
 
-    public int getGlobalPeriodRangeFrom() {
+    public int getGlobalPeriodRangeFrom() 
+    {
         return globalPeriodRangeFrom;
     }
 
-    public void setGlobalPeriodRangeFrom(int globalPeriodRangeFrom) {
+    public void setGlobalPeriodRangeFrom(int globalPeriodRangeFrom) 
+    {
         this.globalPeriodRangeFrom = globalPeriodRangeFrom;
     }
 
-    public int getGlobalPeriodRangeTo() {
+    public int getGlobalPeriodRangeTo() 
+    {
         return globalPeriodRangeTo;
     }
 
-    public void setGlobalPeriodRangeTo(int globalPeriodRangeTo) {
+    public void setGlobalPeriodRangeTo(int globalPeriodRangeTo) 
+    {
         this.globalPeriodRangeTo = globalPeriodRangeTo;
     }
 
     @ProblemFactCollectionProperty
-    public List<Resource> getResourceList() {
+    public List<Resource> getResourceList() 
+    {
         return resourceList;
     }
 
     @ValueRangeProvider(id = "machineRange")
     @ProblemFactCollectionProperty
-    public List<Machine> getMachineList() {
+    public List<Machine> getMachineList() 
+    {
         return machineList;
     }
 
-    public void setMachineList(List<Machine> machineList) {
+    public void setMachineList(List<Machine> machineList) 
+    {
         this.machineList = machineList;
     }
 
-    public void setResourceList(List<Resource> resourceList) {
+    public void setResourceList(List<Resource> resourceList) 
+    {
         this.resourceList = resourceList;
     }
 
     @ProblemFactCollectionProperty
-    public List<MachineCapacity> getMachineCapacityList() {
+    public List<MachineCapacity> getMachineCapacityList() 
+    {
         return machineCapacityList;
     }
 
-    public void setMachineCapacityList(List<MachineCapacity> machineCapacityList) {
+    public void setMachineCapacityList(List<MachineCapacity> machineCapacityList) 
+    {
         this.machineCapacityList = machineCapacityList;
     }
 
     @ProblemFactCollectionProperty
-    public List<Task> getTaskList() {
+    public List<Task> getTaskList() 
+    {
         return taskList;
     }
 
-    public void setTaskList(List<Task> taskList) {
+    public void setTaskList(List<Task> taskList) 
+    {
         this.taskList = taskList;
     }
 
     @ProblemFactCollectionProperty
-    public List<TaskRequirement> getTaskRequirementList() {
+    public List<TaskRequirement> getTaskRequirementList() 
+    {
         return taskRequirementList;
     }
 
-    public void setTaskRequirementList(List<TaskRequirement> taskRequirementList) {
+    public void setTaskRequirementList(List<TaskRequirement> taskRequirementList) 
+    {
         this.taskRequirementList = taskRequirementList;
     }
 
     @ProblemFactCollectionProperty
-    public List<PeriodPowerPrice> getPeriodPowerPriceList() {
+    public List<PeriodPowerPrice> getPeriodPowerPriceList() 
+    {
         return periodPowerPriceList;
     }
 
-    public void setPeriodPowerPriceList(List<PeriodPowerPrice> periodPowerPriceList) {
+    public void setPeriodPowerPriceList(List<PeriodPowerPrice> periodPowerPriceList) 
+    {
         this.periodPowerPriceList = periodPowerPriceList;
     }
 
     @PlanningEntityCollectionProperty
-    public List<TaskAssignment> getTaskAssignmentList() {
+    public List<TaskAssignment> getTaskAssignmentList() 
+    {
         return taskAssignmentList;
     }
 
-    public void setTaskAssignmentList(List<TaskAssignment> taskAssignmentList) {
+    public void setTaskAssignmentList(List<TaskAssignment> taskAssignmentList) 
+    {
         this.taskAssignmentList = taskAssignmentList;
     }
 
     @PlanningScore
-    public HardMediumSoftLongScore getScore() {
+    public HardMediumSoftLongScore getScore() 
+    {
         return score;
     }
 
-    public void setScore(HardMediumSoftLongScore score) {
+    public void setScore(HardMediumSoftLongScore score) 
+    {
         this.score = score;
     }
 
@@ -153,8 +173,8 @@ public class CheapTimeSolution extends AbstractPersistable {
     // ************************************************************************
 
     @ProblemFactProperty
-    public CheapTimeSolution getCheapTimeSolution() {
+    public CheapTimeSolution getCheapTimeSolution() 
+    {
         return this;
     }
-
 }

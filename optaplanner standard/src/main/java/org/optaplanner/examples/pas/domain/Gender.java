@@ -13,30 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.pas.domain;
 
-public enum Gender {
+public enum Gender 
+{
     MALE("M"),
     FEMALE("F");
 
-    public static Gender valueOfCode(String code) {
-        for (Gender gender : values()) {
-            if (code.equalsIgnoreCase(gender.getCode())) {
+    public static Gender valueOfCode(String code) 
+    {
+        for (Gender gender : values()) 
+        {
+            if (code.equalsIgnoreCase(gender.getCode())) 
+            {
                 return gender;
             }
         }
+        
         return null;
     }
 
     private String code;
 
-    private Gender(String code) {
+    private Gender(String code) 
+    {
         this.code = code;
     }
 
-    public String getCode() {
+    public String getCode() 
+    {
         return code;
     }
-
 }

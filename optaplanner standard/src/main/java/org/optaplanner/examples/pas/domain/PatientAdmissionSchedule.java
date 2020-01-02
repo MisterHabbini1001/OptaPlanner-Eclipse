@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.pas.domain;
-
 import java.util.List;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
@@ -31,8 +29,8 @@ import org.optaplanner.persistence.xstream.api.score.buildin.hardmediumsoft.Hard
 
 @PlanningSolution
 @XStreamAlias("PatientAdmissionSchedule")
-public class PatientAdmissionSchedule extends AbstractPersistable {
-
+public class PatientAdmissionSchedule extends AbstractPersistable 
+{
     private List<Specialism> specialismList;
     private List<Equipment> equipmentList;
     private List<Department> departmentList;
@@ -46,150 +44,178 @@ public class PatientAdmissionSchedule extends AbstractPersistable {
     private List<AdmissionPart> admissionPartList;
     private List<RequiredPatientEquipment> requiredPatientEquipmentList;
     private List<PreferredPatientEquipment> preferredPatientEquipmentList;
-
     private List<BedDesignation> bedDesignationList;
 
     @XStreamConverter(HardMediumSoftScoreXStreamConverter.class)
     private HardMediumSoftScore score;
 
     @ProblemFactCollectionProperty
-    public List<Specialism> getSpecialismList() {
+    public List<Specialism> getSpecialismList() 
+    {
         return specialismList;
     }
 
-    public void setSpecialismList(List<Specialism> specialismList) {
+    public void setSpecialismList(List<Specialism> specialismList) 
+    {
         this.specialismList = specialismList;
     }
 
     @ProblemFactCollectionProperty
-    public List<Equipment> getEquipmentList() {
+    public List<Equipment> getEquipmentList() 
+    {
         return equipmentList;
     }
 
-    public void setEquipmentList(List<Equipment> equipmentList) {
+    public void setEquipmentList(List<Equipment> equipmentList) 
+    {
         this.equipmentList = equipmentList;
     }
 
     @ProblemFactCollectionProperty
-    public List<Department> getDepartmentList() {
+    public List<Department> getDepartmentList() 
+    {
         return departmentList;
     }
 
-    public void setDepartmentList(List<Department> departmentList) {
+    public void setDepartmentList(List<Department> departmentList) 
+    {
         this.departmentList = departmentList;
     }
 
     @ProblemFactCollectionProperty
-    public List<DepartmentSpecialism> getDepartmentSpecialismList() {
+    public List<DepartmentSpecialism> getDepartmentSpecialismList() 
+    {
         return departmentSpecialismList;
     }
 
-    public void setDepartmentSpecialismList(List<DepartmentSpecialism> departmentSpecialismList) {
+    public void setDepartmentSpecialismList(List<DepartmentSpecialism> departmentSpecialismList) 
+    {
         this.departmentSpecialismList = departmentSpecialismList;
     }
 
     @ProblemFactCollectionProperty
-    public List<Room> getRoomList() {
+    public List<Room> getRoomList() 
+    {
         return roomList;
     }
 
-    public void setRoomList(List<Room> roomList) {
+    public void setRoomList(List<Room> roomList) 
+    {
         this.roomList = roomList;
     }
 
     @ProblemFactCollectionProperty
-    public List<RoomSpecialism> getRoomSpecialismList() {
+    public List<RoomSpecialism> getRoomSpecialismList() 
+    {
         return roomSpecialismList;
     }
 
-    public void setRoomSpecialismList(List<RoomSpecialism> roomSpecialismList) {
+    public void setRoomSpecialismList(List<RoomSpecialism> roomSpecialismList) 
+    {
         this.roomSpecialismList = roomSpecialismList;
     }
 
     @ProblemFactCollectionProperty
-    public List<RoomEquipment> getRoomEquipmentList() {
+    public List<RoomEquipment> getRoomEquipmentList() 
+    {
         return roomEquipmentList;
     }
 
-    public void setRoomEquipmentList(List<RoomEquipment> roomEquipmentList) {
+    public void setRoomEquipmentList(List<RoomEquipment> roomEquipmentList) 
+    {
         this.roomEquipmentList = roomEquipmentList;
     }
 
     @ValueRangeProvider(id = "bedRange")
     @ProblemFactCollectionProperty
-    public List<Bed> getBedList() {
+    public List<Bed> getBedList() 
+    {
         return bedList;
     }
 
-    public void setBedList(List<Bed> bedList) {
+    public void setBedList(List<Bed> bedList) 
+    {
         this.bedList = bedList;
     }
 
     @ProblemFactCollectionProperty
-    public List<Night> getNightList() {
+    public List<Night> getNightList() 
+    {
         return nightList;
     }
 
-    public void setNightList(List<Night> nightList) {
+    public void setNightList(List<Night> nightList) 
+    {
         this.nightList = nightList;
     }
 
     @ProblemFactCollectionProperty
-    public List<Patient> getPatientList() {
+    public List<Patient> getPatientList() 
+    {
         return patientList;
     }
 
-    public void setPatientList(List<Patient> patientList) {
+    public void setPatientList(List<Patient> patientList) 
+    {
         this.patientList = patientList;
     }
 
     @ProblemFactCollectionProperty
-    public List<AdmissionPart> getAdmissionPartList() {
+    public List<AdmissionPart> getAdmissionPartList() 
+    {
         return admissionPartList;
     }
 
-    public void setAdmissionPartList(List<AdmissionPart> admissionPartList) {
+    public void setAdmissionPartList(List<AdmissionPart> admissionPartList) 
+    {
         this.admissionPartList = admissionPartList;
     }
 
     @ProblemFactCollectionProperty
-    public List<RequiredPatientEquipment> getRequiredPatientEquipmentList() {
+    public List<RequiredPatientEquipment> getRequiredPatientEquipmentList() 
+    {
         return requiredPatientEquipmentList;
     }
 
-    public void setRequiredPatientEquipmentList(List<RequiredPatientEquipment> requiredPatientEquipmentList) {
+    public void setRequiredPatientEquipmentList(List<RequiredPatientEquipment> requiredPatientEquipmentList) 
+    {
         this.requiredPatientEquipmentList = requiredPatientEquipmentList;
     }
 
     @ProblemFactCollectionProperty
-    public List<PreferredPatientEquipment> getPreferredPatientEquipmentList() {
+    public List<PreferredPatientEquipment> getPreferredPatientEquipmentList() 
+    {
         return preferredPatientEquipmentList;
     }
 
-    public void setPreferredPatientEquipmentList(List<PreferredPatientEquipment> preferredPatientEquipmentList) {
+    public void setPreferredPatientEquipmentList(List<PreferredPatientEquipment> preferredPatientEquipmentList) 
+    {
         this.preferredPatientEquipmentList = preferredPatientEquipmentList;
     }
 
     @PlanningEntityCollectionProperty
-    public List<BedDesignation> getBedDesignationList() {
+    public List<BedDesignation> getBedDesignationList() 
+    {
         return bedDesignationList;
     }
 
-    public void setBedDesignationList(List<BedDesignation> bedDesignationList) {
+    public void setBedDesignationList(List<BedDesignation> bedDesignationList) 
+    {
         this.bedDesignationList = bedDesignationList;
     }
 
     @PlanningScore
-    public HardMediumSoftScore getScore() {
+    public HardMediumSoftScore getScore() 
+    {
         return score;
     }
 
-    public void setScore(HardMediumSoftScore score) {
+    public void setScore(HardMediumSoftScore score) 
+    {
         this.score = score;
     }
 
     // ************************************************************************
     // Complex methods
     // ************************************************************************
-
 }

@@ -13,18 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.app;
-
 import org.optaplanner.examples.common.app.CommonBenchmarkApp;
 
-public class GeneralOptaPlannerBenchmarkApp extends CommonBenchmarkApp {
-
-    public static void main(String[] args) {
+public class GeneralOptaPlannerBenchmarkApp extends CommonBenchmarkApp 
+{
+    public static void main(String[] args) 
+    {
         new GeneralOptaPlannerBenchmarkApp().buildAndBenchmark(args);
     }
 
-    public GeneralOptaPlannerBenchmarkApp() {
+    public GeneralOptaPlannerBenchmarkApp() 
+    {
         super(
                 new ArgOption("default",
                         "org/optaplanner/examples/app/benchmark/generalOptaPlannerBenchmarkConfig.xml"),
@@ -32,5 +32,4 @@ public class GeneralOptaPlannerBenchmarkApp extends CommonBenchmarkApp {
                         "org/optaplanner/examples/app/benchmark/generalOptaPlannerBenchmarkConfigTemplate.xml.ftl", true)
         );
     }
-
 }

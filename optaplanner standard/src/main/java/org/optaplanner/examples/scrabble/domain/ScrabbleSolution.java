@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.scrabble.domain;
-
 import java.util.List;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
@@ -31,8 +29,8 @@ import org.optaplanner.persistence.xstream.api.score.buildin.hardmediumsoft.Hard
 
 @PlanningSolution
 @XStreamAlias("ScrabbleSolution")
-public class ScrabbleSolution extends AbstractPersistable {
-
+public class ScrabbleSolution extends AbstractPersistable 
+{
     private int gridWidth;
     private int gridHeight;
 
@@ -46,44 +44,54 @@ public class ScrabbleSolution extends AbstractPersistable {
     @XStreamConverter(HardMediumSoftScoreXStreamConverter.class)
     private HardMediumSoftScore score;
 
-    public int getGridWidth() {
+    public int getGridWidth() 
+    {
         return gridWidth;
     }
 
-    public void setGridWidth(int gridWidth) {
+    public void setGridWidth(int gridWidth) 
+    {
         this.gridWidth = gridWidth;
     }
 
-    public int getGridHeight() {
+    public int getGridHeight() 
+    {
         return gridHeight;
     }
 
-    public void setGridHeight(int gridHeight) {
+    public void setGridHeight(int gridHeight) 
+    {
         this.gridHeight = gridHeight;
     }
 
-    public List<ScrabbleCell> getCellList() {
+    public List<ScrabbleCell> getCellList() 
+    {
         return cellList;
     }
 
-    public void setCellList(List<ScrabbleCell> cellList) {
+    public void setCellList(List<ScrabbleCell> cellList) 
+    {
         this.cellList = cellList;
     }
 
-    public List<ScrabbleWordAssignment> getWordList() {
+    public List<ScrabbleWordAssignment> getWordList() 
+    {
         return wordList;
     }
 
-    public void setWordList(List<ScrabbleWordAssignment> wordList) {
+    public void setWordList(List<ScrabbleWordAssignment> wordList) 
+    {
         this.wordList = wordList;
     }
 
     @PlanningScore
-    public HardMediumSoftScore getScore() {
+    public HardMediumSoftScore getScore() 
+    {
         return score;
     }
 
-    public void setScore(HardMediumSoftScore score) {
+    public void setScore(HardMediumSoftScore score) 
+    {
         this.score = score;
     }
 
@@ -92,12 +100,13 @@ public class ScrabbleSolution extends AbstractPersistable {
     // ************************************************************************
 
     @ValueRangeProvider(id = "directionRange")
-    public ScrabbleWordDirection[] getDirectionRange() {
+    public ScrabbleWordDirection[] getDirectionRange() 
+    {
         return ScrabbleWordDirection.values();
     }
 
-    public ScrabbleCell getCell(int x, int y) {
+    public ScrabbleCell getCell(int x, int y) 
+    {
         return cellList.get(x * gridWidth + y);
     }
-
 }

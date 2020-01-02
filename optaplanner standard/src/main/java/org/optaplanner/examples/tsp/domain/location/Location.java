@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.tsp.domain.location;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamInclude;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
@@ -26,42 +24,50 @@ import org.optaplanner.examples.tsp.domain.TspSolution;
         AirLocation.class,
         RoadLocation.class
 })
-public abstract class Location extends AbstractPersistable {
-
+public abstract class Location extends AbstractPersistable 
+{
     protected String name = null;
     protected double latitude;
     protected double longitude;
 
-    public Location() {
+    public Location() 
+    {
     }
 
-    public Location(long id, double latitude, double longitude) {
+    public Location(long id, double latitude, double longitude) 
+    {
         super(id);
         this.latitude = latitude;
         this.longitude = longitude;
     }
 
-    public String getName() {
+    public String getName() 
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name) 
+    {
         this.name = name;
     }
 
-    public double getLatitude() {
+    public double getLatitude() 
+    {
         return latitude;
     }
 
-    public void setLatitude(double latitude) {
+    public void setLatitude(double latitude) 
+    {
         this.latitude = latitude;
     }
 
-    public double getLongitude() {
+    public double getLongitude() 
+    {
         return longitude;
     }
 
-    public void setLongitude(double longitude) {
+    public void setLongitude(double longitude) 
+    {
         this.longitude = longitude;
     }
 
@@ -77,7 +83,8 @@ public abstract class Location extends AbstractPersistable {
      */
     public abstract long getDistanceTo(Location location);
 
-    public double getAirDistanceDoubleTo(Location location) {
+    public double getAirDistanceDoubleTo(Location location) 
+    {
         // Implementation specified by TSPLIB http://www2.iwr.uni-heidelberg.de/groups/comopt/software/TSPLIB95/
         // Euclidean distance (Pythagorean theorem) - not correct when the surface is a sphere
         double latitudeDifference = location.latitude - latitude;
@@ -91,20 +98,22 @@ public abstract class Location extends AbstractPersistable {
      * @param location never null
      * @return in Cartesian coordinates
      */
-    public double getAngle(Location location) {
+    public double getAngle(Location location) 
+    {
         // Euclidean distance (Pythagorean theorem) - not correct when the surface is a sphere
         double latitudeDifference = location.latitude - latitude;
         double longitudeDifference = location.longitude - longitude;
         return Math.atan2(latitudeDifference, longitudeDifference);
     }
 
-
     @Override
-    public String toString() {
-        if (name == null) {
+    public String toString() 
+    {
+        if (name == null) 
+        {
             return super.toString();
         }
+        
         return name;
     }
-
 }

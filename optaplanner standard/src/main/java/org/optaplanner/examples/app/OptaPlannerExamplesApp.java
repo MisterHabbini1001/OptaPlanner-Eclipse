@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.app;
-
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Container;
@@ -63,13 +61,15 @@ import org.optaplanner.examples.travelingtournament.app.TravelingTournamentApp;
 import org.optaplanner.examples.tsp.app.TspApp;
 import org.optaplanner.examples.vehiclerouting.app.VehicleRoutingApp;
 
-public class OptaPlannerExamplesApp extends JFrame {
+public class OptaPlannerExamplesApp extends JFrame 
+{
 
     /**
      * Supported system properties: {@link CommonApp#DATA_DIR_SYSTEM_PROPERTY}.
      * @param args never null
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         CommonApp.prepareSwingEnvironment();
         OptaPlannerExamplesApp optaPlannerExamplesApp = new OptaPlannerExamplesApp();
         optaPlannerExamplesApp.pack();
@@ -77,24 +77,29 @@ public class OptaPlannerExamplesApp extends JFrame {
         optaPlannerExamplesApp.setVisible(true);
     }
 
-    private static String determineOptaPlannerExamplesVersion() {
+    private static String determineOptaPlannerExamplesVersion() 
+    {
         String optaPlannerExamplesVersion = OptaPlannerExamplesApp.class.getPackage().getImplementationVersion();
-        if (optaPlannerExamplesVersion == null) {
+        if (optaPlannerExamplesVersion == null) 
+        {
             optaPlannerExamplesVersion = "";
         }
+        
         return optaPlannerExamplesVersion;
     }
 
     private JTextArea descriptionTextArea;
 
-    public OptaPlannerExamplesApp() {
+    public OptaPlannerExamplesApp() 
+    {
         super("OptaPlanner examples " + determineOptaPlannerExamplesVersion());
         setIconImage(SolverAndPersistenceFrame.OPTA_PLANNER_ICON.getImage());
         setContentPane(createContentPane());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    private Container createContentPane() {
+    private Container createContentPane() 
+    {
         JPanel contentPane = new JPanel(new BorderLayout(5, 5));
         contentPane.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         JLabel titleLabel = new JLabel("Which example do you want to see?", JLabel.CENTER);
@@ -112,7 +117,8 @@ public class OptaPlannerExamplesApp extends JFrame {
         return contentPane;
     }
 
-    private JPanel createExamplesPanel() {
+    private JPanel createExamplesPanel() 
+    {
         JPanel panel = new JPanel(new GridLayout(0, 4, 5, 5));
         panel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 
@@ -148,27 +154,32 @@ public class OptaPlannerExamplesApp extends JFrame {
         return panel;
     }
 
-    private JButton createExampleButton(final CommonApp commonApp) {
+    private JButton createExampleButton(final CommonApp commonApp) 
+    {
         String iconResource = commonApp.getIconResource();
         Icon icon = iconResource == null ? new EmptyIcon() : new ImageIcon(getClass().getResource(iconResource));
         JButton button = new JButton(new AbstractAction(commonApp.getName(), icon) {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e) 
+            {
                 commonApp.init(OptaPlannerExamplesApp.this, false);
             }
         });
         button.setHorizontalAlignment(JButton.LEFT);
         button.setHorizontalTextPosition(JButton.RIGHT);
         button.setVerticalTextPosition(JButton.CENTER);
-        button.addMouseListener(new MouseAdapter() {
+        button.addMouseListener(new MouseAdapter() 
+        {
 
             @Override
-            public void mouseEntered(MouseEvent e) {
+            public void mouseEntered(MouseEvent e) 
+            {
                 descriptionTextArea.setText(commonApp.getDescription());
             }
 
             @Override
-            public void mouseExited(MouseEvent e) {
+            public void mouseExited(MouseEvent e) 
+            {
                 descriptionTextArea.setText("");
             }
 
@@ -176,7 +187,8 @@ public class OptaPlannerExamplesApp extends JFrame {
         return button;
     }
 
-    private JPanel createDescriptionPanel() {
+    private JPanel createDescriptionPanel() 
+    {
         JPanel descriptionPanel = new JPanel(new BorderLayout(2, 2));
         descriptionPanel.add(new JLabel("Description"), BorderLayout.NORTH);
         descriptionTextArea = new JTextArea(8, 65);
@@ -188,7 +200,8 @@ public class OptaPlannerExamplesApp extends JFrame {
         return descriptionPanel;
     }
 
-    private JPanel createExtraPanel() {
+    private JPanel createExtraPanel() 
+    {
         JPanel extraPanel = new JPanel(new GridLayout(0, 1, 5, 5));
         extraPanel.add(new JPanel());
         Action homepageAction = new OpenBrowserAction("www.optaplanner.org", "https://www.optaplanner.org");
@@ -198,23 +211,24 @@ public class OptaPlannerExamplesApp extends JFrame {
         return extraPanel;
     }
 
-    private static class EmptyIcon implements Icon {
-
+    private static class EmptyIcon implements Icon 
+    {
         @Override
-        public int getIconWidth() {
+        public int getIconWidth() 
+        {
             return 64;
         }
 
         @Override
-        public int getIconHeight() {
+        public int getIconHeight() 
+        {
             return 64;
         }
 
         @Override
-        public void paintIcon(Component c, Graphics g, int x, int y) {
+        public void paintIcon(Component c, Graphics g, int x, int y) 
+        {
             // Do nothing
         }
-
     }
-
 }

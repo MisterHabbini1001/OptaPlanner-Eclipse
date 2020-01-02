@@ -13,58 +13,64 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cheaptime.domain;
-
 import java.util.List;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import org.optaplanner.examples.common.domain.AbstractPersistable;
 
 @XStreamAlias("CtMachine")
-public class Machine extends AbstractPersistable {
-
+public class Machine extends AbstractPersistable 
+{
     private int index;
-
     private long powerConsumptionMicros; // when it's up
     private long spinUpDownCostMicros; // In micros, sum of upCost and downCost
 
     // Order is equal to resourceList so Resource.getIndex() can be used for the index
     private List<MachineCapacity> machineCapacityList;
 
-    public int getIndex() {
+    public int getIndex() 
+    {
         return index;
     }
 
-    public void setIndex(int index) {
+    public void setIndex(int index) 
+    {
         this.index = index;
     }
 
-    public long getPowerConsumptionMicros() {
+    public long getPowerConsumptionMicros() 
+    {
         return powerConsumptionMicros;
     }
 
-    public void setPowerConsumptionMicros(long powerConsumptionMicros) {
+    public void setPowerConsumptionMicros(long powerConsumptionMicros) 
+    {
         this.powerConsumptionMicros = powerConsumptionMicros;
     }
 
-    public long getSpinUpDownCostMicros() {
+    public long getSpinUpDownCostMicros() 
+    {
         return spinUpDownCostMicros;
     }
 
-    public void setSpinUpDownCostMicros(long spinUpDownCostMicros) {
+    public void setSpinUpDownCostMicros(long spinUpDownCostMicros) 
+    {
         this.spinUpDownCostMicros = spinUpDownCostMicros;
     }
 
-    public List<MachineCapacity> getMachineCapacityList() {
+    public List<MachineCapacity> getMachineCapacityList() 
+    {
         return machineCapacityList;
     }
 
-    public void setMachineCapacityList(List<MachineCapacity> machineCapacityList) {
+    public void setMachineCapacityList(List<MachineCapacity> machineCapacityList) 
+    {
         this.machineCapacityList = machineCapacityList;
     }
 
-    public MachineCapacity getMachineCapacity(Resource resource) {
+    public MachineCapacity getMachineCapacity(Resource resource) 
+    {
         return machineCapacityList.get(resource.getIndex());
     }
 
@@ -72,8 +78,8 @@ public class Machine extends AbstractPersistable {
     // Complex methods
     // ************************************************************************
 
-    public String getLabel() {
+    public String getLabel() 
+    {
         return "Machine " + id;
     }
-
 }
