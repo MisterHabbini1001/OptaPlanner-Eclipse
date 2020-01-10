@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.vehiclerouting.optional.score;
-
 import org.optaplanner.core.api.score.buildin.hardsoftlong.HardSoftLongScore;
 import org.optaplanner.core.api.score.stream.Constraint;
 import org.optaplanner.core.api.score.stream.ConstraintFactory;
@@ -25,15 +23,17 @@ import org.optaplanner.examples.vehiclerouting.domain.timewindowed.TimeWindowedC
 
 import static org.optaplanner.core.api.score.stream.ConstraintCollectors.*;
 
-public class VehicleRoutingConstraintProvider implements ConstraintProvider {
-
+public class VehicleRoutingConstraintProvider implements ConstraintProvider 
+{
     // WARNING: The ConstraintStreams/ConstraintProvider API is TECH PREVIEW.
     // It works but it has many API gaps.
     // Therefore, it is not rich enough yet to handle complex constraints.
 
     @Override
-    public Constraint[] defineConstraints(ConstraintFactory factory) {
-        return new Constraint[]{
+    public Constraint[] defineConstraints(ConstraintFactory factory) 
+    {
+        return new Constraint[]
+        {
                 vehicleCapacity(factory),
                 distanceToPreviousStandstill(factory),
                 distanceFromLastCustomerToDepot(factory),
@@ -45,7 +45,8 @@ public class VehicleRoutingConstraintProvider implements ConstraintProvider {
     // Hard constraints
     // ************************************************************************
 
-    private Constraint vehicleCapacity(ConstraintFactory factory) {
+    private Constraint vehicleCapacity(ConstraintFactory factory) 
+    {
         return factory.from(Customer.class)
                 .groupBy(Customer::getVehicle, sum(Customer::getDemand))
                 .filter((vehicle, demand) -> demand > vehicle.getCapacity())
@@ -58,14 +59,16 @@ public class VehicleRoutingConstraintProvider implements ConstraintProvider {
     // Soft constraints
     // ************************************************************************
 
-    private Constraint distanceToPreviousStandstill(ConstraintFactory factory) {
+    private Constraint distanceToPreviousStandstill(ConstraintFactory factory) 
+    {
         return factory.from(Customer.class)
                 .penalizeLong("distanceToPreviousStandstill",
                         HardSoftLongScore.ONE_SOFT,
                         Customer::getDistanceFromPreviousStandstill);
     }
 
-    private Constraint distanceFromLastCustomerToDepot(ConstraintFactory factory) {
+    private Constraint distanceFromLastCustomerToDepot(ConstraintFactory factory) 
+    {
         return factory.from(Customer.class)
                 .filter(customer -> customer.getNextCustomer() == null)
                 .penalizeLong("distanceFromLastCustomerToDepot",
@@ -77,12 +80,12 @@ public class VehicleRoutingConstraintProvider implements ConstraintProvider {
     // TimeWindowed: additional hard constraints
     // ************************************************************************
 
-    private Constraint arrivalAfterDueTime(ConstraintFactory factory) {
+    private Constraint arrivalAfterDueTime(ConstraintFactory factory) 
+    {
         return factory.from(TimeWindowedCustomer.class)
                 .filter(customer -> customer.getArrivalTime() > customer.getDueTime())
                 .penalizeLong("arrivalAfterDueTime",
                         HardSoftLongScore.ONE_HARD,
                         customer -> customer.getArrivalTime() - customer.getDueTime());
     }
-
 }

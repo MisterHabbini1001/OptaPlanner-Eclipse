@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.coachshuttlegathering.solver;
-
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,42 +27,54 @@ import org.optaplanner.examples.coachshuttlegathering.domain.CoachShuttleGatheri
 import org.optaplanner.examples.coachshuttlegathering.domain.Shuttle;
 import org.optaplanner.examples.coachshuttlegathering.domain.StopOrHub;
 
-public class CoachShuttleGatheringEasyScoreCalculator implements EasyScoreCalculator<CoachShuttleGatheringSolution> {
-
+public class CoachShuttleGatheringEasyScoreCalculator implements EasyScoreCalculator<CoachShuttleGatheringSolution> 
+{
     @Override
-    public HardSoftLongScore calculateScore(CoachShuttleGatheringSolution solution) {
+    public HardSoftLongScore calculateScore(CoachShuttleGatheringSolution solution) 
+    {
         long hardScore = 0L;
         long softScore = 0L;
         List<Bus> busList = solution.getBusList();
         Map<Bus, Integer> busToPassengerTotalMap = new LinkedHashMap<>(busList.size());
         Map<Coach, Integer> coachToStopCountMap = new LinkedHashMap<>(busList.size());
-        for (BusStop stop : solution.getStopList()) {
+        for (BusStop stop : solution.getStopList()) 
+        {
             Bus bus = stop.getBus();
-            if (bus != null) {
+            if (bus != null) 
+            {
                 // Constraint shuttleCapacity and coachCapacity
                 Integer passengerTotal = busToPassengerTotalMap.get(bus);
-                if (passengerTotal == null) {
+                if (passengerTotal == null) 
+                {
                     passengerTotal = 0;
                 }
+                
                 passengerTotal += stop.getPassengerQuantity();
                 busToPassengerTotalMap.put(bus, passengerTotal);
-                if (bus instanceof Shuttle) {
+                if (bus instanceof Shuttle) 
+                {
                     Shuttle shuttle = (Shuttle) bus;
                     StopOrHub destination = shuttle.getDestination();
-                    if (destination instanceof BusStop) {
+                    if (destination instanceof BusStop) 
+                    {
                         Bus destinationBus = ((BusStop) destination).getBus();
-                        if (destinationBus != null && destinationBus instanceof Coach) {
+                        if (destinationBus != null && destinationBus instanceof Coach) 
+                        {
                             Integer destinationPassengerTotal = busToPassengerTotalMap.get(destinationBus);
-                            if (destinationPassengerTotal == null) {
+                            if (destinationPassengerTotal == null) 
+                            {
                                 destinationPassengerTotal = 0;
                             }
+                            
                             destinationPassengerTotal += stop.getPassengerQuantity();
                             busToPassengerTotalMap.put(destinationBus, destinationPassengerTotal);
                         }
                     }
                 }
+                
                 // Constraint coachStopLimit
-                if (bus instanceof Coach) {
+                if (bus instanceof Coach) 
+                {
                     Coach coach = (Coach) bus;
                     Integer stopCount = coachToStopCountMap.get(coach);
                     stopCount = (stopCount == null) ? 1 : stopCount + 1;
@@ -73,53 +83,71 @@ public class CoachShuttleGatheringEasyScoreCalculator implements EasyScoreCalcul
             }
             // Constraint transportTime
             Integer transportTimeRemainder = stop.getTransportTimeRemainder();
-            if (transportTimeRemainder != null && transportTimeRemainder < 0) {
+            if (transportTimeRemainder != null && transportTimeRemainder < 0) 
+            {
                 hardScore += transportTimeRemainder;
             }
+            
             // Constraint distanceFromPrevious
-            if (stop.getPreviousBusOrStop() != null) {
+            if (stop.getPreviousBusOrStop() != null) 
+            {
                 softScore -= stop.getDistanceFromPreviousCost();
             }
+            
             // Constraint distanceBusStopToBusDestination
-            if (stop.getNextStop() == null && bus != null && bus.getDestination() != null) {
+            if (stop.getNextStop() == null && bus != null && bus.getDestination() != null) 
+            {
                 softScore -= stop.getDistanceToDestinationCost(bus.getDestination());
             }
         }
-        for (Bus bus : busList) {
+        
+        for (Bus bus : busList) 
+        {
             // Constraint shuttleCapacity and coachCapacity
             Integer passengerTotal = busToPassengerTotalMap.get(bus);
-            if (passengerTotal != null && passengerTotal > bus.getCapacity()) {
+            if (passengerTotal != null && passengerTotal > bus.getCapacity()) 
+            {
                 hardScore += (bus.getCapacity() - passengerTotal) * 1000L;
             }
-            if (bus instanceof Coach) {
+            
+            if (bus instanceof Coach) 
+            {
                 // Constraint coachStopLimit
                 Coach coach = (Coach) bus;
                 Integer stopCount = coachToStopCountMap.get(coach);
-                if (stopCount != null && stopCount > coach.getStopLimit()) {
+                if (stopCount != null && stopCount > coach.getStopLimit()) 
+                {
                     hardScore += (coach.getStopLimit() - stopCount) * 1000000L;
                 }
                 // Constraint distanceCoachDirectlyToDestination
-                if (coach.getNextStop() == null) {
+                if (coach.getNextStop() == null) 
+                {
                     softScore -= coach.getDistanceToDestinationCost();
                 }
             }
-            if (bus instanceof Shuttle) {
+            
+            if (bus instanceof Shuttle) 
+            {
                 // Constraint shuttleDestinationIsCoachOrHub
                 Shuttle shuttle = (Shuttle) bus;
                 StopOrHub destination = shuttle.getDestination();
-                if (destination instanceof BusStop) {
+                if (destination instanceof BusStop) 
+                {
                     Bus destinationBus = ((BusStop) destination).getBus();
-                    if (destinationBus instanceof Shuttle) {
+                    if (destinationBus instanceof Shuttle) 
+                    {
                         hardScore -= 1000000000L;
                     }
                 }
+                
                 // Constraint shuttleSetupCost
-                if (shuttle.getNextStop() != null) {
+                if (shuttle.getNextStop() != null) 
+                {
                     softScore -= shuttle.getSetupCost();
                 }
             }
         }
+     
         return HardSoftLongScore.of(hardScore, softScore);
     }
-
 }

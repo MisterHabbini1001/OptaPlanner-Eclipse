@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cheaptime.solver.drools;
-
 import java.util.Comparator;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
@@ -25,8 +23,8 @@ import org.optaplanner.examples.cheaptime.domain.Machine;
 import static java.util.Comparator.comparing;
 import static java.util.Comparator.comparingLong;
 
-public class IdleCost implements Comparable<IdleCost> {
-
+public class IdleCost implements Comparable<IdleCost> 
+{
     private static final Comparator<IdleCost> COMPARATOR =
             comparing(IdleCost::getMachine, comparingLong(Machine::getId))
                     .thenComparingInt(IdleCost::getActivePeriodAfterIdle)
@@ -36,42 +34,55 @@ public class IdleCost implements Comparable<IdleCost> {
     private final int activePeriodAfterIdle;
     private final long cost;
 
-    public IdleCost(Machine machine, int activePeriodAfterIdle, long cost) {
+    public IdleCost(Machine machine, int activePeriodAfterIdle, long cost) 
+    {
         this.machine = machine;
         this.activePeriodAfterIdle = activePeriodAfterIdle;
         this.cost = cost;
     }
 
-    public Machine getMachine() {
+    public Machine getMachine() 
+    {
         return machine;
     }
 
-    public int getActivePeriodAfterIdle() {
+    public int getActivePeriodAfterIdle() 
+    {
         return activePeriodAfterIdle;
     }
 
-    public long getCost() {
+    public long getCost() 
+    {
         return cost;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) {
+    public boolean equals(Object o) 
+    {
+        if (this == o) 
+        {
             return true;
-        } else if (o instanceof IdleCost) {
+        } 
+        
+        else if (o instanceof IdleCost) 
+        {
             IdleCost other = (IdleCost) o;
             return new EqualsBuilder()
                     .append(machine, other.machine)
                     .append(activePeriodAfterIdle, other.activePeriodAfterIdle)
                     .append(cost, other.cost)
                     .isEquals();
-        } else {
+        } 
+        
+        else 
+        {
             return false;
         }
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode() 
+    {
         return new HashCodeBuilder()
                 .append(machine)
                 .append(activePeriodAfterIdle)
@@ -80,12 +91,14 @@ public class IdleCost implements Comparable<IdleCost> {
     }
 
     @Override
-    public int compareTo(IdleCost other) {
+    public int compareTo(IdleCost other) 
+    {
         return COMPARATOR.compare(this, other);
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return "machine = " + machine + ", activePeriodAfterIdle = " + activePeriodAfterIdle + ", cost = " + cost;
     }
 }

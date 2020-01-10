@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cloudbalancing.app;
-
 import org.optaplanner.core.api.solver.Solver;
 import org.optaplanner.core.api.solver.SolverFactory;
 import org.optaplanner.examples.cloudbalancing.domain.CloudBalance;
@@ -27,19 +25,21 @@ import org.optaplanner.persistence.xstream.impl.domain.solution.XStreamSolutionF
 /**
  * For an easy example, look at {@link CloudBalancingHelloWorld} instead.
  */
-public class CloudBalancingApp extends CommonApp<CloudBalance> {
-
+public class CloudBalancingApp extends CommonApp<CloudBalance> 
+{
     public static final String SOLVER_CONFIG
             = "org/optaplanner/examples/cloudbalancing/solver/cloudBalancingSolverConfig.xml";
 
     public static final String DATA_DIR_NAME = "cloudbalancing";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         prepareSwingEnvironment();
         new CloudBalancingApp().init();
     }
 
-    public CloudBalancingApp() {
+    public CloudBalancingApp() 
+    {
         super("Cloud balancing",
                 "Assign processes to computers.\n\n" +
                 "Each computer must have enough hardware to run all of its processes.\n" +
@@ -49,19 +49,21 @@ public class CloudBalancingApp extends CommonApp<CloudBalance> {
     }
 
     @Override
-    protected Solver<CloudBalance> createSolver() {
+    protected Solver<CloudBalance> createSolver() 
+    {
         SolverFactory<CloudBalance> solverFactory = SolverFactory.createFromXmlResource(SOLVER_CONFIG);
         return solverFactory.buildSolver();
     }
 
     @Override
-    protected CloudBalancingPanel createSolutionPanel() {
+    protected CloudBalancingPanel createSolutionPanel() 
+    {
         return new CloudBalancingPanel();
     }
 
     @Override
-    public SolutionFileIO<CloudBalance> createSolutionFileIO() {
+    public SolutionFileIO<CloudBalance> createSolutionFileIO() 
+    {
         return new XStreamSolutionFileIO<>(CloudBalance.class);
     }
-
 }

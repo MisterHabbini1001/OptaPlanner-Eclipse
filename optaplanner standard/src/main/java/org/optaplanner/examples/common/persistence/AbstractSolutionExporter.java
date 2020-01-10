@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.common.persistence;
-
 import java.io.File;
 import java.util.Arrays;
 
@@ -26,14 +24,12 @@ import org.optaplanner.examples.common.business.ProblemFileComparator;
 /**
  * @param <Solution_> the solution type, the class with the {@link PlanningSolution} annotation
  */
-public abstract class AbstractSolutionExporter<Solution_> extends LoggingMain {
-
+public abstract class AbstractSolutionExporter<Solution_> extends LoggingMain 
+{
     public abstract String getOutputFileSuffix();
-
     public abstract void writeSolution(Solution_ solution, File outputFile);
 
-    public static abstract class OutputBuilder extends LoggingMain {
-
+    public static abstract class OutputBuilder extends LoggingMain 
+    {
     }
-
 }

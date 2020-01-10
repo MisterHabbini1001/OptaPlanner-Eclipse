@@ -13,53 +13,60 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.coachshuttlegathering.domain.location;
-
 import java.io.Serializable;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XStreamAlias("CsgRoadLocationArc")
-public class RoadLocationArc implements Serializable {
-
+public class RoadLocationArc implements Serializable 
+{
     private int coachDistance;
     private int coachDuration;
     private int shuttleDistance;
     private int shuttleDuration;
 
-    public RoadLocationArc() {
+    public RoadLocationArc() 
+    {
     }
 
-    public int getCoachDistance() {
+    public int getCoachDistance() 
+    {
         return coachDistance;
     }
 
-    public void setCoachDistance(int coachDistance) {
+    public void setCoachDistance(int coachDistance) 
+    {
         this.coachDistance = coachDistance;
     }
 
-    public int getCoachDuration() {
+    public int getCoachDuration() 
+    {
         return coachDuration;
     }
 
-    public void setCoachDuration(int coachDuration) {
+    public void setCoachDuration(int coachDuration) 
+    {
         this.coachDuration = coachDuration;
     }
 
-    public int getShuttleDistance() {
+    public int getShuttleDistance() 
+    {
         return shuttleDistance;
     }
 
-    public void setShuttleDistance(int shuttleDistance) {
+    public void setShuttleDistance(int shuttleDistance) 
+    {
         this.shuttleDistance = shuttleDistance;
     }
 
-    public int getShuttleDuration() {
+    public int getShuttleDuration() 
+    {
         return shuttleDuration;
     }
 
-    public void setShuttleDuration(int shuttleDuration) {
+    public void setShuttleDuration(int shuttleDuration) 
+    {
         this.shuttleDuration = shuttleDuration;
     }
 
@@ -68,11 +75,11 @@ public class RoadLocationArc implements Serializable {
     // ************************************************************************
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return "Road arc [coach: "
                 + coachDistance + "m/" + coachDuration
                 + "s, shuttle: "
                 + shuttleDistance + "m/" + shuttleDuration + "s]";
     }
-
 }

@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cloudbalancing.optional.domain;
-
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.Comparator;
@@ -26,14 +24,16 @@ import static java.util.Comparator.comparing;
 import static java.util.Comparator.comparingInt;
 
 public class CloudComputerStrengthComparator implements Comparator<CloudComputer>,
-        Serializable {
+        Serializable 
+        {
 
     private static final Comparator<CloudComputer> COMPARATOR = comparingInt(CloudComputer::getMultiplicand)
             .thenComparing(Collections.reverseOrder(comparing(CloudComputer::getCost))) // Descending (but this is debatable)
             .thenComparingLong(CloudComputer::getId);
 
     @Override
-    public int compare(CloudComputer a, CloudComputer b) {
+    public int compare(CloudComputer a, CloudComputer b) 
+    {
         return COMPARATOR.compare(a, b);
     }
 }

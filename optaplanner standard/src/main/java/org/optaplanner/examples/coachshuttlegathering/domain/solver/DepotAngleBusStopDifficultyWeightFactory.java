@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.coachshuttlegathering.domain.solver;
-
 import java.util.Comparator;
 
 import org.optaplanner.core.impl.heuristic.selector.common.decorator.SelectionSorterWeightFactory;
@@ -27,10 +25,11 @@ import org.optaplanner.examples.coachshuttlegathering.domain.CoachShuttleGatheri
  * On large datasets, the constructed solution looks like pizza slices.
  */
 public class DepotAngleBusStopDifficultyWeightFactory
-        implements SelectionSorterWeightFactory<CoachShuttleGatheringSolution, BusOrStop> {
-
+        implements SelectionSorterWeightFactory<CoachShuttleGatheringSolution, BusOrStop> 
+{
     @Override
-    public DepotAngleBusStopDifficultyWeight createSorterWeight(CoachShuttleGatheringSolution solution, BusOrStop busOrStop) {
+    public DepotAngleBusStopDifficultyWeight createSorterWeight(CoachShuttleGatheringSolution solution, BusOrStop busOrStop) 
+    {
         BusHub hub = solution.getHub();
         return new DepotAngleBusStopDifficultyWeight(busOrStop,
                 busOrStop.getLocation().getAngle(hub.getLocation()),
@@ -38,8 +37,8 @@ public class DepotAngleBusStopDifficultyWeightFactory
                         + hub.getLocation().getMaximumDistanceTo(busOrStop.getLocation()));
     }
 
-    public static class DepotAngleBusStopDifficultyWeight implements Comparable<DepotAngleBusStopDifficultyWeight> {
-
+    public static class DepotAngleBusStopDifficultyWeight implements Comparable<DepotAngleBusStopDifficultyWeight> 
+    {
         private static final Comparator<DepotAngleBusStopDifficultyWeight> COMPARATOR =
                 Comparator.comparingDouble((DepotAngleBusStopDifficultyWeight w) -> w.hubAngle)
                         .thenComparingInt(w -> w.hubRoundTripDistance) // Further from the depot are more difficult.
@@ -49,14 +48,16 @@ public class DepotAngleBusStopDifficultyWeightFactory
         private final double hubAngle;
         private final int hubRoundTripDistance;
 
-        public DepotAngleBusStopDifficultyWeight(BusOrStop busOrStop, double hubAngle, int hubRoundTripDistance) {
+        public DepotAngleBusStopDifficultyWeight(BusOrStop busOrStop, double hubAngle, int hubRoundTripDistance) 
+        {
             this.busOrStop = busOrStop;
             this.hubAngle = hubAngle;
             this.hubRoundTripDistance = hubRoundTripDistance;
         }
 
         @Override
-        public int compareTo(DepotAngleBusStopDifficultyWeight other) {
+        public int compareTo(DepotAngleBusStopDifficultyWeight other) 
+        {
             return COMPARATOR.compare(this, other);
         }
     }

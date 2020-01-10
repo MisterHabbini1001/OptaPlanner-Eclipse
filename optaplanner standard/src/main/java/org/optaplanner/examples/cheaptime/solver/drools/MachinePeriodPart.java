@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cheaptime.solver.drools;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -27,80 +25,98 @@ import org.optaplanner.examples.cheaptime.domain.Task;
 import org.optaplanner.examples.cheaptime.domain.TaskAssignment;
 import org.optaplanner.examples.cheaptime.domain.TaskRequirement;
 
-public class MachinePeriodPart implements Comparable<MachinePeriodPart> {
-
+public class MachinePeriodPart implements Comparable<MachinePeriodPart> 
+{
     private final Machine machine;
     private final int period;
-
     private boolean active;
     private int[] resourceAvailableList;
     private int resourceInShortTotal;
 
-    public MachinePeriodPart(Machine machine, int period, int resourceListSize, List<TaskAssignment> taskAssignmentList) {
+    public MachinePeriodPart(Machine machine, int period, int resourceListSize, List<TaskAssignment> taskAssignmentList) 
+    {
         this.machine = machine;
         this.period = period;
 
         active = false;
 
         resourceAvailableList = new int[resourceListSize];
-        for (int i = 0; i < resourceListSize; i++) {
+        for (int i = 0; i < resourceListSize; i++) 
+        {
             resourceAvailableList[i] = machine.getMachineCapacityList().get(i).getCapacity();
         }
 
-        for (TaskAssignment taskAssignment : taskAssignmentList) {
+        for (TaskAssignment taskAssignment : taskAssignmentList) 
+        {
             addTaskAssignment(taskAssignment);
         }
 
         resourceInShortTotal = 0;
-        for (int resourceAvailable : resourceAvailableList) {
-            if (resourceAvailable < 0) {
+        for (int resourceAvailable : resourceAvailableList) 
+        {
+            if (resourceAvailable < 0) 
+            {
                 resourceInShortTotal += resourceAvailable;
             }
         }
     }
 
-    private void addTaskAssignment(TaskAssignment taskAssignment) {
+    private void addTaskAssignment(TaskAssignment taskAssignment) 
+    {
         active = true;
         Task task = taskAssignment.getTask();
-        for (int i = 0; i < resourceAvailableList.length; i++) {
+        for (int i = 0; i < resourceAvailableList.length; i++) 
+        {
             TaskRequirement taskRequirement = task.getTaskRequirementList().get(i);
             resourceAvailableList[i] -= taskRequirement.getResourceUsage();
         }
     }
 
-    public boolean isActive() {
+    public boolean isActive() 
+    {
         return active;
     }
 
-    public void setActive(boolean active) {
+    public void setActive(boolean active) 
+    {
         this.active = active;
     }
 
-    public int[] getResourceAvailableList() {
+    public int[] getResourceAvailableList() 
+    {
         return resourceAvailableList;
     }
 
-    public void setResourceAvailableList(int[] resourceAvailableList) {
+    public void setResourceAvailableList(int[] resourceAvailableList) 
+    {
         this.resourceAvailableList = resourceAvailableList;
     }
 
-    public int getResourceInShortTotal() {
+    public int getResourceInShortTotal() 
+    {
         return resourceInShortTotal;
     }
 
-    public Machine getMachine() {
+    public Machine getMachine() 
+    {
         return machine;
     }
 
-    public int getPeriod() {
+    public int getPeriod() 
+    {
         return period;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) {
+    public boolean equals(Object o) 
+    {
+        if (this == o) 
+        {
             return true;
-        } else if (o instanceof MachinePeriodPart) {
+        } 
+        
+        else if (o instanceof MachinePeriodPart) 
+        {
             MachinePeriodPart other = (MachinePeriodPart) o;
             return new EqualsBuilder()
                     .append(machine, other.machine)
@@ -108,13 +124,17 @@ public class MachinePeriodPart implements Comparable<MachinePeriodPart> {
                     .append(active, other.active)
                     .append(resourceAvailableList, other.resourceAvailableList)
                     .isEquals();
-        } else {
+        } 
+        
+        else 
+        {
             return false;
         }
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode() 
+    {
         return new HashCodeBuilder()
                 .append(machine)
                 .append(period)
@@ -124,7 +144,8 @@ public class MachinePeriodPart implements Comparable<MachinePeriodPart> {
     }
 
     @Override
-    public int compareTo(MachinePeriodPart other) {
+    public int compareTo(MachinePeriodPart other) 
+    {
         return new CompareToBuilder()
                 .append(machine, other.machine)
                 .append(period, other.period)
@@ -134,7 +155,8 @@ public class MachinePeriodPart implements Comparable<MachinePeriodPart> {
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return machine + ", period = " + period + ", active = " + active
                 + ", resourceAvailableList = " + Arrays.toString(resourceAvailableList);
     }

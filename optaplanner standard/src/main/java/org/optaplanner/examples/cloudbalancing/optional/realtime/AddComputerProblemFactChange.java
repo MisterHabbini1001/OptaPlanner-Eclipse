@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cloudbalancing.optional.realtime;
-
 import java.util.ArrayList;
 
 import org.optaplanner.core.impl.score.director.ScoreDirector;
@@ -23,24 +21,28 @@ import org.optaplanner.core.impl.solver.ProblemFactChange;
 import org.optaplanner.examples.cloudbalancing.domain.CloudBalance;
 import org.optaplanner.examples.cloudbalancing.domain.CloudComputer;
 
-public class AddComputerProblemFactChange implements ProblemFactChange<CloudBalance> {
-
+public class AddComputerProblemFactChange implements ProblemFactChange<CloudBalance> 
+{
     private final CloudComputer computer;
 
-    public AddComputerProblemFactChange(CloudComputer computer) {
+    public AddComputerProblemFactChange(CloudComputer computer) 
+    {
         this.computer = computer;
     }
 
     @Override
-    public void doChange(ScoreDirector<CloudBalance> scoreDirector) {
+    public void doChange(ScoreDirector<CloudBalance> scoreDirector) 
+    {
         CloudBalance cloudBalance = scoreDirector.getWorkingSolution();
         // Set a unique id on the new computer
         long nextComputerId = 0L;
-        for (CloudComputer otherComputer : cloudBalance.getComputerList()) {
+        for (CloudComputer otherComputer : cloudBalance.getComputerList()) 
+        {
             if (nextComputerId <= otherComputer.getId()) {
                 nextComputerId = otherComputer.getId() + 1L;
             }
         }
+        
         computer.setId(nextComputerId);
         // A SolutionCloner does not clone problem fact lists (such as computerList)
         // Shallow clone the computerList so only workingSolution is affected, not bestSolution or guiSolution
@@ -50,5 +52,4 @@ public class AddComputerProblemFactChange implements ProblemFactChange<CloudBala
         cloudBalance.getComputerList().add(computer);
         scoreDirector.afterProblemFactAdded(computer);
     }
-
 }

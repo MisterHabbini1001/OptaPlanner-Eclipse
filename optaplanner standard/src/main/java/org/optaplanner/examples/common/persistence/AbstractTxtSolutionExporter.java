@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.common.persistence;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -27,19 +25,21 @@ import org.optaplanner.core.api.domain.solution.PlanningSolution;
 /**
  * @param <Solution_> the solution type, the class with the {@link PlanningSolution} annotation
  */
-public abstract class AbstractTxtSolutionExporter<Solution_> extends AbstractSolutionExporter<Solution_> {
-
+public abstract class AbstractTxtSolutionExporter<Solution_> extends AbstractSolutionExporter<Solution_> 
+{
     protected static final String DEFAULT_OUTPUT_FILE_SUFFIX = "txt";
 
     @Override
-    public String getOutputFileSuffix() {
+    public String getOutputFileSuffix() 
+    {
         return DEFAULT_OUTPUT_FILE_SUFFIX;
     }
 
     public abstract TxtOutputBuilder<Solution_> createTxtOutputBuilder();
 
     @Override
-    public void writeSolution(Solution_ solution, File outputFile) {
+    public void writeSolution(Solution_ solution, File outputFile) 
+    {
         try (BufferedWriter writer =
                      new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFile), "UTF-8"))) {
             TxtOutputBuilder<Solution_> txtOutputBuilder = createTxtOutputBuilder();
@@ -47,21 +47,26 @@ public abstract class AbstractTxtSolutionExporter<Solution_> extends AbstractSol
             txtOutputBuilder.setSolution(solution);
             txtOutputBuilder.writeSolution();
             logger.info("Exported: {}", outputFile);
-        } catch (IOException e) {
+        } 
+        
+        catch (IOException e) 
+        {
             throw new IllegalArgumentException("Could not write the file (" + outputFile.getName() + ").", e);
         }
     }
 
-    public static abstract class TxtOutputBuilder<Solution_> extends OutputBuilder {
-
+    public static abstract class TxtOutputBuilder<Solution_> extends OutputBuilder 
+    {
         protected BufferedWriter bufferedWriter;
         protected Solution_ solution;
 
-        public void setBufferedWriter(BufferedWriter bufferedWriter) {
+        public void setBufferedWriter(BufferedWriter bufferedWriter) 
+        {
             this.bufferedWriter = bufferedWriter;
         }
 
-        public void setSolution(Solution_ solution) {
+        public void setSolution(Solution_ solution) 
+        {
             this.solution = solution;
         }
 
@@ -70,7 +75,5 @@ public abstract class AbstractTxtSolutionExporter<Solution_> extends AbstractSol
         // ************************************************************************
         // Helper methods
         // ************************************************************************
-
     }
-
 }

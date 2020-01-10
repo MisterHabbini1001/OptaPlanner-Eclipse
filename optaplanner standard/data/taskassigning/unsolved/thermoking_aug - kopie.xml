@@ -1,0 +1,2279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TaTaskAssigningSolution id="0">
+  <id>0</id>
+  <skillList id="1">
+    <TaSkill id="120001">
+      <id>120001</id>
+      <name>Standard</name>
+	</TaSkill>
+	<TaSkill id="120002">
+      <id>120002</id>
+      <name>Super</name>
+    </TaSkill>
+  </skillList>
+  <taskTypeList id="2">
+    <TaTaskType id="160001">
+      <id>160001</id>
+      <code>1</code>
+      <title>Task Type 1</title>
+      <requiredSkillList id="3">
+        <TaSkill reference="120001">
+        </TaSkill>
+      </requiredSkillList>
+    </TaTaskType>
+    <TaTaskType id="160002">
+      <id>160002</id>
+      <code>2</code>
+      <title>Task Type 2</title>
+      <requiredSkillList id="4">
+        <TaSkill reference="120002">
+        </TaSkill>
+      </requiredSkillList>
+    </TaTaskType>
+    <TaTaskType id="160003">
+      <id>160003</id>
+      <code>3</code>
+      <title>Task Type 3</title>
+      <requiredSkillList id="5">
+        <TaSkill reference="120001">
+        </TaSkill>
+      </requiredSkillList>
+    </TaTaskType>
+    <TaTaskType id="160004">
+      <id>160004</id>
+      <code>4</code>
+      <title>Task Type 4</title>
+      <requiredSkillList id="6">
+        <TaSkill reference="120001">
+        </TaSkill>
+      </requiredSkillList>
+    </TaTaskType>
+  </taskTypeList>
+  <customerList id="7">
+    <TaCustomer id="40001">
+      <id>40001</id>
+      <name>STAAY-HISPA. B.V.</name>
+    </TaCustomer>
+    <TaCustomer id="40002">
+      <id>40002</id>
+      <name>SCHMIDT ZEEVIS ROTTERDAM B.V.</name>
+    </TaCustomer>
+    <TaCustomer id="40003">
+      <id>40003</id>
+      <name>
+      </name>
+    </TaCustomer>
+    <TaCustomer id="40004">
+      <id>40004</id>
+      <name>BAKKER BARENDRECHT TRANSPORT B.V.</name>
+    </TaCustomer>
+    <TaCustomer id="40005">
+      <id>40005</id>
+      <name>THERMO KING TRANSPORT SOLUTIONS</name>
+    </TaCustomer>
+    <TaCustomer id="40006">
+      <id>40006</id>
+      <name>CONTANTE VERKOOP ROTTERDAM</name>
+    </TaCustomer>
+    <TaCustomer id="40007">
+      <id>40007</id>
+      <name>REFRIGERATED TRAILER RENTALS HOLLAND B.V.</name>
+    </TaCustomer>
+    <TaCustomer id="40008">
+      <id>40008</id>
+      <name>A. VISBEEN &amp; ZN. B.V.</name>
+    </TaCustomer>
+    <TaCustomer id="40009">
+      <id>40009</id>
+      <name>PNO NEDERLAND B.V.</name>
+    </TaCustomer>
+    <TaCustomer id="40010">
+      <id>40010</id>
+      <name>DERKS BEDRIJFSWAGENS</name>
+    </TaCustomer>
+    <TaCustomer id="40011">
+      <id>40011</id>
+      <name>CHS SPECIAL PRODUCTS B.V.</name>
+    </TaCustomer>
+    <TaCustomer id="40012">
+      <id>40012</id>
+      <name>CONTANTE VERKOOP BEST </name>
+    </TaCustomer>
+    <TaCustomer id="40013">
+      <id>40013</id>
+      <name>UNIT 45 B.V.</name>
+    </TaCustomer>
+    <TaCustomer id="40014">
+      <id>40014</id>
+      <name>VLEESIMPORT- EN EXPORTBEDRIJF FERWERDA B.V.</name>
+    </TaCustomer>
+    <TaCustomer id="40015">
+      <id>40015</id>
+      <name>DFDS LOGISTICS B.V.</name>
+    </TaCustomer>
+    <TaCustomer id="40016">
+      <id>40016</id>
+      <name>GETRU GARAGE EN CARROSSERIEEN</name>
+    </TaCustomer>
+    <TaCustomer id="40017">
+      <id>40017</id>
+      <name>VERHOEVEN TRANSPORT RIDDERKERK</name>
+    </TaCustomer>
+    <TaCustomer id="40018">
+      <id>40018</id>
+      <name>EUSER OPSLAG EN VERHUUR B.V.</name>
+    </TaCustomer>
+    <TaCustomer id="40019">
+      <id>40019</id>
+      <name>D.ZONNEVELD TRANSPORT B.V.</name>
+    </TaCustomer>
+    <TaCustomer id="40020">
+      <id>40020</id>
+      <name>ATTRANS</name>
+    </TaCustomer>
+    <TaCustomer id="40021">
+      <id>40021</id>
+      <name>FAHRZEUGWERK BERNARD KRONE GMBH &amp; CO GMBH</name>
+    </TaCustomer>
+    <TaCustomer id="40022">
+      <id>40022</id>
+      <name>GIST NEDERLAND B.V.</name>
+    </TaCustomer>
+    <TaCustomer id="40023">
+      <id>40023</id>
+      <name>GOEDEGEBUUR VLEES ROTTERDAM B.V.</name>
+    </TaCustomer>
+    <TaCustomer id="40024">
+      <id>40024</id>
+      <name>NASA DIENSTVERLENING</name>
+    </TaCustomer>
+    <TaCustomer id="40025">
+      <id>40025</id>
+      <name>COMPAXO FIJNE VLEESWAREN B.V.</name>
+    </TaCustomer>
+    <TaCustomer id="40026">
+      <id>40026</id>
+      <name>ALTENA KAAS</name>
+    </TaCustomer>
+    <TaCustomer id="40027">
+      <id>40027</id>
+      <name>OFFICINE CAILOTTO SRL</name>
+    </TaCustomer>
+  </customerList>
+  <capacityList id="8">
+    <TaCapacity id="80001">
+      <id>80001</id>
+      <startTime>360</startTime>
+      <endTime>900</endTime>
+    </TaCapacity>
+    <TaCapacity id="80002">
+      <id>80002</id>
+      <startTime>1860</startTime>
+      <endTime>2340</endTime>
+    </TaCapacity>
+    <TaCapacity id="80003">
+      <id>80003</id>
+      <startTime>3300</startTime>
+      <endTime>3780</endTime>
+    </TaCapacity>
+    <TaCapacity id="80004">
+      <id>80004</id>
+      <startTime>4740</startTime>
+      <endTime>5220</endTime>
+    </TaCapacity>
+    <TaCapacity id="80005">
+      <id>80005</id>
+      <startTime>6180</startTime>
+      <endTime>6660</endTime>
+    </TaCapacity>
+    <TaCapacity id="80006">
+      <id>80006</id>
+      <startTime>7620</startTime>
+      <endTime>8100</endTime>
+    </TaCapacity>
+    <TaCapacity id="80007">
+      <id>80007</id>
+      <startTime>9060</startTime>
+      <endTime>9540</endTime>
+    </TaCapacity>
+    <TaCapacity id="80008">
+      <id>80008</id>
+      <startTime>10500</startTime>
+      <endTime>10980</endTime>
+    </TaCapacity>
+    <TaCapacity id="80009">
+      <id>80009</id>
+      <startTime>11940</startTime>
+      <endTime>12420</endTime>
+    </TaCapacity>
+    <TaCapacity id="80010">
+      <id>80010</id>
+      <startTime>13380</startTime>
+      <endTime>13860</endTime>
+    </TaCapacity>
+    <TaCapacity id="80011">
+      <id>80011</id>
+      <startTime>14820</startTime>
+      <endTime>15300</endTime>
+    </TaCapacity>
+    <TaCapacity id="80012">
+      <id>80012</id>
+      <startTime>16260</startTime>
+      <endTime>16740</endTime>
+    </TaCapacity>
+    <TaCapacity id="80013">
+      <id>80013</id>
+      <startTime>17700</startTime>
+      <endTime>18180</endTime>
+    </TaCapacity>
+    <TaCapacity id="80014">
+      <id>80014</id>
+      <startTime>19140</startTime>
+      <endTime>19620</endTime>
+    </TaCapacity>
+    <TaCapacity id="80015">
+      <id>80015</id>
+      <startTime>20580</startTime>
+      <endTime>21060</endTime>
+    </TaCapacity>
+    <TaCapacity id="80016">
+      <id>80016</id>
+      <startTime>22020</startTime>
+      <endTime>22500</endTime>
+    </TaCapacity>
+    <TaCapacity id="80017">
+      <id>80017</id>
+      <startTime>23460</startTime>
+      <endTime>23940</endTime>
+    </TaCapacity>
+    <TaCapacity id="80018">
+      <id>80018</id>
+      <startTime>24900</startTime>
+      <endTime>25380</endTime>
+    </TaCapacity>
+    <TaCapacity id="80019">
+      <id>80019</id>
+      <startTime>26340</startTime>
+      <endTime>26820</endTime>
+    </TaCapacity>
+    <TaCapacity id="80020">
+      <id>80020</id>
+      <startTime>27780</startTime>
+      <endTime>28260</endTime>
+    </TaCapacity>
+    <TaCapacity id="80021">
+      <id>80021</id>
+      <startTime>29220</startTime>
+      <endTime>29700</endTime>
+    </TaCapacity>
+    <TaCapacity id="80022">
+      <id>80022</id>
+      <startTime>30660</startTime>
+      <endTime>31140</endTime>
+    </TaCapacity>
+    <TaCapacity id="80023">
+      <id>80023</id>
+      <startTime>32100</startTime>
+      <endTime>32580</endTime>
+    </TaCapacity>
+    <TaCapacity id="80024">
+      <id>80024</id>
+      <startTime>33540</startTime>
+      <endTime>34020</endTime>
+    </TaCapacity>
+    <TaCapacity id="80025">
+      <id>80025</id>
+      <startTime>34980</startTime>
+      <endTime>35460</endTime>
+    </TaCapacity>
+    <TaCapacity id="80026">
+      <id>80026</id>
+      <startTime>36420</startTime>
+      <endTime>36900</endTime>
+    </TaCapacity>
+    <TaCapacity id="80027">
+      <id>80027</id>
+      <startTime>37860</startTime>
+      <endTime>38340</endTime>
+    </TaCapacity>
+    <TaCapacity id="80028">
+      <id>80028</id>
+      <startTime>39300</startTime>
+      <endTime>39780</endTime>
+    </TaCapacity>
+  </capacityList>
+  <employeeList id="9">
+    <TaEmployee id="10">
+      <id>0</id>
+      <fullName>Ronald Zijlmans</fullName>
+      <latitude>51.8886756</latitude>
+      <longitude>4.5152698</longitude>
+      <skillSet class="linked-hash-set">
+	    <TaSkill reference="120001">
+        </TaSkill>
+        <TaSkill reference="120002">
+        </TaSkill>
+      </skillSet>
+      <capacitySet class="linked-hash-set">
+        <TaCapacity reference="80001">
+        </TaCapacity>
+        <TaCapacity reference="80002">
+        </TaCapacity>
+        <TaCapacity reference="80003">
+        </TaCapacity>
+        <TaCapacity reference="80004">
+        </TaCapacity>
+        <TaCapacity reference="80005">
+        </TaCapacity>
+        <TaCapacity reference="80006">
+        </TaCapacity>
+        <TaCapacity reference="80007">
+        </TaCapacity>
+        <TaCapacity reference="80008">
+        </TaCapacity>
+        <TaCapacity reference="80009">
+        </TaCapacity>
+        <TaCapacity reference="80010">
+        </TaCapacity>
+        <TaCapacity reference="80011">
+        </TaCapacity>
+        <TaCapacity reference="80012">
+        </TaCapacity>
+        <TaCapacity reference="80013">
+        </TaCapacity>
+        <TaCapacity reference="80014">
+        </TaCapacity>
+        <TaCapacity reference="80015">
+        </TaCapacity>
+        <TaCapacity reference="80016">
+        </TaCapacity>
+        <TaCapacity reference="80017">
+        </TaCapacity>
+        <TaCapacity reference="80018">
+        </TaCapacity>
+        <TaCapacity reference="80019">
+        </TaCapacity>
+        <TaCapacity reference="80020">
+        </TaCapacity>
+        <TaCapacity reference="80021">
+        </TaCapacity>
+        <TaCapacity reference="80022">
+        </TaCapacity>
+        <TaCapacity reference="80023">
+        </TaCapacity>
+        <TaCapacity reference="80024">
+        </TaCapacity>
+        <TaCapacity reference="80025">
+        </TaCapacity>
+        <TaCapacity reference="80026">
+        </TaCapacity>
+        <TaCapacity reference="80027">
+        </TaCapacity>
+        <TaCapacity reference="80028">
+        </TaCapacity>
+      </capacitySet>
+      <affinityMap class="linked-hash-map">
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="14">
+      <id>1</id>
+      <fullName>Marvin Louwerens</fullName>
+      <latitude>51.946655</latitude>
+      <longitude>4.849993</longitude>
+      <skillSet class="linked-hash-set">
+        <TaSkill reference="120001">
+        </TaSkill>
+      </skillSet>
+      <capacitySet class="linked-hash-set">
+        <!--<TaCapacity reference="80001">
+        </TaCapacity> -->
+        <TaCapacity reference="80002">
+        </TaCapacity>
+        <TaCapacity reference="80003">
+        </TaCapacity>
+        <TaCapacity reference="80004">
+        </TaCapacity>
+        <TaCapacity reference="80005">
+        </TaCapacity>
+        <TaCapacity reference="80006">
+        </TaCapacity>
+        <TaCapacity reference="80007">
+        </TaCapacity>
+        <TaCapacity reference="80008">
+        </TaCapacity>
+        <TaCapacity reference="80009">
+        </TaCapacity>
+        <TaCapacity reference="80010">
+        </TaCapacity>
+        <TaCapacity reference="80011">
+        </TaCapacity>
+        <TaCapacity reference="80012">
+        </TaCapacity>
+        <TaCapacity reference="80013">
+        </TaCapacity>
+        <TaCapacity reference="80014">
+        </TaCapacity>
+        <TaCapacity reference="80015">
+        </TaCapacity>
+        <TaCapacity reference="80016">
+        </TaCapacity>
+        <TaCapacity reference="80017">
+        </TaCapacity>
+        <TaCapacity reference="80018">
+        </TaCapacity>
+        <TaCapacity reference="80019">
+        </TaCapacity>
+        <TaCapacity reference="80020">
+        </TaCapacity>
+        <TaCapacity reference="80021">
+        </TaCapacity>
+        <TaCapacity reference="80022">
+        </TaCapacity>
+        <TaCapacity reference="80023">
+        </TaCapacity>
+        <TaCapacity reference="80024">
+        </TaCapacity>
+        <TaCapacity reference="80025">
+        </TaCapacity>
+        <TaCapacity reference="80026">
+        </TaCapacity>
+        <TaCapacity reference="80027">
+        </TaCapacity>
+        <TaCapacity reference="80028">
+        </TaCapacity>
+      </capacitySet>
+      <affinityMap class="linked-hash-map">
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="18">
+      <id>10</id>
+      <fullName>Erwin Beljaars</fullName>
+      <latitude>51.8486885</latitude>
+      <longitude>4.3277697</longitude>
+      <skillSet class="linked-hash-set">
+        <TaSkill reference="120001">
+        </TaSkill>
+      </skillSet>
+      <capacitySet class="linked-hash-set">
+        <!--<TaCapacity reference="80001">
+        </TaCapacity>-->
+        <TaCapacity reference="80002">
+        </TaCapacity>
+        <TaCapacity reference="80003">
+        </TaCapacity>
+        <TaCapacity reference="80004">
+        </TaCapacity>
+        <TaCapacity reference="80005">
+        </TaCapacity>
+        <TaCapacity reference="80006">
+        </TaCapacity>
+        <TaCapacity reference="80007">
+        </TaCapacity>
+        <TaCapacity reference="80008">
+        </TaCapacity>
+        <TaCapacity reference="80009">
+        </TaCapacity>
+        <TaCapacity reference="80010">
+        </TaCapacity>
+        <TaCapacity reference="80011">
+        </TaCapacity>
+        <TaCapacity reference="80012">
+        </TaCapacity>
+        <TaCapacity reference="80013">
+        </TaCapacity>
+        <TaCapacity reference="80014">
+        </TaCapacity>
+        <TaCapacity reference="80015">
+        </TaCapacity>
+        <TaCapacity reference="80016">
+        </TaCapacity>
+        <TaCapacity reference="80017">
+        </TaCapacity>
+        <TaCapacity reference="80018">
+        </TaCapacity>
+        <TaCapacity reference="80019">
+        </TaCapacity>
+        <TaCapacity reference="80020">
+        </TaCapacity>
+        <TaCapacity reference="80021">
+        </TaCapacity>
+        <TaCapacity reference="80022">
+        </TaCapacity>
+        <TaCapacity reference="80023">
+        </TaCapacity>
+        <TaCapacity reference="80024">
+        </TaCapacity>
+        <TaCapacity reference="80025">
+        </TaCapacity>
+        <TaCapacity reference="80026">
+        </TaCapacity>
+        <TaCapacity reference="80027">
+        </TaCapacity>
+        <TaCapacity reference="80028">
+        </TaCapacity>
+      </capacitySet>
+      <affinityMap class="linked-hash-map">
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="22">
+      <id>11</id>
+      <fullName>Jan Lagendijk</fullName>
+      <latitude>51.8618718</latitude>
+      <longitude>4.6051289</longitude>
+      <skillSet class="linked-hash-set">
+        <TaSkill reference="120001">
+        </TaSkill>
+      </skillSet>
+      <capacitySet class="linked-hash-set">
+        <!--<TaCapacity reference="80001">
+        </TaCapacity>-->
+        <TaCapacity reference="80002">
+        </TaCapacity>
+        <TaCapacity reference="80003">
+        </TaCapacity>
+        <TaCapacity reference="80004">
+        </TaCapacity>
+        <TaCapacity reference="80005">
+        </TaCapacity>
+        <TaCapacity reference="80006">
+        </TaCapacity>
+        <TaCapacity reference="80007">
+        </TaCapacity>
+        <TaCapacity reference="80008">
+        </TaCapacity>
+        <TaCapacity reference="80009">
+        </TaCapacity>
+        <TaCapacity reference="80010">
+        </TaCapacity>
+        <TaCapacity reference="80011">
+        </TaCapacity>
+        <TaCapacity reference="80012">
+        </TaCapacity>
+        <TaCapacity reference="80013">
+        </TaCapacity>
+        <TaCapacity reference="80014">
+        </TaCapacity>
+        <TaCapacity reference="80015">
+        </TaCapacity>
+        <TaCapacity reference="80016">
+        </TaCapacity>
+        <TaCapacity reference="80017">
+        </TaCapacity>
+        <TaCapacity reference="80018">
+        </TaCapacity>
+        <TaCapacity reference="80019">
+        </TaCapacity>
+        <TaCapacity reference="80020">
+        </TaCapacity>
+        <TaCapacity reference="80021">
+        </TaCapacity>
+        <TaCapacity reference="80022">
+        </TaCapacity>
+        <TaCapacity reference="80023">
+        </TaCapacity>
+        <TaCapacity reference="80024">
+        </TaCapacity>
+        <TaCapacity reference="80025">
+        </TaCapacity>
+        <TaCapacity reference="80026">
+        </TaCapacity>
+        <TaCapacity reference="80027">
+        </TaCapacity>
+        <TaCapacity reference="80028">
+        </TaCapacity>
+      </capacitySet>
+      <affinityMap class="linked-hash-map">
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="26">
+      <id>12</id>
+      <fullName>Ivo Emons</fullName>
+      <latitude>51.8568124</latitude>
+      <longitude>4.5463567</longitude>
+      <skillSet class="linked-hash-set">
+        <TaSkill reference="120001">
+        </TaSkill>
+      </skillSet>
+      <capacitySet class="linked-hash-set">
+        <!--<TaCapacity reference="80001">
+        </TaCapacity>-->
+        <TaCapacity reference="80002">
+        </TaCapacity>
+        <TaCapacity reference="80003">
+        </TaCapacity>
+        <TaCapacity reference="80004">
+        </TaCapacity>
+        <TaCapacity reference="80005">
+        </TaCapacity>
+        <TaCapacity reference="80006">
+        </TaCapacity>
+        <TaCapacity reference="80007">
+        </TaCapacity>
+        <TaCapacity reference="80008">
+        </TaCapacity>
+        <TaCapacity reference="80009">
+        </TaCapacity>
+        <TaCapacity reference="80010">
+        </TaCapacity>
+        <TaCapacity reference="80011">
+        </TaCapacity>
+        <TaCapacity reference="80012">
+        </TaCapacity>
+        <TaCapacity reference="80013">
+        </TaCapacity>
+        <TaCapacity reference="80014">
+        </TaCapacity>
+        <TaCapacity reference="80015">
+        </TaCapacity>
+        <TaCapacity reference="80016">
+        </TaCapacity>
+        <TaCapacity reference="80017">
+        </TaCapacity>
+        <TaCapacity reference="80018">
+        </TaCapacity>
+        <TaCapacity reference="80019">
+        </TaCapacity>
+        <TaCapacity reference="80020">
+        </TaCapacity>
+        <TaCapacity reference="80021">
+        </TaCapacity>
+        <TaCapacity reference="80022">
+        </TaCapacity>
+        <TaCapacity reference="80023">
+        </TaCapacity>
+        <TaCapacity reference="80024">
+        </TaCapacity>
+        <TaCapacity reference="80025">
+        </TaCapacity>
+        <TaCapacity reference="80026">
+        </TaCapacity>
+        <TaCapacity reference="80027">
+        </TaCapacity>
+        <TaCapacity reference="80028">
+        </TaCapacity>
+      </capacitySet>
+      <affinityMap class="linked-hash-map">
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="30">
+      <id>13</id>
+      <fullName>Glenn Weststeijn</fullName>
+      <latitude>51.8415225</latitude>
+      <longitude>4.3275755</longitude>
+      <skillSet class="linked-hash-set">
+        <TaSkill reference="120001">
+        </TaSkill>
+      </skillSet>
+      <capacitySet class="linked-hash-set">
+        <!--<TaCapacity reference="80001">
+        </TaCapacity>-->
+        <TaCapacity reference="80002">
+        </TaCapacity>
+        <TaCapacity reference="80003">
+        </TaCapacity>
+        <TaCapacity reference="80004">
+        </TaCapacity>
+        <TaCapacity reference="80005">
+        </TaCapacity>
+        <TaCapacity reference="80006">
+        </TaCapacity>
+        <TaCapacity reference="80007">
+        </TaCapacity>
+        <TaCapacity reference="80008">
+        </TaCapacity>
+        <TaCapacity reference="80009">
+        </TaCapacity>
+        <TaCapacity reference="80010">
+        </TaCapacity>
+        <TaCapacity reference="80011">
+        </TaCapacity>
+        <TaCapacity reference="80012">
+        </TaCapacity>
+        <TaCapacity reference="80013">
+        </TaCapacity>
+        <TaCapacity reference="80014">
+        </TaCapacity>
+        <TaCapacity reference="80015">
+        </TaCapacity>
+        <TaCapacity reference="80016">
+        </TaCapacity>
+        <TaCapacity reference="80017">
+        </TaCapacity>
+        <TaCapacity reference="80018">
+        </TaCapacity>
+        <TaCapacity reference="80019">
+        </TaCapacity>
+        <TaCapacity reference="80020">
+        </TaCapacity>
+        <TaCapacity reference="80021">
+        </TaCapacity>
+        <TaCapacity reference="80022">
+        </TaCapacity>
+        <TaCapacity reference="80023">
+        </TaCapacity>
+        <TaCapacity reference="80024">
+        </TaCapacity>
+        <TaCapacity reference="80025">
+        </TaCapacity>
+        <TaCapacity reference="80026">
+        </TaCapacity>
+        <TaCapacity reference="80027">
+        </TaCapacity>
+        <TaCapacity reference="80028">
+        </TaCapacity>
+      </capacitySet>
+      <affinityMap class="linked-hash-map">
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="34">
+      <id>14</id>
+      <fullName>Robin Stolwijk</fullName>
+      <latitude>51.9749896</latitude>
+      <longitude>4.7702743</longitude>
+      <skillSet class="linked-hash-set">
+        <TaSkill reference="120001">
+        </TaSkill>
+      </skillSet>
+      <capacitySet class="linked-hash-set">
+        <!--<TaCapacity reference="80001">
+        </TaCapacity>-->
+        <TaCapacity reference="80002">
+        </TaCapacity>
+        <TaCapacity reference="80003">
+        </TaCapacity>
+        <TaCapacity reference="80004">
+        </TaCapacity>
+        <TaCapacity reference="80005">
+        </TaCapacity>
+        <TaCapacity reference="80006">
+        </TaCapacity>
+        <TaCapacity reference="80007">
+        </TaCapacity>
+        <TaCapacity reference="80008">
+        </TaCapacity>
+        <TaCapacity reference="80009">
+        </TaCapacity>
+        <TaCapacity reference="80010">
+        </TaCapacity>
+        <TaCapacity reference="80011">
+        </TaCapacity>
+        <TaCapacity reference="80012">
+        </TaCapacity>
+        <TaCapacity reference="80013">
+        </TaCapacity>
+        <TaCapacity reference="80014">
+        </TaCapacity>
+        <TaCapacity reference="80015">
+        </TaCapacity>
+        <TaCapacity reference="80016">
+        </TaCapacity>
+        <TaCapacity reference="80017">
+        </TaCapacity>
+        <TaCapacity reference="80018">
+        </TaCapacity>
+        <TaCapacity reference="80019">
+        </TaCapacity>
+        <TaCapacity reference="80020">
+        </TaCapacity>
+        <TaCapacity reference="80021">
+        </TaCapacity>
+        <TaCapacity reference="80022">
+        </TaCapacity>
+        <TaCapacity reference="80023">
+        </TaCapacity>
+        <TaCapacity reference="80024">
+        </TaCapacity>
+        <TaCapacity reference="80025">
+        </TaCapacity>
+        <TaCapacity reference="80026">
+        </TaCapacity>
+        <TaCapacity reference="80027">
+        </TaCapacity>
+        <TaCapacity reference="80028">
+        </TaCapacity>
+      </capacitySet>
+      <affinityMap class="linked-hash-map">
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="38">
+      <id>2</id>
+      <fullName>Arie Baas</fullName>
+      <latitude>51.9437573</latitude>
+      <longitude>4.7077265</longitude>
+      <skillSet class="linked-hash-set">
+        <TaSkill reference="120001">
+        </TaSkill>
+      </skillSet>
+      <capacitySet class="linked-hash-set">
+        <TaCapacity reference="80001">
+        </TaCapacity>
+        <TaCapacity reference="80002">
+        </TaCapacity>
+        <TaCapacity reference="80003">
+        </TaCapacity>
+        <TaCapacity reference="80004">
+        </TaCapacity>
+        <TaCapacity reference="80005">
+        </TaCapacity>
+        <TaCapacity reference="80006">
+        </TaCapacity>
+        <TaCapacity reference="80007">
+        </TaCapacity>
+        <TaCapacity reference="80008">
+        </TaCapacity>
+        <TaCapacity reference="80009">
+        </TaCapacity>
+        <TaCapacity reference="80010">
+        </TaCapacity>
+        <TaCapacity reference="80011">
+        </TaCapacity>
+        <TaCapacity reference="80012">
+        </TaCapacity>
+        <TaCapacity reference="80013">
+        </TaCapacity>
+        <TaCapacity reference="80014">
+        </TaCapacity>
+        <TaCapacity reference="80015">
+        </TaCapacity>
+        <TaCapacity reference="80016">
+        </TaCapacity>
+        <TaCapacity reference="80017">
+        </TaCapacity>
+        <TaCapacity reference="80018">
+        </TaCapacity>
+        <TaCapacity reference="80019">
+        </TaCapacity>
+        <TaCapacity reference="80020">
+        </TaCapacity>
+        <TaCapacity reference="80021">
+        </TaCapacity>
+        <TaCapacity reference="80022">
+        </TaCapacity>
+        <TaCapacity reference="80023">
+        </TaCapacity>
+        <TaCapacity reference="80024">
+        </TaCapacity>
+        <TaCapacity reference="80025">
+        </TaCapacity>
+        <TaCapacity reference="80026">
+        </TaCapacity>
+        <TaCapacity reference="80027">
+        </TaCapacity>
+        <TaCapacity reference="80028">
+        </TaCapacity>
+      </capacitySet>
+      <affinityMap class="linked-hash-map">
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="42">
+      <id>3</id>
+      <fullName>Ashwin Tika</fullName>
+      <latitude>52.0756528</latitude>
+      <longitude>4.269883</longitude>
+      <skillSet class="linked-hash-set">
+        <TaSkill reference="120001">
+        </TaSkill>
+      </skillSet>
+      <capacitySet class="linked-hash-set">
+        <TaCapacity reference="80001">
+        </TaCapacity>
+        <TaCapacity reference="80002">
+        </TaCapacity>
+        <TaCapacity reference="80003">
+        </TaCapacity>
+        <TaCapacity reference="80004">
+        </TaCapacity>
+        <TaCapacity reference="80005">
+        </TaCapacity>
+        <TaCapacity reference="80006">
+        </TaCapacity>
+        <TaCapacity reference="80007">
+        </TaCapacity>
+        <TaCapacity reference="80008">
+        </TaCapacity>
+        <TaCapacity reference="80009">
+        </TaCapacity>
+        <TaCapacity reference="80010">
+        </TaCapacity>
+        <TaCapacity reference="80011">
+        </TaCapacity>
+        <TaCapacity reference="80012">
+        </TaCapacity>
+        <TaCapacity reference="80013">
+        </TaCapacity>
+        <TaCapacity reference="80014">
+        </TaCapacity>
+        <TaCapacity reference="80015">
+        </TaCapacity>
+        <TaCapacity reference="80016">
+        </TaCapacity>
+        <TaCapacity reference="80017">
+        </TaCapacity>
+        <TaCapacity reference="80018">
+        </TaCapacity>
+        <TaCapacity reference="80019">
+        </TaCapacity>
+        <TaCapacity reference="80020">
+        </TaCapacity>
+        <TaCapacity reference="80021">
+        </TaCapacity>
+        <TaCapacity reference="80022">
+        </TaCapacity>
+        <TaCapacity reference="80023">
+        </TaCapacity>
+        <TaCapacity reference="80024">
+        </TaCapacity>
+        <TaCapacity reference="80025">
+        </TaCapacity>
+        <TaCapacity reference="80026">
+        </TaCapacity>
+        <TaCapacity reference="80027">
+        </TaCapacity>
+        <TaCapacity reference="80028">
+        </TaCapacity>
+      </capacitySet>
+      <affinityMap class="linked-hash-map">
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="46">
+      <id>4</id>
+      <fullName>Patrick de Breuk</fullName>
+      <latitude>51.9376702</latitude>
+      <longitude>4.4769447</longitude>
+      <skillSet class="linked-hash-set">
+        <TaSkill reference="120001">
+        </TaSkill>
+      </skillSet>
+      <capacitySet class="linked-hash-set">
+        <TaCapacity reference="80001">
+        </TaCapacity>
+        <TaCapacity reference="80002">
+        </TaCapacity>
+        <TaCapacity reference="80003">
+        </TaCapacity>
+        <TaCapacity reference="80004">
+        </TaCapacity>
+        <TaCapacity reference="80005">
+        </TaCapacity>
+        <TaCapacity reference="80006">
+        </TaCapacity>
+        <TaCapacity reference="80007">
+        </TaCapacity>
+        <TaCapacity reference="80008">
+        </TaCapacity>
+        <TaCapacity reference="80009">
+        </TaCapacity>
+        <TaCapacity reference="80010">
+        </TaCapacity>
+        <TaCapacity reference="80011">
+        </TaCapacity>
+        <TaCapacity reference="80012">
+        </TaCapacity>
+        <TaCapacity reference="80013">
+        </TaCapacity>
+        <TaCapacity reference="80014">
+        </TaCapacity>
+        <TaCapacity reference="80015">
+        </TaCapacity>
+        <TaCapacity reference="80016">
+        </TaCapacity>
+        <TaCapacity reference="80017">
+        </TaCapacity>
+        <TaCapacity reference="80018">
+        </TaCapacity>
+        <TaCapacity reference="80019">
+        </TaCapacity>
+        <TaCapacity reference="80020">
+        </TaCapacity>
+        <TaCapacity reference="80021">
+        </TaCapacity>
+        <TaCapacity reference="80022">
+        </TaCapacity>
+        <TaCapacity reference="80023">
+        </TaCapacity>
+        <TaCapacity reference="80024">
+        </TaCapacity>
+        <TaCapacity reference="80025">
+        </TaCapacity>
+        <TaCapacity reference="80026">
+        </TaCapacity>
+        <TaCapacity reference="80027">
+        </TaCapacity>
+        <TaCapacity reference="80028">
+        </TaCapacity>
+      </capacitySet>
+      <affinityMap class="linked-hash-map">
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="50">
+      <id>5</id>
+      <fullName>Jan Dankier</fullName>
+      <latitude>51.9579444</latitude>
+      <longitude>4.21367</longitude>
+      <skillSet class="linked-hash-set">
+        <TaSkill reference="120001">
+        </TaSkill>
+      </skillSet>
+      <capacitySet class="linked-hash-set">
+        <TaCapacity reference="80001">
+        </TaCapacity>
+        <TaCapacity reference="80002">
+        </TaCapacity>
+        <TaCapacity reference="80003">
+        </TaCapacity>
+        <TaCapacity reference="80004">
+        </TaCapacity>
+        <TaCapacity reference="80005">
+        </TaCapacity>
+        <TaCapacity reference="80006">
+        </TaCapacity>
+        <TaCapacity reference="80007">
+        </TaCapacity>
+        <TaCapacity reference="80008">
+        </TaCapacity>
+        <TaCapacity reference="80009">
+        </TaCapacity>
+        <TaCapacity reference="80010">
+        </TaCapacity>
+        <TaCapacity reference="80011">
+        </TaCapacity>
+        <TaCapacity reference="80012">
+        </TaCapacity>
+        <TaCapacity reference="80013">
+        </TaCapacity>
+        <TaCapacity reference="80014">
+        </TaCapacity>
+        <TaCapacity reference="80015">
+        </TaCapacity>
+        <TaCapacity reference="80016">
+        </TaCapacity>
+        <TaCapacity reference="80017">
+        </TaCapacity>
+        <TaCapacity reference="80018">
+        </TaCapacity>
+        <TaCapacity reference="80019">
+        </TaCapacity>
+        <TaCapacity reference="80020">
+        </TaCapacity>
+        <TaCapacity reference="80021">
+        </TaCapacity>
+        <TaCapacity reference="80022">
+        </TaCapacity>
+        <TaCapacity reference="80023">
+        </TaCapacity>
+        <TaCapacity reference="80024">
+        </TaCapacity>
+        <TaCapacity reference="80025">
+        </TaCapacity>
+        <TaCapacity reference="80026">
+        </TaCapacity>
+        <TaCapacity reference="80027">
+        </TaCapacity>
+        <TaCapacity reference="80028">
+        </TaCapacity>
+      </capacitySet>
+      <affinityMap class="linked-hash-map">
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="54">
+      <id>6</id>
+      <fullName>Maurice Boon</fullName>
+      <latitude>51.844231</latitude>
+      <longitude>4.3502484</longitude>
+      <skillSet class="linked-hash-set">
+        <TaSkill reference="120001">
+        </TaSkill>
+      </skillSet>
+      <capacitySet class="linked-hash-set">
+        <TaCapacity reference="80001">
+        </TaCapacity>
+        <TaCapacity reference="80002">
+        </TaCapacity>
+        <TaCapacity reference="80003">
+        </TaCapacity>
+        <TaCapacity reference="80004">
+        </TaCapacity>
+        <TaCapacity reference="80005">
+        </TaCapacity>
+        <TaCapacity reference="80006">
+        </TaCapacity>
+        <TaCapacity reference="80007">
+        </TaCapacity>
+        <TaCapacity reference="80008">
+        </TaCapacity>
+        <TaCapacity reference="80009">
+        </TaCapacity>
+        <TaCapacity reference="80010">
+        </TaCapacity>
+        <TaCapacity reference="80011">
+        </TaCapacity>
+        <TaCapacity reference="80012">
+        </TaCapacity>
+        <TaCapacity reference="80013">
+        </TaCapacity>
+        <TaCapacity reference="80014">
+        </TaCapacity>
+        <TaCapacity reference="80015">
+        </TaCapacity>
+        <TaCapacity reference="80016">
+        </TaCapacity>
+        <TaCapacity reference="80017">
+        </TaCapacity>
+        <TaCapacity reference="80018">
+        </TaCapacity>
+        <TaCapacity reference="80019">
+        </TaCapacity>
+        <TaCapacity reference="80020">
+        </TaCapacity>
+        <TaCapacity reference="80021">
+        </TaCapacity>
+        <TaCapacity reference="80022">
+        </TaCapacity>
+        <TaCapacity reference="80023">
+        </TaCapacity>
+        <TaCapacity reference="80024">
+        </TaCapacity>
+        <TaCapacity reference="80025">
+        </TaCapacity>
+        <TaCapacity reference="80026">
+        </TaCapacity>
+        <TaCapacity reference="80027">
+        </TaCapacity>
+        <TaCapacity reference="80028">
+        </TaCapacity>
+      </capacitySet>
+      <affinityMap class="linked-hash-map">
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="58">
+      <id>7</id>
+      <fullName>Patrick Steenkamer</fullName>
+      <latitude>51.9323258</latitude>
+      <longitude>4.5954581</longitude>
+      <skillSet class="linked-hash-set">
+        <TaSkill reference="120001">
+        </TaSkill>
+      </skillSet>
+      <capacitySet class="linked-hash-set">
+        <TaCapacity reference="80001">
+        </TaCapacity>
+        <TaCapacity reference="80002">
+        </TaCapacity>
+        <TaCapacity reference="80003">
+        </TaCapacity>
+        <TaCapacity reference="80004">
+        </TaCapacity>
+        <TaCapacity reference="80005">
+        </TaCapacity>
+        <TaCapacity reference="80006">
+        </TaCapacity>
+        <TaCapacity reference="80007">
+        </TaCapacity>
+        <TaCapacity reference="80008">
+        </TaCapacity>
+        <TaCapacity reference="80009">
+        </TaCapacity>
+        <TaCapacity reference="80010">
+        </TaCapacity>
+        <TaCapacity reference="80011">
+        </TaCapacity>
+        <TaCapacity reference="80012">
+        </TaCapacity>
+        <TaCapacity reference="80013">
+        </TaCapacity>
+        <TaCapacity reference="80014">
+        </TaCapacity>
+        <TaCapacity reference="80015">
+        </TaCapacity>
+        <TaCapacity reference="80016">
+        </TaCapacity>
+        <TaCapacity reference="80017">
+        </TaCapacity>
+        <TaCapacity reference="80018">
+        </TaCapacity>
+        <TaCapacity reference="80019">
+        </TaCapacity>
+        <TaCapacity reference="80020">
+        </TaCapacity>
+        <TaCapacity reference="80021">
+        </TaCapacity>
+        <TaCapacity reference="80022">
+        </TaCapacity>
+        <TaCapacity reference="80023">
+        </TaCapacity>
+        <TaCapacity reference="80024">
+        </TaCapacity>
+        <TaCapacity reference="80025">
+        </TaCapacity>
+        <TaCapacity reference="80026">
+        </TaCapacity>
+        <TaCapacity reference="80027">
+        </TaCapacity>
+        <TaCapacity reference="80028">
+        </TaCapacity>
+      </capacitySet>
+      <affinityMap class="linked-hash-map">
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="62">
+      <id>8</id>
+      <fullName>Matthias van Tiggelen</fullName>
+      <latitude>51.6760752</latitude>
+      <longitude>4.6636182</longitude>
+      <skillSet class="linked-hash-set">
+        <TaSkill reference="120001">
+        </TaSkill>
+      </skillSet>
+      <capacitySet class="linked-hash-set">
+        <TaCapacity reference="80001">
+        </TaCapacity>
+        <TaCapacity reference="80002">
+        </TaCapacity>
+        <TaCapacity reference="80003">
+        </TaCapacity>
+        <TaCapacity reference="80004">
+        </TaCapacity>
+        <TaCapacity reference="80005">
+        </TaCapacity>
+        <TaCapacity reference="80006">
+        </TaCapacity>
+        <TaCapacity reference="80007">
+        </TaCapacity>
+        <TaCapacity reference="80008">
+        </TaCapacity>
+        <TaCapacity reference="80009">
+        </TaCapacity>
+        <TaCapacity reference="80010">
+        </TaCapacity>
+        <TaCapacity reference="80011">
+        </TaCapacity>
+        <TaCapacity reference="80012">
+        </TaCapacity>
+        <TaCapacity reference="80013">
+        </TaCapacity>
+        <TaCapacity reference="80014">
+        </TaCapacity>
+        <TaCapacity reference="80015">
+        </TaCapacity>
+        <TaCapacity reference="80016">
+        </TaCapacity>
+        <TaCapacity reference="80017">
+        </TaCapacity>
+        <TaCapacity reference="80018">
+        </TaCapacity>
+        <TaCapacity reference="80019">
+        </TaCapacity>
+        <TaCapacity reference="80020">
+        </TaCapacity>
+        <TaCapacity reference="80021">
+        </TaCapacity>
+        <TaCapacity reference="80022">
+        </TaCapacity>
+        <TaCapacity reference="80023">
+        </TaCapacity>
+        <TaCapacity reference="80024">
+        </TaCapacity>
+        <TaCapacity reference="80025">
+        </TaCapacity>
+        <TaCapacity reference="80026">
+        </TaCapacity>
+        <TaCapacity reference="80027">
+        </TaCapacity>
+        <TaCapacity reference="80028">
+        </TaCapacity>
+      </capacitySet>
+      <affinityMap class="linked-hash-map">
+      </affinityMap>
+    </TaEmployee>
+    <TaEmployee id="66">
+      <id>9</id>
+      <fullName>Marco Simon</fullName>
+      <latitude>51.8347691</latitude>
+      <longitude>4.6402022</longitude>
+      <skillSet class="linked-hash-set">
+        <TaSkill reference="120001">
+        </TaSkill>
+      </skillSet>
+      <capacitySet class="linked-hash-set">
+        <TaCapacity reference="80001">
+        </TaCapacity>
+        <TaCapacity reference="80002">
+        </TaCapacity>
+        <TaCapacity reference="80003">
+        </TaCapacity>
+        <TaCapacity reference="80004">
+        </TaCapacity>
+        <TaCapacity reference="80005">
+        </TaCapacity>
+        <TaCapacity reference="80006">
+        </TaCapacity>
+        <TaCapacity reference="80007">
+        </TaCapacity>
+        <TaCapacity reference="80008">
+        </TaCapacity>
+        <TaCapacity reference="80009">
+        </TaCapacity>
+        <TaCapacity reference="80010">
+        </TaCapacity>
+        <TaCapacity reference="80011">
+        </TaCapacity>
+        <TaCapacity reference="80012">
+        </TaCapacity>
+        <TaCapacity reference="80013">
+        </TaCapacity>
+        <TaCapacity reference="80014">
+        </TaCapacity>
+        <TaCapacity reference="80015">
+        </TaCapacity>
+        <TaCapacity reference="80016">
+        </TaCapacity>
+        <TaCapacity reference="80017">
+        </TaCapacity>
+        <TaCapacity reference="80018">
+        </TaCapacity>
+        <TaCapacity reference="80019">
+        </TaCapacity>
+        <TaCapacity reference="80020">
+        </TaCapacity>
+        <TaCapacity reference="80021">
+        </TaCapacity>
+        <TaCapacity reference="80022">
+        </TaCapacity>
+        <TaCapacity reference="80023">
+        </TaCapacity>
+        <TaCapacity reference="80024">
+        </TaCapacity>
+        <TaCapacity reference="80025">
+        </TaCapacity>
+        <TaCapacity reference="80026">
+        </TaCapacity>
+        <TaCapacity reference="80027">
+        </TaCapacity>
+        <TaCapacity reference="80028">
+        </TaCapacity>
+      </capacitySet>
+      <affinityMap class="linked-hash-map">
+      </affinityMap>
+    </TaEmployee>
+  </employeeList>
+  <taskList id="70">
+    <TaTask id="71">
+      <taskType reference="160001">
+      </taskType>
+      <id>0</id>
+      <code>1428170</code>
+      <title>
+      </title>
+      <duration>52</duration>
+      <responsTime>36735</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40001">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="72">
+      <taskType reference="160001">
+      </taskType>
+      <id>1</id>
+      <code>1428185</code>
+      <title>
+      </title>
+      <duration>60</duration>
+      <responsTime>36834</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40002">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="73">
+      <taskType reference="160001">
+      </taskType>
+      <id>2</id>
+      <code>1428186</code>
+      <title>
+      </title>
+      <duration>360</duration>
+      <responsTime>36835</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40002">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="74">
+      <taskType reference="160001">
+      </taskType>
+      <id>3</id>
+      <code>1428187</code>
+      <title>
+      </title>
+      <duration>120</duration>
+      <responsTime>36862</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40003">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="75">
+      <taskType reference="160001">
+      </taskType>
+      <id>4</id>
+      <code>1428189</code>
+      <title>
+      </title>
+      <duration>60</duration>
+      <responsTime>36868</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40004">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="76">
+      <taskType reference="160001">
+      </taskType>
+      <id>5</id>
+      <code>1428199</code>
+      <title>
+      </title>
+      <duration>108</duration>
+      <responsTime>36908</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40005">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="77">
+      <taskType reference="160002">
+      </taskType>
+      <id>6</id>
+      <code>1428211</code>
+      <title>
+      </title>
+      <duration>180</duration>
+      <responsTime>36962</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40004">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="78">
+      <taskType reference="160001">
+      </taskType>
+      <id>7</id>
+      <code>1428216</code>
+      <title>
+      </title>
+      <duration>60</duration>
+      <responsTime>36979</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40004">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="79">
+      <taskType reference="160001">
+      </taskType>
+      <id>8</id>
+      <code>1428222</code>
+      <title>
+      </title>
+      <duration>37</duration>
+      <responsTime>37100</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40006">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="80">
+      <taskType reference="160001">
+      </taskType>
+      <id>9</id>
+      <code>1428230</code>
+      <title>
+      </title>
+      <duration>30</duration>
+      <responsTime>37994</responsTime>
+      <latitude>52.07799</latitude>
+      <longitude>4.730836</longitude>
+      <customer reference="40007">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="81">
+      <taskType reference="160001">
+      </taskType>
+      <id>10</id>
+      <code>1428231</code>
+      <title>
+      </title>
+      <duration>30</duration>
+      <responsTime>38002</responsTime>
+      <latitude>52.07799</latitude>
+      <longitude>4.730836</longitude>
+      <customer reference="40007">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="82">
+      <taskType reference="160001">
+      </taskType>
+      <id>11</id>
+      <code>1428233</code>
+      <title>
+      </title>
+      <duration>30</duration>
+      <responsTime>38072</responsTime>
+      <latitude>52.07799</latitude>
+      <longitude>4.730836</longitude>
+      <customer reference="40007">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="83">
+      <taskType reference="160001">
+      </taskType>
+      <id>12</id>
+      <code>1428237</code>
+      <title>
+      </title>
+      <duration>60</duration>
+      <responsTime>38097</responsTime>
+      <latitude>52.07799</latitude>
+      <longitude>4.730836</longitude>
+      <customer reference="40007">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="84">
+      <taskType reference="160001">
+      </taskType>
+      <id>13</id>
+      <code>1428277</code>
+      <title>
+      </title>
+      <duration>174</duration>
+      <responsTime>40989</responsTime>
+      <latitude>52.07799</latitude>
+      <longitude>4.730836</longitude>
+      <customer reference="40008">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="85">
+      <taskType reference="160001">
+      </taskType>
+      <id>14</id>
+      <code>1428297</code>
+      <title>
+      </title>
+      <duration>152</duration>
+      <responsTime>41096</responsTime>
+      <latitude>52.07799</latitude>
+      <longitude>4.730836</longitude>
+      <customer reference="40009">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="86">
+      <taskType reference="160001">
+      </taskType>
+      <id>15</id>
+      <code>1428304</code>
+      <title>
+      </title>
+      <duration>15</duration>
+      <responsTime>41129</responsTime>
+      <latitude>51.6776073</latitude>
+      <longitude>5.6458831</longitude>
+      <customer reference="40010">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="87">
+      <taskType reference="160001">
+      </taskType>
+      <id>16</id>
+      <code>1428314</code>
+      <title>
+      </title>
+      <duration>37</duration>
+      <responsTime>41154</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40011">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="88">
+      <taskType reference="160001">
+      </taskType>
+      <id>17</id>
+      <code>1428320</code>
+      <title>
+      </title>
+      <duration>366</duration>
+      <responsTime>41179</responsTime>
+      <latitude>51.785179</latitude>
+      <longitude>5.5488815</longitude>
+      <customer reference="40012">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="89">
+      <taskType reference="160001">
+      </taskType>
+      <id>18</id>
+      <code>1428330</code>
+      <title>
+      </title>
+      <duration>357</duration>
+      <responsTime>41226</responsTime>
+      <latitude>51.9427909</latitude>
+      <longitude>4.4801511</longitude>
+      <customer reference="40013">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="90">
+      <taskType reference="160001">
+      </taskType>
+      <id>19</id>
+      <code>1428370</code>
+      <title>
+      </title>
+      <duration>116</duration>
+      <responsTime>42382</responsTime>
+      <latitude>52.07799</latitude>
+      <longitude>4.730836</longitude>
+      <customer reference="40007">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="91">
+      <taskType reference="160001">
+      </taskType>
+      <id>20</id>
+      <code>1428372</code>
+      <title>
+      </title>
+      <duration>362</duration>
+      <responsTime>42386</responsTime>
+      <latitude>51.943302</latitude>
+      <longitude>4.4060282</longitude>
+      <customer reference="40014">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="92">
+      <taskType reference="160001">
+      </taskType>
+      <id>21</id>
+      <code>1428385</code>
+      <title>
+      </title>
+      <duration>37</duration>
+      <responsTime>42470</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40015">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="93">
+      <taskType reference="160001">
+      </taskType>
+      <id>22</id>
+      <code>1428388</code>
+      <title>
+      </title>
+      <duration>90</duration>
+      <responsTime>42516</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40003">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="94">
+      <taskType reference="160001">
+      </taskType>
+      <id>23</id>
+      <code>1428400</code>
+      <title>
+      </title>
+      <duration>30</duration>
+      <responsTime>42601</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40006">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="95">
+      <taskType reference="160001">
+      </taskType>
+      <id>24</id>
+      <code>1428409</code>
+      <title>
+      </title>
+      <duration>360</duration>
+      <responsTime>42660</responsTime>
+      <latitude>51.6460635</latitude>
+      <longitude>4.6075226</longitude>
+      <customer reference="40016">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="96">
+      <taskType reference="160001">
+      </taskType>
+      <id>25</id>
+      <code>1428430</code>
+      <title>
+      </title>
+      <duration>360</duration>
+      <responsTime>43697</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40017">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="97">
+      <taskType reference="160001">
+      </taskType>
+      <id>26</id>
+      <code>1428495</code>
+      <title>
+      </title>
+      <duration>302</duration>
+      <responsTime>43938</responsTime>
+      <latitude>51.8515088</latitude>
+      <longitude>4.5485809</longitude>
+      <customer reference="40018">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="98">
+      <taskType reference="160001">
+      </taskType>
+      <id>27</id>
+      <code>1428529</code>
+      <title>
+      </title>
+      <duration>90</duration>
+      <responsTime>44217</responsTime>
+      <latitude>51.5719149</latitude>
+      <longitude>4.768323</longitude>
+      <customer reference="40019">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="99">
+      <taskType reference="160001">
+      </taskType>
+      <id>28</id>
+      <code>1428534</code>
+      <title>
+      </title>
+      <duration>360</duration>
+      <responsTime>44376</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40020">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="100">
+      <taskType reference="160001">
+      </taskType>
+      <id>29</id>
+      <code>1428054</code>
+      <title>
+      </title>
+      <duration>180</duration>
+      <responsTime>33941</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40021">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="101">
+      <taskType reference="160001">
+      </taskType>
+      <id>30</id>
+      <code>1428055</code>
+      <title>
+      </title>
+      <duration>180</duration>
+      <responsTime>33942</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40021">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="102">
+      <taskType reference="160001">
+      </taskType>
+      <id>31</id>
+      <code>1428056</code>
+      <title>
+      </title>
+      <duration>180</duration>
+      <responsTime>33942</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40021">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="103">
+      <taskType reference="160001">
+      </taskType>
+      <id>32</id>
+      <code>1428057</code>
+      <title>
+      </title>
+      <duration>180</duration>
+      <responsTime>35099</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40012">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="104">
+      <taskType reference="160001">
+      </taskType>
+      <id>33</id>
+      <code>1428098</code>
+      <title>
+      </title>
+      <duration>264</duration>
+      <responsTime>35441</responsTime>
+      <latitude>51.6460635</latitude>
+      <longitude>4.6075226</longitude>
+      <customer reference="40022">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="105">
+      <taskType reference="160001">
+      </taskType>
+      <id>34</id>
+      <code>1428228</code>
+      <title>
+      </title>
+      <duration>243</duration>
+      <responsTime>37955</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40023">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="106">
+      <taskType reference="160001">
+      </taskType>
+      <id>35</id>
+      <code>1428229</code>
+      <title>
+      </title>
+      <duration>120</duration>
+      <responsTime>37977</responsTime>
+      <latitude>52.3704453</latitude>
+      <longitude>4.6503231</longitude>
+      <customer reference="40024">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="107">
+      <taskType reference="160001">
+      </taskType>
+      <id>36</id>
+      <code>1428232</code>
+      <title>
+      </title>
+      <duration>96</duration>
+      <responsTime>38061</responsTime>
+      <latitude>52.07799</latitude>
+      <longitude>4.730836</longitude>
+      <customer reference="40007">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="108">
+      <taskType reference="160001">
+      </taskType>
+      <id>37</id>
+      <code>1428234</code>
+      <title>
+      </title>
+      <duration>74</duration>
+      <responsTime>38081</responsTime>
+      <latitude>51.6460635</latitude>
+      <longitude>4.6075226</longitude>
+      <customer reference="40025">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="109">
+      <taskType reference="160001">
+      </taskType>
+      <id>38</id>
+      <code>1428238</code>
+      <title>
+      </title>
+      <duration>302</duration>
+      <responsTime>38103</responsTime>
+      <latitude>51.8577347</latitude>
+      <longitude>4.5648917</longitude>
+      <customer reference="40004">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="110">
+      <taskType reference="160001">
+      </taskType>
+      <id>39</id>
+      <code>1428239</code>
+      <title>
+      </title>
+      <duration>74</duration>
+      <responsTime>38149</responsTime>
+      <latitude>51.8577347</latitude>
+      <longitude>4.5648917</longitude>
+      <customer reference="40004">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="111">
+      <taskType reference="160001">
+      </taskType>
+      <id>40</id>
+      <code>1428258</code>
+      <title>
+      </title>
+      <duration>363</duration>
+      <responsTime>40868</responsTime>
+      <latitude>52.07799</latitude>
+      <longitude>4.730836</longitude>
+      <customer reference="40007">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="112">
+      <taskType reference="160001">
+      </taskType>
+      <id>41</id>
+      <code>1428309</code>
+      <title>
+      </title>
+      <duration>74</duration>
+      <responsTime>41137</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40011">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="113">
+      <taskType reference="160001">
+      </taskType>
+      <id>42</id>
+      <code>1428310</code>
+      <title>
+      </title>
+      <duration>15</duration>
+      <responsTime>41143</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40011">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="114">
+      <taskType reference="160001">
+      </taskType>
+      <id>43</id>
+      <code>1428326</code>
+      <title>
+      </title>
+      <duration>208</duration>
+      <responsTime>41217</responsTime>
+      <latitude>52.07799</latitude>
+      <longitude>4.730836</longitude>
+      <customer reference="40007">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="115">
+      <taskType reference="160001">
+      </taskType>
+      <id>44</id>
+      <code>1428336</code>
+      <title>
+      </title>
+      <duration>141</duration>
+      <responsTime>41270</responsTime>
+      <latitude>52.07799</latitude>
+      <longitude>4.730836</longitude>
+      <customer reference="40007">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="116">
+      <taskType reference="160001">
+      </taskType>
+      <id>45</id>
+      <code>1428343</code>
+      <title>
+      </title>
+      <duration>97</duration>
+      <responsTime>41373</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40026">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="117">
+      <taskType reference="160001">
+      </taskType>
+      <id>46</id>
+      <code>1428384</code>
+      <title>
+      </title>
+      <duration>318</duration>
+      <responsTime>42445</responsTime>
+      <latitude>52.07799</latitude>
+      <longitude>4.30836</longitude>
+      <customer reference="40007">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="118">
+      <taskType reference="160001">
+      </taskType>
+      <id>47</id>
+      <code>1428389</code>
+      <title>
+      </title>
+      <duration>180</duration>
+      <responsTime>42557</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40012">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="119">
+      <taskType reference="160001">
+      </taskType>
+      <id>48</id>
+      <code>1428437</code>
+      <title>
+      </title>
+      <duration>74</duration>
+      <responsTime>43713</responsTime>
+      <latitude>51.8515088</latitude>
+      <longitude>4.5485809</longitude>
+      <customer reference="40018">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="120">
+      <taskType reference="160001">
+      </taskType>
+      <id>49</id>
+      <code>1428478</code>
+      <title>
+      </title>
+      <duration>82</duration>
+      <responsTime>43829</responsTime>
+      <latitude>51.441642</latitude>
+      <longitude>5.4697225</longitude>
+      <customer reference="40004">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="121">
+      <taskType reference="160001">
+      </taskType>
+      <id>50</id>
+      <code>1428499</code>
+      <title>
+      </title>
+      <duration>180</duration>
+      <responsTime>44003</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40012">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="122">
+      <taskType reference="160001">
+      </taskType>
+      <id>51</id>
+      <code>1428504</code>
+      <title>
+      </title>
+      <duration>172</duration>
+      <responsTime>44032</responsTime>
+      <latitude>51.6460635</latitude>
+      <longitude>4.6075226</longitude>
+      <customer reference="40007">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="123">
+      <taskType reference="160001">
+      </taskType>
+      <id>52</id>
+      <code>1428508</code>
+      <title>
+      </title>
+      <duration>172</duration>
+      <responsTime>44039</responsTime>
+      <latitude>51.6460635</latitude>
+      <longitude>4.6075226</longitude>
+      <customer reference="40007">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+    <TaTask id="124">
+      <taskType reference="160001">
+      </taskType>
+      <id>53</id>
+      <code>1428517</code>
+      <title>
+      </title>
+      <duration>180</duration>
+      <responsTime>44097</responsTime>
+      <latitude>51.864944</latitude>
+      <longitude>4.455653</longitude>
+      <customer reference="40027">
+      </customer>
+      <readyTime>0</readyTime>
+      <priority>MAJOR</priority>
+      <pinned>false</pinned>
+    </TaTask>
+  </taskList>
+</TaTaskAssigningSolution>

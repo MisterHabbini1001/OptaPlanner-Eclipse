@@ -84,12 +84,13 @@ public abstract class AbstractXlsxSolutionFileIO<Solution_> implements SolutionF
     protected static final XSSFColor REPUBLISHED_COLOR = new XSSFColor(TangoColorFactory.MAGENTA);
 
     @Override
-    public String getInputFileExtension() {
+    public String getInputFileExtension() 
+    {
         return "xlsx";
     }
 
-    public static abstract class AbstractXlsxReader<Solution_> {
-
+    public static abstract class AbstractXlsxReader<Solution_> 
+    {
         protected final XSSFWorkbook workbook;
         protected final ScoreDefinition scoreDefinition;
 
@@ -101,7 +102,8 @@ public abstract class AbstractXlsxSolutionFileIO<Solution_> implements SolutionF
         protected int currentRowNumber;
         protected int currentColumnNumber;
 
-        public AbstractXlsxReader(XSSFWorkbook workbook, String solverConfigResource) {
+        public AbstractXlsxReader(XSSFWorkbook workbook, String solverConfigResource) 
+        {
             this.workbook = workbook;
             ScoreDirectorFactory<Solution_> scoreDirectorFactory
                     = SolverFactory.<Solution_>createFromXmlResource(solverConfigResource)
@@ -111,30 +113,41 @@ public abstract class AbstractXlsxSolutionFileIO<Solution_> implements SolutionF
 
         public abstract Solution_ read();
 
-        protected void readIntConstraintParameterLine(String name, Consumer<Integer> consumer, String constraintDescription) {
+        protected void readIntConstraintParameterLine(String name, Consumer<Integer> consumer, String constraintDescription) 
+        {
             nextRow();
             readHeaderCell(name);
             XSSFCell weightCell = nextCell();
-            if (consumer != null) {
-                if (weightCell.getCellTypeEnum() != CellType.NUMERIC) {
+            if (consumer != null) 
+            {
+                if (weightCell.getCellTypeEnum() != CellType.NUMERIC) 
+                {
                     throw new IllegalArgumentException(currentPosition() + ": The value ("
                             + weightCell.getStringCellValue()
                             + ") for constraint (" + name + ") must be a number and the cell type must be numeric.");
                 }
+                
                 double value = weightCell.getNumericCellValue();
-                if (((double) ((int) value)) != value) {
+                if (((double) ((int) value)) != value) 
+                {
                     throw new IllegalArgumentException(currentPosition() + ": The value (" + value
                             + ") for constraint (" + name + ") must be an integer.");
                 }
+                
                 consumer.accept((int) value);
-            } else {
+            } 
+            
+            else 
+            {
                 if (weightCell.getCellTypeEnum() == CellType.NUMERIC
-                        || !weightCell.getStringCellValue().equals("n/a")) {
+                        || !weightCell.getStringCellValue().equals("n/a")) 
+                {
                     throw new IllegalArgumentException(currentPosition() + ": The value ("
                             + weightCell.getStringCellValue()
                             + ") for constraint (" + name + ") must be an n/a.");
                 }
             }
+            
             readHeaderCell(constraintDescription);
         }
 
@@ -142,30 +155,41 @@ public abstract class AbstractXlsxSolutionFileIO<Solution_> implements SolutionF
             nextRow();
             readHeaderCell(name);
             XSSFCell weightCell = nextCell();
-            if (consumer != null) {
-                if (weightCell.getCellTypeEnum() != CellType.NUMERIC) {
+            if (consumer != null) 
+            {
+                if (weightCell.getCellTypeEnum() != CellType.NUMERIC) 
+                {
                     throw new IllegalArgumentException(currentPosition() + ": The value ("
                             + weightCell.getStringCellValue()
                             + ") for constraint (" + name + ") must be a number and the cell type must be numeric.");
                 }
+                
                 double value = weightCell.getNumericCellValue();
-                if (((double) ((long) value)) != value) {
+                if (((double) ((long) value)) != value) 
+                {
                     throw new IllegalArgumentException(currentPosition() + ": The value (" + value
                             + ") for constraint (" + name + ") must be a (long) integer.");
                 }
+                
                 consumer.accept((long) value);
-            } else {
+            } 
+            
+            else 
+            {
                 if (weightCell.getCellTypeEnum() == CellType.NUMERIC
-                        || !weightCell.getStringCellValue().equals("n/a")) {
+                        || !weightCell.getStringCellValue().equals("n/a")) 
+                {
                     throw new IllegalArgumentException(currentPosition() + ": The value ("
                             + weightCell.getStringCellValue()
                             + ") for constraint (" + name + ") must be an n/a.");
                 }
             }
+            
             readHeaderCell(constraintDescription);
         }
 
-        protected void readScoreConstraintHeaders() {
+        protected void readScoreConstraintHeaders() 
+        {
             nextRow(true);
             readHeaderCell("Constraint");
             readHeaderCell("Score weight");
@@ -173,7 +197,8 @@ public abstract class AbstractXlsxSolutionFileIO<Solution_> implements SolutionF
         }
 
         protected <Score_ extends Score<Score_>> Score_ readScoreConstraintLine(
-                String constraintName, String constraintDescription) {
+                String constraintName, String constraintDescription) 
+        {
             nextRow();
             readHeaderCell(constraintName);
             String scoreString = nextStringCell().getStringCellValue();
@@ -181,170 +206,232 @@ public abstract class AbstractXlsxSolutionFileIO<Solution_> implements SolutionF
             return (Score_) scoreDefinition.parseScore(scoreString);
         }
 
-        protected String currentPosition() {
+        protected String currentPosition() 
+        {
             return "Sheet (" + currentSheet.getSheetName() + ") cell ("
                     + (currentRowNumber + 1) + CellReference.convertNumToColString(currentColumnNumber) + ")";
         }
 
-        protected boolean hasSheet(String sheetName) {
+        protected boolean hasSheet(String sheetName) 
+        {
             return workbook.getSheet(sheetName) != null;
         }
 
-        protected void nextSheet(String sheetName) {
+        protected void nextSheet(String sheetName) 
+        {
             currentSheet = workbook.getSheet(sheetName);
-            if (currentSheet == null) {
+            if (currentSheet == null) 
+            {
                 throw new IllegalStateException("The workbook does not contain a sheet with name ("
                         + sheetName + ").");
             }
+            
             currentRowIterator = currentSheet.rowIterator();
-            if (currentRowIterator == null) {
+            if (currentRowIterator == null) 
+            {
                 throw new IllegalStateException(currentPosition() + ": The sheet has no rows.");
             }
+            
             currentRowNumber = -1;
         }
 
-        protected boolean nextRow() {
+        protected boolean nextRow() 
+        {
             return nextRow(true);
         }
 
-        protected boolean nextRow(boolean skipEmptyRows) {
+        protected boolean nextRow(boolean skipEmptyRows) 
+        {
             currentRowNumber++;
             currentColumnNumber = -1;
-            if (!currentRowIterator.hasNext()) {
+            if (!currentRowIterator.hasNext()) 
+            {
                 currentRow = null;
                 return false;
             }
+            
             currentRow = (XSSFRow) currentRowIterator.next();
-            while (skipEmptyRows && currentRowIsEmpty()) {
-                if (!currentRowIterator.hasNext()) {
+            while (skipEmptyRows && currentRowIsEmpty()) 
+            {
+                if (!currentRowIterator.hasNext()) 
+                {
                     currentRow = null;
                     return false;
                 }
+                
                 currentRow = (XSSFRow) currentRowIterator.next();
             }
-            if (currentRow.getRowNum() != currentRowNumber) {
-                if (currentRow.getRowNum() == currentRowNumber + 1) {
+            
+            if (currentRow.getRowNum() != currentRowNumber) 
+            {
+                if (currentRow.getRowNum() == currentRowNumber + 1) 
+                {
                     currentRowNumber++;
-                } else {
+                } 
+                
+                else 
+                {
                     throw new IllegalStateException(currentPosition() + ": The next row (" + currentRow.getRowNum()
                             + ") has a gap of more than 1 empty line with the previous.");
                 }
             }
+            
             return true;
         }
 
-        protected boolean currentRowIsEmpty() {
-            if (currentRow.getPhysicalNumberOfCells() == 0) {
+        protected boolean currentRowIsEmpty() 
+        {
+            if (currentRow.getPhysicalNumberOfCells() == 0) 
+            {
                 return true;
             }
-            for (Cell cell : currentRow) {
-                if (cell.getCellTypeEnum() == CellType.STRING) {
-                    if (!cell.getStringCellValue().isEmpty()) {
+            
+            for (Cell cell : currentRow) 
+            {
+                if (cell.getCellTypeEnum() == CellType.STRING) 
+                {
+                    if (!cell.getStringCellValue().isEmpty()) 
+                    {
                         return false;
                     }
-                } else if (cell.getCellTypeEnum() != CellType.BLANK) {
+                    
+                } 
+                
+                else if (cell.getCellTypeEnum() != CellType.BLANK) 
+                {
                     return false;
                 }
             }
+            
             return true;
         }
 
-        protected void readHeaderCell(String value) {
+        protected void readHeaderCell(String value) 
+        {
             XSSFCell cell = currentRow == null ? null : nextStringCell();
-            if (cell == null || !cell.getStringCellValue().equals(value)) {
+            if (cell == null || !cell.getStringCellValue().equals(value)) 
+            {
                 throw new IllegalStateException(currentPosition() + ": The cell ("
                         + (cell == null ? null : cell.getStringCellValue())
                         + ") does not contain the expected value (" + value + ").");
             }
         }
 
-        protected void readHeaderCell(double value) {
+        protected void readHeaderCell(double value) 
+        {
             XSSFCell cell = currentRow == null ? null : nextNumericCell();
-            if (cell == null || cell.getNumericCellValue() != value) {
+            if (cell == null || cell.getNumericCellValue() != value) 
+            {
                 throw new IllegalStateException(currentPosition() + ": The cell does not contain the expected value ("
                         + value + ").");
             }
         }
 
-        protected XSSFCell nextStringCell() {
+        protected XSSFCell nextStringCell() 
+        {
             XSSFCell cell = nextCell();
-            if (cell.getCellTypeEnum() == CellType.NUMERIC) {
+            if (cell.getCellTypeEnum() == CellType.NUMERIC) 
+            {
                 throw new IllegalStateException(currentPosition() + ": The cell with value ("
                         + cell.getNumericCellValue() + ") has a numeric type but should be a string.");
             }
+            
             return cell;
         }
 
-        protected XSSFCell nextNumericCell() {
+        protected XSSFCell nextNumericCell() 
+        {
             XSSFCell cell = nextCell();
-            if (cell.getCellTypeEnum() == CellType.STRING) {
+            if (cell.getCellTypeEnum() == CellType.STRING) 
+            {
                 throw new IllegalStateException(currentPosition() + ": The cell with value ("
                         + cell.getStringCellValue() + ") has a string type but should be numeric.");
             }
+            
             return cell;
         }
 
-        protected XSSFCell nextNumericCellOrBlank() {
+        protected XSSFCell nextNumericCellOrBlank() 
+        {
             XSSFCell cell = nextCell();
             if (cell.getCellTypeEnum() == CellType.BLANK
                     || (cell.getCellTypeEnum() == CellType.STRING && cell.getStringCellValue().isEmpty())) {
                 return null;
             }
-            if (cell.getCellTypeEnum() == CellType.STRING) {
+            
+            if (cell.getCellTypeEnum() == CellType.STRING) 
+            {
                 throw new IllegalStateException(currentPosition() + ": The cell with value ("
                         + cell.getStringCellValue() + ") has a string type but should be numeric.");
             }
+            
             return cell;
         }
 
-        protected XSSFCell nextBooleanCell() {
+        protected XSSFCell nextBooleanCell() 
+        {
             XSSFCell cell = nextCell();
-            if (cell.getCellTypeEnum() == CellType.STRING) {
+            if (cell.getCellTypeEnum() == CellType.STRING) 
+            {
                 throw new IllegalStateException(currentPosition() + ": The cell with value ("
                         + cell.getStringCellValue() + ") has a string type but should be boolean.");
             }
-            if (cell.getCellTypeEnum() == CellType.NUMERIC) {
+            
+            if (cell.getCellTypeEnum() == CellType.NUMERIC) 
+            {
                 throw new IllegalStateException(currentPosition() + ": The cell with value ("
                         + cell.getNumericCellValue() + ") has a numeric type but should be a boolean.");
             }
+            
             return cell;
         }
 
-        protected XSSFCell nextCell() {
+        protected XSSFCell nextCell() 
+        {
             currentColumnNumber++;
             XSSFCell cell = currentRow.getCell(currentColumnNumber);
             // TODO HACK to workaround the fact that LibreOffice and Excel automatically remove empty trailing cells
-            if (cell == null) {
+            if (cell == null) 
+            {
                 // Return dummy cell
                 return currentRow.createCell(currentColumnNumber);
             }
+            
             return cell;
         }
 
-        protected XSSFColor extractColor(XSSFCell cell, XSSFColor... acceptableColors) {
+        protected XSSFColor extractColor(XSSFCell cell, XSSFColor... acceptableColors) 
+        {
             XSSFCellStyle cellStyle = cell.getCellStyle();
             FillPatternType fillPattern = cellStyle.getFillPatternEnum();
-            if (fillPattern == null || fillPattern == FillPatternType.NO_FILL) {
+            if (fillPattern == null || fillPattern == FillPatternType.NO_FILL) 
+            {
                 return null;
             }
-            if (fillPattern != FillPatternType.SOLID_FOREGROUND) {
+            
+            if (fillPattern != FillPatternType.SOLID_FOREGROUND) 
+            {
                 throw new IllegalStateException(currentPosition() + ": The fill pattern (" + fillPattern
                         + ") should be either " + FillPatternType.NO_FILL
                         + " or " + FillPatternType.SOLID_FOREGROUND + ".");
             }
+            
             XSSFColor color = cellStyle.getFillForegroundColorColor();
-            for (XSSFColor acceptableColor : acceptableColors) {
-                if (acceptableColor.equals(color)) {
+            for (XSSFColor acceptableColor : acceptableColors) 
+            {
+                if (acceptableColor.equals(color)) 
+                {
                     return acceptableColor;
                 }
             }
+            
             throw new IllegalStateException(currentPosition() + ": The fill color (" + color
                     + ") is not one of the acceptableColors (" + Arrays.toString(acceptableColors) + ").");
         }
     }
 
-    public static abstract class AbstractXlsxWriter<Solution_> {
-
+    public static abstract class AbstractXlsxWriter<Solution_> 
+    {
         protected final Solution_ solution;
         protected final Score score;
         protected final ScoreDefinition scoreDefinition;
@@ -374,13 +461,15 @@ public abstract class AbstractXlsxSolutionFileIO<Solution_> implements SolutionF
         protected int currentColumnNumber;
         protected int headerCellCount;
 
-        public AbstractXlsxWriter(Solution_ solution, String solverConfigResource) {
+        public AbstractXlsxWriter(Solution_ solution, String solverConfigResource) 
+        {
             this.solution = solution;
             ScoreDirectorFactory<Solution_> scoreDirectorFactory
                     = SolverFactory.<Solution_>createFromXmlResource(solverConfigResource)
                     .buildSolver().getScoreDirectorFactory();
             scoreDefinition = ((InnerScoreDirectorFactory) scoreDirectorFactory).getScoreDefinition();
-            try (ScoreDirector<Solution_> scoreDirector = scoreDirectorFactory.buildScoreDirector()) {
+            try (ScoreDirector<Solution_> scoreDirector = scoreDirectorFactory.buildScoreDirector()) 
+            {
                 scoreDirector.setWorkingSolution(solution);
                 score = scoreDirector.calculateScore();
                 constraintMatchTotals = scoreDirector.getConstraintMatchTotals();
@@ -390,13 +479,15 @@ public abstract class AbstractXlsxSolutionFileIO<Solution_> implements SolutionF
 
         public abstract Workbook write();
 
-        public void writeSetup() {
+        public void writeSetup() 
+        {
             workbook = new XSSFWorkbook();
             creationHelper = workbook.getCreationHelper();
             createStyles();
         }
 
-        protected void createStyles() {
+        protected void createStyles() 
+        {
             headerStyle = createStyle(null);
             Font headerFont = workbook.createFont();
             headerFont.setBold(true);
@@ -416,18 +507,22 @@ public abstract class AbstractXlsxSolutionFileIO<Solution_> implements SolutionF
             republishedStyle = createStyle(REPUBLISHED_COLOR);
         }
 
-        protected XSSFCellStyle createStyle(XSSFColor color) {
+        protected XSSFCellStyle createStyle(XSSFColor color) 
+        {
             XSSFCellStyle style = workbook.createCellStyle();
-            if (color != null) {
+            if (color != null) 
+            {
                 style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
                 style.setFillForegroundColor(color);
             }
+            
             style.setWrapText(true);
             style.setVerticalAlignment(VerticalAlignment.CENTER);
             return style;
         }
 
-        protected void writeIntConstraintParameterLine(String name, int value, String constraintDescription) {
+        protected void writeIntConstraintParameterLine(String name, int value, String constraintDescription) 
+        {
             nextRow();
             nextHeaderCell(name);
             XSSFCell weightCell = nextCell();
@@ -435,31 +530,44 @@ public abstract class AbstractXlsxSolutionFileIO<Solution_> implements SolutionF
             nextHeaderCell(constraintDescription);
         }
 
-        protected void writeIntConstraintParameterLine(String name, Supplier<Integer> supplier, String constraintDescription) {
+        protected void writeIntConstraintParameterLine(String name, Supplier<Integer> supplier, String constraintDescription) 
+        {
             nextRow();
             nextHeaderCell(name);
             XSSFCell weightCell = nextCell();
-            if (supplier != null) {
+            if (supplier != null) 
+            {
                 weightCell.setCellValue(supplier.get());
-            } else {
+            } 
+            
+            else 
+            {
                 weightCell.setCellValue("n/a");
             }
+            
             nextHeaderCell(constraintDescription);
         }
 
-        protected void writeLongConstraintParameterLine(String name, Supplier<Long> supplier, String constraintDescription) {
+        protected void writeLongConstraintParameterLine(String name, Supplier<Long> supplier, String constraintDescription) 
+        {
             nextRow();
             nextHeaderCell(name);
             XSSFCell weightCell = nextCell();
-            if (supplier != null) {
+            if (supplier != null) 
+            {
                 weightCell.setCellValue(supplier.get());
-            } else {
+            } 
+            
+            else 
+            {
                 weightCell.setCellValue("n/a");
             }
+            
             nextHeaderCell(constraintDescription);
         }
 
-        protected void writeScoreConstraintHeaders() {
+        protected void writeScoreConstraintHeaders() 
+        {
             nextRow();
             nextHeaderCell("Constraint");
             nextHeaderCell("Score weight");
@@ -467,7 +575,8 @@ public abstract class AbstractXlsxSolutionFileIO<Solution_> implements SolutionF
         }
 
         protected <Score_ extends Score<Score_>> void writeScoreConstraintLine(
-                String constraintName, Score_ constraintScore, String constraintDescription) {
+                String constraintName, Score_ constraintScore, String constraintDescription) 
+        {
             nextRow();
             nextHeaderCell(constraintName);
             nextCell(scoreDefinition.getZeroScore().equals(constraintScore) ? disabledScoreStyle : scoreStyle)
@@ -475,7 +584,8 @@ public abstract class AbstractXlsxSolutionFileIO<Solution_> implements SolutionF
             nextHeaderCell(constraintDescription);
         }
 
-        protected void writeScoreView(Function<List<Object>, String> justificationListFormatter) {
+        protected void writeScoreView(Function<List<Object>, String> justificationListFormatter) 
+        {
             nextSheet("Score view", 1, 3, true);
             nextRow();
             nextHeaderCell("Score");
@@ -489,20 +599,23 @@ public abstract class AbstractXlsxSolutionFileIO<Solution_> implements SolutionF
             nextHeaderCell("");
             nextHeaderCell("Match score");
             nextHeaderCell("Justifications");
-            if (!score.isSolutionInitialized()) {
+            if (!score.isSolutionInitialized()) 
+            {
                 nextRow();
                 nextHeaderCell("Unassigned variables");
                 nextCell();
                 nextCell();
                 nextCell().setCellValue(score.getInitScore());
             }
+            
             Comparator<ConstraintMatchTotal> constraintWeightComparator = Comparator.comparing(
                     ConstraintMatchTotal::getConstraintWeight, Comparator.nullsLast(Comparator.reverseOrder()));
             constraintMatchTotals.stream()
                     .sorted(constraintWeightComparator
                             .thenComparing(ConstraintMatchTotal::getConstraintPackage)
                             .thenComparing(ConstraintMatchTotal::getConstraintName))
-                    .forEach(constraintMatchTotal -> {
+                    .forEach(constraintMatchTotal -> 
+                    {
                 nextRow();
                 nextHeaderCell(constraintMatchTotal.getConstraintName());
                 Score constraintWeight = constraintMatchTotal.getConstraintWeight();
@@ -545,54 +658,64 @@ public abstract class AbstractXlsxSolutionFileIO<Solution_> implements SolutionF
             autoSizeColumnsWithHeader();
         }
 
-        protected void nextSheet(String sheetName, int colSplit, int rowSplit, boolean view) {
+        protected void nextSheet(String sheetName, int colSplit, int rowSplit, boolean view) 
+        {
             currentSheet = workbook.createSheet(sheetName);
             currentDrawing = currentSheet.createDrawingPatriarch();
             currentSheet.createFreezePane(colSplit, rowSplit);
             currentRowNumber = -1;
             headerCellCount = 0;
-            if (view) {
+            if (view) 
+            {
                 currentSheet.setTabColor(VIEW_TAB_COLOR);
             }
         }
 
-        protected void nextRow() {
+        protected void nextRow() 
+        {
             currentRowNumber++;
             currentRow = currentSheet.createRow(currentRowNumber);
             currentColumnNumber = -1;
         }
 
-        protected void nextHeaderCell(String value) {
+        protected void nextHeaderCell(String value) 
+        {
             nextCell(headerStyle).setCellValue(value);
             headerCellCount++;
         }
 
-        protected void nextHeaderCell(double value) {
+        protected void nextHeaderCell(double value) 
+        {
             nextCell(headerStyle).setCellValue(value);
             headerCellCount++;
         }
 
-        protected XSSFCell nextCell() {
+        protected XSSFCell nextCell() 
+        {
             return nextCell(defaultStyle);
         }
 
-        protected XSSFCell nextCell(XSSFCellStyle cellStyle) {
+        protected XSSFCell nextCell(XSSFCellStyle cellStyle) 
+        {
             currentColumnNumber++;
             XSSFCell cell = currentRow.createCell(currentColumnNumber);
             cell.setCellStyle(cellStyle);
             return cell;
         }
 
-        protected void nextHeaderCellVertically(String value) {
+        protected void nextHeaderCellVertically(String value) 
+        {
             nextCellVertically(headerStyle).setCellValue(value);
             headerCellCount++;
         }
 
-        protected XSSFCell nextCellVertically() {
+        protected XSSFCell nextCellVertically() 
+        {
             return nextCellVertically(defaultStyle);
         }
 
-        protected XSSFCell nextCellVertically(XSSFCellStyle cellStyle) {
+        protected XSSFCell nextCellVertically(XSSFCellStyle cellStyle) 
+        {
             currentRowNumber++;
             currentRow = currentSheet.getRow(currentRowNumber);
             XSSFCell cell = currentRow.createCell(currentColumnNumber);
@@ -600,17 +723,20 @@ public abstract class AbstractXlsxSolutionFileIO<Solution_> implements SolutionF
             return cell;
         }
 
-        protected void autoSizeColumnsWithHeader() {
-            for (int i = 0; i < headerCellCount; i++) {
+        protected void autoSizeColumnsWithHeader() 
+        {
+            for (int i = 0; i < headerCellCount; i++) 
+            {
                 currentSheet.autoSizeColumn(i);
             }
         }
 
-        protected void setSizeColumnsWithHeader(int width) {
-            for (int i = 0; i < headerCellCount; i++) {
+        protected void setSizeColumnsWithHeader(int width) 
+        {
+            for (int i = 0; i < headerCellCount; i++) 
+            {
                 currentSheet.setColumnWidth(i, width);
             }
         }
     }
-
 }

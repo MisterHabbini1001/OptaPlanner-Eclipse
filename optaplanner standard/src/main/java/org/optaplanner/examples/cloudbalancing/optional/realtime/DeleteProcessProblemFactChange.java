@@ -13,28 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cloudbalancing.optional.realtime;
-
 import org.optaplanner.core.impl.score.director.ScoreDirector;
 import org.optaplanner.core.impl.solver.ProblemFactChange;
 import org.optaplanner.examples.cloudbalancing.domain.CloudBalance;
 import org.optaplanner.examples.cloudbalancing.domain.CloudProcess;
 
-public class DeleteProcessProblemFactChange implements ProblemFactChange<CloudBalance> {
-
+public class DeleteProcessProblemFactChange implements ProblemFactChange<CloudBalance> 
+{
     private final CloudProcess process;
 
-    public DeleteProcessProblemFactChange(CloudProcess process) {
+    public DeleteProcessProblemFactChange(CloudProcess process) 
+    {
         this.process = process;
     }
 
     @Override
-    public void doChange(ScoreDirector<CloudBalance> scoreDirector) {
+    public void doChange(ScoreDirector<CloudBalance> scoreDirector) 
+    {
         CloudBalance cloudBalance = scoreDirector.getWorkingSolution();
         // A SolutionCloner clones planning entity lists (such as processList), so no need to clone the processList here
         CloudProcess workingProcess = scoreDirector.lookUpWorkingObject(process);
-        if (workingProcess == null) {
+        if (workingProcess == null) 
+        {
             // The process has already been deleted (the UI asked to changed the same process twice), so do nothing
             return;
         }
@@ -44,5 +45,4 @@ public class DeleteProcessProblemFactChange implements ProblemFactChange<CloudBa
         scoreDirector.afterEntityRemoved(workingProcess);
         scoreDirector.triggerVariableListeners();
     }
-
 }

@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.vehiclerouting.swingui;
-
 import java.awt.BorderLayout;
 import java.util.Random;
 import javax.swing.JTabbedPane;
@@ -31,16 +29,15 @@ import org.optaplanner.examples.vehiclerouting.domain.timewindowed.TimeWindowedC
 import org.optaplanner.examples.vehiclerouting.domain.timewindowed.TimeWindowedDepot;
 import org.optaplanner.examples.vehiclerouting.domain.timewindowed.TimeWindowedVehicleRoutingSolution;
 
-public class VehicleRoutingPanel extends SolutionPanel<VehicleRoutingSolution> {
-
+public class VehicleRoutingPanel extends SolutionPanel<VehicleRoutingSolution> 
+{
     public static final String LOGO_PATH = "/org/optaplanner/examples/vehiclerouting/swingui/vehicleRoutingLogo.png";
-
     private VehicleRoutingWorldPanel vehicleRoutingWorldPanel;
-
     private Random demandRandom = new Random(37);
     private Long nextLocationId = null;
 
-    public VehicleRoutingPanel() {
+    public VehicleRoutingPanel() 
+    {
         setLayout(new BorderLayout());
         JTabbedPane tabbedPane = new JTabbedPane();
         vehicleRoutingWorldPanel = new VehicleRoutingWorldPanel(this);
@@ -50,38 +47,48 @@ public class VehicleRoutingPanel extends SolutionPanel<VehicleRoutingSolution> {
     }
 
     @Override
-    public boolean isWrapInScrollPane() {
+    public boolean isWrapInScrollPane() 
+    {
         return false;
     }
 
     @Override
-    public void resetPanel(VehicleRoutingSolution solution) {
+    public void resetPanel(VehicleRoutingSolution solution) 
+    {
         vehicleRoutingWorldPanel.resetPanel(solution);
         resetNextLocationId();
     }
 
-    private void resetNextLocationId() {
+    private void resetNextLocationId() 
+    {
         long highestLocationId = 0L;
-        for (Location location : getSolution().getLocationList()) {
-            if (highestLocationId < location.getId().longValue()) {
+        for (Location location : getSolution().getLocationList()) 
+        {
+            if (highestLocationId < location.getId().longValue()) 
+            {
                 highestLocationId = location.getId();
             }
         }
+        
         nextLocationId = highestLocationId + 1L;
     }
 
     @Override
-    public void updatePanel(VehicleRoutingSolution solution) {
+    public void updatePanel(VehicleRoutingSolution solution) 
+    {
         vehicleRoutingWorldPanel.updatePanel(solution);
     }
 
-    public SolverAndPersistenceFrame getWorkflowFrame() {
+    public SolverAndPersistenceFrame getWorkflowFrame() 
+    {
         return solverAndPersistenceFrame;
     }
 
-    public void insertLocationAndCustomer(double longitude, double latitude) {
+    public void insertLocationAndCustomer(double longitude, double latitude) 
+    {
         final Location newLocation;
-        switch (getSolution().getDistanceType()) {
+        switch (getSolution().getDistanceType()) 
+        {
             case AIR_DISTANCE:
                 newLocation = new AirLocation();
                 break;
@@ -95,12 +102,14 @@ public class VehicleRoutingPanel extends SolutionPanel<VehicleRoutingSolution> {
                 throw new IllegalStateException("The distanceType (" + getSolution().getDistanceType()
                         + ") is not implemented.");
         }
+        
         newLocation.setId(nextLocationId);
         nextLocationId++;
         newLocation.setLongitude(longitude);
         newLocation.setLatitude(latitude);
         logger.info("Scheduling insertion of newLocation ({}).", newLocation);
-        doProblemFactChange(scoreDirector -> {
+        doProblemFactChange(scoreDirector -> 
+        {
             VehicleRoutingSolution solution = scoreDirector.getWorkingSolution();
             scoreDirector.beforeProblemFactAdded(newLocation);
             solution.getLocationList().add(newLocation);
@@ -113,9 +122,11 @@ public class VehicleRoutingPanel extends SolutionPanel<VehicleRoutingSolution> {
         });
     }
 
-    protected Customer createCustomer(VehicleRoutingSolution solution, Location newLocation) {
+    protected Customer createCustomer(VehicleRoutingSolution solution, Location newLocation) 
+    {
         Customer newCustomer;
-        if (solution instanceof TimeWindowedVehicleRoutingSolution) {
+        if (solution instanceof TimeWindowedVehicleRoutingSolution) 
+        {
             TimeWindowedCustomer newTimeWindowedCustomer = new TimeWindowedCustomer();
             TimeWindowedDepot timeWindowedDepot = (TimeWindowedDepot) solution.getDepotList().get(0);
             long windowTime = (timeWindowedDepot.getDueTime() - timeWindowedDepot.getReadyTime()) / 4L;
@@ -124,14 +135,17 @@ public class VehicleRoutingPanel extends SolutionPanel<VehicleRoutingSolution> {
             newTimeWindowedCustomer.setDueTime(readyTime + windowTime);
             newTimeWindowedCustomer.setServiceDuration(Math.min(10000L, windowTime / 2L));
             newCustomer = newTimeWindowedCustomer;
-        } else {
+        } 
+        
+        else 
+        {
             newCustomer = new Customer();
         }
+        
         newCustomer.setId(newLocation.getId());
         newCustomer.setLocation(newLocation);
         // Demand must not be 0
         newCustomer.setDemand(demandRandom.nextInt(10) + 1);
         return newCustomer;
     }
-
 }

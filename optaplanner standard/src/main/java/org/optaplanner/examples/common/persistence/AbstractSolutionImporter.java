@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.common.persistence;
-
 import java.io.File;
 import java.math.BigInteger;
 import java.math.RoundingMode;
@@ -27,47 +25,59 @@ import org.optaplanner.examples.common.app.LoggingMain;
 /**
  * @param <Solution_> the solution type, the class with the {@link PlanningSolution} annotation
  */
-public abstract class AbstractSolutionImporter<Solution_> extends LoggingMain {
-
-    public boolean acceptInputFile(File inputFile) {
-        if (isInputFileDirectory()) {
+public abstract class AbstractSolutionImporter<Solution_> extends LoggingMain 
+{
+    public boolean acceptInputFile(File inputFile) 
+    {
+        if (isInputFileDirectory()) 
+        {
             return inputFile.isDirectory();
         }
+        
         return inputFile.getName().endsWith("." + getInputFileSuffix());
     }
 
-    public boolean isInputFileDirectory() {
+    public boolean isInputFileDirectory() 
+    {
         return false;
     }
 
     public abstract String getInputFileSuffix();
-
     public abstract Solution_ readSolution(File inputFile);
 
-    public static abstract class InputBuilder extends LoggingMain {
-
+    public static abstract class InputBuilder extends LoggingMain 
+    {
     }
 
-    public static BigInteger factorial(int base) {
-        if (base > 100000) {
+    public static BigInteger factorial(int base) 
+    {
+        if (base > 100000) 
+        {
             // Calculation takes too long
             return null;
         }
+        
         BigInteger value = BigInteger.ONE;
-        for (int i = 1; i <= base; i++) {
+        for (int i = 1; i <= base; i++) 
+        {
             value = value.multiply(BigInteger.valueOf(i));
         }
+        
         return value;
     }
 
-    public static String getFlooredPossibleSolutionSize(BigInteger possibleSolutionSize) {
-        if (possibleSolutionSize == null) {
+    public static String getFlooredPossibleSolutionSize(BigInteger possibleSolutionSize) 
+    {
+        if (possibleSolutionSize == null) 
+        {
             return null;
         }
-        if (possibleSolutionSize.compareTo(BigInteger.valueOf(1000L)) < 0) {
+        
+        if (possibleSolutionSize.compareTo(BigInteger.valueOf(1000L)) < 0) 
+        {
             return possibleSolutionSize.toString();
         }
+        
         return "10^" + (BigIntegerMath.log10(possibleSolutionSize, RoundingMode.FLOOR));
     }
-
 }

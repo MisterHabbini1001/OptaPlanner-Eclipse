@@ -13,26 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.common.business;
-
 import java.io.File;
 import java.io.FileFilter;
 
-public class ExtensionFileFilter implements FileFilter {
-
+public class ExtensionFileFilter implements FileFilter 
+{
     private final String extensionWithDot;
 
-    public ExtensionFileFilter(String extension) {
+    public ExtensionFileFilter(String extension) 
+    {
         extensionWithDot = "." + extension;
     }
 
     @Override
-    public boolean accept(File file) {
-        if (file.isDirectory() || file.isHidden()) {
+    public boolean accept(File file) 
+    {
+        if (file.isDirectory() || file.isHidden()) 
+        {
             return false;
         }
         return file.getName().endsWith(extensionWithDot);
     }
-
 }

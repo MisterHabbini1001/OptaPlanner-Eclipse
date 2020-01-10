@@ -13,16 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cheaptime.domain.solver;
-
 import java.io.Serializable;
 import java.util.Comparator;
 
 import org.optaplanner.examples.cheaptime.domain.Task;
 import org.optaplanner.examples.cheaptime.domain.TaskAssignment;
 
-public class TaskAssignmentDifficultyComparator implements Comparator<TaskAssignment>, Serializable {
+public class TaskAssignmentDifficultyComparator implements Comparator<TaskAssignment>, Serializable 
+{
 
     private static final Comparator<Task> TASK_COMPARATOR = Comparator.comparingInt(Task::getResourceUsageMultiplicand)
             .thenComparingLong(Task::getPowerConsumptionMicros)
@@ -32,7 +31,8 @@ public class TaskAssignmentDifficultyComparator implements Comparator<TaskAssign
                     .thenComparingLong(TaskAssignment::getId);
 
     @Override
-    public int compare(TaskAssignment a, TaskAssignment b) {
+    public int compare(TaskAssignment a, TaskAssignment b) 
+    {
         return COMPARATOR.compare(a, b);
     }
 }

@@ -13,18 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cloudbalancing.optional.benchmark;
-
 import org.optaplanner.examples.common.app.CommonBenchmarkApp;
 
-public class CloudBalancingBenchmarkApp extends CommonBenchmarkApp {
-
-    public static void main(String[] args) {
+public class CloudBalancingBenchmarkApp extends CommonBenchmarkApp 
+{
+    public static void main(String[] args) 
+    {
         new CloudBalancingBenchmarkApp().buildAndBenchmark(args);
     }
 
-    public CloudBalancingBenchmarkApp() {
+    public CloudBalancingBenchmarkApp() 
+    {
         super(
                 new ArgOption("default",
                         "org/optaplanner/examples/cloudbalancing/optional/benchmark/cloudBalancingBenchmarkConfig.xml"),
@@ -36,5 +36,4 @@ public class CloudBalancingBenchmarkApp extends CommonBenchmarkApp {
                         "org/optaplanner/examples/cloudbalancing/optional/benchmark/cloudBalancingBenchmarkConfigTemplate.xml.ftl", true)
         );
     }
-
 }

@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.coachshuttlegathering.swingui;
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -36,32 +34,36 @@ import org.optaplanner.examples.coachshuttlegathering.domain.location.RoadLocati
 import org.optaplanner.examples.common.swingui.latitudelongitude.LatitudeLongitudeTranslator;
 import org.optaplanner.swing.impl.TangoColorFactory;
 
-public class CoachShuttleGatheringWorldPanel extends JPanel {
-
+public class CoachShuttleGatheringWorldPanel extends JPanel 
+{
     private static final int LOCATION_NAME_TEXT_SIZE = 12;
-
     private final CoachShuttleGatheringPanel coachShuttleGatheringPanel;
-
     private BufferedImage canvas = null;
     private LatitudeLongitudeTranslator translator = null;
 
-    public CoachShuttleGatheringWorldPanel(CoachShuttleGatheringPanel coachShuttleGatheringPanel) {
+    public CoachShuttleGatheringWorldPanel(CoachShuttleGatheringPanel coachShuttleGatheringPanel) 
+    {
         this.coachShuttleGatheringPanel = coachShuttleGatheringPanel;
-        addComponentListener(new ComponentAdapter() {
+        addComponentListener(new ComponentAdapter() 
+        {
             @Override
-            public void componentResized(ComponentEvent e) {
+            public void componentResized(ComponentEvent e) 
+            {
                 // TODO Not thread-safe during solving
                 CoachShuttleGatheringSolution solution = CoachShuttleGatheringWorldPanel.this.coachShuttleGatheringPanel.getSolution();
-                if (solution != null) {
+                if (solution != null) 
+                {
                     resetPanel(solution);
                 }
             }
         });
     }
 
-    public void resetPanel(CoachShuttleGatheringSolution solution) {
+    public void resetPanel(CoachShuttleGatheringSolution solution) 
+    {
         translator = new LatitudeLongitudeTranslator();
-        for (RoadLocation location : solution.getLocationList()) {
+        for (RoadLocation location : solution.getLocationList()) 
+        {
             translator.addCoordinates(location.getLatitude(), location.getLongitude());
         }
 
@@ -74,7 +76,8 @@ public class CoachShuttleGatheringWorldPanel extends JPanel {
         g.setColor(TangoColorFactory.ORANGE_3);
         RoadLocation hubLocation = solution.getHub().getLocation();
         translator.drawSquare(g, hubLocation.getLongitude(), hubLocation.getLatitude(), 5);
-        for (BusStop stop : solution.getStopList()) {
+        for (BusStop stop : solution.getStopList()) 
+        {
             RoadLocation location = stop.getLocation();
             g.setColor((stop.getPassengerQuantity() <= 0) ? TangoColorFactory.ALUMINIUM_4
                     : (stop.getTransportTimeToHub() == null) ? TangoColorFactory.ORANGE_2
@@ -82,19 +85,24 @@ public class CoachShuttleGatheringWorldPanel extends JPanel {
             translator.drawSquare(g, location.getLongitude(), location.getLatitude(), 3,
                     stop.getTransportLabel());
         }
+        
         List<Bus> busList = solution.getBusList();
         g.setColor(TangoColorFactory.ALUMINIUM_2);
         g.setFont(g.getFont().deriveFont((float) LOCATION_NAME_TEXT_SIZE));
-        for (Bus bus : busList) {
+        for (Bus bus : busList) 
+        {
             RoadLocation location = bus.getLocation();
             g.setColor(bus instanceof Coach ? TangoColorFactory.ORANGE_1 : TangoColorFactory.ALUMINIUM_2);
             translator.drawSquare(g, location.getLongitude(), location.getLatitude(), 3, StringUtils.abbreviate(bus.getName(), 20));
         }
+        
         int colorIndex = 0;
-        for (Bus bus : busList) {
+        for (Bus bus : busList) 
+        {
             g.setColor(TangoColorFactory.SEQUENCE_2[colorIndex]);
             BusStop lastStop = null;
-            for (BusStop stop = bus.getNextStop(); stop != null; stop = stop.getNextStop()) {
+            for (BusStop stop = bus.getNextStop(); stop != null; stop = stop.getNextStop()) 
+            {
                 RoadLocation previousLocation = stop.getPreviousBusOrStop().getLocation();
                 RoadLocation location = stop.getLocation();
                 translator.drawRoute(g, previousLocation.getLongitude(), previousLocation.getLatitude(),
@@ -102,26 +110,33 @@ public class CoachShuttleGatheringWorldPanel extends JPanel {
                         false, false);
                 lastStop = stop;
             }
-            if (lastStop != null || bus instanceof Coach) {
+            
+            if (lastStop != null || bus instanceof Coach) 
+            {
                 RoadLocation lastStopLocation = lastStop == null ? bus.getLocation() : lastStop.getLocation();
                 StopOrHub destination = bus.getDestination();
-                if (destination != null) {
+                if (destination != null) 
+                {
                     RoadLocation destinationLocation = destination.getLocation();
                     translator.drawRoute(g, lastStopLocation.getLongitude(), lastStopLocation.getLatitude(),
                             destinationLocation.getLongitude(), destinationLocation.getLatitude(),
                             false, true);
                 }
             }
+            
             colorIndex = (colorIndex + 1) % TangoColorFactory.SEQUENCE_2.length;
         }
+        
         repaint();
     }
 
-    public void updatePanel(CoachShuttleGatheringSolution solution) {
+    public void updatePanel(CoachShuttleGatheringSolution solution) 
+    {
         resetPanel(solution);
     }
 
-    private Graphics2D createCanvas(double width, double height) {
+    private Graphics2D createCanvas(double width, double height) 
+    {
         int canvasWidth = (int) Math.ceil(width) + 1;
         int canvasHeight = (int) Math.ceil(height) + 1;
         canvas = new BufferedImage(canvasWidth, canvasHeight, BufferedImage.TYPE_INT_RGB);
@@ -132,11 +147,12 @@ public class CoachShuttleGatheringWorldPanel extends JPanel {
     }
 
     @Override
-    protected void paintComponent(Graphics g) {
+    protected void paintComponent(Graphics g) 
+    {
         super.paintComponent(g);
-        if (canvas != null) {
+        if (canvas != null) 
+        {
             g.drawImage(canvas, 0, 0, this);
         }
     }
-
 }

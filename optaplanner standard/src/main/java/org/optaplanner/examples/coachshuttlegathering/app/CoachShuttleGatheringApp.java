@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.coachshuttlegathering.app;
-
 import org.optaplanner.examples.coachshuttlegathering.domain.CoachShuttleGatheringSolution;
 import org.optaplanner.examples.coachshuttlegathering.persistence.CoachShuttleGatheringExporter;
 import org.optaplanner.examples.coachshuttlegathering.persistence.CoachShuttleGatheringImporter;
@@ -26,19 +24,21 @@ import org.optaplanner.examples.common.persistence.AbstractSolutionImporter;
 import org.optaplanner.persistence.common.api.domain.solution.SolutionFileIO;
 import org.optaplanner.persistence.xstream.impl.domain.solution.XStreamSolutionFileIO;
 
-public class CoachShuttleGatheringApp extends CommonApp<CoachShuttleGatheringSolution> {
-
+public class CoachShuttleGatheringApp extends CommonApp<CoachShuttleGatheringSolution> 
+{
     public static final String SOLVER_CONFIG
             = "org/optaplanner/examples/coachshuttlegathering/solver/coachShuttleGatheringSolverConfig.xml";
 
     public static final String DATA_DIR_NAME = "coachshuttlegathering";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         prepareSwingEnvironment();
         new CoachShuttleGatheringApp().init();
     }
 
-    public CoachShuttleGatheringApp() {
+    public CoachShuttleGatheringApp() 
+    {
         super("Coach shuttle gathering",
                 "Transport passengers to a hub by using coaches and shuttles.",
                 SOLVER_CONFIG, DATA_DIR_NAME,
@@ -46,25 +46,29 @@ public class CoachShuttleGatheringApp extends CommonApp<CoachShuttleGatheringSol
     }
 
     @Override
-    protected CoachShuttleGatheringPanel createSolutionPanel() {
+    protected CoachShuttleGatheringPanel createSolutionPanel() 
+    {
         return new CoachShuttleGatheringPanel();
     }
 
     @Override
-    public SolutionFileIO<CoachShuttleGatheringSolution> createSolutionFileIO() {
+    public SolutionFileIO<CoachShuttleGatheringSolution> createSolutionFileIO() 
+    {
         return new XStreamSolutionFileIO<>(CoachShuttleGatheringSolution.class);
     }
 
     @Override
-    protected AbstractSolutionImporter[] createSolutionImporters() {
-        return new AbstractSolutionImporter[]{
-                new CoachShuttleGatheringImporter()
+    protected AbstractSolutionImporter[] createSolutionImporters() 
+    {
+        return new AbstractSolutionImporter[]
+        {
+           new CoachShuttleGatheringImporter()
         };
     }
 
     @Override
-    protected AbstractSolutionExporter createSolutionExporter() {
+    protected AbstractSolutionExporter createSolutionExporter() 
+    {
         return new CoachShuttleGatheringExporter();
     }
-
 }

@@ -13,60 +13,71 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cheaptime.solver.drools;
-
 import java.util.Comparator;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
-public class PeriodWrapper {
-
+public class PeriodWrapper 
+{
     private static final Comparator<PeriodWrapper> COMPARATOR = Comparator.comparingInt(PeriodWrapper::getPeriod);
 
     private int period;
 
-    public PeriodWrapper(int period) {
+    public PeriodWrapper(int period) 
+    {
         this.period = period;
     }
 
-    public int getPeriod() {
+    public int getPeriod() 
+    {
         return period;
     }
 
-    public void setPeriod(int period) {
+    public void setPeriod(int period) 
+    {
         this.period = period;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) {
+    public boolean equals(Object o) 
+    {
+        if (this == o) 
+        {
             return true;
-        } else if (o instanceof PeriodWrapper) {
+        } 
+        
+        else if (o instanceof PeriodWrapper) 
+        {
             PeriodWrapper other = (PeriodWrapper) o;
             return new EqualsBuilder()
                     .append(period, other.period)
                     .isEquals();
-        } else {
+        } 
+        
+        else 
+        {
             return false;
         }
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode() 
+    {
         return new HashCodeBuilder()
                 .append(period)
                 .toHashCode();
     }
 
-    public int compareTo(PeriodWrapper other) {
+    public int compareTo(PeriodWrapper other) 
+    {
         return COMPARATOR.compare(this, other);
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return String.valueOf(period);
     }
-
 }

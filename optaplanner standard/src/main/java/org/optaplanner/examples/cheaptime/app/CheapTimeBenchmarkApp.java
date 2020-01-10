@@ -13,18 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cheaptime.app;
-
 import org.optaplanner.examples.common.app.CommonBenchmarkApp;
 
-public class CheapTimeBenchmarkApp extends CommonBenchmarkApp {
-
-    public static void main(String[] args) {
+public class CheapTimeBenchmarkApp extends CommonBenchmarkApp 
+{
+    public static void main(String[] args) 
+    {
         new CheapTimeBenchmarkApp().buildAndBenchmark(args);
     }
 
-    public CheapTimeBenchmarkApp() {
+    public CheapTimeBenchmarkApp() 
+    {
         super(
                 new ArgOption("default",
                         "org/optaplanner/examples/cheaptime/benchmark/cheapTimeBenchmarkConfig.xml"),
@@ -32,5 +32,4 @@ public class CheapTimeBenchmarkApp extends CommonBenchmarkApp {
                         "org/optaplanner/examples/cheaptime/benchmark/cheapTimeBenchmarkConfigTemplate.xml.ftl", true)
         );
     }
-
 }

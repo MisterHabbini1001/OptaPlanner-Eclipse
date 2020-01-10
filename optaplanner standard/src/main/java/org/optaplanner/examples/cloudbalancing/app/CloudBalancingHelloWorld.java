@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cloudbalancing.app;
-
 import org.optaplanner.core.api.solver.Solver;
 import org.optaplanner.core.api.solver.SolverFactory;
 import org.optaplanner.examples.cloudbalancing.domain.CloudBalance;
@@ -27,9 +25,10 @@ import org.optaplanner.examples.cloudbalancing.persistence.CloudBalancingGenerat
 /**
  * To benchmark this solver config, run {@link CloudBalancingBenchmarkHelloWorld} instead.
  */
-public class CloudBalancingHelloWorld {
-
-    public static void main(String[] args) {
+public class CloudBalancingHelloWorld 
+{
+    public static void main(String[] args) 
+    {
         // Build the Solver
         SolverFactory<CloudBalance> solverFactory = SolverFactory.createFromXmlResource(
                 "org/optaplanner/examples/cloudbalancing/solver/cloudBalancingSolverConfig.xml");
@@ -46,14 +45,16 @@ public class CloudBalancingHelloWorld {
                 + toDisplayString(solvedCloudBalance));
     }
 
-    public static String toDisplayString(CloudBalance cloudBalance) {
+    public static String toDisplayString(CloudBalance cloudBalance) 
+    {
         StringBuilder displayString = new StringBuilder();
-        for (CloudProcess process : cloudBalance.getProcessList()) {
+        for (CloudProcess process : cloudBalance.getProcessList()) 
+        {
             CloudComputer computer = process.getComputer();
             displayString.append("  ").append(process.getLabel()).append(" -> ")
                     .append(computer == null ? null : computer.getLabel()).append("\n");
         }
+        
         return displayString.toString();
     }
-
 }

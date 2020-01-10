@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.common.persistence;
-
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -32,49 +30,64 @@ import org.optaplanner.core.api.domain.solution.PlanningSolution;
 /**
  * @param <Solution_> the solution type, the class with the {@link PlanningSolution} annotation
  */
-public abstract class AbstractXmlSolutionImporter<Solution_> extends AbstractSolutionImporter<Solution_> {
-
+public abstract class AbstractXmlSolutionImporter<Solution_> extends AbstractSolutionImporter<Solution_> 
+{
     private static final String DEFAULT_INPUT_FILE_SUFFIX = "xml";
 
     @Override
-    public String getInputFileSuffix() {
+    public String getInputFileSuffix() 
+    {
         return DEFAULT_INPUT_FILE_SUFFIX;
     }
 
     public abstract XmlInputBuilder<Solution_> createXmlInputBuilder();
 
     @Override
-    public Solution_ readSolution(File inputFile) {
-        try (InputStream in = new BufferedInputStream(new FileInputStream(inputFile))) {
+    public Solution_ readSolution(File inputFile) 
+    {
+        try (InputStream in = new BufferedInputStream(new FileInputStream(inputFile))) 
+        {
             SAXBuilder builder = new SAXBuilder(false);
             Document document = builder.build(in);
             XmlInputBuilder<Solution_> xmlInputBuilder = createXmlInputBuilder();
             xmlInputBuilder.setInputFile(inputFile);
             xmlInputBuilder.setDocument(document);
-            try {
+            try 
+            {
                 Solution_ solution = xmlInputBuilder.readSolution();
                 logger.info("Imported: {}", inputFile);
                 return solution;
-            } catch (IllegalArgumentException | IllegalStateException e) {
+            } 
+            
+            catch (IllegalArgumentException | IllegalStateException e) 
+            {
                 throw new IllegalArgumentException("Exception in inputFile (" + inputFile + ")", e);
             }
-        } catch (IOException e) {
+        } 
+        
+        catch (IOException e) 
+        {
             throw new IllegalArgumentException("Could not read the file (" + inputFile.getName() + ").", e);
-        } catch (JDOMException e) {
+        } 
+        
+        catch (JDOMException e) 
+        {
             throw new IllegalArgumentException("Could not parse the XML file (" + inputFile.getName() + ").", e);
         }
     }
 
-    public static abstract class XmlInputBuilder<Solution_> extends InputBuilder {
-
+    public static abstract class XmlInputBuilder<Solution_> extends InputBuilder 
+    {
         protected File inputFile;
         protected Document document;
 
-        public void setInputFile(File inputFile) {
+        public void setInputFile(File inputFile) 
+        {
             this.inputFile = inputFile;
         }
 
-        public void setDocument(Document document) {
+        public void setDocument(Document document) 
+        {
             this.document = document;
         }
 
@@ -84,17 +97,18 @@ public abstract class AbstractXmlSolutionImporter<Solution_> extends AbstractSol
         // Helper methods
         // ************************************************************************
 
-        public String getInputId() {
+        public String getInputId() 
+        {
             return FilenameUtils.getBaseName(inputFile.getPath());
         }
 
-        protected void assertElementName(Element element, String name) {
-            if (!element.getName().equals(name)) {
+        protected void assertElementName(Element element, String name) 
+        {
+            if (!element.getName().equals(name)) 
+            {
                 throw new IllegalStateException("Element name (" + element.getName()
                         + ") should be " + name + ".");
             }
         }
-
     }
-
 }

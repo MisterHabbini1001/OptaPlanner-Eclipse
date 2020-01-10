@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cloudbalancing.optional.score;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,71 +23,82 @@ import org.optaplanner.examples.cloudbalancing.domain.CloudBalance;
 import org.optaplanner.examples.cloudbalancing.domain.CloudComputer;
 import org.optaplanner.examples.cloudbalancing.domain.CloudProcess;
 
-public class CloudBalancingIncrementalScoreCalculator extends AbstractIncrementalScoreCalculator<CloudBalance> {
-
+public class CloudBalancingIncrementalScoreCalculator extends AbstractIncrementalScoreCalculator<CloudBalance> 
+{
     private Map<CloudComputer, Integer> cpuPowerUsageMap;
     private Map<CloudComputer, Integer> memoryUsageMap;
     private Map<CloudComputer, Integer> networkBandwidthUsageMap;
     private Map<CloudComputer, Integer> processCountMap;
-
     private int hardScore;
     private int softScore;
 
     @Override
-    public void resetWorkingSolution(CloudBalance cloudBalance) {
+    public void resetWorkingSolution(CloudBalance cloudBalance) 
+    {
         int computerListSize = cloudBalance.getComputerList().size();
         cpuPowerUsageMap = new HashMap<>(computerListSize);
         memoryUsageMap = new HashMap<>(computerListSize);
         networkBandwidthUsageMap = new HashMap<>(computerListSize);
         processCountMap = new HashMap<>(computerListSize);
-        for (CloudComputer computer : cloudBalance.getComputerList()) {
+        for (CloudComputer computer : cloudBalance.getComputerList()) 
+        {
             cpuPowerUsageMap.put(computer, 0);
             memoryUsageMap.put(computer, 0);
             networkBandwidthUsageMap.put(computer, 0);
             processCountMap.put(computer, 0);
         }
+        
         hardScore = 0;
         softScore = 0;
-        for (CloudProcess process : cloudBalance.getProcessList()) {
+        for (CloudProcess process : cloudBalance.getProcessList()) 
+        {
             insert(process);
         }
     }
 
     @Override
-    public void beforeEntityAdded(Object entity) {
+    public void beforeEntityAdded(Object entity) 
+    {
         // Do nothing
     }
 
     @Override
-    public void afterEntityAdded(Object entity) {
+    public void afterEntityAdded(Object entity) 
+    {
         // TODO the maps should probably be adjusted
         insert((CloudProcess) entity);
     }
 
     @Override
-    public void beforeVariableChanged(Object entity, String variableName) {
+    public void beforeVariableChanged(Object entity, String variableName) 
+    {
         retract((CloudProcess) entity);
     }
 
     @Override
-    public void afterVariableChanged(Object entity, String variableName) {
+    public void afterVariableChanged(Object entity, String variableName) 
+    {
         insert((CloudProcess) entity);
     }
 
     @Override
-    public void beforeEntityRemoved(Object entity) {
+    public void beforeEntityRemoved(Object entity) 
+    {
         retract((CloudProcess) entity);
     }
 
     @Override
-    public void afterEntityRemoved(Object entity) {
+    public void afterEntityRemoved(Object entity) 
+    {
         // Do nothing
         // TODO the maps should probably be adjusted
     }
 
-    private void insert(CloudProcess process) {
+    private void insert(CloudProcess process) 
+    {
         CloudComputer computer = process.getComputer();
-        if (computer != null) {
+        if (computer != null) 
+        {
             int cpuPower = computer.getCpuPower();
             int oldCpuPowerUsage = cpuPowerUsageMap.get(computer);
             int oldCpuPowerAvailable = cpuPower - oldCpuPowerUsage;
@@ -115,17 +124,21 @@ public class CloudBalancingIncrementalScoreCalculator extends AbstractIncrementa
             networkBandwidthUsageMap.put(computer, newNetworkBandwidthUsage);
 
             int oldProcessCount = processCountMap.get(computer);
-            if (oldProcessCount == 0) {
+            if (oldProcessCount == 0) 
+            {
                 softScore -= computer.getCost();
             }
+            
             int newProcessCount = oldProcessCount + 1;
             processCountMap.put(computer, newProcessCount);
         }
     }
 
-    private void retract(CloudProcess process) {
+    private void retract(CloudProcess process) 
+    {
         CloudComputer computer = process.getComputer();
-        if (computer != null) {
+        if (computer != null) 
+        {
             int cpuPower = computer.getCpuPower();
             int oldCpuPowerUsage = cpuPowerUsageMap.get(computer);
             int oldCpuPowerAvailable = cpuPower - oldCpuPowerUsage;
@@ -152,16 +165,18 @@ public class CloudBalancingIncrementalScoreCalculator extends AbstractIncrementa
 
             int oldProcessCount = processCountMap.get(computer);
             int newProcessCount = oldProcessCount - 1;
-            if (newProcessCount == 0) {
+            if (newProcessCount == 0) 
+            {
                 softScore += computer.getCost();
             }
+            
             processCountMap.put(computer, newProcessCount);
         }
     }
 
     @Override
-    public HardSoftScore calculateScore() {
+    public HardSoftScore calculateScore() 
+    {
         return HardSoftScore.of(hardScore, softScore);
     }
-
 }

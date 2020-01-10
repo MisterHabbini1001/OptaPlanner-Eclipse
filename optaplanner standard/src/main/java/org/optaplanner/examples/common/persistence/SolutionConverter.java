@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.common.persistence;
-
 import java.io.File;
 import java.util.Arrays;
 
@@ -29,23 +27,28 @@ import org.optaplanner.persistence.xstream.impl.domain.solution.XStreamSolutionF
 /**
  * @param <Solution_> the solution type, the class with the {@link PlanningSolution} annotation
  */
-public class SolutionConverter<Solution_> extends LoggingMain {
-
+public class SolutionConverter<Solution_> extends LoggingMain 
+{
     public static <Solution_> SolutionConverter<Solution_> createImportConverter(String dataDirName,
-            AbstractSolutionImporter<Solution_> importer, Class<Solution_> solutionClass) {
-        SolutionFileIO<Solution_> inputSolutionFileIO = new SolutionFileIO<Solution_>() {
+            AbstractSolutionImporter<Solution_> importer, Class<Solution_> solutionClass) 
+    {
+        SolutionFileIO<Solution_> inputSolutionFileIO = new SolutionFileIO<Solution_>() 
+        {
             @Override
-            public String getInputFileExtension() {
+            public String getInputFileExtension() 
+            {
                 return importer.getInputFileSuffix();
             }
 
             @Override
-            public Solution_ read(File inputSolutionFile) {
+            public Solution_ read(File inputSolutionFile) 
+            {
                 return importer.readSolution(inputSolutionFile);
             }
 
             @Override
-            public void write(Solution_ solution_, File outputSolutionFile) {
+            public void write(Solution_ solution_, File outputSolutionFile) 
+            {
                 throw new UnsupportedOperationException();
             }
         };
@@ -56,29 +59,36 @@ public class SolutionConverter<Solution_> extends LoggingMain {
     }
 
     public static <Solution_> SolutionConverter<Solution_> createExportConverter(String dataDirName,
-            Class<Solution_> solutionClass, AbstractSolutionExporter<Solution_> exporter) {
+            Class<Solution_> solutionClass, AbstractSolutionExporter<Solution_> exporter) 
+    {
         XStreamSolutionFileIO<Solution_> inputSolutionFileIO = new XStreamSolutionFileIO<>(solutionClass);
-        SolutionFileIO<Solution_> outputSolutionFileIO = new SolutionFileIO<Solution_>() {
+        SolutionFileIO<Solution_> outputSolutionFileIO = new SolutionFileIO<Solution_>() 
+        {
             @Override
-            public String getInputFileExtension() {
+            public String getInputFileExtension() 
+            {
                 throw new UnsupportedOperationException();
             }
 
             @Override
-            public String getOutputFileExtension() {
+            public String getOutputFileExtension() 
+            {
                 return exporter.getOutputFileSuffix();
             }
 
             @Override
-            public Solution_ read(File inputSolutionFile) {
+            public Solution_ read(File inputSolutionFile) 
+            {
                 throw new UnsupportedOperationException();
             }
 
             @Override
-            public void write(Solution_ solution, File outputSolutionFile) {
+            public void write(Solution_ solution, File outputSolutionFile) 
+            {
                 exporter.writeSolution(solution, outputSolutionFile);
             }
         };
+        
         return new SolutionConverter<>(dataDirName,
                 inputSolutionFileIO, "solved", false,
                 outputSolutionFileIO, "export");
@@ -92,59 +102,75 @@ public class SolutionConverter<Solution_> extends LoggingMain {
 
     private SolutionConverter(String dataDirName,
             SolutionFileIO<Solution_> inputSolutionFileIO, String inputDirName, boolean inputFileIsDirectory,
-            SolutionFileIO<Solution_> outputSolutionFileIO, String outputDirName) {
+            SolutionFileIO<Solution_> outputSolutionFileIO, String outputDirName) 
+    {
         this.inputSolutionFileIO = inputSolutionFileIO;
         this.inputFileIsDirectory = inputFileIsDirectory;
         this.outputSolutionFileIO = outputSolutionFileIO;
         File dataDir = CommonApp.determineDataDir(dataDirName);
         inputDir = new File(dataDir, inputDirName);
-        if (!inputDir.exists() || !inputDir.isDirectory()) {
+        if (!inputDir.exists() || !inputDir.isDirectory()) 
+        {
             throw new IllegalStateException("The directory inputDir (" + inputDir.getAbsolutePath()
                     + ") does not exist or is not a directory.");
         }
+        
         outputDir = new File(dataDir, outputDirName);
     }
 
-    public void convertAll() {
+    public void convertAll() 
+    {
         File[] inputFiles = inputDir.listFiles();
-        if (inputFiles == null) {
+        if (inputFiles == null) 
+        {
             throw new IllegalStateException("Unable to list the files in the inputDirectory ("
                     + inputDir.getAbsolutePath() + ").");
         }
+        
         Arrays.sort(inputFiles, new ProblemFileComparator());
-        for (File inputFile : inputFiles) {
-            if (acceptInputFile(inputFile)) {
+        for (File inputFile : inputFiles) 
+        {
+            if (acceptInputFile(inputFile)) 
+            {
                 convert(inputFile);
             }
         }
     }
 
-    public boolean acceptInputFile(File inputFile) {
-        if (inputFileIsDirectory) {
+    public boolean acceptInputFile(File inputFile) 
+    {
+        if (inputFileIsDirectory) 
+        {
             return inputFile.isDirectory();
         }
+        
         return inputFile.getName().endsWith("." + inputSolutionFileIO.getInputFileExtension());
     }
 
-    public void convert(String inputFileName) {
+    public void convert(String inputFileName) 
+    {
         String outputFileName = inputFileName.substring(0,
                 inputFileName.length() - inputSolutionFileIO.getInputFileExtension().length())
                 + outputSolutionFileIO.getOutputFileExtension();
         convert(inputFileName, outputFileName);
     }
 
-    public void convert(String inputFileName, String outputFileName) {
+    public void convert(String inputFileName, String outputFileName) 
+    {
         File inputFile = new File(inputDir, inputFileName);
-        if (!inputFile.exists()) {
+        if (!inputFile.exists()) 
+        {
             throw new IllegalStateException("The file inputFile (" + inputFile.getAbsolutePath()
                     + ") does not exist.");
         }
+        
         File outputFile = new File(outputDir, outputFileName);
         outputFile.getParentFile().mkdirs();
         convert(inputFile, outputFile);
     }
 
-    public void convert(File inputFile) {
+    public void convert(File inputFile) 
+    {
         String inputFileName = inputFile.getName();
         String outputFileName = inputFileName.substring(0,
                 inputFileName.length() - inputSolutionFileIO.getInputFileExtension().length())
@@ -153,10 +179,10 @@ public class SolutionConverter<Solution_> extends LoggingMain {
         convert(inputFile, outputFile);
     }
 
-    protected void convert(File inputFile, File outputFile) {
+    protected void convert(File inputFile, File outputFile) 
+    {
         Solution_ solution = inputSolutionFileIO.read(inputFile);
         outputSolutionFileIO.write(solution, outputFile);
         logger.info("Saved: {}", outputFile);
     }
-
 }

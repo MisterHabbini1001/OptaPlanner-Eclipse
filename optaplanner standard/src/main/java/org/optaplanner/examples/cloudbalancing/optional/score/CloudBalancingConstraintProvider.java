@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cloudbalancing.optional.score;
-
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
 import org.optaplanner.core.api.score.stream.Constraint;
 import org.optaplanner.core.api.score.stream.ConstraintFactory;
@@ -24,15 +22,17 @@ import org.optaplanner.examples.cloudbalancing.domain.CloudProcess;
 
 import static org.optaplanner.core.api.score.stream.ConstraintCollectors.*;
 
-public class CloudBalancingConstraintProvider implements ConstraintProvider {
-
+public class CloudBalancingConstraintProvider implements ConstraintProvider 
+{
     // WARNING: The ConstraintStreams/ConstraintProvider API is TECH PREVIEW.
     // It works but it has many API gaps.
     // Therefore, it is not rich enough yet to handle complex constraints.
 
     @Override
-    public Constraint[] defineConstraints(ConstraintFactory constraintFactory) {
-        return new Constraint[]{
+    public Constraint[] defineConstraints(ConstraintFactory constraintFactory) 
+    {
+        return new Constraint[]
+        {
                 requiredCpuPowerTotal(constraintFactory),
                 requiredMemoryTotal(constraintFactory),
                 requiredNetworkBandwidthTotal(constraintFactory),
@@ -44,7 +44,8 @@ public class CloudBalancingConstraintProvider implements ConstraintProvider {
     // Hard constraints
     // ************************************************************************
 
-    private Constraint requiredCpuPowerTotal(ConstraintFactory constraintFactory) {
+    private Constraint requiredCpuPowerTotal(ConstraintFactory constraintFactory) 
+    {
         return constraintFactory.from(CloudProcess.class)
                 .groupBy(CloudProcess::getComputer, sum(CloudProcess::getRequiredCpuPower))
                 .filter((computer, requiredCpuPower) -> requiredCpuPower > computer.getCpuPower())
@@ -53,7 +54,8 @@ public class CloudBalancingConstraintProvider implements ConstraintProvider {
                         (computer, requiredCpuPower) -> requiredCpuPower - computer.getCpuPower());
     }
 
-    private Constraint requiredMemoryTotal(ConstraintFactory constraintFactory) {
+    private Constraint requiredMemoryTotal(ConstraintFactory constraintFactory) 
+    {
         return constraintFactory.from(CloudProcess.class)
                 .groupBy(CloudProcess::getComputer, sum(CloudProcess::getRequiredMemory))
                 .filter((computer, requiredMemory) -> requiredMemory > computer.getMemory())
@@ -62,7 +64,8 @@ public class CloudBalancingConstraintProvider implements ConstraintProvider {
                         (computer, requiredMemory) -> requiredMemory - computer.getMemory());
     }
 
-    private Constraint requiredNetworkBandwidthTotal(ConstraintFactory constraintFactory) {
+    private Constraint requiredNetworkBandwidthTotal(ConstraintFactory constraintFactory) 
+    {
         return constraintFactory.from(CloudProcess.class)
                 .groupBy(CloudProcess::getComputer, sum(CloudProcess::getRequiredNetworkBandwidth))
                 .filter((computer, requiredNetworkBandwidth) -> requiredNetworkBandwidth > computer.getNetworkBandwidth())
@@ -75,7 +78,8 @@ public class CloudBalancingConstraintProvider implements ConstraintProvider {
     // Soft constraints
     // ************************************************************************
 
-    private Constraint computerCost(ConstraintFactory constraintFactory) {
+    private Constraint computerCost(ConstraintFactory constraintFactory) 
+    {
         return constraintFactory.from(CloudProcess.class)
                 // TODO Simplify by using:
                 // .groupBy(CloudProcess::getComputer)
@@ -85,5 +89,4 @@ public class CloudBalancingConstraintProvider implements ConstraintProvider {
                         HardSoftScore.ONE_SOFT,
                         (computer, count) -> computer.getCost());
     }
-
 }

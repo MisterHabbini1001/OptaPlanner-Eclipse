@@ -63,7 +63,6 @@ import org.optaplanner.examples.vehiclerouting.app.VehicleRoutingApp;
 
 public class OptaPlannerExamplesApp extends JFrame 
 {
-
     /**
      * Supported system properties: {@link CommonApp#DATA_DIR_SYSTEM_PROPERTY}.
      * @param args never null
@@ -158,7 +157,8 @@ public class OptaPlannerExamplesApp extends JFrame
     {
         String iconResource = commonApp.getIconResource();
         Icon icon = iconResource == null ? new EmptyIcon() : new ImageIcon(getClass().getResource(iconResource));
-        JButton button = new JButton(new AbstractAction(commonApp.getName(), icon) {
+        JButton button = new JButton(new AbstractAction(commonApp.getName(), icon) 
+        {
             @Override
             public void actionPerformed(ActionEvent e) 
             {

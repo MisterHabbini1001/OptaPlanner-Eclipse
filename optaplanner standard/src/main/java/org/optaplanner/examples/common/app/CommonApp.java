@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.common.app;
-
 import java.awt.Component;
 import java.io.File;
 import java.util.function.BiConsumer;
@@ -36,18 +34,20 @@ import org.optaplanner.swing.impl.SwingUtils;
 /**
  * @param <Solution_> the solution type, the class with the {@link PlanningSolution} annotation
  */
-public abstract class CommonApp<Solution_> extends LoggingMain {
-
+public abstract class CommonApp<Solution_> extends LoggingMain 
+{
     /**
      * The path to the data directory, preferably with unix slashes for portability.
      * For example: -D{@value #DATA_DIR_SYSTEM_PROPERTY}=sources/data/
      */
     public static final String DATA_DIR_SYSTEM_PROPERTY = "org.optaplanner.examples.dataDir";
 
-    public static File determineDataDir(String dataDirName) {
+    public static File determineDataDir(String dataDirName) 
+    {
         String dataDirPath = System.getProperty(DATA_DIR_SYSTEM_PROPERTY, "data/");
         File dataDir = new File(dataDirPath, dataDirName);
-        if (!dataDir.exists()) {
+        if (!dataDir.exists()) 
+        {
             throw new IllegalStateException("The directory dataDir (" + dataDir.getAbsolutePath()
                     + ") does not exist.\n" +
                     " Either the working directory should be set to the directory that contains the data directory" +
@@ -58,6 +58,7 @@ public abstract class CommonApp<Solution_> extends LoggingMain {
                     " In an IDE (IntelliJ, Eclipse, NetBeans), open the \"Run configuration\""
                     + " to change \"Working directory\" (or add the system property in \"VM options\").");
         }
+        
         return dataDir;
     }
 
@@ -65,7 +66,8 @@ public abstract class CommonApp<Solution_> extends LoggingMain {
      * Some examples are not compatible with every native LookAndFeel.
      * For example, NurseRosteringPanel is incompatible with Mac.
      */
-    public static void prepareSwingEnvironment() {
+    public static void prepareSwingEnvironment() 
+    {
         SwingUncaughtExceptionHandler.register();
         SwingUtils.fixateLookAndFeel();
     }
@@ -79,7 +81,8 @@ public abstract class CommonApp<Solution_> extends LoggingMain {
     protected SolverAndPersistenceFrame<Solution_> solverAndPersistenceFrame;
     protected SolutionBusiness<Solution_> solutionBusiness;
 
-    protected CommonApp(String name, String description, String solverConfig, String dataDirName, String iconResource) {
+    protected CommonApp(String name, String description, String solverConfig, String dataDirName, String iconResource) 
+    {
         this.name = name;
         this.description = description;
         this.solverConfig = solverConfig;
@@ -87,31 +90,38 @@ public abstract class CommonApp<Solution_> extends LoggingMain {
         this.iconResource = iconResource;
     }
 
-    public String getName() {
+    public String getName() 
+    {
         return name;
     }
 
-    public String getDescription() {
+    public String getDescription() 
+    {
         return description;
     }
 
-    public String getSolverConfig() {
+    public String getSolverConfig() 
+    {
         return solverConfig;
     }
 
-    public String getDataDirName() {
+    public String getDataDirName() 
+    {
         return dataDirName;
     }
 
-    public String getIconResource() {
+    public String getIconResource() 
+    {
         return iconResource;
     }
 
-    public void init() {
+    public void init() 
+    {
         init(null, true);
     }
 
-    public void init(Component centerForComponent, boolean exitOnClose) {
+    public void init(Component centerForComponent, boolean exitOnClose) 
+    {
         solutionBusiness = createSolutionBusiness();
         solverAndPersistenceFrame = new SolverAndPersistenceFrame<>(solutionBusiness, createSolutionPanel(), createExtraActions());
         solverAndPersistenceFrame.setDefaultCloseOperation(exitOnClose ? WindowConstants.EXIT_ON_CLOSE : WindowConstants.DISPOSE_ON_CLOSE);
@@ -119,7 +129,8 @@ public abstract class CommonApp<Solution_> extends LoggingMain {
         solverAndPersistenceFrame.setVisible(true);
     }
 
-    public SolutionBusiness<Solution_> createSolutionBusiness() {
+    public SolutionBusiness<Solution_> createSolutionBusiness() 
+    {
         SolutionBusiness<Solution_> solutionBusiness = new SolutionBusiness<>(this);
         solutionBusiness.setSolver(createSolver());
         solutionBusiness.setDataDir(determineDataDir(dataDirName));
@@ -130,14 +141,16 @@ public abstract class CommonApp<Solution_> extends LoggingMain {
         return solutionBusiness;
     }
 
-    protected Solver<Solution_> createSolver() {
+    protected Solver<Solution_> createSolver() 
+    {
         SolverFactory<Solution_> solverFactory = SolverFactory.createFromXmlResource(solverConfig);
         return solverFactory.buildSolver();
     }
 
     protected abstract SolutionPanel<Solution_> createSolutionPanel();
 
-    protected ExtraAction<Solution_>[] createExtraActions() {
+    protected ExtraAction<Solution_>[] createExtraActions() 
+    {
         return new ExtraAction[0];
     }
 
@@ -148,20 +161,20 @@ public abstract class CommonApp<Solution_> extends LoggingMain {
      */
     public abstract SolutionFileIO<Solution_> createSolutionFileIO();
 
-    protected AbstractSolutionImporter[] createSolutionImporters() {
+    protected AbstractSolutionImporter[] createSolutionImporters() 
+    {
         return new AbstractSolutionImporter[0];
     }
 
-    protected AbstractSolutionExporter createSolutionExporter() {
+    protected AbstractSolutionExporter createSolutionExporter() 
+    {
         return null;
     }
 
-    public interface ExtraAction<Solution_> {
-
+    public interface ExtraAction<Solution_> 
+    {
         String getName();
 
         BiConsumer<SolutionBusiness<Solution_>, SolutionPanel<Solution_>> getConsumer();
-
     }
-
 }

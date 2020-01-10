@@ -13,32 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cloudbalancing.optional.realtime;
-
 import org.optaplanner.core.impl.score.director.ScoreDirector;
 import org.optaplanner.core.impl.solver.ProblemFactChange;
 import org.optaplanner.examples.cloudbalancing.domain.CloudBalance;
 import org.optaplanner.examples.cloudbalancing.domain.CloudProcess;
 
-public class AddProcessProblemFactChange implements ProblemFactChange<CloudBalance> {
-
+public class AddProcessProblemFactChange implements ProblemFactChange<CloudBalance> 
+{
     private final CloudProcess process;
 
-    public AddProcessProblemFactChange(CloudProcess process) {
+    public AddProcessProblemFactChange(CloudProcess process) 
+    {
         this.process = process;
     }
 
     @Override
-    public void doChange(ScoreDirector<CloudBalance> scoreDirector) {
+    public void doChange(ScoreDirector<CloudBalance> scoreDirector) 
+    {
         CloudBalance cloudBalance = scoreDirector.getWorkingSolution();
         // Set a unique id on the new process
         long nextProcessId = 0L;
-        for (CloudProcess otherProcess : cloudBalance.getProcessList()) {
-            if (nextProcessId <= otherProcess.getId()) {
+        for (CloudProcess otherProcess : cloudBalance.getProcessList()) 
+        {
+            if (nextProcessId <= otherProcess.getId()) 
+            {
                 nextProcessId = otherProcess.getId() + 1L;
             }
         }
+        
         process.setId(nextProcessId);
         // A SolutionCloner clones planning entity lists (such as processList), so no need to clone the processList here
         // Add the planning entity itself
@@ -47,5 +50,4 @@ public class AddProcessProblemFactChange implements ProblemFactChange<CloudBalan
         scoreDirector.afterEntityAdded(process);
         scoreDirector.triggerVariableListeners();
     }
-
 }

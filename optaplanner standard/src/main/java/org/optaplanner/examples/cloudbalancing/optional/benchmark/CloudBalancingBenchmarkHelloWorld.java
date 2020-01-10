@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cloudbalancing.optional.benchmark;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,14 +28,19 @@ import org.optaplanner.examples.cloudbalancing.persistence.CloudBalancingGenerat
 /**
  * @see CloudBalancingHelloWorld
  */
-public class CloudBalancingBenchmarkHelloWorld {
-
-    public static void main(String[] args) {
+public class CloudBalancingBenchmarkHelloWorld 
+{
+    public static void main(String[] args) 
+    {
         List<String> argList = Arrays.asList(args);
         boolean advanced = argList.contains("--advanced");
-        if (!advanced) {
+        if (!advanced) 
+        {
             runBasicBenchmark();
-        } else {
+        } 
+        
+        else 
+        {
             boolean aggregator = argList.contains("--aggregator");
             runAdvancedBenchmark(aggregator);
         }
@@ -46,7 +49,8 @@ public class CloudBalancingBenchmarkHelloWorld {
     /**
      * Basic (no benchmark XML): just benchmark the solver config
      */
-    public static void runBasicBenchmark() {
+    public static void runBasicBenchmark() 
+    {
         // Build the PlannerBenchmark
         SolverFactory<CloudBalance> solverFactory = SolverFactory.createFromXmlResource(
                 "org/optaplanner/examples/cloudbalancing/solver/cloudBalancingSolverConfig.xml");
@@ -64,7 +68,8 @@ public class CloudBalancingBenchmarkHelloWorld {
     /**
      * Advanced (benchmark XML): benchmark multiple solver configurations
      */
-    public static void runAdvancedBenchmark(boolean aggregator) {
+    public static void runAdvancedBenchmark(boolean aggregator) 
+    {
         // Build the PlannerBenchmark
         PlannerBenchmarkFactory benchmarkFactory = PlannerBenchmarkFactory.createFromXmlResource(
                 "org/optaplanner/examples/cloudbalancing/optional/benchmark/cloudBalancingBenchmarkConfig.xml");
@@ -75,9 +80,9 @@ public class CloudBalancingBenchmarkHelloWorld {
         benchmark.benchmarkAndShowReportInBrowser();
 
         // Show aggregator to aggregate multiple reports
-        if (aggregator) {
+        if (aggregator) 
+        {
             BenchmarkAggregatorFrame.createAndDisplay(benchmarkFactory);
         }
     }
-
 }

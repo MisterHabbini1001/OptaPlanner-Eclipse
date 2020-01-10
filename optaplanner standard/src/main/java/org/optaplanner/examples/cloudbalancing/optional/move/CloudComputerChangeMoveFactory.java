@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cloudbalancing.optional.move;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,18 +22,21 @@ import org.optaplanner.examples.cloudbalancing.domain.CloudBalance;
 import org.optaplanner.examples.cloudbalancing.domain.CloudComputer;
 import org.optaplanner.examples.cloudbalancing.domain.CloudProcess;
 
-public class CloudComputerChangeMoveFactory implements MoveListFactory<CloudBalance> {
-
+public class CloudComputerChangeMoveFactory implements MoveListFactory<CloudBalance> 
+{
     @Override
-    public List<CloudComputerChangeMove> createMoveList(CloudBalance cloudBalance) {
+    public List<CloudComputerChangeMove> createMoveList(CloudBalance cloudBalance) 
+    {
         List<CloudComputerChangeMove> moveList = new ArrayList<>();
         List<CloudComputer> cloudComputerList = cloudBalance.getComputerList();
-        for (CloudProcess cloudProcess : cloudBalance.getProcessList()) {
-            for (CloudComputer cloudComputer : cloudComputerList) {
+        for (CloudProcess cloudProcess : cloudBalance.getProcessList()) 
+        {
+            for (CloudComputer cloudComputer : cloudComputerList) 
+            {
                 moveList.add(new CloudComputerChangeMove(cloudProcess, cloudComputer));
             }
         }
+        
         return moveList;
     }
-
 }

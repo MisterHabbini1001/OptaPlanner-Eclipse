@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cloudbalancing.optional.realtime;
-
 import java.util.ArrayList;
 
 import org.optaplanner.core.impl.score.director.ScoreDirector;
@@ -24,30 +22,37 @@ import org.optaplanner.examples.cloudbalancing.domain.CloudBalance;
 import org.optaplanner.examples.cloudbalancing.domain.CloudComputer;
 import org.optaplanner.examples.cloudbalancing.domain.CloudProcess;
 
-public class DeleteComputerProblemFactChange implements ProblemFactChange<CloudBalance> {
-
+public class DeleteComputerProblemFactChange implements ProblemFactChange<CloudBalance> 
+{
     private final CloudComputer computer;
 
-    public DeleteComputerProblemFactChange(CloudComputer computer) {
+    public DeleteComputerProblemFactChange(CloudComputer computer) 
+    {
         this.computer = computer;
     }
 
     @Override
-    public void doChange(ScoreDirector<CloudBalance> scoreDirector) {
+    public void doChange(ScoreDirector<CloudBalance> scoreDirector) 
+    {
         CloudBalance cloudBalance = scoreDirector.getWorkingSolution();
         CloudComputer workingComputer = scoreDirector.lookUpWorkingObject(computer);
-        if (workingComputer == null) {
+        if (workingComputer == null) 
+        {
             // The computer has already been deleted (the UI asked to changed the same computer twice), so do nothing
             return;
         }
+        
         // First remove the problem fact from all planning entities that use it
-        for (CloudProcess process : cloudBalance.getProcessList()) {
-            if (process.getComputer() == workingComputer) {
+        for (CloudProcess process : cloudBalance.getProcessList()) 
+        {
+            if (process.getComputer() == workingComputer) 
+            {
                 scoreDirector.beforeVariableChanged(process, "computer");
                 process.setComputer(null);
                 scoreDirector.afterVariableChanged(process, "computer");
             }
         }
+        
         // A SolutionCloner does not clone problem fact lists (such as computerList)
         // Shallow clone the computerList so only workingSolution is affected, not bestSolution or guiSolution
         ArrayList<CloudComputer> computerList = new ArrayList<>(cloudBalance.getComputerList());
@@ -58,5 +63,4 @@ public class DeleteComputerProblemFactChange implements ProblemFactChange<CloudB
         scoreDirector.afterProblemFactRemoved(workingComputer);
         scoreDirector.triggerVariableListeners();
     }
-
 }

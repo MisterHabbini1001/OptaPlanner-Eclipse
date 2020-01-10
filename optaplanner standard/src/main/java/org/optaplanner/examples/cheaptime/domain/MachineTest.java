@@ -9,7 +9,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class MachineTest {
+public class MachineTest 
+{
     private int index;
     private long powerConsumptionMicros; 
     private long spinUpDownCostMicros; 

@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.optaplanner.examples.cloudbalancing.swingui;
-
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -44,8 +42,8 @@ import org.optaplanner.examples.common.swingui.SolutionPanel;
 import org.optaplanner.examples.common.swingui.components.LabeledComboBoxRenderer;
 import org.optaplanner.swing.impl.SwingUtils;
 
-public class CloudBalancingPanel extends SolutionPanel<CloudBalance> {
-
+public class CloudBalancingPanel extends SolutionPanel<CloudBalance> 
+{
     public static final String LOGO_PATH = "/org/optaplanner/examples/cloudbalancing/swingui/cloudBalancingLogo.png";
 
     private final ImageIcon cloudComputerIcon;
@@ -64,7 +62,8 @@ public class CloudBalancingPanel extends SolutionPanel<CloudBalance> {
     private int maximumComputerMemory;
     private int maximumComputerNetworkBandwidth;
 
-    public CloudBalancingPanel() {
+    public CloudBalancingPanel() 
+    {
         cloudComputerIcon = new ImageIcon(getClass().getResource("cloudComputer.png"));
         addCloudComputerIcon = new ImageIcon(getClass().getResource("addCloudComputer.png"));
         deleteCloudComputerIcon = new ImageIcon(getClass().getResource("deleteCloudComputer.png"));
@@ -84,48 +83,59 @@ public class CloudBalancingPanel extends SolutionPanel<CloudBalance> {
                         GroupLayout.PREFERRED_SIZE));
     }
 
-    public ImageIcon getCloudComputerIcon() {
+    public ImageIcon getCloudComputerIcon() 
+    {
         return cloudComputerIcon;
     }
 
-    public ImageIcon getAddCloudComputerIcon() {
+    public ImageIcon getAddCloudComputerIcon() 
+    {
         return addCloudComputerIcon;
     }
 
-    public ImageIcon getDeleteCloudComputerIcon() {
+    public ImageIcon getDeleteCloudComputerIcon() 
+    {
         return deleteCloudComputerIcon;
     }
 
-    public ImageIcon getCloudProcessIcon() {
+    public ImageIcon getCloudProcessIcon() 
+    {
         return cloudProcessIcon;
     }
 
-    public ImageIcon getAddCloudProcessIcon() {
+    public ImageIcon getAddCloudProcessIcon() 
+    {
         return addCloudProcessIcon;
     }
 
-    public ImageIcon getDeleteCloudProcessIcon() {
+    public ImageIcon getDeleteCloudProcessIcon() 
+    {
         return deleteCloudProcessIcon;
     }
 
-    public int getMaximumComputerCpuPower() {
+    public int getMaximumComputerCpuPower() 
+    {
         return maximumComputerCpuPower;
     }
 
-    public int getMaximumComputerMemory() {
+    public int getMaximumComputerMemory() 
+    {
         return maximumComputerMemory;
     }
 
-    public int getMaximumComputerNetworkBandwidth() {
+    public int getMaximumComputerNetworkBandwidth() 
+    {
         return maximumComputerNetworkBandwidth;
     }
 
-    private JPanel createHeaderPanel() {
+    private JPanel createHeaderPanel() 
+    {
         JPanel headerPanel = new JPanel(new GridLayout(0, 5));
         JPanel addPanel = new JPanel(new GridLayout());
         JButton addComputerButton = SwingUtils.makeSmallButton(new JButton(addCloudComputerIcon));
         addComputerButton.setToolTipText("Add computer");
-        addComputerButton.addActionListener(e -> {
+        addComputerButton.addActionListener(e -> 
+        {
             CloudComputer computer = new CloudComputer();
             computer.setCpuPower(12);
             computer.setMemory(32);
@@ -133,16 +143,19 @@ public class CloudBalancingPanel extends SolutionPanel<CloudBalance> {
             computer.setCost(400 + 400 + 600);
             addComputer(computer);
         });
+        
         addPanel.add(addComputerButton);
         JButton addProcessButton = SwingUtils.makeSmallButton(new JButton(addCloudProcessIcon));
         addProcessButton.setToolTipText("Add process");
-        addProcessButton.addActionListener(e -> {
+        addProcessButton.addActionListener(e -> 
+        {
             CloudProcess process = new CloudProcess();
             process.setRequiredCpuPower(3);
             process.setRequiredMemory(8);
             process.setRequiredNetworkBandwidth(3);
             addProcess(process);
         });
+        
         addPanel.add(addProcessButton);
         JPanel cornerPanel = new JPanel(new BorderLayout());
         cornerPanel.add(addPanel, BorderLayout.EAST);
@@ -158,33 +171,45 @@ public class CloudBalancingPanel extends SolutionPanel<CloudBalance> {
         return headerPanel;
     }
 
-    private JPanel createComputersPanel() {
+    private JPanel createComputersPanel() 
+    {
         computersPanel = new JPanel(new GridLayout(0, 1));
         computerToPanelMap = new LinkedHashMap<>();
         return computersPanel;
     }
 
     @Override
-    public void resetPanel(CloudBalance cloudBalance) {
+    public void resetPanel(CloudBalance cloudBalance) 
+    {
         maximumComputerCpuPower = 0;
         maximumComputerMemory = 0;
         maximumComputerNetworkBandwidth = 0;
-        for (CloudComputer computer : cloudBalance.getComputerList()) {
-            if (computer.getCpuPower() > maximumComputerCpuPower) {
+        for (CloudComputer computer : cloudBalance.getComputerList()) 
+        {
+            if (computer.getCpuPower() > maximumComputerCpuPower) 
+            {
                 maximumComputerCpuPower = computer.getCpuPower();
             }
-            if (computer.getMemory() > maximumComputerMemory) {
+            
+            if (computer.getMemory() > maximumComputerMemory) 
+            {
                 maximumComputerMemory = computer.getMemory();
             }
-            if (computer.getNetworkBandwidth() > maximumComputerNetworkBandwidth) {
+            
+            if (computer.getNetworkBandwidth() > maximumComputerNetworkBandwidth) 
+            {
                 maximumComputerNetworkBandwidth = computer.getNetworkBandwidth();
             }
         }
-        for (CloudComputerPanel computerPanel : computerToPanelMap.values()) {
-            if (computerPanel.getComputer() != null) {
+        
+        for (CloudComputerPanel computerPanel : computerToPanelMap.values()) 
+        {
+            if (computerPanel.getComputer() != null) 
+            {
                 computersPanel.remove(computerPanel);
             }
         }
+        
         computerToPanelMap.clear();
         computersPanel.removeAll();
         unassignedPanel = new CloudComputerPanel(this, null);
@@ -194,71 +219,88 @@ public class CloudBalancingPanel extends SolutionPanel<CloudBalance> {
     }
 
     @Override
-    public void updatePanel(CloudBalance cloudBalance) {
+    public void updatePanel(CloudBalance cloudBalance) 
+    {
         Set<CloudComputer> deadCloudComputerSet = new LinkedHashSet<>(computerToPanelMap.keySet());
         deadCloudComputerSet.remove(null);
-        for (CloudComputer computer : cloudBalance.getComputerList()) {
+        for (CloudComputer computer : cloudBalance.getComputerList()) 
+        {
             deadCloudComputerSet.remove(computer);
             CloudComputerPanel computerPanel = computerToPanelMap.get(computer);
-            if (computerPanel == null) {
+            if (computerPanel == null) 
+            {
                 computerPanel = new CloudComputerPanel(this, computer);
                 computersPanel.add(computerPanel);
                 computerToPanelMap.put(computer, computerPanel);
             }
+            
             computerPanel.clearProcesses();
         }
+        
         unassignedPanel.clearProcesses();
-        for (CloudProcess process : cloudBalance.getProcessList()) {
+        for (CloudProcess process : cloudBalance.getProcessList()) 
+        {
             CloudComputer computer = process.getComputer();
             CloudComputerPanel computerPanel = computerToPanelMap.get(computer);
             computerPanel.addProcess(process);
         }
-        for (CloudComputer deadComputer : deadCloudComputerSet) {
+        
+        for (CloudComputer deadComputer : deadCloudComputerSet) 
+        {
             CloudComputerPanel deadComputerPanel = computerToPanelMap.remove(deadComputer);
             computersPanel.remove(deadComputerPanel);
         }
-        for (CloudComputerPanel computerPanel : computerToPanelMap.values()) {
+        
+        for (CloudComputerPanel computerPanel : computerToPanelMap.values()) 
+        {
             computerPanel.update();
         }
         // If computersPanel.add() or computersPanel.remove() was called, the component needs to be validated.
         computersPanel.validate();
     }
 
-    public void addComputer(final CloudComputer computer) {
+    public void addComputer(final CloudComputer computer) 
+    {
         logger.info("Scheduling addition of computer ({}).", computer);
         doProblemFactChange(new AddComputerProblemFactChange(computer));
     }
 
-    public void deleteComputer(final CloudComputer computer) {
+    public void deleteComputer(final CloudComputer computer) 
+    {
         logger.info("Scheduling delete of computer ({}).", computer);
         doProblemFactChange(new DeleteComputerProblemFactChange(computer));
     }
 
-    public void addProcess(final CloudProcess process) {
+    public void addProcess(final CloudProcess process) 
+    {
         logger.info("Scheduling addition of process ({}).", process);
         doProblemFactChange(new AddProcessProblemFactChange(process));
     }
 
-    public void deleteProcess(final CloudProcess process) {
+    public void deleteProcess(final CloudProcess process) 
+    {
         logger.info("Scheduling delete of process ({}).", process);
         doProblemFactChange(new DeleteProcessProblemFactChange(process));
     }
 
-    public JButton createButton(CloudProcess process) {
+    public JButton createButton(CloudProcess process) 
+    {
         return SwingUtils.makeSmallButton(new JButton(new CloudProcessAction(process)));
     }
 
-    private class CloudProcessAction extends AbstractAction {
-
+    private class CloudProcessAction extends AbstractAction 
+    {
         private CloudProcess process;
 
-        public CloudProcessAction(CloudProcess process) {
+        public CloudProcessAction(CloudProcess process) 
+        {
             super(process.getLabel());
             this.process = process;
         }
 
         @Override
-        public void actionPerformed(ActionEvent e) {
+        public void actionPerformed(ActionEvent e) 
+        {
             JPanel listFieldsPanel = new JPanel(new GridLayout(1, 2));
             listFieldsPanel.add(new JLabel("Computer:"));
             List<CloudComputer> computerList = getSolution().getComputerList();
@@ -270,15 +312,16 @@ public class CloudBalancingPanel extends SolutionPanel<CloudBalance> {
             listFieldsPanel.add(computerListField);
             int result = JOptionPane.showConfirmDialog(CloudBalancingPanel.this.getRootPane(), listFieldsPanel,
                     "Select computer", JOptionPane.OK_CANCEL_OPTION);
-            if (result == JOptionPane.OK_OPTION) {
+            if (result == JOptionPane.OK_OPTION) 
+            {
                 CloudComputer toComputer = (CloudComputer) computerListField.getSelectedItem();
-                if (process.getComputer() != toComputer) {
+                if (process.getComputer() != toComputer) 
+                {
                     solutionBusiness.doChangeMove(process, "computer", toComputer);
                 }
+                
                 solverAndPersistenceFrame.resetScreen();
             }
         }
-
     }
-
 }
